@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
       (Do not remove this comment block.)
-  Maintained by the MATE Documentation Project
+  Maintained by the CAFE Documentation Project
   http://wiki.mate-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Jan 30, 2002
@@ -20,7 +20,7 @@
 
     <copyright xml:lang="en">
       <year>2019-2020</year>
-      <holder>MATE Documentation Project</holder>
+      <holder>CAFE Documentation Project</holder>
     </copyright>
     <copyright>
       <year>2009</year>
@@ -49,7 +49,7 @@
      not specified, the publisher/author is the same for all versions of the 
      document.  -->
     <publisher>
-      <publishername>MATE Documentation Project</publishername>
+      <publishername>CAFE Documentation Project</publishername>
     </publisher> 
     <publisher>
       <publishername>GNOME Documentation Project</publishername>
@@ -62,9 +62,9 @@
 
   <authorgroup>
       <author>
-          <orgname>MATE Documentation Project</orgname>
+          <orgname>CAFE Documentation Project</orgname>
           <affiliation>
-              <orgname>MATE Desktop</orgname>
+              <orgname>CAFE Desktop</orgname>
           </affiliation>
       </author>
       <author>
@@ -116,7 +116,7 @@
                   <date>July 2015</date>
                   <revdescription>
                          <para role="author" xml:lang="en">Wolfgang Ulbrich</para>
-                         <para role="publisher" xml:lang="en">MATE Documentation Project</para>
+                         <para role="publisher" xml:lang="en">CAFE Documentation Project</para>
                   </revdescription>
                 </revision>
                 <revision>

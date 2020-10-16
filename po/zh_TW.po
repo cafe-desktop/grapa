@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the engrampa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -87,16 +87,16 @@ msgid "Engrampa Archive Manager"
 msgstr "Engrampa 壓縮檔管理員"
 
 #: data/engrampa.appdata.xml.in:8
-msgid "An Archive Manager for the MATE desktop environment"
-msgstr "適用於 MATE 桌面環境的壓縮檔管理員"
+msgid "An Archive Manager for the CAFE desktop environment"
+msgstr "適用於 CAFE 桌面環境的壓縮檔管理員"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the MATE environment. It allows you to "
+"Engrampa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa 是 MATE "
+"Engrampa 是 CAFE "
 "桌面環境的壓縮檔管理員。它讓您可以建立並修改壓縮檔、檢視壓縮檔內容、檢視包含在壓縮檔內的檔案，以及從壓縮檔中解壓縮出檔案。"
 
 #: data/engrampa.appdata.xml.in:15
@@ -208,11 +208,11 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the MATE Desktop Environment. "
-"If you would like to know more about MATE and Engrampa, please visit the "
+"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Engrampa, please visit the "
 "project's home page."
 msgstr ""
-"Engrampa 是 File Roller 的分支，且為 MATE 桌面環境的一部分。如果您想要知道更多關於 MATE 與 Engrampa "
+"Engrampa 是 File Roller 的分支，且為 CAFE 桌面環境的一部分。如果您想要知道更多關於 CAFE 與 Engrampa "
 "的資訊，請造訪專案首頁。"
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -233,8 +233,8 @@ msgstr "engrampa"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/engrampa.desktop.in.in:17
-msgid "MATE;archive;manager;compression;"
-msgstr "MATE;archive;manager;compression;"
+msgid "CAFE;archive;manager;compression;"
+msgstr "CAFE;archive;manager;compression;"
 
 #: data/org.mate.engrampa.gschema.xml.in:38
 msgid "How to sort files"
@@ -510,14 +510,14 @@ msgstr ""
 #: src/actions.c:900
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
-"Copyright © 2012–2020 The MATE developers"
+"Copyright © 2012–2020 The CAFE developers"
 msgstr ""
 "Copyright © 2001–2010 自由軟體基金會\n"
-"Copyright © 2012–2020 MATE 開發者"
+"Copyright © 2012–2020 CAFE 開發者"
 
 #: src/actions.c:902
-msgid "An archive manager for MATE."
-msgstr "MATE 上的壓縮檔管理員程式。"
+msgid "An archive manager for CAFE."
+msgstr "CAFE 上的壓縮檔管理員程式。"
 
 #: src/actions.c:905
 msgid "translator-credits"

@@ -45,9 +45,9 @@ msgstr ""
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:21
-msgid "<year>2019-2020</year> <holder>MATE Documentation Project</holder>"
+msgid "<year>2019-2020</year> <holder>CAFE Documentation Project</holder>"
 msgstr ""
-"<year>2019-2020</year> <holder>Progetto Documentazione di MATE</holder>"
+"<year>2019-2020</year> <holder>Progetto Documentazione di CAFE</holder>"
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:25
@@ -77,8 +77,8 @@ msgstr "<year>2002</year> <holder>Alexander Kirillov</holder>"
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
 #: C/index.docbook:52 C/index.docbook:119
-msgid "MATE Documentation Project"
-msgstr "progetto Documentazione di  MATE"
+msgid "CAFE Documentation Project"
+msgstr "progetto Documentazione di  CAFE"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
@@ -92,11 +92,11 @@ msgstr "Progetto della Documentazione di GNOME "
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:64
 msgid ""
-"<orgname>MATE Documentation Project</orgname> <affiliation> <orgname>MATE "
+"<orgname>CAFE Documentation Project</orgname> <affiliation> <orgname>CAFE "
 "Desktop</orgname> </affiliation>"
 msgstr ""
-"<orgname>Progetto documentazione di MATE</orgname> <affiliation> "
-"<orgname>MATE Desktop</orgname> </affiliation>"
+"<orgname>Progetto documentazione di CAFE</orgname> <affiliation> "
+"<orgname>CAFE Desktop</orgname> </affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:70
@@ -904,7 +904,7 @@ msgstr ""
 "(<guilabel>Nuovo</guilabel>, <guilabel>Apri</guilabel>, "
 "<guilabel>Estrai</guilabel>,...) permettono di sfogliare le cartelle del "
 "computer. Fai riferimento alla <link xlink:href=\"help:mate-user-guide"
-"/filechooser-open\">Guida utente di MATE</link> per imparare come usare le "
+"/filechooser-open\">Guida utente di CAFE</link> per imparare come usare le "
 "finestre di gestione dei file."
 
 #. (itstool) path: section/para
@@ -3685,12 +3685,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Questo manuale fa parte di una raccolta di manuali MATE distribuita in "
+"Questo manuale fa parte di una raccolta di manuali CAFE distribuita in "
 "conformità con la GFDL. Per poter distribuire questo manuale separatamente, "
 "è necessario inserirvi una copia della licenza, come descritto nella sezione"
 " 6 della licenza."
@@ -3699,14 +3699,14 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Molti dei nomi usati dalle aziende per distinguere i propri prodotti e "
 "servizi sono rivendicati come marchi registrati. Quando questi nomi "
-"compaiono nella documentazione di MATE, e i partecipanti al MATE "
+"compaiono nella documentazione di CAFE, e i partecipanti al CAFE "
 "Documentation Project sono consapevoli del loro utilizzo, essi vengono "
 "scritti in lettere maiuscole o con l'iniziale maiuscola."
 
@@ -3763,7 +3763,7 @@ msgstr ""
 "PERDITA DI AVVIAMENTO, INTERRUZIONE DEL LAVORO, GUASTO O MALFUNZIONAMENTO "
 "DEL COMPUTER O QUALUNQUE ALTRO DANNO O PERDITA DERIVANTE O CORRELATA ALL'USO"
 " DEL DOCUMENTO O DI UNA SUA VERSIONE MODIFICATA, ANCHE QUALORA LE PERSONE "
-"CITATE FOSSERO STATE INFORMATE DELLA POSSIBILITÀ DI TALI DANNI."
+"CITATE FOSSERO STATE INFORCAFE DELLA POSSIBILITÀ DI TALI DANNI."
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:29
@@ -3786,10 +3786,10 @@ msgstr "Commenti"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Archive "
 "Manager</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:mate-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:mate-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""
 "Per segnalare un bug o dare suggerimenti su <application>Gestore archivi "
 "Engrampa</application> o su questo manuale, seguite le indicazioni riportate"
 " sulla <link xlink:href=\"help:mate-user-guide/feedback\">pagina di feedback"
-" di MATE</link>."
+" di CAFE</link>."

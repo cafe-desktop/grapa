@@ -60,7 +60,7 @@ typedef enum {
 	FR_ACTION_SAVING_REMOTE_ARCHIVE       /* copying the archive to a remote location */
 } FrAction;
 
-#if MATE_ENABLE_DEBUG
+#if CAFE_ENABLE_DEBUG
 const char * get_action_name (FrAction action);
 #endif
 

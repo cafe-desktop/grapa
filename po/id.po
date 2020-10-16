@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the engrampa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -95,16 +95,16 @@ msgid "Engrampa Archive Manager"
 msgstr "Engrampa Archive Manager"
 
 #: data/engrampa.appdata.xml.in:8
-msgid "An Archive Manager for the MATE desktop environment"
-msgstr "Manajer arsip untuk lingkungan desktop MATE"
+msgid "An Archive Manager for the CAFE desktop environment"
+msgstr "Manajer arsip untuk lingkungan desktop CAFE"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the MATE environment. It allows you to "
+"Engrampa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa adalah sebuah manajer arsip untuk lingkungan MATE. Ini memungkinkan"
+"Engrampa adalah sebuah manajer arsip untuk lingkungan CAFE. Ini memungkinkan"
 " Anda membuat dan mengubah arsip, melihat isi dari suatu arsip, melihat "
 "suatu berkas yang berada dalam suatu arsip, dan mengekstrak berkas dari "
 "arsip."
@@ -221,12 +221,12 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the MATE Desktop Environment. "
-"If you would like to know more about MATE and Engrampa, please visit the "
+"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Engrampa, please visit the "
 "project's home page."
 msgstr ""
 "Engrampa adalah fork dari File Roller dan bagian dari Lingkungan Desktop "
-"MATE. Bila Anda ingin tahu lebih jauh tentang MATE dan Engrampa, harap "
+"CAFE. Bila Anda ingin tahu lebih jauh tentang CAFE dan Engrampa, harap "
 "kunjungi laman proyek."
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -247,8 +247,8 @@ msgstr "engrampa"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/engrampa.desktop.in.in:17
-msgid "MATE;archive;manager;compression;"
-msgstr "MATE;arsip;manajer;kompresi;"
+msgid "CAFE;archive;manager;compression;"
+msgstr "CAFE;arsip;manajer;kompresi;"
 
 #: data/org.mate.engrampa.gschema.xml.in:38
 msgid "How to sort files"
@@ -545,14 +545,14 @@ msgstr ""
 #: src/actions.c:900
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
-"Copyright © 2012–2020 The MATE developers"
+"Copyright © 2012–2020 The CAFE developers"
 msgstr ""
 "Hak Cipta © 2001–2010 Free Software Foundation, Inc.\n"
-"Hak Cipta © 2012–2020 Pengembang MATE"
+"Hak Cipta © 2012–2020 Pengembang CAFE"
 
 #: src/actions.c:902
-msgid "An archive manager for MATE."
-msgstr "Manajer arsip untuk MATE."
+msgid "An archive manager for CAFE."
+msgstr "Manajer arsip untuk CAFE."
 
 #: src/actions.c:905
 msgid "translator-credits"
@@ -560,7 +560,7 @@ msgstr ""
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
 "Ahmad Riza H Nst  <ari@160c.afraid.org>\n"
 "Dirgita <dirgita@gmail.com>\n"
-"Tim MATE Indonesia <http://id.mate.org>\n"
+"Tim CAFE Indonesia <http://id.mate.org>\n"
 "Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017.\n"
 "Andika Triwidada <andika@gmail.com>, 2020."
 

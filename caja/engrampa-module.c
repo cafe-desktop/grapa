@@ -33,7 +33,7 @@ caja_module_initialize (GTypeModule*module)
 {
 	caja_fr_register_type (module);
 
-	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 }
 

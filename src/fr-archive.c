@@ -693,7 +693,7 @@ action_started (FrCommand *command,
 		FrAction   action,
 		FrArchive *archive)
 {
-#ifdef MATE_ENABLE_DEBUG
+#ifdef CAFE_ENABLE_DEBUG
 	debug (DEBUG_INFO, "%s [START] (FR::Archive)\n", get_action_name (action));
 #endif
 
@@ -930,7 +930,7 @@ action_performed (FrCommand   *command,
 		  FrProcError *error,
 		  FrArchive   *archive)
 {
-#ifdef MATE_ENABLE_DEBUG
+#ifdef CAFE_ENABLE_DEBUG
 	debug (DEBUG_INFO, "%s [DONE] (FR::Archive)\n", get_action_name (action));
 #endif
 

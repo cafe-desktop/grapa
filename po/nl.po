@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the engrampa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -92,16 +92,16 @@ msgid "Engrampa Archive Manager"
 msgstr "Engrampa Archiefbeheer"
 
 #: data/engrampa.appdata.xml.in:8
-msgid "An Archive Manager for the MATE desktop environment"
-msgstr "Een archiefbeheerder voor de MATE-werkomgeving"
+msgid "An Archive Manager for the CAFE desktop environment"
+msgstr "Een archiefbeheerder voor de CAFE-werkomgeving"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the MATE environment. It allows you to "
+"Engrampa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa is een archiefbeheerder voor de MATE-werkomgeving. U kunt er "
+"Engrampa is een archiefbeheerder voor de CAFE-werkomgeving. U kunt er "
 "ingepakte archiefbestanden mee maken en bewerken, de inhoud van een "
 "archiefbestand bekijken, een bestand in een archiefbestand bekijken, en "
 "bestanden uit het archief uitpakken."
@@ -219,12 +219,12 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the MATE Desktop Environment. "
-"If you would like to know more about MATE and Engrampa, please visit the "
+"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Engrampa, please visit the "
 "project's home page."
 msgstr ""
-"Engrampa is afgevorkt van File Roller en maakt deel uit van de MATE-"
-"werkomgeving. Als u meer wilt weten over MATE en Engrampa, bezoek dan a.u.b."
+"Engrampa is afgevorkt van File Roller en maakt deel uit van de CAFE-"
+"werkomgeving. Als u meer wilt weten over CAFE en Engrampa, bezoek dan a.u.b."
 " de thuispagina van het project."
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -245,8 +245,8 @@ msgstr "engrampa"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/engrampa.desktop.in.in:17
-msgid "MATE;archive;manager;compression;"
-msgstr "MATE;archief;beheerder;compressie;"
+msgid "CAFE;archive;manager;compression;"
+msgstr "CAFE;archief;beheerder;compressie;"
 
 #: data/org.mate.engrampa.gschema.xml.in:38
 msgid "How to sort files"
@@ -545,14 +545,14 @@ msgstr ""
 #: src/actions.c:900
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
-"Copyright © 2012–2020 The MATE developers"
+"Copyright © 2012–2020 The CAFE developers"
 msgstr ""
 "Auteursrecht © 2001–2010 Free Software Foundation, Inc.\n"
-"Auteursrecht © 2012-2020 MATE-ontwikkelaars"
+"Auteursrecht © 2012-2020 CAFE-ontwikkelaars"
 
 #: src/actions.c:902
-msgid "An archive manager for MATE."
-msgstr "Archiefbeheer voor MATE."
+msgid "An archive manager for CAFE."
+msgstr "Archiefbeheer voor CAFE."
 
 #: src/actions.c:905
 msgid "translator-credits"

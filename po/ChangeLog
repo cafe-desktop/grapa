@@ -928,7 +928,7 @@
 
 2008-02-07  Artur Flinta  <aflinta@svn.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2008-02-05  Leonardo Ferreira Fontenelle  <leonardof@svn.gnome.org>
 
@@ -1251,7 +1251,7 @@
 
 2007-08-08  Artur Flinta  <aflinta@svn.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2007-08-06  Ilkka Tuohela  <hile@iki.fi>
 
@@ -1381,7 +1381,7 @@
 
 2007-06-11  Artur Flinta  <aflinta@svn.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2007-06-05  Jorge Gonzalez <jorgegonz@svn.gnome.org>
 
@@ -1590,7 +1590,7 @@
 
 2007-02-22  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2007-02-22  Alexander Shopov  <ash@contact.bg>
 	* bg.po: Updated Bulgarian translation by
@@ -2176,7 +2176,7 @@
 
 2006-02-26  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2006-02-24  Clytie Siddall <clytie@riverland.net.au>
 
@@ -2521,7 +2521,7 @@
 
 2005-07-26  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2005-07-25  Ilkka Tuohela  <hile@iki.fi>
 
@@ -2733,7 +2733,7 @@
 
 2005-02-28  Abel Cheung  <maddog@linuxhall.org>
 
-	* zh_TW.po: Updated traditional Chinese translation from MATE HK Team
+	* zh_TW.po: Updated traditional Chinese translation from CAFE HK Team
 
 2005-02-27  Roozbeh Pournader  <roozbeh@farsiweb.info>
 
@@ -2762,7 +2762,7 @@
 
 2005-02-19  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2005-02-19  Maxim Dziumanenko <mvd@mylinux.com.ua>
 
@@ -3058,7 +3058,7 @@
 
 2004-09-11  Abel Cheung  <maddog@linuxhall.org>
 
-	* zh_TW.po: Updated traditional Chinese translation by MATE HK Team.
+	* zh_TW.po: Updated traditional Chinese translation by CAFE HK Team.
 	* ar.po, th.po: Mark wrong entry as fuzzy (msgfmt check failed).
 
 2004-09-10  Theppitak Karoonboonyanan  <thep@linux.thai.net>
@@ -3228,7 +3228,7 @@
 
 2004-06-16  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2004-06-13  Kostas Papadimas <pkst@gnome.org>
 
@@ -3651,7 +3651,7 @@
 
 2004-02-05  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2004-02-05  Laurent Dhima  <laurenti@alblinux.net>
 
@@ -3735,7 +3735,7 @@
 
 2004-01-27  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2004-01-27  ?smund Skj?veland  <aasmunds@fys.uio.no>
 
@@ -3775,7 +3775,7 @@
 
 2004-01-19  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2004-01-18  Francisco Javier F. Serrador  <serrador@cvs.gnome.org>
 
@@ -3815,7 +3815,7 @@
 
 2004-01-15  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2004-01-15  Danilo ?egan  <dsegan@gmx.net>
 
@@ -3848,7 +3848,7 @@
 
 2004-01-12  Artur Flinta  <aflinta@cvs.gnome.org>
 
-	* pl.po: Updated Polish translation by MATE PL Team.
+	* pl.po: Updated Polish translation by CAFE PL Team.
 
 2004-01-12  Miloslav Trmac  <mitr@volny.cz>
 
@@ -3967,7 +3967,7 @@
 2003-11-15 Arkadiusz Lipiec <arkadiusz.lipiec@gazeta.pl>
 
 	* pl.po: Updated Polish translation by
-	MATE PL Team <translators@gnome.pl>
+	CAFE PL Team <translators@gnome.pl>
 
 2003-11-12  Laurent Dhima  <laurenti@alblinux.net>
 
@@ -4792,7 +4792,7 @@
 2003-01-02  Zbigniew Chyla  <cyba@gnome.pl>
 
 	* pl.po: Updated Polish translation by
-	MATE PL Team <translators@gnome.pl>.
+	CAFE PL Team <translators@gnome.pl>.
 
 2003-01-01  Ole Laursen  <olau@hardworking.dk>
 

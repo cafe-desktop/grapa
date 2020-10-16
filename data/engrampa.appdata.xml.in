@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright 2014 MATE team <mate-dev@ml.mate-desktop.org> -->
+<!-- Copyright 2014 CAFE team <mate-dev@ml.mate-desktop.org> -->
 <component type="desktop">
  <id>engrampa.desktop</id>
  <metadata_license>CC0-1.0</metadata_license>
  <project_license>GPL-2.0+</project_license>
  <name>Engrampa Archive Manager</name>
- <summary>An Archive Manager for the MATE desktop environment</summary>
+ <summary>An Archive Manager for the CAFE desktop environment</summary>
  <description>
   <p>
-   Engrampa is an archive manager for the MATE environment. It allows you
+   Engrampa is an archive manager for the CAFE environment. It allows you
    to create and modify archives, view the contents of an archive, view a
    file contained in an archive, and extract files from archive.
   </p>
@@ -44,8 +44,8 @@
       lrzip (.lrz), lzip (.lz), lzop (.lzo), rzip(.rz), xz (.xz).</li>
   </ul>
   <p>
-   Engrampa is a fork of File Roller and part of the MATE Desktop Environment.
-   If you would like to know more about MATE and Engrampa, please visit the
+   Engrampa is a fork of File Roller and part of the CAFE Desktop Environment.
+   If you would like to know more about CAFE and Engrampa, please visit the
    project's home page.
   </p>
  </description>
@@ -68,5 +68,5 @@
  </screenshots>
  <url type="homepage">http://www.mate-desktop.org</url>
  <updatecontact>mate-dev@ml.mate-desktop.org</updatecontact>
- <project_group>MATE</project_group>
+ <project_group>CAFE</project_group>
 </component>

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the engrampa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -88,12 +88,12 @@ msgid "Engrampa Archive Manager"
 msgstr "Xestor d'archivadores Engrampa"
 
 #: data/engrampa.appdata.xml.in:8
-msgid "An Archive Manager for the MATE desktop environment"
-msgstr "Un xestor d'archivadores pal entornu d'escritoriu MATE"
+msgid "An Archive Manager for the CAFE desktop environment"
+msgstr "Un xestor d'archivadores pal entornu d'escritoriu CAFE"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the MATE environment. It allows you to "
+"Engrampa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
@@ -201,8 +201,8 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the MATE Desktop Environment. "
-"If you would like to know more about MATE and Engrampa, please visit the "
+"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Engrampa, please visit the "
 "project's home page."
 msgstr ""
 
@@ -224,7 +224,7 @@ msgstr ""
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/engrampa.desktop.in.in:17
-msgid "MATE;archive;manager;compression;"
+msgid "CAFE;archive;manager;compression;"
 msgstr ""
 
 #: data/org.mate.engrampa.gschema.xml.in:38
@@ -522,11 +522,11 @@ msgstr ""
 #: src/actions.c:900
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
-"Copyright © 2012–2020 The MATE developers"
+"Copyright © 2012–2020 The CAFE developers"
 msgstr ""
 
 #: src/actions.c:902
-msgid "An archive manager for MATE."
+msgid "An archive manager for CAFE."
 msgstr "Un xestor d'archivadores pa Mate."
 
 #: src/actions.c:905

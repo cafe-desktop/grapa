@@ -473,7 +473,7 @@ debug (const char *file,
        const char *function,
        const char *format, ...)
 {
-#ifdef MATE_ENABLE_DEBUG
+#ifdef CAFE_ENABLE_DEBUG
 	va_list  args;
 	char    *str;
 

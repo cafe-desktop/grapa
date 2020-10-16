@@ -1,7 +1,7 @@
 AM_CPPFLAGS =						\
 	$(WARN_CFLAGS)					\
 	-DFR_DATADIR=\"$(datadir)\"			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\" 	\
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\" 	\
 	-I$(top_srcdir)					\
 	-I$(top_builddir)				\
 	$(CAJA_CFLAGS)

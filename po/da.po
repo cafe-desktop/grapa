@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the engrampa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -88,16 +88,16 @@ msgid "Engrampa Archive Manager"
 msgstr "Engrampa - arkivhåndtering"
 
 #: data/engrampa.appdata.xml.in:8
-msgid "An Archive Manager for the MATE desktop environment"
-msgstr "Et arkivprogram for skrivebordsmiljøet MATE"
+msgid "An Archive Manager for the CAFE desktop environment"
+msgstr "Et arkivprogram for skrivebordsmiljøet CAFE"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the MATE environment. It allows you to "
+"Engrampa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa er en arkivhåndtering for MATE-miljøet. Du kan oprette og ændre "
+"Engrampa er en arkivhåndtering for CAFE-miljøet. Du kan oprette og ændre "
 "arkiver, se indholdet på et arkiv, vise en fil indeholdt i et arkiv og "
 "udpakke filer fra arkivet."
 
@@ -213,12 +213,12 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the MATE Desktop Environment. "
-"If you would like to know more about MATE and Engrampa, please visit the "
+"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Engrampa, please visit the "
 "project's home page."
 msgstr ""
 "Engrampa er en forgrening af File Roller og en del af skrivebordsmiljøet "
-"MATE. Hvis du ønsker at vide mere om MATE og Engrampa, så besøg projektets "
+"CAFE. Hvis du ønsker at vide mere om CAFE og Engrampa, så besøg projektets "
 "hjemmeside."
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -239,8 +239,8 @@ msgstr "engrampa"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/engrampa.desktop.in.in:17
-msgid "MATE;archive;manager;compression;"
-msgstr "MATE;archive;manager;compression;arkiv;håndtering;komprimering;"
+msgid "CAFE;archive;manager;compression;"
+msgstr "CAFE;archive;manager;compression;arkiv;håndtering;komprimering;"
 
 #: data/org.mate.engrampa.gschema.xml.in:38
 msgid "How to sort files"
@@ -537,13 +537,13 @@ msgstr ""
 #: src/actions.c:900
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
-"Copyright © 2012–2020 The MATE developers"
+"Copyright © 2012–2020 The CAFE developers"
 msgstr ""
 "Ophavsret 2001–2010 Free Software Foundation, Inc.\n"
-"Ophavsret 2012–2020 MATE-udviklerne"
+"Ophavsret 2012–2020 CAFE-udviklerne"
 
 #: src/actions.c:902
-msgid "An archive manager for MATE."
+msgid "An archive manager for CAFE."
 msgstr "Et program til at håndtere arkiver til Mate."
 
 #: src/actions.c:905

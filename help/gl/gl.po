@@ -41,7 +41,7 @@ msgstr ""
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:21
-msgid "<year>2019-2020</year> <holder>MATE Documentation Project</holder>"
+msgid "<year>2019-2020</year> <holder>CAFE Documentation Project</holder>"
 msgstr ""
 
 #. (itstool) path: info/copyright
@@ -72,8 +72,8 @@ msgstr "<year>2002</year> <holder>Alexander Kirillov</holder>"
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
 #: C/index.docbook:52 C/index.docbook:119
-msgid "MATE Documentation Project"
-msgstr "Proxecto de documentación do MATE"
+msgid "CAFE Documentation Project"
+msgstr "Proxecto de documentación do CAFE"
 
 #. (itstool) path: publisher/publishername
 #. (itstool) path: revdescription/para
@@ -87,11 +87,11 @@ msgstr "Proxecto de documentación do GNOME"
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:64
 msgid ""
-"<orgname>MATE Documentation Project</orgname> <affiliation> <orgname>MATE "
+"<orgname>CAFE Documentation Project</orgname> <affiliation> <orgname>CAFE "
 "Desktop</orgname> </affiliation>"
 msgstr ""
-"<orgname>Equipo de documentación do MATE</orgname> <affiliation><orgname>  "
-"Escritorio MATE </orgname></affiliation>"
+"<orgname>Equipo de documentación do CAFE</orgname> <affiliation><orgname>  "
+"Escritorio CAFE </orgname></affiliation>"
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:70
@@ -3034,12 +3034,12 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
 msgstr ""
-"Este manual forma parte da colección de manuais MATE distribuídos baixo a "
+"Este manual forma parte da colección de manuais CAFE distribuídos baixo a "
 "licenza GFDL. Se quere distribuír este manual separadamente da colección, "
 "pode facelo engadindo unha copia da licenza ao manual, tal e como está "
 "descrito na sección 6 da licenza."
@@ -3048,15 +3048,15 @@ msgstr ""
 #: C/legal.xml:20
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
 "Moitos dos nomes utilizados polas empresas para distinguir os seus produtos "
 "e servizos son reivindicados como marcas comerciais. Cando estes nomes "
-"aparecen en calquera documentación de MATE e os membros do Proxecto de "
-"documentación de MATE son conscientes das marcas rexistradas, os nomes están"
+"aparecen en calquera documentación de CAFE e os membros do Proxecto de "
+"documentación de CAFE son conscientes das marcas rexistradas, os nomes están"
 " en letras maiúsculas ou maiúsculas iniciais."
 
 #. (itstool) path: listitem/para
@@ -3134,6 +3134,6 @@ msgstr "Comentarios"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Archive "
 "Manager</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:mate-user-guide/feedback\">MATE Feedback "
+"the <link xlink:href=\"help:mate-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""

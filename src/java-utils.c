@@ -227,7 +227,7 @@ load_constant_pool_utfs (JavaClassFile *cfile)
 		i++;
 	}
 
-#ifdef MATE_ENABLE_DEBUG
+#ifdef CAFE_ENABLE_DEBUG
 	g_print( "Number of Entries: %d\n", i );
 #endif
 }

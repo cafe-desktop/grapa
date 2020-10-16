@@ -78,7 +78,7 @@ get_uncompressed_name_from_archive (FrCommand  *comm,
 			while (g_input_stream_read (stream, buffer, 1, NULL, NULL) > 0) {
 				if (buffer[0] == '\0') {
 					filename = g_strdup (file_name_from_path (str->str));
-#ifdef MATE_ENABLE_DEBUG
+#ifdef CAFE_ENABLE_DEBUG
 					g_message ("filename is: %s", filename);
 #endif
 					break;

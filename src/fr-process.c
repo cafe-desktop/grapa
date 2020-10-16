@@ -743,7 +743,7 @@ start_current_command (FrProcess *process)
 
 	argv[i] = NULL;
 
-#ifdef MATE_ENABLE_DEBUG
+#ifdef CAFE_ENABLE_DEBUG
 	{
 		int j;
 
@@ -953,7 +953,7 @@ check_child (gpointer data)
 	if (continue_process) {
 		if (process->error.type != FR_PROC_ERROR_NONE) {
 			allow_sticky_processes_only (process, TRUE);
-#ifdef MATE_ENABLE_DEBUG
+#ifdef CAFE_ENABLE_DEBUG
 			{
 				GList *scan;
 

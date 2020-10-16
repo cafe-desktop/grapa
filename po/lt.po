@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the engrampa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -87,16 +87,16 @@ msgid "Engrampa Archive Manager"
 msgstr "Archyvų tvarkytuvė „Engrampa“"
 
 #: data/engrampa.appdata.xml.in:8
-msgid "An Archive Manager for the MATE desktop environment"
-msgstr "Archyvų tvarkytuvė MATE darbalaukio aplinkai"
+msgid "An Archive Manager for the CAFE desktop environment"
+msgstr "Archyvų tvarkytuvė CAFE darbalaukio aplinkai"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the MATE environment. It allows you to "
+"Engrampa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa yra MATE darbalaukio aplinkos archyvų tvarkytuvė. Ji leidžia kurti "
+"Engrampa yra CAFE darbalaukio aplinkos archyvų tvarkytuvė. Ji leidžia kurti "
 "ir keisti archyvus, žiūrėti jų turinį, atsidaryti archyvuose esančius failus"
 " bei juos išskleisti."
 
@@ -212,12 +212,12 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the MATE Desktop Environment. "
-"If you would like to know more about MATE and Engrampa, please visit the "
+"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Engrampa, please visit the "
 "project's home page."
 msgstr ""
-"Engrampa yra File Roller atšaka ir MATE dabalaukio aplinkos dalis. Jei "
-"norite sužinoti daugiau apie MATE ir Engrampą, prašom apsilankyti projekto "
+"Engrampa yra File Roller atšaka ir CAFE dabalaukio aplinkos dalis. Jei "
+"norite sužinoti daugiau apie CAFE ir Engrampą, prašom apsilankyti projekto "
 "tinklalapyje. "
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -231,9 +231,9 @@ msgstr "Kurti ir modifikuoti archyvą"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/engrampa.desktop.in.in:17
-msgid "MATE;archive;manager;compression;"
+msgid "CAFE;archive;manager;compression;"
 msgstr ""
-"MATE;archive;manager;compression;archyvų;tvarkytuvė;zip;pakuoti;glaudinti;suspausti"
+"CAFE;archive;manager;compression;archyvų;tvarkytuvė;zip;pakuoti;glaudinti;suspausti"
 
 #: data/org.mate.engrampa.gschema.xml.in:38
 msgid "How to sort files"
@@ -531,14 +531,14 @@ msgstr ""
 #: src/actions.c:900
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
-"Copyright © 2012–2020 The MATE developers"
+"Copyright © 2012–2020 The CAFE developers"
 msgstr ""
 "Autorių teisės © 2001–2010 Free Software Foundation, Inc.\n"
-"Autorių teisės © 2012–2020 MATE kūrėjai "
+"Autorių teisės © 2012–2020 CAFE kūrėjai "
 
 #: src/actions.c:902
-msgid "An archive manager for MATE."
-msgstr "MATE archyvų tvarkytuvė."
+msgid "An archive manager for CAFE."
+msgstr "CAFE archyvų tvarkytuvė."
 
 #: src/actions.c:905
 msgid "translator-credits"

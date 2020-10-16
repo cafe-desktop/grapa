@@ -303,7 +303,7 @@
 
 ========== en_CA.po ==========
 # Canadian English translation of engrampa.
-# Copyright (C) 2004-2005 Adam Weinberger and the MATE Foundation
+# Copyright (C) 2004-2005 Adam Weinberger and the CAFE Foundation
 # This file is distributed under the same licence as the engrampa package.
 # Adam Weinberger <adamw@gnome.org>, 2004, 2005.
 #
@@ -352,7 +352,7 @@
 # Estonian translation of File-roller.
 #
 # Copyright (C) 2002-2006 Free Software Foundation, Inc.
-# Copyright (C) 2007-2010 The MATE Project.
+# Copyright (C) 2007-2010 The CAFE Project.
 # This file is distributed under the same license as the engrampa package.
 #
 # Ilmar Kerm <ikerm hot ee>, 2002.
@@ -806,7 +806,7 @@
 ========== nn.po ==========
 # translation of nn.po to Norwegian Nynorsk
 # This file is distributed under the same license as the engrampa package.
-# Copyright (C) 2004 MATE Foundation
+# Copyright (C) 2004 CAFE Foundation
 #
 # Åsmund Skjæveland <aasmunds@fys.uio.no>, 2003, 2004, 2005, 2006.
 # Torstein Adolf Winterseth <kvikende@fsfe.org>, 2010.
