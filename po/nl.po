@@ -88,8 +88,8 @@ msgid "Show session management options"
 msgstr "Toon opties voor sessiebeheer"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
-msgstr "Engrampa Archiefbeheer"
+msgid "Grapa Archive Manager"
+msgstr "Grapa Archiefbeheer"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
@@ -97,21 +97,21 @@ msgstr "Een archiefbeheerder voor de CAFE-werkomgeving"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa is een archiefbeheerder voor de CAFE-werkomgeving. U kunt er "
+"Grapa is een archiefbeheerder voor de CAFE-werkomgeving. U kunt er "
 "ingepakte archiefbestanden mee maken en bewerken, de inhoud van een "
 "archiefbestand bekijken, een bestand in een archiefbestand bekijken, en "
 "bestanden uit het archief uitpakken."
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
-"Engrampa is slechts een bedieningsschil (een grafische schil) voor "
+"Grapa is slechts een bedieningsschil (een grafische schil) voor "
 "archiveringstoepassingen als tar en zip. De ondersteunde bestandssoorten "
 "zijn:"
 
@@ -219,12 +219,12 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
-"Engrampa is afgevorkt van File Roller en maakt deel uit van de CAFE-"
-"werkomgeving. Als u meer wilt weten over CAFE en Engrampa, bezoek dan a.u.b."
+"Grapa is afgevorkt van File Roller en maakt deel uit van de CAFE-"
+"werkomgeving. Als u meer wilt weten over CAFE en Grapa, bezoek dan a.u.b."
 " de thuispagina van het project."
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -460,8 +460,8 @@ msgstr "Maak een gecomprimeerd archief met de geselecteerde objecten"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
-msgstr "Engrampa"
+msgid "Grapa"
+msgstr "Grapa"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
@@ -509,24 +509,24 @@ msgstr "Laatste uitvoer"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Engrampa Archiefbeheer is vrije programmatuur; u kunt haar verspreiden en/of"
+"Grapa Archiefbeheer is vrije programmatuur; u kunt haar verspreiden en/of"
 " wijzigen onder de bepalingen van de GNU Algemene Publieke Licentie, zoals "
 "gepubliceerd door de Free Software Foundation; oftewel versie 2 van de "
 "Licentie, of (naar uw eigen keuze) enige latere versie."
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"Engrampa Archiefbeheer is verspreid in de hoop dat het nuttig zal zijn, maar"
+"Grapa Archiefbeheer is verspreid in de hoop dat het nuttig zal zijn, maar"
 " ZONDER ENIGE GARANTIE; zelfs zonder de impliciete garantie van "
 "VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU Algemene "
 "Publieke Licentie voor meer bijzonderheden."
@@ -534,7 +534,7 @@ msgstr ""
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
 "U zou een exemplaar van de GNU Algemene Publieke Licentie ontvangen moeten "
@@ -1687,8 +1687,8 @@ msgid "Contents"
 msgstr "Inhoud"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
-msgstr "Toon de handleiding voor Engrampa Archiefbeheer"
+msgid "Display the Grapa Manual"
+msgstr "Toon de handleiding voor Grapa Archiefbeheer"
 
 #: src/ui.h:68 src/ui.h:89
 msgid "_Copy"

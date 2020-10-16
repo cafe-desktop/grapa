@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Engrampa
+ *  Grapa
  *
  *  Copyright (C) 2003 The Free Software Foundation, Inc.
  *

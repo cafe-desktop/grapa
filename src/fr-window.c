@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Engrampa
+ *  Grapa
  *
  *  Copyright (C) 2007 Free Software Foundation, Inc.
  *
@@ -96,7 +96,7 @@ static int             dir_tree_icon_size = 0;
 #define XDS_ATOM   gdk_atom_intern  ("XdndDirectSave0", FALSE)
 #define TEXT_ATOM  gdk_atom_intern  ("text/plain", FALSE)
 #define OCTET_ATOM gdk_atom_intern  ("application/octet-stream", FALSE)
-#define XFR_ATOM   gdk_atom_intern  ("XdndEngrampa0", FALSE)
+#define XFR_ATOM   gdk_atom_intern  ("XdndGrapa0", FALSE)
 
 #define FR_CLIPBOARD (gdk_atom_intern_static_string ("_RNGRAMPA_SPECIAL_CLIPBOARD"))
 #define FR_SPECIAL_URI_LIST (gdk_atom_intern_static_string ("application/engrampa-uri-list"))
@@ -106,12 +106,12 @@ static GtkTargetEntry clipboard_targets[] = {
 };
 
 static GtkTargetEntry target_table[] = {
-	{ "XdndEngrampa0", 0, 0 },
+	{ "XdndGrapa0", 0, 0 },
 	{ "text/uri-list", 0, 1 },
 };
 
 static GtkTargetEntry folder_tree_targets[] = {
-	{ "XdndEngrampa0", 0, 0 },
+	{ "XdndGrapa0", 0, 0 },
 	{ "XdndDirectSave0", 0, 2 }
 };
 
@@ -2940,7 +2940,7 @@ fr_window_add_to_recent_list (FrWindow *window,
 
 		recent_data = g_new0 (GtkRecentData, 1);
 		recent_data->mime_type = g_content_type_get_mime_type (window->archive->content_type);
-		recent_data->app_name = "Engrampa";
+		recent_data->app_name = "Grapa";
 		recent_data->app_exec = "engrampa";
 		gtk_recent_manager_add_full (gtk_recent_manager_get_default (), uri, recent_data);
 
@@ -5397,7 +5397,7 @@ fr_window_init_recent_chooser (FrWindow         *window,
 	gtk_recent_filter_set_name (filter, _("All archives"));
 	for (i = 0; open_type[i] != -1; i++)
 		gtk_recent_filter_add_mime_type (filter, mime_type_desc[open_type[i]].mime_type);
-	gtk_recent_filter_add_application (filter, "Engrampa");
+	gtk_recent_filter_add_application (filter, "Grapa");
 	gtk_recent_chooser_add_filter (chooser, filter);
 
 	gtk_recent_chooser_set_local_only (chooser, FALSE);

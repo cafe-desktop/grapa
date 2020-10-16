@@ -1,19 +1,19 @@
 
-			   * Engrampa *
+			   * Grapa *
 
 		  an archive manager utility for the
 			  CAFE Environment.
 
 * What is it ?
 
-  Engrampa is a fork of File-Roller.
+  Grapa is a fork of File-Roller.
 
-  Engrampa is an archive manager for the CAFE environment.  This means
+  Grapa is an archive manager for the CAFE environment.  This means
   that you can create and modify archives; view the content of an archive;
   view and modify a file contained in the archive; extract files from the
   archive.
 
-  Engrampa is only a front-end (a graphical interface) to archiving programs
+  Grapa is only a front-end (a graphical interface) to archiving programs
   like tar and zip. The supported file types are :
     * 7-Zip Compressed File (.7z)
     * WinAce Compressed File (.ace)
@@ -80,7 +80,7 @@
 
 * Notes
 
-  [Read-only mode] means that Engrampa may read the file type, but it cannot
+  [Read-only mode] means that Grapa may read the file type, but it cannot
   write to that file type.
   An example is ISO-9660 CD Disc Image (.iso) [Read-only mode]. Iso images
   may be read, but file(s) cannot be written to an (.iso).

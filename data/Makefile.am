@@ -11,7 +11,7 @@ matchdir = $(datadir)/engrampa
 match_DATA = packages.match
 
 servicedir = $(datadir)/dbus-1/services
-service_in_files = org.cafe.Engrampa.service.in
+service_in_files = org.cafe.Grapa.service.in
 service_DATA = $(service_in_files:.service.in=.service)
 $(service_DATA): $(service_in_files) Makefile
 	$(AM_V_GEN) $(SED) -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@

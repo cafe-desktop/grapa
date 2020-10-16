@@ -4,16 +4,16 @@
  <id>engrampa.desktop</id>
  <metadata_license>CC0-1.0</metadata_license>
  <project_license>GPL-2.0+</project_license>
- <name>Engrampa Archive Manager</name>
+ <name>Grapa Archive Manager</name>
  <summary>An Archive Manager for the CAFE desktop environment</summary>
  <description>
   <p>
-   Engrampa is an archive manager for the CAFE environment. It allows you
+   Grapa is an archive manager for the CAFE environment. It allows you
    to create and modify archives, view the contents of an archive, view a
    file contained in an archive, and extract files from archive.
   </p>
   <p>
-   Engrampa is only a front-end (a graphical interface) to archiving programs
+   Grapa is only a front-end (a graphical interface) to archiving programs
    like tar and zip. The supported file types are:
   </p>
   <ul>
@@ -44,8 +44,8 @@
       lrzip (.lrz), lzip (.lz), lzop (.lzo), rzip(.rz), xz (.xz).</li>
   </ul>
   <p>
-   Engrampa is a fork of File Roller and part of the CAFE Desktop Environment.
-   If you would like to know more about CAFE and Engrampa, please visit the
+   Grapa is a fork of File Roller and part of the CAFE Desktop Environment.
+   If you would like to know more about CAFE and Grapa, please visit the
    project's home page.
   </p>
  </description>

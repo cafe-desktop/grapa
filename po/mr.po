@@ -81,7 +81,7 @@ msgid "Show session management options"
 msgstr "सत्र व्यवस्थापन पर्याय दाखवा"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
+msgid "Grapa Archive Manager"
 msgstr "एनग्राम्पा आर्काइव्ह व्यवस्थापक"
 
 #: data/engrampa.appdata.xml.in:8
@@ -90,14 +90,14 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
 
@@ -198,8 +198,8 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
 
@@ -421,7 +421,7 @@ msgstr "निवडलेले घटकांसह संकुचीत आ
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
+msgid "Grapa"
 msgstr "फाइल रोलर"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
@@ -470,24 +470,24 @@ msgstr "शेवटचे प्रदान"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Engrampa मुक्त सॉफ्टवेअर आहे; तुम्ही याचे वितरण व/किंवा संपादन Free Software"
+"Grapa मुक्त सॉफ्टवेअर आहे; तुम्ही याचे वितरण व/किंवा संपादन Free Software"
 " Foundation प्रकाशीत GNU General Public License च्या अंतर्गत; एकतर परवानातील"
 " आवृत्ती 2 , किंवा (तुमच्या पर्यायनुसारे) पुढील कुठल्याही आवृत्तीनुसारे करू "
 "शकता."
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"Engrampa चा वापर लाभदायी ठरावा या हेतुने त्याचे वितरन केले आहे, पण कुठल्याही"
+"Grapa चा वापर लाभदायी ठरावा या हेतुने त्याचे वितरन केले आहे, पण कुठल्याही"
 " हमी विना; व्यापारहेतु अंतर्भुतीत किंवा कुठल्याही हेतुकरीता "
 "वापरकरीतायेण्याजोगी हमी विना.  अधिक माहितीकरीता GNU General Public License "
 "पहा."
@@ -495,10 +495,10 @@ msgstr ""
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
-"तुमच्याकडे Engrampa सह GNU General Public License ची एक प्रत असायला हवी; "
+"तुमच्याकडे Grapa सह GNU General Public License ची एक प्रत असायला हवी; "
 "नसल्यास, Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, "
 "Boston, MA  02110-1301 USA कडे लिहून पाठवा"
 
@@ -1619,7 +1619,7 @@ msgid "Contents"
 msgstr "अनुक्रम"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
+msgid "Display the Grapa Manual"
 msgstr "फाइल रोलर पुस्तिका दर्शवा"
 
 #: src/ui.h:68 src/ui.h:89

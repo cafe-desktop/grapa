@@ -90,8 +90,8 @@ msgid "Show session management options"
 msgstr "Mostrar las opciones de gestión de la sesión"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
-msgstr "Gestor de archivadores Engrampa"
+msgid "Grapa Archive Manager"
+msgstr "Gestor de archivadores Grapa"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
@@ -99,20 +99,20 @@ msgstr "Un gestor de archivadores para el entorno de escritorio CAFE"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa es un gestor de archivadores para el entorno CAFE. Le permite crear"
+"Grapa es un gestor de archivadores para el entorno CAFE. Le permite crear"
 " y modificar archivadores, ver el contenido de un archivador, ver un archivo"
 " contenido en un archivador y extraer archivos de un archivador."
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
-"Engrampa es solo una interfaz gráfica para programas de archivado como tar y"
+"Grapa es solo una interfaz gráfica para programas de archivado como tar y"
 " zip. Tipos de archivo compatibles:"
 
 #: data/engrampa.appdata.xml.in:20
@@ -219,12 +219,12 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
-"Engrampa es una bifurcación de File Roller y es parte del entorno de "
-"escritorio CAFE. Si quiere saber más sobre CAFE y Engrampa, visite la página"
+"Grapa es una bifurcación de File Roller y es parte del entorno de "
+"escritorio CAFE. Si quiere saber más sobre CAFE y Grapa, visite la página"
 " principal del proyecto."
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -462,8 +462,8 @@ msgstr "Crear un archivador comprimido con los objetos seleccionados"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
-msgstr "Engrampa"
+msgid "Grapa"
+msgstr "Grapa"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
@@ -511,24 +511,24 @@ msgstr "Último resultado"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Engrampa es software libre: puede redistribuirlo y/o modificarlo según los "
+"Grapa es software libre: puede redistribuirlo y/o modificarlo según los "
 "términos de la Licencia Pública General de GNU publicada por la Free "
 "Software Foundation, ya sea la versión 2 de la Licencia como (a su elección)"
 " cualquier versión posterior."
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"Engrampa se distribuye con la esperanza de que le sea útil, pero SIN NINGUNA"
+"Grapa se distribuye con la esperanza de que le sea útil, pero SIN NINGUNA"
 " GARANTÍA; ni siquiera la garantía implícita de COMERCIALIZACIÓN o IDONEIDAD"
 " PARA UN PROPÓSITO PARTICULAR. Consulte la Licencia Pública General de GNU "
 "para obtener más detalles."
@@ -536,11 +536,11 @@ msgstr ""
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
 "Debería haber recibido una copia de la Licencia Pública General de GNU con "
-"Engrampa, si no es así, escriba a la Free Software Foundation, Inc, 51 "
+"Grapa, si no es así, escriba a la Free Software Foundation, Inc, 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
 #: src/actions.c:900
@@ -1670,8 +1670,8 @@ msgid "Contents"
 msgstr "Índice"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
-msgstr "Muestra el manual de Engrampa"
+msgid "Display the Grapa Manual"
+msgstr "Muestra el manual de Grapa"
 
 #: src/ui.h:68 src/ui.h:89
 msgid "_Copy"

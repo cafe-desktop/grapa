@@ -85,8 +85,8 @@ msgid "Show session management options"
 msgstr "Показване на настройките за управлението на сесиите"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
-msgstr "Работа с архиви Engrampa"
+msgid "Grapa Archive Manager"
+msgstr "Работа с архиви Grapa"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
@@ -94,14 +94,14 @@ msgstr "Мениджър на архивите за работната сред�
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
 
@@ -202,8 +202,8 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
 
@@ -442,8 +442,8 @@ msgstr "Създаване на компресиран архив с избра�
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
-msgstr "Engrampa"
+msgid "Grapa"
+msgstr "Grapa"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
@@ -491,19 +491,19 @@ msgstr "Последен изход"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Тази програма (Engrampa) е свободен софтуер. Можете да я разпространявате "
+"Тази програма (Grapa) е свободен софтуер. Можете да я разпространявате "
 "и/или променяте под условията на Общия публичен лиценз на GNU (GNU GPL), "
 "както е публикуван от Фондацията за свободен софтуер — версия 2 на лиценза "
 "или (по ваше решение) по-късна версия."
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
@@ -515,7 +515,7 @@ msgstr ""
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
 "Трябва да сте получили копие от Общия публичен лиценз на GNU (GNU GPL) "
@@ -1661,8 +1661,8 @@ msgid "Contents"
 msgstr "Ръководство"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
-msgstr "Показване на ръководството на Engrampa"
+msgid "Display the Grapa Manual"
+msgstr "Показване на ръководството на Grapa"
 
 #: src/ui.h:68 src/ui.h:89
 msgid "_Copy"

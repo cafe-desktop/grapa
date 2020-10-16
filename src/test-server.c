@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Engrampa
+ *  Grapa
  *
  *  Copyright (C) 2010 The Free Software Foundation, Inc.
  *
@@ -146,8 +146,8 @@ main (int argc, char *argv[])
 		proxy = g_dbus_proxy_new_sync (connection,
 					       G_DBUS_PROXY_FLAGS_NONE,
 					       NULL,
-					       "org.cafe.Engrampa",
-					       "/org/cafe/Engrampa",
+					       "org.cafe.Grapa",
+					       "/org/cafe/Grapa",
 					       "org.cafe.ArchiveManager",
 					       NULL,
 					       &error);

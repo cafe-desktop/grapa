@@ -33,10 +33,10 @@ msgstr "Manual do xestor de arquivos"
 #. (itstool) path: abstract/para
 #: C/index.docbook:18
 msgid ""
-"Archive Manager, also known as Engrampa, allows you to create, view, modify,"
+"Archive Manager, also known as Grapa, allows you to create, view, modify,"
 " or unpack an archive."
 msgstr ""
-"O Xestor de arquivos, tamén coñecido como Engrampa, permítelle crear, ver, "
+"O Xestor de arquivos, tamén coñecido como Grapa, permítelle crear, ver, "
 "modificar ou desempaquetar un arquivo."
 
 #. (itstool) path: info/copyright
@@ -240,8 +240,8 @@ msgstr "Este manual describe a versión 1.22 do Xestor de arquivos"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:202
-msgid "<primary>Engrampa</primary>"
-msgstr "<primary>Engrampa</primary>"
+msgid "<primary>Grapa</primary>"
+msgstr "<primary>Grapa</primary>"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:205
@@ -726,7 +726,7 @@ msgstr ""
 #: C/index.docbook:419
 msgid ""
 "<imageobject> <imagedata fileref=\"figures/engrampa_main_window.png\" "
-"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Engrampa main "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Grapa main "
 "window.</phrase> </textobject>"
 msgstr ""
 

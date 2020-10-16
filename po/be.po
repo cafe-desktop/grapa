@@ -81,8 +81,8 @@ msgid "Show session management options"
 msgstr "Паказаць параметры кіравання сеансам"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
-msgstr "Кіраўнік архіваў Engrampa"
+msgid "Grapa Archive Manager"
+msgstr "Кіраўнік архіваў Grapa"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
@@ -90,14 +90,14 @@ msgstr "Кіраўнік архіваў асяроддзя CAFE"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
 
@@ -198,8 +198,8 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
 
@@ -421,8 +421,8 @@ msgstr "Стварыць сціснуты архіў з вылучанымі а�
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
-msgstr "Engrampa"
+msgid "Grapa"
+msgstr "Grapa"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
@@ -470,23 +470,23 @@ msgstr "Апошні вывад"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Engrampa - свабодная праграма; яе можна распаўсюджваць і/ці змяняць паводле "
+"Grapa - свабодная праграма; яе можна распаўсюджваць і/ці змяняць паводле "
 "ўмоваў GNU General Public License версіі 2 ці пазнейшай (на ваш выбар), "
 "апублікаванай Free Software Foundation."
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"Engrampa распаўсюджваецца з надзеяй на тое, што яна будзе карыснай, але БЕЗ "
+"Grapa распаўсюджваецца з надзеяй на тое, што яна будзе карыснай, але БЕЗ "
 "АНІЯКІХ ГАРАНТЫЙ; нават без відавочных гарантый прыдатнасці да КАМЕРЦЫЙНАГА "
 "ПРОДАЖУ ці ПЭЎНАЙ МЭТЫ. Па падрабязнасці звяртайцеся да GNU General Public "
 "License."
@@ -494,10 +494,10 @@ msgstr ""
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
-"Вы мусілі атрымаць копію GNU General Public License разам з Engrampa; калі "
+"Вы мусілі атрымаць копію GNU General Public License разам з Grapa; калі "
 "не атрымалі, лістуйце да Free Software Foundation, Inc., 51 Franklin Street,"
 " Fifth Floor, Boston, MA 02110-1301 USA"
 
@@ -1625,8 +1625,8 @@ msgid "Contents"
 msgstr "Змесціва"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
-msgstr "Паказаць даведнік па Engrampa"
+msgid "Display the Grapa Manual"
+msgstr "Паказаць даведнік па Grapa"
 
 #: src/ui.h:68 src/ui.h:89
 msgid "_Copy"

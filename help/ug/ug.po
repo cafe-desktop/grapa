@@ -36,7 +36,7 @@ msgstr ""
 #. (itstool) path: abstract/para
 #: C/index.docbook:31
 msgid ""
-"Archive Manager, also known as Engrampa, allows you to create, view, modify,"
+"Archive Manager, also known as Grapa, allows you to create, view, modify,"
 " or unpack an archive."
 msgstr ""
 
@@ -243,35 +243,35 @@ msgstr ""
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:161
 msgid ""
-"<revnumber>Engrampa Manual V2.5</revnumber> <date>March 2004</date> "
+"<revnumber>Grapa Manual V2.5</revnumber> <date>March 2004</date> "
 "<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:169
 msgid ""
-"<revnumber>Engrampa Manual V2.4</revnumber> <date>February 2004</date> "
+"<revnumber>Grapa Manual V2.4</revnumber> <date>February 2004</date> "
 "<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:177
 msgid ""
-"<revnumber>Engrampa Manual V2.3</revnumber> <date>August 2003</date> "
+"<revnumber>Grapa Manual V2.3</revnumber> <date>August 2003</date> "
 "<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:185
 msgid ""
-"<revnumber>Engrampa Manual V2.2</revnumber> <date>June 2003</date> "
+"<revnumber>Grapa Manual V2.2</revnumber> <date>June 2003</date> "
 "<_:revdescription-1/>"
 msgstr ""
 
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:193
 msgid ""
-"<revnumber>Engrampa Manual V2.1</revnumber> <date>January 2003</date> "
+"<revnumber>Grapa Manual V2.1</revnumber> <date>January 2003</date> "
 "<_:revdescription-1/>"
 msgstr ""
 
@@ -283,7 +283,7 @@ msgstr ""
 #. (itstool) path: revhistory/revision
 #: C/index.docbook:201
 msgid ""
-"<revnumber>Engrampa Manual V2.0</revnumber> <date>June 2002</date> "
+"<revnumber>Grapa Manual V2.0</revnumber> <date>June 2002</date> "
 "<_:revdescription-1/>"
 msgstr ""
 
@@ -308,7 +308,7 @@ msgstr ""
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:221
-msgid "<primary>Engrampa</primary>"
+msgid "<primary>Grapa</primary>"
 msgstr ""
 
 #. (itstool) path: article/indexterm
@@ -790,7 +790,7 @@ msgstr ""
 #: C/index.docbook:438
 msgid ""
 "<imageobject> <imagedata fileref=\"figures/engrampa_main_window.png\" "
-"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Engrampa main "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Grapa main "
 "window.</phrase> </textobject>"
 msgstr ""
 

@@ -68,10 +68,10 @@ msgstr "Руководство по Менеджеру архивов"
 #. (itstool) path: abstract/para
 #: C/index.docbook:18
 msgid ""
-"Archive Manager, also known as Engrampa, allows you to create, view, modify,"
+"Archive Manager, also known as Grapa, allows you to create, view, modify,"
 " or unpack an archive."
 msgstr ""
-"Менеджер архивов, также известный как Engrampa, позволяет создавать "
+"Менеджер архивов, также известный как Grapa, позволяет создавать "
 "просматривать, модифицировать и распаковывать архивы."
 
 #. (itstool) path: info/copyright
@@ -275,8 +275,8 @@ msgstr "Это руководство описывает версию 1.22 Ме�
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:202
-msgid "<primary>Engrampa</primary>"
-msgstr "<primary>Engrampa</primary>"
+msgid "<primary>Grapa</primary>"
+msgstr "<primary>Grapa</primary>"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:205
@@ -791,12 +791,12 @@ msgstr ""
 #: C/index.docbook:419
 msgid ""
 "<imageobject> <imagedata fileref=\"figures/engrampa_main_window.png\" "
-"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Engrampa main "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Grapa main "
 "window.</phrase> </textobject>"
 msgstr ""
 "<imageobject> <imagedata fileref=\"figures/engrampa_main_window.png\" "
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Показывает главное окно"
-" Engrampa.</phrase> </textobject>"
+" Grapa.</phrase> </textobject>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:429

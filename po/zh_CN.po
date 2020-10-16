@@ -93,8 +93,8 @@ msgid "Show session management options"
 msgstr "显示会话管理选项"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
-msgstr "Engrampa 归档管理器"
+msgid "Grapa Archive Manager"
+msgstr "Grapa 归档管理器"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
@@ -102,16 +102,16 @@ msgstr "CAFE 的归档管理器"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
-msgstr "Engrampa 是 CAFE 桌面的存档管理器。可用来创建或修改存档、查看存档的内容、查看存档中包含的文件，以及从存档中提取文件。"
+msgstr "Grapa 是 CAFE 桌面的存档管理器。可用来创建或修改存档、查看存档的内容、查看存档中包含的文件，以及从存档中提取文件。"
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
-msgstr "Engrampa 只是归档程序如 tar 和 zip 的一个前端（图形界面）。受支持的文件类型有："
+msgstr "Grapa 只是归档程序如 tar 和 zip 的一个前端（图形界面）。受支持的文件类型有："
 
 #: data/engrampa.appdata.xml.in:20
 msgid "7-Zip Compressed File (.7z)"
@@ -216,11 +216,11 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
-"Engrampa 为 CAFE 桌面环境的一部分，是 File Roller 的复刻。想了解更多 CAFE 及 Engrampa "
+"Grapa 为 CAFE 桌面环境的一部分，是 File Roller 的复刻。想了解更多 CAFE 及 Grapa "
 "的信息，请访问项目主页。"
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -441,7 +441,7 @@ msgstr "使用选择的对象创建一个压缩的归档"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
+msgid "Grapa"
 msgstr "文件打包器"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
@@ -490,28 +490,28 @@ msgstr "上次的输出"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Engrampa 是自由软件；您可以在自由软件基金会发布的 GNU 公共许可证的条款下重新发布或修改它；您应当使用该许可证的第二版本或更高版本。"
+"Grapa 是自由软件；您可以在自由软件基金会发布的 GNU 公共许可证的条款下重新发布或修改它；您应当使用该许可证的第二版本或更高版本。"
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
-msgstr "Engrampa 发布的目的是希望它对您有用，但没有任何担保，即使针对商业或其它特定应用目的。请查阅 GNU 公共许可证以获得更多细节。"
+msgstr "Grapa 发布的目的是希望它对您有用，但没有任何担保，即使针对商业或其它特定应用目的。请查阅 GNU 公共许可证以获得更多细节。"
 
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
-"您应当在收到 Engrampa 的同时收到了一份 GNU 公共许可证的副本；如果没有收到，请给自由软件基金会写信。地址是：51 Franklin St,"
+"您应当在收到 Grapa 的同时收到了一份 GNU 公共许可证的副本；如果没有收到，请给自由软件基金会写信。地址是：51 Franklin St,"
 " Fifth Floor, Boston, MA  02110-1301 USA"
 
 #: src/actions.c:900
@@ -1632,7 +1632,7 @@ msgid "Contents"
 msgstr "目录"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
+msgid "Display the Grapa Manual"
 msgstr "显示文件打包器的手册"
 
 #: src/ui.h:68 src/ui.h:89

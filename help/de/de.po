@@ -42,10 +42,10 @@ msgstr "Leitfaden zur Archivverwaltung"
 #. (itstool) path: abstract/para
 #: C/index.docbook:18
 msgid ""
-"Archive Manager, also known as Engrampa, allows you to create, view, modify,"
+"Archive Manager, also known as Grapa, allows you to create, view, modify,"
 " or unpack an archive."
 msgstr ""
-"Die Archiv-Verwaltung, auch als Engrampa bekannt, erlaubt es Ihnen Archive "
+"Die Archiv-Verwaltung, auch als Grapa bekannt, erlaubt es Ihnen Archive "
 "einzusehen, zu bearbeiten, oder auszupacken."
 
 #. (itstool) path: info/copyright
@@ -230,8 +230,8 @@ msgstr "Dieses Handbuch beschreibt die Version 1.22 des Archiv-Managers."
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:202
-msgid "<primary>Engrampa</primary>"
-msgstr "<primary>Engrampa</primary>"
+msgid "<primary>Grapa</primary>"
+msgstr "<primary>Grapa</primary>"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:205
@@ -715,7 +715,7 @@ msgstr ""
 #: C/index.docbook:419
 msgid ""
 "<imageobject> <imagedata fileref=\"figures/engrampa_main_window.png\" "
-"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Engrampa main "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Grapa main "
 "window.</phrase> </textobject>"
 msgstr ""
 

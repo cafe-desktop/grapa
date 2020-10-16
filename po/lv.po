@@ -84,8 +84,8 @@ msgid "Show session management options"
 msgstr "Rādīt sesijas pārvaldības opcijas"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
-msgstr "Engrampa Arhīvu Pārvaldnieks"
+msgid "Grapa Archive Manager"
+msgstr "Grapa Arhīvu Pārvaldnieks"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
@@ -93,14 +93,14 @@ msgstr "Arhīvu Pārvaldnieks CAFE darbvirsmai"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
 
@@ -201,8 +201,8 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
 
@@ -424,8 +424,8 @@ msgstr "Izveidot saspiestu arhīvu no izvēlētajiem objektiem"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
-msgstr "Engrampa"
+msgid "Grapa"
+msgstr "Grapa"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
@@ -473,31 +473,31 @@ msgstr "Pēdējā izvade"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Engrampa ir brīva programmatūra; jūs varat to izplatīt tālāk un/vai "
+"Grapa ir brīva programmatūra; jūs varat to izplatīt tālāk un/vai "
 "modificēt saskaņā ar GNU Vispārējās publiskās licences noteikumiem, ko "
 "publicējis Brīvas programmatūras fonds; izmantojiet Licences versiju 2 vai "
 "(pēc jūsu izvēles) jebkuru vēlāku versiju."
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"Engrampa tiek izplatīts ar cerību, ka tas būs noderīgs. Tas tiek izplatīts "
+"Grapa tiek izplatīts ar cerību, ka tas būs noderīgs. Tas tiek izplatīts "
 "BEZ jebkādas garantijas vai iekļautas ražotāja atbildības par šo produktu. "
 "Sīkāku informāciju meklējiet GNU Vispārējās Publiskās Licences tekstā."
 
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
 "Jums vajadzēja saņemt GNU Vispārējās publiskās licences kopiju kopā ar File "
@@ -1626,8 +1626,8 @@ msgid "Contents"
 msgstr "Saturs"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
-msgstr "Parādīt Engrampa rokasgrāmatu"
+msgid "Display the Grapa Manual"
+msgstr "Parādīt Grapa rokasgrāmatu"
 
 #: src/ui.h:68 src/ui.h:89
 msgid "_Copy"

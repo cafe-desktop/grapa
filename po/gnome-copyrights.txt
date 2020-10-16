@@ -223,7 +223,7 @@
 # Konventioner:
 #
 #   extract -> udpakke
-#   Engrampa -> Filpakker
+#   Grapa -> Filpakker
 #
 # Husk at tilføje dig i credit-listen (besked id "translator_credits")
 #
@@ -232,7 +232,7 @@
 
 
 ========== de.po ==========
-# German Engrampa translation
+# German Grapa translation
 # Copyright (C) 2001-2004 Free Software Foundation, Inc.
 # Erik Vetters <j-o-n-e-s@web.de>
 # Stefan Furtmayr <sf@paf.net>, 2002.
@@ -339,7 +339,7 @@
 # Miguel A. Arevalo <marevalo@marevalo.net>, 2002.
 # Francisco Javier F. Serrador <serrador@cvs.cafe.org>, 2004, 2005, 2006.
 # Rodrigo Marcos Fombellida <rodrifom@gmail.com>, 2007.
-# Spanish localization for Engrampa.
+# Spanish localization for Grapa.
 # Copyright © 2002, 2006, 2007, 2008 the Free Software Foundation, Inc.
 # Jorge González <jorgegonz@svn.cafe.org>, 2007, 2009, 2010.
 #
@@ -499,7 +499,7 @@
 
 ========== hi.po ==========
 # translation of engrampa.master.po to Hindi
-# Engrampa - Hindi Translation
+# Grapa - Hindi Translation
 # Copyright (C) 2003, 2004, 2005, 2006, 2009 Free Software Foundation, Inc.
 #
 # ambuj_v@lycos.com <ambuj_v@lycos.com>,2003.
@@ -567,7 +567,7 @@
 
 
 ========== it.po ==========
-# Italian translation of Engrampa.
+# Italian translation of Grapa.
 # Copyright (C) 2001, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
 # This file is distributed under the same license as the engrampa package.
 # Paolo Bacchilega <paolo.bacch@tin.it>, 2001.
@@ -627,7 +627,7 @@
 
 
 ========== ko.po ==========
-# ko.po for Engrampa.
+# ko.po for Grapa.
 # This file is distributed under the same license as the engrampa package.
 #
 # Kang Joeng-Hee <Keizi@mail.co.kr>, 2001.
@@ -652,7 +652,7 @@
 
 ========== lt.po ==========
 # translation of engrampa.HEAD.po to Lithuanian
-# Engrampa's Lithuanian translation
+# Grapa's Lithuanian translation
 # Copyright (C) 2003-2006, 2007, 2008 Free Software Foundation, Inc.
 # Žygimantas Beručka <zygis@gnome.org>, 2003-2006, 2010.
 # Gintautas Miliauskas <gintas@akl.lt>, 2006, 2007, 2008.
@@ -662,7 +662,7 @@
 
 ========== lv.po ==========
 # translation of lv.po to Latvian
-# Latvian translation for Engrampa.
+# Latvian translation for Grapa.
 # Copyright © 2006 Cafe i18n Project for Latvian.
 #
 # Artis Trops <hornet@navigator.lv>, 2004.
@@ -917,7 +917,7 @@
 ========== ru.po ==========
 # translation of engrampa.master.ru.po to Russian
 # translation of engrampa to Russian
-# Engrampa translation into Russian
+# Grapa translation into Russian
 # Copyright (C) 2001-2003, 2004, 2005, 2006, 2008, 2009, 2010 Free Software Foundation, Inc.
 #
 # Sergei Acht <sergei@dgap.mipt.ru>, 2001.
@@ -1107,7 +1107,7 @@
 
 
 ========== tr.po ==========
-# Turkish Engrampa translation
+# Turkish Grapa translation
 # Copyright (C) 2001-2004, 2008 Free Software Foundation, Inc.
 # Erik Vetters <j-o-n-e-s@web.de>
 # 
@@ -1130,7 +1130,7 @@
 
 
 ========== uk.po ==========
-# Ukrainian translation of Engrampa 0.3
+# Ukrainian translation of Grapa 0.3
 # Copyright (C) 2001 Free Software Foundation, Inc.
 # Yuriy Syrota <yuri@renome.rovno.ua>
 # Maxim Dziumanenko <dziumanenko@gmail.com>, 2004-2008.

@@ -86,9 +86,9 @@ msgstr ""
 
 #: ../data/engrampa.appdata.xml.in.h:2
 msgid ""
-"<p> Engrampa is an archive manager for the CAFE environment. It allows you "
+"<p> Grapa is an archive manager for the CAFE environment. It allows you "
 "to create and modify archives, view the contents of an archive, view a file "
-"contained in an archive, and extract files from archive. </p> <p> Engrampa "
+"contained in an archive, and extract files from archive. </p> <p> Grapa "
 "is only a front-end (a graphical interface) to archiving programs like tar "
 "and zip. The supported file types are: </p> <ul> <li>7-Zip Compressed File "
 "(.7z)</li> <li>WinAce Compressed File (.ace)</li> <li>ALZip Compressed File "
@@ -106,13 +106,13 @@ msgid ""
 "<li>Stuffit Archives (.bin, .sit)</li> <li>ZIP Archive (.zip)</li> <li>ZIP "
 "Archived Comic Book (.cbz)</li> <li>ZOO Compressed Archive File (.zoo)</li> "
 "<li>Single files compressed with gzip, bzip, bzip2, compress, lrzip, lzip, "
-"lzop, rzip, xz</li> </ul> <p> Engrampa is a fork of File Roller and part of "
+"lzop, rzip, xz</li> </ul> <p> Grapa is a fork of File Roller and part of "
 "the CAFE Desktop Environment. If you would like to know more about CAFE and "
-"Engrampa, please visit the project's home page. </p>"
+"Grapa, please visit the project's home page. </p>"
 msgstr ""
 
 #: ../data/engrampa.desktop.in.in.h:1
-msgid "Engrampa Archive Manager"
+msgid "Grapa Archive Manager"
 msgstr ""
 
 #: ../data/engrampa.desktop.in.in.h:2 ../src/fr-window.c:2002
@@ -313,7 +313,7 @@ msgstr ""
 
 #: ../caja/libcaja-engrampa.caja-extension.in.in.h:1 ../src/main.c:330
 #: ../src/server.c:457
-msgid "Engrampa"
+msgid "Grapa"
 msgstr ""
 
 #: ../caja/libcaja-engrampa.caja-extension.in.in.h:2
@@ -363,7 +363,7 @@ msgstr ""
 
 #: ../src/actions.c:860
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
@@ -371,7 +371,7 @@ msgstr ""
 
 #: ../src/actions.c:864
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
@@ -380,7 +380,7 @@ msgstr ""
 #: ../src/actions.c:868
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
 
@@ -1380,7 +1380,7 @@ msgid "Contents"
 msgstr ""
 
 #: ../src/ui.h:64
-msgid "Display the Engrampa Manual"
+msgid "Display the Grapa Manual"
 msgstr ""
 
 #: ../src/ui.h:69 ../src/ui.h:90

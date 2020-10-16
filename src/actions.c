@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Engrampa
+ *  Grapa
  *
  *  Copyright (C) 2004 Free Software Foundation, Inc.
  *
@@ -856,16 +856,16 @@ activate_action_about (GtkAction *action,
         NULL
     };
     const char *license[] = {
-        N_("Engrampa is free software; you can redistribute it and/or modify "
+        N_("Grapa is free software; you can redistribute it and/or modify "
         "it under the terms of the GNU General Public License as published by "
         "the Free Software Foundation; either version 2 of the License, or "
         "(at your option) any later version."),
-        N_("Engrampa is distributed in the hope that it will be useful, "
+        N_("Grapa is distributed in the hope that it will be useful, "
         "but WITHOUT ANY WARRANTY; without even the implied warranty of "
         "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the "
         "GNU General Public License for more details."),
         N_("You should have received a copy of the GNU General Public License "
-        "along with Engrampa; if not, write to the Free Software Foundation, Inc., "
+        "along with Grapa; if not, write to the Free Software Foundation, Inc., "
         "51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA")
     };
     char *license_text;

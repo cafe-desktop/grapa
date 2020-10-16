@@ -92,8 +92,8 @@ msgid "Show session management options"
 msgstr "Zobrazit možnosti Správy sezení"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
-msgstr "Engrampa správce archivů"
+msgid "Grapa Archive Manager"
+msgstr "Grapa správce archivů"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
@@ -101,20 +101,20 @@ msgstr "Správce archivů pro prostředí plochy CAFE"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa je správce archivů pro prostředí CAFE. Umožňuje vytvářet a "
+"Grapa je správce archivů pro prostředí CAFE. Umožňuje vytvářet a "
 "upravovat archivy, prohlížet obsah archivu, prohlížet soubor obsažený v "
 "archivu a extrahovat soubory z archivu."
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
-"Engrampa je pouze front-end (grafické rozhraní) pro archivační programy, "
+"Grapa je pouze front-end (grafické rozhraní) pro archivační programy, "
 "jako je tar nebo zip. Podporované typy souborů jsou:"
 
 #: data/engrampa.appdata.xml.in:20
@@ -221,12 +221,12 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
-"Engrampa je forkem aplikace File Roller a je součástí prostředí CAFE. Pokud "
-"se chcete dozvědět více o CAFE a aplikaci Engrampa, navštivte domovskou "
+"Grapa je forkem aplikace File Roller a je součástí prostředí CAFE. Pokud "
+"se chcete dozvědět více o CAFE a aplikaci Grapa, navštivte domovskou "
 "stránku projektu."
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -458,8 +458,8 @@ msgstr "Vytvořit komprimovaný archiv s vybranými objekty"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
-msgstr "Engrampa"
+msgid "Grapa"
+msgstr "Grapa"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
@@ -507,31 +507,31 @@ msgstr "Poslední výstup"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Engrampa je svobodný software; můžete jej šířit a/nebo modifikovat podle "
+"Grapa je svobodný software; můžete jej šířit a/nebo modifikovat podle "
 "ustanovení GNU General Public License, vydávané Free Software Foundation; a "
 "to buď verze 2 této licence anebo (podle vlastního uvážení) kterékoliv "
 "pozdější verze."
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"Engrampa je rozšiřován v naději, že bude užitečný, avšak BEZ JAKÉKOLIV "
+"Grapa je rozšiřován v naději, že bude užitečný, avšak BEZ JAKÉKOLIV "
 "ZÁRUKY; neposkytují se ani odvozené záruky PRODEJNOSTI anebo VHODNOSTI PRO "
 "URČITÝ ÚČEL. Další podrobnosti hledejte v GNU General Public License."
 
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
 "Kopii GNU General Public License byste měli obdržet spolu s tímto programem;"
@@ -1684,8 +1684,8 @@ msgid "Contents"
 msgstr "Obsah"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
-msgstr "Zobrazit manuál Engrampa"
+msgid "Display the Grapa Manual"
+msgstr "Zobrazit manuál Grapa"
 
 #: src/ui.h:68 src/ui.h:89
 msgid "_Copy"

@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Engrampa
+ *  Grapa
  *
  *  Copyright (C) 2001, 2003 Free Software Foundation, Inc.
  *
@@ -44,7 +44,7 @@ static char  *default_url = NULL;
 static void
 _print_version_and_exit (const gchar *option_name, const gchar *value, gpointer data, GError *error)
 {
-	g_print("%s %s\n", _("Engrampa Archive Manager"), VERSION);
+	g_print("%s %s\n", _("Grapa Archive Manager"), VERSION);
 	exit (EXIT_SUCCESS);
 }
 
@@ -337,7 +337,7 @@ main (int argc, char **argv)
 
 	g_option_context_free (context);
 
-	g_set_application_name (_("Engrampa"));
+	g_set_application_name (_("Grapa"));
 	gtk_window_set_default_icon_name ("engrampa");
 
 	client = egg_sm_client_get ();

@@ -81,8 +81,8 @@ msgid "Show session management options"
 msgstr "Tunjuk pilihan pengurusan sesi"
 
 #: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
-msgid "Engrampa Archive Manager"
-msgstr "Pengurus Arkib Engrampa"
+msgid "Grapa Archive Manager"
+msgstr "Pengurus Arkib Grapa"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
@@ -90,21 +90,21 @@ msgstr "Pengurus Arkib untuk persekitaran desktop CAFE"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""
-"Engrampa is an archive manager for the CAFE environment. It allows you to "
+"Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
-"Engrampa ialah sebuah pengurus arkib untuk persekitaran CAFE. Anda boleh "
+"Grapa ialah sebuah pengurus arkib untuk persekitaran CAFE. Anda boleh "
 "mencipta dan mengubah suai arkib, melihat kandungan arkib, melihat fail yang"
 " terkandung di dalam sebuah arkib, dan juga mengekstrak fail-fail daripada "
 "arkib."
 
 #: data/engrampa.appdata.xml.in:15
 msgid ""
-"Engrampa is only a front-end (a graphical interface) to archiving programs "
+"Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
-"Engrampa ialah satu bahagian-hadapan (antara muka bergrafik) yang dapat "
+"Grapa ialah satu bahagian-hadapan (antara muka bergrafik) yang dapat "
 "mengarkibkan program-program seperti tar dan zip. Jenis-jenis fail yang "
 "disokong adalah:"
 
@@ -212,12 +212,12 @@ msgstr ""
 
 #: data/engrampa.appdata.xml.in:46
 msgid ""
-"Engrampa is a fork of File Roller and part of the CAFE Desktop Environment. "
-"If you would like to know more about CAFE and Engrampa, please visit the "
+"Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
+"If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
-"Engrampa merupakan cabang File Roller dan sebahagian dari Persekitaran Atas "
-"Meja CAFE. Jika anda mahu ketahui lebih lanjut mengenai CAFE dan Engrampa, "
+"Grapa merupakan cabang File Roller dan sebahagian dari Persekitaran Atas "
+"Meja CAFE. Jika anda mahu ketahui lebih lanjut mengenai CAFE dan Grapa, "
 "sila lawati laman sesawang projek."
 
 #: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
@@ -452,8 +452,8 @@ msgstr "Cipta arkib termampat dengan objek terpilih"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
-msgid "Engrampa"
-msgstr "Engrampa"
+msgid "Grapa"
+msgstr "Grapa"
 
 #: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
@@ -501,24 +501,24 @@ msgstr "Output Akhir"
 
 #: src/actions.c:859
 msgid ""
-"Engrampa is free software; you can redistribute it and/or modify it under "
+"Grapa is free software; you can redistribute it and/or modify it under "
 "the terms of the GNU General Public License as published by the Free "
 "Software Foundation; either version 2 of the License, or (at your option) "
 "any later version."
 msgstr ""
-"Engrampa merupakan perisian bebas; anda boleh mengedarkannya dan/atau "
+"Grapa merupakan perisian bebas; anda boleh mengedarkannya dan/atau "
 "mengubahsuainya dibawah terma GNU Genaral Public License sebagaimana yang "
 "telah dikeluarkan oleh Free Software Foundation; samada versi ke-2 lesen, "
 "atau (mengikut pilihan anda) sebarang versi terkemudian."
 
 #: src/actions.c:863
 msgid ""
-"Engrampa is distributed in the hope that it will be useful, but WITHOUT ANY "
+"Grapa is distributed in the hope that it will be useful, but WITHOUT ANY "
 "WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
 "FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
 "details."
 msgstr ""
-"Engrampa ini diedarkan dengan harapan ianya berguna tetapi TANPA SEBARANG "
+"Grapa ini diedarkan dengan harapan ianya berguna tetapi TANPA SEBARANG "
 "JAMINAN; tanpa sebarang implakasi jaminan KEBOLEHDAGANGAN atau KESESUAIAN "
 "UNTUK SESUATU TUJUAN. Sila rujuk GNU General Public LIcense untuk keterangan"
 " lanjut."
@@ -526,11 +526,11 @@ msgstr ""
 #: src/actions.c:867
 msgid ""
 "You should have received a copy of the GNU General Public License along with"
-" Engrampa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+" Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
 "Anda seharusnya menerima satu salinan Lesen Awam Am GNU bersama-sama dengan "
-"Engrampa; jika tiada, laporkan ke Free Software Foundation, Inc., 51 "
+"Grapa; jika tiada, laporkan ke Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA"
 
 #: src/actions.c:900
@@ -1655,8 +1655,8 @@ msgid "Contents"
 msgstr "Kandungan"
 
 #: src/ui.h:64
-msgid "Display the Engrampa Manual"
-msgstr "Papar Manual Engrampa"
+msgid "Display the Grapa Manual"
+msgstr "Papar Manual Grapa"
 
 #: src/ui.h:68 src/ui.h:89
 msgid "_Copy"

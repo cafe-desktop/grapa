@@ -1,7 +1,7 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*- */
 
 /*
- *  Engrampa
+ *  Grapa
  *
  *  Copyright (C) 2010 Free Software Foundation, Inc.
  *
@@ -28,8 +28,8 @@
 #include "fr-init.h"
 
 
-#define FR_SERVICE_NAME "org.cafe.Engrampa"
-#define FR_SERVICE_PATH "/org/cafe/Engrampa"
+#define FR_SERVICE_NAME "org.cafe.Grapa"
+#define FR_SERVICE_PATH "/org/cafe/Grapa"
 
 
 static const char introspection_xml[] =
@@ -454,7 +454,7 @@ main (int argc, char *argv[])
 
 	g_option_context_free (context);
 
-	g_set_application_name (_("Engrampa"));
+	g_set_application_name (_("Grapa"));
 	gtk_window_set_default_icon_name ("engrampa");
 
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/org/cafe/Engrampa">
+  <gresource prefix="/org/cafe/Grapa">
     <file compressed="true">ui/add-options.ui</file>
     <file compressed="true">ui/app-menu.ui</file>
     <file compressed="true">ui/batch-add-files.ui</file>

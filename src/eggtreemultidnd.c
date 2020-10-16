@@ -1,5 +1,5 @@
 /*
- * Engrampa
+ * Grapa
  *
  * Copyright (C) 2005 Free Software Foundation, Inc.
  * Author: Paolo Bacchilega
@@ -33,7 +33,7 @@
 
 static GtkTargetEntry target_table[] = {
         { "XdndDirectSave0", 0, 0 },
-        { "XdndEngrampa0", 0, 1 }
+        { "XdndGrapa0", 0, 1 }
 };
 
 typedef struct

@@ -15,7 +15,7 @@
   <info><title>Archive Manager Manual</title> 
 
      <abstract>
-       <para>Archive Manager, also known as Engrampa, allows you to create, view, modify, or unpack an archive.</para>
+       <para>Archive Manager, also known as Grapa, allows you to create, view, modify, or unpack an archive.</para>
      </abstract>
 
     <copyright xml:lang="en">
@@ -200,7 +200,7 @@
   </info> 
 
   <indexterm zone="index"> 
-    <primary>Engrampa</primary> 
+    <primary>Grapa</primary> 
   </indexterm> 
   <indexterm zone="index"> 
     <primary>engrampa</primary> 
@@ -389,7 +389,7 @@
     <para>This section provides information on how to start <application>Archive Manager</application>, and describes the <application>Archive Manager</application> user interface.
     </para>
 
-<!-- ============= To Start Engrampa ============================ -->
+<!-- ============= To Start Grapa ============================ -->
          <section xml:id="engrampa-to-start"><info><title>To Start <application>Archive Manager</application></title></info>
                 
                 <para>You can start <application>Archive Manager</application> in the following ways:</para>
@@ -420,7 +420,7 @@
                                 <imageobject>
                                   <imagedata fileref="figures/engrampa_main_window.png" format="PNG"/>
                                          </imageobject>
-                                <textobject> <phrase>Shows Engrampa main window.</phrase>
+                                <textobject> <phrase>Shows Grapa main window.</phrase>
                                 </textobject>
                         </mediaobject>
                   </screenshot>

@@ -30,10 +30,10 @@ msgstr "Panduan Pengurus Arkib"
 #. (itstool) path: abstract/para
 #: C/index.docbook:18
 msgid ""
-"Archive Manager, also known as Engrampa, allows you to create, view, modify,"
+"Archive Manager, also known as Grapa, allows you to create, view, modify,"
 " or unpack an archive."
 msgstr ""
-"Pengurus Arkib, juga dikenali sebagai Engrampa, membolehkan anda cipta, "
+"Pengurus Arkib, juga dikenali sebagai Grapa, membolehkan anda cipta, "
 "lihat, ubah suai. atau nyahpek arkib."
 
 #. (itstool) path: info/copyright
@@ -237,8 +237,8 @@ msgstr "Panduan ini menerangkan versi 1.22 bagi Pengurus Arkib."
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:202
-msgid "<primary>Engrampa</primary>"
-msgstr "<primary>Engrampa</primary>"
+msgid "<primary>Grapa</primary>"
+msgstr "<primary>Grapa</primary>"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:205
@@ -756,12 +756,12 @@ msgstr ""
 #: C/index.docbook:419
 msgid ""
 "<imageobject> <imagedata fileref=\"figures/engrampa_main_window.png\" "
-"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Engrampa main "
+"format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows Grapa main "
 "window.</phrase> </textobject>"
 msgstr ""
 "<imageobject> <imagedata fileref=\"figures/engrampa_main_window.png\" "
 "format=\"PNG\"/> </imageobject> <textobject> <phrase>Menunjukkan tetingkap "
-"utama Engrampa.</phrase> </textobject>"
+"utama Grapa.</phrase> </textobject>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:429

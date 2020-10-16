@@ -1,5 +1,5 @@
 /*
- *  Engrampa
+ *  Grapa
  *
  *  Copyright (C) 2004 Free Software Foundation, Inc.
  *
@@ -438,7 +438,7 @@ caja_fr_register_type (GTypeModule *module)
 
 	fr_type = g_type_module_register_type (module,
 					       G_TYPE_OBJECT,
-					       "CajaEngrampa",
+					       "CajaGrapa",
 					       &info, 0);
 
 	g_type_module_add_interface (module,
