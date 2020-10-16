@@ -299,7 +299,7 @@ dlg_extract__common (FrWindow *window,
 		g_free (data);
 		return;
 	}
-	data->settings = g_settings_new (ENGRAMPA_SCHEMA_EXTRACT);
+	data->settings = g_settings_new (GRAPA_SCHEMA_EXTRACT);
 	data->window = window;
 	data->selected_files = selected_files;
 	data->base_dir_for_selection = base_dir_for_selection;

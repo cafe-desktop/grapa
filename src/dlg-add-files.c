@@ -144,7 +144,7 @@ add_files_cb (GtkWidget *widget,
 
 	data = g_new0 (DialogData, 1);
 	data->window = callback_data;
-	data->settings = g_settings_new (ENGRAMPA_SCHEMA_ADD);
+	data->settings = g_settings_new (GRAPA_SCHEMA_ADD);
 	data->dialog = file_sel =
 		gtk_file_chooser_dialog_new (_("Add Files"),
 					     GTK_WINDOW (data->window),

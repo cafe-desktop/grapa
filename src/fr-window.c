@@ -5557,10 +5557,10 @@ fr_window_construct (FrWindow *window)
 
         /* Create the settings objects */
 
-	window->priv->settings_listing = g_settings_new (ENGRAMPA_SCHEMA_LISTING);
-	window->priv->settings_ui = g_settings_new (ENGRAMPA_SCHEMA_UI);
-	window->priv->settings_general = g_settings_new (ENGRAMPA_SCHEMA_GENERAL);
-	window->priv->settings_dialogs = g_settings_new (ENGRAMPA_SCHEMA_DIALOGS);
+	window->priv->settings_listing = g_settings_new (GRAPA_SCHEMA_LISTING);
+	window->priv->settings_ui = g_settings_new (GRAPA_SCHEMA_UI);
+	window->priv->settings_general = g_settings_new (GRAPA_SCHEMA_GENERAL);
+	window->priv->settings_dialogs = g_settings_new (GRAPA_SCHEMA_DIALOGS);
 
 	schema_source = g_settings_schema_source_get_default ();
 	caja_schema = g_settings_schema_source_lookup (schema_source, CAJA_SCHEMA, FALSE);
@@ -6003,7 +6003,7 @@ fr_window_construct (FrWindow *window)
 				 g_cclosure_new_swap (G_CALLBACK (fr_window_close), window, NULL));
 
 
-	if (! gtk_ui_manager_add_ui_from_resource (ui, ENGRAMPA_RESOURCE_UI_PATH G_DIR_SEPARATOR_S "menus-toolbars.ui", &error)) {
+	if (! gtk_ui_manager_add_ui_from_resource (ui, GRAPA_RESOURCE_UI_PATH G_DIR_SEPARATOR_S "menus-toolbars.ui", &error)) {
 		g_message ("building menus failed: %s", error->message);
 		g_error_free (error);
 	}

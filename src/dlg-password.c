@@ -66,7 +66,7 @@ response_cb (GtkWidget  *dialog,
 		{
 			GSettings *settings;
 
-			settings = g_settings_new (ENGRAMPA_SCHEMA_GENERAL);
+			settings = g_settings_new (GRAPA_SCHEMA_GENERAL);
 			g_settings_set_boolean (settings, PREF_GENERAL_ENCRYPT_HEADER, encrypt_header);
 			g_object_unref (settings);
 		}

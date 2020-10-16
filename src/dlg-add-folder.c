@@ -216,7 +216,7 @@ add_folder_cb (GtkWidget *widget,
 	GtkWidget   *grid;
 
 	data = g_new0 (DialogData, 1);
-	data->settings = g_settings_new (ENGRAMPA_SCHEMA_ADD);
+	data->settings = g_settings_new (GRAPA_SCHEMA_ADD);
 	data->window = callback_data;
 
 	data->dialog = file_sel =

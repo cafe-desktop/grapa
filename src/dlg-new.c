@@ -313,11 +313,11 @@ dlg_new_archive (FrWindow  *window,
 	gtk_button_set_use_stock (GTK_BUTTON (n_new_button), TRUE);
 	gtk_button_set_label (GTK_BUTTON (n_new_button), FR_STOCK_CREATE_ARCHIVE);
 	gtk_expander_set_expanded (GTK_EXPANDER (data->n_other_options_expander), FALSE);
-	settings = g_settings_new (ENGRAMPA_SCHEMA_GENERAL);
+	settings = g_settings_new (GRAPA_SCHEMA_GENERAL);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->n_encrypt_header_checkbutton), g_settings_get_boolean (settings, PREF_GENERAL_ENCRYPT_HEADER));
         g_object_unref (settings);
 
-        settings = g_settings_new (ENGRAMPA_SCHEMA_BATCH_ADD);
+        settings = g_settings_new (GRAPA_SCHEMA_BATCH_ADD);
         gtk_spin_button_set_value (GTK_SPIN_BUTTON (data->n_volume_spinbutton), g_settings_get_int (settings, PREF_BATCH_ADD_VOLUME_SIZE) / MEGABYTE);
         g_object_unref (settings);
 

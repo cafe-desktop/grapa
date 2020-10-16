@@ -448,7 +448,7 @@ save_file_response_cb (GtkWidget  *w,
     encrypt_header = dlg_new_data_get_encrypt_header (data);
     volume_size = dlg_new_data_get_volume_size (data);
 
-    settings = g_settings_new (ENGRAMPA_SCHEMA_BATCH_ADD);
+    settings = g_settings_new (GRAPA_SCHEMA_BATCH_ADD);
     g_settings_set_int (settings, PREF_BATCH_ADD_VOLUME_SIZE, volume_size);
     g_object_unref (settings);
 
@@ -728,7 +728,7 @@ activate_action_view_toolbar (GtkAction *action,
 {
     GSettings *settings;
 
-    settings = g_settings_new (ENGRAMPA_SCHEMA_UI);
+    settings = g_settings_new (GRAPA_SCHEMA_UI);
     g_settings_set_boolean (settings, PREF_UI_VIEW_TOOLBAR, gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)));
     g_object_unref (settings);
 }
@@ -740,7 +740,7 @@ activate_action_view_statusbar (GtkAction *action,
 {
     GSettings *settings;
 
-    settings = g_settings_new (ENGRAMPA_SCHEMA_UI);
+    settings = g_settings_new (GRAPA_SCHEMA_UI);
     g_settings_set_boolean (settings, PREF_UI_VIEW_STATUSBAR, gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)));
     g_object_unref (settings);
 }
@@ -752,7 +752,7 @@ activate_action_view_folders (GtkAction *action,
 {
     GSettings *settings;
 
-    settings = g_settings_new (ENGRAMPA_SCHEMA_UI);
+    settings = g_settings_new (GRAPA_SCHEMA_UI);
     g_settings_set_boolean (settings, PREF_UI_VIEW_FOLDERS, gtk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)));
     g_object_unref (settings);
 }
@@ -877,7 +877,7 @@ activate_action_about (GtkAction *action,
     char **authors;
     gsize n_authors = 0, i;
 
-    bytes = g_resources_lookup_data (ENGRAMPA_RESOURCE_UI_PATH G_DIR_SEPARATOR_S "grapa.about", G_RESOURCE_LOOKUP_FLAGS_NONE, &error);
+    bytes = g_resources_lookup_data (GRAPA_RESOURCE_UI_PATH G_DIR_SEPARATOR_S "grapa.about", G_RESOURCE_LOOKUP_FLAGS_NONE, &error);
     g_assert_no_error (error);
 
     data = g_bytes_get_data (bytes, &data_len);

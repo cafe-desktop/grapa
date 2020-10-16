@@ -604,7 +604,7 @@ _gtk_builder_new_from_resource (const char *resource_path)
 	GError     *error = NULL;
 
 	builder = gtk_builder_new ();
-	full_path = g_strconcat (ENGRAMPA_RESOURCE_UI_PATH G_DIR_SEPARATOR_S, resource_path, NULL);
+	full_path = g_strconcat (GRAPA_RESOURCE_UI_PATH G_DIR_SEPARATOR_S, resource_path, NULL);
         if (! gtk_builder_add_from_resource (builder, full_path, &error)) {
                 g_warning ("%s\n", error->message);
                 g_clear_error (&error);
