@@ -11,7 +11,7 @@
 
   * Translations update
   * dlg-extract: GtkFileChooserDialog instead of set extra widget
-  * Fix mate-desktop URL
+  * Fix cafe-desktop URL
   * dlg-batch-add: set dialog image from icon-name instead of pixbuf
   * Fix build using gcc 10 -fno-common flag
   * fr-process: do not override LC_CTYPE
@@ -47,7 +47,7 @@
   * fr-command-ar: fetch dates with strptime
   * Remove internal mkdtemp and define feature test macro
   * fr-command-tar: fetch dates with strptime
-  * Use mate-compiler-flags.m4 provided by mate-common
+  * Use cafe-compiler-flags.m4 provided by cafe-common
   * ar: don't remove leading whitespaces in filename field
   * i18n caja extension copyright
   * LHA: make compatible with content-type response from gio file query
@@ -143,7 +143,7 @@
   * Replace -Dokumentationteam
   * Replace -Dokumentationsprojekt with Documentation Project
   * Manual: Update file format descriptions using shared-mime-info
-  * Fix url of ulinks to point to mate-user-guide
+  * Fix url of ulinks to point to cafe-user-guide
   * UNIX and Linux systems -> Linux and UNIX-like systems
   * tx: add atril help to transifex config
   * Add the ability to support 'unar' over .zip archives
@@ -286,7 +286,7 @@
   * Add engrampa.appdata.xml
   * Fix memory leaks
   * Fixed crash when clicking Cancel in Add Files
-  * use g_get_user_config_dir instead of using .config/mate
+  * use g_get_user_config_dir instead of using .config/cafe
   * do not set the "last output" dialog as modal to allow the user to resize it
   * Fixed loading of multi-volume rar archives with 7zip
   * use GtkRecentAction objects to create the recent file choosers

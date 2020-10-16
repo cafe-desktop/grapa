@@ -1,3 +1,3 @@
 [D-BUS Service]
-Name=org.mate.Engrampa
+Name=org.cafe.Engrampa
 Exec=@libexecdir@/engrampa-server

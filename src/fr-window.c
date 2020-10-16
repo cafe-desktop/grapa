@@ -4363,7 +4363,7 @@ file_list_drag_end (GtkWidget      *widget,
 
 
 /* The following three functions taken from bugzilla
- * (http://bugzilla.mate.org/attachment.cgi?id=49362&action=view)
+ * (http://bugzilla.cafe.org/attachment.cgi?id=49362&action=view)
  * Author: Christian Neumair
  * Copyright: 2005 Free Software Foundation, Inc
  * License: GPL */

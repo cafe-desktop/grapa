@@ -1,7 +1,7 @@
 # 
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # monsta <monsta@inbox.ru>, 2020
 # Alex Putz, 2020
 # Olesya Gerasimenko <gammaray@basealt.ru>, 2020
@@ -16,7 +16,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:58+0000\n"
 "Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
-"Language-Team: Russian (https://www.transifex.com/mate/teams/13566/ru/)\n"
+"Language-Team: Russian (https://www.transifex.com/cafe/teams/13566/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -923,7 +923,7 @@ msgid ""
 "Several <application>Archive Manager</application> dialogs "
 "(<guilabel>New</guilabel>, <guilabel>Open</guilabel>, "
 "<guilabel>Extract</guilabel>,...) enable you to browse files and folders on "
-"your computer. Refer to the <link xlink:href=\"help:mate-user-guide"
+"your computer. Refer to the <link xlink:href=\"help:cafe-user-guide"
 "/filechooser-open\">Desktop User Guide</link> to learn more about using the "
 "file browsing dialogs."
 msgstr ""
@@ -931,18 +931,18 @@ msgstr ""
 "(<guilabel>Создать</guilabel>, <guilabel>Открыть</guilabel>, "
 "<guilabel>Распаковать</guilabel> и другие) позволяют просматривать файлы и "
 "папки на компьютере. Чтобы узнать, как с ними работать, обратитесь к <link "
-"xlink:href=\"help:mate-user-guide/filechooser-open\">Руководству "
+"xlink:href=\"help:cafe-user-guide/filechooser-open\">Руководству "
 "пользователя рабочей среды</link>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:464
 msgid ""
-"You can also refer to the <link xlink:href=\"help:mate-user-guide/caja-"
+"You can also refer to the <link xlink:href=\"help:cafe-user-guide/caja-"
 "bookmarks\">Bookmarks section</link> of the Desktop User Guide to learn how "
 "you can use the <guilabel>Places</guilabel> pane to access your favorite "
 "locations."
 msgstr ""
-"В разделе <link xlink:href=\"help:mate-user-guide/caja-"
+"В разделе <link xlink:href=\"help:cafe-user-guide/caja-"
 "bookmarks\">Закладки</link> этого руководства вы можете узнать, как "
 "использовать панель <guilabel>Места</guilabel> для доступа к избранным "
 "местоположениям."
@@ -3768,10 +3768,10 @@ msgstr "Обратная связь"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Archive "
 "Manager</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:mate-user-guide/feedback\">CAFE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""
 "Чтобы сообщить об ошибке или внести предложение относительно "
 "<application>Менеджера архивов</application> или этого руководства, следуйте"
-" инструкциям на <ulink url=\"help:mate-user-guide/feedback\" "
+" инструкциям на <ulink url=\"help:cafe-user-guide/feedback\" "
 "type=\"help\">Странице обратной связи CAFE</ulink>."

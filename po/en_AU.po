@@ -9,11 +9,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: engrampa 1.23.2\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org/\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: Michael Findlay <translate@cobber-linux.org>, 2020\n"
-"Language-Team: English (Australia) (https://www.transifex.com/mate/teams/13566/en_AU/)\n"
+"Language-Team: English (Australia) (https://www.transifex.com/cafe/teams/13566/en_AU/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -223,11 +223,11 @@ msgstr ""
 msgid "CAFE;archive;manager;compression;"
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:38
+#: data/org.cafe.engrampa.gschema.xml.in:38
 msgid "How to sort files"
 msgstr "How to sort files"
 
-#: data/org.mate.engrampa.gschema.xml.in:39
+#: data/org.cafe.engrampa.gschema.xml.in:39
 msgid ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
@@ -235,11 +235,11 @@ msgstr ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
 
-#: data/org.mate.engrampa.gschema.xml.in:43
+#: data/org.cafe.engrampa.gschema.xml.in:43
 msgid "Sort type"
 msgstr "Sort type"
 
-#: data/org.mate.engrampa.gschema.xml.in:44
+#: data/org.cafe.engrampa.gschema.xml.in:44
 msgid ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
@@ -247,11 +247,11 @@ msgstr ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
 
-#: data/org.mate.engrampa.gschema.xml.in:48
+#: data/org.cafe.engrampa.gschema.xml.in:48
 msgid "List Mode"
 msgstr "List Mode"
 
-#: data/org.mate.engrampa.gschema.xml.in:49
+#: data/org.cafe.engrampa.gschema.xml.in:49
 msgid ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
@@ -259,43 +259,43 @@ msgstr ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
 
-#: data/org.mate.engrampa.gschema.xml.in:53
+#: data/org.cafe.engrampa.gschema.xml.in:53
 msgid "Display type"
 msgstr "Display type"
 
-#: data/org.mate.engrampa.gschema.xml.in:54
+#: data/org.cafe.engrampa.gschema.xml.in:54
 msgid "Display the Type column in the main window."
 msgstr "Display the Type column in the main window."
 
-#: data/org.mate.engrampa.gschema.xml.in:58
+#: data/org.cafe.engrampa.gschema.xml.in:58
 msgid "Display size"
 msgstr "Display size"
 
-#: data/org.mate.engrampa.gschema.xml.in:59
+#: data/org.cafe.engrampa.gschema.xml.in:59
 msgid "Display the Size column in the main window."
 msgstr "Display the Size column in the main window."
 
-#: data/org.mate.engrampa.gschema.xml.in:63
+#: data/org.cafe.engrampa.gschema.xml.in:63
 msgid "Display time"
 msgstr "Display time"
 
-#: data/org.mate.engrampa.gschema.xml.in:64
+#: data/org.cafe.engrampa.gschema.xml.in:64
 msgid "Display the Time column in the main window."
 msgstr "Display the Time column in the main window."
 
-#: data/org.mate.engrampa.gschema.xml.in:68
+#: data/org.cafe.engrampa.gschema.xml.in:68
 msgid "Display path"
 msgstr "Display path"
 
-#: data/org.mate.engrampa.gschema.xml.in:69
+#: data/org.cafe.engrampa.gschema.xml.in:69
 msgid "Display the Path column in the main window."
 msgstr "Display the Path column in the main window."
 
-#: data/org.mate.engrampa.gschema.xml.in:73
+#: data/org.cafe.engrampa.gschema.xml.in:73
 msgid "Use MIME icons"
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:74
+#: data/org.cafe.engrampa.gschema.xml.in:74
 msgid ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
@@ -303,51 +303,51 @@ msgstr ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
 
-#: data/org.mate.engrampa.gschema.xml.in:78
+#: data/org.cafe.engrampa.gschema.xml.in:78
 msgid "Name column width"
 msgstr "Name column width"
 
-#: data/org.mate.engrampa.gschema.xml.in:79
+#: data/org.cafe.engrampa.gschema.xml.in:79
 msgid "The default width of the name column in the file list."
 msgstr "The default width of the name column in the file list."
 
-#: data/org.mate.engrampa.gschema.xml.in:85
+#: data/org.cafe.engrampa.gschema.xml.in:85
 msgid "Max history length"
 msgstr "Max history length"
 
-#: data/org.mate.engrampa.gschema.xml.in:86
+#: data/org.cafe.engrampa.gschema.xml.in:86
 msgid "Max number of items in the Open Recents menu."
 msgstr "Max number of items in the Open Recents menu."
 
-#: data/org.mate.engrampa.gschema.xml.in:99
+#: data/org.cafe.engrampa.gschema.xml.in:99
 msgid "View toolbar"
 msgstr "View toolbar"
 
-#: data/org.mate.engrampa.gschema.xml.in:100
+#: data/org.cafe.engrampa.gschema.xml.in:100
 msgid "Whether to display the toolbar."
 msgstr "Whether to display the toolbar."
 
-#: data/org.mate.engrampa.gschema.xml.in:104
+#: data/org.cafe.engrampa.gschema.xml.in:104
 msgid "View statusbar"
 msgstr "View statusbar"
 
-#: data/org.mate.engrampa.gschema.xml.in:105
+#: data/org.cafe.engrampa.gschema.xml.in:105
 msgid "Whether to display the statusbar."
 msgstr "Whether to display the statusbar."
 
-#: data/org.mate.engrampa.gschema.xml.in:109 src/ui.h:234
+#: data/org.cafe.engrampa.gschema.xml.in:109 src/ui.h:234
 msgid "View the folders pane"
 msgstr "View the folders pane"
 
-#: data/org.mate.engrampa.gschema.xml.in:110
+#: data/org.cafe.engrampa.gschema.xml.in:110
 msgid "Whether to display the folders pane."
 msgstr "Whether to display the folders pane."
 
-#: data/org.mate.engrampa.gschema.xml.in:116
+#: data/org.cafe.engrampa.gschema.xml.in:116
 msgid "Editors"
 msgstr "Editors"
 
-#: data/org.mate.engrampa.gschema.xml.in:117
+#: data/org.cafe.engrampa.gschema.xml.in:117
 msgid ""
 "List of applications entered in the Open file dialog and not associated with"
 " the file type."
@@ -355,21 +355,21 @@ msgstr ""
 "List of applications entered in the Open file dialogue and not associated "
 "with the file type."
 
-#: data/org.mate.engrampa.gschema.xml.in:121
+#: data/org.cafe.engrampa.gschema.xml.in:121
 msgid "Compression level"
 msgstr "Compression level"
 
-#: data/org.mate.engrampa.gschema.xml.in:122
+#: data/org.cafe.engrampa.gschema.xml.in:122
 msgid ""
 "Compression level used when adding files to an archive. Possible values: "
 "very_fast, fast, normal, maximum."
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:126
+#: data/org.cafe.engrampa.gschema.xml.in:126
 msgid "Encrypt the archive header"
 msgstr "Encrypt the archive header"
 
-#: data/org.mate.engrampa.gschema.xml.in:127
+#: data/org.cafe.engrampa.gschema.xml.in:127
 msgid ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
@@ -377,31 +377,31 @@ msgstr ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
 
-#: data/org.mate.engrampa.gschema.xml.in:131
+#: data/org.cafe.engrampa.gschema.xml.in:131
 msgid "Adds 'unar' support over .zip archives."
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:132
+#: data/org.cafe.engrampa.gschema.xml.in:132
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:143
+#: data/org.cafe.engrampa.gschema.xml.in:143
 msgid "Overwrite existing files"
 msgstr "Overwrite existing files"
 
-#: data/org.mate.engrampa.gschema.xml.in:147
+#: data/org.cafe.engrampa.gschema.xml.in:147
 msgid "Do not overwrite newer files"
 msgstr "Do not overwrite newer files"
 
-#: data/org.mate.engrampa.gschema.xml.in:151
+#: data/org.cafe.engrampa.gschema.xml.in:151
 msgid "Recreate the folders stored in the archive"
 msgstr "Recreate the folders stored in the archive"
 
-#: data/org.mate.engrampa.gschema.xml.in:189
+#: data/org.cafe.engrampa.gschema.xml.in:189
 msgid "Default volume size"
 msgstr "Default volume size"
 
-#: data/org.mate.engrampa.gschema.xml.in:190
+#: data/org.cafe.engrampa.gschema.xml.in:190
 msgid "The default size for volumes."
 msgstr "The default size for volumes."
 

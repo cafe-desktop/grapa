@@ -12,11 +12,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: engrampa 1.23.2\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org/\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2020\n"
-"Language-Team: Chinese (Taiwan) (https://www.transifex.com/mate/teams/13566/zh_TW/)\n"
+"Language-Team: Chinese (Taiwan) (https://www.transifex.com/cafe/teams/13566/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -236,173 +236,173 @@ msgstr "engrampa"
 msgid "CAFE;archive;manager;compression;"
 msgstr "CAFE;archive;manager;compression;"
 
-#: data/org.mate.engrampa.gschema.xml.in:38
+#: data/org.cafe.engrampa.gschema.xml.in:38
 msgid "How to sort files"
 msgstr "如何排序檔案"
 
-#: data/org.mate.engrampa.gschema.xml.in:39
+#: data/org.cafe.engrampa.gschema.xml.in:39
 msgid ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
 msgstr "要使用什麼標準來排列檔案。可能的值：name、size、type、time、path。"
 
-#: data/org.mate.engrampa.gschema.xml.in:43
+#: data/org.cafe.engrampa.gschema.xml.in:43
 msgid "Sort type"
 msgstr "排序類型"
 
-#: data/org.mate.engrampa.gschema.xml.in:44
+#: data/org.cafe.engrampa.gschema.xml.in:44
 msgid ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
 msgstr "是否要以遞增或遞減的方向排序。可能的值：遞增、遞減。"
 
-#: data/org.mate.engrampa.gschema.xml.in:48
+#: data/org.cafe.engrampa.gschema.xml.in:48
 msgid "List Mode"
 msgstr "清單模式"
 
-#: data/org.mate.engrampa.gschema.xml.in:49
+#: data/org.cafe.engrampa.gschema.xml.in:49
 msgid ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
 msgstr "是否在壓縮檔中檢視所有的檔案 (all_files)，或是將壓縮檔作為一個資料夾檢視 (as_folder)。"
 
-#: data/org.mate.engrampa.gschema.xml.in:53
+#: data/org.cafe.engrampa.gschema.xml.in:53
 msgid "Display type"
 msgstr "顯示類型"
 
-#: data/org.mate.engrampa.gschema.xml.in:54
+#: data/org.cafe.engrampa.gschema.xml.in:54
 msgid "Display the Type column in the main window."
 msgstr "在主視窗中顯示類型欄。"
 
-#: data/org.mate.engrampa.gschema.xml.in:58
+#: data/org.cafe.engrampa.gschema.xml.in:58
 msgid "Display size"
 msgstr "顯示大小"
 
-#: data/org.mate.engrampa.gschema.xml.in:59
+#: data/org.cafe.engrampa.gschema.xml.in:59
 msgid "Display the Size column in the main window."
 msgstr "在主視窗中顯示大小欄。"
 
-#: data/org.mate.engrampa.gschema.xml.in:63
+#: data/org.cafe.engrampa.gschema.xml.in:63
 msgid "Display time"
 msgstr "顯示時間"
 
-#: data/org.mate.engrampa.gschema.xml.in:64
+#: data/org.cafe.engrampa.gschema.xml.in:64
 msgid "Display the Time column in the main window."
 msgstr "在主視窗中顯示時間欄。"
 
-#: data/org.mate.engrampa.gschema.xml.in:68
+#: data/org.cafe.engrampa.gschema.xml.in:68
 msgid "Display path"
 msgstr "顯示路徑"
 
-#: data/org.mate.engrampa.gschema.xml.in:69
+#: data/org.cafe.engrampa.gschema.xml.in:69
 msgid "Display the Path column in the main window."
 msgstr "在主視窗中顯示路徑欄。"
 
-#: data/org.mate.engrampa.gschema.xml.in:73
+#: data/org.cafe.engrampa.gschema.xml.in:73
 msgid "Use MIME icons"
 msgstr "使用 MIME 圖示"
 
-#: data/org.mate.engrampa.gschema.xml.in:74
+#: data/org.cafe.engrampa.gschema.xml.in:74
 msgid ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
 msgstr "若設定為 TRUE 將會依據檔案類型顯示圖示（較慢），否則將會總是在所有的檔案上使用相同的圖示（較快）。"
 
-#: data/org.mate.engrampa.gschema.xml.in:78
+#: data/org.cafe.engrampa.gschema.xml.in:78
 msgid "Name column width"
 msgstr "名稱欄寬度"
 
-#: data/org.mate.engrampa.gschema.xml.in:79
+#: data/org.cafe.engrampa.gschema.xml.in:79
 msgid "The default width of the name column in the file list."
 msgstr "在檔案清單中的預設名稱欄位寬度。"
 
-#: data/org.mate.engrampa.gschema.xml.in:85
+#: data/org.cafe.engrampa.gschema.xml.in:85
 msgid "Max history length"
 msgstr "最大歷史長度"
 
-#: data/org.mate.engrampa.gschema.xml.in:86
+#: data/org.cafe.engrampa.gschema.xml.in:86
 msgid "Max number of items in the Open Recents menu."
 msgstr "在開啟的最近使用選單中的最大項目數。"
 
-#: data/org.mate.engrampa.gschema.xml.in:99
+#: data/org.cafe.engrampa.gschema.xml.in:99
 msgid "View toolbar"
 msgstr "檢視工具列"
 
-#: data/org.mate.engrampa.gschema.xml.in:100
+#: data/org.cafe.engrampa.gschema.xml.in:100
 msgid "Whether to display the toolbar."
 msgstr "是否顯示工具列"
 
-#: data/org.mate.engrampa.gschema.xml.in:104
+#: data/org.cafe.engrampa.gschema.xml.in:104
 msgid "View statusbar"
 msgstr "檢視狀態列"
 
-#: data/org.mate.engrampa.gschema.xml.in:105
+#: data/org.cafe.engrampa.gschema.xml.in:105
 msgid "Whether to display the statusbar."
 msgstr "是否顯示狀態列。"
 
-#: data/org.mate.engrampa.gschema.xml.in:109 src/ui.h:234
+#: data/org.cafe.engrampa.gschema.xml.in:109 src/ui.h:234
 msgid "View the folders pane"
 msgstr "檢視資料夾窗格"
 
-#: data/org.mate.engrampa.gschema.xml.in:110
+#: data/org.cafe.engrampa.gschema.xml.in:110
 msgid "Whether to display the folders pane."
 msgstr "是否顯示資料夾面板。"
 
-#: data/org.mate.engrampa.gschema.xml.in:116
+#: data/org.cafe.engrampa.gschema.xml.in:116
 msgid "Editors"
 msgstr "編輯器"
 
-#: data/org.mate.engrampa.gschema.xml.in:117
+#: data/org.cafe.engrampa.gschema.xml.in:117
 msgid ""
 "List of applications entered in the Open file dialog and not associated with"
 " the file type."
 msgstr "進入開啟檔案對話框，而未關聯到檔案類型的應用程式清單。"
 
-#: data/org.mate.engrampa.gschema.xml.in:121
+#: data/org.cafe.engrampa.gschema.xml.in:121
 msgid "Compression level"
 msgstr "壓縮等級"
 
-#: data/org.mate.engrampa.gschema.xml.in:122
+#: data/org.cafe.engrampa.gschema.xml.in:122
 msgid ""
 "Compression level used when adding files to an archive. Possible values: "
 "very_fast, fast, normal, maximum."
 msgstr "壓縮等級會用於加入檔案到壓縮檔中時。可能的值：very_fast、fast、normal、maximum。"
 
-#: data/org.mate.engrampa.gschema.xml.in:126
+#: data/org.cafe.engrampa.gschema.xml.in:126
 msgid "Encrypt the archive header"
 msgstr "加密壓縮檔檔頭"
 
-#: data/org.mate.engrampa.gschema.xml.in:127
+#: data/org.cafe.engrampa.gschema.xml.in:127
 msgid ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
 msgstr "是否加密壓縮檔檔頭。若檔頭被加密，則列出壓縮檔內容時也需要密碼。"
 
-#: data/org.mate.engrampa.gschema.xml.in:131
+#: data/org.cafe.engrampa.gschema.xml.in:131
 msgid "Adds 'unar' support over .zip archives."
 msgstr "對 .zip 壓縮檔新增 'unar' 的支援。"
 
-#: data/org.mate.engrampa.gschema.xml.in:132
+#: data/org.cafe.engrampa.gschema.xml.in:132
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr "它支援對 .zip 壓縮檔使用 'unar' 的能力。"
 
-#: data/org.mate.engrampa.gschema.xml.in:143
+#: data/org.cafe.engrampa.gschema.xml.in:143
 msgid "Overwrite existing files"
 msgstr "覆寫已存在的檔案"
 
-#: data/org.mate.engrampa.gschema.xml.in:147
+#: data/org.cafe.engrampa.gschema.xml.in:147
 msgid "Do not overwrite newer files"
 msgstr "不要覆寫較新的檔案"
 
-#: data/org.mate.engrampa.gschema.xml.in:151
+#: data/org.cafe.engrampa.gschema.xml.in:151
 msgid "Recreate the folders stored in the archive"
 msgstr "重新建立儲存在壓縮檔內的資料夾"
 
-#: data/org.mate.engrampa.gschema.xml.in:189
+#: data/org.cafe.engrampa.gschema.xml.in:189
 msgid "Default volume size"
 msgstr "預設卷冊大小"
 
-#: data/org.mate.engrampa.gschema.xml.in:190
+#: data/org.cafe.engrampa.gschema.xml.in:190
 msgid "The default size for volumes."
 msgstr "卷冊的預設大小。"
 

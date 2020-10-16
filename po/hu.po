@@ -16,11 +16,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: engrampa 1.23.2\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org/\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: Károly Papp <pkaroly82@gmail.com>, 2020\n"
-"Language-Team: Hungarian (https://www.transifex.com/mate/teams/13566/hu/)\n"
+"Language-Team: Hungarian (https://www.transifex.com/cafe/teams/13566/hu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -230,11 +230,11 @@ msgstr ""
 msgid "CAFE;archive;manager;compression;"
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:38
+#: data/org.cafe.engrampa.gschema.xml.in:38
 msgid "How to sort files"
 msgstr "Fájlok rendezési módja"
 
-#: data/org.mate.engrampa.gschema.xml.in:39
+#: data/org.cafe.engrampa.gschema.xml.in:39
 msgid ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
@@ -242,11 +242,11 @@ msgstr ""
 "Fájlok rendezésének szempontja. Lehetséges értékek: name (név), size "
 "(méret), type (típus), time (idő), path (útvonal)."
 
-#: data/org.mate.engrampa.gschema.xml.in:43
+#: data/org.cafe.engrampa.gschema.xml.in:43
 msgid "Sort type"
 msgstr "Rendezés típusa"
 
-#: data/org.mate.engrampa.gschema.xml.in:44
+#: data/org.cafe.engrampa.gschema.xml.in:44
 msgid ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
@@ -254,11 +254,11 @@ msgstr ""
 "Rendezés iránya. Lehetséges értékek: „ascending” (növekvő), „descending” "
 "(csökkenő)."
 
-#: data/org.mate.engrampa.gschema.xml.in:48
+#: data/org.cafe.engrampa.gschema.xml.in:48
 msgid "List Mode"
 msgstr "Lista mód"
 
-#: data/org.mate.engrampa.gschema.xml.in:49
+#: data/org.cafe.engrampa.gschema.xml.in:49
 msgid ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
@@ -266,43 +266,43 @@ msgstr ""
 "Lehetséges értékek: „all_files”: az archívum összes fájljának megjelenítése "
 "egyetlen listában, „as_folder”: navigáció az archívumban mappaként."
 
-#: data/org.mate.engrampa.gschema.xml.in:53
+#: data/org.cafe.engrampa.gschema.xml.in:53
 msgid "Display type"
 msgstr "Típus megjelenítése"
 
-#: data/org.mate.engrampa.gschema.xml.in:54
+#: data/org.cafe.engrampa.gschema.xml.in:54
 msgid "Display the Type column in the main window."
 msgstr "A típus oszlop megjelenítése a főablakban."
 
-#: data/org.mate.engrampa.gschema.xml.in:58
+#: data/org.cafe.engrampa.gschema.xml.in:58
 msgid "Display size"
 msgstr "Méret megjelenítése"
 
-#: data/org.mate.engrampa.gschema.xml.in:59
+#: data/org.cafe.engrampa.gschema.xml.in:59
 msgid "Display the Size column in the main window."
 msgstr "A méret oszlop megjelenítése a főablakban."
 
-#: data/org.mate.engrampa.gschema.xml.in:63
+#: data/org.cafe.engrampa.gschema.xml.in:63
 msgid "Display time"
 msgstr "Dátum megjelenítése"
 
-#: data/org.mate.engrampa.gschema.xml.in:64
+#: data/org.cafe.engrampa.gschema.xml.in:64
 msgid "Display the Time column in the main window."
 msgstr "A dátum oszlop megjelenítése a főablakban."
 
-#: data/org.mate.engrampa.gschema.xml.in:68
+#: data/org.cafe.engrampa.gschema.xml.in:68
 msgid "Display path"
 msgstr "Elérési út megjelenítése"
 
-#: data/org.mate.engrampa.gschema.xml.in:69
+#: data/org.cafe.engrampa.gschema.xml.in:69
 msgid "Display the Path column in the main window."
 msgstr "Az elérési út oszlop megjelenítése a főablakban."
 
-#: data/org.mate.engrampa.gschema.xml.in:73
+#: data/org.cafe.engrampa.gschema.xml.in:73
 msgid "Use MIME icons"
 msgstr "MIME ikonok használata"
 
-#: data/org.mate.engrampa.gschema.xml.in:74
+#: data/org.cafe.engrampa.gschema.xml.in:74
 msgid ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
@@ -310,51 +310,51 @@ msgstr ""
 "Ha igaz, akkor a fájltípus alapján jeleníti meg az ikonokat (lassabb), "
 "különben mindig ugyanazt az ikont használja minden fájlhoz (gyorsabb)."
 
-#: data/org.mate.engrampa.gschema.xml.in:78
+#: data/org.cafe.engrampa.gschema.xml.in:78
 msgid "Name column width"
 msgstr "Név oszlop szélessége"
 
-#: data/org.mate.engrampa.gschema.xml.in:79
+#: data/org.cafe.engrampa.gschema.xml.in:79
 msgid "The default width of the name column in the file list."
 msgstr "A név oszlop alapértelmezett szélessége a fájllistában."
 
-#: data/org.mate.engrampa.gschema.xml.in:85
+#: data/org.cafe.engrampa.gschema.xml.in:85
 msgid "Max history length"
 msgstr "Legnagyobb előzményhossz"
 
-#: data/org.mate.engrampa.gschema.xml.in:86
+#: data/org.cafe.engrampa.gschema.xml.in:86
 msgid "Max number of items in the Open Recents menu."
 msgstr "A „Legutóbbi megnyitása” menü elemeinek maximális száma."
 
-#: data/org.mate.engrampa.gschema.xml.in:99
+#: data/org.cafe.engrampa.gschema.xml.in:99
 msgid "View toolbar"
 msgstr "Eszköztár megjelenítése"
 
-#: data/org.mate.engrampa.gschema.xml.in:100
+#: data/org.cafe.engrampa.gschema.xml.in:100
 msgid "Whether to display the toolbar."
 msgstr "Megjelenjen-e az eszköztár."
 
-#: data/org.mate.engrampa.gschema.xml.in:104
+#: data/org.cafe.engrampa.gschema.xml.in:104
 msgid "View statusbar"
 msgstr "Állapotsor megjelenítése"
 
-#: data/org.mate.engrampa.gschema.xml.in:105
+#: data/org.cafe.engrampa.gschema.xml.in:105
 msgid "Whether to display the statusbar."
 msgstr "Megjelenjen-e az állapotsor."
 
-#: data/org.mate.engrampa.gschema.xml.in:109 src/ui.h:234
+#: data/org.cafe.engrampa.gschema.xml.in:109 src/ui.h:234
 msgid "View the folders pane"
 msgstr "Mappák ablaktábla megjelenítése"
 
-#: data/org.mate.engrampa.gschema.xml.in:110
+#: data/org.cafe.engrampa.gschema.xml.in:110
 msgid "Whether to display the folders pane."
 msgstr "Megjelenjen-e a mappák ablaktábla."
 
-#: data/org.mate.engrampa.gschema.xml.in:116
+#: data/org.cafe.engrampa.gschema.xml.in:116
 msgid "Editors"
 msgstr "Szerkesztők"
 
-#: data/org.mate.engrampa.gschema.xml.in:117
+#: data/org.cafe.engrampa.gschema.xml.in:117
 msgid ""
 "List of applications entered in the Open file dialog and not associated with"
 " the file type."
@@ -362,11 +362,11 @@ msgstr ""
 "A „Fájl megnyitása” ablakban megadott, és a fájltípushoz nem társított "
 "alkalmazások listája."
 
-#: data/org.mate.engrampa.gschema.xml.in:121
+#: data/org.cafe.engrampa.gschema.xml.in:121
 msgid "Compression level"
 msgstr "Tömörítési szint"
 
-#: data/org.mate.engrampa.gschema.xml.in:122
+#: data/org.cafe.engrampa.gschema.xml.in:122
 msgid ""
 "Compression level used when adding files to an archive. Possible values: "
 "very_fast, fast, normal, maximum."
@@ -374,11 +374,11 @@ msgstr ""
 "Fájlok archívumhoz adásakor használt tömörítési szint. Lehetséges értékek: "
 "very_fast (nagyon gyors), fast (gyors), normal, maximum."
 
-#: data/org.mate.engrampa.gschema.xml.in:126
+#: data/org.cafe.engrampa.gschema.xml.in:126
 msgid "Encrypt the archive header"
 msgstr "Archívum fejlécének titkosítása"
 
-#: data/org.mate.engrampa.gschema.xml.in:127
+#: data/org.cafe.engrampa.gschema.xml.in:127
 msgid ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
@@ -386,31 +386,31 @@ msgstr ""
 "Az archívumfejléc titkosítandó-e? Ha a fejléc titkosított, akkor a jelszó az"
 " archívum tartalmának kiírásához is szükséges lesz."
 
-#: data/org.mate.engrampa.gschema.xml.in:131
+#: data/org.cafe.engrampa.gschema.xml.in:131
 msgid "Adds 'unar' support over .zip archives."
 msgstr "Hozzáadja az „unar” támogatást a .zip archívumokhoz."
 
-#: data/org.mate.engrampa.gschema.xml.in:132
+#: data/org.cafe.engrampa.gschema.xml.in:132
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr "Engedélyezi az „unar” támogatás lehetőségét a .zip archívumokon."
 
-#: data/org.mate.engrampa.gschema.xml.in:143
+#: data/org.cafe.engrampa.gschema.xml.in:143
 msgid "Overwrite existing files"
 msgstr "Meglévő fájlok felülírása"
 
-#: data/org.mate.engrampa.gschema.xml.in:147
+#: data/org.cafe.engrampa.gschema.xml.in:147
 msgid "Do not overwrite newer files"
 msgstr "Ne írja felül az újabb fájlokat"
 
-#: data/org.mate.engrampa.gschema.xml.in:151
+#: data/org.cafe.engrampa.gschema.xml.in:151
 msgid "Recreate the folders stored in the archive"
 msgstr "Az archívumban tárolt mappák ismételt létrehozása"
 
-#: data/org.mate.engrampa.gschema.xml.in:189
+#: data/org.cafe.engrampa.gschema.xml.in:189
 msgid "Default volume size"
 msgstr "Alapértelmezett kötetméret"
 
-#: data/org.mate.engrampa.gschema.xml.in:190
+#: data/org.cafe.engrampa.gschema.xml.in:190
 msgid "The default size for volumes."
 msgstr "Kötetek alapértelmezett mérete."
 
@@ -535,14 +535,14 @@ msgstr "Archívumkezelő a CAFE-hoz."
 #: src/actions.c:905
 msgid "translator-credits"
 msgstr ""
-"Dvornik László<dvornik at mate dot hu>\n"
-"Kelemen Gábor<kelemeng at mate dot hu>\n"
+"Dvornik László<dvornik at cafe dot hu>\n"
+"Kelemen Gábor<kelemeng at cafe dot hu>\n"
 "Kalman „KAMI” Szalai<kami911 at gmail dot com>\n"
 "Falu<info at falu dot me>\n"
 "Rezső Páder<rezso at rezso dot net>\n"
 "Zoltán Rápolthy<real_zolee at hotmail dot com>\n"
 "Meskó Balázs <mesko dot balazs at fsf dot hu>\n"
-"Tímár András<timar at mate dot hu>"
+"Tímár András<timar at cafe dot hu>"
 
 #: src/dlg-add-files.c:103 src/dlg-add-folder.c:136
 msgid "Could not add the files to the archive"

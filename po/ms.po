@@ -10,11 +10,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: engrampa 1.23.2\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org/\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2020\n"
-"Language-Team: Malay (https://www.transifex.com/mate/teams/13566/ms/)\n"
+"Language-Team: Malay (https://www.transifex.com/cafe/teams/13566/ms/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -241,11 +241,11 @@ msgstr "engrampa"
 msgid "CAFE;archive;manager;compression;"
 msgstr "CAFE;arkib;pengurus;pemampatan;"
 
-#: data/org.mate.engrampa.gschema.xml.in:38
+#: data/org.cafe.engrampa.gschema.xml.in:38
 msgid "How to sort files"
 msgstr "Bagaimana hendak mengisih fail"
 
-#: data/org.mate.engrampa.gschema.xml.in:39
+#: data/org.cafe.engrampa.gschema.xml.in:39
 msgid ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
@@ -253,11 +253,11 @@ msgstr ""
 "Apakah kriteria yang mesit digunakan untuk menyusun fail. Nilai yang "
 "mungkin: nama, saiz, jenis, masa, laluan."
 
-#: data/org.mate.engrampa.gschema.xml.in:43
+#: data/org.cafe.engrampa.gschema.xml.in:43
 msgid "Sort type"
 msgstr "Jenis isih"
 
-#: data/org.mate.engrampa.gschema.xml.in:44
+#: data/org.cafe.engrampa.gschema.xml.in:44
 msgid ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
@@ -265,11 +265,11 @@ msgstr ""
 "Sama ada hendak mengisih dalam kedudukan menaik atau menurun. Nilai yang "
 "mungkin: menaik, menurun."
 
-#: data/org.mate.engrampa.gschema.xml.in:48
+#: data/org.cafe.engrampa.gschema.xml.in:48
 msgid "List Mode"
 msgstr "Mod Senarai"
 
-#: data/org.mate.engrampa.gschema.xml.in:49
+#: data/org.cafe.engrampa.gschema.xml.in:49
 msgid ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
@@ -277,43 +277,43 @@ msgstr ""
 "Sama ada hendak lihat semua fail di dalam arkib (semua_fail), atau lihat "
 "arkib sebagai folder (sebagai_folder)."
 
-#: data/org.mate.engrampa.gschema.xml.in:53
+#: data/org.cafe.engrampa.gschema.xml.in:53
 msgid "Display type"
 msgstr "Papar jenis"
 
-#: data/org.mate.engrampa.gschema.xml.in:54
+#: data/org.cafe.engrampa.gschema.xml.in:54
 msgid "Display the Type column in the main window."
 msgstr "Papar lajur Jenis dalam tetingkap utama."
 
-#: data/org.mate.engrampa.gschema.xml.in:58
+#: data/org.cafe.engrampa.gschema.xml.in:58
 msgid "Display size"
 msgstr "Papar saiz"
 
-#: data/org.mate.engrampa.gschema.xml.in:59
+#: data/org.cafe.engrampa.gschema.xml.in:59
 msgid "Display the Size column in the main window."
 msgstr "Papar lajur Saiz dalam tetingkap utama."
 
-#: data/org.mate.engrampa.gschema.xml.in:63
+#: data/org.cafe.engrampa.gschema.xml.in:63
 msgid "Display time"
 msgstr "Papar masa"
 
-#: data/org.mate.engrampa.gschema.xml.in:64
+#: data/org.cafe.engrampa.gschema.xml.in:64
 msgid "Display the Time column in the main window."
 msgstr "Papar lajur Masa dalam tetingkap utama."
 
-#: data/org.mate.engrampa.gschema.xml.in:68
+#: data/org.cafe.engrampa.gschema.xml.in:68
 msgid "Display path"
 msgstr "Papar laluan"
 
-#: data/org.mate.engrampa.gschema.xml.in:69
+#: data/org.cafe.engrampa.gschema.xml.in:69
 msgid "Display the Path column in the main window."
 msgstr "Papar lajur Laluan dalam tetingkap utama."
 
-#: data/org.mate.engrampa.gschema.xml.in:73
+#: data/org.cafe.engrampa.gschema.xml.in:73
 msgid "Use MIME icons"
 msgstr "Guna ikon MIME"
 
-#: data/org.mate.engrampa.gschema.xml.in:74
+#: data/org.cafe.engrampa.gschema.xml.in:74
 msgid ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
@@ -321,51 +321,51 @@ msgstr ""
 "jika BENAR akan papar ikon bergantung pada jenis fail (lebih lambat), jika "
 "tidak akan guna sentiasa ikon yang serupa untuk semua fail (lebih pantas)."
 
-#: data/org.mate.engrampa.gschema.xml.in:78
+#: data/org.cafe.engrampa.gschema.xml.in:78
 msgid "Name column width"
 msgstr "Lebar lajur nama"
 
-#: data/org.mate.engrampa.gschema.xml.in:79
+#: data/org.cafe.engrampa.gschema.xml.in:79
 msgid "The default width of the name column in the file list."
 msgstr "Lebar lalai lajur nama dalam senarai fail."
 
-#: data/org.mate.engrampa.gschema.xml.in:85
+#: data/org.cafe.engrampa.gschema.xml.in:85
 msgid "Max history length"
 msgstr "Panjang sejarah maksimum"
 
-#: data/org.mate.engrampa.gschema.xml.in:86
+#: data/org.cafe.engrampa.gschema.xml.in:86
 msgid "Max number of items in the Open Recents menu."
 msgstr "Bilangan item maksimum dalam menu Dibuka Baru-Baru Ini."
 
-#: data/org.mate.engrampa.gschema.xml.in:99
+#: data/org.cafe.engrampa.gschema.xml.in:99
 msgid "View toolbar"
 msgstr "Lihat palang alat"
 
-#: data/org.mate.engrampa.gschema.xml.in:100
+#: data/org.cafe.engrampa.gschema.xml.in:100
 msgid "Whether to display the toolbar."
 msgstr "Sama ada hendak papar palang alat."
 
-#: data/org.mate.engrampa.gschema.xml.in:104
+#: data/org.cafe.engrampa.gschema.xml.in:104
 msgid "View statusbar"
 msgstr "Lihat palang status"
 
-#: data/org.mate.engrampa.gschema.xml.in:105
+#: data/org.cafe.engrampa.gschema.xml.in:105
 msgid "Whether to display the statusbar."
 msgstr "Sama ada hendak papar palang status."
 
-#: data/org.mate.engrampa.gschema.xml.in:109 src/ui.h:234
+#: data/org.cafe.engrampa.gschema.xml.in:109 src/ui.h:234
 msgid "View the folders pane"
 msgstr "Lihat anak tetingkap folder"
 
-#: data/org.mate.engrampa.gschema.xml.in:110
+#: data/org.cafe.engrampa.gschema.xml.in:110
 msgid "Whether to display the folders pane."
 msgstr "Sama ada hendak papar anak tetingkap folder."
 
-#: data/org.mate.engrampa.gschema.xml.in:116
+#: data/org.cafe.engrampa.gschema.xml.in:116
 msgid "Editors"
 msgstr "Penyunting"
 
-#: data/org.mate.engrampa.gschema.xml.in:117
+#: data/org.cafe.engrampa.gschema.xml.in:117
 msgid ""
 "List of applications entered in the Open file dialog and not associated with"
 " the file type."
@@ -373,11 +373,11 @@ msgstr ""
 "Senarai aplikasi dimasukkan dalam dialog Buka fail dan tidak dikaitkan "
 "dengan jenis fail."
 
-#: data/org.mate.engrampa.gschema.xml.in:121
+#: data/org.cafe.engrampa.gschema.xml.in:121
 msgid "Compression level"
 msgstr "Aras pemampatan"
 
-#: data/org.mate.engrampa.gschema.xml.in:122
+#: data/org.cafe.engrampa.gschema.xml.in:122
 msgid ""
 "Compression level used when adding files to an archive. Possible values: "
 "very_fast, fast, normal, maximum."
@@ -385,11 +385,11 @@ msgstr ""
 "Aras pemampatan yang digunakan bila menambah fail ke dalam arkib. Nilai yang"
 " mungkin : sangat_pantas, pantas, biasa, maksimum."
 
-#: data/org.mate.engrampa.gschema.xml.in:126
+#: data/org.cafe.engrampa.gschema.xml.in:126
 msgid "Encrypt the archive header"
 msgstr "Sulitkan pengepala arkib"
 
-#: data/org.mate.engrampa.gschema.xml.in:127
+#: data/org.cafe.engrampa.gschema.xml.in:127
 msgid ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
@@ -397,31 +397,31 @@ msgstr ""
 "Sama ada hendak sulitkan pengepala arkib. Jika pengepala disulitkan, kata "
 "laluan diperlukan untuk menyenaraikan kandungan arkib."
 
-#: data/org.mate.engrampa.gschema.xml.in:131
+#: data/org.cafe.engrampa.gschema.xml.in:131
 msgid "Adds 'unar' support over .zip archives."
 msgstr "Tambah sokongan 'unar' pada arkib .zip."
 
-#: data/org.mate.engrampa.gschema.xml.in:132
+#: data/org.cafe.engrampa.gschema.xml.in:132
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr "Jika dibenarkan mampu menyokong 'unar' pada arkib .zip."
 
-#: data/org.mate.engrampa.gschema.xml.in:143
+#: data/org.cafe.engrampa.gschema.xml.in:143
 msgid "Overwrite existing files"
 msgstr "Tulis-ganti fail sedia ada"
 
-#: data/org.mate.engrampa.gschema.xml.in:147
+#: data/org.cafe.engrampa.gschema.xml.in:147
 msgid "Do not overwrite newer files"
 msgstr "Jangan tulis-ganti fail lebih baharu"
 
-#: data/org.mate.engrampa.gschema.xml.in:151
+#: data/org.cafe.engrampa.gschema.xml.in:151
 msgid "Recreate the folders stored in the archive"
 msgstr "Cipta semula folder tersimpan di dalam arkib"
 
-#: data/org.mate.engrampa.gschema.xml.in:189
+#: data/org.cafe.engrampa.gschema.xml.in:189
 msgid "Default volume size"
 msgstr "Saiz volum lalai"
 
-#: data/org.mate.engrampa.gschema.xml.in:190
+#: data/org.cafe.engrampa.gschema.xml.in:190
 msgid "The default size for volumes."
 msgstr "Saiz lalai bagi volum."
 

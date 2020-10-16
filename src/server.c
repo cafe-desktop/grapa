@@ -28,13 +28,13 @@
 #include "fr-init.h"
 
 
-#define FR_SERVICE_NAME "org.mate.Engrampa"
-#define FR_SERVICE_PATH "/org/mate/Engrampa"
+#define FR_SERVICE_NAME "org.cafe.Engrampa"
+#define FR_SERVICE_PATH "/org/cafe/Engrampa"
 
 
 static const char introspection_xml[] =
 	"<node>"
-	"  <interface name='org.mate.ArchiveManager'>"
+	"  <interface name='org.cafe.ArchiveManager'>"
 
 	/**
 	 * GetSupportedTypes:
@@ -201,7 +201,7 @@ window_progress_cb (FrWindow *window,
 	g_dbus_connection_emit_signal (connection,
 				       NULL,
 				       FR_SERVICE_PATH,
-				       "org.mate.ArchiveManager",
+				       "org.cafe.ArchiveManager",
 				       "Progress",
 				       g_variant_new ("(ds)",
 						      fraction,

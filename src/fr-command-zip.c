@@ -400,7 +400,7 @@ static const char **
 fr_command_zip_get_mime_types (FrCommand *comm)
 {
 	GSettings *settings;
-	settings = g_settings_new ("org.mate.engrampa.general");
+	settings = g_settings_new ("org.cafe.engrampa.general");
 
 	if (g_settings_get_boolean (settings, "unar-open-zip") &&
 	    is_program_in_path ("unar") && is_program_in_path ("lsar"))

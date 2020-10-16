@@ -27,7 +27,7 @@
 #include "typedefs.h"
 #include "fr-window.h"
 
-#define ENGRAMPA_SCHEMA			"org.mate.engrampa"
+#define ENGRAMPA_SCHEMA			"org.cafe.engrampa"
 #define ENGRAMPA_SCHEMA_LISTING		ENGRAMPA_SCHEMA	".listing"
 #define ENGRAMPA_SCHEMA_UI		ENGRAMPA_SCHEMA	".ui"
 #define ENGRAMPA_SCHEMA_GENERAL		ENGRAMPA_SCHEMA	".general"
@@ -76,7 +76,7 @@
 #define PREF_BATCH_ADD_OTHER_OPTIONS	 "other-options"
 #define PREF_BATCH_ADD_VOLUME_SIZE	 "volume-size"
 
-#define CAJA_SCHEMA			"org.mate.caja.preferences"
+#define CAJA_SCHEMA			"org.cafe.caja.preferences"
 #define CAJA_CLICK_POLICY		"click-policy"
 
 void pref_util_save_window_geometry (GtkWindow *window,

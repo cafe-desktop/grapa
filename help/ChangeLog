@@ -2,15 +2,15 @@
 
 	* fr/fr.po: Updated French translation
 
-2009-04-03  Mario Blättermann  <mariobl@svn.mate.org>
+2009-04-03  Mario Blättermann  <mariobl@svn.cafe.org>
 
 	* de/de.po: Updated german translation
 
-2009-03-31  Jorge Gonzalez  <jorgegonz@svn.mate.org>
+2009-03-31  Jorge Gonzalez  <jorgegonz@svn.cafe.org>
 
 	* es/es.po: Updated Spanish translation
 
-2009-03-31  Paolo Bacchilega  <paobac@svn.mate.org>
+2009-03-31  Paolo Bacchilega  <paobac@svn.cafe.org>
 
 	* C/engrampa.xml: 
 	
@@ -36,7 +36,7 @@
 	* sv/sv.po: Updated Swedish translation.
 	* sv/figures/*png: Updated screenshots.
 
-2009-01-19  Paolo Bacchilega  <paobac@svn.mate.org>
+2009-01-19  Paolo Bacchilega  <paobac@svn.cafe.org>
 
 	* es/figures/engrampa_home.png: 
 	* es/figures/engrampa_rightarrow.png: 
@@ -71,15 +71,15 @@
 
 	* it/it.po: Updated Italian translation by Milo Casagrande.
 
-2008-09-12  Mario Blättermann  <mariobl@svn.mate.org>
+2008-09-12  Mario Blättermann  <mariobl@svn.cafe.org>
 
 	* de/de.po: Updated german translation
 
-2008-09-10  Jorge Gonzalez  <jorgegonz@svn.mate.org>   
+2008-09-10  Jorge Gonzalez  <jorgegonz@svn.cafe.org>   
 
 	* es/es.po: Updated Spanish translation
 
-2008-09-08  Paolo Bacchilega  <paobac@svn.mate.org>
+2008-09-08  Paolo Bacchilega  <paobac@svn.cafe.org>
 
 	* C/engrampa.xml: 
 	
@@ -90,11 +90,11 @@
 
 	* vi/vi.po: Added translation from Nguyễn Đình Trung
 
-2008-08-29  Mario Blättermann  <mariobl@svn.mate.org>
+2008-08-29  Mario Blättermann  <mariobl@svn.cafe.org>
 
 	* de/de.po: Updated german translation
 
-2008-08-17  Jorge Gonzalez  <jorgegonz@svn.mate.org>
+2008-08-17  Jorge Gonzalez  <jorgegonz@svn.cafe.org>
 
 	* es/es.po: Updated Spanish translation  
 
@@ -103,30 +103,30 @@
 	* de/de.po: Updated German translation by Mario Blättermann.
 	* de/figures/engrampa_main_window.png: Updated.
 
-2008-08-16  Paolo Bacchilega  <paobac@svn.mate.org>
+2008-08-16  Paolo Bacchilega  <paobac@svn.cafe.org>
 
 	* C/engrampa.xml: 
 	
 	Fixed bug #546541 – Typo and little errors in documentation.
 	Suggested by  Frederic Peters.  Patch by Claude Paroz.
 
-2008-08-14  Paolo Bacchilega  <paobac@svn.mate.org>
+2008-08-14  Paolo Bacchilega  <paobac@svn.cafe.org>
 
 	* C/engrampa.xml: updated the extract options section.
 
-2008-08-10  Jorge Gonzalez  <jorgegonz@svn.mate.org> 
+2008-08-10  Jorge Gonzalez  <jorgegonz@svn.cafe.org> 
 
 	* es/es.po: Updated Spanish translation
 
-2008-08-07  Jorge Gonzalez  <jorgegonz@svn.mate.org>
+2008-08-07  Jorge Gonzalez  <jorgegonz@svn.cafe.org>
 
 	* es/es.po: Updated Spanish translation
 
-2008-08-04  Jorge Gonzalez  <jorgegonz@svn.mate.org>
+2008-08-04  Jorge Gonzalez  <jorgegonz@svn.cafe.org>
 
 	* es/es.po: Updated Spanish translation
 
-2008-07-28  Paolo Bacchilega  <paobac@svn.mate.org>
+2008-07-28  Paolo Bacchilega  <paobac@svn.cafe.org>
 
 	* C/engrampa.xml: now describes the current engrampa version.
 
@@ -140,7 +140,7 @@
 	* ca/ca.po: Added Catalan translation by Joan Duran.
 	* ca/figures/*.png: Added screenshots for Catalan documentation.
 
-2008-05-03  Jorge Gonzalez  <jorgegonz@svn.mate.org>
+2008-05-03  Jorge Gonzalez  <jorgegonz@svn.cafe.org>
 
 	* es/es.po: Updated Spanish translation
 	* es/figures/*.png: Updated screensots
@@ -149,7 +149,7 @@
 
 	* C/figures/*.png: Refreshed screenshots with recent theme.
 
-2008-03-04  Jorge Gonzalez  <jorgegonz@svn.mate.org>
+2008-03-04  Jorge Gonzalez  <jorgegonz@svn.cafe.org>
 
 	* es/es.po: Updated Spanish translation
 	* es/figures/engrampa_main_window.png: Updated Spanish
@@ -175,7 +175,7 @@
 
 	* ru.po: Updated Russian translation.
 
-2007-07-11  Paolo Bacchilega  <paobac@cvs.mate.org>
+2007-07-11  Paolo Bacchilega  <paobac@cvs.cafe.org>
 
 	* uk/uk.po:
 	* es/es.po:
@@ -187,7 +187,7 @@
 	validate.
 	Patch by hans AT degraaff.org
 
-2007-06-29  Jorge Gonzalez <jorgegonz@svn.mate.org>
+2007-06-29  Jorge Gonzalez <jorgegonz@svn.cafe.org>
 
 	* es/es.po: Updated Spanish translation
 
@@ -195,7 +195,7 @@
 
 	* uk/uk.po: Updated Ukrainian translation.
 
-2007-01-08  Paolo Bacchilega  <paobac@cvs.mate.org>
+2007-01-08  Paolo Bacchilega  <paobac@cvs.cafe.org>
 
 	* removed the ja ko zh_CN zh_HK zh_TW directories because they missed
 	the .po	file (how is this possible ??)
@@ -267,19 +267,19 @@
 	* ru/ru.po: Updated Russian translation.
 	* ru/figures: remove obsolete figures.
 
-2006-04-28  Francisco Javier F. Serrador  <serrador@cvs.mate.org>
+2006-04-28  Francisco Javier F. Serrador  <serrador@cvs.cafe.org>
 
 	* es/es.po: Updated Spanish translation.
 
-2006-04-09  Paolo Bacchilega  <paobac@cvs.mate.org>
+2006-04-09  Paolo Bacchilega  <paobac@cvs.cafe.org>
 
 	* C/engrampa.xml: Fixed bug #337728 - Duplicate tag
 
-2006-04-08  Francisco Javier F. Serrador  <serrador@cvs.mate.org>
+2006-04-08  Francisco Javier F. Serrador  <serrador@cvs.cafe.org>
 
 	* es/es.po: Updated Spanish translation.
 
-2006-04-03  Paolo Bacchilega  <paobac@cvs.mate.org>
+2006-04-03  Paolo Bacchilega  <paobac@cvs.cafe.org>
 
 	* C/engrampa.xml: fixed validity errors.
 
@@ -314,20 +314,20 @@
 
 	* uk/uk.po: Updated Ukrainian translation.
 
-2005-08-15  Francisco Javier F. Serrador  <serrador@cvs.mate.org>
+2005-08-15  Francisco Javier F. Serrador  <serrador@cvs.cafe.org>
 
 	* es/es.po: Updated Spanish translation.
 
-2005-08-11  Francisco Javier F. Serrador  <serrador@cvs.mate.org>
+2005-08-11  Francisco Javier F. Serrador  <serrador@cvs.cafe.org>
 
 	* es/es.po: Updated Spanish translation.
 
-2005-08-05  Paolo Bacchilega  <paobac@cvs.mate.org>
+2005-08-05  Paolo Bacchilega  <paobac@cvs.cafe.org>
 
 	* Makefile.am, C/Makefile.am, C/engrampa-C.omf, engrampa.omf.in,
-	C/engrampa.xml, .cvsignore: Migrated to mate-doc-utils.
+	C/engrampa.xml, .cvsignore: Migrated to cafe-doc-utils.
 
-2005-07-31  Francisco Javier F. Serrador  <serrador@cvs.mate.org>
+2005-07-31  Francisco Javier F. Serrador  <serrador@cvs.cafe.org>
 
 	* es/es.po: Added Spanish help infraestructure.
 

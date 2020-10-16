@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
 
-AC_INIT([engrampa], [1.24.1], [https://mate-desktop.org])
+AC_INIT([engrampa], [1.24.1], [https://cafe-desktop.org])
 AM_INIT_AUTOMAKE([1.9 foreign dist-xz no-dist-gzip check-news])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
@@ -224,7 +224,7 @@ dnl ******************************
 AC_CONFIG_FILES([Makefile
 		 data/Makefile
 		 data/engrampa.desktop.in
-		 data/org.mate.engrampa.gschema.xml
+		 data/org.cafe.engrampa.gschema.xml
 		 data/icons/Makefile
 		 copy-n-paste/Makefile
 		 src/Makefile

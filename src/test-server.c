@@ -146,9 +146,9 @@ main (int argc, char *argv[])
 		proxy = g_dbus_proxy_new_sync (connection,
 					       G_DBUS_PROXY_FLAGS_NONE,
 					       NULL,
-					       "org.mate.Engrampa",
-					       "/org/mate/Engrampa",
-					       "org.mate.ArchiveManager",
+					       "org.cafe.Engrampa",
+					       "/org/cafe/Engrampa",
+					       "org.cafe.ArchiveManager",
 					       NULL,
 					       &error);
 

@@ -3,7 +3,7 @@
 # dsafsadf <heneral@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
-# Wolfgang Ulbrich <mate@raveit.de>, 2020
+# Wolfgang Ulbrich <cafe@raveit.de>, 2020
 # Микола Ткач <chistomov@gmail.com>, 2020
 # Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020
 # 
@@ -13,7 +13,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:58+0000\n"
 "Last-Translator: Oleksii Khalikov <oleksii.khalikov@gmail.com>, 2020\n"
-"Language-Team: Ukrainian (https://www.transifex.com/mate/teams/13566/uk/)\n"
+"Language-Team: Ukrainian (https://www.transifex.com/cafe/teams/13566/uk/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -895,7 +895,7 @@ msgid ""
 "Several <application>Archive Manager</application> dialogs "
 "(<guilabel>New</guilabel>, <guilabel>Open</guilabel>, "
 "<guilabel>Extract</guilabel>,...) enable you to browse files and folders on "
-"your computer. Refer to the <link xlink:href=\"help:mate-user-guide"
+"your computer. Refer to the <link xlink:href=\"help:cafe-user-guide"
 "/filechooser-open\">Desktop User Guide</link> to learn more about using the "
 "file browsing dialogs."
 msgstr ""
@@ -903,18 +903,18 @@ msgstr ""
 "архівів</application><guilabel>Створити</guilabel>, "
 "<guilabel>Відкрити</guilabel>, <guilabel>Видобути</guilabel>та інші) "
 "дозволяють продивлятися файли й теки на комп'ютері. Щоб дізнатися, як з ними"
-" працювати, зверніться до <link xlink:href=\"help:mate-user-guide"
+" працювати, зверніться до <link xlink:href=\"help:cafe-user-guide"
 "/filechooser-open\">Керівництва користувача робочого середовища</link>."
 
 #. (itstool) path: section/para
 #: C/index.docbook:464
 msgid ""
-"You can also refer to the <link xlink:href=\"help:mate-user-guide/caja-"
+"You can also refer to the <link xlink:href=\"help:cafe-user-guide/caja-"
 "bookmarks\">Bookmarks section</link> of the Desktop User Guide to learn how "
 "you can use the <guilabel>Places</guilabel> pane to access your favorite "
 "locations."
 msgstr ""
-"У розділі <link xlink:href=\"help:mate-user-guide/caja-"
+"У розділі <link xlink:href=\"help:cafe-user-guide/caja-"
 "bookmarks\">Закладки</link> цього керівництва ви можете дізнатися, як "
 "використовувати панель <guilabel>Місця</guilabel> для доступу до вибраних "
 "розташувань."
@@ -3591,6 +3591,6 @@ msgstr "Зворотній зв'язок"
 msgid ""
 "To report a bug or make a suggestion regarding the <application>Archive "
 "Manager</application> application or this manual, follow the directions in "
-"the <link xlink:href=\"help:mate-user-guide/feedback\">CAFE Feedback "
+"the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback "
 "Page</link>."
 msgstr ""

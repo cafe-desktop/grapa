@@ -8,7 +8,7 @@ copy-n-paste/eggsmclient-private.h
 copy-n-paste/eggsmclient-xsmp.c
 data/engrampa.appdata.xml.in
 data/engrampa.desktop.in.in
-data/org.mate.engrampa.gschema.xml.in
+data/org.cafe.engrampa.gschema.xml.in
 caja/engrampa-module.c
 caja/caja-engrampa.c
 caja/caja-engrampa.h

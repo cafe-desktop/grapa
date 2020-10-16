@@ -239,7 +239,7 @@ get_icon_name_for_type (const char *mime_type)
 	if (mime_type != NULL) {
 		char *s;
 
-		name = g_strconcat ("mate-mime-", mime_type, NULL);
+		name = g_strconcat ("cafe-mime-", mime_type, NULL);
 		for (s = name; *s; ++s)
 			if (! g_ascii_isalpha (*s))
 				*s = '-';

@@ -2,7 +2,7 @@
 <!--
       (Do not remove this comment block.)
   Maintained by the CAFE Documentation Project
-  http://wiki.mate-desktop.org/dev-doc:doc-team-guide
+  http://wiki.cafe-desktop.org/dev-doc:doc-team-guide
   Template version: 2.0 beta
   Template last modified Jan 30, 2002
 -->
@@ -459,9 +459,9 @@
      <section xml:id="engrampa-bookmarks"><info><title>Browsing the Filesystem</title></info>
         
         <para>Several <application>Archive Manager</application> dialogs (<guilabel>New</guilabel>, <guilabel>Open</guilabel>, <guilabel>Extract</guilabel>,...) enable you
-        to browse files and folders on your computer. Refer to the <link xlink:href="help:mate-user-guide/filechooser-open">Desktop User Guide</link> to learn more about using the 
+        to browse files and folders on your computer. Refer to the <link xlink:href="help:cafe-user-guide/filechooser-open">Desktop User Guide</link> to learn more about using the 
         file browsing dialogs.</para>
-        <para>You can also refer to the <link xlink:href="help:mate-user-guide/caja-bookmarks">Bookmarks 
+        <para>You can also refer to the <link xlink:href="help:cafe-user-guide/caja-bookmarks">Bookmarks 
         section</link> of the Desktop User Guide to learn how you can use the <guilabel>Places</guilabel> pane 
         to access your favorite locations.</para>
      </section>

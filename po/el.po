@@ -19,11 +19,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: engrampa 1.23.2\n"
-"Report-Msgid-Bugs-To: http://www.mate-desktop.org/\n"
+"Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: Christos Pappis <pappis@gmail.com>, 2020\n"
-"Language-Team: Greek (https://www.transifex.com/mate/teams/13566/el/)\n"
+"Language-Team: Greek (https://www.transifex.com/cafe/teams/13566/el/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -237,11 +237,11 @@ msgstr ""
 msgid "CAFE;archive;manager;compression;"
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:38
+#: data/org.cafe.engrampa.gschema.xml.in:38
 msgid "How to sort files"
 msgstr "Τρόπος ταξινόμησης αρχείων"
 
-#: data/org.mate.engrampa.gschema.xml.in:39
+#: data/org.cafe.engrampa.gschema.xml.in:39
 msgid ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
@@ -249,11 +249,11 @@ msgstr ""
 "Ποια κριτήρια θα χρησιμοποιηθούν για την ταξινόμηση των αρχείων. Πιθανές "
 "τιμές: όνομα, μέγεθος, ώρα, διαδρομή."
 
-#: data/org.mate.engrampa.gschema.xml.in:43
+#: data/org.cafe.engrampa.gschema.xml.in:43
 msgid "Sort type"
 msgstr "Τύπος ταξινόμησης"
 
-#: data/org.mate.engrampa.gschema.xml.in:44
+#: data/org.cafe.engrampa.gschema.xml.in:44
 msgid ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
@@ -261,11 +261,11 @@ msgstr ""
 "Ταξινόμηση είτε σε αύξουσα είτε σε φθινουσα σειρά. Πιθανές τιμές: αύξουσα, "
 "φθίνουσα."
 
-#: data/org.mate.engrampa.gschema.xml.in:48
+#: data/org.cafe.engrampa.gschema.xml.in:48
 msgid "List Mode"
 msgstr "Λειτουργία Λίστας"
 
-#: data/org.mate.engrampa.gschema.xml.in:49
+#: data/org.cafe.engrampa.gschema.xml.in:49
 msgid ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
@@ -274,43 +274,43 @@ msgstr ""
 "συμπιεσμένο αρχείο (all_files), ή εάν θα εμφανίζονται μόνο οι φάκελοι του "
 "συμπιεσμένου αρχείου (as_folder)."
 
-#: data/org.mate.engrampa.gschema.xml.in:53
+#: data/org.cafe.engrampa.gschema.xml.in:53
 msgid "Display type"
 msgstr "Προβολή τύπου"
 
-#: data/org.mate.engrampa.gschema.xml.in:54
+#: data/org.cafe.engrampa.gschema.xml.in:54
 msgid "Display the Type column in the main window."
 msgstr "Προβολή της στήλης Τύπος στο κεντρικό παράθυρο."
 
-#: data/org.mate.engrampa.gschema.xml.in:58
+#: data/org.cafe.engrampa.gschema.xml.in:58
 msgid "Display size"
 msgstr "Προβολή μεγέθους"
 
-#: data/org.mate.engrampa.gschema.xml.in:59
+#: data/org.cafe.engrampa.gschema.xml.in:59
 msgid "Display the Size column in the main window."
 msgstr "Προβολή της στήλης Μέγεθος στο κεντρικό παράθυρο."
 
-#: data/org.mate.engrampa.gschema.xml.in:63
+#: data/org.cafe.engrampa.gschema.xml.in:63
 msgid "Display time"
 msgstr "Προβολή ώρας"
 
-#: data/org.mate.engrampa.gschema.xml.in:64
+#: data/org.cafe.engrampa.gschema.xml.in:64
 msgid "Display the Time column in the main window."
 msgstr "Προβολή της στήλης Ώρα στο κεντρικό παράθυρο."
 
-#: data/org.mate.engrampa.gschema.xml.in:68
+#: data/org.cafe.engrampa.gschema.xml.in:68
 msgid "Display path"
 msgstr "Προβολή διαδρομής"
 
-#: data/org.mate.engrampa.gschema.xml.in:69
+#: data/org.cafe.engrampa.gschema.xml.in:69
 msgid "Display the Path column in the main window."
 msgstr "Προβολή της στήλης Διαδρομή στο κεντρικό παράθυρο."
 
-#: data/org.mate.engrampa.gschema.xml.in:73
+#: data/org.cafe.engrampa.gschema.xml.in:73
 msgid "Use MIME icons"
 msgstr "Χρήση εικονιδίων MIME"
 
-#: data/org.mate.engrampa.gschema.xml.in:74
+#: data/org.cafe.engrampa.gschema.xml.in:74
 msgid ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
@@ -319,53 +319,53 @@ msgstr ""
 "ειδάλλως θα χρησιμοποιείται πάντα το ίδιο εικονίδιο για όλα τα αρχεία "
 "(ταχύτερο)."
 
-#: data/org.mate.engrampa.gschema.xml.in:78
+#: data/org.cafe.engrampa.gschema.xml.in:78
 msgid "Name column width"
 msgstr "πλάτος στήλης Όνομα"
 
-#: data/org.mate.engrampa.gschema.xml.in:79
+#: data/org.cafe.engrampa.gschema.xml.in:79
 msgid "The default width of the name column in the file list."
 msgstr "Το προεπιλεγμένο πλάτος της στήλης του ονόματος στη λίστα αρχείων."
 
-#: data/org.mate.engrampa.gschema.xml.in:85
+#: data/org.cafe.engrampa.gschema.xml.in:85
 msgid "Max history length"
 msgstr "Μέγιστο χρονικό όριο ιστορικού"
 
-#: data/org.mate.engrampa.gschema.xml.in:86
+#: data/org.cafe.engrampa.gschema.xml.in:86
 msgid "Max number of items in the Open Recents menu."
 msgstr ""
 "Μέγιστος αριθμός αντικειμένων που θα εμφανίζονται στο μενού Άνοιγμα "
 "προσφάτων."
 
-#: data/org.mate.engrampa.gschema.xml.in:99
+#: data/org.cafe.engrampa.gschema.xml.in:99
 msgid "View toolbar"
 msgstr "Προβολή γραμμής εργαλείων"
 
-#: data/org.mate.engrampa.gschema.xml.in:100
+#: data/org.cafe.engrampa.gschema.xml.in:100
 msgid "Whether to display the toolbar."
 msgstr "Επιλέξτε εάν θα εμφανίζεται η γραμμή εργαλείων."
 
-#: data/org.mate.engrampa.gschema.xml.in:104
+#: data/org.cafe.engrampa.gschema.xml.in:104
 msgid "View statusbar"
 msgstr "Προβολή γραμμής κατάστασης"
 
-#: data/org.mate.engrampa.gschema.xml.in:105
+#: data/org.cafe.engrampa.gschema.xml.in:105
 msgid "Whether to display the statusbar."
 msgstr "Επιλέξτε εάν θα εμφανίζεται η γραμμή κατάστασης."
 
-#: data/org.mate.engrampa.gschema.xml.in:109 src/ui.h:234
+#: data/org.cafe.engrampa.gschema.xml.in:109 src/ui.h:234
 msgid "View the folders pane"
 msgstr "Προβολή πλευρικής στήλης φακέλου"
 
-#: data/org.mate.engrampa.gschema.xml.in:110
+#: data/org.cafe.engrampa.gschema.xml.in:110
 msgid "Whether to display the folders pane."
 msgstr "Επιλέξτε εάν θα εμφανίζεται το πάνελ των φακέλων."
 
-#: data/org.mate.engrampa.gschema.xml.in:116
+#: data/org.cafe.engrampa.gschema.xml.in:116
 msgid "Editors"
 msgstr "Επεξεργαστές"
 
-#: data/org.mate.engrampa.gschema.xml.in:117
+#: data/org.cafe.engrampa.gschema.xml.in:117
 msgid ""
 "List of applications entered in the Open file dialog and not associated with"
 " the file type."
@@ -373,11 +373,11 @@ msgstr ""
 "Λίστα των εφαρμογών που εχουν εισαχθεί μέσω του διαλόγου Άνοιγμα αρχείου και"
 " δεν έχουν αντιστοιχιστεί με κάποιον τύπο αρχείου."
 
-#: data/org.mate.engrampa.gschema.xml.in:121
+#: data/org.cafe.engrampa.gschema.xml.in:121
 msgid "Compression level"
 msgstr "Επίπεδο συμπίεσης"
 
-#: data/org.mate.engrampa.gschema.xml.in:122
+#: data/org.cafe.engrampa.gschema.xml.in:122
 msgid ""
 "Compression level used when adding files to an archive. Possible values: "
 "very_fast, fast, normal, maximum."
@@ -386,11 +386,11 @@ msgstr ""
 "συμπιεσμένη αρχειοθήκη. Πιθανές τιμές: πολύ_γρήγορο, γρήγορο, κανονικό, "
 "μέγιστο."
 
-#: data/org.mate.engrampa.gschema.xml.in:126
+#: data/org.cafe.engrampa.gschema.xml.in:126
 msgid "Encrypt the archive header"
 msgstr "Κρυπτογράφηση κεφαλίδας του συμπιεσμένου αρχείου"
 
-#: data/org.mate.engrampa.gschema.xml.in:127
+#: data/org.cafe.engrampa.gschema.xml.in:127
 msgid ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
@@ -400,31 +400,31 @@ msgstr ""
 "κωδικός ακόμη και για την εμφάνιση του περιεχομένου του συμπιεσμένου "
 "αρχείου."
 
-#: data/org.mate.engrampa.gschema.xml.in:131
+#: data/org.cafe.engrampa.gschema.xml.in:131
 msgid "Adds 'unar' support over .zip archives."
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:132
+#: data/org.cafe.engrampa.gschema.xml.in:132
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr ""
 
-#: data/org.mate.engrampa.gschema.xml.in:143
+#: data/org.cafe.engrampa.gschema.xml.in:143
 msgid "Overwrite existing files"
 msgstr "Αντικατάσταση υπάρχοντων αρχείων"
 
-#: data/org.mate.engrampa.gschema.xml.in:147
+#: data/org.cafe.engrampa.gschema.xml.in:147
 msgid "Do not overwrite newer files"
 msgstr "Να μη γίνεται αντικατάσταση νέων αρχείων"
 
-#: data/org.mate.engrampa.gschema.xml.in:151
+#: data/org.cafe.engrampa.gschema.xml.in:151
 msgid "Recreate the folders stored in the archive"
 msgstr "Επαναδημιουργία των αποθηκευμένων φακέλων στη συμπιεσμένη αρχειοθήκη"
 
-#: data/org.mate.engrampa.gschema.xml.in:189
+#: data/org.cafe.engrampa.gschema.xml.in:189
 msgid "Default volume size"
 msgstr "Προεπιλεγμένο μέγεθος τόμου"
 
-#: data/org.mate.engrampa.gschema.xml.in:190
+#: data/org.cafe.engrampa.gschema.xml.in:190
 msgid "The default size for volumes."
 msgstr "Το προεπιλεγμένο μέγεθος των τόμων."
 
@@ -556,7 +556,7 @@ msgstr ""
 "Ελληνική μεταφραστική ομάδα CAFE\n"
 " Αλέξανδρος Μουχτσής <alexandros@gnugr.org>\n"
 "\n"
-"Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.mate.gr/"
+"Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.cafe.gr/"
 
 #: src/dlg-add-files.c:103 src/dlg-add-folder.c:136
 msgid "Could not add the files to the archive"

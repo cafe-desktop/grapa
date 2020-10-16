@@ -903,7 +903,7 @@ get_icon_name (const gchar *mime_type)
 
   if (mime_type)
     {
-      name = g_strconcat ("mate-mime-", mime_type, NULL);
+      name = g_strconcat ("cafe-mime-", mime_type, NULL);
 
       for(s = name; *s; ++s)
         {
@@ -916,7 +916,7 @@ get_icon_name (const gchar *mime_type)
       !gtk_icon_theme_has_icon (gtk_icon_theme_get_default (), name))
     {
       g_free (name);
-      name = g_strdup ("mate-mime-image");
+      name = g_strdup ("cafe-mime-image");
     }
 
   return name;
