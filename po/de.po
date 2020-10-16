@@ -96,7 +96,7 @@ msgstr "Engrampa-Archivverwaltung"
 
 #: data/engrampa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
-msgstr "Eine Archivverwaltung für die Mate-Arbeitsumgebung"
+msgstr "Eine Archivverwaltung für die Cafe-Arbeitsumgebung"
 
 #: data/engrampa.appdata.xml.in:10
 msgid ""

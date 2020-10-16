@@ -263,20 +263,20 @@
 #
 # ##############################################
 # ##############################################
-# Mate 2.4 (engrampa 2.4.xx)
+# Cafe 2.4 (engrampa 2.4.xx)
 # ##############################################
-# kostas:25May2003, updated translation for Mate 2.4xx
+# kostas:25May2003, updated translation for Cafe 2.4xx
 # kostas: 06Jul2003, one more update
 # Nikos: 7jul2003, fixes for access keys
 # kostas: 03Aug2003, one more update
 # ##############################################
-# Mate 2.6
+# Cafe 2.6
 # ##############################################
 # kostas: 12Nov2003, updates and fixes
 # Nikos: 28Nov2003, pass updates made for 2.4 branch to HEAD
 # kostas: 7Mar2004, update
 # ##############################################
-# Mate 2.8
+# Cafe 2.8
 # ##############################################
 # nikos 30Aug2004, update
 #
@@ -295,7 +295,7 @@
 
 ========== en@shaw.po ==========
 # Shavian translation for engrampa.
-# Copyright (C) 2009 The Mate Foundation.
+# Copyright (C) 2009 The Cafe Foundation.
 # Thomas Thurman <tthurman@gnome.org>, 2009.
 
 
@@ -526,7 +526,7 @@
 # Andras Timar <timar at cafe dot hu>, 2002, 2003, 2004.
 # Laszlo Dvornik <dvornik at cafe dot hu>, 2004.
 # Gabor Kelemen <kelemeng at cafe dot hu>, 2005, 2006, 2007, 2008, 2009, 2010.
-# Mate ORY <orycafe at gmail d0t com>, 2006, 2008.
+# Cafe ORY <orycafe at gmail d0t com>, 2006, 2008.
 
 
 
@@ -663,7 +663,7 @@
 ========== lv.po ==========
 # translation of lv.po to Latvian
 # Latvian translation for Engrampa.
-# Copyright © 2006 Mate i18n Project for Latvian.
+# Copyright © 2006 Cafe i18n Project for Latvian.
 #
 # Artis Trops <hornet@navigator.lv>, 2004.
 # Edgars Jēkabsons <edgars@way.lv>, 2004.
@@ -983,7 +983,7 @@
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2002.
 # Matjaž Horvat <m@owca.info>, 2006.
 # Matic Žgur <mr.zgur@gmail.com>, 2007.
-# Matej Urbančič <cafeju@svn.cafe.org>, 2007 - 2010.
+# Cafej Urbančič <cafeju@svn.cafe.org>, 2007 - 2010.
 #
 
 

@@ -544,7 +544,7 @@ msgstr ""
 
 #: src/actions.c:902
 msgid "An archive manager for CAFE."
-msgstr "Et program til at håndtere arkiver til Mate."
+msgstr "Et program til at håndtere arkiver til Cafe."
 
 #: src/actions.c:905
 msgid "translator-credits"

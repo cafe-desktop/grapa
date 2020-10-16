@@ -527,7 +527,7 @@ msgstr ""
 
 #: src/actions.c:902
 msgid "An archive manager for CAFE."
-msgstr "Un xestor d'archivadores pa Mate."
+msgstr "Un xestor d'archivadores pa Cafe."
 
 #: src/actions.c:905
 msgid "translator-credits"

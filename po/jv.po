@@ -54,7 +54,7 @@ msgstr "Sanes barang sing saged dilakokna"
 
 #: ../copy-n-paste/eggsmclient.c:225
 msgid "Disable connection to session manager"
-msgstr "Mateni sambungan menyang manager sesi"
+msgstr "Cafeni sambungan menyang manager sesi"
 
 #: ../copy-n-paste/eggsmclient.c:228
 msgid "Specify file containing saved configuration"

@@ -244,7 +244,7 @@
 
 ### engrampa 1.14.0
 
-  * Drop MateConf migration script
+  * Drop CafeConf migration script
   * Fix random crash in "open with" dialog
   * 7z: avoid problems with '?' char in filenames
   * 7z: correct checking for p7zip 15.09+
