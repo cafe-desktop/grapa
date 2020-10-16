@@ -203,32 +203,32 @@
     <primary>Grapa</primary> 
   </indexterm> 
   <indexterm zone="index"> 
-    <primary>engrampa</primary> 
+    <primary>grapa</primary> 
   </indexterm>
   <indexterm zone="index"> 
     <primary>Archiving</primary> 
   </indexterm>
-  <indexterm zone="engrampa-add-files"> 
+  <indexterm zone="grapa-add-files"> 
     <primary>Archives</primary> 
     <secondary>Adding files to</secondary>
   </indexterm> 
-  <indexterm zone="engrampa-delete-files"> 
+  <indexterm zone="grapa-delete-files"> 
     <primary>Archives</primary> 
     <secondary>Deleting files from</secondary>
   </indexterm> 
-  <indexterm zone="engrampa-open"> 
+  <indexterm zone="grapa-open"> 
     <primary>Archives</primary> 
     <secondary>Opening</secondary>
   </indexterm> 
-  <indexterm zone="engrampa-view"> 
+  <indexterm zone="grapa-view"> 
     <primary>Archives</primary> 
     <secondary>Viewing</secondary>
   </indexterm> 
-  <indexterm zone="engrampa-extract"> 
+  <indexterm zone="grapa-extract"> 
     <primary>Archives</primary> 
     <secondary>Extracting</secondary>
   </indexterm> 
-  <indexterm zone="engrampa-create"> 
+  <indexterm zone="grapa-create"> 
     <primary>Archives</primary> 
     <secondary>Creating</secondary>
   </indexterm> 
@@ -237,7 +237,7 @@
 <!-- ============= Introduction ============================== -->
 <!-- Use the Introduction section to give a brief overview of what
      the application is and what it does. -->
-  <section xml:id="engrampa-intro"><info><title>Introduction</title></info> 
+  <section xml:id="grapa-intro"><info><title>Introduction</title></info> 
      
     <para>You can use the <application>Archive Manager</application> application to create, view, modify, or unpack an archive. An archive is a file that acts as a container for other files. An archive can contain many files, folders, and subfolders, usually in compressed form. 
     </para>
@@ -376,7 +376,7 @@
       </informaltable>
     <para>The most common archive format on Linux and Unix-like systems is the tar archive compressed with <command>gzip</command> or <command>bzip2</command>.  </para>
     <para>The most common archive format on Microsoft Windows systems is the archive created with <application>PKZIP</application> or <application>WinZip</application>.  </para>
-    <section xml:id="engrampa-intro-nonarchive"><info><title>Compressed Non-Archive Files</title></info>
+    <section xml:id="grapa-intro-nonarchive"><info><title>Compressed Non-Archive Files</title></info>
        
       <para>A compressed non-archive file is a file that is created when you use <command>bzip2</command>, <command>gzip</command>, <command>lzip</command>, <command>lzop</command>, <command>compress</command> or <command>rzip</command> to compress a non-archive file. For example, <filename>file.txt.gz</filename> is created when you use <command>gzip</command> to compress <filename>file.txt</filename>.</para>
       <para>You can use <application>Archive Manager</application> to create, open and extract a compressed non-archive file.</para> 
@@ -384,13 +384,13 @@
   </section>
 
 <!-- ============= Getting Started =========================== -->
-  <section xml:id="engrampa-get-start"><info><title>Getting Started</title></info>
+  <section xml:id="grapa-get-start"><info><title>Getting Started</title></info>
     
     <para>This section provides information on how to start <application>Archive Manager</application>, and describes the <application>Archive Manager</application> user interface.
     </para>
 
 <!-- ============= To Start Grapa ============================ -->
-         <section xml:id="engrampa-to-start"><info><title>To Start <application>Archive Manager</application></title></info>
+         <section xml:id="grapa-to-start"><info><title>To Start <application>Archive Manager</application></title></info>
                 
                 <para>You can start <application>Archive Manager</application> in the following ways:</para>
                 <variablelist>
@@ -403,22 +403,22 @@
                 <varlistentry>
                 <term>Command line</term>
                 <listitem>
-                <para>Execute the following command: <command>engrampa</command></para>
+                <para>Execute the following command: <command>grapa</command></para>
                 </listitem>
                 </varlistentry>
                 </variablelist>
         </section>
 
-         <section xml:id="engrampa-when-start"><info><title>When You Start <application>Archive Manager</application></title></info>
+         <section xml:id="grapa-when-start"><info><title>When You Start <application>Archive Manager</application></title></info>
                 
                 <para>When you start <application>Archive Manager</application>, the following window is displayed:</para>
 
-                <figure xml:id="engrampa-FIG-main-window"><info><title><application>Archive Manager</application> Window</title></info>
+                <figure xml:id="grapa-FIG-main-window"><info><title><application>Archive Manager</application> Window</title></info>
                   
                   <screenshot>
                          <mediaobject>
                                 <imageobject>
-                                  <imagedata fileref="figures/engrampa_main_window.png" format="PNG"/>
+                                  <imagedata fileref="figures/grapa_main_window.png" format="PNG"/>
                                          </imageobject>
                                 <textobject> <phrase>Shows Grapa main window.</phrase>
                                 </textobject>
@@ -440,7 +440,7 @@
                   </varlistentry>
                   <varlistentry> <term>Folderbar</term>
                          <listitem>
-                                <para>The folderbar enables you to navigate among folders within an archive. <application>Archive Manager</application> displays the folderbar only in folder view. See <xref linkend="engrampa-view-type-folder"/> for more information.</para>
+                                <para>The folderbar enables you to navigate among folders within an archive. <application>Archive Manager</application> displays the folderbar only in folder view. See <xref linkend="grapa-view-type-folder"/> for more information.</para>
                          </listitem>
                   </varlistentry>
                   <varlistentry> <term>Display area</term>
@@ -456,7 +456,7 @@
                 </variablelist>
                 <para>When you right-click in the <application>Archive Manager</application> window, the application displays a popup menu. The popup menu contains the most common contextual archive commands. </para>
 
-     <section xml:id="engrampa-bookmarks"><info><title>Browsing the Filesystem</title></info>
+     <section xml:id="grapa-bookmarks"><info><title>Browsing the Filesystem</title></info>
         
         <para>Several <application>Archive Manager</application> dialogs (<guilabel>New</guilabel>, <guilabel>Open</guilabel>, <guilabel>Extract</guilabel>,...) enable you
         to browse files and folders on your computer. Refer to the <link xlink:href="help:cafe-user-guide/filechooser-open">Desktop User Guide</link> to learn more about using the 
@@ -472,7 +472,7 @@
 
 <!-- ======= Working with archives ============= --> 
 
-<section xml:id="engrampa-working"><info><title>Working With Archives</title></info>
+<section xml:id="grapa-working"><info><title>Working With Archives</title></info>
       
       <para>
         When you use <application>Archive Manager</application> to work with an archive, all changes are saved to disk immediately. For example, if you delete a file from an archive, <application>Archive Manager</application> deletes the file as soon as you click <guibutton>OK</guibutton>. This behavior is different to that of most applications, which save the changes to disk only when you quit the application or select <guimenuitem>Save</guimenuitem> in the menu.</para>
@@ -525,7 +525,7 @@
       This manual documents functionality from the menubar.
       </para>
 
-    <section xml:id="engrampa-pattern"><info><title>Filename Patterns</title></info>
+    <section xml:id="grapa-pattern"><info><title>Filename Patterns</title></info>
       
       <para><application>Archive Manager</application> enables you to add, extract, or delete several files at once. To apply an action to all files that match a certain pattern, enter the pattern in the text box. The pattern can include standard wildcard symbols such as <keycap>*</keycap> to match any string, and <keycap>?</keycap> to match any single symbol. You can enter several patterns separated by semicolons. <application>Archive Manager</application> applies the action to all files that match at least one of the patterns. The examples in the following table show how to use filename patterns to select files.
       </para>
@@ -565,7 +565,7 @@
 
 <!-- ======= To open an archive ============= --> 
 
-<section xml:id="engrampa-open"><info><title>To Open an Archive</title></info>
+<section xml:id="grapa-open"><info><title>To Open an Archive</title></info>
       
       <para>
 	To open an archive, perform the following steps:
@@ -598,12 +598,12 @@
         To open another archive, choose <menuchoice><guimenu>Archive</guimenu><guimenuitem>Open</guimenuitem></menuchoice> again. <application>Archive Manager</application> opens each archive in a new window. You can't open another archive in the same window.
       </para>
       <para>
-	If you try to open an archive that was created in a format that <application>Archive Manager</application> does not recognize, the application displays an error message. See <xref linkend="engrampa-intro"/> for a list of supported formats.
+	If you try to open an archive that was created in a format that <application>Archive Manager</application> does not recognize, the application displays an error message. See <xref linkend="grapa-intro"/> for a list of supported formats.
       </para>
   </section>
 
 <!-- ======= Selecting files in an archive  ============= --> 
-    <section xml:id="engrampa-select-files"><info><title>To Select Files in an Archive</title></info>
+    <section xml:id="grapa-select-files"><info><title>To Select Files in an Archive</title></info>
       
     <para>
       To select all files in an archive, choose <menuchoice><guimenu>Edit</guimenu><guimenuitem>Select All</guimenuitem></menuchoice> or press <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>. </para>
@@ -613,7 +613,7 @@
 
   <!-- =========== Extracting Files From an Archive ==================== -->
 
-  <section xml:id="engrampa-extract"><info><title>To Extract Files From an Archive</title></info> 
+  <section xml:id="grapa-extract"><info><title>To Extract Files From an Archive</title></info> 
      
     <para>
 	To extract files from an open archive, perform the following steps:
@@ -628,7 +628,7 @@
         Select the folder where <application>Archive Manager</application> extracts the files.</para>
         </listitem>
         <listitem><para>
-        Select the required extract options. For more information about the extract options, see <xref linkend="engrampa-extract-options"/>.</para>
+        Select the required extract options. For more information about the extract options, see <xref linkend="grapa-extract-options"/>.</para>
         </listitem>
         <listitem><para>
         Click <guibutton>Extract</guibutton>.</para>
@@ -640,23 +640,23 @@
             If some but not all of the files in the archive are protected by a password, and you have not specified the password, <application>Archive Manager</application> does not ask for a password. However, <application>Archive Manager</application> extracts only the unprotected files.
           </para>
           <para>
-            For more information about passwords, see <xref linkend="engrampa-encrypt-files"/>.
+            For more information about passwords, see <xref linkend="grapa-encrypt-files"/>.
           </para>
         </note>
         </listitem>
         </orderedlist>
         </para>
-      <para><application>Archive Manager</application> also provides ways of extracting files from an archive in a file manager window, without opening a <application>Archive Manager</application> window. See <xref linkend="engrampa-fmgr"/> for more information.</para>
+      <para><application>Archive Manager</application> also provides ways of extracting files from an archive in a file manager window, without opening a <application>Archive Manager</application> window. See <xref linkend="grapa-fmgr"/> for more information.</para>
     <para>
       The Extract operation extracts a <emphasis>copy</emphasis> of the specified files from the archive. The extracted files have the same permissions and modification date as the original files that were added to the archive.
     </para>
     <para>
-      The Extract operation does not change the contents of the archive. For information on how to delete files from an archive, see <xref linkend="engrampa-delete-files"/>. 
+      The Extract operation does not change the contents of the archive. For information on how to delete files from an archive, see <xref linkend="grapa-delete-files"/>. 
     </para>
   </section>
     
 <!-- ======= Closing the Archive ============= --> 
-  <section xml:id="engrampa-archive-close"><info><title>To Close an Archive</title></info>
+  <section xml:id="grapa-archive-close"><info><title>To Close an Archive</title></info>
     
     <para>To close the current archive and the current <application>Archive Manager</application> window, choose <menuchoice> <guimenu>Archive</guimenu> <guimenuitem>Close</guimenuitem> </menuchoice>, or press <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>.
     </para>
@@ -669,11 +669,11 @@
 
 
 <!-- =============  Creating Archives ============================= -->
-<section xml:id="engrampa-creating"><info><title>Creating Archives</title></info> 
+<section xml:id="grapa-creating"><info><title>Creating Archives</title></info> 
      
     <para>
       In addition to opening existing archives, you can also create new archives with <application>Archive Manager</application>.</para>
-    <section xml:id="engrampa-create"><info><title>To Create an Archive</title></info> 
+    <section xml:id="grapa-create"><info><title>To Create an Archive</title></info> 
      
     <para>
       To create an archive, perform the following steps:
@@ -691,14 +691,14 @@
           </para>
         </listitem>
         <listitem><para>
-        Select the required create options clicking on <guilabel>Other Options</guilabel>. For more information about the create options, see <xref linkend="engrampa-create-options"/>.</para>
+        Select the required create options clicking on <guilabel>Other Options</guilabel>. For more information about the create options, see <xref linkend="grapa-create-options"/>.</para>
         </listitem>
         <listitem>
           <para>Click <guibutton>New</guibutton>. <application>Archive Manager</application> creates an empty archive, but does not yet write the archive to disk. 
           </para>
         </listitem>
         <listitem>
-          <para>Add files to the new archive as described in <xref linkend="engrampa-add-files"/>.  
+          <para>Add files to the new archive as described in <xref linkend="grapa-add-files"/>.  
                 <note>
                   <para><application>Archive Manager</application> writes a new archive to disk only when the archive contains at least one file. If you create a new archive and quit <application>Archive Manager</application> before you add any files to the archive, <application>Archive Manager</application> deletes the archive.
                   </para>
@@ -710,7 +710,7 @@
 </section>
 
     <!-- ======= Adding files to an archive  ============= --> 
-  <section xml:id="engrampa-add-files"><info><title>To Add Files to an Archive</title></info>
+  <section xml:id="grapa-add-files"><info><title>To Add Files to an Archive</title></info>
     
     <para>
       To add files to an archive, perform the following steps:
@@ -730,15 +730,15 @@
          </listitem>
       </orderedlist>
     </para>
-    <para>You cannot add folders to the archive with the <guilabel>Add Files</guilabel> dialog. To add a folder see <xref linkend="engrampa-add-folder"/>.</para>
-    <para>The <guilabel>Add Files</guilabel> dialog provides the <guilabel>Add only if newer</guilabel> option, see <xref linkend="engrampa-add-options"/> for more information on this option.</para>
-    <para>You can also add files to an archive in a file manager window, without opening an <application>Archive Manager</application> window. See <xref linkend="engrampa-fmgr"/> for more information.</para>
+    <para>You cannot add folders to the archive with the <guilabel>Add Files</guilabel> dialog. To add a folder see <xref linkend="grapa-add-folder"/>.</para>
+    <para>The <guilabel>Add Files</guilabel> dialog provides the <guilabel>Add only if newer</guilabel> option, see <xref linkend="grapa-add-options"/> for more information on this option.</para>
+    <para>You can also add files to an archive in a file manager window, without opening an <application>Archive Manager</application> window. See <xref linkend="grapa-fmgr"/> for more information.</para>
     <para>The Add operation adds a <emphasis>copy</emphasis> of the specified files or folders to the archive. <application>Archive Manager</application> does not remove the original files, which remain unchanged in the file system. The copies that are added to the archive have the same permissions and modification date as the original files. 
     </para>
     </section>
 
 <!-- ======= Adding files - Adding folder  ============= --> 
-    <section xml:id="engrampa-add-folder"><info><title>To Add a Folder to an Archive</title></info>
+    <section xml:id="grapa-add-folder"><info><title>To Add a Folder to an Archive</title></info>
       
     <para>
       To add a folder to an archive, perform the following steps:
@@ -758,11 +758,11 @@
          </listitem>
       </orderedlist>
     </para>
-    <para>The <guilabel>Add a Folder</guilabel> dialog provides several advanced options. See <xref linkend="engrampa-add-options"/> for more information.</para>
+    <para>The <guilabel>Add a Folder</guilabel> dialog provides several advanced options. See <xref linkend="grapa-add-options"/> for more information.</para>
     </section>
 
   <!-- ======= Converting an Archive to Another Format ============= --> 
-  <section xml:id="engrampa-convert-archive"><info><title>To Convert an Archive to Another Format</title></info>
+  <section xml:id="grapa-convert-archive"><info><title>To Convert an Archive to Another Format</title></info>
     
     <para>To convert an archive to another format and save as a new file, perform the following steps:
     </para>
@@ -784,7 +784,7 @@
         </para>
       </listitem>
       <listitem>
-        <para>Select the required create options clicking on <guilabel>Other Options</guilabel>. For more information about the create options, see <xref linkend="engrampa-create-options"/>.
+        <para>Select the required create options clicking on <guilabel>Other Options</guilabel>. For more information about the create options, see <xref linkend="grapa-create-options"/>.
         </para>
       </listitem>      
       <listitem>
@@ -798,7 +798,7 @@
             If some but not all of the files in the archive are protected by a password, and you have not specified the password, <application>Archive Manager</application> does not ask for a password. However, <application>Archive Manager</application> copies only the unprotected files to the new archive.
           </para>
           <para>
-            For more information about passwords, see <xref linkend="engrampa-encrypt-files"/>.
+            For more information about passwords, see <xref linkend="grapa-encrypt-files"/>.
           </para>
         </note>
       </listitem>
@@ -807,14 +807,14 @@
 </section>
 
 <!-- ======= Operations on Archive Contents ============= --> 
-<section xml:id="engrampa-modify-contents"><info><title>Modifying the Contents of an Archive</title></info>
+<section xml:id="grapa-modify-contents"><info><title>Modifying the Contents of an Archive</title></info>
   
   <para>
     You can modify the contents of an archive in several ways.
   </para>
 
 <!-- ======= Encrypting files in an archive  ============= --> 
-    <section xml:id="engrampa-encrypt-files"><info><title>To Encrypt Files in an Archive</title></info>
+    <section xml:id="grapa-encrypt-files"><info><title>To Encrypt Files in an Archive</title></info>
       
     <para>For security, you might want to encrypt the files that you add to an archive. </para>
       <para>If the archive format supports encryption, you can specify a password to encrypt the files that you add to the archive.</para>
@@ -829,7 +829,7 @@
        </orderedlist>
     <para><application>Archive Manager</application> uses the password to encrypt the files that you add to the current archive, and to decrypt the files that you extract from the current archive. <application>Archive Manager</application> deletes the password when you close the archive.
       </para>
-      <para>For information on how to check whether an archive contains encrypted files, see <xref linkend="engrampa-extra-info"/>.
+      <para>For information on how to check whether an archive contains encrypted files, see <xref linkend="grapa-extra-info"/>.
       </para>
       <note>
       <para>The encryption provided by archive utilities is weak and insecure. If security is important, use a strong encryption tool such as <link xlink:href="http://www.gnupg.org">GNU Privacy Guard</link>.
@@ -838,7 +838,7 @@
     </section>
 
 <!-- ======= Renaming files in an archive  ============= --> 
-  <section xml:id="engrampa-rename-files"><info><title>To Rename a File in an Archive</title></info>
+  <section xml:id="grapa-rename-files"><info><title>To Rename a File in an Archive</title></info>
     
     <para>To rename a file in an archive, perform the following steps:</para>
       <orderedlist inheritnum="ignore" continuation="restarts">
@@ -859,7 +859,7 @@
   </section>
 
 <!-- ======= Copying files in an archive  ============= --> 
-  <section xml:id="engrampa-copy-files"><info><title>To Copy Files in an Archive</title></info>
+  <section xml:id="grapa-copy-files"><info><title>To Copy Files in an Archive</title></info>
     
     <para>To copy files in an archive, perform the following steps:</para>
       <orderedlist inheritnum="ignore" continuation="restarts">
@@ -879,7 +879,7 @@
   </section>
 
 <!-- ======= Moving files in an archive  ============= --> 
-  <section xml:id="engrampa-move-files"><info><title>To Move Files in an Archive</title></info>
+  <section xml:id="grapa-move-files"><info><title>To Move Files in an Archive</title></info>
     
     <para>To move files in an archive, perform the following steps:</para>
       <orderedlist inheritnum="ignore" continuation="restarts">
@@ -899,7 +899,7 @@
   </section>
 
 <!-- ======= Deleting files from an archive  ============= --> 
-  <section xml:id="engrampa-delete-files"><info><title>To Delete Files From an Archive</title></info>
+  <section xml:id="grapa-delete-files"><info><title>To Delete Files From an Archive</title></info>
     
     <para>To delete files from an archive, perform the following steps:</para>
       <orderedlist inheritnum="ignore" continuation="restarts">
@@ -932,7 +932,7 @@
               <term><guilabel>Files</guilabel></term>
               <listitem>
                 <para>
-                  Delete from the archive all files that match the specified pattern. See <xref linkend="engrampa-pattern"/> for more information about filename patterns. 
+                  Delete from the archive all files that match the specified pattern. See <xref linkend="grapa-pattern"/> for more information about filename patterns. 
                 </para>
               </listitem>
             </varlistentry>
@@ -946,7 +946,7 @@
   </section>
 
 <!-- =============  Modify a File in an Archive ==================== -->
-  <section xml:id="engrampa-modify-archive-file"><info><title>To Modify a File in an Archive</title></info> 
+  <section xml:id="grapa-modify-archive-file"><info><title>To Modify a File in an Archive</title></info> 
      
     <para>
       To modify a file in an archive perform the following steps:
@@ -959,7 +959,7 @@
     </para>
     <para><application>Archive Manager</application> uses the system-defined associations between file types and programs to determine the appropriate application to launch for a specific file. These assocations can be displayed and modified in the <guilabel>Open With</guilabel> tab of the file properties dialog. If <application>Archive Manager</application> cannot determine the appropriate application, <application>Archive Manager</application> displays the <guilabel>Open Files</guilabel> dialog to let you choose an application, as described in below.
     </para>
-    <section xml:id="engrampa-modifiy-archive-file-custom-app"><info><title>To Modify a File in an Archive with a Custom Application</title></info>
+    <section xml:id="grapa-modifiy-archive-file-custom-app"><info><title>To Modify a File in an Archive with a Custom Application</title></info>
     
     <para>
       You can use an application specified by you, rather than the default application, to modify a file. To use an external application to open a file:
@@ -969,20 +969,20 @@
       </orderedlist>
     </para>    
     <para><application>Archive Manager</application> displays the <guilabel>Open Files</guilabel> dialog, which lists all of the applications that can open files of the specified type. To select one of the applications, double-click the application name or click on the application name and then click <guibutton>Open</guibutton>. Alternatively, enter the application name in the <guilabel>Application</guilabel> text box and then click <guibutton>Open</guibutton> to launch the application of your choice.</para>
-    <para>Once the application starts follow the procedure from step 2 as described in <xref linkend="engrampa-modify-archive-file"/>.</para>
+    <para>Once the application starts follow the procedure from step 2 as described in <xref linkend="grapa-modify-archive-file"/>.</para>
     </section>
   </section>
 </section>
 
 
 <!-- ======= Viewing an archive ============= --> 
-<section xml:id="engrampa-view"><info><title>Viewing Archives</title></info>
+<section xml:id="grapa-view"><info><title>Viewing Archives</title></info>
   
   <para><application>Archive Manager</application> enables you to view several aspects of an archive.
   </para>
 
 <!-- ======= Archive Properties ============= --> 
-    <section xml:id="engrampa-view-archive-properties"><info><title>To View the Properties of an Archive</title></info>
+    <section xml:id="grapa-view-archive-properties"><info><title>To View the Properties of an Archive</title></info>
       
       <para>To view the properties of an archive, choose <menuchoice><guimenu>Archive</guimenu><guimenuitem>Properties</guimenuitem></menuchoice> to display the <guilabel>Properties</guilabel> dialog. The <guilabel>Properties</guilabel> dialog displays the following information about the archive:
             <variablelist>
@@ -1029,7 +1029,7 @@
  
 
 <!-- ======= Archive Contents ============= --> 
-    <section xml:id="engrampa-view-archive-contents"><info><title>To View the Contents of an Archive</title></info>
+    <section xml:id="grapa-view-archive-contents"><info><title>To View the Contents of an Archive</title></info>
       
 
       <para> <application>Archive Manager</application> displays the archive contents in the main window as a file list with the following columns:
@@ -1041,7 +1041,7 @@
 	  </varlistentry>
 	  <varlistentry>
 	    <term><guilabel>Size</guilabel></term>
-	    <listitem><para>The size of the file when the file is extracted from the archive. For a folder, the <guilabel>Size</guilabel> field is blank. For information on how to display the size of the compressed file, see <xref linkend="engrampa-extra-info"/>.
+	    <listitem><para>The size of the file when the file is extracted from the archive. For a folder, the <guilabel>Size</guilabel> field is blank. For information on how to display the size of the compressed file, see <xref linkend="grapa-extra-info"/>.
             </para></listitem>
 	  </varlistentry>
 	  <varlistentry>
@@ -1056,29 +1056,29 @@
 	  </varlistentry>
 	  <varlistentry>
 	    <term><guilabel>Location</guilabel></term>
-	    <listitem><para>The path to the file within the archive. This column is visible only when the window is in file view, when in folder view the location of the files is displayed in the <guilabel>Location</guilabel> text box of the folderbar. For more information about view types see <xref linkend="engrampa-view-type-folder"/>.
+	    <listitem><para>The path to the file within the archive. This column is visible only when the window is in file view, when in folder view the location of the files is displayed in the <guilabel>Location</guilabel> text box of the folderbar. For more information about view types see <xref linkend="grapa-view-type-folder"/>.
             </para></listitem>
 	  </varlistentry>
         </variablelist>
       </para>
       <para>If another program has modified the archive since <application>Archive Manager</application> opened the archive, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Reload</guimenuitem></menuchoice> to reload the archive contents from disk.
       </para>
-      <para>For information on how to customize the way that <application>Archive Manager</application> displays the archive contents, see <xref linkend="engrampa-archive-custom"/>.
+      <para>For information on how to customize the way that <application>Archive Manager</application> displays the archive contents, see <xref linkend="grapa-archive-custom"/>.
       </para>
-      <para>For more advanced tasks, use an application installed on your system. For more information, see <xref linkend="engrampa-view-archive-file"/>. 
+      <para>For more advanced tasks, use an application installed on your system. For more information, see <xref linkend="grapa-view-archive-file"/>. 
       </para>
     </section>
 
   <!-- =============  Viewing a File in an Archive ==================== -->
-  <section xml:id="engrampa-view-archive-file"><info><title>To View a File in an Archive</title></info> 
+  <section xml:id="grapa-view-archive-file"><info><title>To View a File in an Archive</title></info> 
      
     <para>
-      To view a file in an archive follow the steps described in <xref linkend="engrampa-modify-archive-file"/>.  If you save the opened file, click <guilabel>Cancel</guilabel> when <application>Archive Manager</application> asks confirmation to update the file in the archive.
+      To view a file in an archive follow the steps described in <xref linkend="grapa-modify-archive-file"/>.  If you save the opened file, click <guilabel>Cancel</guilabel> when <application>Archive Manager</application> asks confirmation to update the file in the archive.
     </para>
   </section>
 
 <!-- =============  Testing the Integrity of an Archive ==================== -->
-  <section xml:id="engrampa-test-archive"><info><title>To Test the Integrity of an Archive</title></info> 
+  <section xml:id="grapa-test-archive"><info><title>To Test the Integrity of an Archive</title></info> 
      
     <para>Sometimes an archive can be damaged for some reason, to check whether an archive is damaged, choose <menuchoice><guimenu>Archive</guimenu><guimenuitem>Test Integrity</guimenuitem></menuchoice>:
             <itemizedlist>
@@ -1109,33 +1109,33 @@
 </section>
     
 <!-- ======= Customizing the Archive Display ============= --> 
-<section xml:id="engrampa-archive-custom"><info><title>Customizing the Archive Display</title></info>
+<section xml:id="grapa-archive-custom"><info><title>Customizing the Archive Display</title></info>
   
   <para>You can customize the way that <application>Archive Manager</application> displays the archive contents, as follows:
   </para>
   <itemizedlist>
     <listitem>
-      <para>Switch between folder view and file view. For more information, see <xref linkend="engrampa-view-type"/>.
+      <para>Switch between folder view and file view. For more information, see <xref linkend="grapa-view-type"/>.
       </para>
     </listitem>
     <listitem>
-      <para>Specify the order in which to display files in the list. For more information, see <xref linkend="engrampa-view-sort"/>. 
+      <para>Specify the order in which to display files in the list. For more information, see <xref linkend="grapa-view-sort"/>. 
       </para>
     </listitem> 
     <listitem>
-      <para>Display additional details about the contents of the archive. For more information, see <xref linkend="engrampa-extra-info"/>. 
+      <para>Display additional details about the contents of the archive. For more information, see <xref linkend="grapa-extra-info"/>. 
       </para>
     </listitem> 
   </itemizedlist>
   <para><application>Archive Manager</application> updates the display immediately, when you make any of the above customizations.
   </para>
 
-  <section xml:id="engrampa-view-type"><info><title>To Set the View Type</title></info>
+  <section xml:id="grapa-view-type"><info><title>To Set the View Type</title></info>
     
-    <para>If the archive contains folders, you can show the archive contents in either <xref linkend="engrampa-view-type-folder"/> or <xref linkend="engrampa-view-type-file"/>.
+    <para>If the archive contains folders, you can show the archive contents in either <xref linkend="grapa-view-type-folder"/> or <xref linkend="grapa-view-type-file"/>.
     </para>
 
-    <section xml:id="engrampa-view-type-folder"><info><title>Folder View</title></info>
+    <section xml:id="grapa-view-type-folder"><info><title>Folder View</title></info>
       
       <para><application>Archive Manager</application> displays the archive contents in folder view by default. To explicitly select folder view, choose <menuchoice><guimenu>View</guimenu><guimenuitem>View as a Folder</guimenuitem></menuchoice>.
       </para>
@@ -1161,7 +1161,7 @@
                 <para>
                   <inlinemediaobject>
                     <imageobject>
-                      <imagedata fileref="figures/engrampa_leftarrow.png" format="PNG"/>
+                      <imagedata fileref="figures/grapa_leftarrow.png" format="PNG"/>
                     </imageobject>
                     <textobject>
                       <phrase>Shows icon to navigate backwards in location history list.</phrase>
@@ -1180,7 +1180,7 @@
                 <para>
                   <inlinemediaobject>
                     <imageobject>
-                      <imagedata fileref="figures/engrampa_rightarrow.png" format="PNG"/>
+                      <imagedata fileref="figures/grapa_rightarrow.png" format="PNG"/>
                     </imageobject>
                     <textobject>
                       <phrase>Shows icon to navigate forwards in location history list.</phrase>
@@ -1199,7 +1199,7 @@
                 <para>
                   <inlinemediaobject>
                     <imageobject>
-                      <imagedata fileref="figures/engrampa_uparrow.png" format="PNG"/>
+                      <imagedata fileref="figures/grapa_uparrow.png" format="PNG"/>
                     </imageobject>
                     <textobject>
                       <phrase>Shows icon to navigate up one level in folder tree.</phrase>
@@ -1218,7 +1218,7 @@
                 <para>
                   <inlinemediaobject>
                     <imageobject>
-                      <imagedata fileref="figures/engrampa_home.png" format="PNG"/>
+                      <imagedata fileref="figures/grapa_home.png" format="PNG"/>
                     </imageobject>
                     <textobject>
                       <phrase>Shows icon to open the top-level folder in the archive.</phrase>
@@ -1251,7 +1251,7 @@
       </informaltable>
     </section>
 
-    <section xml:id="engrampa-view-type-file"><info><title>File View</title></info>
+    <section xml:id="grapa-view-type-file"><info><title>File View</title></info>
       
       <para>To select file view, choose <menuchoice><guimenu>View</guimenu><guimenuitem>View All Files</guimenuitem></menuchoice>.
       </para>
@@ -1261,7 +1261,7 @@
 
   </section>
 
-  <section xml:id="engrampa-view-sort"><info><title>To Sort the File List</title></info>
+  <section xml:id="grapa-view-sort"><info><title>To Sort the File List</title></info>
     
     <para>You can sort the file list by name, size, type, modification date, or location. </para>
     <para>To specify a sort order, click on the heading of the corresponding column. </para>
@@ -1273,7 +1273,7 @@
     </para>
   </section>
 
-  <section xml:id="engrampa-extra-info"><info><title>To Display Additional Details</title></info>
+  <section xml:id="grapa-extra-info"><info><title>To Display Additional Details</title></info>
     
       <para>To open the <guilabel>Last Output</guilabel> dialog, choose <menuchoice><guimenu>View</guimenu><guimenuitem>Last Output</guimenuitem></menuchoice>: 
             <itemizedlist>
@@ -1292,13 +1292,13 @@
 
 <!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
 
-<section xml:id="engrampa-fmgr"><info><title>Using the File Manager to Work with an Archive</title></info> 
+<section xml:id="grapa-fmgr"><info><title>Using the File Manager to Work with an Archive</title></info> 
      
     <para>
 	You can use the file manager to add files to an archive, or to extract files from an archive.</para>
 
 <!-- ======= Adding files Using File Manager Menu  ============= --> 
-    <section xml:id="engrampa-fmgr-add"><info><title>To Add Files to an Archive by Using the File Manager</title></info>
+    <section xml:id="grapa-fmgr-add"><info><title>To Add Files to an Archive by Using the File Manager</title></info>
       
            <para>You can use the file manager to add files to an archive, in the following ways:
            <itemizedlist>
@@ -1321,17 +1321,17 @@
         <listitem><para>Choose the location where to save the archive file, from the <guilabel>Location</guilabel> drop-down list.  If the location is not present in the list choose <guilabel>Other...</guilabel> to select it with the <guilabel>Location</guilabel> dialog.</para>
         </listitem>
         <listitem><para>
-        Select the required create options clicking on <guilabel>Other Options</guilabel>. For more information about the create options, see <xref linkend="engrampa-create-options"/>.</para>
+        Select the required create options clicking on <guilabel>Other Options</guilabel>. For more information about the create options, see <xref linkend="grapa-create-options"/>.</para>
         </listitem>
         <listitem><para>Click <guilabel>Create</guilabel> to add the selected files to the root folder of the specified archive.
       </para>
-                 <note><para>To select any of the advanced add options, you must invoke <application>Archive Manager</application> as described in <xref linkend="engrampa-to-start"/>.</para></note>
+                 <note><para>To select any of the advanced add options, you must invoke <application>Archive Manager</application> as described in <xref linkend="grapa-to-start"/>.</para></note>
         </listitem>
       </orderedlist>
     </section>
 
 <!-- ======= Extracting files Using File Manager Menu  ============= --> 
-  <section xml:id="engrampa-fmgr-extract"><info><title>To Extract Files From an Archive by Using the File Manager</title></info>
+  <section xml:id="grapa-fmgr-extract"><info><title>To Extract Files From an Archive by Using the File Manager</title></info>
       
            <para>You can use the file manager to extract files from an archive, in the following ways:
            <itemizedlist>
@@ -1354,7 +1354,7 @@
 </section>
 
 <!-- ======= Create Archive Advanced Options  ============= --> 
-    <section xml:id="engrampa-create-options"><info><title>Create Options</title></info>
+    <section xml:id="grapa-create-options"><info><title>Create Options</title></info>
       
       <para>When creating a new archive, or when converting an existing archive to another format, click on <guilabel>Other Options</guilabel> to specify the following advanced options: 
       </para>
@@ -1365,7 +1365,7 @@
 	  <listitem>
 	  <para>Type the password that will be used to encrypt the archive.  If no password is specified the archive will not be encrypted.</para>
 	  <note>
-	    <para>Not all archive types support encryption.  For more information about file encryption, see <xref linkend="engrampa-encrypt-files"/>.</para>
+	    <para>Not all archive types support encryption.  For more information about file encryption, see <xref linkend="grapa-encrypt-files"/>.</para>
 	  </note>
 	  </listitem>
 	</varlistentry>
@@ -1388,7 +1388,7 @@
     </section>
 
 <!-- ======= Add Advanced Options  ============= --> 
-    <section xml:id="engrampa-add-options"><info><title>Add Options</title></info>
+    <section xml:id="grapa-add-options"><info><title>Add Options</title></info>
       
       <para>The <guilabel>Add Files</guilabel> and <guilabel>Add a Folder</guilabel> dialogs provide the following option: 
       </para>
@@ -1437,7 +1437,7 @@
 	</listitem>
       </varlistentry>
       </variablelist>
-      <section xml:id="engrampa-add-folder-options"><info><title>Add to Folder Options</title></info>
+      <section xml:id="grapa-add-folder-options"><info><title>Add to Folder Options</title></info>
       
       <para>The following options are available in the <guilabel>Add a Folder</guilabel> dialog and allow to automatically select and add all files that satisfy certain criteria: 
       </para>
@@ -1446,7 +1446,7 @@
 	<varlistentry>
 	  <term><guilabel>Include files</guilabel></term>
 	  <listitem>
-            <para>Type a filename pattern in this text box to include files with names that match the specified pattern. See <xref linkend="engrampa-pattern"/> for more information about filename patterns.
+            <para>Type a filename pattern in this text box to include files with names that match the specified pattern. See <xref linkend="grapa-pattern"/> for more information about filename patterns.
             </para>
           </listitem>
 	</varlistentry>
@@ -1454,7 +1454,7 @@
 	<varlistentry>
 	  <term><guilabel>Exclude files</guilabel></term>
 	  <listitem>
-            <para>Type a filename pattern in this text box to exclude files with names that match the specified pattern. See <xref linkend="engrampa-pattern"/> for more information about filename patterns.
+            <para>Type a filename pattern in this text box to exclude files with names that match the specified pattern. See <xref linkend="grapa-pattern"/> for more information about filename patterns.
             </para>
           </listitem>
 	</varlistentry>
@@ -1462,7 +1462,7 @@
 	<varlistentry>
 	  <term><guilabel>Exclude folders</guilabel></term>
 	  <listitem>
-            <para>Type a filename pattern in this text box to exclude folders with names that match the specified pattern. See <xref linkend="engrampa-pattern"/> for more information about filename patterns.
+            <para>Type a filename pattern in this text box to exclude folders with names that match the specified pattern. See <xref linkend="grapa-pattern"/> for more information about filename patterns.
             </para>
           </listitem>
 	</varlistentry>      
@@ -1531,7 +1531,7 @@
   </section>
 
 <!-- ======= Extract Options  ============= --> 
-  <section xml:id="engrampa-extract-options"><info><title>Extract Options</title></info>
+  <section xml:id="grapa-extract-options"><info><title>Extract Options</title></info>
     
       
     <para>
@@ -1566,7 +1566,7 @@
                 <term><guilabel>Files</guilabel></term>
                 <listitem>
                   <para>
-                    Extract from the archive all files that match the specified pattern. See <xref linkend="engrampa-pattern"/> for more information about filename patterns. 
+                    Extract from the archive all files that match the specified pattern. See <xref linkend="grapa-pattern"/> for more information about filename patterns. 
                   </para>
                 </listitem>
               </varlistentry>

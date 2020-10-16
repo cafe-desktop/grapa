@@ -2,7 +2,7 @@ dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.61)
 
-AC_INIT([engrampa], [1.24.1], [https://cafe-desktop.org])
+AC_INIT([grapa], [1.24.1], [https://cafe-desktop.org])
 AM_INIT_AUTOMAKE([1.9 foreign dist-xz no-dist-gzip check-news])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 
@@ -127,7 +127,7 @@ fi
 
 dnl ******************************
 
-GETTEXT_PACKAGE=engrampa
+GETTEXT_PACKAGE=grapa
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [GetText Package])
 
@@ -223,15 +223,15 @@ dnl ******************************
 
 AC_CONFIG_FILES([Makefile
 		 data/Makefile
-		 data/engrampa.desktop.in
-		 data/org.cafe.engrampa.gschema.xml
+		 data/grapa.desktop.in
+		 data/org.cafe.grapa.gschema.xml
 		 data/icons/Makefile
 		 copy-n-paste/Makefile
 		 src/Makefile
 		 src/sh/Makefile
 		 src/ui/Makefile
 		 caja/Makefile
-		 caja/libcaja-engrampa.caja-extension.desktop.in
+		 caja/libcaja-grapa.caja-extension.desktop.in
 		 help/Makefile
 		 po/Makefile.in])
 AC_OUTPUT

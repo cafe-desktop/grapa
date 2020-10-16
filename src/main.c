@@ -338,7 +338,7 @@ main (int argc, char **argv)
 	g_option_context_free (context);
 
 	g_set_application_name (_("Grapa"));
-	gtk_window_set_default_icon_name ("engrampa");
+	gtk_window_set_default_icon_name ("grapa");
 
 	client = egg_sm_client_get ();
 	g_signal_connect (client, "save-state", G_CALLBACK (fr_save_state), NULL);

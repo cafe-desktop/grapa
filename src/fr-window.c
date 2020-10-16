@@ -99,10 +99,10 @@ static int             dir_tree_icon_size = 0;
 #define XFR_ATOM   gdk_atom_intern  ("XdndGrapa0", FALSE)
 
 #define FR_CLIPBOARD (gdk_atom_intern_static_string ("_RNGRAMPA_SPECIAL_CLIPBOARD"))
-#define FR_SPECIAL_URI_LIST (gdk_atom_intern_static_string ("application/engrampa-uri-list"))
+#define FR_SPECIAL_URI_LIST (gdk_atom_intern_static_string ("application/grapa-uri-list"))
 
 static GtkTargetEntry clipboard_targets[] = {
-	{ "application/engrampa-uri-list", 0, 1 }
+	{ "application/grapa-uri-list", 0, 1 }
 };
 
 static GtkTargetEntry target_table[] = {
@@ -806,7 +806,7 @@ fr_window_init (FrWindow *window)
 	window->priv->batch_title = NULL;
 
 	context = gtk_widget_get_style_context (GTK_WIDGET (window));
-	gtk_style_context_add_class (context, "engrampa-window");
+	gtk_style_context_add_class (context, "grapa-window");
 
 	g_signal_connect (window,
 			  "realize",
@@ -2941,7 +2941,7 @@ fr_window_add_to_recent_list (FrWindow *window,
 		recent_data = g_new0 (GtkRecentData, 1);
 		recent_data->mime_type = g_content_type_get_mime_type (window->archive->content_type);
 		recent_data->app_name = "Grapa";
-		recent_data->app_exec = "engrampa";
+		recent_data->app_exec = "grapa";
 		gtk_recent_manager_add_full (gtk_recent_manager_get_default (), uri, recent_data);
 
 		g_free (recent_data);

@@ -1,6 +1,6 @@
 [Caja Extension]
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=engrampa
+Icon=grapa
 Name=Grapa
 Description=Allows to create and extract archives
 Author=Paolo Bacchilega <paolo.bacchilega@libero.it>;Perberos <perberos@gmail.com>

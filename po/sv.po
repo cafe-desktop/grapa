@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR CAFE Desktop Environment team
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -18,7 +18,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: engrampa 1.23.2\n"
+"Project-Id-Version: grapa 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
@@ -89,92 +89,92 @@ msgstr "Flaggor för sessionshantering:"
 msgid "Show session management options"
 msgstr "Visa flaggor för sessionshantering"
 
-#: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
+#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:3 src/main.c:49
 msgid "Grapa Archive Manager"
 msgstr "Arkivhanteraren Grapa"
 
-#: data/engrampa.appdata.xml.in:8
+#: data/grapa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
 msgstr "En arkivhanterare för skrivbordsmiljön CAFE"
 
-#: data/engrampa.appdata.xml.in:10
+#: data/grapa.appdata.xml.in:10
 msgid ""
 "Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:15
+#: data/grapa.appdata.xml.in:15
 msgid ""
 "Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:20
+#: data/grapa.appdata.xml.in:20
 msgid "7-Zip Compressed File (.7z)"
 msgstr "7-Zip-komprimerad fil (.7z)"
 
-#: data/engrampa.appdata.xml.in:21
+#: data/grapa.appdata.xml.in:21
 msgid "WinAce Compressed File (.ace)"
 msgstr "WinAce komprimerad fil  (.ace)"
 
-#: data/engrampa.appdata.xml.in:22
+#: data/grapa.appdata.xml.in:22
 msgid "ALZip Compressed File (.alz)"
 msgstr "ALZip komprimerad fil  (.alz)"
 
-#: data/engrampa.appdata.xml.in:23
+#: data/grapa.appdata.xml.in:23
 msgid "AIX Small Indexed Archive (.ar)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:24
+#: data/grapa.appdata.xml.in:24
 msgid "ARJ Compressed Archive (.arj)"
 msgstr "ARJ komprimerat arkiv (.arj)"
 
-#: data/engrampa.appdata.xml.in:25
+#: data/grapa.appdata.xml.in:25
 msgid "Cabinet File (.cab)"
 msgstr "Kabinett fil (.cab)"
 
-#: data/engrampa.appdata.xml.in:26
+#: data/grapa.appdata.xml.in:26
 msgid "UNIX CPIO Archive (.cpio)"
 msgstr "Unix CPIO arkiv (.cpio)"
 
-#: data/engrampa.appdata.xml.in:27
+#: data/grapa.appdata.xml.in:27
 msgid "Debian Linux Package (.deb, .udeb) [Read-only mode]"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:28
+#: data/grapa.appdata.xml.in:28
 msgid "ISO-9660 CD Disc Image (.iso) [Read-only mode]"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:29
+#: data/grapa.appdata.xml.in:29
 msgid "Java Archive (.jar)"
 msgstr "Java arkiv (.jar)"
 
-#: data/engrampa.appdata.xml.in:30
+#: data/grapa.appdata.xml.in:30
 msgid "Java Enterprise archive (.ear)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:31
+#: data/grapa.appdata.xml.in:31
 msgid "Java Web Archive (.war)"
 msgstr "Java webbarkiv (.war)"
 
-#: data/engrampa.appdata.xml.in:32
+#: data/grapa.appdata.xml.in:32
 msgid "LHA Archive (.lzh, .lha)"
 msgstr "LHA arkiv (.lzh, .lha)"
 
-#: data/engrampa.appdata.xml.in:33
+#: data/grapa.appdata.xml.in:33
 msgid "WinRAR Compressed Archive (.rar)"
 msgstr "WinRAR komprimerat arkiv (.rar)"
 
-#: data/engrampa.appdata.xml.in:34
+#: data/grapa.appdata.xml.in:34
 msgid "RAR Archived Comic Book (.cbr)"
 msgstr "Rar-arkiverad serietidning (.cbr)"
 
-#: data/engrampa.appdata.xml.in:35
+#: data/grapa.appdata.xml.in:35
 msgid "RPM Linux Package (.rpm) [Read-only mode]"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:36
+#: data/grapa.appdata.xml.in:36
 msgid ""
 "Tape Archive File uncompressed (.tar) or compressed with: gzip (.tar.gz, "
 ".tgz), brotli (.tar.br), bzip (.tar.bz, .tbz), bzip2 (.tar.bz2, .tbz2), "
@@ -182,62 +182,62 @@ msgid ""
 " (.tar.lzo, .tzo), 7zip (.tar.7z), xz (.tar.xz), Zstandard (.zst)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:39
+#: data/grapa.appdata.xml.in:39
 msgid "Stuffit Archives (.bin, .sit)"
 msgstr "StuffIt arkiv (.bin, .sit)"
 
-#: data/engrampa.appdata.xml.in:40
+#: data/grapa.appdata.xml.in:40
 msgid "ZIP Archive (.zip)"
 msgstr "ZIP arkiv (.zip)"
 
-#: data/engrampa.appdata.xml.in:41
+#: data/grapa.appdata.xml.in:41
 msgid "ZIP Archived Comic Book (.cbz)"
 msgstr "Zip-arkiverad serietidning (.cbz)"
 
-#: data/engrampa.appdata.xml.in:42
+#: data/grapa.appdata.xml.in:42
 msgid "ZOO Compressed Archive File (.zoo)"
 msgstr "ZOO komprimerad arkiv fil (.zoo)"
 
-#: data/engrampa.appdata.xml.in:43
+#: data/grapa.appdata.xml.in:43
 msgid ""
 "Single files compressed with gzip (.gz), brotli (.br), bzip (.bz), bzip2 "
 "(.bz2), compress (.Z), lrzip (.lrz), lzip (.lz), lzop (.lzo), rzip(.rz), xz "
 "(.xz)."
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:46
+#: data/grapa.appdata.xml.in:46
 msgid ""
 "Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
 "If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
 
-#: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
+#: data/grapa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
 msgid "Archive Manager"
 msgstr "Arkivhanterare"
 
-#: data/engrampa.desktop.in.in:5
+#: data/grapa.desktop.in.in:5
 msgid "Create and modify an archive"
 msgstr "Skapa och ändra ett arkiv"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: data/engrampa.desktop.in.in:12
-#: caja/libcaja-engrampa.caja-extension.desktop.in.in:4
-msgid "engrampa"
-msgstr "engrampa"
+#: data/grapa.desktop.in.in:12
+#: caja/libcaja-grapa.caja-extension.desktop.in.in:4
+msgid "grapa"
+msgstr "grapa"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/engrampa.desktop.in.in:17
+#: data/grapa.desktop.in.in:17
 msgid "CAFE;archive;manager;compression;"
 msgstr ""
 
-#: data/org.cafe.engrampa.gschema.xml.in:38
+#: data/org.cafe.grapa.gschema.xml.in:38
 msgid "How to sort files"
 msgstr "Hur filer ska sorteras"
 
-#: data/org.cafe.engrampa.gschema.xml.in:39
+#: data/org.cafe.grapa.gschema.xml.in:39
 msgid ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
@@ -245,11 +245,11 @@ msgstr ""
 "Vilket kriterium ska styra hur filer sorteras. Möjliga val: namn, storlek, "
 "typ, tidpunkt, mapp."
 
-#: data/org.cafe.engrampa.gschema.xml.in:43
+#: data/org.cafe.grapa.gschema.xml.in:43
 msgid "Sort type"
 msgstr "Sorteringssätt"
 
-#: data/org.cafe.engrampa.gschema.xml.in:44
+#: data/org.cafe.grapa.gschema.xml.in:44
 msgid ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
@@ -257,11 +257,11 @@ msgstr ""
 "Om sortering ska ske i stigande eller fallande ordning. Möjliga val: "
 "stigande, fallande."
 
-#: data/org.cafe.engrampa.gschema.xml.in:48
+#: data/org.cafe.grapa.gschema.xml.in:48
 msgid "List Mode"
 msgstr "Listläge"
 
-#: data/org.cafe.engrampa.gschema.xml.in:49
+#: data/org.cafe.grapa.gschema.xml.in:49
 msgid ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
@@ -269,43 +269,43 @@ msgstr ""
 "Om alla filer i ett arkiv ska visas (all_files) eller om arkivet ska visas "
 "som en mapp (as_folder)."
 
-#: data/org.cafe.engrampa.gschema.xml.in:53
+#: data/org.cafe.grapa.gschema.xml.in:53
 msgid "Display type"
 msgstr "Visningstyp"
 
-#: data/org.cafe.engrampa.gschema.xml.in:54
+#: data/org.cafe.grapa.gschema.xml.in:54
 msgid "Display the Type column in the main window."
 msgstr "Visa kolumnen för typ i huvudfönstret."
 
-#: data/org.cafe.engrampa.gschema.xml.in:58
+#: data/org.cafe.grapa.gschema.xml.in:58
 msgid "Display size"
 msgstr "Visa storlek"
 
-#: data/org.cafe.engrampa.gschema.xml.in:59
+#: data/org.cafe.grapa.gschema.xml.in:59
 msgid "Display the Size column in the main window."
 msgstr "Visa kolumnen för storlek i huvudfönstret."
 
-#: data/org.cafe.engrampa.gschema.xml.in:63
+#: data/org.cafe.grapa.gschema.xml.in:63
 msgid "Display time"
 msgstr "Visa tid"
 
-#: data/org.cafe.engrampa.gschema.xml.in:64
+#: data/org.cafe.grapa.gschema.xml.in:64
 msgid "Display the Time column in the main window."
 msgstr "Visa kolumnen för tidpunkt i huvudfönstret."
 
-#: data/org.cafe.engrampa.gschema.xml.in:68
+#: data/org.cafe.grapa.gschema.xml.in:68
 msgid "Display path"
 msgstr "Visa sökväg"
 
-#: data/org.cafe.engrampa.gschema.xml.in:69
+#: data/org.cafe.grapa.gschema.xml.in:69
 msgid "Display the Path column in the main window."
 msgstr "Visa kolumnen för mapp i huvudfönstret."
 
-#: data/org.cafe.engrampa.gschema.xml.in:73
+#: data/org.cafe.grapa.gschema.xml.in:73
 msgid "Use MIME icons"
 msgstr "Använd MIME ikoner"
 
-#: data/org.cafe.engrampa.gschema.xml.in:74
+#: data/org.cafe.grapa.gschema.xml.in:74
 msgid ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
@@ -313,51 +313,51 @@ msgstr ""
 "Om SANT så kommer olika ikoner att visas beroende på filtyp (långsammare), "
 "annars kommer samma ikon att användas för alla filer (snabbare)."
 
-#: data/org.cafe.engrampa.gschema.xml.in:78
+#: data/org.cafe.grapa.gschema.xml.in:78
 msgid "Name column width"
 msgstr "Bredd på namnkolumnen"
 
-#: data/org.cafe.engrampa.gschema.xml.in:79
+#: data/org.cafe.grapa.gschema.xml.in:79
 msgid "The default width of the name column in the file list."
 msgstr "Standardbredd på namnkolumnen i fillistan."
 
-#: data/org.cafe.engrampa.gschema.xml.in:85
+#: data/org.cafe.grapa.gschema.xml.in:85
 msgid "Max history length"
 msgstr "Maximal längd för historik"
 
-#: data/org.cafe.engrampa.gschema.xml.in:86
+#: data/org.cafe.grapa.gschema.xml.in:86
 msgid "Max number of items in the Open Recents menu."
 msgstr "Maximalt antal objekt i menyn Öppna senaste."
 
-#: data/org.cafe.engrampa.gschema.xml.in:99
+#: data/org.cafe.grapa.gschema.xml.in:99
 msgid "View toolbar"
 msgstr "Visa huvudverktygsraden"
 
-#: data/org.cafe.engrampa.gschema.xml.in:100
+#: data/org.cafe.grapa.gschema.xml.in:100
 msgid "Whether to display the toolbar."
 msgstr "Om verktygsraden ska visas."
 
-#: data/org.cafe.engrampa.gschema.xml.in:104
+#: data/org.cafe.grapa.gschema.xml.in:104
 msgid "View statusbar"
 msgstr "Visa statusrad"
 
-#: data/org.cafe.engrampa.gschema.xml.in:105
+#: data/org.cafe.grapa.gschema.xml.in:105
 msgid "Whether to display the statusbar."
 msgstr "Om statusraden ska visas."
 
-#: data/org.cafe.engrampa.gschema.xml.in:109 src/ui.h:234
+#: data/org.cafe.grapa.gschema.xml.in:109 src/ui.h:234
 msgid "View the folders pane"
 msgstr "Visa mappanelen"
 
-#: data/org.cafe.engrampa.gschema.xml.in:110
+#: data/org.cafe.grapa.gschema.xml.in:110
 msgid "Whether to display the folders pane."
 msgstr "Om mappanelen ska visas."
 
-#: data/org.cafe.engrampa.gschema.xml.in:116
+#: data/org.cafe.grapa.gschema.xml.in:116
 msgid "Editors"
 msgstr "Redigerare"
 
-#: data/org.cafe.engrampa.gschema.xml.in:117
+#: data/org.cafe.grapa.gschema.xml.in:117
 msgid ""
 "List of applications entered in the Open file dialog and not associated with"
 " the file type."
@@ -365,11 +365,11 @@ msgstr ""
 "Lista av applikationer som angivits i Öppna fil-dialogen och som ej är "
 "assosierade med filtypen."
 
-#: data/org.cafe.engrampa.gschema.xml.in:121
+#: data/org.cafe.grapa.gschema.xml.in:121
 msgid "Compression level"
 msgstr "Komprimeringsnivå"
 
-#: data/org.cafe.engrampa.gschema.xml.in:122
+#: data/org.cafe.grapa.gschema.xml.in:122
 msgid ""
 "Compression level used when adding files to an archive. Possible values: "
 "very_fast, fast, normal, maximum."
@@ -377,11 +377,11 @@ msgstr ""
 "Den komprimeringsnivå som ska användas när filer läggs till i ett arkiv. "
 "Möjliga val är very_fast, fast, normal, maximum."
 
-#: data/org.cafe.engrampa.gschema.xml.in:126
+#: data/org.cafe.grapa.gschema.xml.in:126
 msgid "Encrypt the archive header"
 msgstr "Kryptera arkivets huvud"
 
-#: data/org.cafe.engrampa.gschema.xml.in:127
+#: data/org.cafe.grapa.gschema.xml.in:127
 msgid ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
@@ -389,65 +389,65 @@ msgstr ""
 "Om arkivets huvud ska krypteras. Om huvudet krypteras så måste lösenordet "
 "anges för att lista arkivets innehåll."
 
-#: data/org.cafe.engrampa.gschema.xml.in:131
+#: data/org.cafe.grapa.gschema.xml.in:131
 msgid "Adds 'unar' support over .zip archives."
 msgstr "Lägger till \"unar\"-stöd över .zip-arkiv."
 
-#: data/org.cafe.engrampa.gschema.xml.in:132
+#: data/org.cafe.grapa.gschema.xml.in:132
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr "Aktiverar förmågan att stödja 'unar' över .zip-arkiv."
 
-#: data/org.cafe.engrampa.gschema.xml.in:143
+#: data/org.cafe.grapa.gschema.xml.in:143
 msgid "Overwrite existing files"
 msgstr "Skriv över befintliga filer"
 
-#: data/org.cafe.engrampa.gschema.xml.in:147
+#: data/org.cafe.grapa.gschema.xml.in:147
 msgid "Do not overwrite newer files"
 msgstr "Skriv inte över nyare filer"
 
-#: data/org.cafe.engrampa.gschema.xml.in:151
+#: data/org.cafe.grapa.gschema.xml.in:151
 msgid "Recreate the folders stored in the archive"
 msgstr "Återskapa mappar som lagrats i arkivet"
 
-#: data/org.cafe.engrampa.gschema.xml.in:189
+#: data/org.cafe.grapa.gschema.xml.in:189
 msgid "Default volume size"
 msgstr "Standardstorlek för volym"
 
-#: data/org.cafe.engrampa.gschema.xml.in:190
+#: data/org.cafe.grapa.gschema.xml.in:190
 msgid "The default size for volumes."
 msgstr "Standardstorlek för volymer."
 
-#: caja/caja-engrampa.c:329
+#: caja/caja-grapa.c:329
 msgid "Extract Here"
 msgstr "Extrahera här"
 
 #. Translators: the current position is the current folder
-#: caja/caja-engrampa.c:331
+#: caja/caja-grapa.c:331
 msgid "Extract the selected archive to the current position"
 msgstr "Extrahera det markerade arkivet till den aktuella platsen"
 
-#: caja/caja-engrampa.c:348
+#: caja/caja-grapa.c:348
 msgid "Extract To..."
 msgstr "Extrahera till..."
 
-#: caja/caja-engrampa.c:349
+#: caja/caja-grapa.c:349
 msgid "Extract the selected archive"
 msgstr "Extrahera det markerade arkivet"
 
-#: caja/caja-engrampa.c:368
+#: caja/caja-grapa.c:368
 msgid "Compress..."
 msgstr "Komprimera..."
 
-#: caja/caja-engrampa.c:369
+#: caja/caja-grapa.c:369
 msgid "Create a compressed archive with the selected objects"
 msgstr "Skapa ett komprimerat arkiv med de markerade objekten"
 
-#: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
+#: caja/libcaja-grapa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
 msgid "Grapa"
 msgstr "Grapa"
 
-#: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
+#: caja/libcaja-grapa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
 msgstr "Tillåter att skapa och extrahera arkiv"
 

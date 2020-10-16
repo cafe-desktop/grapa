@@ -257,7 +257,7 @@ file_sel_response_cb (GtkWidget    *widget,
 	}
 
 	if (response == GTK_RESPONSE_HELP) {
-		show_help_dialog (GTK_WINDOW (data->dialog), "engrampa-extract-options");
+		show_help_dialog (GTK_WINDOW (data->dialog), "grapa-extract-options");
 		return TRUE;
 	}
 

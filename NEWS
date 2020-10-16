@@ -1,13 +1,13 @@
-### engrampa 1.24.1
+### grapa 1.24.1
 
   * Translations update
   * Avoid memory leak in java utils
   * build: silent build warnings for distcheck
-  * engrampa.appdata.xml: recursive acronyms for .iso, .rpm filetypes
+  * grapa.appdata.xml: recursive acronyms for .iso, .rpm filetypes
   * Update authors
   * autoconf: get zstd mime type using libmagic if enabled
 
-### engrampa 1.24.0
+### grapa 1.24.0
 
   * Translations update
   * dlg-extract: GtkFileChooserDialog instead of set extra widget
@@ -16,7 +16,7 @@
   * Fix build using gcc 10 -fno-common flag
   * fr-process: do not override LC_CTYPE
 
-### engrampa 1.23.3
+### grapa 1.23.3
 
   * Translations update
   * Update copyright to 2020
@@ -34,7 +34,7 @@
   * Automatically sets the maximum size of static arrays
   * Fix localized pause UI logic
 
-### engrampa 1.23.2
+### grapa 1.23.2
 
   * Translations update
   * LHA: add test for checking compressed file integrity
@@ -73,7 +73,7 @@
   * remove warnings: cast from function call [-Wbad-function-cast]
   * remove build warning: local variable shadows another variable
 
-### engrampa 1.23.1
+### grapa 1.23.1
 
   * Translations update
   * java-utils: Remove blank spaces before reading package name
@@ -90,7 +90,7 @@
   * fr-window: remove unused struct members
   * fr-command-unarchiver: ask password if required
 
-### engrampa 1.23.0
+### grapa 1.23.0
 
   * Translations update
   * Remove trailing whitespaces
@@ -114,12 +114,12 @@
   * Clean-up archive list and descriptions
   * Show version on command line
 
-### engrampa 1.22.0
+### grapa 1.22.0
 
   * Translations update
   * Avoid array index out of bounds parsing dpkg-deb --info
   * warning: Use of memory after it is freed
-  * Read authors (updated) from engrampa.about gresource
+  * Read authors (updated) from grapa.about gresource
   * Enable Travis CI
   * eggsmclient: avoid deprecated 'g_type_class_add_private'
   * update copyright year to 2019
@@ -150,7 +150,7 @@
   * Add support for OpenDocument formats
   * UI: on the properties dialog, focus the Close button instead of the Help button by default
 
-### engrampa 1.21.0
+### grapa 1.21.0
 
   * Translations update
   * Add .a (Ar) support
@@ -158,13 +158,13 @@
   * fix crash on exit after using Open With dialog
   * avoid deprecated GtkStock
 
-### engrampa 1.20.0
+### grapa 1.20.0
 
   * Translations update
   * require GTK+ 3.22 and GLib 2.50
   * update copyright year to 2018
 
-### engrampa 1.19.2
+### grapa 1.19.2
 
   * Translations update
   * build: use PKG_CONFIG to fix cross-build
@@ -172,7 +172,7 @@
   * 7z: Fix: rename files with password without the list encrypted
   * 7z: Fix: delete/rename files/folders with the list encrypted
 
-### engrampa 1.19.1
+### grapa 1.19.1
 
   * Translations update
   * avoid deprecated gdk_screen_make_display_name
@@ -183,7 +183,7 @@
   * Add the button "Show the Files and Quit" in the progress dialog
   * Fix: create zip files in "maximum" compression level
 
-### engrampa 1.19.0
+### grapa 1.19.0
 
   * Translations update
   * Fix: Browsing history not correct
@@ -198,17 +198,17 @@
   * dlg-add-folder: avoid deprecated gtk_alignment_new ()
   * build: use variable instead of hardcoded file name when cleaning
 
-### engrampa 1.18.0
+### grapa 1.18.0
 
   * check the rar/unrar version to work the new date style with all versions
   * Fix: rar file listing now shows correct date with recent binary
   * Fix: open the 7z first split volume after compress
-  * Fix typo in NEWS: engrampa instead engramp
+  * Fix typo in NEWS: grapa instead engramp
   * Fix: compress rar split into volumes
   * Fix: compress 7z split into volumes
   * build: remove option that disables deprecated stuff
   * zip: added ear and war to the supported types list
-  * Update engrampa NEWS to use consistent, project wide, markdown-like 
+  * Update grapa NEWS to use consistent, project wide, markdown-like 
     formatting.
   * Build: require Caja >= 1.17.1 to build against GTK+3 version
     of libcaja-extension
@@ -218,7 +218,7 @@
   * Some corrections in GSettings schema
   * Translations update
 
-### engrampa 1.16.0
+### grapa 1.16.0
 
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
     --with-gtk build option
@@ -235,14 +235,14 @@
   * Some more fixes and cleanups
   * Translations update
 
-### engrampa 1.14.1
+### grapa 1.14.1
 
   * Translations update
   * tar: Fixed problems with backslashes
   * 'All files' is duplicated in available formats
   * fix extracting files with single-character names.
 
-### engrampa 1.14.0
+### grapa 1.14.0
 
   * Drop CafeConf migration script
   * Fix random crash in "open with" dialog
@@ -255,25 +255,25 @@
   * unar: avoid problems with '?' char in filenames
   * Translations update
 
-### engrampa 1.12.0
+### grapa 1.12.0
 
   * Retrieve strings directly from gschema (requires intltool 0.50.1)
   * Fix ngettext usage in progress dialog
   * Make extracting multiple archives to a separate dir actually work
   * Fixed overwrite check when the files to be extracted are inside a folder
 
-### engrampa 1.10.2
+### grapa 1.10.2
 
   * don't crash when opening archives on network drive
   * fix extracting archives with '[' in filename
   * some more improvements
 
-### engrampa 1.10.1
+### grapa 1.10.1
 
   * Help fixes
   * UI fixes
 
-### engrampa 1.10.0
+### grapa 1.10.0
 
   * Fix open rar file inside a rar file
   * Drop support for Gtk+ < 2.24
@@ -283,7 +283,7 @@
   * Fix possible errors with some password protected files
   * Use Caja GSettings schema optionally
   * Add ini file for caja extension
-  * Add engrampa.appdata.xml
+  * Add grapa.appdata.xml
   * Fix memory leaks
   * Fixed crash when clicking Cancel in Add Files
   * use g_get_user_config_dir instead of using .config/cafe
@@ -295,20 +295,20 @@
   * Change strings to use ellipsis
   * allow to compress iso images and tar archives from the caja menu
   * Ask overwrite confirmation when extracting files with drag&drop
-  * Small fixes for Gtk3 engrampa
-  * Fix hyphen-as-minus-sign issues for engrampa.1 man page
+  * Small fixes for Gtk3 grapa
+  * Fix hyphen-as-minus-sign issues for grapa.1 man page
   * Add keywords key to .desktop file
 
-### engrampa 1.8.0
+### grapa 1.8.0
 
   * Updates to man pages.
   * Update translations.
 
-### engrampa 1.7.2
+### grapa 1.7.2
 
   * Fix zip file extraction with unzip
 
-### engrampa 1.7.x
+### grapa 1.7.x
 
   * Added GTK3 support (--with-gtk=3.0 configure flag)
   * Added manpage

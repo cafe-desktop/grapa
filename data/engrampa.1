@@ -21,18 +21,18 @@
 .SH "NAME"
 Grapa \- Archive Manager for CAFE
 .SH "SYNOPSIS"
-.B engrampa [OPTIONS...] [FILES...]
+.B grapa [OPTIONS...] [FILES...]
 .SH "DESCRIPTION"
 Grapa is the official archive manager for the CAFE Desktop Environment, it is a graphical front-end to archiving utilities such as tar and zip. It is a fork of File Roller.
 .TP 
 Grapa supports most common operations such as creating, modifying and extracting files from an archive. You can also view the contents of an archive and open files contained within the archive.
 .TP
-This manual page briefly documents the \fBengrampa\fR command.
+This manual page briefly documents the \fBgrapa\fR command.
 
 .SH "OPTIONS"
 .TP
 \fBfilename(s)...\fR
-Specifies the archive file to open when \fBengrampa\fR starts. If this is not specified, \fBengrampa\fR will start with a blank window and you may open an archive from the menu or by using the shortcut CTRL+O.
+Specifies the archive file to open when \fBgrapa\fR starts. If this is not specified, \fBgrapa\fR will start with a blank window and you may open an archive from the menu or by using the shortcut CTRL+O.
 .TP
 \fB\-a, \-\-add\-to=ARCHIVE\fR
 Add files to the specified archive and quit the program
@@ -70,23 +70,23 @@ Show the application's version.
 This program also accepts the standard GTK options.
 
 .SH "EXAMPLES"
-\fBengrampa \-h cafelivecd.iso\fR
+\fBgrapa \-h cafelivecd.iso\fR
 .RS 4
 Extract cafelivecd.iso to ./cafelivecd in the current working directory.
 .RE
 .PP
-\fBengrampa ./cafelivecd/* \-a cafelivecd.tar.gz\fR
+\fBgrapa ./cafelivecd/* \-a cafelivecd.tar.gz\fR
 .RS 4
 Create a new gzip compressed tarball archive named cafelivecd.tar.gz, containing all the files located in the ./cafelivecd directory.
 .RE
 .PP
-\fBengrampa cafelivecd.tar.gz\fR
+\fBgrapa cafelivecd.tar.gz\fR
 .RS 4
 Open cafelivecd.tar.gz to view and manipulate its contents.
 
 .SH "BUGS"
 .SS Should you encounter any bugs, they may be reported at: 
-http://github.com/cafe-desktop/engrampa/issues
+http://github.com/cafe-desktop/grapa/issues
 .SH "AUTHORS"
 .SS \fBGrapa\fR is written by Paolo Bacchilega <paolo.bacch@tin.it> and Perberos <perberos@gmail.com>.
 .SS This Man Page has been updated/re-written for the CAFE Desktop Environment by:

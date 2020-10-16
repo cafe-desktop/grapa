@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR CAFE Desktop Environment team
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -11,7 +11,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: engrampa 1.24.0\n"
+"Project-Id-Version: grapa 1.24.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
 "POT-Creation-Date: 2020-08-17 16:41+0200\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
@@ -82,15 +82,15 @@ msgstr "Seanso valdymo parametrai:"
 msgid "Show session management options"
 msgstr "Rodyti seanso valdymo parametrus"
 
-#: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:47
+#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:3 src/main.c:47
 msgid "Grapa Archive Manager"
 msgstr "Archyvų tvarkytuvė „Grapa“"
 
-#: data/engrampa.appdata.xml.in:8
+#: data/grapa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
 msgstr "Archyvų tvarkytuvė CAFE darbalaukio aplinkai"
 
-#: data/engrampa.appdata.xml.in:10
+#: data/grapa.appdata.xml.in:10
 msgid ""
 "Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
@@ -100,7 +100,7 @@ msgstr ""
 "ir keisti archyvus, žiūrėti jų turinį, atsidaryti archyvuose esančius failus"
 " bei juos išskleisti."
 
-#: data/engrampa.appdata.xml.in:15
+#: data/grapa.appdata.xml.in:15
 msgid ""
 "Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
@@ -108,71 +108,71 @@ msgstr ""
 "Grapa yra tik archyvavimo programų kaip tar ir zip vartotojo sąsaja. "
 "Palaikomi šie failų tipai:"
 
-#: data/engrampa.appdata.xml.in:20
+#: data/grapa.appdata.xml.in:20
 msgid "7-Zip Compressed File (.7z)"
 msgstr "7-Zip suglaudintas failas (.7z)"
 
-#: data/engrampa.appdata.xml.in:21
+#: data/grapa.appdata.xml.in:21
 msgid "WinAce Compressed File (.ace)"
 msgstr "WinAce suglaudintas failas (.ace)"
 
-#: data/engrampa.appdata.xml.in:22
+#: data/grapa.appdata.xml.in:22
 msgid "ALZip Compressed File (.alz)"
 msgstr "ALZip suglaudintas failas (.alz)"
 
-#: data/engrampa.appdata.xml.in:23
+#: data/grapa.appdata.xml.in:23
 msgid "AIX Small Indexed Archive (.ar)"
 msgstr "AIX mažas indeksuotas archyvas (.ar)"
 
-#: data/engrampa.appdata.xml.in:24
+#: data/grapa.appdata.xml.in:24
 msgid "ARJ Compressed Archive (.arj)"
 msgstr "ARJ suglaudintas archyvas (.arj)"
 
-#: data/engrampa.appdata.xml.in:25
+#: data/grapa.appdata.xml.in:25
 msgid "Cabinet File (.cab)"
 msgstr "Kabinetinis failas (.cab)"
 
-#: data/engrampa.appdata.xml.in:26
+#: data/grapa.appdata.xml.in:26
 msgid "UNIX CPIO Archive (.cpio)"
 msgstr "UNIX CPIO archyvas (.cpio)"
 
-#: data/engrampa.appdata.xml.in:27
+#: data/grapa.appdata.xml.in:27
 msgid "Debian Package (.deb, .udeb) [Read-only mode]"
 msgstr "Debian paketas (.deb, .udeb.) [Tik skaitymo režimas]"
 
-#: data/engrampa.appdata.xml.in:28
+#: data/grapa.appdata.xml.in:28
 msgid "ISO-9660 Disk Image (.iso) [Read-only mode]"
 msgstr "ISO-96660 disko atvaizdas (.iso) [Tik skaitymo režimas]"
 
-#: data/engrampa.appdata.xml.in:29
+#: data/grapa.appdata.xml.in:29
 msgid "Java Archive (.jar)"
 msgstr "Java archyvas (.jar)"
 
-#: data/engrampa.appdata.xml.in:30
+#: data/grapa.appdata.xml.in:30
 msgid "Java Enterprise archive (.ear)"
 msgstr "Java Enterprise archyvas (.ear)"
 
-#: data/engrampa.appdata.xml.in:31
+#: data/grapa.appdata.xml.in:31
 msgid "Java Web Archive (.war)"
 msgstr "Java Web archyvas (.war)"
 
-#: data/engrampa.appdata.xml.in:32
+#: data/grapa.appdata.xml.in:32
 msgid "LHA Archive (.lzh, .lha)"
 msgstr "LHA archyvas (.lzh, .lha)"
 
-#: data/engrampa.appdata.xml.in:33
+#: data/grapa.appdata.xml.in:33
 msgid "WinRAR Compressed Archive (.rar)"
 msgstr "WinRAR suglaudintas archyvas (.rar)"
 
-#: data/engrampa.appdata.xml.in:34
+#: data/grapa.appdata.xml.in:34
 msgid "RAR Archived Comic Book (.cbr)"
 msgstr "RAR archyvuota komiksų knyga (.cbr)"
 
-#: data/engrampa.appdata.xml.in:35
+#: data/grapa.appdata.xml.in:35
 msgid "RPM Package Manager (.rpm) [Read-only mode]"
 msgstr "RPM paketas (.rpm) [Tik skaitymo režimas]"
 
-#: data/engrampa.appdata.xml.in:36
+#: data/grapa.appdata.xml.in:36
 msgid ""
 "Tape Archive File uncompressed (.tar) or compressed with: gzip (.tar.gz, "
 ".tgz), brotli (.tar.br), bzip (.tar.bz, .tbz), bzip2 (.tar.bz2, .tbz2), "
@@ -184,23 +184,23 @@ msgstr ""
 "compress (.tar.Z, .taz), lrzip (.tar.lrz, .tlrz), lzip (.tar.lz, .tlz), lzop"
 " (.tar.lzo, .tzo), 7zip (.tar.7z), xz (.tar.xz), Zstandard (.zst)"
 
-#: data/engrampa.appdata.xml.in:39
+#: data/grapa.appdata.xml.in:39
 msgid "Stuffit Archives (.bin, .sit)"
 msgstr "Stuffit archyvai (.bin, .sit)"
 
-#: data/engrampa.appdata.xml.in:40
+#: data/grapa.appdata.xml.in:40
 msgid "ZIP Archive (.zip)"
 msgstr "ZIP archyvas (.zip)"
 
-#: data/engrampa.appdata.xml.in:41
+#: data/grapa.appdata.xml.in:41
 msgid "ZIP Archived Comic Book (.cbz)"
 msgstr "ZIP archyvuota komiksų knyga (.cbz)"
 
-#: data/engrampa.appdata.xml.in:42
+#: data/grapa.appdata.xml.in:42
 msgid "ZOO Compressed Archive File (.zoo)"
 msgstr "ZOO suspaustas archyvas (.zoo)"
 
-#: data/engrampa.appdata.xml.in:43
+#: data/grapa.appdata.xml.in:43
 msgid ""
 "Single files compressed with gzip (.gz), brotli (.br), bzip (.bz), bzip2 "
 "(.bz2), compress (.Z), lrzip (.lrz), lzip (.lz), lzop (.lzo), rzip(.rz), xz "
@@ -210,7 +210,7 @@ msgstr ""
 " bzip2 (.bz2), compress (.Z), lrzip (.lrz), lzip (.lz), lzop (.lzo), "
 "rzip(.rz), xz (.xz)."
 
-#: data/engrampa.appdata.xml.in:46
+#: data/grapa.appdata.xml.in:46
 msgid ""
 "Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
 "If you would like to know more about CAFE and Grapa, please visit the "
@@ -220,26 +220,26 @@ msgstr ""
 "norite sužinoti daugiau apie CAFE ir Engrampą, prašom apsilankyti projekto "
 "tinklalapyje. "
 
-#: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
+#: data/grapa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
 msgid "Archive Manager"
 msgstr "Archyvų tvarkytuvė"
 
-#: data/engrampa.desktop.in.in:5
+#: data/grapa.desktop.in.in:5
 msgid "Create and modify an archive"
 msgstr "Kurti ir modifikuoti archyvą"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/engrampa.desktop.in.in:17
+#: data/grapa.desktop.in.in:17
 msgid "CAFE;archive;manager;compression;"
 msgstr ""
 "CAFE;archive;manager;compression;archyvų;tvarkytuvė;zip;pakuoti;glaudinti;suspausti"
 
-#: data/org.cafe.engrampa.gschema.xml.in:38
+#: data/org.cafe.grapa.gschema.xml.in:38
 msgid "How to sort files"
 msgstr "Kaip rikiuoti failus"
 
-#: data/org.cafe.engrampa.gschema.xml.in:39
+#: data/org.cafe.grapa.gschema.xml.in:39
 msgid ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
@@ -247,11 +247,11 @@ msgstr ""
 "Koks kriterijus turėtų būti naudojamas failų sutvarkymui. Galimos reikšmės: "
 "name, size, type, time, path."
 
-#: data/org.cafe.engrampa.gschema.xml.in:43
+#: data/org.cafe.grapa.gschema.xml.in:43
 msgid "Sort type"
 msgstr "Rikiavimo tipas"
 
-#: data/org.cafe.engrampa.gschema.xml.in:44
+#: data/org.cafe.grapa.gschema.xml.in:44
 msgid ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
@@ -259,11 +259,11 @@ msgstr ""
 "Ar rikiuoti didėjančia ar mažėjančia tvarka. Galimos reikšmės: ascending, "
 "descending."
 
-#: data/org.cafe.engrampa.gschema.xml.in:48
+#: data/org.cafe.grapa.gschema.xml.in:48
 msgid "List Mode"
 msgstr "Sąrašo veiksena"
 
-#: data/org.cafe.engrampa.gschema.xml.in:49
+#: data/org.cafe.grapa.gschema.xml.in:49
 msgid ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
@@ -271,43 +271,43 @@ msgstr ""
 "Ar rodyti visus failus archyve (all_files) ar rodyti archyvą kaip aplanką "
 "(as_folder)."
 
-#: data/org.cafe.engrampa.gschema.xml.in:53
+#: data/org.cafe.grapa.gschema.xml.in:53
 msgid "Display type"
 msgstr "Rodyti tipą"
 
-#: data/org.cafe.engrampa.gschema.xml.in:54
+#: data/org.cafe.grapa.gschema.xml.in:54
 msgid "Display the Type column in the main window."
 msgstr "Rodyti pagrindiniame lange Tipo stulpelį."
 
-#: data/org.cafe.engrampa.gschema.xml.in:58
+#: data/org.cafe.grapa.gschema.xml.in:58
 msgid "Display size"
 msgstr "Rodyti dydį"
 
-#: data/org.cafe.engrampa.gschema.xml.in:59
+#: data/org.cafe.grapa.gschema.xml.in:59
 msgid "Display the Size column in the main window."
 msgstr "Rodyti pagrindiniame lange Dydžio stulpelį."
 
-#: data/org.cafe.engrampa.gschema.xml.in:63
+#: data/org.cafe.grapa.gschema.xml.in:63
 msgid "Display time"
 msgstr "Rodyti laiką"
 
-#: data/org.cafe.engrampa.gschema.xml.in:64
+#: data/org.cafe.grapa.gschema.xml.in:64
 msgid "Display the Time column in the main window."
 msgstr "Rodyti pagrindiniame lange Laiko stulpelį."
 
-#: data/org.cafe.engrampa.gschema.xml.in:68
+#: data/org.cafe.grapa.gschema.xml.in:68
 msgid "Display path"
 msgstr "Rodyti kelią"
 
-#: data/org.cafe.engrampa.gschema.xml.in:69
+#: data/org.cafe.grapa.gschema.xml.in:69
 msgid "Display the Path column in the main window."
 msgstr "Rodyti pagrindiniame lange Kelio stulpelį."
 
-#: data/org.cafe.engrampa.gschema.xml.in:73
+#: data/org.cafe.grapa.gschema.xml.in:73
 msgid "Use MIME icons"
 msgstr "Naudoti MIME piktogramas"
 
-#: data/org.cafe.engrampa.gschema.xml.in:74
+#: data/org.cafe.grapa.gschema.xml.in:74
 msgid ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
@@ -315,52 +315,52 @@ msgstr ""
 "jei TEISINGA, rodys piktogramas, priklausomai nuo failo tipo (lėčiau), kitu "
 "atveju visiems failams visuomet naudos tą pačią piktogramą (greičiau)."
 
-#: data/org.cafe.engrampa.gschema.xml.in:78
+#: data/org.cafe.grapa.gschema.xml.in:78
 msgid "Name column width"
 msgstr "Pavadinimo stulpelio plotis"
 
-#: data/org.cafe.engrampa.gschema.xml.in:79
+#: data/org.cafe.grapa.gschema.xml.in:79
 msgid "The default width of the name column in the file list."
 msgstr "Numatytasis, failų sąraše esančio pavadinimo stulpelio, plotis."
 
-#: data/org.cafe.engrampa.gschema.xml.in:85
+#: data/org.cafe.grapa.gschema.xml.in:85
 msgid "Max history length"
 msgstr "Didžiausias istorijos dydis"
 
-#: data/org.cafe.engrampa.gschema.xml.in:86
+#: data/org.cafe.grapa.gschema.xml.in:86
 msgid "Max number of items in the Open Recents menu."
 msgstr ""
 "Didžiausias elementų, esančių meniu Atverti paskiausiai naudotus, skaičius."
 
-#: data/org.cafe.engrampa.gschema.xml.in:99
+#: data/org.cafe.grapa.gschema.xml.in:99
 msgid "View toolbar"
 msgstr "Rodyti įrankių juostą"
 
-#: data/org.cafe.engrampa.gschema.xml.in:100
+#: data/org.cafe.grapa.gschema.xml.in:100
 msgid "Whether to display the toolbar."
 msgstr "Ar rodyti įrankių juostą."
 
-#: data/org.cafe.engrampa.gschema.xml.in:104
+#: data/org.cafe.grapa.gschema.xml.in:104
 msgid "View statusbar"
 msgstr "Rodyti būsenos juostą"
 
-#: data/org.cafe.engrampa.gschema.xml.in:105
+#: data/org.cafe.grapa.gschema.xml.in:105
 msgid "Whether to display the statusbar."
 msgstr "Ar rodyti būsenos juostą."
 
-#: data/org.cafe.engrampa.gschema.xml.in:109 src/ui.h:234
+#: data/org.cafe.grapa.gschema.xml.in:109 src/ui.h:234
 msgid "View the folders pane"
 msgstr "Rodyti aplankų polangį"
 
-#: data/org.cafe.engrampa.gschema.xml.in:110
+#: data/org.cafe.grapa.gschema.xml.in:110
 msgid "Whether to display the folders pane."
 msgstr "Ar rodyti aplankų polangį."
 
-#: data/org.cafe.engrampa.gschema.xml.in:116
+#: data/org.cafe.grapa.gschema.xml.in:116
 msgid "Editors"
 msgstr "Redaktoriai"
 
-#: data/org.cafe.engrampa.gschema.xml.in:117
+#: data/org.cafe.grapa.gschema.xml.in:117
 msgid ""
 "List of applications entered in the Open file dialog and not associated with"
 " the file type."
@@ -368,11 +368,11 @@ msgstr ""
 "Programų, įvestų į failo Atvėrimo dialogą ir nesusietų su jokiu failų tipu, "
 "sąrašas."
 
-#: data/org.cafe.engrampa.gschema.xml.in:121
+#: data/org.cafe.grapa.gschema.xml.in:121
 msgid "Compression level"
 msgstr "Glaudinimo lygis"
 
-#: data/org.cafe.engrampa.gschema.xml.in:122
+#: data/org.cafe.grapa.gschema.xml.in:122
 msgid ""
 "Compression level used when adding files to an archive. Possible values: "
 "very_fast, fast, normal, maximum."
@@ -380,11 +380,11 @@ msgstr ""
 "Glaudinimo lygis, naudojamas pridedant failus į archyvą. Galimos reikšmės: "
 "very_fast, fast, normal, maximum."
 
-#: data/org.cafe.engrampa.gschema.xml.in:126
+#: data/org.cafe.grapa.gschema.xml.in:126
 msgid "Encrypt the archive header"
 msgstr "Užšifruoti archyvo antraštę"
 
-#: data/org.cafe.engrampa.gschema.xml.in:127
+#: data/org.cafe.grapa.gschema.xml.in:127
 msgid ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
@@ -392,65 +392,65 @@ msgstr ""
 "Ar užšifruoti archyvo antraštę. Jei antraštė yra užšifruota, bus taip pat "
 "reikalaujama slaptažodžio, norint išvardinti archyvo turinį."
 
-#: data/org.cafe.engrampa.gschema.xml.in:131
+#: data/org.cafe.grapa.gschema.xml.in:131
 msgid "Adds 'unar' support over .zip archives."
 msgstr "Įgalina „unrar“ palaikymą .zip archyvams."
 
-#: data/org.cafe.engrampa.gschema.xml.in:132
+#: data/org.cafe.grapa.gschema.xml.in:132
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr "Įgalina „unrar“ palaikymą .zip archyvams."
 
-#: data/org.cafe.engrampa.gschema.xml.in:143
+#: data/org.cafe.grapa.gschema.xml.in:143
 msgid "Overwrite existing files"
 msgstr "Perrašyti esamus failus"
 
-#: data/org.cafe.engrampa.gschema.xml.in:147
+#: data/org.cafe.grapa.gschema.xml.in:147
 msgid "Do not overwrite newer files"
 msgstr "Neperrašyti naujesnių failų"
 
-#: data/org.cafe.engrampa.gschema.xml.in:151
+#: data/org.cafe.grapa.gschema.xml.in:151
 msgid "Recreate the folders stored in the archive"
 msgstr "Atkurti archyve laikomų aplankų struktūrą"
 
-#: data/org.cafe.engrampa.gschema.xml.in:189
+#: data/org.cafe.grapa.gschema.xml.in:189
 msgid "Default volume size"
 msgstr "Numatytasis tomo dydis"
 
-#: data/org.cafe.engrampa.gschema.xml.in:190
+#: data/org.cafe.grapa.gschema.xml.in:190
 msgid "The default size for volumes."
 msgstr "Numatytasis tomų dydis."
 
-#: caja/caja-engrampa.c:329
+#: caja/caja-grapa.c:329
 msgid "Extract Here"
 msgstr "Išskleisti čia"
 
 #. Translators: the current position is the current folder
-#: caja/caja-engrampa.c:331
+#: caja/caja-grapa.c:331
 msgid "Extract the selected archive to the current position"
 msgstr "Išskleisti pažymėtą archyvą esamon vieton"
 
-#: caja/caja-engrampa.c:348
+#: caja/caja-grapa.c:348
 msgid "Extract To..."
 msgstr "Išskleisti į..."
 
-#: caja/caja-engrampa.c:349
+#: caja/caja-grapa.c:349
 msgid "Extract the selected archive"
 msgstr "Išskleisti pažymėtą archyvą"
 
-#: caja/caja-engrampa.c:368
+#: caja/caja-grapa.c:368
 msgid "Compress..."
 msgstr "Suglaudinti..."
 
-#: caja/caja-engrampa.c:369
+#: caja/caja-grapa.c:369
 msgid "Create a compressed archive with the selected objects"
 msgstr "Sukurti suglaudintą archyvą iš pažymėtų objektų"
 
-#: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:340
+#: caja/libcaja-grapa.caja-extension.desktop.in.in:5 src/main.c:340
 #: src/server.c:457
 msgid "Grapa"
 msgstr "Grapa"
 
-#: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
+#: caja/libcaja-grapa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
 msgstr "Leidžia sukurti ir išskleisti archyvus"
 

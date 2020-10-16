@@ -50,7 +50,7 @@ static int
 help_cb (GtkWidget   *w,
 	 DialogData  *data)
 {
-	show_help_dialog (GTK_WINDOW (data->dialog), "engrampa-view-archive-properties");
+	show_help_dialog (GTK_WINDOW (data->dialog), "grapa-view-archive-properties");
 	return TRUE;
 }
 

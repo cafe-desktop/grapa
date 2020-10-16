@@ -47,7 +47,7 @@ sub ReplaceAuthors {
 
 sub GetCurrentAuthors {
   my @authors;
-  open(FILE,"src/ui/engrampa.about") or die "Can't open src/ui/engrampa.about";
+  open(FILE,"src/ui/grapa.about") or die "Can't open src/ui/grapa.about";
   while (<FILE>) {
     if (/^Authors=*(.+)$/) {
       @authors=split(";",$1);

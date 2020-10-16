@@ -5,7 +5,7 @@ EXTRA_DIST = 			\
 	batch-password.ui	\
 	delete.ui		\
 	dlg-extract.ui		\
-	engrampa.about		\
+	grapa.about		\
 	menus-toolbars.ui	\
 	new.ui			\
 	password.ui		\

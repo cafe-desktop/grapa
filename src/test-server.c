@@ -27,7 +27,7 @@ GMainLoop *loop;
 
 
 static void
-engrampa_getsupportedtypes_ready_cb (GObject      *source_object,
+grapa_getsupportedtypes_ready_cb (GObject      *source_object,
 				    GAsyncResult *res,
 				    gpointer      user_data)
 {
@@ -91,7 +91,7 @@ engrampa_getsupportedtypes_ready_cb (GObject      *source_object,
 
 
 static void
-engrampa_addtoarchive_ready_cb (GObject      *source_object,
+grapa_addtoarchive_ready_cb (GObject      *source_object,
 				  GAsyncResult *res,
 				  gpointer      user_data)
 {
@@ -168,7 +168,7 @@ main (int argc, char *argv[])
 					   G_DBUS_CALL_FLAGS_NONE,
 					   G_MAXINT,
 					   NULL,
-					   engrampa_getsupportedtypes_ready_cb,
+					   grapa_getsupportedtypes_ready_cb,
 					   NULL);
 #endif
 
@@ -191,7 +191,7 @@ main (int argc, char *argv[])
 					   G_DBUS_CALL_FLAGS_NONE,
 					   G_MAXINT,
 					   NULL,
-					   engrampa_addtoarchive_ready_cb,
+					   grapa_addtoarchive_ready_cb,
 					   NULL);
 
 			g_free (archive);
@@ -218,7 +218,7 @@ main (int argc, char *argv[])
 					   G_DBUS_CALL_FLAGS_NONE,
 					   G_MAXINT,
 					   NULL,
-					   engrampa_addtoarchive_ready_cb,
+					   grapa_addtoarchive_ready_cb,
 					   NULL);
 
 			g_strfreev (files);
@@ -235,7 +235,7 @@ main (int argc, char *argv[])
 					   G_DBUS_CALL_FLAGS_NONE,
 					   G_MAXINT,
 					   NULL,
-					   engrampa_addtoarchive_ready_cb,
+					   grapa_addtoarchive_ready_cb,
 					   NULL);
 
 			/* -- ExtractHere -- */
@@ -248,7 +248,7 @@ main (int argc, char *argv[])
 					   G_DBUS_CALL_FLAGS_NONE,
 					   G_MAXINT,
 					   NULL,
-					   engrampa_addtoarchive_ready_cb,
+					   grapa_addtoarchive_ready_cb,
 					   NULL);
 
 #endif

@@ -569,7 +569,7 @@ show_help_dialog (GtkWindow  *parent,
 	char   *uri;
 	GError *error = NULL;
 
-	uri = g_strconcat ("help:engrampa", section ? "/" : NULL, section, NULL);
+	uri = g_strconcat ("help:grapa", section ? "/" : NULL, section, NULL);
 	if (! gtk_show_uri_on_window (parent, uri, GDK_CURRENT_TIME, &error)) {
 		GtkWidget *dialog;
 

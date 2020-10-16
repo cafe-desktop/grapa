@@ -2,16 +2,16 @@ NULL =
 
 SUBDIRS = sh ui
 
-bin_PROGRAMS = engrampa
-libexec_PROGRAMS = engrampa-server
+bin_PROGRAMS = grapa
+libexec_PROGRAMS = grapa-server
 noinst_PROGRAMS = test-server
 
 if RUN_IN_PLACE
 privdatadir = $(top_srcdir)/data/
 shdir = $(top_srcdir)/src/sh/
 else
-privdatadir = $(datadir)/engrampa/
-shdir = $(libexecdir)/engrampa/
+privdatadir = $(datadir)/grapa/
+shdir = $(libexecdir)/grapa/
 endif
 
 AM_CPPFLAGS =						\
@@ -185,38 +185,38 @@ fr-enum-types.c: typedefs.h fr-enum-types.h
 	&& (cmp -s xgen-$(@F) fr-enum-types.c || cp xgen-$(@F) fr-enum-types.c ) \
 	&& rm -f xgen-$(@F) )
 
-fr-resources.c: engrampa.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies engrampa.gresource.xml)
-	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name fr $(srcdir)/engrampa.gresource.xml
+fr-resources.c: grapa.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies grapa.gresource.xml)
+	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name fr $(srcdir)/grapa.gresource.xml
 
-fr-resources.h: engrampa.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies engrampa.gresource.xml)
-	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name fr $(srcdir)/engrampa.gresource.xml
+fr-resources.h: grapa.gresource.xml $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies grapa.gresource.xml)
+	$(GLIB_COMPILE_RESOURCES) --target=$@ --sourcedir=$(srcdir) --generate --c-name fr $(srcdir)/grapa.gresource.xml
 
-engrampa_SOURCES = 			\
+grapa_SOURCES = 			\
 	$(COMMON_SOURCES)		\
 	main.c
 
-engrampa_LDADD =					\
+grapa_LDADD =					\
 	$(top_builddir)/copy-n-paste/libeggsmclient.la	\
 	$(FR_LIBS)					\
 	${JSON_GLIB_LIBS}
 
-engrampa_server_SOURCES =		\
+grapa_server_SOURCES =		\
 	$(COMMON_SOURCES)		\
 	server.c
 
-engrampa_server_LDADD =		\
-	$(engrampa_LDADD)
+grapa_server_LDADD =		\
+	$(grapa_LDADD)
 
 test_server_SOURCES = test-server.c
 test_server_FLAGS = $(FR_CFLAGS)
 test_server_LDADD = $(FR_LIBS)
 
 if ENABLE_MAGIC
-engrampa_LDADD += $(MAGIC_LIBS)
+grapa_LDADD += $(MAGIC_LIBS)
 endif
 
 EXTRA_DIST = 				\
-	engrampa.gresource.xml		\
+	grapa.gresource.xml		\
 	fr-marshal.list
 
 CLEANFILES = $(BUILT_SOURCES)

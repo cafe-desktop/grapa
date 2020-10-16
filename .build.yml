@@ -3,7 +3,7 @@
 ##########################################################
 requires:
   archlinux:
-    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/engrampa
+    # Useful URL: https://git.archlinux.org/svntogit/community.git/tree/grapa
     - autoconf-archive
     - caja
     - clang
@@ -18,7 +18,7 @@ requires:
 
   debian:
     # Useful URL: https://github.com/cafe-desktop/debian-packages
-    # Useful URL: https://salsa.debian.org/debian-cafe-team/engrampa
+    # Useful URL: https://salsa.debian.org/debian-cafe-team/grapa
     - autoconf-archive
     - autopoint
     - clang
@@ -36,7 +36,7 @@ requires:
     - yelp-tools
 
   fedora:
-    # Useful URL: https://src.fedoraproject.org/cgit/rpms/engrampa.git
+    # Useful URL: https://src.fedoraproject.org/cgit/rpms/grapa.git
     - autoconf-archive
     - caja-devel
     - clang
@@ -119,7 +119,7 @@ releases:
   prerelease: false
   checksum: true
   file_glob: true
-  files: engrampa-*.tar.xz
+  files: grapa-*.tar.xz
   github_release:
     tags: true
     overwrite: true

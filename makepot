@@ -1,6 +1,6 @@
 #! /bin/sh
 
-PACKAGE=engrampa;
+PACKAGE=grapa;
 
 # normal translations
 make -C po $PACKAGE.pot && mv po/$PACKAGE.pot .

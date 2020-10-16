@@ -1,13 +1,13 @@
 @YELP_HELP_RULES@
 
-HELP_ID = engrampa
+HELP_ID = grapa
 HELP_FILES = index.docbook legal.xml
 HELP_MEDIA = 					\
-	figures/engrampa_home.png		\
-	figures/engrampa_leftarrow.png	\
-	figures/engrampa_main_window.png	\
-	figures/engrampa_rightarrow.png	\
-	figures/engrampa_uparrow.png
+	figures/grapa_home.png		\
+	figures/grapa_leftarrow.png	\
+	figures/grapa_main_window.png	\
+	figures/grapa_rightarrow.png	\
+	figures/grapa_uparrow.png
 
 # Add linguas to be ignored, e.g. IGNORE_HELP_LINGUAS = ca de es fr
 IGNORE_HELP_LINGUAS =

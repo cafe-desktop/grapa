@@ -28,7 +28,7 @@
 
 #define MEGABYTE (1024.0 * 1024.0)
 
-#define ADD_FOLDER_OPTIONS_DIR  "engrampa/options"
+#define ADD_FOLDER_OPTIONS_DIR  "grapa/options"
 
 typedef enum { /*< skip >*/
 	FR_WINDOW_SORT_BY_NAME = 0,

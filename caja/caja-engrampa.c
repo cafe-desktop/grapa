@@ -28,7 +28,7 @@
 #include <libcaja-extension/caja-extension-types.h>
 #include <libcaja-extension/caja-file-info.h>
 #include <libcaja-extension/caja-menu-provider.h>
-#include "caja-engrampa.h"
+#include "caja-grapa.h"
 
 
 static GObjectClass *parent_class;
@@ -47,7 +47,7 @@ extract_to_callback (CajaMenuItem *item,
 	default_dir = caja_file_info_get_parent_uri (files->data);
 	quoted_default_dir = g_shell_quote (default_dir);
 
-	cmd = g_string_new ("engrampa");
+	cmd = g_string_new ("grapa");
 	g_string_append_printf(cmd," --default-dir=%s --extract", quoted_default_dir);
 
 	for (scan = files; scan; scan = scan->next) {
@@ -81,7 +81,7 @@ extract_here_callback (CajaMenuItem *item,
 
 	files = g_object_get_data (G_OBJECT (item), "files");
 
-	cmd = g_string_new ("engrampa --extract-here");
+	cmd = g_string_new ("grapa --extract-here");
 
 	for (scan = files; scan; scan = scan->next) {
 		CajaFileInfo *file = scan->data;
@@ -118,7 +118,7 @@ add_callback (CajaMenuItem *item,
 	dir = g_path_get_dirname (uri);
 	quoted_dir = g_shell_quote (dir);
 
-	cmd = g_string_new ("engrampa");
+	cmd = g_string_new ("grapa");
 	g_string_append_printf (cmd," --default-dir=%s --add", quoted_dir);
 
 	g_free (uri);

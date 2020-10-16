@@ -203,7 +203,7 @@ migrate_options_directory (void)
 	GFile *old_directory;
 	GFile *new_directory;
 
-	old_directory_path = get_home_relative_path (".config/cafe/engrampa/options");
+	old_directory_path = get_home_relative_path (".config/cafe/grapa/options");
 	old_directory = g_file_new_for_path (old_directory_path);
 	new_directory = get_user_config_subdirectory (ADD_FOLDER_OPTIONS_DIR, FALSE);
 	if (g_file_query_exists (old_directory, NULL) && ! g_file_query_exists (new_directory, NULL)) {

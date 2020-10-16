@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR CAFE Desktop Environment team
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -12,7 +12,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: engrampa 1.23.2\n"
+"Project-Id-Version: grapa 1.23.2\n"
 "Report-Msgid-Bugs-To: http://www.cafe-desktop.org/\n"
 "POT-Creation-Date: 2020-01-10 14:13+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
@@ -83,92 +83,92 @@ msgstr "세션 관리 옵션:"
 msgid "Show session management options"
 msgstr "세션 관리 옵션을 표시합니다"
 
-#: data/engrampa.appdata.xml.in:7 data/engrampa.desktop.in.in:3 src/main.c:49
+#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:3 src/main.c:49
 msgid "Grapa Archive Manager"
 msgstr "잉그람파 압축 관리자"
 
-#: data/engrampa.appdata.xml.in:8
+#: data/grapa.appdata.xml.in:8
 msgid "An Archive Manager for the CAFE desktop environment"
 msgstr "마테 데스크톱 환경용 압축 관리자"
 
-#: data/engrampa.appdata.xml.in:10
+#: data/grapa.appdata.xml.in:10
 msgid ""
 "Grapa is an archive manager for the CAFE environment. It allows you to "
 "create and modify archives, view the contents of an archive, view a file "
 "contained in an archive, and extract files from archive."
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:15
+#: data/grapa.appdata.xml.in:15
 msgid ""
 "Grapa is only a front-end (a graphical interface) to archiving programs "
 "like tar and zip. The supported file types are:"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:20
+#: data/grapa.appdata.xml.in:20
 msgid "7-Zip Compressed File (.7z)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:21
+#: data/grapa.appdata.xml.in:21
 msgid "WinAce Compressed File (.ace)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:22
+#: data/grapa.appdata.xml.in:22
 msgid "ALZip Compressed File (.alz)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:23
+#: data/grapa.appdata.xml.in:23
 msgid "AIX Small Indexed Archive (.ar)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:24
+#: data/grapa.appdata.xml.in:24
 msgid "ARJ Compressed Archive (.arj)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:25
+#: data/grapa.appdata.xml.in:25
 msgid "Cabinet File (.cab)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:26
+#: data/grapa.appdata.xml.in:26
 msgid "UNIX CPIO Archive (.cpio)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:27
+#: data/grapa.appdata.xml.in:27
 msgid "Debian Linux Package (.deb, .udeb) [Read-only mode]"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:28
+#: data/grapa.appdata.xml.in:28
 msgid "ISO-9660 CD Disc Image (.iso) [Read-only mode]"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:29
+#: data/grapa.appdata.xml.in:29
 msgid "Java Archive (.jar)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:30
+#: data/grapa.appdata.xml.in:30
 msgid "Java Enterprise archive (.ear)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:31
+#: data/grapa.appdata.xml.in:31
 msgid "Java Web Archive (.war)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:32
+#: data/grapa.appdata.xml.in:32
 msgid "LHA Archive (.lzh, .lha)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:33
+#: data/grapa.appdata.xml.in:33
 msgid "WinRAR Compressed Archive (.rar)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:34
+#: data/grapa.appdata.xml.in:34
 msgid "RAR Archived Comic Book (.cbr)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:35
+#: data/grapa.appdata.xml.in:35
 msgid "RPM Linux Package (.rpm) [Read-only mode]"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:36
+#: data/grapa.appdata.xml.in:36
 msgid ""
 "Tape Archive File uncompressed (.tar) or compressed with: gzip (.tar.gz, "
 ".tgz), brotli (.tar.br), bzip (.tar.bz, .tbz), bzip2 (.tar.bz2, .tbz2), "
@@ -176,82 +176,82 @@ msgid ""
 " (.tar.lzo, .tzo), 7zip (.tar.7z), xz (.tar.xz), Zstandard (.zst)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:39
+#: data/grapa.appdata.xml.in:39
 msgid "Stuffit Archives (.bin, .sit)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:40
+#: data/grapa.appdata.xml.in:40
 msgid "ZIP Archive (.zip)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:41
+#: data/grapa.appdata.xml.in:41
 msgid "ZIP Archived Comic Book (.cbz)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:42
+#: data/grapa.appdata.xml.in:42
 msgid "ZOO Compressed Archive File (.zoo)"
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:43
+#: data/grapa.appdata.xml.in:43
 msgid ""
 "Single files compressed with gzip (.gz), brotli (.br), bzip (.bz), bzip2 "
 "(.bz2), compress (.Z), lrzip (.lrz), lzip (.lz), lzop (.lzo), rzip(.rz), xz "
 "(.xz)."
 msgstr ""
 
-#: data/engrampa.appdata.xml.in:46
+#: data/grapa.appdata.xml.in:46
 msgid ""
 "Grapa is a fork of File Roller and part of the CAFE Desktop Environment. "
 "If you would like to know more about CAFE and Grapa, please visit the "
 "project's home page."
 msgstr ""
 
-#: data/engrampa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
+#: data/grapa.desktop.in.in:4 src/fr-window.c:2009 src/fr-window.c:5578
 msgid "Archive Manager"
 msgstr "압축 관리자"
 
-#: data/engrampa.desktop.in.in:5
+#: data/grapa.desktop.in.in:5
 msgid "Create and modify an archive"
 msgstr "압축 파일을 만들고 수정합니다"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: data/engrampa.desktop.in.in:12
-#: caja/libcaja-engrampa.caja-extension.desktop.in.in:4
-msgid "engrampa"
+#: data/grapa.desktop.in.in:12
+#: caja/libcaja-grapa.caja-extension.desktop.in.in:4
+msgid "grapa"
 msgstr ""
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/engrampa.desktop.in.in:17
+#: data/grapa.desktop.in.in:17
 msgid "CAFE;archive;manager;compression;"
 msgstr ""
 
-#: data/org.cafe.engrampa.gschema.xml.in:38
+#: data/org.cafe.grapa.gschema.xml.in:38
 msgid "How to sort files"
 msgstr "파일 정렬 방식"
 
-#: data/org.cafe.engrampa.gschema.xml.in:39
+#: data/org.cafe.grapa.gschema.xml.in:39
 msgid ""
 "What criteria must be used to arrange files. Possible values: name, size, "
 "type, time, path."
 msgstr "파일을 정렬하는데 사용할 기준. 가능 값: 이름, 크기 형식, 시간, 경로"
 
-#: data/org.cafe.engrampa.gschema.xml.in:43
+#: data/org.cafe.grapa.gschema.xml.in:43
 msgid "Sort type"
 msgstr "정렬 방식"
 
-#: data/org.cafe.engrampa.gschema.xml.in:44
+#: data/org.cafe.grapa.gschema.xml.in:44
 msgid ""
 "Whether to sort in ascending or descending direction. Possible values: "
 "ascending, descending."
 msgstr "오름차순으로 할 것인가 내림차순으로 할 것인가를 결정합니다. 가능 값: 오름차순, 내림차순."
 
-#: data/org.cafe.engrampa.gschema.xml.in:48
+#: data/org.cafe.grapa.gschema.xml.in:48
 msgid "List Mode"
 msgstr "정리 모드"
 
-#: data/org.cafe.engrampa.gschema.xml.in:49
+#: data/org.cafe.grapa.gschema.xml.in:49
 msgid ""
 "Whether to view all files in the archive (all_files), or view the archive as"
 " a folder (as_folder)."
@@ -259,43 +259,43 @@ msgstr ""
 "압축파일 안의 모든 파일 (all_files)을 보일 것인가, 압축 파일을 폴더로 보일 것인가 (as_folder) 의 여부를 "
 "결정합니다."
 
-#: data/org.cafe.engrampa.gschema.xml.in:53
+#: data/org.cafe.grapa.gschema.xml.in:53
 msgid "Display type"
 msgstr "표시 형식"
 
-#: data/org.cafe.engrampa.gschema.xml.in:54
+#: data/org.cafe.grapa.gschema.xml.in:54
 msgid "Display the Type column in the main window."
 msgstr "메인 창에 형식을 가로줄로 보이기."
 
-#: data/org.cafe.engrampa.gschema.xml.in:58
+#: data/org.cafe.grapa.gschema.xml.in:58
 msgid "Display size"
 msgstr "표시 크기"
 
-#: data/org.cafe.engrampa.gschema.xml.in:59
+#: data/org.cafe.grapa.gschema.xml.in:59
 msgid "Display the Size column in the main window."
 msgstr "메인 창에 크기를 가로줄로 보이기."
 
-#: data/org.cafe.engrampa.gschema.xml.in:63
+#: data/org.cafe.grapa.gschema.xml.in:63
 msgid "Display time"
 msgstr "표시 시간"
 
-#: data/org.cafe.engrampa.gschema.xml.in:64
+#: data/org.cafe.grapa.gschema.xml.in:64
 msgid "Display the Time column in the main window."
 msgstr "메인 창에 시간을 가로줄로 보이기."
 
-#: data/org.cafe.engrampa.gschema.xml.in:68
+#: data/org.cafe.grapa.gschema.xml.in:68
 msgid "Display path"
 msgstr "경로 표시"
 
-#: data/org.cafe.engrampa.gschema.xml.in:69
+#: data/org.cafe.grapa.gschema.xml.in:69
 msgid "Display the Path column in the main window."
 msgstr "메인 창에 경로를 가로줄로 보이기."
 
-#: data/org.cafe.engrampa.gschema.xml.in:73
+#: data/org.cafe.grapa.gschema.xml.in:73
 msgid "Use MIME icons"
 msgstr "MIME 아이콘 사용하기"
 
-#: data/org.cafe.engrampa.gschema.xml.in:74
+#: data/org.cafe.grapa.gschema.xml.in:74
 msgid ""
 "if TRUE will display icons depending on the file type (slower), otherwise "
 "will use always the same icon for all files (faster)."
@@ -303,136 +303,136 @@ msgstr ""
 "파일 형식 (느린)에 따라 TRUE 값이 아이콘을 표합니다, 그렇지 않으면 TRUE 값은 모든 파일 (빠른)에 같은 아이콘을 사용합니다."
 "  "
 
-#: data/org.cafe.engrampa.gschema.xml.in:78
+#: data/org.cafe.grapa.gschema.xml.in:78
 msgid "Name column width"
 msgstr "이름 줄 너비"
 
-#: data/org.cafe.engrampa.gschema.xml.in:79
+#: data/org.cafe.grapa.gschema.xml.in:79
 msgid "The default width of the name column in the file list."
 msgstr "파일 목록의 이름 줄 기본 너비"
 
-#: data/org.cafe.engrampa.gschema.xml.in:85
+#: data/org.cafe.grapa.gschema.xml.in:85
 msgid "Max history length"
 msgstr "사용 기록 최대 길이"
 
-#: data/org.cafe.engrampa.gschema.xml.in:86
+#: data/org.cafe.grapa.gschema.xml.in:86
 msgid "Max number of items in the Open Recents menu."
 msgstr "최근 사용한 목록 메뉴의 최대 항목 수"
 
-#: data/org.cafe.engrampa.gschema.xml.in:99
+#: data/org.cafe.grapa.gschema.xml.in:99
 msgid "View toolbar"
 msgstr "도구 모음 보이기"
 
-#: data/org.cafe.engrampa.gschema.xml.in:100
+#: data/org.cafe.grapa.gschema.xml.in:100
 msgid "Whether to display the toolbar."
 msgstr "도구 모음을 보일지 여부를 결정합니다."
 
-#: data/org.cafe.engrampa.gschema.xml.in:104
+#: data/org.cafe.grapa.gschema.xml.in:104
 msgid "View statusbar"
 msgstr "상태 표시줄 보이기"
 
-#: data/org.cafe.engrampa.gschema.xml.in:105
+#: data/org.cafe.grapa.gschema.xml.in:105
 msgid "Whether to display the statusbar."
 msgstr "상태 표시줄을 보일지 여부를 결정합니다."
 
-#: data/org.cafe.engrampa.gschema.xml.in:109 src/ui.h:234
+#: data/org.cafe.grapa.gschema.xml.in:109 src/ui.h:234
 msgid "View the folders pane"
 msgstr "폴더창을 봅니다"
 
-#: data/org.cafe.engrampa.gschema.xml.in:110
+#: data/org.cafe.grapa.gschema.xml.in:110
 msgid "Whether to display the folders pane."
 msgstr "경로 창을 보일지 여부를 결정합니다."
 
-#: data/org.cafe.engrampa.gschema.xml.in:116
+#: data/org.cafe.grapa.gschema.xml.in:116
 msgid "Editors"
 msgstr "편집기"
 
-#: data/org.cafe.engrampa.gschema.xml.in:117
+#: data/org.cafe.grapa.gschema.xml.in:117
 msgid ""
 "List of applications entered in the Open file dialog and not associated with"
 " the file type."
 msgstr "파일 열기 대화상자에 등록된 애플리케이션 목록과 파일 형식을 따르지 않는 애플리케이션 목록."
 
-#: data/org.cafe.engrampa.gschema.xml.in:121
+#: data/org.cafe.grapa.gschema.xml.in:121
 msgid "Compression level"
 msgstr "압축 레벨"
 
-#: data/org.cafe.engrampa.gschema.xml.in:122
+#: data/org.cafe.grapa.gschema.xml.in:122
 msgid ""
 "Compression level used when adding files to an archive. Possible values: "
 "very_fast, fast, normal, maximum."
 msgstr "압축 레벨은 파일을 압축할 때 이용됩니다. 가능 값: 매우 빠르게, 빠르게, 기본값, 최대치."
 
-#: data/org.cafe.engrampa.gschema.xml.in:126
+#: data/org.cafe.grapa.gschema.xml.in:126
 msgid "Encrypt the archive header"
 msgstr "압축 파일 헤더를 암호화 처리"
 
-#: data/org.cafe.engrampa.gschema.xml.in:127
+#: data/org.cafe.grapa.gschema.xml.in:127
 msgid ""
 "Whether to encrypt the archive header. If the header is encrypted the "
 "password will be required to list the archive content as well."
 msgstr ""
 "압축 파일 헤더를 암호화할 것인지 여부를 결정합니다. 헤더를 암호화하면 압축 파일 안의 내용을 표시할 때 비밀번호가 있어야 합니다."
 
-#: data/org.cafe.engrampa.gschema.xml.in:131
+#: data/org.cafe.grapa.gschema.xml.in:131
 msgid "Adds 'unar' support over .zip archives."
 msgstr "zip 아카이브를 통한 'unar' 지원 추가"
 
-#: data/org.cafe.engrampa.gschema.xml.in:132
+#: data/org.cafe.grapa.gschema.xml.in:132
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr ".zip 아카이브를 통해 'unar'를 지원하게 합니다."
 
-#: data/org.cafe.engrampa.gschema.xml.in:143
+#: data/org.cafe.grapa.gschema.xml.in:143
 msgid "Overwrite existing files"
 msgstr "파일 덮어쓰기"
 
-#: data/org.cafe.engrampa.gschema.xml.in:147
+#: data/org.cafe.grapa.gschema.xml.in:147
 msgid "Do not overwrite newer files"
 msgstr "더 최근에 생기는 파일들은 덮어쓰지 마시오"
 
-#: data/org.cafe.engrampa.gschema.xml.in:151
+#: data/org.cafe.grapa.gschema.xml.in:151
 msgid "Recreate the folders stored in the archive"
 msgstr "압축 파일에 저장된 폴더들을 다시 만듭니다"
 
-#: data/org.cafe.engrampa.gschema.xml.in:189
+#: data/org.cafe.grapa.gschema.xml.in:189
 msgid "Default volume size"
 msgstr "기본 볼륨 크기"
 
-#: data/org.cafe.engrampa.gschema.xml.in:190
+#: data/org.cafe.grapa.gschema.xml.in:190
 msgid "The default size for volumes."
 msgstr "볼륨의 기본 크기"
 
-#: caja/caja-engrampa.c:329
+#: caja/caja-grapa.c:329
 msgid "Extract Here"
 msgstr "여기에 풀기"
 
 #. Translators: the current position is the current folder
-#: caja/caja-engrampa.c:331
+#: caja/caja-grapa.c:331
 msgid "Extract the selected archive to the current position"
 msgstr "선택한 압축 파일을 현재 위치에 풉니다"
 
-#: caja/caja-engrampa.c:348
+#: caja/caja-grapa.c:348
 msgid "Extract To..."
 msgstr "풀기..."
 
-#: caja/caja-engrampa.c:349
+#: caja/caja-grapa.c:349
 msgid "Extract the selected archive"
 msgstr "선택한 압축 파일을 풉니다"
 
-#: caja/caja-engrampa.c:368
+#: caja/caja-grapa.c:368
 msgid "Compress..."
 msgstr "압축..."
 
-#: caja/caja-engrampa.c:369
+#: caja/caja-grapa.c:369
 msgid "Create a compressed archive with the selected objects"
 msgstr "선택한 오브젝트로 압축 파일을 만듭니다"
 
-#: caja/libcaja-engrampa.caja-extension.desktop.in.in:5 src/main.c:342
+#: caja/libcaja-grapa.caja-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
 msgid "Grapa"
 msgstr "잉그람파"
 
-#: caja/libcaja-engrampa.caja-extension.desktop.in.in:6
+#: caja/libcaja-grapa.caja-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
 msgstr "압축 파일을 만들거나 푸는 것을 허락합니다"
 

@@ -281,7 +281,7 @@ new_file_response_cb (GtkWidget  *w,
     }
 
     if (response == GTK_RESPONSE_HELP) {
-        show_help_dialog (GTK_WINDOW (data->dialog), "engrampa-create");
+        show_help_dialog (GTK_WINDOW (data->dialog), "grapa-create");
         return;
     }
 
@@ -436,7 +436,7 @@ save_file_response_cb (GtkWidget  *w,
     }
 
     if (response == GTK_RESPONSE_HELP) {
-        show_help_dialog (GTK_WINDOW (data->dialog), "engrampa-create#engrampa-convert-archive");
+        show_help_dialog (GTK_WINDOW (data->dialog), "grapa-create#grapa-convert-archive");
         return;
     }
 
@@ -877,7 +877,7 @@ activate_action_about (GtkAction *action,
     char **authors;
     gsize n_authors = 0, i;
 
-    bytes = g_resources_lookup_data (ENGRAMPA_RESOURCE_UI_PATH G_DIR_SEPARATOR_S "engrampa.about", G_RESOURCE_LOOKUP_FLAGS_NONE, &error);
+    bytes = g_resources_lookup_data (ENGRAMPA_RESOURCE_UI_PATH G_DIR_SEPARATOR_S "grapa.about", G_RESOURCE_LOOKUP_FLAGS_NONE, &error);
     g_assert_no_error (error);
 
     data = g_bytes_get_data (bytes, &data_len);
@@ -903,7 +903,7 @@ activate_action_about (GtkAction *action,
                    "authors", authors,
                    "documenters", documenters,
                    "translator-credits", _("translator-credits"),
-                   "logo-icon-name", "engrampa",
+                   "logo-icon-name", "grapa",
                    "license", license_text,
                    "wrap-license", TRUE,
                    "website", "https://cafe-desktop.org",

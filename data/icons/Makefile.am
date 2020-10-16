@@ -4,14 +4,14 @@ nobase_dist_icons_DATA = \
 	16x16/actions/add-files-to-archive.png \
 	16x16/actions/add-folder-to-archive.png \
 	16x16/actions/extract-archive.png \
-	16x16/apps/engrampa.png \
-	22x22/apps/engrampa.png \
+	16x16/apps/grapa.png \
+	22x22/apps/grapa.png \
 	24x24/actions/add-files-to-archive.png \
 	24x24/actions/add-folder-to-archive.png \
 	24x24/actions/extract-archive.png \
-	24x24/apps/engrampa.png \
-	32x32/apps/engrampa.png \
-	scalable/apps/engrampa.svg
+	24x24/apps/grapa.png \
+	32x32/apps/grapa.png \
+	scalable/apps/grapa.svg
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(iconsdir)
 

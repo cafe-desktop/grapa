@@ -10,7 +10,7 @@
 ========== am.po ==========
 # Translations into the Amharic Language.
 # Copyright (C) 2002 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Ge'ez Frontier Foundation <locales@geez.org>, 2002.
 #
 #
@@ -19,8 +19,8 @@
 
 
 ========== ar.po ==========
-# translation of engrampa.HEAD.ar.po to Arabic
-# translation of engrampa.po to
+# translation of grapa.HEAD.ar.po to Arabic
+# translation of grapa.po to
 # Copyright (C) 2002,2003, 2004, 2006, 2007, 2008 Free Software Foundation, Inc.
 # Isam Bayazidi <bayazidi@arabeyes.org>, 2002.
 # Arafat Medini <lumina@silverpen.de>, 2003.
@@ -45,9 +45,9 @@
 
 
 ========== ast.po ==========
-# Asturian translation for engrampa
+# Asturian translation for grapa
 # Copyright (c) 2008 Rosetta Contributors and Canonical Ltd 2008
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
 #
 
@@ -55,17 +55,17 @@
 
 
 ========== az.po ==========
-# translation of engrampa.HEAD.az.po to Azerbaijani
-# translation of engrampa.HEAD.az.po to Azerbaijani Turkish
+# translation of grapa.HEAD.az.po to Azerbaijani
+# translation of grapa.HEAD.az.po to Azerbaijani Turkish
 # Copyright (C) 2003 Mətin Əmirov
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Mətin Əmirov <metin@karegen.com>, 2003, 2004.
 
 
 
 
 ========== be.po ==========
-# Беларускі пераклад engrampa.HEAD.
+# Беларускі пераклад grapa.HEAD.
 # Copyright (C) 2001, 2003, 2004 Free Software Foundation, Inc.
 # Vital Khilko <dojlid@mova.org>, 2003.
 # Ales Nyakhaychyk <nab@mail.by>, 2003, 2004.
@@ -75,9 +75,9 @@
 
 
 ========== be@latin.po ==========
-# Biełaruski pierakład engrampa
+# Biełaruski pierakład grapa
 # Copyright (C) 2007 Ihar Hrachyshka
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Ihar Hrachyshka <ihar.hrachyshka@gmail.com>, 2007.
 #
 
@@ -85,7 +85,7 @@
 
 
 ========== bg.po ==========
-# Bulgarian translation of engrampa po-file.
+# Bulgarian translation of grapa po-file.
 # Copyright (C) 2002, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
 # Copyright (C) 2008, 2009, 2010 Free Software Foundation, Inc.
 # Filip Andonov <demercel@c4.com>, 2002.
@@ -99,9 +99,9 @@
 
 
 ========== bn.po ==========
-# The Bengali translation for engrampa.
+# The Bengali translation for grapa.
 # Copyright (C) 2003 Rupak Sinha
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Rupak Sinha <rupak.sinha@softhome.net>, 2003.
 # Mahay Alam Khan <makl10n@yahoo.com>, 2005.
 # Samia Niamatullah <mailsamia2001@yahoo.com>, 2005.
@@ -115,7 +115,7 @@
 ========== bn_IN.po ==========
 # translation of bn_IN.po to Bengali INDIA
 # Copyright (C) 2003 Rupak Sinha
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Rupak Sinha <rupak.sinha@softhome.net>, 2003.
 # Mahay Alam Khan <makl10n@yahoo.com>, 2005.
@@ -128,9 +128,9 @@
 
 
 ========== br.po ==========
-# Breton translation of engrampa
+# Breton translation of grapa
 # Copyright (C) 2006 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Jérémy Ar Floc'h <jeremy.lefloch@gmail.com>, 2006.
 # Alan Monfort <alan.monfort@free.fr>, 2010.
@@ -140,10 +140,10 @@
 
 
 ========== bs.po ==========
-# translation of engrampa.HEAD.bs.po to Bosnian
-# translation of engrampa.cafe-2-6.bs.po to Bosnian
+# translation of grapa.HEAD.bs.po to Bosnian
+# translation of grapa.cafe-2-6.bs.po to Bosnian
 # translation of bs.po to
-# translation of engrampa.po to
+# translation of grapa.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2004.
 # Kenan Hadžiavdić <kenan@bgnett.no>, 2004.
@@ -155,7 +155,7 @@
 ========== ca.po ==========
 # File-Roller Catalan translation.
 # Copyright © 2002, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Raül Cambeiro <rulet@menta.net>, 2002.
 # Jordi Mallach <jordi@sindominio.net>, 2003, 2004, 2005, 2006, 2007.
 # Gil Forcada <gilforcada@guifi.net>, 2008, 2009, 2010.
@@ -167,7 +167,7 @@
 ========== ca@valencia.po ==========
 # File-Roller Catalan translation.
 # Copyright © 2002, 2003, 2004, 2005, 2006, 2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Raül Cambeiro <rulet@menta.net>, 2002.
 # Jordi Mallach <jordi@sindominio.net>, 2003, 2004, 2005, 2006, 2007.
 # Gil Forcada <gilforcada@guifi.net>, 2008, 2009, 2010.
@@ -177,10 +177,10 @@
 
 
 ========== cs.po ==========
-# Czech translation of engrampa.
-# Copyright (C) 2008, 2009, 2010 the author(s) of engrampa.
+# Czech translation of grapa.
+# Copyright (C) 2008, 2009, 2010 the author(s) of grapa.
 # Copyright (C) 2004, 2005 Miloslav Trmac <mitr@volny.cz>.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Miloslav Trmac <mitr@volny.cz>, 2002, 2003, 2004, 2005.
 # Petr Tomeš <ptomes@gmail.com>, 2006.
@@ -195,9 +195,9 @@
 
 
 ========== cy.po ==========
-# engrampa yn Gymraeg.
+# grapa yn Gymraeg.
 # Copyright (C) 2003 Chris Jackson.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Chris Jackson <chriscf@gmail.com>, 2003, 2005.
 # Dafydd Harries <daf@muse.19inch.net>, 2003.
 #
@@ -210,9 +210,9 @@
 
 
 ========== da.po ==========
-# Danish translation of engrampa.
+# Danish translation of grapa.
 # Copyright (C) 2002-2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Ole Laursen <olau@hardworking.dk>, 2002-2004.
 # Martin Willemoes Hansen <mwh@sysrq.dk>, 2004-2005.
 # Lasse Bang Mikkelsen <lbm@fatalerror.dk>, 2006.
@@ -248,7 +248,7 @@
 
 
 ========== dz.po ==========
-# Dzongkha translation of engrampa
+# Dzongkha translation of grapa
 # Copyright @ 2006 Free Software Foundation, Inc.
 # Mindu Dorji
 #
@@ -263,7 +263,7 @@
 #
 # ##############################################
 # ##############################################
-# Cafe 2.4 (engrampa 2.4.xx)
+# Cafe 2.4 (grapa 2.4.xx)
 # ##############################################
 # kostas:25May2003, updated translation for Cafe 2.4xx
 # kostas: 06Jul2003, one more update
@@ -294,7 +294,7 @@
 
 
 ========== en@shaw.po ==========
-# Shavian translation for engrampa.
+# Shavian translation for grapa.
 # Copyright (C) 2009 The Cafe Foundation.
 # Thomas Thurman <tthurman@gnome.org>, 2009.
 
@@ -302,9 +302,9 @@
 
 
 ========== en_CA.po ==========
-# Canadian English translation of engrampa.
+# Canadian English translation of grapa.
 # Copyright (C) 2004-2005 Adam Weinberger and the CAFE Foundation
-# This file is distributed under the same licence as the engrampa package.
+# This file is distributed under the same licence as the grapa package.
 # Adam Weinberger <adamw@gnome.org>, 2004, 2005.
 #
 # 
@@ -314,8 +314,8 @@
 
 ========== en_GB.po ==========
 # English (British) translation.
-# Copyright (C) 2004 engrampa'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the engrampa package.
+# Copyright (C) 2004 grapa'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the grapa package.
 # Gareth Owen <gowen72@yahoo.com>, David Lodge <dave@cirt.net>, 2004.
 # Philip Withnall <philip@tecnocode.co.uk>, 2009.
 # Bruce Cowan <bruce@bcowan.me.uk>, 2010.
@@ -324,9 +324,9 @@
 
 
 ========== eo.po ==========
-# Esperanto translation for engrampa
+# Esperanto translation for grapa
 # Copyright (c) 2006 Rosetta Contributors and Canonical Ltd 2006
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Ed GLEZ <herzo2@gmail.com>, 2006.
 # Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010.
 #
@@ -335,7 +335,7 @@
 
 
 ========== es.po ==========
-# translation of engrampa.HEAD.po to Español
+# translation of grapa.HEAD.po to Español
 # Miguel A. Arevalo <marevalo@marevalo.net>, 2002.
 # Francisco Javier F. Serrador <serrador@cvs.cafe.org>, 2004, 2005, 2006.
 # Rodrigo Marcos Fombellida <rodrifom@gmail.com>, 2007.
@@ -353,7 +353,7 @@
 #
 # Copyright (C) 2002-2006 Free Software Foundation, Inc.
 # Copyright (C) 2007-2010 The CAFE Project.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Ilmar Kerm <ikerm hot ee>, 2002.
 # Tõivo Leedjärv <toivo linux ee>, 2002, 2003.
@@ -368,7 +368,7 @@
 ========== eu.po ==========
 # translation of eu.po to Basque
 # Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 the Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Eneko Lacunza <enlar@enlar.net>, 2003.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
@@ -378,7 +378,7 @@
 
 
 ========== fa.po ==========
-# Persian translation of engrampa.
+# Persian translation of grapa.
 # Copyright (C) 2003, 2005 Sharif FarsiWeb Inc.
 # Roozbeh Pournader <roozbeh@farsiweb.info>, 2003.
 # Behnam Pournader <bp@farsiweb.info>, 2005.
@@ -391,9 +391,9 @@
 
 
 ========== fi.po ==========
-# engrampa Finnish Translation.
+# grapa Finnish Translation.
 # Copyright (C) 2003-2009 The Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Pauli Virtanen <pauli.virtanen@hut.fi>, 2003-2004.
 # Ilkka Tuohela <hile@iki.fi>, 2005-2009.
 # Tommi Vainikainen <thv@iki.fi>, 2010. 
@@ -403,9 +403,9 @@
 
 
 ========== fr.po ==========
-# French translation of engrampa.
+# French translation of grapa.
 # Copyright (C) 2002-2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Jean-Michel Ardantz <jmardantz@ifrance.com>, 2002-2006.
 # Roland Baudin <roland65@free.fr>, 2002.
@@ -424,9 +424,9 @@
 
 
 ========== fur.po ==========
-# translation of engrampa.
-# Copyright (C) 2008 THE engrampa'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the engrampa package.
+# translation of grapa.
+# Copyright (C) 2008 THE grapa'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the grapa package.
 # Andrea Decorte <adecorte@gmail.com>, 2008.
 #
 #
@@ -435,9 +435,9 @@
 
 
 ========== fy.po ==========
-# Frisian translation for engrampa
+# Frisian translation for grapa
 #
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Sense Hofstede <sense@ubuntu.com>, 2010.
 #
 
@@ -445,9 +445,9 @@
 
 
 ========== ga.po ==========
-# Irish translations for engrampa package.
+# Irish translations for grapa package.
 # Copyright (C) 2004-2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Paul Duffy <dubhthach@frink.nuigalway.ie>, 2003.
 # Alastair McKinstry <mckinstry@computer.org>, 2004.
 # Seán de Búrca <leftmostcat@gmail.com>, 2007, 2009.
@@ -457,8 +457,8 @@
 
 
 ========== gl.po ==========
-# translation of engrampa.master.po to Galician
-# translation of engrampa.cafe-2-10.gl.po to
+# translation of grapa.master.po to Galician
+# translation of grapa.cafe-2-10.gl.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2010 Fran Diéguez.
 #
@@ -475,7 +475,7 @@
 
 
 ========== gu.po ==========
-# translation of engrampa.master.gu.po to Gujarati
+# translation of grapa.master.gu.po to Gujarati
 # Ankit Patel <ankit644@yahoo.com>, 2005, 2006.
 # Ankit Patel <ankit@redhat.com>, 2006, 2007, 2008, 2009.
 # Sweta Kothari <swkothar@redhat.com>, 2008, 2009.
@@ -485,9 +485,9 @@
 
 
 ========== he.po ==========
-# translation of engrampa.HEAD.po to Hebrew
-# translation of engrampa.HEAD.he.po to Hebrew
-# translation of engrampa.cafe-2-6.po to Hebrew
+# translation of grapa.HEAD.po to Hebrew
+# translation of grapa.HEAD.he.po to Hebrew
+# translation of grapa.cafe-2-6.po to Hebrew
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2005 THE PACKAGE'S COPYRIGHT HOLDER.
 # Gil 'Dolfin' Osher <dolfin@rpg.org.il>, 2003, 2004.
@@ -498,7 +498,7 @@
 
 
 ========== hi.po ==========
-# translation of engrampa.master.po to Hindi
+# translation of grapa.master.po to Hindi
 # Grapa - Hindi Translation
 # Copyright (C) 2003, 2004, 2005, 2006, 2009 Free Software Foundation, Inc.
 #
@@ -511,7 +511,7 @@
 
 
 ========== hr.po ==========
-# Translation of engrampa to Croatiann
+# Translation of grapa to Croatiann
 # Copyright (C) Croatiann team
 # Translators: Automatski Prijevod <>,Denis Lackovic <delacko@fly.srk.fer.hr>,Mato Kutlić <cafe@iskraemeco.hr>,Robert Sedak <robert.sedak@sk.t-com.hr>,
 
@@ -519,9 +519,9 @@
 
 
 ========== hu.po ==========
-# Hungarian translation of engrampa.
+# Hungarian translation of grapa.
 # Copyright (C) 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Andras Timar <timar at cafe dot hu>, 2002, 2003, 2004.
 # Laszlo Dvornik <dvornik at cafe dot hu>, 2004.
@@ -532,7 +532,7 @@
 
 
 ========== hy.po ==========
-# translation of engrampa.HEAD.po to armenian
+# translation of grapa.HEAD.po to armenian
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER, 2005.
 # Norayr Chilingaryan <norik@freenet.am>, 2005
@@ -542,11 +542,11 @@
 
 
 ========== id.po ==========
-# translation of engrampa.master.po to Indonesian
-# Indonesian engrampa translation.
+# translation of grapa.master.po to Indonesian
+# Indonesian grapa translation.
 # by Yunanes Tjandra <yuhanes@cbn.net.id>
-# Copyright (C) 2004 THE engrampa'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the engrampa package.
+# Copyright (C) 2004 THE grapa'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the grapa package.
 #
 #
 # Mohammad DAMT <mdamt@bisnisweb.com>, 2004.
@@ -569,7 +569,7 @@
 ========== it.po ==========
 # Italian translation of Grapa.
 # Copyright (C) 2001, 2003, 2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Paolo Bacchilega <paolo.bacch@tin.it>, 2001.
 # Roberto Rosselli Del Turco <rosselli@ling.unipi.it>, 2003, 2004.
 # Luca Ferretti <elle.uca@libero.it>, 2006-2008.
@@ -580,7 +580,7 @@
 
 
 ========== ja.po ==========
-# engrampa ja.po.
+# grapa ja.po.
 # Copyright (C) 2001-2010 Free Software Foundation, Inc.
 # Takeshi AIHANA <takeshi.aihana@gmail.com>, 2001-2009.
 # Hideki Yamane (Debian-JP) <henrich@debian.or.jp>, 2009.
@@ -592,8 +592,8 @@
 
 
 ========== ka.po ==========
-# translation of engrampa.HEAD.po to Georgian
-# Georgian translation for engrampa
+# translation of grapa.HEAD.po to Georgian
+# Georgian translation for grapa
 # Copyright (c) (c) 2005 Canonical Ltd, and Rosetta Contributors 2005
 # This file is distributed under the same license as the caja package.
 #
@@ -607,9 +607,9 @@
 
 
 ========== kk.po ==========
-# engrampa to kazakh.
+# grapa to kazakh.
 # Copyright (C) 2009 HZ
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Baurzhan Muftakhidinov <baurthefirst@gmail.com>, 2009-2010.
 #
 
@@ -617,7 +617,7 @@
 
 
 ========== kn.po ==========
-# translation of engrampa.master.kn.po to Kannada
+# translation of grapa.master.kn.po to Kannada
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -628,7 +628,7 @@
 
 ========== ko.po ==========
 # ko.po for Grapa.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Kang Joeng-Hee <Keizi@mail.co.kr>, 2001.
 # Young-Ho Cha <ganadist@mizi.com>, 2003, 2006, 2007.
@@ -641,7 +641,7 @@
 
 
 ========== ku.po ==========
-# translation of engrampa.HEAD.po to Kurdish
+# translation of grapa.HEAD.po to Kurdish
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 # Erdal Ronahi <erdal.ronahi@gmail.com, pckurd@hotmail.com>, 2005.
@@ -651,7 +651,7 @@
 
 
 ========== lt.po ==========
-# translation of engrampa.HEAD.po to Lithuanian
+# translation of grapa.HEAD.po to Lithuanian
 # Grapa's Lithuanian translation
 # Copyright (C) 2003-2006, 2007, 2008 Free Software Foundation, Inc.
 # Žygimantas Beručka <zygis@gnome.org>, 2003-2006, 2010.
@@ -674,7 +674,7 @@
 
 
 ========== mai.po ==========
-# translation of engrampa.HEAD.po to Maithili
+# translation of grapa.HEAD.po to Maithili
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -695,7 +695,7 @@
 
 ========== mk.po ==========
 # translation of mk.po to Macedonian
-# translation of engrampa.HEAD.mk.po to
+# translation of grapa.HEAD.mk.po to
 # This file is distributed under the same license as the PACKAGE package.
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER.
 #
@@ -712,10 +712,10 @@
 
 
 ========== ml.po ==========
-# translation of engrampa.master.ml.po to
-# translation of engrampa.HEAD.ml.po to
-# This file is distributed under the same license as the engrampa package.
-# Copyright (C) 2003-2008 engrampa'S COPYRIGHT HOLDER.
+# translation of grapa.master.ml.po to
+# translation of grapa.HEAD.ml.po to
+# This file is distributed under the same license as the grapa package.
+# Copyright (C) 2003-2008 grapa'S COPYRIGHT HOLDER.
 # FSF-India <locale@gnu.org.in>, 2003.
 # Ani Peter <apeter@redhat.com>, 2006, 2009.
 # Santhosh Thottingal <santhosh.thottingal@gmail.com>, 2008.
@@ -725,8 +725,8 @@
 
 
 ========== mn.po ==========
-# translation of engrampa.HEAD.po to Mongolian
-# translation of engrampa.HEAD.mn.po to Mongolian
+# translation of grapa.HEAD.po to Mongolian
+# translation of grapa.HEAD.mn.po to Mongolian
 # This file is distributed under the same license as the PACKAGE package.
 # Tegshbayar <zahiatotbr@msn.com>
 # Copyright (C) 2004 THE PACKAGE'S COPYRIGHT HOLDER.
@@ -758,7 +758,7 @@
 
 
 ========== nb.po ==========
-# Norwegian/Bokmaal translation of engrampa.
+# Norwegian/Bokmaal translation of grapa.
 # Copyright (C) 2002-2004 Free Software Foundation, Inc.
 # Lars Alvik <lalvik@hotmail.com>, 2002.
 # Kjartan Maraas <kmaraas@gnome.org>, 2002-2010.
@@ -768,9 +768,9 @@
 
 
 ========== nds.po ==========
-# Low German translation for engrampa.
-# Copyright (C) 2009 engrampa's COPYRIGHT HOLDER
-# This file is distributed under the same license as the engrampa package.
+# Low German translation for grapa.
+# Copyright (C) 2009 grapa's COPYRIGHT HOLDER
+# This file is distributed under the same license as the grapa package.
 # Nils-Christoph Fiedler <fiedler@medienkompanie.de>, 2009.
 #
 
@@ -778,7 +778,7 @@
 
 
 ========== ne.po ==========
-# translation of engrampa.HEAD.ne.po to Nepali
+# translation of grapa.HEAD.ne.po to Nepali
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -789,9 +789,9 @@
 
 
 ========== nl.po ==========
-# Dutch translation for engrampa
+# Dutch translation for grapa
 #
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Michiel Sikkes <michiel@sikkes.xs4all.nl> 2003–2004.
 # Kees van den Broek <kvdb@NOSPAMkvdb.net>
@@ -805,7 +805,7 @@
 
 ========== nn.po ==========
 # translation of nn.po to Norwegian Nynorsk
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Copyright (C) 2004 CAFE Foundation
 #
 # Åsmund Skjæveland <aasmunds@fys.uio.no>, 2003, 2004, 2005, 2006.
@@ -816,9 +816,9 @@
 
 ========== oc.po ==========
 # Translation of oc.po to Occitan
-# Occitan translation of engrampa.
+# Occitan translation of grapa.
 # Copyright (C) 2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 #
 # Yannig Marchegay (Kokoyaya)  <yannig@marchegay.org>, 2007-2008.
@@ -839,9 +839,9 @@
 
 
 ========== pa.po ==========
-# translation of engrampa.HEAD.po to Punjabi
-# Copyright (C) 2004 THE engrampa.HEAD'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the engrampa.HEAD package.
+# translation of grapa.HEAD.po to Punjabi
+# Copyright (C) 2004 THE grapa.HEAD'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the grapa.HEAD package.
 #
 #
 # Amanpreet Singh Alam <amanlinux@netscape.net>, 2004.
@@ -873,9 +873,9 @@
 
 
 ========== pt.po ==========
-# engrampa's Portuguese translation.
-# Copyright © 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 engrampa
-# This file is distributed under the same license as the engrampa package.
+# grapa's Portuguese translation.
+# Copyright © 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 grapa
+# This file is distributed under the same license as the grapa package.
 # Duarte Loreto <happyguy_pt@hotmail.com>, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010.
 #
 
@@ -883,7 +883,7 @@
 
 
 ========== pt_BR.po ==========
-# Brazilian Portuguese translation of engrampa.
+# Brazilian Portuguese translation of grapa.
 # Copyright (C) 2002-2009 Free Software Foundation, Inc.
 # Marcus Brito <pazu@animegaiden.com.br>, 2002.
 # David Barzilay <barzilay@redhat.com>, 2003.
@@ -904,7 +904,7 @@
 
 
 ========== ro.po ==========
-# Romanian translation for engrampa.
+# Romanian translation for grapa.
 # Copyright (C) Free Software Foundation, Inc.
 # Mugurel Tudor <mugurelu@cafe.ro>, 2003, 2004.
 # Mișu Moldovan <dumol@cafe.ro>, 2003-2009.
@@ -915,8 +915,8 @@
 
 
 ========== ru.po ==========
-# translation of engrampa.master.ru.po to Russian
-# translation of engrampa to Russian
+# translation of grapa.master.ru.po to Russian
+# translation of grapa to Russian
 # Grapa translation into Russian
 # Copyright (C) 2001-2003, 2004, 2005, 2006, 2008, 2009, 2010 Free Software Foundation, Inc.
 #
@@ -934,9 +934,9 @@
 
 
 ========== rw.po ==========
-# translation of engrampa to Kinyarwanda.
+# translation of grapa to Kinyarwanda.
 # Copyright (C) 2005 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Steve Murphy <murf@e-tools.com>, 2005
 # Steve performed initial rough translation from compendium built from translations provided by the following translators:
 # Philibert Ndandali  <ndandali@yahoo.fr>, 2005.
@@ -962,9 +962,9 @@
 
 
 ========== sk.po ==========
-# Slovak translation for engrampa.
+# Slovak translation for grapa.
 # Copyright (C) 2003, 2004, 2005, 2006, 2007, 2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Stanislav Visnovsky <visnovsky@kde.org>, 2003.
 # Stanislav Visnovsky <visnovsky@nenya.ms.mff.cuni.cz>, 2004.
 # Peter Tuhársky <tuharsky@misbb.sk>, 2007.
@@ -976,9 +976,9 @@
 
 
 ========== sl.po ==========
-# Slovenian translations for engrampa.
+# Slovenian translations for grapa.
 # Copyright (C) 2002-2007 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Andraž Tori <andraz.tori1@guest.arnes.si>, 2002.
 # Matjaž Horvat <m@owca.info>, 2006.
@@ -990,7 +990,7 @@
 
 
 ========== sq.po ==========
-# Përkthimi i mesazheve të engrampa në shqip
+# Përkthimi i mesazheve të grapa në shqip
 # Copyright (C) 2006-2008 Free Software Foundation, Inc.
 # This file is distributed under the same license as the File Rroller package.
 #
@@ -1000,9 +1000,9 @@
 
 
 ========== sr.po ==========
-# Serbian translation of engrampa
+# Serbian translation of grapa
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2003 - 2009.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Maintainer: Слободан Д. Средојевић <slobo@akrep.be>
 # Reviewed on 2005-07-16 by: Игор Несторовић <igor@prevod.org>
 # Милош Поповић <gpopac@gmail.com>, 2010.
@@ -1014,7 +1014,7 @@
 ========== sr@ije.po ==========
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2003, 2004.
 #
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # Maintainer: Слободан Средојевић <ssl@uns.ns.ac.yu>
 #
@@ -1023,9 +1023,9 @@
 
 
 ========== sr@latin.po ==========
-# Serbian translation of engrampa
+# Serbian translation of grapa
 # Courtesy of Prevod.org team (http://prevod.org/) -- 2003 - 2009.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Maintainer: Slobodan D. Sredojević <slobo@akrep.be>
 # Reviewed on 2005-07-16 by: Igor Nestorović <igor@prevod.org>
 # Miloš Popović <gpopac@gmail.com>, 2010.
@@ -1035,7 +1035,7 @@
 
 
 ========== sv.po ==========
-# Swedish messages for engrampa.
+# Swedish messages for grapa.
 # Copyright (C) 2002-2010 Free Software Foundation, Inc.
 # Jimmy Carlson <sanaya@telia.com>, 2002.
 # Christian Rose <menthos@menthos.com>, 2002, 2003, 2004, 2005.
@@ -1046,7 +1046,7 @@
 
 
 ========== ta.po ==========
-# translation of engrampa.HEAD.ta.po to Tamil
+# translation of grapa.HEAD.ta.po to Tamil
 # translation of ta.po to
 # Tamil translation of Tamil Fileroller 2.4.
 # Copyright (C) 2003, 2004, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
@@ -1064,10 +1064,10 @@
 
 
 ========== te.po ==========
-# translation of engrampa.master.te.po to Telugu
-# Telugu translation of engrampa
+# translation of grapa.master.te.po to Telugu
+# Telugu translation of grapa
 # Copyright (C) 2005 Free Software Foundation, Andhra Pradesh.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 # వి.సౌజన్య <hai_sowjanya@rediffmail.com>, 2005.
 # స్రవంతి <sravanthi_reddy7@yahoo.com>, 2005.
@@ -1077,9 +1077,9 @@
 
 
 ========== th.po ==========
-# Thai translation for engrampa.
+# Thai translation for grapa.
 # Copyright (C) 2003-2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 #
 #
 # Note:
@@ -1096,7 +1096,7 @@
 
 
 ========== tk.po ==========
-# Turkmen translation of engrampa
+# Turkmen translation of grapa
 # Copyright (C) 2004 Free Software Foundation
 # Copyright (C) 2004 Kakilik Project <kakilik.sourceforge.net>
 # This file is distributed under the terms of GNU General Public License (GPL)
@@ -1141,7 +1141,7 @@
 
 
 ========== ur.po ==========
-# translation of engrampa.HEAD.po to Urdu
+# translation of grapa.HEAD.po to Urdu
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -1151,7 +1151,7 @@
 
 
 ========== ur_PK.po ==========
-# translation of engrampa.HEAD.po to Urdu
+# translation of grapa.HEAD.po to Urdu
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -1172,9 +1172,9 @@
 
 
 ========== xh.po ==========
-# Xhosa translation of engrampa
+# Xhosa translation of grapa
 # Copyright (C) 2005 Canonical Ltd.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Translation by Canonical Ltd <translations@canonical.com> with thanks to
 # Translation World CC in South Africa, 2005.
 #
@@ -1183,9 +1183,9 @@
 
 
 ========== zh_CN.po ==========
-# zh_CN translation for engrampa.
+# zh_CN translation for grapa.
 # Copyright (C) 2003, 2004, 2005, 2006, 2008, 2009, 2010 Free Software Foundation, Inc.
-# This file is distributed under the same license as the engrampa package.
+# This file is distributed under the same license as the grapa package.
 # Funda Wang <fundawang@gmail.com>, 2003-2006.
 # 甘露(Gan Lu) <rhythm.gan@gmail.com>, 2008, 2009.
 # Fan Qijiang <fqj1994@linux.com>, 2010.
@@ -1196,7 +1196,7 @@
 
 
 ========== zh_HK.po ==========
-# Chinese (Hong Kong) translation of engrampa.
+# Chinese (Hong Kong) translation of grapa.
 # Copyright (C) 2002, 03, 04, 05, 06, 07 Free Software Foundation, Inc.
 # Ben Wu <hpwu@redhat.com>, 2002-2003.
 # Woodman Tuen <wmtuen@gmail.com>, 2004-2007.
@@ -1208,7 +1208,7 @@
 
 
 ========== zh_TW.po ==========
-# Chinese (Taiwan) translation of engrampa.
+# Chinese (Taiwan) translation of grapa.
 # Copyright (C) 2002, 03, 04, 05, 06, 07 Free Software Foundation, Inc.
 # Ben Wu <hpwu@redhat.com>, 2002-2003.
 # Woodman Tuen <wmtuen@gmail.com>, 2004-2007.

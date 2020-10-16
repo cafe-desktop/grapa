@@ -1,13 +1,13 @@
 SUBDIRS = icons
 
 desktopdir = $(datadir)/applications
-desktop_in_in_files = engrampa.desktop.in.in
+desktop_in_in_files = grapa.desktop.in.in
 desktop_in_files = $(desktop_in_in_files:.desktop.in.in=.desktop.in) 
 desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 $(desktop_DATA): $(desktop_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --template $< -d $(top_srcdir)/po -o $@
 
-matchdir = $(datadir)/engrampa
+matchdir = $(datadir)/grapa
 match_DATA = packages.match
 
 servicedir = $(datadir)/dbus-1/services
@@ -17,18 +17,18 @@ $(service_DATA): $(service_in_files) Makefile
 	$(AM_V_GEN) $(SED) -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
 
 appdatadir = $(datadir)/metainfo
-appdata_in_files = engrampa.appdata.xml.in
+appdata_in_files = grapa.appdata.xml.in
 appdata_DATA = $(appdata_in_files:.xml.in=.xml)
 $(appdata_DATA): $(appdata_in_files)
 	$(AM_V_GEN) $(MSGFMT) --xml --template $< -d $(top_srcdir)/po -o $@
 
-gsettingsschema_in_files = org.cafe.engrampa.gschema.xml.in
+gsettingsschema_in_files = org.cafe.grapa.gschema.xml.in
 gsettings_SCHEMAS = $(gsettingsschema_in_files:.xml.in=.xml)
 .PRECIOUS: $(gsettings_SCHEMAS)
 
 @GSETTINGS_RULES@
 
-man_MANS = engrampa.1
+man_MANS = grapa.1
 
 gtk_update_icon_cache = gtk-update-icon-cache -f -t $(datadir)/icons/hicolor
 
@@ -63,7 +63,7 @@ DISTCLEANFILES = \
 
 CLEANFILES = \
        $(gsettings_SCHEMAS) \
-       engrampa.appdata.xml \
+       grapa.appdata.xml \
        $(NULL)
 
 dist-hook:
