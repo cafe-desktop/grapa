@@ -53,6 +53,7 @@ requires:
     - libtool
     - make
     - redhat-rpm-config
+    - yelp-tools
 
   ubuntu:
     - autoconf-archive
