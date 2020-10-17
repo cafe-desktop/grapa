@@ -15,7 +15,7 @@
   <object class="GtkImage" id="image3">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
-    <property name="icon_name">extract-archive</property>
+    <property name="icon_name">grapa_extract-archive</property>
   </object>
   <object class="GtkFileChooserDialog" id="dialog_extract">
     <property name="can_focus">False</property>
