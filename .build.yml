@@ -47,6 +47,7 @@ requires:
     - desktop-file-utils
     - file-devel
     - gcc
+    - gettext-devel
     - git
     - gtk3-devel
     - json-glib-devel
