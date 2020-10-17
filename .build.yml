@@ -15,6 +15,7 @@ requires:
     - libtool
     - json-glib
     - make
+    - pkgconf
     - which
     - yelp-tools
 
