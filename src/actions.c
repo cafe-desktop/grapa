@@ -898,8 +898,9 @@ activate_action_about (GtkAction *action,
     gtk_show_about_dialog (GTK_WINDOW (window),
                    "version", VERSION,
                    "copyright", _("Copyright \xc2\xa9 2001–2010 Free Software Foundation, Inc.\n"
-                                  "Copyright \xc2\xa9 2012–2020 The CAFE developers"),
-                   "comments", _("An archive manager for CAFE."),
+                                  "Copyright \xc2\xa9 2012–2020 The MATE developers\n"
+                                  "Copyright \xc2\xa9 2020 The CAFE developers"),
+                   "comments", _("An archive manager for CAFE"),
                    "authors", authors,
                    "documenters", documenters,
                    "translator-credits", _("translator-credits"),

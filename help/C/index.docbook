@@ -19,8 +19,12 @@
      </abstract>
 
     <copyright xml:lang="en">
-      <year>2019-2020</year>
+      <year>2020</year>
       <holder>CAFE Documentation Project</holder>
+    </copyright>
+    <copyright>
+      <year>2019-2020</year>
+      <holder>MATE Documentation Project</holder>
     </copyright>
     <copyright>
       <year>2009</year>
