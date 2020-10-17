@@ -10,6 +10,7 @@ requires:
     - clang
     - file
     - gcc
+    - gettext
     - git
     - gtk3
     - libtool
