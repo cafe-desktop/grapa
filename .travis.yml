@@ -42,6 +42,6 @@ deploy:
 
 env:
   - DISTRO="archlinux"
-  - DISTRO="debian"
+  - DISTRO="debian:experimental"
   - DISTRO="fedora"
   - DISTRO="ubuntu"
