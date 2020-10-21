@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generated with glade 3.20.0 -->
+<!-- Generated with glade 3.22.2 -->
 <interface>
-  <requires lib="gtk+" version="3.14"/>
+  <requires lib="gtk+" version="3.24"/>
+  <object class="GtkImage" id="image1">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">list-remove</property>
+  </object>
+  <object class="GtkImage" id="image2">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">window-close</property>
+  </object>
+  <object class="GtkImage" id="image3">
+    <property name="visible">True</property>
+    <property name="can_focus">False</property>
+    <property name="icon_name">emblem-ok-symbolic</property>
+  </object>
   <object class="GtkDialog" id="add_options_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Load Options</property>
     <property name="window_position">center-on-parent</property>
     <property name="type_hint">dialog</property>
+    <child type="titlebar">
+      <placeholder/>
+    </child>
     <child internal-child="vbox">
       <object class="GtkBox" id="dialog-vbox19">
         <property name="visible">True</property>
@@ -21,12 +39,14 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="aod_cancelbutton">
-                <property name="label">gtk-close</property>
+                <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
+                <property name="image">image2</property>
+                <property name="use_underline">True</property>
+                <property name="always_show_image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -36,12 +56,14 @@
             </child>
             <child>
               <object class="GtkButton" id="aod_okbutton">
-                <property name="label">gtk-apply</property>
+                <property name="label" translatable="yes">_Apply</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
-                <property name="use_stock">True</property>
+                <property name="image">image3</property>
+                <property name="use_underline">True</property>
+                <property name="always_show_image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -72,11 +94,13 @@
                 <property name="spacing">6</property>
                 <child>
                   <object class="GtkButton" id="aod_remove_button">
-                    <property name="label">gtk-remove</property>
+                    <property name="label" translatable="yes">_Remove</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
-                    <property name="use_stock">True</property>
+                    <property name="image">image1</property>
+                    <property name="use_underline">True</property>
+                    <property name="always_show_image">True</property>
                   </object>
                   <packing>
                     <property name="expand">False</property>
