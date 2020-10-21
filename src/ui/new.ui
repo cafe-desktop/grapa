@@ -45,7 +45,7 @@
         <property name="can_focus">True</property>
         <property name="expanded">True</property>
         <child>
-          <object class="GtkAlignment" id="other_oprtions_alignment">
+          <object class="GtkBox" id="other_oprtions_alignment">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="margin_top">6</property>
