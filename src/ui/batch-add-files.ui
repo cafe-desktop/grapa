@@ -212,11 +212,11 @@
                     <property name="margin_bottom">6</property>
                     <property name="expanded">True</property>
                     <child>
-                      <object class="GtkAlignment" id="alignment2">
+                      <object class="GtkBox" id="alignment2">
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
-                        <property name="top_padding">6</property>
-                        <property name="left_padding">12</property>
+                        <property name="margin_top">6</property>
+                        <property name="margin-start">12</property>
                         <child>
                           <object class="GtkGrid" id="table6">
                             <property name="visible">True</property>
