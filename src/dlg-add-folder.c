@@ -220,12 +220,12 @@ add_folder_cb (GtkWidget *widget,
 	data->window = callback_data;
 
 	data->dialog = file_sel =
-		gtk_file_chooser_dialog_new (_("Add a Folder"),
+		grapa_file_chooser_dialog_new (_("Add a Folder"),
 					     GTK_WINDOW (data->window),
 					     GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-					     "gtk-cancel", GTK_RESPONSE_CANCEL,
-					     FR_STOCK_ADD_FOLDER, GTK_RESPONSE_OK,
-					     "gtk-help", GTK_RESPONSE_HELP,
+					     "process-stop", GTK_RESPONSE_CANCEL,
+					     "grapa_add-folder-to-archive", GTK_RESPONSE_OK,
+					     "help-browser", GTK_RESPONSE_HELP,
 					     NULL);
 
 	gtk_window_set_default_size (GTK_WINDOW (data->dialog), 530, 510);
