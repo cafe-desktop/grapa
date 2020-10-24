@@ -5940,7 +5940,7 @@ fr_window_construct (FrWindow *window)
 			       /* Translators: this is the label for the "open recent file" sub-menu. */
 			       "label", _("Open _Recent"),
 			       "tooltip", _("Open a recently used archive"),
-			       "stock-id", "gtk-open",
+			       "icon-name", "document-open",
 			       NULL);
 	fr_window_init_recent_chooser (window, GTK_RECENT_CHOOSER (action));
 	gtk_action_group_add_action (actions, action);
@@ -5952,7 +5952,7 @@ fr_window_construct (FrWindow *window)
 			       "name", "OpenRecent_Toolbar",
 			       "label", _("Open"),
 			       "tooltip", _("Open a recently used archive"),
-			       "stock-id", "gtk-open",
+			       "icon-name", "document-open",
 			       "is-important", TRUE,
 			       NULL);
 	fr_window_init_recent_chooser (window, GTK_RECENT_CHOOSER (action));
