@@ -638,7 +638,7 @@ _gtk_widget_lookup_for_size (GtkWidget *widget,
 }
 
 
-static GtkWidget *
+GtkWidget *
 grapa_dialog_add_button (GtkDialog   *dialog,
 			 const gchar *button_text,
 			 const gchar *icon_name,

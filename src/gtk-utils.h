@@ -86,9 +86,14 @@ GtkWidget *
 int	    _gtk_widget_lookup_for_size	    (GtkWidget *widget,
 					     GtkIconSize icon_size);
 
-GtkWidget* grapa_file_chooser_dialog_new (const gchar          *title,
-					  GtkWindow            *parent,
-					  GtkFileChooserAction  action,
-					  const gchar          *first_button_text,
-					  ...);
+GtkWidget* grapa_file_chooser_dialog_new    (const gchar          *title,
+					     GtkWindow            *parent,
+					     GtkFileChooserAction  action,
+					     const gchar          *first_button_text,
+					     ...);
+
+GtkWidget * grapa_dialog_add_button         (GtkDialog   *dialog,
+					     const gchar *button_text,
+					     const gchar *icon_name,
+					     gint         response_id);
 #endif

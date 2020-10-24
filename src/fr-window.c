@@ -2550,27 +2550,6 @@ fr_window_message_cb (FrCommand  *command,
 }
 
 
-static GtkWidget*
-dialog_add_button_with_icon_name (GtkDialog   *dialog,
-                                  const gchar *button_text,
-                                  const gchar *icon_name,
-                                  gint         response_id)
-{
-	GtkWidget *button;
-
-	button = gtk_button_new_with_mnemonic (button_text);
-	gtk_button_set_image (GTK_BUTTON (button), gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
-
-	gtk_button_set_use_underline (GTK_BUTTON (button), TRUE);
-	gtk_style_context_add_class (gtk_widget_get_style_context (button), "text-button");
-	gtk_widget_set_can_default (button, TRUE);
-	gtk_widget_show (button);
-	gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
-
-	return button;
-}
-
-
 static void
 create_the_progress_dialog (FrWindow *window)
 {
@@ -2602,14 +2581,14 @@ create_the_progress_dialog (FrWindow *window)
 								     NULL,
 								     NULL);
 
-	window->priv->pd_quit_button = dialog_add_button_with_icon_name (GTK_DIALOG (window->priv->progress_dialog), _("_Quit"), "application-exit", DIALOG_RESPONSE_QUIT);
+	window->priv->pd_quit_button = grapa_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Quit"), "application-exit", DIALOG_RESPONSE_QUIT);
 	window->priv->pd_open_archive_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Open the Archive"), DIALOG_RESPONSE_OPEN_ARCHIVE);
 	window->priv->pd_open_destination_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Show the Files"), DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER);
 	window->priv->pd_open_destination_and_quit_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("Show the _Files and Quit"), DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER_AND_QUIT);
-	window->priv->pd_close_button = dialog_add_button_with_icon_name (GTK_DIALOG (window->priv->progress_dialog), _("_Close"), "window-close", GTK_RESPONSE_CLOSE);
-	window->priv->pd_cancel_button = dialog_add_button_with_icon_name (GTK_DIALOG (window->priv->progress_dialog), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
+	window->priv->pd_close_button = grapa_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Close"), "window-close", GTK_RESPONSE_CLOSE);
+	window->priv->pd_cancel_button = grapa_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
 	/*add start button default suspend*/
-	window->priv->pd_state_button = dialog_add_button_with_icon_name (GTK_DIALOG (window->priv->progress_dialog), _("_Pause"), "media-playback-pause", GTK_RESPONSE_ACCEPT);
+	window->priv->pd_state_button = grapa_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Pause"), "media-playback-pause", GTK_RESPONSE_ACCEPT);
 	d = GTK_DIALOG (window->priv->progress_dialog);
 	gtk_window_set_resizable (GTK_WINDOW (d), TRUE);
 	gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
