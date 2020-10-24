@@ -310,10 +310,10 @@ dlg_new_archive (FrWindow  *window,
 
 	/**/
 
-	gtk_button_set_use_stock (GTK_BUTTON (n_new_button), TRUE);
 	gtk_button_set_label (GTK_BUTTON (n_new_button), _("C_reate"));
 	gtk_button_set_image (GTK_BUTTON (n_new_button),
 			      gtk_image_new_from_icon_name ("grapa_add-files-to-archive", GTK_ICON_SIZE_BUTTON));
+
 	gtk_expander_set_expanded (GTK_EXPANDER (data->n_other_options_expander), FALSE);
 	settings = g_settings_new (GRAPA_SCHEMA_GENERAL);
         gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->n_encrypt_header_checkbutton), g_settings_get_boolean (settings, PREF_GENERAL_ENCRYPT_HEADER));
