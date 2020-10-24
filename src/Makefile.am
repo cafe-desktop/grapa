@@ -125,8 +125,6 @@ COMMON_SOURCES = 			\
 	fr-init.h			\
 	fr-list-model.c			\
 	fr-list-model.h			\
-	fr-stock.c			\
-	fr-stock.h			\
 	fr-proc-error.c			\
 	fr-proc-error.h			\
 	fr-process.c			\

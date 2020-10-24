@@ -29,7 +29,6 @@
 #include <gio/gio.h>
 #include "dlg-add-folder.h"
 #include "file-utils.h"
-#include "fr-stock.h"
 #include "fr-window.h"
 #include "gtk-utils.h"
 #include "preferences.h"

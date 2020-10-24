@@ -27,7 +27,6 @@
 #include <gio/gio.h>
 #include "dlg-new.h"
 #include "file-utils.h"
-#include "fr-stock.h"
 #include "gtk-utils.h"
 #include "fr-init.h"
 #include "preferences.h"

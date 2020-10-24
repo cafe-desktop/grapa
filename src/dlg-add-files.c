@@ -26,7 +26,6 @@
 #include <glib/gi18n.h>
 #include <gtk/gtk.h>
 #include "file-utils.h"
-#include "fr-stock.h"
 #include "fr-window.h"
 #include "gtk-utils.h"
 #include "preferences.h"

@@ -29,7 +29,6 @@
 #include "dlg-batch-add.h"
 #include "file-utils.h"
 #include "fr-init.h"
-#include "fr-stock.h"
 #include "fr-window.h"
 #include "gtk-utils.h"
 #include "glib-utils.h"
