@@ -11,6 +11,7 @@ nobase_dist_icons_DATA = \
 	24x24/actions/grapa_extract-archive.png \
 	24x24/actions/grapa-apply.png \
 	24x24/actions/grapa-ok.png \
+	24x24/actions/grapa-no.png \
 	24x24/apps/grapa.png \
 	32x32/apps/grapa.png \
 	scalable/apps/grapa.svg
