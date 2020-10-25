@@ -315,7 +315,6 @@ _gtk_error_dialog_new (GtkWindow        *parent,
 	GtkWidget     *scrolled = NULL;
 	GtkWidget     *expander;
 	GtkWidget     *content_area;
-	GtkWidget     *action_area;
 	GtkTextBuffer *text_buf;
 	GtkTextIter    iter;
 	GList         *scan;
@@ -336,8 +335,6 @@ _gtk_error_dialog_new (GtkWindow        *parent,
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
 	content_area = gtk_dialog_get_content_area (GTK_DIALOG (dialog));
-
-	action_area = gtk_dialog_get_action_area (GTK_DIALOG (dialog));
 
 	/* Add label and image */
 
@@ -435,8 +432,6 @@ _gtk_error_dialog_new (GtkWindow        *parent,
 	gtk_container_set_border_width (GTK_CONTAINER (dialog), 5);
 	gtk_container_set_border_width (GTK_CONTAINER (hbox), 5);
 	gtk_box_set_spacing (GTK_BOX (content_area), 14); /* 14 + 2 * 5 = 24 */
-	gtk_container_set_border_width (GTK_CONTAINER (action_area), 5);
-	gtk_box_set_spacing (GTK_BOX (action_area), 6);
 
 	gtk_widget_show_all (vbox);
 
