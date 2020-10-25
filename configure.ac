@@ -44,7 +44,7 @@ AC_SUBST(CAJA_REQUIRED)
 
 dnl ===========================================================================
 
-PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= $GTK_REQUIRED])
+PKG_CHECK_MODULES(GTK, [gtk4 >= $GTK_REQUIRED])
 AC_SUBST([GTK_CFLAGS])
 AC_SUBST([GTK_LIBS])
 
