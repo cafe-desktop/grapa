@@ -62,7 +62,7 @@ PKG_CHECK_MODULES(FR,					\
 	glib-2.0 >= $GLIB_REQUIRED			\
 	gthread-2.0					\
 	gio-unix-2.0 >= $GIO_REQUIRED			\
-	gtk+-3.0 >= $GTK_REQUIRED)
+	gtk4 >= $GTK_REQUIRED)
 AC_SUBST(FR_CFLAGS)
 AC_SUBST(FR_LIBS)
 
