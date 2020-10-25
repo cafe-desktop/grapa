@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the CAFE Documentation Project
+  http://wiki.cafe-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="ru">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>Руководство по Менеджеру архивов</title> 
+
+     <abstract>
+       <para>Менеджер архивов, также известный как Grapa, позволяет создавать просматривать, модифицировать и распаковывать архивы.</para>
+     </abstract>
+
+    <copyright xml:lang="en">
+      <year>2020</year>
+      <holder>CAFE Documentation Project</holder>
+    </copyright>
+    <copyright xml:lang="en">
+      <year>2019-2020</year>
+      <holder>MATE Documentation Project</holder>
+    </copyright>
+    <copyright><year>2009</year> <holder>Paul Cutler</holder></copyright>	    
+	<copyright><year>2006</year> <year>2008</year> <holder>Paolo Bacchilega</holder></copyright> 
+     <copyright><year>2003</year> <year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <holder>Paolo Bacchilega</holder></copyright> 
+    <copyright><year>2002</year> <holder>Alexander Kirillov</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>Проект документирования CAFE</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>Проект документирования GNOME</publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>Проект документирования МАТЕ</orgname> <affiliation> <orgname>Окружение рабочего стола МАТЕ</orgname> </affiliation></author>
+      <author><personname> <firstname>Sun</firstname> <surname>Команда документирования GNOME</surname> </personname> <affiliation> <orgname>Sun Microsystems</orgname> </affiliation></author>
+      <author><personname> <firstname>Paolo</firstname> <surname>Bacchilega</surname> </personname> <affiliation> <orgname>Проект документирования GNOME</orgname> </affiliation></author> 
+      <author><personname> <firstname>Alexander</firstname> <surname>Kirillov</surname> </personname> <affiliation> <orgname>Проект документирования GNOME</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Paul</firstname> <surname>Cutler</surname> </personname> <affiliation> <orgname>Проект документирования GNOME</orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>Июль 2015</date> <revdescription>
+                         <para role="author" xml:lang="en">Wolfgang Ulbrich</para>
+                         <para role="publisher" xml:lang="en">Проект документирования CAFE</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>Март 2009</date> <revdescription>
+                         <para role="author">Paul Cutler</para>
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>Июль 2008</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>Апрель 2006</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>Март 2004</date> <revdescription>
+                         <para role="author">Команда документирования GNOME компании Sun</para>
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>Февраль 2004</date> <revdescription>
+                         <para role="author">Команда документирования GNOME компании Sun</para>
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>Август 2003</date> <revdescription>
+                         <para role="author">Команда документирования GNOME компании Sun</para>
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>Июнь 2003</date> <revdescription>
+                         <para role="author">Команда документирования GNOME компании Sun</para>
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>Январь 2003</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>                         
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>Июнь 2002</date> <revdescription>
+                         <para role="author">Alexander Kirillov</para>                         
+                         <para role="publisher">Проект документирования GNOME</para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>Это руководство описывает версию 1.22 Менеджера архивов.</releaseinfo> 
+  </info> 
+
+  <indexterm zone="index"><primary>Grapa</primary></indexterm> 
+  <indexterm zone="index"><primary>grapa</primary></indexterm>
+  <indexterm zone="index"><primary>Архивация</primary></indexterm>
+  <indexterm zone="grapa-add-files"><primary>Архивы</primary> <secondary>Добавление файлов</secondary></indexterm> 
+  <indexterm zone="grapa-delete-files"><primary>Архивы</primary> <secondary>Удаление файлов</secondary></indexterm> 
+  <indexterm zone="grapa-open"><primary>Архивы</primary> <secondary>Открытие</secondary></indexterm> 
+  <indexterm zone="grapa-view"><primary>Архивы</primary> <secondary>Просмотр</secondary></indexterm> 
+  <indexterm zone="grapa-extract"><primary>Архивы</primary> <secondary>Распаковка</secondary></indexterm> 
+  <indexterm zone="grapa-create"><primary>Архивы</primary> <secondary>Создание</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="grapa-intro"><info><title>Введение</title></info> 
+     
+    <para>Приложение <application>Менеджер архивов</application> можно использовать для создания, просмотра, изменения и распаковки архивов. Архив — это файл, служащий контейнером для других файлов. Архив может содержать множество файлов, папок и вложенных папок, обычно в сжатом виде.</para>
+    <para><application>Менеджер архивов</application> предоставляет лишь графический интерфейс, используя для самих операций с архивами утилиты командной строки, такие как <command>tar</command>, <command>gzip</command>и <command>bzip2</command>.</para>
+    <para>Если в вашей системе установлены соответствующие инструменты командной строки, <application>Менеджер архивов</application> поддерживает форматы архивов, перечисленные в следующей таблице.</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Формат</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Расширение файла</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>Архив 7-zip</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив ACE</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив Alzip</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив AR</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив ARJ</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив Microsoft Cabinet</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив формата CPIO</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Пакет формата Debian</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Образ компакт-диска</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив Java</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив корпоративных приложений</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Ресурс веб-приложений или архив веб-приложений</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив LHA</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив RAR</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Файл Comic Book (сжатый с помощью RAR)</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Пакет RPM</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив TAR</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив TAR, сжатый <command>bzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> или <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив TAR, сжатый <command>bzip2</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> или <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив TAR, сжатый <command>gzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.gz</filename> или <filename>.tgz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив TAR, сжатый <command>lzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> или <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив TAR, сжатый <command>lzop</command></para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> или <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив TAR, сжатый <command>compress</command></para></entry>
+              <entry align="left"><para><filename>.tar.Z</filename> или <filename>.taz</filename></para></entry>
+            </row>
+             <row valign="top">
+              <entry><para>Архив TAR, сжатый <command>7zip</command></para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив StuffIt</para></entry>
+              <entry align="left"><para><filename>.bin</filename> или <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив ZIP</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Файл Comic Book (сжатый с помощью Zip)</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Архив ZOO</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>В Linux- и Unix-подобных системах чаще всего используется формат архивов TAR, сжатый с помощью <command>gzip</command> или <command>bzip2</command>.</para>
+    <para>Для систем Microsoft Windows наиболее типичны архивы, созданные с помощью <application>PKZIP</application> или <application>WinZip</application>.</para>
+    <section xml:id="grapa-intro-nonarchive"><info><title>Сжатые неархивированные файлы</title></info>
+       
+      <para>Сжатый неархивированный файл — это файл, не являющийся архивом и сжатый с помощью <command>bzip2</command>, <command>gzip</command>, <command>lzip</command>, <command>lzop</command>, <command>compress</command> или <command>rzip</command>. Например, <filename>file.txt.gz</filename> создаётся при сжатии файла <filename>file.txt</filename> с помощью <command>gzip</command>.</para>
+      <para>С помощью <application>Менеджера архивов</application> можно создавать, открывать и извлекать содержимое сжатых неархивированных файлов.</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="grapa-get-start"><info><title>Начало работы</title></info>
+    
+    <para>Этот раздел содержит информацию о том, как запустить <application>Менеджер архивов</application>, и описывает его пользовательский интерфейс.</para>
+
+<!-- ============= To Start Grapa ============================ -->
+         <section xml:id="grapa-to-start"><info><title>Запуск <application>Менеджера архивов</application></title></info>
+                
+                <para><application>Менеджер архивов</application> можно запустить следующими способами:</para>
+                <variablelist>
+                <varlistentry>
+                <term>Меню <guimenu>Приложения</guimenu></term>
+                <listitem>
+                <para>Выберите <menuchoice><guisubmenu>Стандартные</guisubmenu><guimenuitem>Менеджер Архивов</guimenuitem></menuchoice>.</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>Командная строка</term>
+                <listitem>
+                <para>Выполните команду: <command>grapa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="grapa-when-start"><info><title>После запуска <application>Менеджера архивов</application></title></info>
+                
+                <para>После запуска <application>Менеджера архивов</application> появляется следующее окно:</para>
+
+                <figure xml:id="grapa-FIG-main-window"><info><title>Окно <application>Менеджера архивов</application></title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/grapa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Показывает главное окно Grapa.</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para>Окно <application>Менеджера архивов</application> содержит следующие элементы:</para>
+                <variablelist>
+                  <varlistentry> <term>Строка меню</term>
+                         <listitem>
+                                <para>Строка меню содержит все команды, необходимые для работы в <application>Менеджере архивов</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Панель инструментов</term>
+                         <listitem>
+                                <para>Панель инструментов содержит некоторые из команд, доступных в строке меню. Она включена в <application>Менеджере архивов</application> по умолчанию. Чтобы скрыть её, выберите <menuchoice><guimenu>Вид</guimenu><guimenuitem>Панель инструментов</guimenuitem></menuchoice>. Чтобы снова сделать панель инструментов видимой, ещё раз выберите <menuchoice><guimenu>Вид</guimenu><guimenuitem>Панель инструментов</guimenuitem></menuchoice>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Дерево папок</term>
+                         <listitem>
+                                <para>Панель с деревом папок позволяет переходить между содержащимися в архиве папками. <application>Менеджер архивов</application> отображает эту панель только в режиме просмотра папок. Подробнее читайте в разделе <xref linkend="grapa-view-type-folder"/>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Область отображения</term>
+                         <listitem>
+                                <para>Область отображения показывает содержимое архива.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Строка состояния</term>
+                         <listitem>
+                                <para>Строка состояния показывает информацию о текущих действиях <application>Менеджера архивов</application> и контекстную информацию о содержимом архива. По умолчанию отображение стоки состояния включено. Чтобы скрыть её, выберите <menuchoice><guimenu>Вид</guimenu><guimenuitem>Строка состояния</guimenuitem></menuchoice>. Чтобы снова сделать её видимой, выберите <menuchoice><guimenu>Вид</guimenu><guimenuitem>Строка состояния</guimenuitem></menuchoice> ещё раз.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para>Щелчок правой кнопкой мыши в окне <application>Менеджера архивов</application> открывает всплывающее контекстное меню, которое содержит наиболее часто используемые в данной ситуации команды.</para>
+
+     <section xml:id="grapa-bookmarks"><info><title>Просмотр файловой системы</title></info>
+        
+        <para>Некоторые диалоговые окна <application>Менеджера архивов</application> (<guilabel>Создать</guilabel>, <guilabel>Открыть</guilabel>, <guilabel>Распаковать</guilabel> и другие) позволяют просматривать файлы и папки на компьютере. Чтобы узнать, как с ними работать, обратитесь к <link xlink:href="help:cafe-user-guide/filechooser-open">Руководству пользователя рабочей среды</link>.</para>
+        <para>В разделе <link xlink:href="help:cafe-user-guide/caja-bookmarks">Закладки</link> этого руководства вы можете узнать, как использовать панель <guilabel>Места</guilabel> для доступа к избранным местоположениям.</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="grapa-working"><info><title>Работа с архивами</title></info>
+      
+      <para>При работе с архивами в <application>Менеджере архивов</application> все изменения сразу же сохраняются на диск. Например, если вы удаляете файл из архива, то <application>Менеджер архивов</application> удалит файл сразу после нажатия кнопки <guibutton>OK</guibutton>. Это отличается от поведения большинства приложений, которые сохраняют изменения на диск только после выхода из приложения или выбора команды <guimenuitem>Сохранить</guimenuitem> в меню.</para>
+      <para>Если архив очень большой, или у вас непроизводительный компьютер, то некоторые действия с архивами могут занимать продолжительное время. Чтобы прервать текущее действие, нажмите <keycap>Esc</keycap>. Другой способ — выбрать <menuchoice><guimenu>Вид</guimenu><guimenuitem>Остановить</guimenuitem></menuchoice> или нажать <guibutton>Прервать текущую операцию</guibutton> на панели инструментов.</para>      
+      <para>В <application>Менеджере архивов</application> одни и те же действия можно выполнить несколькими способами:<informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>Компонент интерфейса</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>Действие</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>Окно</para></entry>
+                          <entry><para>Перетащите архив в окно <application>Менеджера архивов</application> из другого приложения, например из файлового менеджера.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Строка меню</para></entry>
+                          <entry><para>Выберите <menuchoice><guimenu>Архив</guimenu><guimenuitem>Открыть</guimenuitem></menuchoice>.</para>
+           <para>Недавно открывавшиеся архивы будут перечислены непосредственно в меню <menuchoice><guimenu>Архив</guimenu></menuchoice>.</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Панель инструментов</para></entry>
+                          <entry><para>Щёлкните по кнопке <guibutton>Открыть</guibutton> в панели инструментов.</para>
+           <para>Если вы недавно уже открывали нужный архив, щёлкните по стрелке вниз рядом с кнопкой <guibutton>Открыть</guibutton>.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Контекстное меню</para></entry>
+                          <entry><para>Щёлкните правой кнопкой по архиву и выберите <guilabel>Открыть</guilabel> во всплывающем меню.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Комбинация клавиш</para></entry>
+                          <entry><para>Нажмите <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>.</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>В этом руководстве описано выполнение действий с помощью строки меню.</para>
+
+    <section xml:id="grapa-pattern"><info><title>Шаблоны имён файлов</title></info>
+      
+      <para><application>Менеджер архивов</application> позволяет добавлять, извлекать или удалять несколько файлов сразу. Чтобы применить действие ко всем файлам, соответствующим определённому шаблону, введите шаблон в текстовом поле. Шаблон может включать стандартные символы подстановки, такие как <keycap>*</keycap> для соответствия любой строке и <keycap>?</keycap> для соответствия любому одиночному символу. Можно вводить несколько шаблонов, разделяя их точкой с запятой. <application>Менеджер архивов</application> применит действие ко всем файлам, удовлетворяющим по меньшей мере одному из шаблонов. Примеры в таблице ниже демонстрируют, как использовать шаблоны для выбора файлов.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Шаблон</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>Соответствующие файлы</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>Все файлы</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>Все файлы с расширением <filename>tar</filename>, включая те, у которых за расширением <filename>tar</filename> следует любая последовательность символов, например, <filename>filename.tar.gz</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>Все файлы с расширением <filename>jpg</filename> и все файлы с расширением <filename>jpeg</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>file?.gz</filename></para></entry>
+              <entry align="left"><para>Все файлы с расширением <filename>gz</filename> и именем, состоящим из слова «file» и одного любого символа, например: <filename>file2.gz</filename>, <filename>filex.gz</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="grapa-open"><info><title>Открытие архива</title></info>
+      
+      <para>Чтобы открыть архив, выполните следующие действия: <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem>
+           <para>Выберите <menuchoice><guimenu>Архив</guimenu><guimenuitem>Открыть</guimenuitem></menuchoice>, чтобы открыть диалоговое окно <guilabel>Открыть</guilabel>, нажмите <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>, или щёлкните по кнопке <guibutton>Открыть</guibutton> на панели инструментов.</para> 
+          </listitem>
+          <listitem>
+           <para>Выберите архив, который нужно открыть.</para> 
+          </listitem>
+          <listitem>
+           <para>Нажмите кнопку <guibutton>Открыть</guibutton>.</para> 
+          </listitem>
+        </orderedlist></para>
+      <para><application>Менеджер архивов</application> автоматически определяет тип архива и отображает: <itemizedlist>
+          <listitem>
+            <para>Имя архива в заголовке окна</para>
+          </listitem>
+          <listitem>
+            <para>Содержимое архива в области отображения</para>
+          </listitem>
+          <listitem>
+            <para>Число файлов и папок (объектов) в текущем местоположении и их размер (в распакованном виде) в строке состояния</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>Чтобы открыть другой архив, выберите <menuchoice><guimenu>Архив</guimenu><guimenuitem>Открыть</guimenuitem></menuchoice> снова. <application>Менеджер архивов</application> открывает каждый архив в отдельном окне. Открыть другой архив в том же окне нельзя.</para>
+      <para>Если <application>Менеджер архивов</application> не поддерживает формат открываемого архива, вы увидите сообщение об ошибке. Список поддерживаемых форматов приводится в разделе <xref linkend="grapa-intro"/>.</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="grapa-select-files"><info><title>Выбор файлов в архиве</title></info>
+      
+    <para>Для выделения всех файлов в архиве выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Выделить все</guimenuitem></menuchoice> или нажмите <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+      <para>Для снятия выделения со всех файлов в архиве выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Снять выделение</guimenuitem></menuchoice> или нажмите <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="grapa-extract"><info><title>Извлечение файлов из архива</title></info> 
+     
+    <para>Чтобы извлечь файлы из открытого архива, выполните следующие действия: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Выберите файлы, которые нужно извлечь. Для выбора нескольких файлов нажмите и удерживайте <keycap>Ctrl</keycap> и щёлкайте на файлах, которые хотите выделить.</para>
+        </listitem>
+        <listitem><para>Выберите <menuchoice><guimenu>Архив</guimenu><guimenuitem>Распаковать</guimenuitem></menuchoice>, чтобы открыть диалоговое окно <guilabel>Распаковать</guilabel>, или щёлкните на кнопке <guibutton>Распаковать</guibutton> в панели инструментов.</para>
+        </listitem>
+        <listitem><para>Выберите папку, в которую <application>Менеджер архивов</application> должен извлечь файлы.</para>
+        </listitem>
+        <listitem><para>Выберите требуемые параметры распаковки. Подробнее о параметрах распаковки читайте в разделе <xref linkend="grapa-extract-options"/>.</para>
+        </listitem>
+        <listitem><para>Нажмите кнопку <guibutton>Распаковать</guibutton>.</para>
+        <note>
+          <para>Если все файлы в архиве защищены паролем, а вы не указали его, то <application>Менеджер архивов</application> попросит ввести пароль.</para>
+          <para>Если паролем защищены лишь некоторые файлы в архиве, и вы не указали пароль, то <application>Менеджер архивов</application> не станет запрашивать пароль. Вместо этого он распакует только не защищённые паролем файлы.</para>
+          <para>Подробнее о паролях читайте в разделе <xref linkend="grapa-encrypt-files"/>.</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para><application>Менеджер архивов</application> также обеспечивает возможность извлечения файлов из архива прямо в окне файлового менеджера. Подробнее читайте в разделе <xref linkend="grapa-fmgr"/>.</para>
+    <para>Операция распаковки извлекает <emphasis>копии</emphasis> выбранных файлов из архива. Распакованные файлы имеют те же права доступа и дату изменения, что и оригинальные файлы, которые были добавлены в архив.</para>
+    <para>Операция распаковки не изменяет содержимое архива. Подробнее о том, как удалить файлы из архива, читайте в разделе <xref linkend="grapa-delete-files"/>.</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="grapa-archive-close"><info><title>Закрытие архива</title></info>
+    
+    <para>Чтобы закрыть текущий архив и текущее окно <application>Менеджера архивов</application>, выберите <menuchoice> <guimenu>Архив</guimenu> <guimenuitem>Закрыть</guimenuitem> </menuchoice> или нажмите <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>.</para>
+    <note>
+      <para>Закрыть текущий архив, не закрывая окно <application>Менеджера архивов</application>, нельзя.</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="grapa-creating"><info><title>Создание архивов</title></info> 
+     
+    <para>В <application>Менеджере архивов</application> можно не только открывать существующие архивы, но и создавать новые.</para>
+    <section xml:id="grapa-create"><info><title>Создание архивов</title></info> 
+     
+    <para>Чтобы создать архив, выполните следующие действия: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Выберите <menuchoice><guimenu>Архив</guimenu><guimenuitem>Создать</guimenuitem></menuchoice>, чтобы открыть диалоговое окно <guilabel>Создать</guilabel>. Можно вместо этого нажать <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo> или щёлкнуть по кнопке <guibutton>Создать новый архив</guibutton> на панели инструментов.</para>
+        </listitem>
+        <listitem>
+          <para>Укажите папку, в которой <application>Менеджер архивов</application> сохранит новый архив, в раскрывающемся списке <guilabel>Сохранить в папке</guilabel>. Если нужной папки нет в списке, нажмите <guilabel>Просмотреть другие папки</guilabel> и выберите нужную. Можно вместо этого ввести путь в текстовом поле <guilabel>Имя</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Введите имя нового архива, включая расширение файла в текстовом поле <guilabel>Имя</guilabel>. Можно также указать имя архива без расширения, а затем выбрать тип архива из выпадающего меню <guilabel>Формат файла</guilabel>, тогда расширение будет добавлено автоматически.</para>
+        </listitem>
+        <listitem><para>Выберите требуемые параметры создания архива, нажав <guilabel>Другие параметры</guilabel>. Подробнее о параметрах создания архива читайте в разделе <xref linkend="grapa-create-options"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Нажмите <guibutton>Создать</guibutton>. <application>Менеджер архивов</application> создаст пустой архив, но пока не  будет записывать его на диск.</para>
+        </listitem>
+        <listitem>
+          <para>Добавьте файлы в новый архив, как описано в разделе <xref linkend="grapa-add-files"/>. <note>
+                  <para><application>Менеджер архивов</application> записывает новый архив на диск, только когда архив содержит хотя бы один файл. Если вы создадите новый архив и выйдете из <application>Менеджера архивов</application>, не добавив в него никакие файлы, то <application>Менеджер архивов</application> удалит архив.</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="grapa-add-files"><info><title>Добавление файлов в архив</title></info>
+    
+    <para>Чтобы добавить файлы в архив, выполните следующие действия: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Решите, куда именно в архиве следует добавить файлы и откройте это местоположение в архиве.</para> 
+         </listitem>
+         <listitem>
+           <para>Выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Добавить файлы</guimenuitem></menuchoice>, чтобы открыть диалоговое окно <guilabel>Добавить файлы</guilabel>, или нажмите кнопку <guibutton>Добавить файлы</guibutton> на панели инструментов.</para> 
+         </listitem>
+         <listitem>
+           <para>Выберите файлы для добавления. Для выделения нескольких файлов удерживайте <keycap>Ctrl</keycap> и щёлкайте на файлах.</para> 
+         </listitem>
+         <listitem>
+           <para>Нажмите <guibutton>Добавить</guibutton>. <application>Менеджер архивов</application> добавит файлы в текущую папку в архиве.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Использовать диалог <guilabel>Добавить файлы</guilabel> для добавления папок нельзя. О добавлении папок читайте в разделе <xref linkend="grapa-add-folder"/>.</para>
+    <para>В диалоговом окне <guilabel>Добавить файлы</guilabel> есть опция <guilabel>Добавлять только обновлённые файлы</guilabel>, подробнее о ней читайте в разделе <xref linkend="grapa-add-options"/>.</para>
+    <para>Вы также можете добавить файлы в архив прямо в окне файлового менеджера, не открывая окно <application>Менеджера архивов</application>. Подробнее читайте в разделе <xref linkend="grapa-fmgr"/>.</para>
+    <para>Операция добавления помещает в архив <emphasis>копии</emphasis> выбранных файлов или папок. <application>Менеджер архивов</application> не удаляет исходные файлы, они остаются нетронутыми в файловой системе. Копии, добавленные в архив, имеют те же права доступа и дату изменения, что и исходные файлы.</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="grapa-add-folder"><info><title>Добавление папки в архив</title></info>
+      
+    <para>Чтобы добавить папку в архив, выполните следующие действия: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Решите, куда именно в архиве следует добавить файлы и откройте это местоположение в архиве.</para>
+         </listitem>
+         <listitem>
+           <para>Выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Добавить папку</guimenuitem></menuchoice>, чтобы открыть диалоговое окно <guilabel>Добавить папку</guilabel>.</para> 
+         </listitem>
+         <listitem>
+           <para>Выберите папку, которую хотите добавить.</para> 
+         </listitem>
+         <listitem>
+           <para>Нажмите кнопку <guibutton>Добавить</guibutton>. <application>Менеджер архивов</application> добавит выбранную папку в текущую папку архива.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Диалоговое окно <guilabel>Добавить папку</guilabel> содержит несколько дополнительных параметров. Подробнее читайте в разделе <xref linkend="grapa-add-options"/>.</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="grapa-convert-archive"><info><title>Преобразование архива в другой формат</title></info>
+    
+    <para>Чтобы преобразовать архив в другой формат и сохранить его как другой файл, выполните следующие действия:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>Откройте архив, который хотите преобразовать.</para>
+      </listitem>
+      <listitem>
+        <para>Выберите <menuchoice><guimenu>Архив</guimenu><guimenuitem>Сохранить как</guimenuitem></menuchoice>, чтобы открыть диалоговое окно <guilabel>Сохранить</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Введите имя нового архива в текстовом поле <guilabel>Имя</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Выберите новый формат из выпадающего списка <guilabel>Формат файла</guilabel>. Можно вместо этого указать расширение файла в текстовом поле <guilabel>Имя</guilabel> и выбрать <guilabel>По расширению</guilabel> в выпадающем списке <guilabel>Формат файла</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Выберите требуемые параметры создания архива, нажав <guilabel>Другие параметры</guilabel>. Подробнее о параметрах создания архива читайте в разделе <xref linkend="grapa-create-options"/>.</para>
+      </listitem>      
+      <listitem>
+        <para>Нажмите <guibutton>Сохранить</guibutton>.</para>
+        <note>
+          <para>Если все файлы в архиве защищены паролем, а вы не указали его, то <application>Менеджер архивов</application> попросит ввести пароль.</para>
+          <para>Если некоторые файлы в архиве защищены паролем, и вы не указали пароль, то <application>Менеджер архивов</application> не запросит пароль. При этом в новый архив будут скопированы только незащищённые паролем файлы.</para>
+          <para>Подробнее о паролях читайте в разделе <xref linkend="grapa-encrypt-files"/>.</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="grapa-modify-contents"><info><title>Изменение содержимого архива</title></info>
+  
+  <para>Вы можете изменять содержимое архива несколькими способами.</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="grapa-encrypt-files"><info><title>Шифрование файлов в архиве</title></info>
+      
+    <para>В целях безопасности вы можете зашифровать добавляемые в архив файлы.</para>
+      <para>Если формат архива поддерживает шифрование, вы можете указать пароль для шифрования файлов, которые добавляете в архив.</para>
+      <note>
+        <para>В настоящее время шифрование поддерживают только архивы 7-Zip, ZIP, RAR и ARJ.</para>
+      </note>
+     <para>Чтобы указать пароль для шифрования файла, сделайте следующее:</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para>Выберите <menuchoice><guimenu>Правка</guimenu> <guimenuitem>Пароль</guimenuitem></menuchoice>, чтобы открыть диалоговое окно <guilabel>Пароль</guilabel>.</para></listitem> 
+<listitem><para>Наберите пароль в текстовом поле <guilabel>Пароль</guilabel>.</para></listitem>
+<listitem><para>Нажмите <guibutton>OK</guibutton>.</para></listitem>
+       </orderedlist>
+    <para><application>Менеджер архивов</application> использует пароль для шифрования и расшифровки файлов, добавленных в текущий архив. <application>Менеджер архивов</application> не сохраняет пароль после закрытия архива.</para>
+      <para>О том, как проверить, содержит ли архив зашифрованные файлы, читайте в разделе <xref linkend="grapa-extra-info"/>.</para>
+      <note>
+      <para>Шифрование, обеспечиваемое программами архивирования, является слабым и небезопасным. Если для вас важна безопасность, воспользуйтесь более надёжным инструментом шифрования, например <ulink url="http://www.gnupg.org" type="http">GNU Privacy Guard</ulink>.</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="grapa-rename-files"><info><title>Переименование файла в архиве</title></info>
+    
+    <para>Чтобы переименовать файл в архиве, выполните следующие действия:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Выберите файл, который нужно переименовать.</para>
+        </listitem>
+        <listitem>
+          <para>Выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Переименовать</guimenuitem></menuchoice> или нажмите <keycombo><keycap>F2</keycap></keycombo>, чтобы открыть диалоговое окно <guilabel>Переименовать</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Введите новое имя файла в текстовом поле <guilabel>Новое имя файла</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Нажмите кнопку <guibutton>Переименовать</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="grapa-copy-files"><info><title>Копирование файлов в архиве</title></info>
+    
+    <para>Чтобы скопировать файлы в архиве, сделайте следующее:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Выделите файлы, которые нужно скопировать.</para>
+        </listitem>
+        <listitem>
+          <para>Выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Копировать</guimenuitem></menuchoice> или нажмите <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Откройте место, куда вы хотите поместить скопированные файлы.</para>
+        </listitem>
+        <listitem>
+          <para>Выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Вставить</guimenuitem></menuchoice> или нажмите <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="grapa-move-files"><info><title>Перемещение файлов в архиве</title></info>
+    
+    <para>Для перемещения файлов в архиве сделайте следующее:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Выделите файлы, которые нужно переместить.</para>
+        </listitem>
+        <listitem>
+          <para>Выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Вырезать</guimenuitem></menuchoice> или нажмите <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Откройте место, куда вы хотите поместить файлы.</para>
+        </listitem>
+        <listitem>
+          <para>Выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Вставить</guimenuitem></menuchoice> или нажмите <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="grapa-delete-files"><info><title>Удаление файлов из архива</title></info>
+    
+    <para>Для удаления файлов из архива, выполните следующие действия:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Выделите файлы, которые нужно удалить.</para>
+        </listitem>
+        <listitem>
+          <para>Выберите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Удалить</guimenuitem></menuchoice> или нажмите <keycap>Delete</keycap>, чтобы открыть диалоговое окно <guilabel>Удалить</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Выберите один из следующих вариантов удаления:</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>Все</guilabel></term>
+              <listitem>
+                <para>Удалить все файлы из архива.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Выделенные</guilabel></term>
+              <listitem>
+                <para>Удалить выделенные файлы из архива.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Файлы:</guilabel></term>
+              <listitem>
+                <para>Удалить из архива все файлы, соответствующие заданному шаблону. Подробнее о шаблонах имён файлов читайте в разделе <xref linkend="grapa-pattern"/>.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para>Нажмите <guibutton>OK</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="grapa-modify-archive-file"><info><title>Изменение файла в архиве</title></info> 
+     
+    <para>Чтобы изменить файл в архиве, выполните следующие действия: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Дважды щёлкните по файлу, который нужно открыть, или щёлкните по нему правой кнопкой и выберите <menuchoice><guimenuitem>Открыть</guimenuitem></menuchoice>.</para></listitem>
+      <listitem><para>Измените файл и сохраните изменения.</para></listitem>
+      <listitem><para><application>Менеджер архивов</application> запросит подтверждение на обновление файла в архиве.</para></listitem>
+      <listitem><para>Нажмите <guilabel>Обновить</guilabel>.</para></listitem>
+      </orderedlist></para>
+    <para><application>Менеджер архивов</application> использует заданные операционной системой ассоциации между типами файлов и приложениями, чтобы определить подходящее приложение для запуска файла определённого типа. Эти ассоциации можно посмотреть и изменить на вкладке <guilabel>Открывать в программе</guilabel> диалога свойств файла. Если <application>Менеджер архивов</application> не может найти подходящее приложение,  он отображает диалоговое окно <guilabel>Выбрать приложение</guilabel>, где вы можете выбрать приложение, как описано ниже.</para>
+    <section xml:id="grapa-modifiy-archive-file-custom-app"><info><title>Изменение файла в архиве с помощью другого приложения</title></info>
+    
+    <para>Для изменения файла можно воспользоваться не приложением по умолчанию, а выбранным вами приложением. Чтобы использовать внешнее приложение для открытия файла, выполните следующие действия: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Щёлкните правой кнопкой по файлу.</para></listitem>
+      <listitem><para>Выберите <menuchoice><guimenuitem>Открыть с помощью...</guimenuitem></menuchoice>.</para></listitem>
+      </orderedlist></para>    
+    <para><application>Менеджер архивов</application> откроет диалоговое окно <guilabel>Выбрать приложение</guilabel> со списком всех приложений, способных открывать файлы данного типа. Чтобы выбрать одно из приложений, дважды щёлкните по его названию или щёлкните по названию приложения, а затем по кнопке <guibutton>Выбрать</guibutton>. Можно также ввести имя приложения в текстовом поле <guilabel>Приложения</guilabel> и нажать кнопку <guibutton>Выбрать</guibutton>, чтобы запустить выбранное приложение.</para>
+    <para>После запуска приложения следуйте процедуре, описанной в разделе <xref linkend="grapa-modify-archive-file"/>, начиная с шага 2.</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="grapa-view"><info><title>Просмотр архивов</title></info>
+  
+  <para><application>Менеджер архивов</application> позволяет просматривать некоторые сведения об архиве.</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="grapa-view-archive-properties"><info><title>Просмотр свойств архива</title></info>
+      
+      <para>Для просмотра свойств архива выберите <menuchoice><guimenu>Архив</guimenu><guimenuitem>Свойства</guimenuitem></menuchoice>, чтобы открыть диалоговое окно <guilabel>Свойства архива</guilabel>. Диалог <guilabel>Свойства архива</guilabel> показывает следующую информацию об архиве: <variablelist>
+	      <varlistentry>
+	        <term><guilabel>Название</guilabel></term>
+	        <listitem><para>Имя архива.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Расположение</guilabel></term>
+	        <listitem><para>Местоположение архива в файловой системе.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Последнее изменение</guilabel></term>
+	        <listitem><para>Дата и время последнего изменения архива.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Размер архива</guilabel></term>
+	        <listitem><para>Размер содержимого архива в упакованном виде.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Размер содержимого</guilabel></term>
+	        <listitem><para>Размер содержимого архива в распакованном виде. Эта информация доступна также в строке состояния.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Степень сжатия</guilabel></term>
+	        <listitem><para>Степень сжатия — это значение, характеризующее уменьшение размера данных при сжатии. Например, степень сжатия 5 означает, что размер сжатого архива составляет 1/5 от размера исходных данных.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Количество файлов</guilabel></term>
+	        <listitem><para>Количество файлов в архиве.</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="grapa-view-archive-contents"><info><title>Просмотр содержимого архива</title></info>
+      
+
+      <para><application>Менеджер архивов</application> показывает содержимое архива в главном окне в виде списка файлов со следующими столбцами: <variablelist>
+	  <varlistentry>
+	    <term><guilabel>Название</guilabel></term>
+	    <listitem><para>Имя файла или папки в архиве.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Размер</guilabel></term>
+	    <listitem><para>Размер файла, когда он извлечён из архива. Для папки поле <guilabel>Размер</guilabel> пустое. О том, как показать размер сжатого файла, читайте в разделе  <xref linkend="grapa-extra-info"/>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Тип</guilabel></term>
+	    <listitem><para>Тип файла. Для папки поле <guilabel>Тип</guilabel> имеет значение <literal>Папка</literal>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Дата изменения</guilabel></term>
+	    <listitem><para>Дата последнего изменения файла. Для папки поле <guilabel>Дата изменения</guilabel> пустое.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Расположение</guilabel></term>
+	    <listitem><para>Путь к файлу внутри архива. Этот столбец виден только в режиме показа всего содержимого, а в режиме показа текущей папки местоположение файлов отображается в текстовом поле <guilabel>Расположение</guilabel>. Подробнее о режимах просмотра читайте в разделе <xref linkend="grapa-view-type-folder"/>.</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para>Если после открытия архива в <application>Менеджере архивов</application> содержимое архива было изменено в другой программе, выберите <menuchoice><guimenu>Вид</guimenu><guimenuitem>Обновить</guimenuitem></menuchoice>, чтобы перезагрузить содержимое архива с диска.</para>
+      <para>О том, как настроить отображение содержимого архива в <application>Менеджере архивов</application>, читайте в разделе <xref linkend="grapa-archive-custom"/>.</para>
+      <para>Для более сложных задач используйте специальное приложение, установленное в вашей системе. Для получения дополнительной информации см. раздел <xref linkend="grapa-view-archive-file"/>.</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="grapa-view-archive-file"><info><title>Просмотр файла в архиве</title></info> 
+     
+    <para>Чтобы просмотреть файл в архиве, выполните действия, описанные в разделе <xref linkend="grapa-modify-archive-file"/>. Если вы сохранили открытый файл, нажмите <guilabel>Отменить</guilabel>, когда <application>Менеджер архивов</application> запросит подтверждение обновления файла в архиве. </para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="grapa-test-archive"><info><title>Проверка целостности архива</title></info> 
+     
+    <para>Иногда архив по каким-либо причинам может оказаться повреждённым. Чтобы проверить, не повреждён ли архив, выберите <menuchoice><guimenu>Архив</guimenu><guimenuitem>Проверить целостность</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Если ошибок в архиве не обнаружено, <application>Менеджер архивов</application> откроет диалоговое окно <guilabel>Результаты проверки</guilabel>, в котором перечислит все файлы в архиве с указанием, что каждый из них имеет статус <literal>OK</literal>.</para>
+              </listitem>
+              <listitem>
+                <para>Если в архиве есть ошибка, <application>Менеджер архивов</application> откроет диалоговое окно <guilabel>Результаты проверки</guilabel>, в котором будет показана часть архива, содержащая ошибку.</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>Повреждённый архив может быть невозможно распаковать, что приведёт к потере данных. По этой причине следует проверить целостность архива перед удалением исходных файлов, которые были в него добавлены.</para>
+    <para>Если архив содержит зашифрованные файлы, <application>Менеджер архивов</application> запросит пароль к архиву перед выполнением проверки.</para>
+    <note>
+      <para>Не все форматы архивов поддерживают проверку целостности. Проверка целостности возможна для следующих форматов: 7-Zip, RAR, ZIP, ACE, ARJ и Zoo.</para>
+    </note>
+    <tip><info><title>Совет</title></info>
+      
+      <para>Чтобы убедиться в целостности архива, формат которого не поддерживает проверку целостности, распакуйте все файлы из архива и убедитесь, что распаковка завершена успешно.</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="grapa-archive-custom"><info><title>Настройка отображения содержимого архива</title></info>
+  
+  <para>Вы можете настроить отображение содержимого архива в <application>Менеджере архивов</application>:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Вы можете переключаться между режимами просмотра папок и файлов. Подробнее читайте в разделе <xref linkend="grapa-view-type"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Вы можете настроить порядок отображения файлов в списке. Подробнее читайте в разделе <xref linkend="grapa-view-sort"/>.</para>
+    </listitem> 
+    <listitem>
+      <para>Вы можете включить отображение дополнительных сведений о содержимом архива. Подробнее читайте в разделе <xref linkend="grapa-extra-info"/>.</para>
+    </listitem> 
+  </itemizedlist>
+  <para>При внесении этих изменений <application>Менеджер архивов</application> обновляет режим просмотра моментально.</para>
+
+  <section xml:id="grapa-view-type"><info><title>Настройка режима отображения</title></info>
+    
+    <para>Если архив содержит папки, вы можете просматривать его содержимое в режимах <xref linkend="grapa-view-type-folder"/> и <xref linkend="grapa-view-type-file"/>.</para>
+
+    <section xml:id="grapa-view-type-folder"><info><title>Просмотр папок</title></info>
+      
+      <para><application>Менеджер архивов</application> показывает содержимое архива в режиме просмотра папок по умолчанию. Чтобы явным образом выбрать режим просмотра папок, нажмите <menuchoice><guimenu>Вид</guimenu><guimenuitem>Показывать текущую папку</guimenuitem></menuchoice>.</para>
+      <para>В режиме просмотра папок <application>Менеджер архивов</application> показывает папки так же, как файловый менеджер: папки показаны на экране вместе с их значками и названиями. Чтобы просмотреть содержимое папки, дважды щёлкните по её названию.</para>
+      <para>Панель папок, которую <application>Менеджер архивов</application> показывает только в режиме просмотра папок, содержит элементы, описанные в таблице ниже.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Элемент</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Описание</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject><imageobject><imagedata fileref="figures/grapa_leftarrow.png" format="PNG"/></imageobject><textobject><phrase>Показывает значок для возвращения к ранее посещённому расположению.</phrase></textobject></inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Щёлкните по этой кнопке для возвращения назад по журналу расположений</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject><imageobject><imagedata fileref="figures/grapa_rightarrow.png" format="PNG"/></imageobject><textobject><phrase>Показывает значок для перехода вперёд по журналу расположений</phrase></textobject></inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Щёлкните по этой кнопке для перехода вперёд по журналу расположений</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject><imageobject><imagedata fileref="figures/grapa_uparrow.png" format="PNG"/></imageobject><textobject><phrase>Показывает значок для перехода на один уровень вверх в дереве папок</phrase></textobject></inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Щёлкните по этой кнопке для перехода на один уровень вверх в дереве папок</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject><imageobject><imagedata fileref="figures/grapa_home.png" format="PNG"/></imageobject><textobject><phrase>Показывает значок для перехода в корневую папку архива.</phrase></textobject></inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Щёлкните по этой кнопке для перехода в корневую папку архива.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>Расположение</guilabel></para>
+              </entry>
+              <entry>
+                <para>В этом поле показывается полный путь к текущей папке внутри архива.</para>
+                <para>Для перехода на другой уровень в дереве папок наберите новый адрес в текстовом поле <guilabel>Расположение</guilabel> и нажмите <keycap>Enter</keycap>. <application>Менеджер архивов</application> отобразит содержимое указанного адреса.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="grapa-view-type-file"><info><title>Просмотр файлов</title></info>
+      
+      <para>Чтобы включить режим просмотра файлов, нажмите <menuchoice><guimenu>Вид</guimenu><guimenuitem>Показывать всё содержимое</guimenuitem></menuchoice>.</para>
+      <para>В этом режиме <application>Менеджер архивов</application> показывает одним списком все файлы в архиве, включая файлы во вложенных папках.</para>
+    </section>
+
+  </section>
+
+  <section xml:id="grapa-view-sort"><info><title>Сортировка списка файлов</title></info>
+    
+    <para>Список файлов можно отсортировать по имени, размеру, типу, дате изменения или расположению.</para>
+    <para>Чтобы указать порядок сортировки, щёлкните на заголовке соответствующего столбца.</para>
+    <para>Чтобы обратить порядок сортировки, щёлкните на заголовке столбца ещё раз.</para>
+    <para>Например, чтобы отсортировать список файлов по дате изменения, щёлкните по заголовку <guilabel>Дата изменения</guilabel>. <application>Менеджер архивов</application> перекомпонует список файлов, чтобы показать их в порядке изменения, от более ранних к более поздним. Чтобы вверху располагались файлы, изменённые позднее всего, щёлкните по заголовку <guilabel>Дата изменения</guilabel> ещё раз.</para>
+    <para><application>Менеджер архивов</application> всегда дополнительно сортирует файлы по имени. В примере выше все файлы, имеющие одну и ту же дату изменения, будут отсортированы по имени.</para>
+  </section>
+
+  <section xml:id="grapa-extra-info"><info><title>Показ дополнительных сведений</title></info>
+    
+      <para>Чтобы открыть окно <guilabel>Журнал сообщений</guilabel>, нажмите <menuchoice><guimenu>Вид</guimenu><guimenuitem>Показать журнал сообщений</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Если в текущем сеансе работы Менеджера архивов вы тестировали архив, диалог <application>Журнал сообщений</application> показывает результаты последнего тестирования.</para>
+              </listitem>
+              <listitem>
+                <para>Если в текущем сеансе работы <application>Менеджера архивов</application> вы не тестировали архивы, в окне <guilabel>Журнал сообщений</guilabel> показан список всех файлов в архиве без указания статуса. Указывается размер каждого файла в сжатом виде и степень сжатия, а также дата и время последнего изменения.</para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="grapa-fmgr"><info><title>Использование файлового менеджера для работы с архивом</title></info> 
+     
+    <para>Вы можете добавить файлы в архив или извлечь их с помощью файлового менеджера.</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="grapa-fmgr-add"><info><title>Добавление файлов в архив в файловом менеджере</title></info>
+      
+           <para>Вы можете добавить файлы в архив в файловом менеджере следующими способами: <itemizedlist>
+             <listitem><para>Перетащите архив в окно <application>Менеджера архивов</application> из окна файлового менеджера.</para>
+             </listitem>
+             <listitem><para>Используйте контекстное меню файлового менеджера, чтобы добавить файлы в архив.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Чтобы добавить файлы в архив из контекстного меню, выполните следующие действия:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Щёлкните правой кнопкой по файлам или папкам в окне файлового менеджера.</para>
+        </listitem>
+        <listitem><para>Выберите <guimenuitem>Создать архив</guimenuitem>, чтобы увидеть диалог <guilabel>Создать архив</guilabel> <application>Менеджера архивов</application>. </para>
+        </listitem>
+        <listitem><para>Введите имя архива без расширения в текстовом поле <guilabel>Архив</guilabel>.</para>
+        </listitem>
+        <listitem><para>Выберите тип архива в раскрывающемся меню.</para>
+        </listitem>
+        <listitem><para>Выберите расположение, в котором нужно сохранить архив, в раскрывающемся списке <guilabel>Расположение</guilabel>. Если нужного расположения нет в списке, нажмите <guilabel>Другой…</guilabel>, чтобы выбрать его в диалоге <guilabel>Расположение</guilabel>.</para>
+        </listitem>
+        <listitem><para>Выберите требуемые параметры создания архива, нажав <guilabel>Другие параметры</guilabel>. Подробнее о параметрах создания архива читайте в разделе <xref linkend="grapa-create-options"/>.</para>
+        </listitem>
+        <listitem><para>Нажмите <guilabel>Создать</guilabel>, чтобы добавить выбранные файлы в корневую папку указанного архива.</para>
+                 <note><para>Чтобы указать расширенные параметры добавления в архив, запустите <application>Менеджер архивов</application>, как описано в разделе <xref linkend="grapa-to-start"/>.</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="grapa-fmgr-extract"><info><title>Извлечение файлов из архива в файловом менеджере</title></info>
+      
+           <para>Вы можете извлечь файлы из архива в файловом менеджере следующими способами:</para>
+      <para>Чтобы извлечь файлы из архива через контекстное меню, выполните следующие действия:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Щёлкните правой кнопкой мыши по архиву в файловом менеджере.</para>
+        </listitem>
+        <listitem><para>Выберите <guimenuitem>Распаковать сюда</guimenuitem>, чтобы извлечь все файлы из архива и поместить их в каталог, в котором расположен архив.</para>
+        </listitem>
+      </orderedlist>
+      <note><para>Если архив зашифрован, <application>Менеджер архивов</application> запросит пароль перед выполнением проверки.</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="grapa-create-options"><info><title>Опции создания архива</title></info>
+      
+      <para>При создании архива или его конвертации в другой формат вы можете нажать <guilabel>Другие параметры</guilabel>, чтобы указать дополнительные параметры:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Пароль</guilabel></term>
+	  <listitem>
+	  <para>Введите пароль, который будет использован для шифрования архива. Если пароль не указан, архив не будет зашифрован.</para>
+	  <note>
+	    <para>Шифрование доступно не для всех форматов файлов. Подробнее о шифровании читайте в разделе <xref linkend="grapa-encrypt-files"/>.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Шифровать также список файлов</guilabel></term>
+	  <listitem>
+	  <para>Если этот флажок установлен, для просмотра списка файлов в архиве будет необходимо ввести пароль. Если флажок не установлен, пароль нужен будет только для извлечения файлов. Эта опция доступна, только если вы указали пароль.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Разделить на тома</guilabel></term>
+	  <listitem>
+	  <para>Выберите эту опцию, чтобы разбить архив на несколько файлов указанного размера.</para>
+	  <note>
+	    <para>Эта возможность доступна только в форматах 7-ZIP и RAR.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="grapa-add-options"><info><title>Опции добавления</title></info>
+      
+      <para>В диалогах <guilabel>Добавить файлы</guilabel> и <guilabel>Добавить папку</guilabel> доступна следующая функция:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Добавлять только обновлённые файлы</guilabel></term>
+	  <listitem>
+            <para>Установите этот флажок, чтобы файлы добавлялись в архив только в случае, если в архиве их ещё нет или в архиве хранится более ранняя версия. <application>Менеджер архивов</application> определяет версию файла по дате изменения. Если версия файла в архиве самая поздняя, <application>Менеджер архивов</application> не добавляет выбранный файл в архив.</para>
+	    <para>Если этот флажок не установлен, <application>Менеджер архивов</application> добавляет файл в архив и перезаписывает предшествующее содержимое архива.</para>
+	    <tip><info><title>Совет</title></info>
+	      
+	      <para>Опция <guilabel>Добавлять только обновлённые файлы</guilabel> очень полезна, если вы используете <application>Менеджер архивов</application> для создания резервных копий. Предположим, что архив <filename>backup.tar.gz</filename> содержит резервную копию вашей домашней папки недельной давности. Чтобы обновить архив и создать новую резервную копию, выполните следующие действия: <orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para>Откройте архив <filename>backup.tar.gz</filename> в <application>Менеджере архивов</application>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Нажмите <menuchoice><guimenu>Правка</guimenu><guimenuitem>Добавить папку</guimenuitem></menuchoice>.</para> 
+                      </listitem>
+                      <listitem>
+                        <para>Выберите домашнюю папку.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Установите флажок <guilabel>Добавлять только обновлённые файлы</guilabel>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Нажмите кнопку <guibutton>Добавить</guibutton>.</para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>Менеджер архивов</application> автоматически добавит в архив все файлы, которые вы создали или изменили за последнюю неделю. При этом файлы, которые вы удалили за эту неделю, из архива удалены не будут. Обновление архива выполняется намного быстрее, чем создание полной резервной копии.</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="grapa-add-folder-options"><info><title>Опции добавления папки</title></info>
+      
+      <para>В диалоге <guilabel>Добавить папку</guilabel> доступны опции, позволяющие автоматически выбрать и добавить в архив все файлы, соответствующие определенным критериям:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Включать файлы</guilabel></term>
+	  <listitem>
+            <para>Введите шаблон имени файла в этом текстовом поле, чтобы добавить файлы с соответствующими именами. Подробнее о шаблонах имён файлов читайте в разделе <xref linkend="grapa-pattern"/>.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Исключать файлы</guilabel></term>
+	  <listitem>
+            <para>Введите шаблон имени файла в этом текстовом поле, чтобы исключить файлы с соответствующими именами. Подробнее о шаблонах имён файлов читайте в разделе <xref linkend="grapa-pattern"/>.</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Исключать папки</guilabel></term>
+	  <listitem>
+            <para>Введите шаблон имени файла в этом текстовом поле, чтобы исключить папки с соответствующими именами. Подробнее о шаблонах имён файлов читайте в разделе <xref linkend="grapa-pattern"/>.</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>Включать вложенные папки</guilabel></term>
+	<listitem>
+          <para>Выберите эту опцию, чтобы добавить все файлы, соответствующие заданному шаблону, из выбранной папки и вложенных в неё папок.</para>
+          <note>
+          <para>При этом шаблону должно соответствовать имя файла, а не имя вложенной папки.</para>
+          </note>
+	  <para>Если этот флажок не установлен, <application>Менеджер архивов</application> добавит соответствующие шаблону файлы только из текущей папки.</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>Исключать символические ссылки на папки</guilabel></term>
+	  <listitem>
+            <para>Выберите эту опцию, чтобы исключать файлы их папок, являющихся символическими ссылками. Символические ссылки — это указатели или ярлыки на другие папки.</para>
+	    <para>Если этот флажок не установлен, <application>Менеджер архивов</application> добавит соответствующие шаблону файлы из папок, являющихся символическими ссылками.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>Сохранить параметры</guibutton></term>
+	  <listitem>
+            <para>Нажмите эту кнопку, чтобы сохранить выбранные параметры в файл. Появится окно <guilabel>Сохранить параметры</guilabel>. Введите поясняющее имя файла в поле <guilabel>Название параметров</guilabel> и нажмите <guibutton>Сохранить</guibutton>.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Загрузить параметры</guibutton></term>
+	  <listitem>
+            <para>Нажмите эту кнопку, чтобы загрузить или удалить ранее сохранённый набор параметров. Появится окно <guilabel>Загрузить параметры</guilabel>.</para>
+            <itemizedlist>
+              <listitem>
+                <para>Чтобы загрузить набор параметров, выберите нужный файл в списке и нажмите <guibutton>Применить</guibutton>.</para>
+              </listitem>
+              <listitem>
+                <para>Чтобы удалить набор параметров, выберите файл в списке и нажмите <guibutton>Удалить</guibutton>. Нажмите <guibutton>Закрыть</guibutton>, чтобы закрыть окно <guilabel>Загрузить параметры</guilabel>.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Сбросить параметры</guibutton></term>
+	  <listitem>
+            <para>Нажмите эту кнопку, чтобы сбросить текущие параметры до значений по умолчанию.</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="grapa-extract-options"><info><title>Опции распаковки</title></info>
+    
+      
+    <para>В окне <guilabel>Распаковать</guilabel> доступен ряд настраиваемых параметров, которые сохраняются при выходе из <application>Менеджера архивов</application>:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Распаковать</guilabel></term>
+	  <listitem>
+            <para>Выберите файлы, которые нужно распаковать:</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>Все</guilabel></term>
+                <listitem>
+                  <para>Распаковать все файлы из архива.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Выделенные</guilabel></term>
+                <listitem>
+                  <para>Распаковать выбранные файлы из архива.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Файлы:</guilabel></term>
+                <listitem>
+                  <para>Распаковать из архива все файлы, соответствующие заданному шаблону. Подробнее о шаблонах имён файлов читайте в разделе <xref linkend="grapa-pattern"/>.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>Действия</guilabel></term>
+        <listitem>
+          <para>Вы можете выбрать следующие действия, которые будут выполнены при распаковке архива:</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>Воссоздавать папки</guilabel></term>
+	          <listitem><para>Установите этот флажок, чтобы воссоздавать структуру папок при распаковке выбранных файлов.</para> 
+                <para>Предположим, вы выбрали <filename>/tmp</filename> в поле <guilabel>Имя файла</guilabel> и указали, что нужно распаковать все файлы. В архиве есть вложенная папка с названием <filename>doc</filename>.<itemizedlist>
+                  <listitem><para>Если опция <guilabel>Воссоздавать папки</guilabel> выбрана, <application>Менеджер архивов</application> распакует содержимое вложенной папки в <filename>/tmp/doc</filename>.</para>
+                 </listitem>
+                 <listitem><para>Если эта опция не выбрана, <application>Менеджер архивов</application> не создаст никаких вложенных папок. Все файлы, включая файлы во вложенных папках, будут распакованы в <filename>/tmp</filename>.</para>
+                 </listitem>
+               </itemizedlist></para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Перезаписывать существующие файлы</guilabel></term>
+	           <listitem><para>Установите этот флажок, чтобы перезаписать в целевой папке все файлы с совпадающими именами.</para>
+	             <para>Если этот флажок не установлен, <application>Менеджер архивов</application> не будет извлекать выбранный вами файл при наличии в целевой папке файла с таким же именем.</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Пропускать устаревшие файлы</guilabel></term>
+	           <listitem>
+	             <para>Эта функция эффективна, только если установлен флажок <guilabel>Перезаписывать существующие файлы</guilabel>.</para>
+	             <para>Установите флажок <guilabel>Пропускать устаревшие файлы</guilabel>, чтобы указанный файл был распакован только в том случае, если целевая папка не содержит этот файл или содержит его более раннюю версию. <application>Менеджер архивов</application> определяет по дате изменения файла, какая версия более поздняя, и, если версия в архиве старше, распаковка файла не выполняется.</para>
+	             <para>Если флажок <guilabel>Перезаписывать существующие файлы</guilabel> установлен, а флажок <guilabel>Пропускать устаревшие файлы</guilabel> — нет, <application>Менеджер архивов</application> распакует указанный файл и заменит существующее содержимое целевой папки.</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>

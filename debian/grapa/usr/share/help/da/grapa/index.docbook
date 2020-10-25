@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the CAFE Documentation Project
+  http://wiki.cafe-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="da">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>Manual for Arkivhåndtering</title> 
+
+     <abstract>
+       <para>Arkivhåndtering, også kendt som Grapa, gør at du kan oprette, se, ændre eller udpakke et arkiv.</para>
+     </abstract>
+
+    <copyright xml:lang="en">
+      <year>2020</year>
+      <holder>CAFE Documentation Project</holder>
+    </copyright>
+    <copyright xml:lang="en">
+      <year>2019-2020</year>
+      <holder>MATE Documentation Project</holder>
+    </copyright>
+    <copyright><year>2009</year> <holder>Paul Cutler</holder></copyright>	    
+	<copyright><year>2006</year> <year>2008</year> <holder>Paolo Bacchilega</holder></copyright> 
+     <copyright><year>2003</year> <year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <holder>Paolo Bacchilega</holder></copyright> 
+    <copyright><year>2002</year> <holder>Alexander Kirillov</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>CAFE-dokumentationsprojekt</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>GNOME-dokumentationsprojekt</publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>CAFE-dokumentationsprojektet</orgname> <affiliation> <orgname>CAFE-skrivebordet</orgname> </affiliation></author>
+      <author><personname> <firstname>Sun </firstname> <surname>GNOME-dokumentationsholdet</surname> </personname> <affiliation> <orgname>Sun Microsystems</orgname> </affiliation></author>
+      <author><personname> <firstname>Paolo</firstname> <surname>Bacchilega</surname> </personname> <affiliation> <orgname>GNOME-dokumentationsprojektet</orgname> </affiliation></author> 
+      <author><personname> <firstname>Alexander</firstname> <surname>Kirillov</surname> </personname> <affiliation> <orgname>GNOME-dokumentationsprojektet</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Paul</firstname> <surname>Cutler</surname> </personname> <affiliation> <orgname>GNOME-dokumentationsprojektet</orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>Juli 2015</date> <revdescription>
+                         <para role="author" xml:lang="en">Wolfgang Ulbrich</para>
+                         <para role="publisher" xml:lang="en">CAFE-dokumentationsprojekt</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>Marts 2009</date> <revdescription>
+                         <para role="author">Paul Cutler</para>
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>Juli 2008</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>April 2006</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>Marts 2004</date> <revdescription>
+                         <para role="author">Suns GNOME-dokumentationshold</para>
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>Februar 2004</date> <revdescription>
+                         <para role="author">Suns GNOME-dokumentationshold</para>
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>August 2003</date> <revdescription>
+                         <para role="author">Suns GNOME-dokumentationshold</para>
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>Juni 2003</date> <revdescription>
+                         <para role="author">Suns GNOME-dokumentationshold</para>
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>Januar 2003</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>                         
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>Juni 2002</date> <revdescription>
+                         <para role="author">Alexander Kirillov</para>                         
+                         <para role="publisher">GNOME-dokumentationsprojekt</para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>Denne manual beskriver version 1.2 af Arkivhåndtering.</releaseinfo> 
+  </info> 
+
+  <indexterm zone="index"><primary>Grapa</primary></indexterm> 
+  <indexterm zone="index"><primary>grapa</primary></indexterm>
+  <indexterm zone="index"><primary>Arkivering</primary></indexterm>
+  <indexterm zone="grapa-add-files"><primary>Arkiver</primary> <secondary>Tilføje filer til</secondary></indexterm> 
+  <indexterm zone="grapa-delete-files"><primary>Arkiver</primary> <secondary>Slette filer fra</secondary></indexterm> 
+  <indexterm zone="grapa-open"><primary>Arkiver</primary> <secondary>Åbne</secondary></indexterm> 
+  <indexterm zone="grapa-view"><primary>Arkiver</primary> <secondary>Gennemse</secondary></indexterm> 
+  <indexterm zone="grapa-extract"><primary>Arkiver</primary> <secondary>Udpakke</secondary></indexterm> 
+  <indexterm zone="grapa-create"><primary>Arkiver</primary> <secondary>Oprette</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="grapa-intro"><info><title>Indledning</title></info> 
+     
+    <para>Du kan bruge programmet <application>Arkivhåndtering</application> til at oprette, se, ændre eller udpakke et arkiv. Et arkiv er en fil der fungerer som en beholder for andre filer. Et arkiv kan indeholde mange filer, mapper og undermapper, normalt i komprimeret form.</para>
+    <para><application>Arkivhåndtering</application> tilbyder udelukkende en grafisk brugerflade. Den benytter sig af terminalprogrammer som <command>tar</command>, <command>gzip</command>, og <command>bzip2</command> til arkiveringen.</para>
+    <para>Hvis du har de nødvendige terminalprogrammer installeret på dit system, så understøtter <application>Arkivhåndtering</application> de arkivforcafer, som opregnes i den følgende tabel.</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Format</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Filendelse</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>7-zip-arkiv</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ACE-arkiv</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Alzip-arkiv</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>AR-arkiv</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>ARJ-arkiv</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Microsoft Cabinet-arkiv</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>CPIO-arkiv</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Debianpakke</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>rå cd-aftryk</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Java-arkiv</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Enterprise Application aRchive</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Web Application Resource eller Web application ARchive</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>LHA-arkiv</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Roshal ARchive</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Comic Book (Rar-komprimeret)</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>RPM-pakke</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Tar-arkiv</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Tar-arkiv komprimeret med <command>bzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> eller <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Tar-arkiv komprimeret med <command>bzip2</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> eller <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Tar-arkiv komprimeret med <command>gzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.gz</filename> eller <filename>.tgz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Tar-arkiv komprimeret med <command>lzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> eller <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Tar-arkiv komprimeret med <command>lzop</command></para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> eller <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Tar-arkiv komprimeret med <command>compress</command></para></entry>
+              <entry align="left"><para><filename>.tar.Z</filename> eller <filename>.taz</filename></para></entry>
+            </row>
+             <row valign="top">
+              <entry><para>Tar-arkiv komprimeret med <command>7zip</command></para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Stuffit-arkiv</para></entry>
+              <entry align="left"><para><filename>.bin</filename> eller <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Zip-arkiv</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Comic Book (Zip-komprimeret)</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Zoo-arkiv</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Det gængse arkivformat på Linux- og Unix-lignende systemer er tar-arkivet komprimeret med <command>gzip</command> eller <command>bzip2</command>.</para>
+    <para>Det gængse på Microsoft Windowssystemer er at der arkiveres med <application>PKZIP</application> eller <application>WinZip</application>.</para>
+    <section xml:id="grapa-intro-nonarchive"><info><title>Ukomprimeret ikke-arkiv filer</title></info>
+       
+      <para>En komprimeret, upakket fil er en, som oprettes, når man bruger <command>bzip2</command>, <command>gzip</command>, <command>lzip</command>, <command>lzop</command>, <command>compress</command> eller <command>rzip</command> til at komprimere en upakket fil med. For eksempel oprettes <filename>fil.txt.gz</filename>, når man bruger  <command>gzip</command> til at komprimere <filename>fil.txt</filename> med.</para>
+      <para>Man kan bruge <application>Arkivhåndtering</application> til at oprette, åbne og udpakke en komprimeret ikke-arkiv-fil.</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="grapa-get-start"><info><title>Kom godt i gang</title></info>
+    
+    <para>Dette afsnit fortæller hvordan man starter <application>Arkivhåndtering</application>, og det beskriver brugerfladen i <application>Arkivhåndtering</application>.</para>
+
+<!-- ============= To Start Grapa ============================ -->
+         <section xml:id="grapa-to-start"><info><title>For at starte <application>Arkivhåndtering</application></title></info>
+                
+                <para>Du kan starte <application>Arkivhåndtering</application> via de følgende metoder:</para>
+                <variablelist>
+                <varlistentry>
+                <term>Menuen <guimenu>Programmer</guimenu></term>
+                <listitem>
+                <para>Vælg <menuchoice><guisubmenu>Tilbehør</guisubmenu><guimenuitem>Arkivhåndtering</guimenuitem></menuchoice>.</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>Kommandolinje</term>
+                <listitem>
+                <para>Kør den følgende kommando: <command>grapa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="grapa-when-start"><info><title>Når du starter <application>Arkivhåndtering</application></title></info>
+                
+                <para>Når du starter  <application>Arkivhåndtering</application> vises følgende vindue:</para>
+
+                <figure xml:id="grapa-FIG-main-window"><info><title>Vindue for <application>Arkivhåndtering</application></title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/grapa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Viser hovedvinduet for Grapa.</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para>Vinduet i <application>Arkivhåndtering</application> indeholder følgende elementer:</para>
+                <variablelist>
+                  <varlistentry> <term>Menubjælke</term>
+                         <listitem>
+                                <para>Menuerne på menulinjen rummer alle de kommandoer, som du har brug for, når du vil arbejde med arkiver i <application>Arkivhåndtering</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Værktøjslinje</term>
+                         <listitem>
+                                <para>Værktøjslinjen indeholder en række kommandoer, som man kan tilgå fra menulinjen. Som standard viser <application>Arkivhåndtering</application> værktøjslinjen. For at skjule værktøjslinjen skal du vælge <menuchoice><guimenu>Vis</guimenu><guimenuitem>Værktøjslinje</guimenuitem></menuchoice>. For at vise værktøjslinjen igen, skal du vælge <menuchoice><guimenu>Vis</guimenu><guimenuitem>Værktøjslinje</guimenuitem></menuchoice> en gang til.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Mappelinjen</term>
+                         <listitem>
+                                <para>Med mappelinjen kan du navigere mellem mapperne i et arkiv. <application>Arkivhåndtering</application> viser kun mappelinjen, når du har valgt »Vis som en mappe«. Se <xref linkend="grapa-view-type-folder"/>, for yderligere information.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Billedområde</term>
+                         <listitem>
+                                <para>I visningsområdet vises arkivets indhold.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Statusbjælke</term>
+                         <listitem>
+                                <para>Statuslinjen viser oplysninger om den aktuelle aktivitet i <application>Arkivhåndtering</application> og kontekstoplysninger om arkivets indhold. Som standard viser <application>Arkivhåndtering</application> statuslinjen. For at skjule statuslinjen skal du vælge <menuchoice><guimenu>Vis</guimenu><guimenuitem>Statuslinje</guimenuitem></menuchoice>. For at vise statuslinjen igen skal du vælge <menuchoice><guimenu>Vis</guimenu><guimenuitem>Statuslinje</guimenuitem></menuchoice> en gang til.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para>Når du højreklikker i vinduet i <application>Arkivhåndtering</application>, fremkommer der en pop op-menu. Denne indeholder de almindeligste kommandoer for arkivkontekst.</para>
+
+     <section xml:id="grapa-bookmarks"><info><title>Gennemse filsystemet</title></info>
+        
+        <para>Du kan bruge flere <application>Arkivhåndtering</application>-dialoger (<guilabel>Ny</guilabel>, <guilabel>Åbn</guilabel>, <guilabel>Udpak</guilabel>,...) til at gennemse filer og mapper på din computer. Se <link xlink:href="help:cafe-user-guide/filechooser-open">Brugervejledningen for skrivebordet</link> for at lære mere om brugen af dialogerne til filgennemsyn.</para>
+        <para>Du kan også henvise til <link xlink:href="help:cafe-user-guide/caja-bookmarks">Bogmærkeafsnittet</link> i brugervejledningen for skrivebordet til at lære om hvordan du kan bruge <guilabel>Steder</guilabel>-panelet til at tilgå dine favoritsteder.</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="grapa-working"><info><title>Arbejde med arkiver</title></info>
+      
+      <para>Når du bruger <application>Arkivhåndtering</application> til arbejdet med et arkiv, gemmes alle ændringer straks til harddisken. Hvis du f.eks. sletter en fil fra et arkiv, sletter <application>Arkivhåndtering</application> filen, så snart du klikker på <guibutton>o.k.</guibutton>. Dette er forskelligt fra de fleste programmer, da de ikke gemmer ændringer til harddisken, før du afslutter programmet eller vælger <guimenuitem>Gem</guimenuitem> i menuen.</para>
+      <para>Hvis et arkiv er meget stort, eller hvis du har et langsomt system, kan visse handlinger tage lang tid at udføre. For at stoppe en igangværende handling skal du trykke på <keycap>Esc</keycap>. Eller du kan vælge <menuchoice><guimenu>Vis</guimenu><guimenuitem>Stop</guimenuitem></menuchoice>, eller klikke på knappen <guibutton>Stop</guibutton>.</para>      
+      <para>I <application>Arkivhåndtering</application>, kan du udføre en handling på flere måder. Du kan f.eks. åbne et arkiv på følgende måder: <informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>UI-komponent</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>Handling</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>Vindue</para></entry>
+                          <entry><para>Træk et arkiv ind i vinduet i <application>Arkivhåndtering</application> fra et andet program, som f.eks. filhåndteringen.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Menubjælke</para></entry>
+                          <entry><para>Vælg <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Åbn</guimenuitem></menuchoice>.</para>
+           <para>Har du haft et arkiv åbent for nylig, så optræder det direkte i menuen <menuchoice><guimenu>Arkiv</guimenu></menuchoice>.</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Værktøjslinje</para></entry>
+                          <entry><para>Klik på værktøjslinjeknappen <guibutton>Åbn</guibutton>.</para>
+           <para>Har du haft et arkiv åbent for nylig, kan du klikke på pilen ved siden af knappen <guibutton>Åbn</guibutton> på værktøjslinjen.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Pop op-menu ved højreklik</para></entry>
+                          <entry><para>Højreklik på arkivet, og vælg derefter <guilabel>Åbn</guilabel> fra pop op-menuen.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Genvejstaster</para></entry>
+                          <entry><para>Tryk <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>.</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>Denne manual dokumenterer menulinjens funktioner.</para>
+
+    <section xml:id="grapa-pattern"><info><title>Mønstre i filnavne</title></info>
+      
+      <para>Med <application>Arkivhåndtering</application> kan du tilføje, udpakke eller slette flere filer på en gang. For at udføre en handling for alle filer, som svarer til et bestemt mønster, skal du skrive dette mønster i tekstfeltet. Et mønster kan indeholde standard-jokertegn, f.eks. <keycap>*</keycap> for en vilkårlig tekststreng, eller <keycap>?</keycap> for et vilkårligt enkelt tegn. Du kan skrive mere end et mønster, som så skal adskilles af semikolon. <application>Arkivhåndtering</application> udfører handlingen på alle filer, som passer med mindst et af mønstrene. De følgende eksempler viser, hvordan man kan bruge filnavn-mønstre til at vælge filer med.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Mønster</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>Fundne filer</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>Alle filer</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>Alle filer med endelsen <filename>tar</filename>, herunder filer, hvor endelsen <filename>tar</filename> følges af andre tegn, som f.eks. <filename>filename.tar.gz</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>Alle filer med endelsen <filename>jpg</filename> og alle filer med endelsen <filename>jpeg</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>file?.gz</filename></para></entry>
+              <entry align="left"><para>Alle filer med endelsen <filename>gz</filename>, hvor navnet "fil" efterfølges af et enkelt tegn, f.eks. <filename>fil2.gz</filename>, <filename>filx.gz</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="grapa-open"><info><title>For at åbne et arkiv</title></info>
+      
+      <para>For at åbne et arkiv skal du udføre følgende trin: <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem>
+           <para>Vælg <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Åbn</guimenuitem></menuchoice> for at se dialogen <guilabel>Åbn</guilabel>. Eller tryk på <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>, eller klik på <guibutton>Åbn</guibutton> i værktøjslinjen.</para> 
+          </listitem>
+          <listitem>
+           <para>Vælg det arkiv, som du vil åbne.</para> 
+          </listitem>
+          <listitem>
+           <para>Klik <guibutton>Åbn</guibutton>.</para> 
+          </listitem>
+        </orderedlist></para>
+      <para><application>Arkivhåndtering</application> finder automatisk arkivets type og viser: <itemizedlist>
+          <listitem>
+            <para>Arkivnavnet i vinduets titellinje</para>
+          </listitem>
+          <listitem>
+            <para>Arkivindholdet i visningsområdet</para>
+          </listitem>
+          <listitem>
+            <para>Antallet af filer og mapper (objekter) på det aktuelle sted, og deres ukomprimerede størrelse, på statuslinjen</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>For at åbne et andet arkiv vælger du <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Åbn</guimenuitem></menuchoice> igen. <application>Arkivhåndtering</application> åbner hvert arkiv i et nyt vindue. Man kan ikke åbne flere arkiver i samme vindue.</para>
+      <para>Prøver du at åbne et arkiv, som er oprettet i et format, som <application>Arkivhåndtering</application> ikke genkender, viser programmet en fejlmeddelelse. Se en liste over understøttede forcafer i <xref linkend="grapa-intro"/>.</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="grapa-select-files"><info><title>Valg af filer i et arkiv</title></info>
+      
+    <para>Vil du vælge alle filer i et arkiv, skal du bruge <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Vælg alle</guimenuitem></menuchoice> eller trykke <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+      <para>For at afmarkere alle filer i et arkiv skal du bruge <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Afmarker alle</guimenuitem></menuchoice> eller trykke <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="grapa-extract"><info><title>For at udpakke filer fra et arkiv</title></info> 
+     
+    <para>For at udpakke filer fra et åbent arkiv, udfør de følgende trin: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Vælg de filer, som du vil pakke ud. Du kan vælge flere filer ved at holde <keycap>Ctrl</keycap> nede, medens du klikker på filerne.</para>
+        </listitem>
+        <listitem><para>Vælg <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Udpak</guimenuitem></menuchoice> for at vise dialogen <guilabel>Udpak</guilabel>, eller klik på knappen <guibutton>Udpak</guibutton> i værktøjslinjen.</para>
+        </listitem>
+        <listitem><para>Vælg mappen hvor <application>Arkivhåndtering</application> udpakker filerne.</para>
+        </listitem>
+        <listitem><para>Træf de nødvendige valg for udpakningen. For yderligere information om de valgmulighederne, se <xref linkend="grapa-extract-options"/>.</para>
+        </listitem>
+        <listitem><para>Klik <guibutton>Udpak</guibutton>.</para>
+        <note>
+          <para>Hvis alle filer i arkivet er beskyttet med en adgangskode, og du ikke har angivet det, så anmoder <application>Arkivhåndtering</application> dig om at gøre det.</para>
+          <para>Hvis kun nogle af filerne i arkivet er beskyttet med adgangskode, og du ikke har angivet dette, så anmoder  <application>Arkivhåndtering</application> ikke om adgangskoden. Men <application>Arkivhåndtering</application> udpakker kun de filer, som ikke er beskyttet.</para>
+          <para>Få mere at vide om adgangskoder i <xref linkend="grapa-encrypt-files"/>.</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para>Med <application>Arkivhåndtering</application> kan du også udpakke filer fra et arkiv i filhåndteringsvinduet uden at åbne et vindue i <application>Arkivhåndtering</application>. Se mere herom i <xref linkend="grapa-fmgr"/>.</para>
+    <para>Ved udpakning bliver der udpakket en <emphasis>kopi</emphasis> af de angivne filer i arkivet. De udpakkede filer har samme tilladelser og ændringsdato som de originale filer i arkivet.</para>
+    <para>Ved udpakning ændres indholdet af arkivet ikke. Se hvordan du kan slette filer fra et arkiv her: <xref linkend="grapa-delete-files"/>.</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="grapa-archive-close"><info><title>Lukning af et arkiv</title></info>
+    
+    <para>Du kan lukke det aktuelle arkiv og det aktuelle vindue i <application>Arkivhåndtering</application> ved at vælge <menuchoice> <guimenu>Arkiv</guimenu> <guimenuitem>Luk</guimenuitem> </menuchoice>, eller trykke på <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>.</para>
+    <note>
+      <para>Man kan ikke lukke det aktuelle arkiv uden samtidig at lukke vinduet i <application>Arkivhåndtering</application>.</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="grapa-creating"><info><title>Oprette arkiver</title></info> 
+     
+    <para>Udover at åbne eksisterende arkiver kan du også oprette nye arkiver med <application>Arkivhåndtering</application>.</para>
+    <section xml:id="grapa-create"><info><title>For at oprette et arkiv</title></info> 
+     
+    <para>For at oprette et arkiv skal du gøre følgende: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Skal du vælge <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Nyt</guimenuitem></menuchoice> for at se dialogen <guilabel>Nyt</guilabel>. Eller trykke på <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>, eller klikke på knappen <guibutton>Nyt</guibutton> i værktøjslinjen.</para>
+        </listitem>
+        <listitem>
+          <para>Vælg den mappe, hvor <application>Arkivhåndtering</application> skal anbringe det nye arkiv, ved at vælge fra rullegardinslisten ved <guilabel>Gem i mappe</guilabel>. Hvis mappen ikke findes i listen, skal du klikke på <guilabel>Se efter andre mapper</guilabel>, og vælge mappen. Eller skriv stien til mappen i tekstfeltet <guilabel>Navn</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Skriv navnet på det nye arkiv, herunder også filforcafet, i tekstfeltet <guilabel>Navn</guilabel>.
+Eller du kan skrive arkivets navn uden filforcafet, for så at vælge arkivtypen fra rullegardinsmenuen <guilabel>Arkivtype</guilabel>. På den måde tilføjes filforcafet automatisk.</para>
+        </listitem>
+        <listitem><para>Vælg de ønskede muligheder for oprettelse ved at klikke på <guilabel>Andre indstillinger</guilabel>. Se mere om mulighederne under oprettelsen af et arkiv: <xref linkend="grapa-create-options"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Klik på <guibutton>Ny</guibutton>. <application>Arkivhåndtering</application> opretter et tomt arkiv, men skriver det endnu ikke til harddisken.</para>
+        </listitem>
+        <listitem>
+          <para>Tilføj filer til det nye arkiv som beskrevet i <xref linkend="grapa-add-files"/>. <note>
+                  <para><application>Arkivhåndtering</application> skriver først et nyt arkiv til harddisken, når arkivet indeholder mindst en fil.Hvis du opretter et nyt arkiv, og så lukker <application>Arkivhåndtering</application> før du har tilføjet nogen filer til arkivet, sletter <application>Arkivhåndtering</application> arkivet.</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="grapa-add-files"><info><title>Tilføje filer til et arkiv</title></info>
+    
+    <para>For at tilføje filer til et arkiv skal du gøre følgende: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Bestem dig for, hvor i arkivet du vil tilføje filerne, og åbn så dette sted i arkivet.</para> 
+         </listitem>
+         <listitem>
+           <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Tilføj filer</guimenuitem></menuchoice> for at se dialogen <guilabel>Tilføj filer</guilabel>, eller klik på knappen <guibutton>Tilføj filer</guibutton> i værktøjslinjen.</para> 
+         </listitem>
+         <listitem>
+           <para>Vælg de filer, som du vil tilføje. Du kan vælge flere filer ved at holde <keycap>Ctrl</keycap> nede, medens du klikker på filerne.</para> 
+         </listitem>
+         <listitem>
+           <para>Klik på <guibutton>Tilføj</guibutton>. <application>Arkivhåndtering</application> tilføjer filerne til den aktuelle mappe i arkivet.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Man kan ikke tilføje mapper til arkivet med dialogen <guilabel>Tilføj filer</guilabel>. Se <xref linkend="grapa-add-folder"/> for hvordan du filføjer en mappe.</para>
+    <para>I dialogen <guilabel>Tilføj filer</guilabel> findes muligheden <guilabel>Tilføj kun hvis nyere</guilabel>. Se mere om denne mulighed: <xref linkend="grapa-add-options"/>.</para>
+    <para>Man kan også tilføje filer til et arkiv i et filhåndteringsvindue uden at åbne et vindue i <application>Arkivhåndtering</application>. Se mere: <xref linkend="grapa-fmgr"/>.</para>
+    <para>Med Tilføj tilføjer man en <emphasis>kopi</emphasis> af de valgte filer eller mapper til arkivet. <application>Arkivhåndtering</application> fjerner ikke de originale filer, de forbliver uændrede i filsystemet. De kopier som føjes til arkivet har samme tilladelser og ændringstidspunkt som de originale filer.</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="grapa-add-folder"><info><title>For at tilføje en mappe til et arkiv</title></info>
+      
+    <para>For at tilføje en mappe til et arkiv, udfør de følgende trin: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Bestem dig for, hvor i arkivet du vil tilføje filerne, og åbn så dette sted i arkivet.</para>
+         </listitem>
+         <listitem>
+           <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Tilføj en mappe</guimenuitem></menuchoice> for at se dialogen <guilabel>Tilføj en mappe</guilabel>.</para> 
+         </listitem>
+         <listitem>
+           <para>Vælg den mappe, som du vil åbne.</para> 
+         </listitem>
+         <listitem>
+           <para>Klik på <guibutton>Tilføj</guibutton>. <application>Arkivhåndtering</application> tilføjer mappen til den aktuelle mappe i arkivet.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Dialogen <guilabel>Tilføj en mappe</guilabel> giver dig en række avancerede muligheder. Se mere: <xref linkend="grapa-add-options"/>.</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="grapa-convert-archive"><info><title>Ændring af et arkiv til et andet format</title></info>
+    
+    <para>For at ændre et arkiv til et andet format og gemme det som en ny fil skal du gøre følgende:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>Vælg det arkiv, som du vil ændre.</para>
+      </listitem>
+      <listitem>
+        <para>Vælg <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Gem som</guimenuitem></menuchoice> for at se dialogen <guilabel>Gem</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Skriv det nye arkivnavn i tekstfeltet <guilabel>Navn</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Vælg det nye format fra rullegardinsmenuen <guilabel>Arkivtype</guilabel>. Eller skriv filtypenavnet i tekstfeltet <guilabel>Navn</guilabel> og vælg <guilabel>Automatisk</guilabel> fra rullegardinsmenuen <guilabel>Arkivtype</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Vælg de ønskede muligheder for oprettelse ved at klikke på <guilabel>Andre indstillinger</guilabel>. Se mere om mulighederne under oprettelsen af et arkiv: <xref linkend="grapa-create-options"/>.</para>
+      </listitem>      
+      <listitem>
+        <para>Klik på <guibutton>Gem</guibutton>.</para>
+        <note>
+          <para>Hvis alle filer i arkivet er beskyttet med en adgangskode, og du ikke har angivet det, så anmoder <application>Arkivhåndtering</application> dig om at gøre det.</para>
+          <para>Hvis kun nogle af filerne i arkivet er beskyttet med adgangskode, og du ikke har angivet dette, så anmoder <application>Arkivhåndtering</application> ikke om adgangskoden. Men <application>Arkivhåndtering</application> udpakker kun de filer, som ikke er beskyttet.</para>
+          <para>Få mere at vide om adgangskoder i <xref linkend="grapa-encrypt-files"/>.</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="grapa-modify-contents"><info><title>Ændring af indholdet for et arkiv</title></info>
+  
+  <para>Man kan ændre indholdet af et arkiv på flere måder.</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="grapa-encrypt-files"><info><title>Kryptering af filer i et arkiv</title></info>
+      
+    <para>Det kan være, at du af sikkerhedshensyn vil kryptere de filer, som du føjer til et arkiv.</para>
+      <para>Hvis arkivforcafet understøtter kryptering, kan du angive en adgangskode til krypteringen af de filer, som du føjer til arkivet.</para>
+      <note>
+        <para>For øjeblikket er det kun 7-Zip, ZIP, RAR og ARJ-arkiver som understøtter kryptering.</para>
+      </note>
+     <para>For at angive en adgangskode for filkryptering, udfør de følgende trin:</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Adgangskode</guimenuitem></menuchoice> for at vise dialogen <guilabel>Adgangskode</guilabel>.</para></listitem> 
+<listitem><para>Skriv adgangskoden i tekstfeltet <guilabel>Adgangskode</guilabel>.</para></listitem>
+<listitem><para>Klik på <guibutton>O.k.</guibutton>.</para></listitem>
+       </orderedlist>
+    <para><application>Arkivhåndtering</application> bruger adgangskoden til at kryptere de filer, som man tilføjer til det aktuelle arkiv, og til at dekryptere de filer, som man udpakker fra det aktuelle arkiv. <application>Arkivhåndtering</application> sletter adgangskoden, når man lukker arkivet.</para>
+      <para>For at få at vide, hvordan man undersøger om et arkiv indeholder krypterede filer, se <xref linkend="grapa-extra-info"/>.</para>
+      <note>
+      <para>Den kryptering som kan opnås med arkiv-redskaberne er svag og usikker. Hvis sikkerheden er vigtig, skal man bruge et stærkt krypteringsredskab som <link xlink:href="http://www.gnupg.org">GNU Privacy Guard</link>.</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="grapa-rename-files"><info><title>Omdøbning af en fil i et arkiv</title></info>
+    
+    <para>For at omdøbe en fil i et arkiv skal du gøre følgende:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Vælg den fil, som du vil omdøbe.</para>
+        </listitem>
+        <listitem>
+          <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Omdøb</guimenuitem></menuchoice>, eller tryk på <keycombo><keycap>F2</keycap></keycombo>, for at se dialogen <guilabel>Omdøb</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Skriv det nye filnavn i tekstfeltet <guilabel>Nyt filnavn</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Klik på <guibutton>Omdøb</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="grapa-copy-files"><info><title>Kopiering af filer i et arkiv</title></info>
+    
+    <para>For at kopiere filer i et arkiv skal du gøre følgende:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Vælg de filer, som du ønsker at kopiere.</para>
+        </listitem>
+        <listitem>
+          <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Kopier</guimenuitem></menuchoice>, eller tryk på <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Åbn den placering, hvor du vil anbringe de kopierede filer.</para>
+        </listitem>
+        <listitem>
+          <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Indsæt</guimenuitem></menuchoice>, eller tryk på <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="grapa-move-files"><info><title>Flytning af filer i et arkiv</title></info>
+    
+    <para>For at flytte filer i et arkiv skal du gøre følgende:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Vælg de filer, som du vil flytte.</para>
+        </listitem>
+        <listitem>
+          <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Klip</guimenuitem></menuchoice>, eller tryk på <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Åbn den placering, hvor du vil anbringe de flyttede filer.</para>
+        </listitem>
+        <listitem>
+          <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Indsæt</guimenuitem></menuchoice>, eller tryk på <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="grapa-delete-files"><info><title>Sletning af filer i et arkiv</title></info>
+    
+    <para>For at slette filer fra et arkiv skal du gøre følgende:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Vælg de filer, som du vil slette.</para>
+        </listitem>
+        <listitem>
+          <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Slet</guimenuitem></menuchoice> eller tryk på <keycap>Slet</keycap> for at vise dialogen <guilabel>Slet</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Vælg en af følgende muligheder for sletning:</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>Alle filer</guilabel></term>
+              <listitem>
+                <para>Slet alle filer fra arkivet.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Valgte filer</guilabel></term>
+              <listitem>
+                <para>Slet de valgte filer fra arkivet.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Filer</guilabel></term>
+              <listitem>
+                <para>Slet alle de filer fra arkivet, som passer med det angivne mønster. Se mere om mønstre i filnavne: <xref linkend="grapa"/>.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para>Klik på <guibutton>O.k.</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="grapa-modify-archive-file"><info><title>Ændring af en fil i et arkiv</title></info> 
+     
+    <para>Vil du ændre en fil i arkivet, skal du udføre følgende: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Dobbeltklik på den fil, som du vil åbne. Eller højreklik på filen og vælg <menuchoice><guimenuitem>Åbn</guimenuitem></menuchoice>.</para></listitem>
+      <listitem><para>Rediger filen, som du åbnede i trin 1, og gem så ændringerne.</para></listitem>
+      <listitem><para><application>Arkivhåndtering</application> viser en dialog til bekræftelse, og anmoder om tilladelse til at opdatere den arkiverede fil med de ændringer, som du har foretaget.</para></listitem>
+      <listitem><para>Klik på knappen <guibutton>Opdater</guibutton> på værktøjslinjen.</para></listitem>
+      </orderedlist></para>
+    <para><application>Arkivhåndtering</application> bruger systemets forbindelser mellem filtyper og programmer for at afgøre, hvilket program der skal åbne bestemte filer. Disse forbindelser kan vises og ændres i fanebladet <guilabel>Åbn med</guilabel> i filegenskaber-dialogen. Hvis <application>Arkivhåndtering</application> ikke kan afgøre, hvilket program der er det rette, viser den dialogen <guilabel>Åbn filer</guilabel>, så du kan vælge et program, sådan som det beskrives nedenfor.</para>
+    <section xml:id="grapa-modifiy-archive-file-custom-app"><info><title>Ændring af en fil i et arkiv med et selvvalgt program</title></info>
+    
+    <para>Du kan bruge et program efter eget valg i stedet for standardprogrammet, når du vil ændre en fil. Åbn en fil med et eksternt program: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Højreklik på filen.</para></listitem>
+      <listitem><para>Vælg <menuchoice><guimenu>Åbn med...</guimenu><guimenuitem>Åbn</guimenuitem></menuchoice>.</para></listitem>
+      </orderedlist></para>    
+    <para><application>Arkivhåndtering</application> viser dialogen <guilabel>Åbn filer</guilabel>, som giver en liste over alle de programmer, som kan åbne filer af den angivne type. Du kan vælge et af disse programmer ved at dobbeltklikke på dets navn, eller ved at klikke på programmets navn og derefter klikke på <guibutton>Åbn</guibutton>.Eller du kan skrive navnet i tekstfeltet <guilabel>Program</guilabel> og så klikke på <guibutton>Åbn</guibutton> for at starte det program, som du har valgt.</para>
+    <para>Når programmet starter,skal du følge fremgangsmåden fra trin 2 i <xref linkend="grapa-modify-archive-file"/>.</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="grapa-view"><info><title>Gennemse arkiver</title></info>
+  
+  <para>Med <application>Arkivhåndtering</application> kan du se en række oplysninger om et arkiv.</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="grapa-view-archive-properties"><info><title>For at se et arkivs egenskaber</title></info>
+      
+      <para>Vil du se egenskaberne for et arkiv, skal du vælge <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Egenskaber</guimenuitem></menuchoice> for at få vist dialogen <guilabel>Egenskaber</guilabel>. Dialogen <guilabel>Egenskaber</guilabel> viser følgende oplysninger om arkivet: <variablelist>
+	      <varlistentry>
+	        <term><guilabel>Navn</guilabel></term>
+	        <listitem><para>Navet på arkivet.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Sted</guilabel></term>
+	        <listitem><para>Arkivets placering i filsystemet.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Ændret den</guilabel></term>
+	        <listitem><para>Dato og tidspunkt for seneste ændring af arkivet.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Arkivstørrelse</guilabel></term>
+	        <listitem><para>Størrelsen på arkivets indhold, når det er pakket.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Indholdsstørrelse</guilabel></term>
+	        <listitem><para>Størrelsen af arkivindholdet, når det er udpakket. Denne oplysning gives også på statuslinjen.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Komprimeringsforholdet</guilabel></term>
+	        <listitem><para>Komprimeringsforholdet er en værdi, der bruges til at beskrive formindskelsen af størrelsen af data. Et komprimeringsforhold på 5 betyder for eksempel, at det pakkede arkiv er 1/5 af de oprindelige datas størrelse.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Antallet af filer</guilabel></term>
+	        <listitem><para>Antallet af filer i arkivet.</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="grapa-view-archive-contents"><info><title>For at se indholdet af et arkiv</title></info>
+      
+
+      <para>I hovedvinduet viser <application>Arkivhåndtering</application> indholdet af arkivet som en filliste med følgende kolonner: <variablelist>
+	  <varlistentry>
+	    <term><guilabel>Navn</guilabel></term>
+	    <listitem><para>Navnet på en fil eller mappe i arkivet.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Størrelse</guilabel></term>
+	    <listitem><para>Størrelsen på en fil, når den udpakkes fra arkivet. Ved en mappe er feltet <guilabel>Størrelse</guilabel> tomt. Se hvordan du kan få vist den størrelsen på den pakkede fil <xref linkend="grapa-extra-info"/>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Type</guilabel></term>
+	    <listitem><para>Filtypen. Værdien i feltet <guilabel>Type</guilabel> er <literal>Mappe</literal>, når der er tale om en mappe.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Dato ændret</guilabel></term>
+	    <listitem><para>Datoen for seneste ændring af filen. Når der er tale om en mappe, er feltet <guilabel>Dato for ændring</guilabel> tomt.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Sted</guilabel></term>
+	    <listitem><para>Sti til filen i arkivet. Denne kolonne er kun synlig, når vinduet er sat til at vise filer. I mappevisning kan man se filernes placering i tekstboksen <guilabel>Placering</guilabel> på mappelinjen. Se mere om de forskellige visninger: <xref linkend="grapa-view-type-folder"/>.</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para>Hvis et andet program har ændret arkivet siden det sidst blev åbnet med <application>Arkivhåndtering</application>, skal du vælge <menuchoice><guimenu>Vis</guimenu><guimenuitem>Opdater</guimenuitem></menuchoice> for at genindlæse arkivets indhold fra harddisken.</para>
+      <para>Se hvordan du kan tilpasse den måde, hvorpå <application>Arkivhåndtering</application> fremviser arkivindholdet: <xref linkend="grapa-archive-custom"/>.</para>
+      <para>Til mere avancerede opgaver kan du bruge et program i dit system, Se mere: <xref linkend="grapa-view-archive-file"/>.</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="grapa-view-archive-file"><info><title>For at se en fil i et arkiv</title></info> 
+     
+    <para>For at se en fil i et arkiv skal du følge den fremgangsmåde, der er beskrevet i <xref linkend="grapa-modify-archive-file"/>. Hvis du gemmer den åbnede fil, skal du klikke <guilabel>Annuller</guilabel> når <application>Arkivhåndtering</application> spørger om bekræftelse på, at filen skal opdateres i arkivet.</para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="grapa-test-archive"><info><title>Undersøgelse af et arkivs integritet</title></info> 
+     
+    <para>Det kan ske, at et arkiv er blevet beskadiget. Undersøg om det er tilfældet ved at vælge <menuchoice><guimenu>Arkiv</guimenu><guimenuitem>Test integritet</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Hvis der ikke er fejl i arkivet, så åbner <application>Arkivhåndtering</application> dialogen <guilabel>Kontrolresultater</guilabel> med en liste over alle filer i arkivet med statusmeldingen <literal>o.k.</literal> ved hver af filerne.</para>
+              </listitem>
+              <listitem>
+                <para>Hvis der er en fejl i arkivet, så åbner <application>Arkivhåndtering</application> dialogen <guilabel>Kontrolresultater</guilabel> og viser den del af arkivet, hvor fejlen(e) findes.</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>Er et arkiv beskadiget, kan det være umuligt at pakke det ud, og dette kan medføre datatab. Derfor bør du teste arkivets integritet, inden du sletter de oprindelige filer.</para>
+    <para>Indeholder arkivet krypterede filer, så anmoder <application>Arkivhåndtering</application> om adgangskoden til arkivet, før testen udføres.</para>
+    <note>
+      <para>Ikke alle arkivtyper understøtter integritetstesten. Følgende arkivtyper kan testes: 7-Zip, RAR, ZIP, ACE, ARJ og Zoo.</para>
+    </note>
+    <tip><info><title>Tip</title></info>
+      
+      <para>Vil du teste integriteten af et arkiv, som ikke understøtter integritetstesten, så kan du udpakke alle filerne fra arkivet og kontrollere, at handlingen blev gennemført uden fejl.</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="grapa-archive-custom"><info><title>Tilpasning af visning af arkivet</title></info>
+  
+  <para>Du kan tilpasse måden, hvorpå <application>Arkivhåndtering</application> viser arkivindholdet som følger:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Skift mellem mappevisning og filvisning. Se mere: <xref linkend="grapa-view-type"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Vælg i hvilken rækkefølge filerne i listen skal vises. Se mere: <xref linkend="grapa-view-sort"/>.</para>
+    </listitem> 
+    <listitem>
+      <para>Vis yderligere detaljer om arkivindholdet. Se mere: <xref linkend="grapa-extra-info"/>.</para>
+    </listitem> 
+  </itemizedlist>
+  <para><application>Arkivhåndtering</application> opdaterer visningen så snart du ændrer på ovenstående indstillinger.</para>
+
+  <section xml:id="grapa-view-type"><info><title>Indstilling af visningen</title></info>
+    
+    <para>Hvis arkivet indeholder mapper, kan du  vise arkivindholdet i enten <xref linkend="grapa-view-type-folder"/> eller <xref linkend="grapa-view-type-file"/>.</para>
+
+    <section xml:id="grapa-view-type-folder"><info><title>Mappevisning</title></info>
+      
+      <para>Som standard viser <application>Arkivhåndtering</application> indholdet i mappevisning. For selv at vælge mappevisning skal du vælge <menuchoice><guimenu>View</guimenu><guimenuitem>Vis som mappe</guimenuitem></menuchoice>.</para>
+      <para>I mappevisning viser <application>Arkivhåndtering</application> mapperne på samme måde som filhåndteringen viser mapper. Det vil sige, at <application>Arkivhåndtering</application> viser mapper i visningsområdet med et mappeikon og mappenavnet. Vil du se en mappes indhold, skal du dobbeltklikke på mappenavnet.</para>
+      <para>Mappelinjen, som <application>Arkivhåndtering</application> kun viser, når mappevisning er valgt, har de komponenter som beskrives i den følgende tabel.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Komponent</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Beskrivelse</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_leftarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Viser ikon til at navigere baglæns i historiklisten.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik på dette ikon for at navigere tilbage til tidligere viste placeringer.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_rightarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Viser ikon til at navigere fremad i historiklisten.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik på dette ikon for at navigere fremad i placeringshistorikken.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_uparrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Viser ikon til at navigere et niveau op i mappetræet.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik på denne knap for at navigere opad i mappe-træet.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_home.png" format="PNG"/> </imageobject> <textobject> <phrase>Viser ikon til at åbne øverste mappe i arkivet.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik på denne knap for at åbne den øverste mappe i arkivet.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>Sted</guilabel></para>
+              </entry>
+              <entry>
+                <para>Dette felt viser den fulde sti i arkivet til den valgte mappe.</para>
+                <para>Skriv den nye placering i tekstboksen <guilabel>Placering</guilabel> og tryk på <keycap>Retur</keycap> for at skifte til et andet niveau i mappetræet. <application>Akivhåndtering</application> viser indholdet på den nye placering.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="grapa-view-type-file"><info><title>Filvisning</title></info>
+      
+      <para>For at vælge filvisning skal du vælge <menuchoice><guimenu>Vis</guimenu><guimenuitem>Vis alle filer</guimenuitem></menuchoice>.</para>
+      <para>I filvisning viser <application>Arkivhåndtering</application> alle arkivets filer, herunder filer fra undermapper, i en samlet liste.</para>
+    </section>
+
+  </section>
+
+  <section xml:id="grapa-view-sort"><info><title>Sortering af fillisten</title></info>
+    
+    <para>Man kan sortere fillisten efter navn, størrelse, type, dato for ændring eller placering.</para>
+    <para>For at vælge sorteringsrækkefølge skal du klikke på overskriften til den pågældende kolonne.</para>
+    <para>For at få den omvendte sorteringsrækkefølge skal du klikke på overskriften til kolonnen en gang til.</para>
+    <para>For eksempel skal du, for at sortere fillisten efter ændringsdato, klikke på overskriften <guilabel>Ændringsdato</guilabel>. <application>Arkivhåndtering</application> arrangerer listen, så filerne vises efter ændringsdato med de tidligste først. For at få vist de seneste filer først skal du klikke på overskriften <guilabel>Ændringsdato</guilabel> en gang til.</para>
+    <para><application>Arkivhåndtering</application> udfører altid en sekundær sortering efter filnavnet. I ovenstående eksempel finder <application>Arkivhåndtering</application> filer med samme ændringsdato og sorterer dem efter navn.</para>
+  </section>
+
+  <section xml:id="grapa-extra-info"><info><title>Visning af flere detaljer</title></info>
+    
+      <para>For at åbne dialogen <guilabel>Seneste resultat</guilabel> skal du vælge <menuchoice><guimenu>Vis</guimenu><guimenuitem>Seneste resultat</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Har du testet arkivet i den aktuelle session i <application>Arkivhåndtering</application>, viser dialogen <guilabel>Seneste resultat</guilabel> resultatet af den seneste test.</para>
+              </listitem>
+              <listitem>
+                <para>Hvis du ikke har testet arkivet i den aktuelle session i <application>Arkivhåndtering</application>, viser dialogen <guilabel>Seneste resultat</guilabel> en liste over alle arkivets filer, men anfører ingen status for filerne. I stedet viser dialogen<guilabel>Seneste resultat</guilabel> den komprimerede størrelse af hver fil og hvor mange procent den er komprimeret til, og dato og tid for den seneste ændring af filen.</para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="grapa-fmgr"><info><title>Arbejde med et arkiv ved hjælp af filhåndtering</title></info> 
+     
+    <para>Filhåndteringen kan bruges til at tilføje filer til et arkiv, eller til at udpakke filer fra et arkiv.</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="grapa-fmgr-add"><info><title>Tilføjelse af filer til et arkiv ved hjælp af filhåndtering</title></info>
+      
+           <para>Filhåndteringen kan bruges til at tilføje filer til et arkiv, på følgende måder: <itemizedlist>
+             <listitem><para>Træk filerne ind i et i<application>Arkivhåndtering</application>svindue fra filhåndteringsvinduet.</para>
+             </listitem>
+             <listitem><para>Brug filhåndteringens pop op-menu til at filføje filer til arkivet.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>For at bruge filhåndteringens pop op-menu til at tilføje filer til et arkiv skal du gøre følgende:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Højreklik på filer eller mapper i et filhåndteringsvindue.</para>
+        </listitem>
+        <listitem><para>Vælg <guimenuitem>Opret arkiv</guimenuitem> i filhåndteringens pop op-menu for at få vist <application>Arkivhåndtering</application>sdialogen <guimenuitem>Opret arkiv</guimenuitem>.</para>
+        </listitem>
+        <listitem><para>Skriv arkivets navn, uden filtype i tekstfeltet <guilabel>Arkiv</guilabel>.</para>
+        </listitem>
+        <listitem><para>Vælg arkivtypen fra rullegardinet.</para>
+        </listitem>
+        <listitem><para>Brug rullegardinslisten ved <guilabel>Placering</guilabel> for at vælge hvor du vil gemme arkivfilen. Hvis placeringen ikke findes i listen, skal du vælge <guilabel>Anden...</guilabel> for at vælge den med dialogen <guilabel>Placering</guilabel>.</para>
+        </listitem>
+        <listitem><para>Vælg de ønskede muligheder for oprettelse ved at klikke på <guilabel>Andre indstillinger</guilabel>. Se mere om mulighederne under oprettelsen af et arkiv: <xref linkend="grapa-create-options"/>.</para>
+        </listitem>
+        <listitem><para>Klik på <guilabel>Opret</guilabel> for at tilføje de valgte filer til rodmappen i det valgte arkiv.</para>
+                 <note><para>For at vælge de avancerede muligheder for tilføjelse skal du åbne <application>Arkivhåndtering</application> som beskrevet i <xref linkend="grapa-to-start"/>.</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="grapa-fmgr-extract"><info><title>Udpakning af filer til et arkiv ved hjælp af filhåndtering</title></info>
+      
+           <para>Du kan bruge filhåndteringen til at udpakke filer fra et arkiv på følgende måder: <itemizedlist>
+             <listitem><para>Træk filerne fra et <application>Arkivhåndtering</application>svindue ind i filhåndteringsvinduet.</para>
+             </listitem>
+             <listitem><para>Brug filhåndteringens pop op-menu for at udpakke filerne fra arkivet.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>For at bruge filhåndteringens pop op-menu til at udpakke filer fra et arkiv skal du gøre følgende:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Højreklik på arkivet i et filhåndteringsvindue.</para>
+        </listitem>
+        <listitem><para>Vælg <guimenuitem>Udpak her</guimenuitem> for at udpakke alt arkivets indhold i den mappe, hvor arkivet er placeret.</para>
+        </listitem>
+      </orderedlist>
+      <note><para>Hvis arkivet er krypteret, vil <application>Arkivhåndtering</application> spørge om adgangskoden før filerne udpakkes.</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="grapa-create-options"><info><title>Muligheder ved oprettelse</title></info>
+      
+      <para>Hvis du vil oprette et nyt arkiv eller konvertere et eksisterende arkiv til et andet format, skal du klikke på <guilabel>Andre indstillinger</guilabel> for at vælge følgende avancerede muligheder:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Adgangskode</guilabel></term>
+	  <listitem>
+	  <para>Skriv den adgangskode, som skal bruges til kryptering af arkivet. Hvis du ikke skriver en adgangskode, krypteres arkivet ikke.</para>
+	  <note>
+	    <para>Ikke alle arkivtyper understøtter kryptering. Se mere om kryptering af filer: <xref linkend="grapa-encrypt-files"/>.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Krypter også fillisten</guilabel></term>
+	  <listitem>
+	  <para>Når denne mulighed er valgt, så kræves adgangskoden også for blot at se listen over filer i arkivet. Ellers kræves det kun for at udpakke filerne fra arkivet. Denne mulighed er kun til stede, hvis der er angivet en adgangskode.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Del i flere filer</guilabel></term>
+	  <listitem>
+	  <para>Vælg denne mulighed for at dele arkivet i flere filer af den angivne størrelse.</para>
+	  <note>
+	    <para>Det er kun 7-Zip and RAR arkiver, der understøtter denne mulighed.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="grapa-add-options"><info><title>Tilføj muligheder</title></info>
+      
+      <para>Dialogerne <guilabel>Tilføj filer</guilabel> og <guilabel>Tilføj en mappe</guilabel> giver følgende mulighed:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Tilføj kun hvis nyere</guilabel></term>
+	  <listitem>
+            <para>Vælg denne mulighed for kun at tilføje den valgte fil til arkivet, hvis arkivet ikke rummer den angivne fil, eller hvis arkivet rummer en ældre udgave af den valgte fil. <application>Arkivhåndtering</application> bruger datoen for ændring for at afgøre, hvilken fil er den nyeste. Hvis filen i arkivet er den nyeste, vil <application>Arkivhåndtering</application> ikke tilføje den valgte fil til arkivet.</para>
+	    <para>Hvis du ikke vælger denne mulighed, vil <application>Arkivhåndtering</application> tilføje filen til arkivet og overskrive det tidligere indhold af arkivet.</para>
+	    <tip><info><title>Tip</title></info>
+	      
+	      <para>Bruger du <application>Arkivhåndtering</application>til at lave sikkerhedskopier, så er <guilabel>Tilføj kun hvis nyere</guilabel> meget nyttig. For eksempel kan arkivet <filename>backup.tar.gz</filename> indeholde en ugegammel sikkerhedskopi af din hjemmemappe. For at opdatere arkivet, så det kommer til at indeholde en frisk sikkerhedskopi af din hjemmemappe, skal du gøre som følger: <orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para>Åbn arkivet <filename>backup.tar.gz</filename> i <application>Arkivhåndtering</application>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Vælg <menuchoice><guimenu>Rediger</guimenu><guimenuitem>Tilføj</guimenuitem></menuchoice> for at se dialogen <guilabel>Tilføj en mappe</guilabel>.</para> 
+                      </listitem>
+                      <listitem>
+                        <para>Vælg din hjemmemappe.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Vælg <guilabel>Tilføj kun hvis nyere</guilabel>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Klik på <guibutton>Tilføj</guibutton>.</para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>Arkivhåndtering</application> tilføjer automatisk alle de filer, som du har oprettet i ugens løb, og opdaterer alle de filer, som du har ændret i ugens løb. <application>Arkivhåndtering</application> fjerner dog ikke de filer, som du har slettet i ugens løb. Opdatering af arkivet sker meget hurtigere, end hvis du tog en fuld sikkerhedskopi af hjemmemappen.</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="grapa-add-folder-options"><info><title>Muligheder for tilføj til mapper</title></info>
+      
+      <para>I dialogen <guilabel>Tilføj mappe</guilabel> er der følgende muligheder for automatisk udvælgelse og tilføjelse af alle filer, der opfylder bestemte kriterier:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Inkluder filer</guilabel></term>
+	  <listitem>
+            <para>Skriv et filnavnsmønster i dette tekstfelt for at medtage filer med navne, der stemmer overens med det angivne mønster. Se <xref linkend="grapa-pattern"/> for yderligere information om filnavnsmønstre.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Ekskluder filer</guilabel></term>
+	  <listitem>
+            <para>Skriv et filnavnsmønster i dette tekstfelt for at udelukke filer med navne, der stemmer overens med det angivne mønster. Se <xref linkend="grapa-pattern"/> for yderligere information om filnavnsmønstre.</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Ekskluder mapper</guilabel></term>
+	  <listitem>
+            <para>Skriv et filnavnsmønster i dette tekstfelt for at udelukke filer med navne, der stemmer overens med det angivne mønster. Se <xref linkend="grapa-pattern"/> for yderligere information om filnavnsmønstre.</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>Inkluder undermapper</guilabel></term>
+	<listitem>
+          <para>Vælg denne mulighed hvis du vil tilføje alle de filer, der svarer overens med det angivne mønster, både fra den aktuelle mappe og fra dens undermapper.</para>
+          <note>
+          <para>Det er filnavnet, ikke undermappens navn, der skal svare overens med det angivne mønster.</para>
+          </note>
+	  <para>Hvis du ikke vælger denne mulighed, vil <application>Arkivhåndtering</application> tilføje de fundne filer fra den aktuelle mappe.</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>Udeluk mapper, som er symbolske henvisninger</guilabel></term>
+	  <listitem>
+            <para>Vælg denne mulighed for at udelukke filer fra mapper, som er symbolske henvisninger. Symbolske henvisninger er genveje, der peger på andre mapper.</para>
+	    <para>Hvis ikke du vælger dette, vil <application>Arkivhåndtering</application> tilføje filer fra mapper, som er symbolske henvisninger.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>Gem indstillinger</guibutton></term>
+	  <listitem>
+            <para>Klik på denne knap for at gemme det aktuelle valg af avancerede muligheder ved tilføjelsen af en fil. Dialogen <guilabel>Gem valg</guilabel> kommer frem. Skriv et beskrivende filnavn i tekstfeltet <guilabel>Navn</guilabel> og tryk på <guibutton>Gem</guibutton>.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Indlæs indstillinger</guibutton></term>
+	  <listitem>
+            <para>Klik på denne knap for at indlæse eller slette et tidligere gemt valg af avancerede muligheder for tilføj. Dialogen <guibutton>Åbn valg</guibutton> fremkommer.</para>
+            <itemizedlist>
+              <listitem>
+                <para>For at indlæse et sæt af valg skal du vælge den pågældende fil i boksen, der rummer listen med valgmuligheder. Klik så på <guibutton>Anvend</guibutton>.</para>
+              </listitem>
+              <listitem>
+                <para>For at slette et sæt af valg skal du i boksen med filer, som indeholder valgene vælge den pågældende fil. Så trykker du på <guibutton>Slet</guibutton>, og herefter på<guibutton>Luk</guibutton> for at lukke dialogen <guilabel>Muligheder for valg</guilabel>.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Nulstil indstillinger</guibutton></term>
+	  <listitem>
+            <para>Klik på denne knap for at nulstille det aktuelle sæt af avancerede valgmuligheder,så du igen bruger standardmulighederne.</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="grapa-extract-options"><info><title>Muligheder for udpak</title></info>
+    
+      
+    <para>Dialogen <guilabel>Udpak</guilabel> giver dig følgende muligheder, der gemmes når du afslutter <application>Arkivhåndtering</application>:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Udpak</guilabel></term>
+	  <listitem>
+            <para>Vælg filerne der skal pakkes ud:</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>Alle filer</guilabel></term>
+                <listitem>
+                  <para>Udpak alle filer fra arkivet.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Valgte filer</guilabel></term>
+                <listitem>
+                  <para>Udpak de valgte filer fra arkivet.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Filer</guilabel></term>
+                <listitem>
+                  <para>Udpak alle de filer fra arkivet, som passer med det angivne mønster. Se mere om mønstre i filnavne: <xref linkend="grapa-pattern"/>.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>Handlinger</guilabel></term>
+        <listitem>
+          <para>Vælg følgende muligheder for udpakning:</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>Genskab mapper</guilabel></term>
+	          <listitem><para>Brug denne valgmulighed for at genoprette mappestrukturen, når du udpakker de valgte filer.</para> 
+                <para>Du vælger for eksempel <filename>/tmp</filename> i tekstfeltet <guilabel>Filnavn</guilabel> og vælger at udpakke alle filer. Arkivet indeholder en undermappe ved navn <filename>doc</filename>. <itemizedlist>
+                  <listitem><para>Hvis du vælger <guilabel>Opret mapper igen</guilabel>, vil <application>Arkivhåndtering</application> udpakke undermappens indhold til <filename>/tmp/doc</filename>.</para>
+                 </listitem>
+                 <listitem><para>Hvis ikke du vælger <guilabel>Opret mapper igen</guilabel>, vil <application>Arkivhåndtering</application> ikke oprette undermapper. I stedet udpakker <application>Arkivhåndtering</application> alle filer i arkivet, herunder filer fra undermapper, til <filename>/tmp/doc</filename>.</para>
+                 </listitem>
+               </itemizedlist></para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Overskriv eksisterende filer</guilabel></term>
+	           <listitem><para>Vælg denne mulighed for at få overskrevet filer i destinationsmappen med samme navn som de valgte filer.</para>
+	             <para>Vælger du ikke denne mulighed, så udpakker <application>Arkivhåndtering</application> ikke den valgte fil, hvis der allerede findes en fil med samme navn i målmappen.</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Udpak ikke ældre filer</guilabel></term>
+	           <listitem>
+	             <para>Denne mulighed vil kun fungere, hvis <guilabel>Overerskriv eksisterende filer</guilabel> er valgt.</para>
+	             <para>Vælg <guilabel>Udpak ikke ældre filer</guilabel> for kun at udpakke den valgte fil, hvis ikke mål-mappen indeholder den valgte fil, eller hvis mål-mappen indeholder en ældre udgave af den valgte fil. <application>Arkivhåndtering</application> bruger ændringsdatoen til at afgøre, hvilken af filerne der er den nyeste. Hvis filen i arkivet er den ældste, vil <application>Arkivhåndtering</application> ikke udpakke den pågældende fil til mål-mappen.</para>
+	             <para>Hvis du har valgt <guilabel>Overskriv eksisterende filer</guilabel>,men ikke <guilabel>Udpak ikke ældre filer</guilabel>, så vil <application>Arkivhåndtering</application> udpakke den valgte fil fra arkivet og overskrive det eksisterende indhold i mål-mappen.</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>

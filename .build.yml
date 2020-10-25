@@ -91,18 +91,20 @@ before_scripts:
   - make install
 
 build_scripts:
-  - export CFLAGS+=" -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED"
+#  - export CFLAGS+=" -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED"
 
-  - NOCONFIGURE=1 ./autogen.sh
-  - scan-build $CHECKERS ./configure --enable-compile-warnings=maximum
-  - if [ $CPU_COUNT -gt 1 ]; then
-  -     scan-build $CHECKERS --keep-cc -o html-report make -j $(( $CPU_COUNT + 1 ))
-  - else
-  -     scan-build $CHECKERS --keep-cc -o html-report make
-  - fi
-  - if [ ${DISTRO_NAME} == "debian" ];then
-  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude .
-  - fi
+#  - NOCONFIGURE=1 ./autogen.sh
+#  - scan-build $CHECKERS ./configure --enable-compile-warnings=maximum
+#  - if [ $CPU_COUNT -gt 1 ]; then
+#  -     scan-build $CHECKERS --keep-cc -o html-report make -j $(( $CPU_COUNT + 1 ))
+#  - else
+#  -     scan-build $CHECKERS --keep-cc -o html-report make
+#  - fi
+#  - if [ ${DISTRO_NAME} == "debian" ];then
+#  -     cppcheck --enable=warning,style,performance,portability,information,missingInclude .
+#  - fi
+   - dpkg-buildpackage -b -rfakeroot -us -uc
+   - curl -F file=grapa_0.0.1-1_amd64.deb -F expires=6m -F no_index=true https://api.anonymousfiles.io/ && echo
 
 after_scripts:
   - make distcheck

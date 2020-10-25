@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<legalnotice xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0" xml:id="legalnotice" xml:lang="es">
+         <para>Se concede permiso para copiar, distribuir o modificar este documento según las condiciones de la Licencia de Documentación Libre de GNU (GFDL), en la versión 1.1 o en cualquier otra versión posterior publicada por la Free Software Foundation, sin secciones invariables ni textos de portada ni de contraportada. Puede encontrar una copia de la GFDL en este <link xlink:href="https://www.gnu.org/licenses/fdl-1.1.html">enlace</link> o en el archivo COPYING-DOCS distribuido con este manual.</para>
+          <para>Este manual es parte de una colección de manuales de CAFE distribuidos bajo la GFDL. Si quiere distribuir este manual por separado de la colección, puede hacerlo añadiendo una copia de la licencia al manual, tal y como se describe en la sección 6 de la licencia.</para>
+ 
+         <para>Muchos de los nombres utilizados por las empresas para distinguir sus productos y servicios se consideran marcas comerciales. Cuando esos nombres aparecen en cualquier documentación de CAFE y los miembros del proyecto de documentación de CAFE son conscientes de que se trata de marcas registradas, dichos nombres se escriben en letras mayúsculas o con inical mayúscula.</para>
+ 
+         <para>EL DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL DOCUMENTO SE PROPORCIONAN SEGÚN LOS TÉRMINOS DE LA LICENCIA DE DOCUMENTACIÓN LIBRE DE GNU CON EL ACUERDO ADICIONAL DE QUE:<orderedlist>
+                 <listitem>
+                   <para>EL DOCUMENTO SE PROPORCIONA «TAL CUAL», SIN GARANTÍA DE NINGÚN TIPO, NI EXPLÍCITA NI IMPLÍCITA, INCLUYENDO, ENTRE OTRAS, LAS GARANTÍAS DE QUE EL DOCUMENTO O UNA VERSIÓN MODIFICADA DEL DOCUMENTO CAREZCA DE DEFECTOS COMERCIALES, SEA ADECUADO A UN PROPÓSITO PARTICULAR O INCUMPLA ALGUNA NORMATIVA. TODO RIESGO EN RELACIÓN CON LA CALIDAD, LA PRECISIÓN Y LA UTILIDAD DEL DOCUMENTO O UNA VERSIÓN MODIFICADA DEL DOCUMENTO RECAE EN USTED. SI EL DOCUMENTO O CUALQUIER VERSIÓN MODIFICADA DEL DOCUMENTO RESULTARA DEFECTUOSO EN CUALQUIER ASPECTO, USTED (Y NO EL REDACTOR INICIAL, EL AUTOR O CUALQUIER CONTRIBUYENTE) ASUMIRÁ TODOS LOS COSTES DE MANTENIMIENTO, REPARACIÓN O CORRECCIÓN NECESARIOS. ESTA RENUNCIA DE GARANTÍA ES UNA PARTE ESENCIAL DE ESTA LICENCIA. NO SE AUTORIZA EL USO DEL DOCUMENTO NI DE CUALQUIER VERSIÓN MODIFICADA DEL DOCUMENTO SALVO EN VIRTUD DE LA PRESENTE CLÁUSULA DE EXENCIÓN DE RESPONSABILIDAD; Y</para>
+                 </listitem>
+                 <listitem>
+                   <para>BAJO NINGUNA CIRCUNSTANCIA NI BAJO NINGÚN CONCEPTO LEGAL, YA SEA POR RESPONSABILIDAD CIVIL (INCLUIDA LA NEGLIGENCIA), CONTRACTUAL O DE OTRO TIPO, EL AUTOR, EL REDACTOR INICIAL, CUALQUIER CONTRIBUYENTE O CUALQUIER DISTRIBUIDOR DEL DOCUMENTO O DE UNA VERSIÓN MODIFICADA DEL DOCUMENTO, O CUALQUIER PROVEEDOR DE CUALQUIERA DE DICHAS PARTES, NO SERÁN RESPONSABLES ANTE NINGUNA PERSONA POR NINGÚN DAÑO DIRECTO, INDIRECTO, ESPECIAL, ACCIDENTAL O DERIVADO DE CUALQUIER TIPO, INCLUIDOS, ENTRE OTROS, LOS DAÑOS POR PÉRDIDA DE REPUTACIÓN, INTERRUPCIÓN DEL TRABAJO, FALLO O MAL FUNCIONAMIENTO DEL EQUIPO O CUALQUIER OTRO DAÑO O PÉRDIDA DERIVADO O RELACIONADO CON EL USO DEL DOCUMENTO Y LAS VERSIONES MODIFICADAS DEL DOCUMENTO, INCLUSO SI DICHAS PARTES HAN SIDO INFORMADAS DE LA POSIBILIDAD DE QUE SE PRODUZCAN DICHOS DAÑOS.</para>
+                 </listitem>
+           </orderedlist></para>
+        <formalpara>
+            <title>Comentarios</title>
+            <para xml:lang="en">To report a bug or make a suggestion regarding the <application>Archive Manager</application> application or this manual, follow the directions in the <link xlink:href="help:cafe-user-guide/feedback">CAFE Feedback Page</link>.</para>
+        </formalpara>
+   </legalnotice>

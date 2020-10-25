@@ -1,0 +1,5 @@
+grapa (0.0.1-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- scow <scow@debian.debian>  Fri, 16 Oct 2020 22:34:14 +0200

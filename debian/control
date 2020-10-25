@@ -1,0 +1,16 @@
+Source: grapa
+Section: unknown
+Priority: optional
+Maintainer: scow <scow@debian.debian>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.5.0
+Homepage: <insert the upstream URL, if relevant>
+#Vcs-Browser: https://salsa.debian.org/debian/grapa
+#Vcs-Git: https://salsa.debian.org/debian/grapa.git
+Rules-Requires-Root: no
+
+Package: grapa
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

@@ -1,0 +1,12 @@
+Package: grapa-dbgsym
+Source: grapa
+Version: 0.0.1-1
+Auto-Built-Package: debug-symbols
+Architecture: amd64
+Maintainer: scow <scow@debian.debian>
+Installed-Size: 1109
+Depends: grapa (= 0.0.1-1)
+Section: debug
+Priority: optional
+Description: debug symbols for grapa
+Build-Ids: 30e2eb6aaf86b6ece117f8038c4797dd30936bfb 6f46f84c169596d8f63b807fbd7f6ac149676ae9 7f5d9adf8c9276def79ac96686f2ff4d3da00b6e

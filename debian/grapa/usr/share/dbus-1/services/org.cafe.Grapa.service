@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.cafe.Grapa
+Exec=/usr/libexec/grapa-server

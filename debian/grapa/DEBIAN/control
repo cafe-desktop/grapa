@@ -1,0 +1,11 @@
+Package: grapa
+Version: 0.0.1-1
+Architecture: amd64
+Maintainer: scow <scow@debian.debian>
+Installed-Size: 14475
+Depends: libc6 (>= 2.14), libcairo2 (>= 1.2.4), libcaja-extension1 (>= 1.6.3), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.37.3), libgtk-3-0 (>= 3.21.5), libjson-glib-1.0-0 (>= 1.5.2), libpango-1.0-0 (>= 1.14.0), dconf-gsettings-backend | gsettings-backend
+Section: unknown
+Priority: optional
+Homepage: <insert the upstream URL, if relevant>
+Description: <insert up to 60 chars description>
+ <insert long description, indented with spaces>

@@ -1,0 +1,1240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the CAFE Documentation Project
+  http://wiki.cafe-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="it">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>Manuale del Gestore di archivi Grapa</title> 
+
+     <abstract>
+       <para>Gestore Archivi, altrimenti noto come Grapa, consente di creare, visualizzare, modificare o decomprimere un archivio</para>
+     </abstract>
+
+    <copyright xml:lang="en">
+      <year>2020</year>
+      <holder>CAFE Documentation Project</holder>
+    </copyright>
+    <copyright xml:lang="en">
+      <year>2019-2020</year>
+      <holder>MATE Documentation Project</holder>
+    </copyright>
+    <copyright><year>2009</year> <holder>Paul Cutler</holder></copyright>	    
+	<copyright><year>2006</year> <year>2008</year> <holder>Paolo Bacchilega</holder></copyright> 
+     <copyright><year>2003</year> <year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <holder>Paolo Bacchilega</holder></copyright> 
+    <copyright><year>2002</year> <holder>Alexander Kirillov</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>progetto Documentazione di  CAFE</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>Progetto della Documentazione di GNOME </publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>Progetto documentazione di CAFE</orgname> <affiliation> <orgname>CAFE Desktop</orgname> </affiliation></author>
+      <author><personname> <firstname>Sun </firstname> <surname>Progetto documentazione di GNOME</surname> </personname> <affiliation> <orgname>Sun Microsystems</orgname> </affiliation></author>
+      <author><personname> <firstname>Paolo</firstname> <surname>Bacchilega</surname> </personname> <affiliation> <orgname>Progetto documentazione di GNOME</orgname> </affiliation></author> 
+      <author><personname> <firstname>Alexander</firstname> <surname>Kirillov</surname> </personname> <affiliation> <orgname>Progetto documentazione di GNOME</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Paul</firstname> <surname>Cutler</surname> </personname> <affiliation> <orgname>Progetto documentazione di GNOME</orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>Luglio 2015</date> <revdescription>
+                         <para role="author" xml:lang="en">Wolfgang Ulbrich</para>
+                         <para role="publisher" xml:lang="en">progetto Documentazione di  CAFE</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>Marzo 2009</date> <revdescription>
+                         <para role="author">Paul Cutler</para>
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>Luglio 2008</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>Aprile 2006</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>Marzo 2004</date> <revdescription>
+                         <para role="author">Team Documentazione GNOME Sun</para>
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>Febbraio 2004</date> <revdescription>
+                         <para role="author">Team Documentazione GNOME Sun</para>
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>Agosto 2003</date> <revdescription>
+                         <para role="author">Team Documentazione GNOME Sun</para>
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>Giugno 2003</date> <revdescription>
+                         <para role="author">Team Documentazione GNOME Sun</para>
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>Gennaio 2003</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>                         
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>Giugno 2002</date> <revdescription>
+                         <para role="author">Alexander Kirillov</para>                         
+                         <para role="publisher">Progetto della Documentazione di GNOME </para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>Questo manuale descrive la versione 1.22 di Gestore Archivi</releaseinfo> 
+  </info> 
+
+  <indexterm zone="index"><primary>Grapa</primary></indexterm> 
+  <indexterm zone="index"><primary>grapa</primary></indexterm>
+  <indexterm zone="index">Archiviazione</indexterm>
+  <indexterm zone="grapa-add-files"><primary>Archivi</primary> <secondary>Aggiunta file</secondary></indexterm> 
+  <indexterm zone="grapa-delete-files"><primary>Archivi</primary> <secondary>Eliminazione file</secondary></indexterm> 
+  <indexterm zone="grapa-open"><primary>Archivi</primary> <secondary>Apertura</secondary></indexterm> 
+  <indexterm zone="grapa-view"><primary>Archivi</primary> <secondary>Visualizzazione</secondary></indexterm> 
+  <indexterm zone="grapa-extract"><primary>Archivi</primary> <secondary>Estrazione</secondary></indexterm> 
+  <indexterm zone="grapa-create"><primary>Archivi</primary> <secondary>Creazione</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="grapa-intro"><info><title>Introduzione</title></info> 
+     
+    <para>Puoi utilizzare il <application>Gestore archivi Grapa</application> per creare, visualizzare, modificare ed estrarre un archivio. Un archivio è un file che agisce come contenitore di altri file. Un archivio può contenere molti file, cartelle e sottocartelle, di solito in formato compresso.</para>
+    <para>Il <application>Gestore archivi Grapa</application> fornisce solamente l'interfaccia grafica e si affida a programmi da linea di comando come <command>tar</command>, <command>gzip</command>, and <command>bzip2</command> per effettuare operazioni sugli archivi.</para>
+    <para>Se hai installato gli strumenti a linea di comando adeguati, il <application>Gestore archivi</application> supporta i formati riportati nella tabella sottostante.</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Formato</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Estensione</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>Archivio 7-zip</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio ACE</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Alzip</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio AR</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio ARJ</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Microsoft Cabinet</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio CPIO</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Pacchetto Debian</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Immagine CD raw</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Java</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Enterprise Application aRchive</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Web Application Resource o Web application ARchive</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio LHA</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Roshal</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Fumetto (compresso Rar)</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Pacchetto RPM</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio tar</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>bzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> o <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>bzip2</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> o <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>gzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.gz</filename> or <filename>.tgz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>lzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> o <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>lzop</command></para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> o <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>compress</command></para></entry>
+              <entry align="left"><para><filename>.tar.Z</filename> or <filename>.taz</filename></para></entry>
+            </row>
+             <row valign="top">
+              <entry><para>Archivio Tar compresso con <command>7zip</command></para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio StuffIt</para></entry>
+              <entry align="left"><para><filename>.bin</filename> o <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio zip</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Fumetto (compresso Zip)</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Archivio zoo</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Il formato di archivio più diffuso in ambito Linux e nei sistemi derivati da Unix è il tar compresso con <command>gzip</command> o <command>bzip2</command>.</para>
+    <para>Il formato più diffuso nei sistemi Microsoft Windows è quello degli archivi creati con <application>PKZIP</application> o <application>WinZip</application>.</para>
+    <section xml:id="grapa-intro-nonarchive"><info><title>File compressi non archivi</title></info>
+       
+      <para>Un file compresso non archivio è un file creato tramite l'uso di <command>bzip2</command>, <command>gzip</command>, <command>lzip</command>, <command>lzop</command>, <command>compress</command> o <command>rzip</command> per la compressione. Ad esempio, <filename>file.txt.gz</filename> è creato usando <command>gzip</command> per comprimere <filename>file.txt</filename>.</para>
+      <para>Puoi usare <application>Gestore archivi</application> per creare, aprire ed estrarre file compressi del tipo non archivio.</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="grapa-get-start"><info><title>Per Iniziare</title></info>
+    
+    <para>Questa sezione fornisce informazioni sull'uso di <application>Gestore archivi</application> e descrive l'interfaccia dello stesso <application>Gestore archivi Grapa</application>.</para>
+
+<!-- ============= To Start Grapa ============================ -->
+         <section xml:id="grapa-to-start"><info><title>Iniziare ad usare <application>Gestore archivi Grapa</application></title></info>
+                
+                <para>E' possibile avviare <application>Gestore archivi Grapa</application> nei seguenti modi:</para>
+                <variablelist>
+                <varlistentry>
+                <term>menu <guimenu>Applicazioni</guimenu></term>
+                <listitem>
+                <para>Scegliere <menuchoice><guisubmenu>Accessori</guisubmenu><guimenuitem>Gestore archivi Grapa</guimenuitem></menuchoice>.</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>Riga di comando</term>
+                <listitem>
+                <para>Avviare il comando: <command>grapa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="grapa-when-start"><info><title>Quando si avvia <application>Gestore archivi Grapa</application></title></info>
+                
+                <para>Quando avvii il <application>Gestore archivi Grapa</application>, viene mostrata la seguente finestra:</para>
+
+                <figure xml:id="grapa-FIG-main-window"><info><title>Finestra di <application>Gestore archivi Grapa</application> </title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/grapa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra la finestra principale di Grapa.</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para>La finestra deli <application>Gestore archivi Grapa</application> contiene i seguenti elementi:</para>
+                <variablelist>
+                  <varlistentry> <term>Barra dei menu</term>
+                         <listitem>
+                                <para>I menù nella Barra dei menù contengono tutti i comandi necessari per lavorare con gli archivi tramite <application>Gestore archivi Grapa</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Barra degli strumenti</term>
+                         <listitem>
+                                <para>La barra degli strumenti contiene un sottoinsieme dei comandi accessibili tramite la barra dei menù. Il <application>Gestore archivi</application> mostra questa barra per impostazione predefinita, ma è possibile nasconderla tramite <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barra degli strumenti</guimenuitem> </menuchoice>. Per visualizzarla, premere <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barra degli strumenti</guimenuitem> </menuchoice> di nuovo.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Barra della cartella</term>
+                         <listitem>
+                                <para>La Barra della cartella permette di navigare le varie cartelle contenute in un archivio. <application>Gestore archivi</application> mostra questa barra per impostazione predefinita. Vedi <xref linkend="grapa-view-type-folder"/> per altre informazioni.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Area di visualizzazione</term>
+                         <listitem>
+                                <para>L'area di visualizzazione mostra il contenuto dell'archivio.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Barra di stato</term>
+                         <listitem>
+                                <para>La barra di stato mostra le informazioni relative alle attività svolte dal<application>Gestore archivi Grapa</application> e al contenuto dell'archivio. <application>Gestore archivi Grapa</application> visualizza la barra di stato per impostazione predefinita. Per nasconderla, scegli <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barra di stato</guimenuitem> </menuchoice>. Per mostrarla, clicca <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Barra di stato</guimenuitem> </menuchoice>di nuovo .</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para>Quando si fai clic destro sulla finestra del <application>Gestore archivi Grapa</application>, viene mostrato un menu contestuale che contiene tutti i comandi più comuni per la gestione dell'archivio.</para>
+
+     <section xml:id="grapa-bookmarks"><info><title>Sfogliare il filesystem</title></info>
+        
+        <para>Varie finestre del <application>Gestore archivi Grapa</application> (<guilabel>Nuovo</guilabel>, <guilabel>Apri</guilabel>, <guilabel>Estrai</guilabel>,...) permettono di sfogliare le cartelle del computer. Fai riferimento alla <link xlink:href="help:cafe-user-guide/filechooser-open">Guida utente di CAFE</link> per imparare come usare le finestre di gestione dei file.</para>
+        <para>Puoi anche fare riferimento alla sezione <link xlink:href="help:cafe-user-guide/caja-bookmarks">Segnalibri</link> della guida utente per l'ambiente grafico al fine di capire come impostare il pannello <guilabel>Risorse</guilabel> per accedere ai percorsi preferiti.</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="grapa-working"><info><title>Lavorare con gli archivi</title></info>
+      
+      <para>Quando si utilizza il <application>Gestore archivi Grapa</application> per lavorare con un archivio, tutte le modifiche vengono salvate immediatamente su disco. Ad esempio, se elimini un file da un archivio, il <application>Gestore di archivi Grapa</application> elimina il file non appena fai clic su <guibutton>OK</guibutton>. Questo comportamento è diverso da quello della maggior parte delle applicazioni, che salvano le modifiche solo quando si esce dall'applicazione o si seleziona <guimenuitem>Salva</guimenuitem> nel menu.</para>
+      <para>Se un archivio è molto grande, o se il sistema è lento, alcune operazioni possono richiedere molto tempo. Per interrompere l'azione corrente, premi <keycap>Esc</keycap>. In alternativa, seleziona <menuchoice> <guimenu>Visualizza</guimenu> <guimenuitem>Stop</guimenuitem> </menuchoice> o fai clic <guibutton>Stop</guibutton> nella barra degli strumenti.</para>      
+      <para>Nel <application>Gestore archivi Grapa</application> è possibile eseguire la stessa azione in modi diversi. Ad esempio puoi aprire un archivio tramite: <informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>Componente UI</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>Azione</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>Finestra</para></entry>
+                          <entry><para>Trascina un archivio nella finestra del <application>Gestore archivi Grapa</application> da un'altra applicazione come il gestore file.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Barra dei menu</para></entry>
+                          <entry><para>Seleziona <menuchoice> <guimenu>Archivio</guimenu> <guimenuitem>Apri</guimenuitem> </menuchoice>.</para>
+           <para>Se hai aperto un archivio recentemente, verrà elencato direttamente nel menu <menuchoice><guimenu>Archivio</guimenu></menuchoice>.</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Barra degli strumenti</para></entry>
+                          <entry><para>Clicca sul pulsante <guibutton>Apri</guibutton> della barra degli strumenti.</para>
+           <para>Se hai aperto un archivio recentemente, clicca sulla freccia in basso vicino al pulsante <guibutton>Apri</guibutton> nella barra degli strumenti.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Clic destro sul menu a comparsa</para></entry>
+                          <entry><para>Clicca con il tasto destro sull'archivio, poi scegli <guilabel>Apri</guilabel> dal menu a comparsa.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Tasti scorciatoia</para></entry>
+                          <entry><para>Premi <keycombo> <keycap>Ctrl</keycap> <keycap>O</keycap> </keycombo>.</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>Questo manuale descrive le funzionalità tramite la barra dei menu.</para>
+
+    <section xml:id="grapa-pattern"><info><title>Modelli di nome di file</title></info>
+      
+      <para>Il <application>Gestore archivi Grapa</application> consente di aggiungere, estrarre o eliminare più file contemporaneamente. Per applicare un'azione a tutti i file secondo un modello definiti, inserisci il criterio nella casella di testo. Lo schema può includere simboli jolly standard come <keycap>*</keycap> per identificare qualsiasi stringa e <keycap>?</keycap> per identificare a qualsiasi singolo simbolo. È possibile inserire diversi criteri separati da punti e virgola. Il <application>Gestore di archivi Entrampa</application> applica l'azione a tutti i file che corrispondono ad almeno uno dei modelli definiti. Gli esempi della tabella seguente mostrano come utilizzare i modelli per selezionare i file.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Modello</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>File corrispondenti</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>Tutti i file</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>Tutti i file con estensione <filename>tar</filename>, inclusi quelli in cui l'estensione <filename>tar</filename> è seguita da qualsiasi sequenza di simboli, come <filename>fiename.tar.gz</filename>.</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>Tutti i file con estensione <filename>jpg</filename> e tutti i file con estensione <filename>jpeg</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>file?.gz</filename></para></entry>
+              <entry align="left"><para>Tutti i file con estensione <filename>gz</filename> il cui nome inizia con "file" seguito da qualsiasi carattere singolo, es. <filename>file2.gz</filename>, <filename>filex.gz</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="grapa-open"><info><title>Aprire un archivio</title></info>
+      
+      <para>Per aprire un archivio, segui questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem>
+           <para>Seleziona <menuchoice> <guimenu>Archivio</guimenu> <guimenuitem>Apri</guimenuitem> </menuchoice> per mostrare la finestra <guilabel>Apri</guilabel>. Premi in alternativa <keycombo> <keycap>Ctrl</keycap> <keycap>O</keycap> </keycombo>, o clicca <guibutton>Apri</guibutton> nella barra degli strumenti.</para> 
+          </listitem>
+          <listitem>
+           <para>Seleziona l'archivio che desideri aprire.</para> 
+          </listitem>
+          <listitem>
+           <para>Fare clic su <guibutton>Apri</guibutton>.</para> 
+          </listitem>
+        </orderedlist></para>
+      <para><application>Gestore archivi</application> determina automaticamente il tipo di archivio e mostra: <itemizedlist>
+          <listitem>
+            <para>Nome dell'archivio nella barra del titolo della finestra</para>
+          </listitem>
+          <listitem>
+            <para>Il contenuto dell'archivio viene mostrato nell'area di visualizzazione</para>
+          </listitem>
+          <listitem>
+            <para>Numero di file e cartelle (oggetti) nel percorso corrente, con la loro dimensione non compressa nella barra di stato.</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>Per aprire un altro archivio, seleziona nuovamente <menuchoice> <guimenu>Archivio</guimenu> <guimenuitem>Apri</guimenuitem> </menuchoice>. <application>Gestore archivi Grapa</application> apre ogni archivio in una nuova finestra. Non è possibile aprire un altro archivio nella stessa finestra.</para>
+      <para>Se si tenta di aprire un archivio in un formato non riconosciuto dal <application>Gestore archivi Grapa</application>, l'applicazione visualizza un messaggio di errore. Vedi <xref linkend="grapa-intro"/> per un elenco dei formati supportati.</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="grapa-select-files"><info><title>Selezionare file in un archivio</title></info>
+      
+    <para>Per selezionare tutti i file in un archivio, scegli <menuchoice> <guimenu>Modifica</guimenu> <guimenuitem>Seleziona tutto</guimenuitem> </menuchoice> o premi <keycombo> <keycap>Ctrl</keycap> <keycap>A</keycap> </keycombo>.</para>
+      <para>Per deselezionare tutti i file di un archivio, seleziona <menuchoice> <guimenu>Modifica</guimenu> <guimenuitem>Deseleziona tutto</guimenuitem> </menuchoice> o premi <keycombo> <keycap>Shift</keycap> <keycap>Ctrl</keycap> <keycap>A</keycap> </keycombo>.</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="grapa-extract"><info><title>Estrarre dei file dall'archivio</title></info> 
+     
+    <para>Per estrarre i file da un archivio, segui questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Seleziona i file da estrarre. Per selezionare altri file, tieni premuto Ctrl e fai clic sui file che si desideri.</para>
+        </listitem>
+        <listitem><para>Seleziona <menuchoice> <guimenu>Archivio</guimenu> <guimenuitem>Apri</guimenuitem> </menuchoice> per mostrare la finestra <guilabel>Apri</guilabel>. Premi in alternativa <keycombo> <keycap>Ctrl</keycap> <keycap>O</keycap> </keycombo>, o clicca <guibutton>Apri</guibutton> nella barra degli strumenti.</para>
+        </listitem>
+        <listitem><para>Seleziona la cartella dove il <application>Gestore archivi Grapa</application> estrae i file.</para>
+        </listitem>
+        <listitem><para>Seleziona le opzioni di estrazione desiderate. Per ulteriori informazioni sulle opzioni di estrazione, vedi <xref linkend="grapa-extract-options"/>.</para>
+        </listitem>
+        <listitem><para>Clicca su <guibutton>Estrai</guibutton>.</para>
+        <note>
+          <para>Se tutti i file dell'archivio sono protetti da una password che non è stata specificata, <application>Gestore di archivi Grapa</application> chiederà di inserirla.</para>
+          <para>Se solo alcuni file dell'archivio sono protetti da una password, e non è stata specificata, <application>Gestore di archivi Grapa</application> non la richiede. Tuttavia, <application>Gestore archivi Grapa</application> estrarrà solo i file non protetti.</para>
+          <para>Per ulteriori informazioni sulle password, vedi <xref linkend="grapa-encrypt-files"/>.</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para><application>Gestore archivi Grapa</application> fornisce anche degli strumenti per estrarre i file da un archivio senza aprire una finestra del <application>Gestore di archivi Grapa</application>. Vedi <xref linkend="grapa-fmgr"/> per ulteriori informazioni.</para>
+    <para>L'operazione di estrazione estrae una <emphasis>copia</emphasis> dei file dell'archivio. I file estratti hanno gli stessi permessi e la stessa data di modifica dei file originali contenuti nell'archivio.</para>
+    <para>L'operazione di estrazione non modifica il contenuto dell'archivio. Per informazioni su come eliminare i file da un archivio, vedi <xref linkend="grapa-delete-files"/>.</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="grapa-archive-close"><info><title>Chiudere un archivio</title></info>
+    
+    <para>Per chiudere l'archivio e la finestra del <application> Gestore archivi Grapa</application>, scegli <menuchoice> <guimenu>Archivio</guimenu> <guimenuitem>Chiudi</guimenuitem> </menuchoice> oppure premi <keycombo> <keycap>Ctrl</keycap> <keycap>W</keycap> </keycombo>.</para>
+    <note>
+      <para>Non è possibile chiudere l'archivio senza chiudere anche la finestra del <application>Gestore di archivi Grapa</application> relativa.</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="grapa-creating"><info><title>Creare archivi</title></info> 
+     
+    <para>Oltre ad aprire gli archivi esistenti, è anche possibile creare nuovi archivi con il <application>Gestore archivi Grapa</application></para>
+    <section xml:id="grapa-create"><info><title>Creare un archivio</title></info> 
+     
+    <para>Per creare un archivio, segui questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Seleziona <menuchoice> <guimenu>Archivio</guimenu> <guimenuitem>Nuovo</guimenuitem> </menuchoice> per mostrare la finestra <guilabel>Nuovo archivio</guilabel>. In alternativa, premi <keycombo> <keycap>Ctrl</keycap> <keycap>N</keycap> </keycombo> o clicca il tasto <guibutton>Nuovo</guibutton> nella barra degli strumenti.</para>
+        </listitem>
+        <listitem>
+          <para>Specifica la cartella in cui il <application>Gestore di archivi Grapa</application> creerà il nuovo archivio cliccando sulla voce nell'elenco a discesa <guilabel>Nuovo</guilabel>. Se la cartella non è presente nell'elenco, fai clic su <guilabel>Sfoglia</guilabel> e seleziona la cartella. In alternativa, inserisci il percorso completo nella casella di testo <guilabel>Nome</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Inserisci il nome del nuovo archivio, compresa l'estensione del file, nella casella di testo <guilabel>Nome</guilabel>. In alternativa, scrivi il nome dell'archivio senza estensione e seleziona il tipo di archivio dal menu a discesa <guilabel>Formato del file</guilabel>, così facendo l'estensione verrà aggiunta automaticamente.</para>
+        </listitem>
+        <listitem><para>Seleziona le opzioni di creazione desiderate cliccando su <guilabel>Altre opzioni</guilabel>. Per ulteriori informazioni sulle opzioni di creazione, vedi <xref linkend="grapa-create-options"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Clicca su <guibutton>Nuovo</guibutton>. <application>Gestore archivi Grapa</application> crea un archivio vuoto, ma non lo scrive ancora sul disco.</para>
+        </listitem>
+        <listitem>
+          <para>Aggiungi i file all'archivio come descritto in <xref linkend="grapa-add-files"/>. <note>
+                  <para><application>Gestore archivi Grapa</application> scrive l'archivio su disco solo quando contiene almeno un file. Se crei un nuovo archivio e esci dal <application>Gestore di archivi Grapa</application> prima di aver aggiunto un file, il <application>Gestore di archivi Grapa</application> elimina l'archivio.</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="grapa-add-files"><info><title>Aggiungere elementi ad un archivio</title></info>
+    
+    <para>Per aggiungere file ad un archivio, segui questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Identifica in quale posizione dell'archivio desideri aggiungere i file e apri quella posizione nel gestore archivi.</para> 
+         </listitem>
+         <listitem>
+           <para>Seleziona <menuchoice> <guimenu>Modifca</guimenu> <guimenuitem>Aggiungi file</guimenuitem> </menuchoice> per visualizzare la finestra <guilabel>Aggiungi file</guilabel> o clicca <guibutton>Aggiungi file</guibutton> nella barra degli strumenti.</para> 
+         </listitem>
+         <listitem>
+           <para>Seleziona i file che desideri aggiungere. Per selezionarne altri tieni premuto <keycap>Ctrl</keycap> e clicca sui file.</para> 
+         </listitem>
+         <listitem>
+           <para>Clicca <guibutton>Aggiungi</guibutton>. Il <application>Gestore archivi Grapa</application> aggiunge i file alla cartella dell'archivio correntemente visualizzata.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Non è possibile aggiungere cartelle ad un archivio tramite <guilabel>Aggiungi file</guilabel>. Per aggiungere una cartella vedi <xref linkend="grapa-add-folder"/>.</para>
+    <para>La finestra <guilabel>Aggiungi file</guilabel> dà accesso all'opzione <guilabel>Aggiungi solo se più recente</guilabel>, vedi <xref linkend="grapa-add-options"/> per ulteriori informazioni su questa opzione.</para>
+    <para>È anche possibile aggiungere file ad un archivio tramite il gestore dei file, senza dover aprire una finestra del <application>Gestore archivi Grapa</application>. Vedi <xref linkend="grapa-fmgr"/> per ulteriori informazioni.</para>
+    <para>L'operazione Aggiungi aggiunge <emphasis>una copia</emphasis> dei file o delle cartelle specificate all'archivio. <application>Gestore archivi Grapa</application> non rimuove i file originali, che rimangono invariati nel file system locale. Le copie aggiunte all'archivio hanno le stesse autorizzazioni e la stessa data di modifica dei file originali.</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="grapa-add-folder"><info><title>Aggiungere una cartella ad un archivio</title></info>
+      
+    <para>Per aggiungere una cartella ad un archivio, segui questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Identifica in quale posizione dell'archivio desideri aggiungere i file e apri quella posizione nel gestore archivi.</para>
+         </listitem>
+         <listitem>
+           <para>Seleziona <menuchoice> <guimenu>Modifica</guimenu> <guimenuitem>Aggiungi una cartella</guimenuitem> </menuchoice> per far apparire la finestra <guilabel>Aggiungi ad una cartella</guilabel>.</para> 
+         </listitem>
+         <listitem>
+           <para>Seleziona la cartella che desideri aggiungere.</para> 
+         </listitem>
+         <listitem>
+           <para>Clicca <guibutton>Aggiungi</guibutton>. <application>Gestore archivi Grapa</application> aggiunge la cartella a quella dell'archivio attualmente aperta.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>La finestra <guilabel>Aggiungi una cartella</guilabel> fornisce varie opzioni avanzate. Vedi <xref linkend="grapa-add-options"/> per ulteriori informazioni.</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="grapa-convert-archive"><info><title>Convertire un archivio in un altro formato</title></info>
+    
+    <para>Per convertire un archivio in un altro formato e salvarlo come nuovo file, segui i seguenti passaggi:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>Apri l'archivio che desideri convertire</para>
+      </listitem>
+      <listitem>
+        <para>Seleziona <menuchoice> <guimenu>Archivio</guimenu> <guimenuitem>Salva come</guimenuitem> </menuchoice> per mostrare la finestra <guilabel>Salva come</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Inserisci il nome dell'archivio nel campo <guilabel>Nome</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Seleziona il nuovo formato dall'elenco <guilabel>Formato del file</guilabel>. In alternativa puoi inserire l'estensione dopo il nome del file nella casella di testo <guilabel>Nome</guilabel> e selezionare <guilabel>Per estensione</guilabel> dall'elenco a discesa <guilabel>Formato del file</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Seleziona le opzioni di creazione desiderate cliccando su <guilabel>Altre opzioni</guilabel>. Per ulteriori informazioni sulle opzioni di creazione, vedi <xref linkend="grapa-create-options"/>.</para>
+      </listitem>      
+      <listitem>
+        <para>Cliccare <guibutton>Salva</guibutton>.</para>
+        <note>
+          <para>Se tutti i file dell'archivio sono protetti da una password che non è stata specificata, <application>Gestore di archivi Grapa</application> chiederà di inserirla.</para>
+          <para>Se alcuni, ma non tutti, i file dell'archivio sono protetti da una password che non è stata specificata <application>Gestore archivi Grapa</application> non richiede la password. Tuttavia, il <application>Gestore archivi Grapa</application> copierà nel nuovo archivio solo i file non protetti.</para>
+          <para>Per ulteriori informazioni sulle password, vedi <xref linkend="grapa-encrypt-files"/>.</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="grapa-modify-contents"><info><title>Modificare i contenuti dell'archivio</title></info>
+  
+  <para>E' possibile modificare i contenuti dell'archivio in vari modi.</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="grapa-encrypt-files"><info><title>Cifrare i file di un archivio</title></info>
+      
+    <para>Per motivi di sicurezza è anche possibile crittografare i file aggiunti ad un archivio.</para>
+      <para>Se il formato dell'archivio supporta la crittografia, puoi inserire una password per crittografare i file  aggiunti all'archivio.</para>
+      <note>
+        <para>Attualmente supportano la cifratura gli archivi 7-Zip, RAR e ARJ.</para>
+      </note>
+     <para>Per inserire una password di cifratura, segui questi passaggi:</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para>Seleziona <menuchoice> <guimenu>Modifica</guimenu> <guimenuitem>Password</guimenuitem> </menuchoice> per mostrare la finestra <guilabel>Password</guilabel>.</para></listitem> 
+<listitem><para>Inserisci la password nel campo <guilabel>Password</guilabel>.</para></listitem>
+<listitem><para>Clicca su <guibutton>OK</guibutton>.</para></listitem>
+       </orderedlist>
+    <para><application>Gestore archivi Grapa</application> utilizza la password per crittografare i file aggiunti all'archivio attuale e per decifrare i file che vengono estratti. <application>Gestore archivi Grapa</application> dimentica la password quando l'archivio viene chiuso.</para>
+      <para>Per ulteriori informazioni su come verificare se un archivio contiene file cifrati, vedi <xref linkend="grapa-encrypt-files"/>.</para>
+      <note>
+      <para>La crittografia fornita dalle utilità di archiviazione è debole e insicura. Se per te la sicurezza è davvero importante, utilizza uno strumento di crittografia avanzato come <link xlink:href="http://www.gnupg.org">GNU Privacy Guard</link>.</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="grapa-rename-files"><info><title>Rinominare un file in un archivio</title></info>
+    
+    <para>Per rinominare un file in un archivio, segui questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Seleziona il file che desideri rinominare.</para>
+        </listitem>
+        <listitem>
+          <para>Seleziona <menuchoice> <guimenu>Modifica</guimenu> <guimenuitem>Rinomina</guimenuitem> </menuchoice> o premi <keycombo><keycap>F2</keycap> </keycombo>, per mostrare la finestra <guilabel>Rinomina</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Inserisci il nome del file nella casella <guilabel>Nuovo nome del file</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Clicca <guibutton>Rinomina</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="grapa-copy-files"><info><title>Copiare i file in un archivio</title></info>
+    
+    <para>Per copiare file in un archivio, segui questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Seleziona i file che desideri copiare.</para>
+        </listitem>
+        <listitem>
+          <para>Seleziona <menuchoice> <guimenu>Modifica</guimenu> <guimenuitem>Copia</guimenuitem> </menuchoice>, o premi <keycombo> <keycap>Ctrl</keycap> <keycap>C</keycap> </keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Apri la posizione in cui desideri che i file vengano copiati.</para>
+        </listitem>
+        <listitem>
+          <para>Seleziona <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Incolla</guimenuitem></menuchoice> o premi <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="grapa-move-files"><info><title>Spostare i file in un archivio</title></info>
+    
+    <para>Per spostare i file in un archivio, segui questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Seleziona i file che desideri spostare.</para>
+        </listitem>
+        <listitem>
+          <para>Seleziona <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Taglia</guimenuitem></menuchoice> o premi <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Apri la posizione in cui desideri che i file vengano spostati.</para>
+        </listitem>
+        <listitem>
+          <para>Seleziona <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Incolla</guimenuitem></menuchoice> o premi <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="grapa-delete-files"><info><title>Eliminare file da un archivio</title></info>
+    
+    <para>Per eliminare i file da un archivio, segui questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Seleziona i file che desideri eliminare.</para>
+        </listitem>
+        <listitem>
+          <para>Seleziona <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Elimina</guimenuitem></menuchoice> o premi <keycap>Canc</keycap> per mostrare la finestra <guilabel>Elimina</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Seleziona una delle seguenti opzioni di eliminazione:</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>Tutti i file</guilabel></term>
+              <listitem>
+                <para>Elimina tutti i file dall'archivio.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>File selezionati</guilabel></term>
+              <listitem>
+                <para>Elimina i file selezionati dall'archivio.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>File</guilabel></term>
+              <listitem>
+                <para>Elimina dall'archivio tutti i file che corrispondono ai criteri specificati. Vedi <xref linkend="grapa-pattern"/> per ulteriori informazioni sui criteri di selezione dei file.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para>Clicca su <guibutton>OK</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="grapa-modify-archive-file"><info><title>Modificare file in un archivio</title></info> 
+     
+    <para>Per modificare i file in un archivio, segui questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Fai doppio clic sul file che desideri aprire oppure fai clic con il tasto destro del mouse sul file e seleziona <menuchoice><guimenuitem>Apri</guimenuitem></menuchoice>.</para></listitem>
+      <listitem><para>Modifica il file aperto al punto 1 e salva le modifiche.</para></listitem>
+      <listitem><para>Il <application>Gestore archivi Grapa</application> mostra una finestra di conferma per aggiornare il file nell'archivio con le modifiche recenti. </para></listitem>
+      <listitem><para>Clicca <guilabel>Aggiorna</guilabel>.</para></listitem>
+      </orderedlist></para>
+    <para>Il <application>Gestore archivi Grapa</application> utilizza le associazioni tra tipi di file e programmi definite a livello di sistema per determinare l'applicazione adatta per ogni file. Queste associazioni possono essere visualizzate e modificate nella scheda <guilabel>Apri con</guilabel> delle proprietà dei file. Se <application>Gestore archivi Grapa</application> non è in grado di trovare un'applicazione appropriata, <application>Gestore archivi Grapa</application> visualizzerà la finestra <guilabel>Apri file</guilabel> per permetterti di scegliere un'applicazione, come descritto di seguito.</para>
+    <section xml:id="grapa-modifiy-archive-file-custom-app"><info><title>Modificare file con un programma personalizzato</title></info>
+    
+    <para>Puoi usare un'applicazione da te specificata per modificare un file, al posto dell'applicazione predefinita. Per utilizzare un'applicazione esterna: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Fai clic destro sul file.</para></listitem>
+      <listitem><para>Seleziona <menuchoice><guimenuitem>Apri con...</guimenuitem></menuchoice>.</para></listitem>
+      </orderedlist></para>    
+    <para><application>Gestore archivi Grapa</application> visualizza la finestra <guilabel>Apri file</guilabel> che elenca tutte le applicazioni in grado di aprire file scelto. Per selezionare una delle applicazioni, fai doppio clic sul nome dell'applicazione o un clic singolo sul nome dell'applicazione seguito da <guibutton>Apri</guibutton>. In alternativa, scrivi il nome dell'applicazione nella casella di testo <guilabel>Applicazione</guilabel>, quindi clicca su <guibutton>Apri</guibutton> per avviare l'applicazione.</para>
+    <para>Una volta avviata la applicazione, segui la procedura dal passo 2, come descritto in <xref linkend="grapa-modify-archive-file"/>.</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="grapa-view"><info><title>Visualizzare archivi</title></info>
+  
+  <para><application>Gestore di archivi Grapa</application> permette di visualizzare vari aspetti di un archivio.</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="grapa-view-archive-properties"><info><title>Visualizzare le proprietà di un archivio</title></info>
+      
+      <para>Per vedere le proprtietà di un archivio, seleziona <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Proprietà</guimenuitem></menuchoice>  per far appareire la finestra <guilabel>Proprietà</guilabel>. La finestra <guilabel>Proprietà</guilabel> mostra le seguenti informazioni sull'archivio: <variablelist>
+	      <varlistentry>
+	        <term><guilabel>Nome</guilabel></term>
+	        <listitem><para>Il nome dell'archivio.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Posizione</guilabel></term>
+	        <listitem><para>Posizione dell'archivio nel disco.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Ultima modifica</guilabel></term>
+	        <listitem><para>Data e ora in cui l'archivio è stato modificato l'ultima volta.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Dimensioni archivio</guilabel></term>
+	        <listitem><para>Dimensione dell'archivio compresso</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Dimensioni contenuto</guilabel></term>
+	        <listitem><para>Dimensione dell'archivio quando non compresso. L'informazione è disponibile anche nella barra di stato.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Livello di compressione</guilabel></term>
+	        <listitem><para>Il livello di compressione è un valore utilizzato per descrivere la riduzione delle dimensioni ottenuta. Ad esempio, un rapporto di compressione di 5 significa che l'archivio compresso è pari a 1/5 della dimensione dei dati originali.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Numero di file</guilabel></term>
+	        <listitem><para>Numero dei file nell'archivio.</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="grapa-view-archive-contents"><info><title>Visualizzare i contenuti di un archivio</title></info>
+      
+
+      <para><application>Gestore di archivi Grapa</application> visualizza il contenuto dell'archivio nella finestra principale come elenco di file, con le seguenti colonne : <variablelist>
+	  <varlistentry>
+	    <term><guilabel>Nome</guilabel></term>
+	    <listitem><para>Il nome del file o della cartella nell'archivio.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Dimensione</guilabel></term>
+	    <listitem><para>La dimensione del file estratto dall'archivio. Per le cartelle il campo <guilabel>Dimensione</guilabel> è vuoto. Per informazioni su come visualizzare le dimensioni del file compresso, vedi <xref linkend="grapa-extra-info"/>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Tipo</guilabel></term>
+	    <listitem><para>Il tipo di file. Per le cartelle, il valore di <guilabel>Tipo</guilabel> è definito come <literal>Cartella</literal>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Data ultima modifica</guilabel></term>
+	    <listitem><para>Data in cui l'oggetto è stato modificato l'ultima volta. Per le cartelle la <guilabel>Data ultima modifica</guilabel> è vuota.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Posizione</guilabel></term>
+	    <listitem><para>Percorso del file all'interno dell'archivio. Questa colonna è visibile solo quando la finestra è in modalità di visualizzazione file, quando è in visualizzazione cartella la posizione dei file viene visualizzata nella casella di testo <guilabel>Posizione</guilabel> della barra. Per ulteriori informazioni sui tipi di visualizzazione, vedi <xref linkend="grapa-view-type-folder"/>.</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para>Se un altro programma ha modificato l'archivio dopo che <application>Gestore di archivi Grapa</application> lo ha aperto, seleziona <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Aggiorna</guimenuitem></menuchoice> per ricaricare il contenuto dal disco.</para>
+      <para>Per informazioni su come personalizzare il modo in cui <application>Gestore di archivi Grapa</application> mostra i contenuti dell'archivio, vedi <xref linkend="grapa-archive-custom"/>.</para>
+      <para>Per le attività più avanzate utilizza un'applicazione installata nel sistema. Per ulteriori informazioni, vedi <xref linkend="grapa-view-archive-file"/>.</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="grapa-view-archive-file"><info><title>Visualizzare un file di un archivio</title></info> 
+     
+    <para>Per visualizzare un file in un archivio, segui la procedura descritta in <xref linkend="grapa-modify-archive-file"/>. Se salvi il file aperto, fai clic su <guilabel>Annulla</guilabel> quando <application>Gestore archivi Grapa</application> chiede conferma per aggiornare il file nell'archivio.</para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="grapa-test-archive"><info><title>Verificare l'integrità di un archivio</title></info> 
+     
+    <para>A volte un archivio può essere danneggiato per qualsivoglia motivo, per verificarne l'integrità seleziona <menuchoice><guimenu>Archivio</guimenu><guimenuitem>Controlla integrità</guimenuitem></menuchoice>:<itemizedlist>
+              <listitem>
+                <para>Se l'archivio non contiene errori, <application>Gestore archivi Grapa</application> apre la finestra <guilabel>Risultato della verifica</guilabel> in cui sono elencati i file con, a fianco, l'indicazione <literal>OK</literal>.</para>
+              </listitem>
+              <listitem>
+                <para>Se l'archivio contiene qualche errore, <application>Gestore di archivi Grapa</application> apre la finestra <guilabel>Risultato della verifica</guilabel> in cui vengono mostrate le parti dell'archivio contenenti errori.</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>Un archivio danneggiato può essere impossibile da estrarre e questo può portare ad una perdita di dati. Per questo motivo è necessario verificare l'integrità dell'archivio prima di cancellare i file originali.</para>
+    <para>Se l'archivio contiene file crittografati, <application>Gestore archivi Grapa</application> chiede la password dell'archivio prima di eseguire il test.</para>
+    <note>
+      <para>Non tutti i tipi di archivio supportano il test di integrità, i tipi di archivio che possono essere testati sono: 7-Zip, RAR, ZIP, ACE, ARJ e Zoo.</para>
+    </note>
+    <tip><info><title>Suggerimento</title></info>
+      
+      <para>Per verificare l'integrità di un archivio che non supporta il test di integrità, estrai tutti i file dall'archivio e assicurati che l'operazione sia stata completata con successo.</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="grapa-archive-custom"><info><title>Personalizzare la visualizzazione di un archivio</title></info>
+  
+  <para>Puoi personalizzare il modo in cui <application>Gestore archivi Grapa</application> visualizza il contenuto dell'archivio come segue:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Passa dalla visualizzazione per cartelle a quella per file. Vedi <xref linkend="grapa-view-type"/> per ulteriori informazioni.</para>
+    </listitem>
+    <listitem>
+      <para>Definisci l'ordine di visualizzazione nella lista. Vedi <xref linkend="grapa-view-type"/> per ulteriori informazioni.</para>
+    </listitem> 
+    <listitem>
+      <para>Mostra informazioni aggiuntive sui contenuti dell'archivio. Vedi <xref linkend="grapa-view-type"/> per ulteriori informazioni.</para>
+    </listitem> 
+  </itemizedlist>
+  <para><application>Gestore archivi Grapa</application> modifica la visualizzazione appena vengono modificate le opzioni di personalizzazione di cui sopra.</para>
+
+  <section xml:id="grapa-view-type"><info><title>Impostare il tipo di visualizzazione</title></info>
+    
+    <para>Se l'archivio contiene delle cartelle, puoi mostrare i contenuti in <xref linkend="grapa-view-type-folder"/> o <xref linkend="grapa-view-type-file"/>.</para>
+
+    <section xml:id="grapa-view-type-folder"><info><title>Visualizza come cartella</title></info>
+      
+      <para><application>Gestore archivi Grapa</application> mostra i contenuti nella visualizzazione per cartelle per impostazione predefinita. Per selezionarla manualmente, seleziona <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Vedi come una cartella</guimenuitem></menuchoice>.</para>
+      <para>Nella visualizzazione per cartelle, il <application>Gestore archivi</application> mostra le cartelle così come farebbe il gestore file. Per questo, <application>Gestore archivi</application> mostra le cartelle nell'area di visualizzazione con l'icona di una cartella e il relativo nome. Per vederne il contenuto, basta fare doppio clic sul nome della cartella.</para>
+      <para>La barra della cartella, che <application>Gestore di archivi Grapa</application> mostra solo nella visualizzazione come cartella, contiene gli strumenti descritti sotto.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Componente</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Descrizione</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_leftarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra l'icona per navigare all'indietro nei percorsi selezionati.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Clicca questo pulsante per tornare indietro al percorso precedente.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_rightarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra l'icona per navigare in avanti nei percorsi selezionati.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Clicca questo pulsante per andare al percorso successivo.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_uparrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra l'icona per navigare indietro nell'albero delle cartelle.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Clicca su questo pulsante per salire di un livello nell'albero gerarchico delle cartelle.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_home.png" format="PNG"/> </imageobject> <textobject> <phrase>Mostra l'icona per aprire la posizione iniziale dell'archivio.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Clicca questo pulsante per salire al livello più alto dell'albero gerarchico delle cartelle.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>Posizione</guilabel></para>
+              </entry>
+              <entry>
+                <para>Questo campo mostra il percorso completo all'interno dell'archivio della cartella attuale.</para>
+                <para>Per passare a un livello diverso nell'albero delle cartelle, inserisci manualmente la nuova posizione nella casella di testo <guilabel>Posizione</guilabel> e premi <keycap>Invio</keycap>. <application>Gestore archivi Grapa</application> visualizzerà il contenuto della nuova posizione.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="grapa-view-type-file"><info><title>Visualizzazione come elenco file</title></info>
+      
+      <para>Per scegliere questa visualizzazione, seleziona <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Vedi come elenco di file</guimenuitem></menuchoice>.</para>
+      <para>Nella vista per file, <application>Gestore archivi Grapa</application> mostra tutti i file dell'archivio, compresi i file contenuti nelle sottocartelle, come un unico elenco.</para>
+    </section>
+
+  </section>
+
+  <section xml:id="grapa-view-sort"><info><title>Ordinare l'elenco file</title></info>
+    
+    <para>È possibile ordinare l'elenco per nome, dimensione, tipo, data di modifica o posizione.</para>
+    <para>Per selezionare l'ordinamento, fai clic sull'intestazione della colonna corrispondente.</para>
+    <para>Per invertire l'ordine, clicca nuovamente sull'intestazione della colonna.</para>
+    <para>Ad esempio, per ordinare l'elenco dei file per data di modifica, fare clic sull'intestazione <guilabel>Data ultima modifica</guilabel>. <application>Gestore archivi Grapa</application> riorganizza l'elenco dei file per visualizzare i file per data di modifica, a partire dalla più vecchi. Per visualizzare prima i file più recenti, fai nuovamente clic sull'intestazione <guilabel>Data ultima modifica</guilabel>.</para>
+    <para><application>Gestore archivi Grapa</application> esegue sempre un ordinamento secondario in base al nome del file. Nell'esempio precedente, <application>Gestore archivi Grapa</application> ordina per nome tutti i file che hanno la stessa data di modifica.</para>
+  </section>
+
+  <section xml:id="grapa-extra-info"><info><title>Mostrare informazioni aggiuntive</title></info>
+    
+      <para>Per aprire la finestra <guilabel>Ultimo output</guilabel> seleziona <menuchoice><guimenu>Visualizza</guimenu><guimenuitem>Ultimo output</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Se l'archivio è stato verificato nella sessione corrente del <application>Gestore archivi Grapa</application> la voce <guilabel>Ultimo output</guilabel> mostra i risultati dell'ultimo test.</para>
+              </listitem>
+              <listitem>
+                <para>Se invece l'archivio non è stato verificato nella sessione attuale del <application>Gestore archivi Grapa</application>, la voce <guilabel>Ultimo output</guilabel> visualizza un elenco di tutti i file presenti nell'archivio, ma non indica lo stato dei file. La finestra <guilabel>Ultimo output</guilabel> fornisce la dimensione compressa di ciascun file, la percentuale di compressione e la data e l'ora dell'ultima modifica.</para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="grapa-fmgr"><info><title>Usare il gestore file per operare su un archivio</title></info> 
+     
+    <para>È possibile utilizzare il gestore file per aggiungere o estrarre elementi da un archivio.</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="grapa-fmgr-add"><info><title>Aggiungere elementi dal gestore file</title></info>
+      
+           <para>Puoi aggiungere file ad un archivio nei seguenti modi: <itemizedlist>
+             <listitem><para>Trascina i file nella finestra del <application>Gestore archivi Grapa</application> dal gestore di file.</para>
+             </listitem>
+             <listitem><para>Utilizza il menu a scomparse per aggiungere file ad un archivio.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Per utilizzare il menu a scomparsa del gestore file per aggiungere elementi a un archivio, segui questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Clica destro sui file o sulle cartelle dal gestore file.</para>
+        </listitem>
+        <listitem><para>Seleziona <guimenuitem>Crea archivio</guimenuitem> dal menu del gestore di file per far comparire la finestra del <application>Gestore archivi Grapa</application> denominata <guilabel>Create Archive</guilabel>.</para>
+        </listitem>
+        <listitem><para>Inserisci il nome dell'archivio, senza estensione, nel campo <guilabel>Archivio</guilabel>.</para>
+        </listitem>
+        <listitem><para>Seleziona il tipo di archivio dalla lista disponibile.</para>
+        </listitem>
+        <listitem><para>Imposta il percorso in cui salvare il file di archivio, dal menu <guilabel>Posizione</guilabel>. Se la posizione non è elencata, seleziona <guilabel>Altro...</guilabel> per aprire la finestra di selezione della <guilabel>Posizione</guilabel>.</para>
+        </listitem>
+        <listitem><para>Seleziona le opzioni di creazione desiderate cliccando su <guilabel>Altre opzioni</guilabel>. Per ulteriori informazioni sulle opzioni di creazione, vedi <xref linkend="grapa-create-options"/>.</para>
+        </listitem>
+        <listitem><para>Premi <guilabel>Crea</guilabel> per aggiungere i file selezionati alla cartella principale dell'archivio specificato. </para>
+                 <note><para>Per selezionare una delle opzioni avanzate, è necessario richiamare il <application>Gestore archivi Grapa</application> come descritto in <xref linkend="grapa-to-start"/>.</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="grapa-fmgr-extract"><info><title>Estrarre elementi dal gestore file</title></info>
+      
+           <para>Puoi estrarre i file da un archivio nei seguenti modi: <itemizedlist>
+             <listitem><para>Trascina i file dalla finestra del <application>Gestore archivi Grapa</application> a quella del gestore file.</para>
+             </listitem>
+             <listitem><para>Utilizza il menu a scomparsa per estrarre i file da un archivio.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Per utilizzare il menu a scomparsa del gestore file per estrarre elementi da un archivio, segui questi passaggi:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Fai Clic con il tasto destro sull'archivio dal gestore file.</para>
+        </listitem>
+        <listitem><para>Seleziona <guimenuitem>Estrai qui</guimenuitem> per estrarre tutti i contenuti dell'archivio nella cartella in cui si trova l'archivio. </para>
+        </listitem>
+      </orderedlist>
+      <note><para>Se l'archivio è cifrato, il <application>Gestore archivi Grapa</application> chiderà la password prima di estrarre i file.</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="grapa-create-options"><info><title>Opzioni di creazione</title></info>
+      
+      <para>Creando un nuovo archivio, o convertendone uno esistente in un altro formato, clicca su <guilabel>Altre Opzioni</guilabel> per specificare le seguenti funzioni avanzate:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Password</guilabel></term>
+	  <listitem>
+	  <para>Inserite la password che sarà utilizzata per cifrare l'archivio. Se non verrà specificata una password, l'archivio non sarà cifrato.</para>
+	  <note>
+	    <para>Non tutti i formati di archiviazione supportano la cifratura. Per ulteriori informazioni sulla cifratura dei file, vedi <xref linkend="grapa-encrypt-files"/>.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Cifra anche la lista dei file</guilabel></term>
+	  <listitem>
+	  <para>Selezionando questa opzione verrà richiesta la password anche per visualizzare l'elenco dei file contenuti nell'archivio, altrimenti verrà richiesta solo per estrarre i file. Questa opzione è disponibile solo se viene specificata una password.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Dividi in volumi</guilabel></term>
+	  <listitem>
+	  <para>Seleziona questa opzione per dividere l'archivio in più file della dimensione specificata.</para>
+	  <note>
+	    <para>Solo gli archivi 7-Zip e RAR supportano questa funzione.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="grapa-add-options"><info><title>Opzioni di aggiunta</title></info>
+      
+      <para><guilabel>Aggiungi file</guilabel> e <guilabel>Aggiungi una cartella</guilabel> forniscono le seguenti opzioni:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Aggiungi solo se più recente</guilabel></term>
+	  <listitem>
+            <para>Seleziona questa opzione per aggiungere il file specificato all'archivio solo se non è già presente o se la versione nell'archivio è più vecchia. <application>Gestore archivi Grapa</application> utilizza la data di modifica per determinare quale file è il più recente. Se la versione presente nell'archivio è più recente, <application>Gestore archivi Grapa</application> non aggiunge il file.</para>
+	    <para>Se l'opzione non è selezionata, <application>Gestore archivi Grapa</application> aggiunge il file sovrascrivendo la versione presente nell'archivio.</para>
+	    <tip><info><title>Suggerimento</title></info>
+	      
+	      <para>Se utilizzi <application>Gestore archivi Grapa</application> per creare file di backup, l'opzione <guilabel>Aggiungi solo se più recente</guilabel> è molto utile. Ad esempio, l'archivio <filename>backup.tar.gz</filename> contiene il backup della scorsa settimana della tua cartella home. Per aggiornare l'archivio in modo che costituisca un backup aggiornato della tua cartella home, segui questi passaggi: <orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para>Apri l'archivio <filename>backup.tar.gz</filename> nel <application>Gestore archivi Grapa</application>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Seleziona <menuchoice><guimenu>Modifica</guimenu><guimenuitem>Aggiungi</guimenuitem></menuchoice> per mostrare la finestra <guilabel>Aggiungi una cartella</guilabel>.</para> 
+                      </listitem>
+                      <listitem>
+                        <para>Seleziona la tua cartella home.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Seleziona l'opzione <guilabel>Aggiungi solo se più recente</guilabel>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Clicca su <guibutton>Aggiungi</guibutton></para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>Gestore archivi Grapa</application> aggiunge automaticamente all'archivio tutti i file creati nell'ultima settimana e aggiorna i file modificati nello stesso periodo. Tuttavia, <application>Gestore archivi Grapa</application> non rimuove dall'archivio i file eliminati durante l'ultima settimana. L'operazione di aggiornamento dell'archivio è molto più veloce di un backup completo della cartella principale.</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="grapa-add-folder-options"><info><title>Opzioni Aggiungi alla cartella</title></info>
+      
+      <para>Le seguenti opzioni sono disponibili in <guilabel>Aggiungi una cartella</guilabel> e permettono di selezionare automaticamente e di aggiungere tutti i file che soddisfano determinati criteri:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Includi file</guilabel></term>
+	  <listitem>
+            <para>Inserisci un modello di filename in questa casella di testo per includere i file che corrispondono al modello specificato. Vedi <xref linkend="grapa-pattern"/> per maggiori informazioni sui modelli di filename.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Escludi file</guilabel></term>
+	  <listitem>
+            <para>Inserisci un modello di filename in questa casella di testo per escludere i file con i nomi che corrispondono al modello specificato. Vedi <xref linkend="grapa-pattern"/> per maggiori informazioni sui modelli di filename.</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Escludi cartelle</guilabel></term>
+	  <listitem>
+            <para>Inserisci un modello di filename in questa casella di testo per escludere le cartelle che corrispondono al modello specificato. . Vedi <xref linkend="grapa-pattern"/> per maggiori informazioni sui modelli di filename.</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>Includi le sottocartelle</guilabel></term>
+	<listitem>
+          <para>Seleziona questa opzione per aggiungere tutti i file che corrispondono al modello specificato, dalla cartella corrente e dalle sottocartelle.</para>
+          <note>
+          <para>Il filename, non il nome della sottocartella, deve corrispondere al modello specificato. </para>
+          </note>
+	  <para>Se non selezioni questa opzione, <application>Gestore archivi Grapa</application> aggiunge i file corrispondenti solo dalla cartella corrente.</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>Escludi le cartelle che sono collegamenti simbolici</guilabel></term>
+	  <listitem>
+            <para>Seleziona questa opzione per omettere i file delle cartelle che sono collegamenti simbolici. I collegamenti simbolici sono puntatori o scorciatoie ad altre cartelle</para>
+	    <para>Se non selezioni questa opzione, <application>Gestore archivi Grapa</application> aggiunge i file che corrispondono dalle cartelle che sono collegamenti simbolici.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>Salva opzioni</guibutton></term>
+	  <listitem>
+            <para>Clicca questo pulsante per salvare la selezione corrente di opzioni di aggiunta avanzate su un file. Sarà mostrato il dialogo <guilabel>Salva opzioni</guilabel>. Inserisci un filename descrittivo nella casella di testo <guilabel>Nome opzioni</guilabel>, e quindi clicca <guibutton>Salva</guibutton>.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Carica opzioni</guibutton></term>
+	  <listitem>
+            <para>Clicca questo pulsante per caricare o cancellare un una precedente selezione di opzioni di aggiunta avanzate. Sarà mostrata la finestra di dialogo <guilabel>Carica opzioni</guilabel>.</para>
+            <itemizedlist>
+              <listitem>
+                <para>Per caricare un insieme di opzioni, seleziona il file di opzioni e clicca <guibutton>Applica</guibutton>.</para>
+              </listitem>
+              <listitem>
+                <para>Per cancellare un insieme di opzioni, seleziona il file di opzioni e clicca <guibutton>Rimuovi</guibutton>. Clicca <guibutton>Chiudi</guibutton> per chiudere la finestra di dialogo <guilabel>
+Carica opzioni</guilabel>.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Resetta opzioni</guibutton></term>
+	  <listitem>
+            <para>Clicca questo pulsante per resettare la selezione corrente di opzioni avanzate di aggiunta ai valori predefiniti.</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="grapa-extract-options"><info><title>Opzioni di scompattamento</title></info>
+    
+      
+    <para>La finestra di dialogo <guilabel>Estrai</guilabel> fornisce le seguenti opzioni, che vengono salvate quando chiudi <application>Gestore archivi Grapa</application>:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Estrai</guilabel></term>
+	  <listitem>
+            <para>Seleziona i file che saranno estratti:</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>Tutti i file</guilabel></term>
+                <listitem>
+                  <para>Estrai tutti i file dall'archivio.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>File selezionati</guilabel></term>
+                <listitem>
+                  <para>Estrai i seguenti file dall'archivio.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>File</guilabel></term>
+                <listitem>
+                  <para>Estrai dall'archivio tutti i file che corrispondono al modello specificato. Vedi <xref linkend="grapa-pattern"/> per maggiori informazioni sui modelli di filename.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>Azioni</guilabel></term>
+        <listitem>
+          <para>Seleziona le opzioni di estrazione seguenti:</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>Ri-crea cartelle</guilabel></term>
+	          <listitem><para>Seleziona questa opzione per ricostruire la struttura delle cartelle quando si estrae il file specificato.</para> 
+                <para>Per esempio, specifichi <filename>/tmp</filename> nell'area di testo <guilabel>Filename</guilabel> e scegli di estrarre tutti i file. L'archivio creato conterrà una sottocartella chiamata <filename>doc</filename>. <itemizedlist>
+                  <listitem><para>Se selezioni l'opzione <guilabel>Ri-crea cartelle</guilabel>, <application>Gestore archivi Grapa</application> estrae il contenuto dellla sottocartella in <filename>/tmp/doc</filename>.</para>
+                 </listitem>
+                 <listitem><para>Se non selezioni l'opzione <guilabel>Ri-crea cartelle</guilabel>, <application>Gestore archivi Grapa</application> non crea alcuna sottocartella. Al contrario, <application>Gestore archivi Grapa</application> estrae tutti i file dall'archivio, inclusi i file delle sottocartelle, in <filename>/tmp</filename>.</para>
+                 </listitem>
+               </itemizedlist></para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Sovrascrivi i file esistenti</guilabel></term>
+	           <listitem><para>Seleziona questa opzione per sovrascrivere ogni file nella cartella di destinazione che ha lo stesso nome dei file specificati.</para>
+	             <para>Se non selezioni questa opzione, <application>Gestore archivi Grapa</application> non estrae il file specificato se nella cartella di destinazione esiste un file con lo stesso nome .</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>No estrarre i file più vecchi</guilabel></term>
+	           <listitem>
+	             <para>Questa opzione è attiva solo se l'opzione <guilabel>Sovrascrivi i file esistenti</guilabel> è selezionata.</para>
+	             <para>Seleziona l'opzione <guilabel>Non estrarre i file più vecchi</guilabel> per estrarre il file specificato solo se esso non è presente nella cartella di destinazione, o se essa contiene una versione più vecchia del file. <application>Gestore archivi Grapa</application> usa la data di ultima modifica per determinare quale file è il più recente. Se il file nell'archivio è più antico, <application>Gestore archivi Grapa</application> non estrae il file specificato nella cartella di destinazione.</para>
+	             <para>Se non selezioni l'opzione <guilabel>Non estrarre i file più vecchi</guilabel> mentre è selezionata l'opzione <guilabel>Sovrascrivi i file esistenti</guilabel>,  <application>Gestore archivi Grapa</application> estrae il file specificato dall'archivio e sovrascrive il contenuto precedente della cartella di destinazione.</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>

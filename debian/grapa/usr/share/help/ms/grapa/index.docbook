@@ -1,0 +1,1239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+      (Do not remove this comment block.)
+  Maintained by the CAFE Documentation Project
+  http://wiki.cafe-desktop.org/dev-doc:doc-team-guide
+  Template version: 2.0 beta
+  Template last modified Jan 30, 2002
+-->
+<article xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude" version="5.0" xml:id="index" xml:lang="ms">
+<!-- please do not change the id; for translations, change lang to -->
+<!-- appropriate code -->
+  <info><title>Panduan Pengurus Arkib</title> 
+
+     <abstract>
+       <para>Pengurus Arkib, juga dikenali sebagai Grapa, membolehkan anda cipta, lihat, ubah suai. atau nyahpek arkib.</para>
+     </abstract>
+
+    <copyright xml:lang="en">
+      <year>2020</year>
+      <holder>CAFE Documentation Project</holder>
+    </copyright>
+    <copyright xml:lang="en">
+      <year>2019-2020</year>
+      <holder>MATE Documentation Project</holder>
+    </copyright>
+    <copyright><year>2009</year> <holder>Paul Cutler</holder></copyright>	    
+	<copyright><year>2006</year> <year>2008</year> <holder>Paolo Bacchilega</holder></copyright> 
+     <copyright><year>2003</year> <year>2004</year> <holder>Sun Microsystems</holder></copyright>
+    <copyright><year>2003</year> <holder>Paolo Bacchilega</holder></copyright> 
+    <copyright><year>2002</year> <holder>Alexander Kirillov</holder></copyright> 
+
+<!-- An address can be added to the publisher information.  If a role is 
+     not specified, the publisher/author is the same for all versions of the 
+     document.  -->
+    <publisher>
+      <publishername>Projek Dokumentasi CAFE</publishername>
+    </publisher> 
+    <publisher>
+      <publishername>Projek Dokumentasi GNOME</publishername>
+    </publisher>
+
+  <xi:include href="legal.xml"/>
+  <!-- This file contains link to license for the
+   documentation (GNU FDL), and other legal stuff such as "NO
+   WARRANTY" statement. Please do not change any of this. -->
+
+  <authorgroup>
+      <author><orgname>Projek Dokumentasi CAFE</orgname> <affiliation> <orgname>Dekstop CAFE</orgname> </affiliation></author>
+      <author><personname> <firstname>Sun </firstname> <surname>Pasukan Dokumentasi GNOME</surname> </personname> <affiliation> <orgname>Sun Microsystems</orgname> </affiliation></author>
+      <author><personname> <firstname>Paolo</firstname> <surname>Bacchilega</surname> </personname> <affiliation> <orgname>Projek Dokumentasi GNOME</orgname> </affiliation></author> 
+      <author><personname> <firstname>Alexander</firstname> <surname>Kirillov</surname> </personname> <affiliation> <orgname>Projek Dokumentasi GNOME</orgname> </affiliation> <email>kirillov@math.sunysb.edu</email></author> 
+      <author><personname> <firstname>Paul</firstname> <surname>Cutler</surname> </personname> <affiliation> <orgname>Projek Dokumentasi GNOME</orgname> </affiliation> <email>pcutler@foresightlinux.org</email></author>	  
+  </authorgroup>
+	
+	<releaseinfo revision="1.10" role="review">
+	</releaseinfo>
+
+         <revhistory>
+                <revision xml:lang="en"><revnumber>1.10.0</revnumber> <date>Julai 2015</date> <revdescription>
+                         <para role="author" xml:lang="en">Wolfgang Ulbrich</para>
+                         <para role="publisher" xml:lang="en">Projek Dokumentasi CAFE</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.26.0</revnumber> <date>Mac 2009</date> <revdescription>
+                         <para role="author">Paul Cutler</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.24.0</revnumber> <date>Julai 2008</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+				
+                <revision><revnumber>2.6</revnumber> <date>April 2006</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+
+                <revision><revnumber>2.5</revnumber> <date>Mac 2004</date> <revdescription>
+                         <para role="author">Pasukan Dokumentasi Sun GNOME</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.4</revnumber> <date>Februari 2004</date> <revdescription>
+                         <para role="author">Pasukan Dokumentasi Sun GNOME</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.3</revnumber> <date>Ogos 2003</date> <revdescription>
+                         <para role="author">Pasukan Dokumentasi Sun GNOME</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.2</revnumber> <date>Jun 2003</date> <revdescription>
+                         <para role="author">Pasukan Dokumentasi Sun GNOME</para>
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.1</revnumber> <date>Januari 2003</date> <revdescription>
+                         <para role="author">Paolo Bacchilega</para>                         
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+                <revision><revnumber>2.0</revnumber> <date>Jun 2002</date> <revdescription>
+                         <para role="author">Alexander Kirillov</para>                         
+                         <para role="publisher">Projek Dokumentasi GNOME</para>
+                  </revdescription></revision>
+         </revhistory>
+
+    <releaseinfo>Panduan ini menerangkan versi 1.22 bagi Pengurus Arkib.</releaseinfo> 
+  </info> 
+
+  <indexterm zone="index"><primary>Grapa</primary></indexterm> 
+  <indexterm zone="index"><primary>grapa</primary></indexterm>
+  <indexterm zone="index"><primary>Mengarkib</primary></indexterm>
+  <indexterm zone="grapa-add-files"><primary>Arkib</primary> <secondary>Menambah masuk fail-fail</secondary></indexterm> 
+  <indexterm zone="grapa-delete-files"><primary>Arkib</primary> <secondary>Memadam fail-fail</secondary></indexterm> 
+  <indexterm zone="grapa-open"><primary>Arkib</primary> <secondary>Membuka</secondary></indexterm> 
+  <indexterm zone="grapa-view"><primary>Arkib</primary> <secondary>Melihat</secondary></indexterm> 
+  <indexterm zone="grapa-extract"><primary>Arkib</primary> <secondary>Mengekstrak</secondary></indexterm> 
+  <indexterm zone="grapa-create"><primary>Arkib</primary> <secondary>Mencipta</secondary></indexterm> 
+
+<!-- ============= Document Body ============================= -->
+<!-- ============= Introduction ============================== -->
+<!-- Use the Introduction section to give a brief overview of what
+     the application is and what it does. -->
+  <section xml:id="grapa-intro"><info><title>Pengenalan</title></info> 
+     
+    <para>Anda boleh gunakan aplikasi <application>Pengurus Arkib</application> untuk mencipta, melihat, mengubah suai, atau menyahpek sesebuah arkib. Arkib merupakan sebuah fail yang bertindak sebagai bekas untuk lain-lain fail. Sebuah arkib boleh mengandungi banyak fail, folder, mahupun subfolder-subfolder, biasanya dalam bentuk termampat.</para>
+    <para><application>Pengurus Arkib</application> hanya menyediakan antaramuka bergrafik, dan bergantung kepada utiliti-utiliti baris-perintah seperti <command>tar</command>, <command>gzip</command>, and <command>bzip2</command> untuk operasi-operasi pengarkibannya.</para>
+    <para>Jika anda sudah mempunyai alatan baris-perintah berkaitan terpasang di dalam sistem anda, <application>Pengurus Arkib</application> dapat menyokong format-format arkib yang tersenarai di dalam jadual di bawah.</para> 
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Format</para></entry>
+              <entry colname="COLSPEC1" align="left">
+                <para>Sambungan Nama Fail</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry><para>Arkib 7-zip</para></entry>
+              <entry align="left"><para><filename>.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib ACE</para></entry>
+              <entry align="left"><para><filename>.ace</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Alzip</para></entry>
+              <entry align="left"><para><filename>.alz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arib AR</para></entry>
+              <entry align="left"><para><filename>.ar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib ARJ</para></entry>
+              <entry align="left"><para><filename>.arj</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Kabinet Microsoft</para></entry>
+              <entry align="left"><para><filename>.cab</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib CPIO</para></entry>
+              <entry align="left"><para><filename>.cpio</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Pakej Debian</para></entry>
+              <entry align="left"><para><filename>.deb</filename>, <filename>.udeb</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Imej CD mentah</para></entry>
+              <entry align="left"><para><filename>.iso</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Java</para></entry>
+              <entry align="left"><para><filename>.jar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Enterprise Application aRchive</para></entry>
+              <entry align="left"><para><filename>.ear</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Sumber Aplikasi Sesawang atau Arkib aplikasi Sesawang</para></entry>
+              <entry align="left"><para><filename>.war</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib LHA</para></entry>
+              <entry align="left"><para><filename>.lha</filename>, <filename>.lzh</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Roshal</para></entry>
+              <entry align="left"><para><filename>.rar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Buku Komik (Termampat-Rar)</para></entry>
+              <entry align="left"><para><filename>.cbr</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Pakej RPM</para></entry>
+              <entry align="left"><para><filename>.rpm</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Tar</para></entry>
+              <entry align="left"><para><filename>.tar</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Tar termampat dengan <command>bzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz</filename> atau <filename>.tbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Tar termampat dengan <command>bzip2</command></para></entry>
+              <entry align="left"><para><filename>.tar.bz2</filename> atau <filename>.tbz2</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Tar termampat dengan <command>gzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.gz</filename> atau <filename>.tgz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Tar termampat dengan <command>lzip</command></para></entry>
+              <entry align="left"><para><filename>.tar.lz</filename> atau <filename>.tlz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Tar termampat dengan <command>lzop</command></para></entry>
+              <entry align="left"><para><filename>.tar.lzo</filename> atau <filename>.tzo</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Tar termampat dengan <command>compress</command></para></entry>
+              <entry align="left"><para><filename>.tar.Z</filename> atau <filename>.taz</filename></para></entry>
+            </row>
+             <row valign="top">
+              <entry><para>Arkib Tar termampat dengan <command>7zip</command></para></entry>
+              <entry align="left"><para><filename>.tar.7z</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Stuffit</para></entry>
+              <entry align="left"><para><filename>.bin</filename> atau <filename>.sit</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Zip</para></entry>
+              <entry align="left"><para><filename>.zip</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Buku Komik (Termampat-Zip)</para></entry>
+              <entry align="left"><para><filename>.cbz</filename></para></entry>
+            </row>
+            <row valign="top">
+              <entry><para>Arkib Zoo</para></entry>
+              <entry align="left"><para><filename>.zoo</filename></para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    <para>Format arkib paling umum dalam Linux dan sistem seakan-Unix ialah arkib tar termampat dengan <command>gzip</command> atau <command>bzip2</command>.</para>
+    <para>Format arkib paling umum pada sistem Microsoft Windows ialah arkib yang dicipta dengan  <application>PKZIP</application> atau <application>WinZip</application>.</para>
+    <section xml:id="grapa-intro-nonarchive"><info><title>Fail-Fail Bukan-Arkib Termampat</title></info>
+       
+      <para>Sebuah fail bukan-arkib termampat yang dicipta ketika anda menggunakan <command>bzip2</command>, <command>gzip</command>, <command>lzip</command>, <command>lzop</command>, <command>compress</command> atau <command>rzip</command> untuk memampatkan sebuah fail bukan-arkib. Contohnya, <filename>file.txt.gz</filename> dicipta ketika anda menggunakan <command>gzip</command> untuk memampatkan <filename>file.txt</filename>.</para>
+      <para>Anda juga boleh menggunakan <application>Pengurus Arkib</application> untuk mencipta, membuka dan mengekstrak fail bukan-arkib termampat.</para> 
+    </section>
+  </section>
+
+<!-- ============= Getting Started =========================== -->
+  <section xml:id="grapa-get-start"><info><title>Membiasakan Diri</title></info>
+    
+    <para>Seksyen ini menyediakan maklumat berkenaan memulakan <application>Pengurus Arkib</application>, dan menjelaskan antaramuka pengguna <application>Pengurus Arkib</application>.</para>
+
+<!-- ============= To Start Grapa ============================ -->
+         <section xml:id="grapa-to-start"><info><title>Untuk Memulakan <application>Pengurus Arkib</application></title></info>
+                
+                <para>Anda boleh memulakan <application>Pengurus Arkib</application> dengan cara berikut:</para>
+                <variablelist>
+                <varlistentry>
+                <term>Menu <guimenu>Aplikasi</guimenu></term>
+                <listitem>
+                <para>Pilih <menuchoice><guisubmenu>Aksesori</guisubmenu><guimenuitem>Pengurus Arkib</guimenuitem></menuchoice>.</para>
+                </listitem>
+                </varlistentry>
+                <varlistentry>
+                <term>Baris perintah</term>
+                <listitem>
+                <para>Lakukan perintah berikut: <command>grapa</command></para>
+                </listitem>
+                </varlistentry>
+                </variablelist>
+        </section>
+
+         <section xml:id="grapa-when-start"><info><title>Ketika anda Memulakan <application>Pengurus Arkib</application></title></info>
+                
+                <para>Ketika anda memulakan <application>Pengurus Arkib</application>, tetingkap berikut dipaparkan:</para>
+
+                <figure xml:id="grapa-FIG-main-window"><info><title>Tetingkap <application>Pengurus Arkib</application></title></info>
+                  
+                  <screenshot>
+                         <mediaobject><imageobject> <imagedata fileref="figures/grapa_main_window.png" format="PNG"/> </imageobject> <textobject> <phrase>Menunjukkan tetingkap utama Grapa.</phrase> </textobject></mediaobject>
+                  </screenshot>
+                </figure>
+
+                <para>Tetingkap <application>Pengurus Arkib</application> mengandungi unsur-unsur berikut:</para>
+                <variablelist>
+                  <varlistentry> <term>Palang Menu</term>
+                         <listitem>
+                                <para>Menu dalam palang menu mengandungi semua perintah yang anda perlu untuk mengendalikan arkib di dalam <application>Pengurus Arkib</application>.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Palang Alat</term>
+                         <listitem>
+                                <para>Palang alat mengandungi satu subset perintah yang anda juga boleh capai melalui palang menu. <application>Pengurus Arkib</application> memaparkan palang alat secara lalai. Untuk sembunyikan palang menu, pilih <menuchoice> <guimenu>Lihat</guimenu><guimenuitem>Palang Alat</guimenuitem> </menuchoice>. Untuk menunjukkannya semula, pilih <menuchoice><guimenu>Lihat</guimenu><guimenuitem>Palang Alat</guimenuitem></menuchoice> sekali lagi.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Palang Folder</term>
+                         <listitem>
+                                <para>Palang folder membolehkan anda navigasi folder di dalam sesebuah arkib. <application>Pengurus Arkib</application> memaparkan palang folder sahaja di dalam pandangan folder. Sila rujuk <xref linkend="grapa-view-type-folder"/> untuk maklumat lanjut.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Kawasan paparan</term>
+                         <listitem>
+                                <para>Kawasan paparan memaparkan kandungan arkib.</para>
+                         </listitem>
+                  </varlistentry>
+                  <varlistentry> <term>Palang Status</term>
+                         <listitem>
+                                <para>Palang status memaparkan maklumat berkenaan aktiviti-aktiviti<application>Pengurus Arkib</application> semasa dan maklumat konteksual berkenaan kandungan arkib. <application>Pengurus Arkib</application> memaparkan palang status secara lalai. Untuk sembunyikan palang status, pilih <menuchoice> <guimenu>Lihat</guimenu><guimenuitem>Palang Status</guimenuitem> </menuchoice>. Untuk menunjukkannya semula, pilih <menuchoice><guimenu>Lihat</guimenu><guimenuitem>Palang Status</guimenuitem></menuchoice> sekali lagi.</para>
+                         </listitem>
+                  </varlistentry>
+                </variablelist>
+                <para>Ketika anda mengklik-kanan di dalam tetingkap <application>Pengurus Arkib</application>, aplikasi memaparkan satu menu timbul, Menu timbul mengandungi perintah arkib konteksual yang paling umum.</para>
+
+     <section xml:id="grapa-bookmarks"><info><title>Melayari Sistem Fail</title></info>
+        
+        <para>Beberapa dialog <application>Pengurus Arkib</application> (<guilabel>Baharu</guilabel>, <guilabel>Buka</guilabel>, <guilabel>Ekstrak</guilabel>,...) membolehkan anda layari fail dan folder di dalam komputer anda. Sila rujuk <link xlink:href="help:cafe-user-guide/filechooser-open">Panduan Pengguna Desktop</link> untuk mengetahui lebih lanjut berkenaan penggunaan dialog-dialog pelayaran fail.</para>
+        <para>Anda juga boleh merujuk <link xlink:href="help:cafe-user-guide/caja-bookmarks">seksyen Tanda Buku</link> dalam Panduan Pengguna Dekstop untuk mengetahui bagaimana hendak menggunakan anak tetingkap <guilabel>Tempat</guilabel> untuk mencapai lokasi-lokasi kegemaran anda.</para>
+     </section>
+   </section>
+</section>
+
+
+
+<!-- ======= Working with archives ============= --> 
+
+<section xml:id="grapa-working"><info><title>Mengendalikan Arkib</title></info>
+      
+      <para>Ketika anda menggunakan <application>Pengurus Arkib</application>, semua perubahan disimpan ke dalam cakera serta-merta. Sebagai contoh, jika anda memadam satu fail di dalam arkib, <application>Pengurus Arkib</application> memadam fail sebaik sahaja anda mengklik <guibutton>OK</guibutton>. Kelakuan ini berbeza dengan kebanyakan aplikasi, yang mana menyimpan perubahan ke dalam cakera sahaja jika anda keluar aplikasi atau pilih <guimenuitem>Simpan</guimenuitem> di dalam menu.</para>
+      <para>Jika sesebuah arkib terlalu besar, atau anda mempunyai sistem yang lambat, sesetengah tindakan arkib akan mengambil masa untuk diproses. Untuk menghenti paksa tindakan semasa, tekan <keycap>Esc</keycap>. Selain itu, pilih <menuchoice><guimenu>Lihat</guimenu><guimenuitem>Henti</guimenuitem></menuchoice>, atau klik <guibutton>Henti</guibutton> dalam palang alat.</para>      
+      <para>Dalam <application>Pengurus Arkib</application>, anda boleh buat tindakan yang sama dalam beberapa cara. Sebagai contoh, anda boleh buka arkib dengan cara berikut: <informaltable frame="all">
+                    <tgroup cols="2" colsep="1" rowsep="1">
+                      <colspec colname="COLSPEC0" colwidth="50*"/>
+                      <colspec colname="COLSPEC1" colwidth="50*"/>
+                      <thead>
+                        <row valign="top">
+                          <entry colname="COLSPEC0">
+                            <para>Komponen UI</para></entry>
+                          <entry colname="COLSPEC1" align="left"> 
+                            <para>Tindakan</para></entry>
+                        </row>
+                      </thead>
+                      <tbody>
+                        <row valign="top">               
+                          <entry><para>Tetingkap</para></entry>
+                          <entry><para>Seret satu arkib ke dalam tetingkap <application>Pengurus Arkib</application> daripada aplikasi lain seperti pengurus fail.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Palang Menu</para></entry>
+                          <entry><para>Pilih <menuchoice><guimenu>Arkib</guimenu><guimenuitem>Buka</guimenuitem></menuchoice>.</para>
+           <para>Jika anda telah membuka arkib baru-baru ini, ia akan tersenarai di dalam menu <menuchoice><guimenu>Arkib</guimenu></menuchoice>.</para> 
+</entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Palang Alat</para></entry>
+                          <entry><para>Klik pada butang palang alat <guibutton>Buka</guibutton>.</para>
+           <para>Jika anda telah membuka arkib baru-baru ini, klik pada anak panah bawah berhampiran dengan butang palang alat <guibutton>Buka</guibutton>.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Menu timbul klik-kanan</para></entry>
+                          <entry><para>Klik-kanan pada arkib, kemudian pilih <guimenuitem>Buka</guimenuitem> melalui menu timbul.</para></entry>
+                        </row>
+                        <row valign="top">               
+                          <entry><para>Kekunci pintasan</para></entry>
+                          <entry><para>Ketik <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>.</para></entry>
+                        </row>
+                      </tbody>
+                    </tgroup>
+                  </informaltable></para>
+      <para>Panduan ini menjelaskan kefungsian dalam palang menu.</para>
+
+    <section xml:id="grapa-pattern"><info><title>Pola Nama Fail</title></info>
+      
+      <para><application>Pengurus Arkib</application> membolehkan anda tambah, ekstrak, atau padam beberapa fail serentak. Untuk menerap tindakan kepada semua fail yang menepati pola tertentu, masukkan pola di dalam kotak teks. Pola boleh sertakan simbol kad liar piawai seperti <keycap>*</keycap> untuk padankan mana-mana rentetan, dan  <keycap>?</keycap> untuk padankan mana-mana simbol tunggal. Anda boleh masukkan beberapa pola yang dipisahkan dengan tanda titik bertindih atau semicolon. <application>Pengurus Arkib</application> seterusnya menerapkan tindakan kepada semua fail yang sepadan sekurang-kurangnya salah satu daripada pola. Contoh-contoh di dalam jadual berikut menunjukkan penggunaan pola-pola nama fail untuk memilih fail.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Corak</para></entry>
+              <entry colname="COLSPEC1" align="left"> 
+                <para>Fail-Fail Sepadan</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">               
+              <entry><para><filename>*</filename></para></entry>
+              <entry align="left"><para>Semua fail</para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.tar*</filename></para></entry>
+              <entry align="left"><para>Semua fail dengan sambungan <filename>tar</filename>, termasuklah sambungan <filename>tar</filename> yang diikuti dengan apa jua jujukan simbol seperti <filename>namafail.tar.gz</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>*.jpg; *.jpeg</filename></para></entry>
+              <entry align="left"><para>Semua fail dengan sambungan <filename>jpg</filename>, dan semua fail dengan sambungan <filename>jpeg</filename></para></entry>
+            </row>
+            <row valign="top">               
+              <entry><para><filename>file?.gz</filename></para></entry>
+              <entry align="left"><para>Semua fail dengan sambungan <filename>gz</filename>, yang mempunyai nama "fail" diikuti oleh mana-mana aksara tunggal iaitu <filename>fail2.gz</filename>, <filename>failx.gz</filename>.</para></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+<!-- ======= To open an archive ============= --> 
+
+<section xml:id="grapa-open"><info><title>Membuka satu Arkib</title></info>
+      
+      <para>Untuk membuka satu arkib, buat langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem>
+           <para>Pilih <menuchoice><guimenu>Arkib</guimenu><guimenuitem>Buka</guimenuitem></menuchoice> untuk memaparkan dialog <guilabel>Buka</guilabel> . Selain itu, tekan <keycombo><keycap>Ctrl</keycap><keycap>O</keycap></keycombo>, atau klik <guibutton>Buka</guibutton> dalam palang alat.</para> 
+          </listitem>
+          <listitem>
+           <para>Pilih arkib yang mahu dibuka.</para> 
+          </listitem>
+          <listitem>
+           <para>Klik <guibutton>Buka</guibutton>.</para> 
+          </listitem>
+        </orderedlist></para>
+      <para><application>Pengurus Arkib</application> secar automatik menentukan jenis arkib, dan paparkan: <itemizedlist>
+          <listitem>
+            <para>Nama arkib ada di dalam palang tajuk tetingkap</para>
+          </listitem>
+          <listitem>
+            <para>Kandungan arkib di dalam kawasan paparan</para>
+          </listitem>
+          <listitem>
+            <para>Bilangan fail dan folder (objek) di dalam lokasi semasa, dan saiznya ketika tidak dimampat, dalam palang status</para>
+          </listitem>
+        </itemizedlist></para>
+      <para>Untuk membuka arkib lain, pilih <menuchoice> <guimenu>Arkib</guimenu><guimenuitem>Buka</guimenuitem> </menuchoice> sekali lagi. <application>Pengurus Arkib</application> akan membuka setiap arkib dalam tetingkap baharu. Anda tidak boleh membuka arkib lain dalam tetingkap yang sama.</para>
+      <para>Jika anda cuba membuka satu arkib yang formatnya <application>Pengurus Arkib</application> tidak kenali, aplikasi akan paparkan mesej ralat. Sila rujuk <xref linkend="grapa-intro"/> untuk melihat senarai format yang disokong.</para>
+  </section>
+
+<!-- ======= Selecting files in an archive  ============= --> 
+    <section xml:id="grapa-select-files"><info><title>Memilih Fail dalam satu Arkib</title></info>
+      
+    <para>Untuk memilih semua fail dalam satu arkib, pilih <menuchoice> <guimenu>Sunting</guimenu> <guimenuitem>Pilih Semua</guimenuitem> </menuchoice> atau ketik <keycombo><keycap>Ctrl</keycap><keycap>A</keycap></keycombo> .</para>
+      <para>Untuk menyahpilih semua fail dalam satu arkib, pilih <menuchoice> <guimenu>Sunting</guimenu> <guimenuitem>Nyahpilih Semua</guimenuitem> </menuchoice> atau ketik <keycombo><keycap>Shift</keycap><keycap>Ctrl</keycap><keycap>A</keycap></keycombo>.</para>
+    </section>
+
+  <!-- =========== Extracting Files From an Archive ==================== -->
+
+  <section xml:id="grapa-extract"><info><title>Mengekstrak Fail Daripada satu Arkib</title></info> 
+     
+    <para>Untuk mengekstrak fail daripada arkib yang telah dibuka, buat langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Pilih fail yang mahu diesktrak. Untuk memilih lebih fail, tekan-dan-tahan <keycap>Ctrl</keycap> kemudian klik pada fail-fail yang mahu dipilih.</para>
+        </listitem>
+        <listitem><para>Pilih <menuchoice><guimenu>Arkib</guimenu><guimenuitem>Ekstrak</guimenuitem></menuchoice> untuk memaparkan dialog <guilabel>Ekstrak</guilabel> . Selain itu, tekan <guibutton>Ektrak</guibutton> dalam palang alat.</para>
+        </listitem>
+        <listitem><para>Pilih folder yang mana <application>Pengurus Ekstrak</application> akan ekstrak fail-fail tersebut.</para>
+        </listitem>
+        <listitem><para>Pilih pilihan ekstrak yang diperlukan. Untuk maklumat lanjut berkenaan pilihan ekstrak, sila rujuk <xref linkend="grapa-extract-options"/>.</para>
+        </listitem>
+        <listitem><para>Klik <guibutton>Ekstrak</guibutton>.</para>
+        <note>
+          <para>Jika semua fail di dalam arkib telah dilindungi oleh satu kata laluan, dan anda tidak menyatakannya, <application>Pengurus Arkib</application> meminta anda masukkan kata laluan yang dikehendaki.</para>
+          <para>Jika bukan semua fail di dalam arkib telah dilindungi oleh satu kata laluan, dan anda tidak menyatakan kata laluan yang dikehendaki, <application>Pengurus Arkib</application> tidak meminta anda masukkan kata laluan. Akan tetapi, <application>Pengurus Arkib</application> mengekstrak fail-fail yang tidak dilindungi sahaja.</para>
+          <para>Untuk maklumat lanjut berkenaan kata laluan, sila rujuk <xref linkend="grapa-encrypt-files"/>/</para>
+        </note>
+        </listitem>
+        </orderedlist></para>
+      <para><application>Pengurus Arkib</application> juga menyediakan cara mengekstrak fail daripada arkib melalui tetingkap pengurus fail, tanpa membuka tetingkap <application>Pengurus Arkib</application>. Sila rujuk <xref linkend="grapa-fmgr"/> untuk maklumat lanjut.</para>
+    <para>Operasi Ekstrak mengekstrak satu <emphasis>salinan</emphasis> fail yang ditentukan melalui arkib. Fail-fail yang diekstrak mempunyai tarikh keizinan dan pengubahsuaian yang sama dengan fail asal yang telah ditambah masuk ke dalam arkib.</para>
+    <para>Operasi Ekstrak tidak mengubah kandungan sesebuah arkib. Untuk maklumat bagaimana hendak memadam fail menerusi arkib, bolehlah merujuk <xref linkend="grapa-delete-files"/>.</para>
+  </section>
+    
+<!-- ======= Closing the Archive ============= --> 
+  <section xml:id="grapa-archive-close"><info><title>Menutup satu Arkib</title></info>
+    
+    <para>Untuk arkib semasa dan tetingkap <application>Pengurus Arkib</application> semasa, pilih <menuchoice><guimenu>Arkib</guimenu> <guimenuitem>Tutup</guimenuitem></menuchoice>, atau ketik <keycombo><keycap>Ctrl</keycap><keycap>W</keycap></keycombo>.</para>
+    <note>
+      <para>Tiada cara untuk menutup arkib semasa tetapi tiada masalah dengan tetingkap <application>Pengurus Arkib</application>.</para>
+    </note>
+  </section>
+</section>
+
+
+<!-- =============  Creating Archives ============================= -->
+<section xml:id="grapa-creating"><info><title>Mencipta Arkib</title></info> 
+     
+    <para>Selain daripada membuka arkib sedia ada, anda juga boleh mencipta arkib-arkib baharu dengan <application>Pengurus Arkib</application>.</para>
+    <section xml:id="grapa-create"><info><title>Untuk Mencipta satu Arkib</title></info> 
+     
+    <para>Untuk mencipta satu arkib, buat langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Arkib</guimenu><guimenuitem>Baharu</guimenuitem></menuchoice> untuk memaparkan dialog <guilabel>Baharu</guilabel> . Selain itu, tekan <keycombo><keycap>Ctrl</keycap><keycap>N</keycap></keycombo>, atau klik <guibutton>Baharu</guibutton> dalam palang alat.</para>
+        </listitem>
+        <listitem>
+          <para>Nyatakan folder tempat <application>Pengurus Arkib</application> meletak arkib baharu yang diklik dalam senarai tarik-turun <guilabel>Simpan dalam folder</guilabel>. Jika folder tiada dalam senarai, klik pada <guilabel>Layar folder lain</guilabel>, dan pilih folder yang dikehendaki. Selain itu, masukkan laluan dalam kotak teks <guilabel>Nama</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Masukkan nama arkib baharu, termasuklah sambungan failnya, di dalam kotak teks <guilabel>Nama</guilabel>. Selain itu anda boleh nyatakan nama arkib tanpa sambungan, dan kemudian pilih jenis arkib menerusi menu tarik-turun <guilabel>Jenis arkib</guilabel>, dengan cara ini sambungan akan ditambah secara automatik.</para>
+        </listitem>
+        <listitem><para>Pilih pilihan cipta diperlukan dengan mengklik <guilabel>Pilihan Lain</guilabel>. Untuk maklumat lanjut berkenaan pilihan-pilihan cipta, sila rujuk <xref linkend="grapa-create-options"/>.</para>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>Baharu</guibutton>. <application>Pengurus Arkib</application> akan mencipta satu arkib kosong, tetapi belum lagi menulis arkib ke dalam cakera.</para>
+        </listitem>
+        <listitem>
+          <para>Tambah fail-fail ke dalam arkib baharu seperti yang dijelaskan di dalam <xref linkend="grapa-add-files"/>. <note>
+                  <para><application>Pengurus Arkib</application> menulis satu arkib baharu ke dalam cakera jika arkib mengandungi sekurang-kurangnya satu fail. Sekiranya anda mencipta satu arkib kemudian keluar daripada <application>Pengurus Arkib</application> sebelum menambah apa-apa fail ke dalam arkib. <application>Pengurus Arkib</application> akan memadam arkib tersebut.</para>
+                </note></para>
+        </listitem>
+      </orderedlist></para>
+</section>
+
+    <!-- ======= Adding files to an archive  ============= --> 
+  <section xml:id="grapa-add-files"><info><title>Menambah Fail-Fail ke dalam Arkib</title></info>
+    
+    <para>Untuk menambah fail-fail ke dalam arkib, buat langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Tentukan lokasi dalam arkib yang mahu ditambah masuk fail, kemudian buka lokasi tersebut menerusi arkib.</para> 
+         </listitem>
+         <listitem>
+           <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tambah Fail</guimenuitem></menuchoice> untuk memaparkan dialog <guilabel>Tambah Fail</guilabel> . atau, klik <guibutton>Tambah Fail</guibutton> dalam palang alat.</para> 
+         </listitem>
+         <listitem>
+           <para>Pilih fail yang mahu ditambah masuk. Untuk memilih lebih fail, tekan-dan-tahan <keycap>Ctrl</keycap> kemudian klik pada fail-fail yang mahu dipilih.</para> 
+         </listitem>
+         <listitem>
+           <para>Klik <guibutton>Tambah</guibutton>. <application>Pengurus Arkib</application> akan menambah fail-fail tersebut ke dalam folder semasa di dalam arkib.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Anda tidak boleh menambah folder ke dalam arkib dengan dialog <guilabel>Tambah Fail</guilabel>. Untuk menambah sebuah folder sila rujuk <xref linkend="grapa-add-folder"/>.</para>
+    <para>Dialog <guilabel>Tambah Fail</guilabel> menyediakan pilihan <guilabel>Hanya tambah jika lebih baharu</guilabel>, sila rujuk <xref linkend="grapa-add-options"/> untuk maklumat lanjut berkenaan pilihan ini.</para>
+    <para>Anda juga boleh menambah satu arkib di dalam tetingkap pengurus fail, tanpa membuka satu tetingkap <application>Pengurus Arkib</application>. Sila rujuk <xref linkend="grapa-fmgr"/> untuk maklumat lanjut.</para>
+    <para>Operasi Tambah menambah satu <emphasis>salinan</emphasis> fail atau folder yang ditentukan ke dalam arkib. <application>Pengurus Arkib</application> tidak membuang fail-fail asal, yang mana ia kekal tidak berubah di dalam sistem fai,. Salinan yang ditambah masuk ke dalam arkib mempunyai tarikh keizinan dan pengubahsuaian yang sama dengan fail asal.</para>
+    </section>
+
+<!-- ======= Adding files - Adding folder  ============= --> 
+    <section xml:id="grapa-add-folder"><info><title>Menambah satu Folder ke dalam Arkib</title></info>
+      
+    <para>Untuk menambah satu folder ke dalam arkib, buat langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+         <listitem>
+           <para>Tentukan lokasi dalam arkib yang mahu ditambah masuk fail, kemudian buka lokasi tersebut menerusi arkib.</para>
+         </listitem>
+         <listitem>
+           <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tambah satu Folder</guimenuitem></menuchoice> untuk paparkan dialog <guilabel>Tambah satu Folder</guilabel>.</para> 
+         </listitem>
+         <listitem>
+           <para>Pilih folder yang mahu ditambah masuk.</para> 
+         </listitem>
+         <listitem>
+           <para>Klik <guibutton>Tambah</guibutton>. <application>Pengurus Arkib</application> akan menambah folder ke dalam folder semasa di dalam arkib.</para> 
+         </listitem>
+      </orderedlist></para>
+    <para>Dialog <guilabel>Tambah satu Folder</guilabel> menyediakan beberapa pilihan lanjutan. Sila rujuk <xref linkend="grapa-add-options"/> untuk maklumat lanjut.</para>
+    </section>
+
+  <!-- ======= Converting an Archive to Another Format ============= --> 
+  <section xml:id="grapa-convert-archive"><info><title>Menukar Format Arkib ke Format Lain</title></info>
+    
+    <para>Untuk menukar format arkib ke format yang lain dan simpan sebagai fail baharu, buat langkah-langkah berikut:</para>
+    <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem>
+        <para>Buka arkib yang mahu ditukar formatnya.</para>
+      </listitem>
+      <listitem>
+        <para>Pilih <menuchoice><guimenu>Arkib</guimenu><guimenuitem>Simpan Sebagai</guimenuitem></menuchoice> untuk paparkan dialog <guilabel>Simpan</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Masukkan nama arkib baharu di dalam kotak teks <guilabel>Nama</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Pilih format baharu melalui senarai tarik-turun <guilabel>Jenis Arkib</guilabel>. Selain itu, masukkan sambungan nama fail di dalam kotak teks <guilabel>Nama</guilabel>, kemudian pilih <guilabel>Automatik</guilabel> menerusi senarai tarik-turun <guilabel>Jenis Arkib</guilabel>.</para>
+      </listitem>
+      <listitem>
+        <para>Pilih pilihan cipta diperlukan dengan mengklik <guilabel>Pilihan Lain</guilabel>. Untuk maklumat lanjut berkenaan pilihan-pilihan cipta, sila rujuk <xref linkend="grapa-create-options"/>.</para>
+      </listitem>      
+      <listitem>
+        <para>Klik <guibutton>Simpan</guibutton>.</para>
+        <note>
+          <para>Jika semua fail di dalam arkib telah dilindungi oleh satu kata laluan, dan anda tidak menyatakannya, <application>Pengurus Arkib</application> meminta anda masukkan kata laluan yang dikehendaki.</para>
+          <para>Jika sebahagian sahaja dan bukannya semua fail dalam arkib dilindungi dengan kata laluan, dan anda tidak menyatakan kata laluan, <application>Pengurus Arkib</application> tidak akan menanya kata laluan. Namun begitu, <application>Pengurus Arkib</application> hanya menyalin fail-fail tidak dilindungi ke dalam arkib baharu.</para>
+          <para>Untuk maklumat lanjut berkenaan kata laluan, sila rujuk <xref linkend="grapa-encrypt-files"/>/</para>
+        </note>
+      </listitem>
+    </orderedlist>
+  </section>
+</section>
+
+<!-- ======= Operations on Archive Contents ============= --> 
+<section xml:id="grapa-modify-contents"><info><title>Mengubahsuai Kandungan Arkib</title></info>
+  
+  <para>Anda boleh mengubahsuai kandungan sesebuah arkib dalam beberapa cara.</para>
+
+<!-- ======= Encrypting files in an archive  ============= --> 
+    <section xml:id="grapa-encrypt-files"><info><title>Untuk Menyulitkan Fail-Fail di dalam Arkib</title></info>
+      
+    <para>Atas sebab keselamatan, anda mungkin mahu menyulitkan fail-fail yang ditambah masuk ke dalam arkib.</para>
+      <para>Jika format arkib menyokong penyulitan, anda boleh nyatakan satu kata laluan untuk menyulitkan fail-fail yang mahu ditambah ke dalam arkib.</para>
+      <note>
+        <para>Buat masa ini, hanya arkib 7-Zip, ZIP, RAR dan ARJ menyokong penyulitan.</para>
+      </note>
+     <para>Untuk menyatakan satu kata laluan untuk penyulitan fail, buat langkah-langkah berikut:</para>
+       <orderedlist inheritnum="ignore" continuation="restarts">
+          <listitem><para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Kata Laluan</guimenuitem></menuchoice> untuk paparkan dialog <guilabel>Kata Laluan</guilabel>.</para></listitem> 
+<listitem><para>Masukkan kata laluan di dalam kotak teks <guilabel>Kata Laluan</guilabel>.</para></listitem>
+<listitem><para>Klik <guibutton>OK</guibutton>.</para></listitem>
+       </orderedlist>
+    <para><application>Pengurus Arkib</application> menggunakan kata laluan untuk menyulitkan fail-fail yang anda tambah masuk ke dalam arkib semasa, dan menyahsulitkan fail-fail yang anda esktrak daripada arkib semasa. <application>Pengurus Arkib</application> memadam kata laluan ketika anda tutup arkib tersebut.</para>
+      <para>Untuk maklumat lanjut bagaimana hendak memeriksa sama sesebuah arkib mengandungi fail-fail tersulit, bolehlah rujuk <xref linkend="grapa-extra-info"/>.</para>
+      <note>
+      <para>Penyulitan yang disediakan oleh utiliti arkib bersifat lemah dan kurang selamat. Jika faktor keselamatan adalah penting buat anda, gunakan alat penyulitan yang kuat seperti <link xlink:href="http://www.gnupg.org">GNU Privacy Guard</link>.</para>
+      </note>
+    </section>
+
+<!-- ======= Renaming files in an archive  ============= --> 
+  <section xml:id="grapa-rename-files"><info><title>Menamakan Semula satu Fail di dalam Arkib</title></info>
+    
+    <para>Untuk menamakan semula satu fail di dalam arkib, buat langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih fail yang mahu dinamakan semula.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice> <guimenu>Sunting</guimenu><guimenuitem>Nama Semula</guimenuitem> </menuchoice>, atau ketik <keycombo> <keycap>F2</keycap></keycombo>, untuk memaparkan dialog <guilabel>Nama Semula</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Masukkan nama fail baharu di dalam kotak teks <guilabel>Nama fail baharu</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>Nama Semula</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Copying files in an archive  ============= --> 
+  <section xml:id="grapa-copy-files"><info><title>Menyalin Fail-Fail ke dalam Arkib</title></info>
+    
+    <para>Untuk menyalin fail-fail di dalam arkib, buat langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih fail yang mahu disalinkan.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Salin</guimenuitem></menuchoice>, atau ketik <keycombo><keycap>Ctrl</keycap><keycap>C</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Buka lokasi yang mahu diletak fail-fail salinan.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tampal</guimenuitem></menuchoice>, atau ketik <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Moving files in an archive  ============= --> 
+  <section xml:id="grapa-move-files"><info><title>Mengalih Fail-Fail di dalam Arkib</title></info>
+    
+    <para>Untuk mengalih fail-fail yang ada di dalam arkib, buat langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih fail-fail yang mahu dialihkan.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Potong</guimenuitem></menuchoice>, atau ketik <keycombo><keycap>Ctrl</keycap><keycap>X</keycap></keycombo>.</para>
+        </listitem>
+        <listitem>
+          <para>Buka lokasi yang mahu dialih fail-fail ke dalamnya.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tampal</guimenuitem></menuchoice>, atau ketik <keycombo><keycap>Ctrl</keycap><keycap>V</keycap></keycombo>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- ======= Deleting files from an archive  ============= --> 
+  <section xml:id="grapa-delete-files"><info><title>Memadam Fail-Fail Daripada Arkib</title></info>
+    
+    <para>Untuk memadam fail-fail yang ada di dalam arkib, buat langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem>
+          <para>Pilih fail-fail yang mahu dipadamkan.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih <menuchoice> <guimenu>Sunting</guimenu><guimenuitem>Padam</guimenuitem> </menuchoice>, atau ketik <keycombo> <keycap>Delete</keycap></keycombo>, untuk memaparkan dialog <guilabel>Padam</guilabel>.</para>
+        </listitem>
+        <listitem>
+          <para>Pilih salah satu pilihan padam berikut:</para>
+          <variablelist>
+            <varlistentry>
+              <term><guilabel>Semua fail</guilabel></term>
+              <listitem>
+                <para>Padam semua fail di dalam arkib.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Fail terpilih</guilabel></term>
+              <listitem>
+                <para>Padam fail terpilih dari arkib.</para>
+              </listitem>
+            </varlistentry>
+            <varlistentry>
+              <term><guilabel>Fail</guilabel></term>
+              <listitem>
+                <para>Padam daripada arkib semua fail yang sepadan dengan pola yang ditentukan. Sila rujuk <xref linkend="grapa-pattern"/> untuk maklumat lanjut berkenaan pola nama fail.</para>
+              </listitem>
+            </varlistentry>
+          </variablelist>
+        </listitem>
+        <listitem>
+          <para>Klik <guibutton>OK</guibutton>.</para>
+        </listitem>
+      </orderedlist>
+  </section>
+
+<!-- =============  Modify a File in an Archive ==================== -->
+  <section xml:id="grapa-modify-archive-file"><info><title>Mengubahsuai Fail di dalam Arkib</title></info> 
+     
+    <para>Untuk mengubahsuai fail di dalam arkib, buat langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Dwi-klik fail yang mahu dibuka. Selain itu, boleh mengklik-kanan fail kemudian pilih <menuchoice><guimenuitem>Buka</guimenuitem></menuchoice>.</para></listitem>
+      <listitem><para>Sunting fail yang telah dibuka dalam langkah 1, kemudian simpan perubahan yang dibuat.</para></listitem>
+      <listitem><para><application>Pengurus Arkib</application> akan menunjukkan satu dialog pengesahan, untuk mengesahkan kemaskini fail di dalam arkib yang terlibat dengan perubahan tersebut.</para></listitem>
+      <listitem><para>Klik pada <guilabel>Kemaskini</guilabel>.</para></listitem>
+      </orderedlist></para>
+    <para><application>Pengurus Arkib</application> menggunakan perkaitan ditakrif-sistem antara jenis fail dengan program untuk menentukan aplikasi yang sesuai dilancarkan mengikut fail tertentu. Perkaitan ini boleh dipaparkan dan diubahsuai dalam tab <guilabel>Buka Dengan</guilabel> dialog sifat fail. Jika <application>Pengurus Arkib</application> gagal menentukan aplikasi yang sesuai, <application>Pengurus Arkib</application> akan memaparkan dialog <guilabel>Buka Fail</guilabel> yang mana anda dapat memilih aplikasi, seperti di bawah.</para>
+    <section xml:id="grapa-modifiy-archive-file-custom-app"><info><title>Mengubahsuai Fail di dalam Arkib dengan Aplikasi Suai</title></info>
+    
+    <para>Anda boleh guna aplikasi yang telah dinyatakan sebelum ini, berbanding aplikasi lalai, untuk mengubahsuai fail. Untuk menggunakan aplikasi luar bagi membuka fail tertentu: <orderedlist inheritnum="ignore" continuation="restarts">
+      <listitem><para>Klik kanan pada fail,</para></listitem>
+      <listitem><para>Pilih <menuchoice><guimenuitem>Buka Dengan...</guimenuitem></menuchoice>.</para></listitem>
+      </orderedlist></para>    
+    <para><application>Pengurus Arkib</application> memaparkan dialog <guilabel>Buka Fail</guilabel>, yang dapat menyenaraikan semua aplikasi yang dapat membuka jenis fail tertentu. Untuk memilih salah satu aplikasi yang tersenarai, dwi-klik nama aplikasi atau klik pada nama aplikasi kemudian klik <guibutton>Buka</guibutton>. Selain itu, anda boleh masukkan nama aplikasi di dalam kotak teks <guilabel>Aplikasi</guilabel> dan kemudian klik <guibutton>Buka</guibutton> untuk melancarkan aplikasi pilihan anda.</para>
+    <para>Setelah aplikasi dimulakan ikuti prosedur dari langkah 2 yang telah dijelaskan di dalam <xref linkend="grapa-modify-archive-file"/>.</para>
+    </section>
+  </section>
+</section>
+
+
+<!-- ======= Viewing an archive ============= --> 
+<section xml:id="grapa-view"><info><title>Melihat Arkib</title></info>
+  
+  <para><application>Pengurus Arkib</application> membenarkan anda lihat beberapa aspek berkenaan sesebuah arkib.</para>
+
+<!-- ======= Archive Properties ============= --> 
+    <section xml:id="grapa-view-archive-properties"><info><title>Untuk melihat Sifat-Sifat Arkib</title></info>
+      
+      <para>Untuk melihat sifat-sifat sesebuah arkib, pilih <menuchoice><guimenu>Arkib</guimenu><guimenuitem>Sifat</guimenuitem></menuchoice> untuk memaparkan dialog <guilabel>Sifat</guilabel>. Dialog <guilabel>Sifat</guilabel> ini memaparkan maklumat berikut berkenaan arkib: <variablelist>
+	      <varlistentry>
+	        <term><guilabel>Nama</guilabel></term>
+	        <listitem><para>Nama bagi arkib</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Lokasi</guilabel></term>
+	        <listitem><para>Kedudukan arkib di dalam sistem fail.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Diubahsuai pada</guilabel></term>
+	        <listitem><para>Tarikh dan waktu yang mana arkib kali terakhir diubahsuai.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Saiz arkib</guilabel></term>
+	        <listitem><para>Saiz kandungan arkib setelah dimampatkan.</para></listitem>
+	      </varlistentry>
+	      <varlistentry>
+	        <term><guilabel>Saiz kandungan</guilabel></term>
+	        <listitem><para>Saiz kandungan arkib setelah dimampatkan. Maklumat ini juga tersedia di dalam palang status.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Nisbah pemampatan</guilabel></term>
+	        <listitem><para>Nisbah pemampatan ialah satu nilai yang digunakan untuk menjelaskan pengurangan saiz data. Sebagai contoh, nisbah pemampatan 5 bermaksud arkib telah dimampatkan sebanyak 1/5 daripada saiz data asalnya.</para></listitem>
+	      </varlistentry>
+
+	      <varlistentry>
+	        <term><guilabel>Bilangan fail</guilabel></term>
+	        <listitem><para>Bilangan fail di dalam arkib.</para></listitem>
+	      </varlistentry>
+            </variablelist></para>
+    </section>
+ 
+
+<!-- ======= Archive Contents ============= --> 
+    <section xml:id="grapa-view-archive-contents"><info><title>Melihat Kandungan Arkib</title></info>
+      
+
+      <para><application>Pengurus Arkib</application> memaparkan kandungan arkib di dalam tetingkap utama sebagai senarai fail dengan lajur-lajur berikut: <variablelist>
+	  <varlistentry>
+	    <term><guilabel>Nama</guilabel></term>
+	    <listitem><para>Nama bagi fail atau folder di dalam arkib.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Saiz</guilabel></term>
+	    <listitem><para>Saiz fail ketika fail diekstrak daripada arkib. Bagi sebuah folder, medan <guilabel>Saiz</guilabel> adalah kosong. Untuk maklumat bagaimana hendak memaparkan saiz fail termampat, sila rujuk <xref linkend="grapa-extra-info"/>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Jenis</guilabel></term>
+	    <listitem><para>Jenis fail. Bagi sebuah folder, nilai di dalam medan <guilabel>Jenis</guilabel> ialah <literal>Folder</literal>.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Tarikh diubahsuai</guilabel></term>
+	    <listitem><para>Tarikh kali terakhir fail diubahsuai. Bagi sebuah folder, medan <guilabel>Tarikh diubahsuai</guilabel> adalah kosong.</para></listitem>
+	  </varlistentry>
+	  <varlistentry>
+	    <term><guilabel>Lokasi</guilabel></term>
+	    <listitem><para>Laluan ke fail di dalam arkib. Lajur ini hanya kelihatan ketika tetingkap dalam pandangan fail, jika dalam pandangan folder lokasi fail dipaparkan dalam kotak teks <guilabel>Lokasi</guilabel> pada palang folder. Untuk maklumat lanjut berkenaan jenis pandangan sila rujuk <xref linkend="grapa-view-type-folder"/>.</para></listitem>
+	  </varlistentry>
+        </variablelist></para>
+      <para>Jika program lain telah mengubahsuai arkib setelah <application>Pengurus Arkib</application> membuka arkib, pilih <menuchoice><guimenu>Lihat</guimenu><guimenuitem>Muat Semula</guimenuitem></menuchoice> untuk memuatkan semula kandungan arkib dari cakera.</para>
+      <para>Untuk maklumat lanjut bagaimana <application>Pengurus Arkib</application>dapat menyuaikan penampilan kandungan di dalam tetingkapnya, bolehlah rujuk <xref linkend="grapa-archive-custom"/>.</para>
+      <para>Untuk tugas-tugas lanjutan, gunakan aplikasi terpasang  di dalam sistem anda. Maklumat lanjut, sila rujuk <xref linkend="grapa-view-archive-file"/>.</para>
+    </section>
+
+  <!-- =============  Viewing a File in an Archive ==================== -->
+  <section xml:id="grapa-view-archive-file"><info><title>Melihat Fail di dalam Arkib</title></info> 
+     
+    <para>Untuk melihat fail di dalam sesebuah arkib ikuti langkah-langkah yang dijelaskan di dalam <xref linkend="grapa-modify-archive-file"/>. Jika anda menyimpan fail yang telah dibuka, klik <guilabel>Batal</guilabel> ketika <application>Pengurus Arkib</application> menanya pengesahan untuk mengemaskini fail di dalam arkib.</para>
+  </section>
+
+<!-- =============  Testing the Integrity of an Archive ==================== -->
+  <section xml:id="grapa-test-archive"><info><title>Menguji Integriti sesebuah Arkib</title></info> 
+     
+    <para>Kadang kala arkib boleh menjadi rosak atas sebab-sebab tertentu, untuk memeriksa sama ada ia mengalami kerosakan atau sebaliknya, pilih <menuchoice><guimenu>Arkib</guimenu><guimenuitem>Uji Integriti</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Jika arkib tidak mengandungi ralat, <application>Pengurus Arkib</application> membuka dialog <guilabel>Keputusan Ujian</guilabel> untuk menyenaraikan setiap fail di dalam arkib, dan menunjukkan setiap fail dengan status <literal>OK</literal>.</para>
+              </listitem>
+              <listitem>
+                <para>Jika arkib mengandungi beberapa ralat, <application>Pengurus Arkib</application> membuka dialog <guilabel>Keputusan Ujian</guilabel> untuk menyenaraikan bahagian arkib yang mengandungi ralat tersebut.</para>
+              </listitem>
+            </itemizedlist></para>
+    <para>Arkib rosak sukar atau mustahil boleh diekstrakkan, dan menyebabkan kehilangan data penting. Atas sebab ini anda patut menguji integriti arkib sebelum memadam fail-fail yang asal.</para>
+    <para>Jika arkib mengandungi fail-fail tersulit, <application>Pengurus Arkib</application> akan meminta kata laluan sebelum ujian dimulakan.</para>
+    <note>
+      <para>Bukan semua jenis arkib menyokong pengujian integriti, senarai jenis arkib berikut boleh diuji integritinya: 7-Zip, RAR, ZIP, ACE, ARJ dan Zoo.</para>
+    </note>
+    <tip><info><title>Petua</title></info>
+      
+      <para>Untuk menguji integriti arkib yang tidak menyokong pengujian integriti, ekstrak semu fail daripada arkib dan pastikan operasi ini berjalan lancar tanpa masalah.</para>      
+    </tip>
+  </section>  
+</section>
+    
+<!-- ======= Customizing the Archive Display ============= --> 
+<section xml:id="grapa-archive-custom"><info><title>Menyuaikan Paparan Arkib</title></info>
+  
+  <para>Anda boleh menyuaikan penampilan <application>Pengurus Arkib</application> ketika memaparkan kandungannya, seperti berikut:</para>
+  <itemizedlist>
+    <listitem>
+      <para>Tukar pandangan folder dengan pandangan fail. Untuk maklumat lanjut, sila rujuk <xref linkend="grapa-view-type"/>.</para>
+    </listitem>
+    <listitem>
+      <para>Nyatakan tertib fail manakah mahu dipaparkan dalam bentuk senarai. Untuk maklumat lanjut, sila rujuk <xref linkend="grapa-view-sort"/>.</para>
+    </listitem> 
+    <listitem>
+      <para>Papar maklumat tambahan berkenaan kandungan arkib. Maklumat lanjut sila rujuk <xref linkend="grapa-extra-info"/>.</para>
+    </listitem> 
+  </itemizedlist>
+  <para><application>Pengurus Arkib</application> mengemaskini paparan serta-merta, ketika anda melakukan penyuaian di atas.</para>
+
+  <section xml:id="grapa-view-type"><info><title>Untuk Menetapkan Jenis Pandangan</title></info>
+    
+    <para>Jika arkib mengandungi folder, anda boleh tunjukkan kandungan arkib sama ada <xref linkend="grapa-view-type-folder"/> atau <xref linkend="grapa-view-type-file"/>.</para>
+
+    <section xml:id="grapa-view-type-folder"><info><title>Pandangan Folder</title></info>
+      
+      <para><application>Pengurus Arkib</application> memaparkan kandungan arkib dalam pandangan folder secara lalai. Untuk memilih pandangan folder secara eksplisit, pilih <menuchoice><guimenu>Lihat</guimenu><guimenuitem>Lihat sebagai Folder</guimenuitem></menuchoice>.</para>
+      <para>Dalam pandangan folder, <application>Pengurus Arkib</application> dapat menunjukkan folder sepertimana yang dipaparkan oleh pengurus fail ketika menunjukkan foldernya. Iaitu, <application>Pengurus Arkib</application> menunjukkan folder dalam kawasan paparan di dalam ikon folder dan nama folder. Untuk melihat kandungan sesebuah folder, dwi-klik pada nama folder tersebut.</para>
+      <para>Palang folder, yang mana <application>Pengurus Arkib</application> hanya papar dalam pandangan folder, terdiri daripada komponen-komponen yang dijelaskan dalam jadual berikut.</para>
+      <informaltable frame="all">
+        <tgroup cols="2" colsep="1" rowsep="1">
+          <colspec colname="COLSPEC0" colwidth="50*"/>
+          <colspec colname="COLSPEC1" colwidth="50*"/>
+          <thead>
+            <row valign="top">
+              <entry colname="COLSPEC0">
+                <para>Komponen</para></entry>
+              <entry colname="COLSPEC1">
+                <para>Keterangan</para></entry>
+            </row>
+          </thead>
+          <tbody>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_leftarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Menunjukkan ikon navigasi undur dalam senarai sejarah loaksi.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik butang ini untuk menavigasi secara mengundur di dalam senarai sejarah lokasi.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_rightarrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Menunjukkan ikon navigasi maju dalam senarai sejarah lokasi.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik butang ini untuk menavigasi secara maju di dalam senarai sejarah lokasi.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_uparrow.png" format="PNG"/> </imageobject> <textobject> <phrase>Menunjukkan ikon navigasi naik satu aras dalam pepohon folder.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik butang ini untuk menavigasi naik satu aras di dalam pepohon folder.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><inlinemediaobject> <imageobject> <imagedata fileref="figures/grapa_home.png" format="PNG"/> </imageobject> <textobject> <phrase>Menunjukkan ikon untuk membuka folder aras-teratas dalam arkib.</phrase> </textobject> </inlinemediaobject></para>
+              </entry>
+              <entry>
+                <para>Klik butang ini untuk membuka folder aras-teratas di dalam arkib.</para>
+              </entry>
+            </row>
+            <row valign="top">
+              <entry>
+                <para><guilabel>Lokasi</guilabel></para>
+              </entry>
+              <entry>
+                <para>Medan ini menunjukkan nama laluan penuh, di dalam arkib, bagi folder semasa.</para>
+                <para>Untuk mengubah ke aras berlainan di dalam pepohon folder, taip lokasi baharu di dalam kotak teks <guilabel>Lokasi</guilabel> kemudian tekan <keycap>Return</keycap>. <application>Pengurus Arkib</application> akan memaparkan kandungan lokasi baharu tersebut.</para>
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </informaltable>
+    </section>
+
+    <section xml:id="grapa-view-type-file"><info><title>Pandangan Fail</title></info>
+      
+      <para>Untuk memilih pandangan fail, pilih <menuchoice><guimenu>Lihat</guimenu><guimenuitem>Lihat Semua Fail</guimenuitem></menuchoice>.</para>
+      <para>Dalam pandangan fail, <application>Pengurus Arkib</application> memaparkan semua fail yang ada di dalam arkib, termasuklah fail-fail dari subfolder, dalam satu senarai.</para>
+    </section>
+
+  </section>
+
+  <section xml:id="grapa-view-sort"><info><title>Mengisih Senarai Fail</title></info>
+    
+    <para>Anda boleh mengisih senarai mengikut nama, saiz, jenis, tarikh ubahsuai, atau lokasi.</para>
+    <para>Untuk menyatakan satu tertib isih, klik pengepala lajur berkenaan.</para>
+    <para>Untuk menyongsangkan tertib isih, hanya klik pada pengepala lajur sekali lagi.</para>
+    <para>Sebagai contoh, untuk mengisih senarai fail mengikut tarikh ubahsuai, klik pada pengepala <guilabel>Tarikh diubahsuai</guilabel>. <application>Pengurus Arkib</application> akan menyusun semnula senarai fail yang memaparkan fail mengikut tarikh ubahsuai, bermula yang paling awal. Untuk memaparkan senarai fail terkini, hanya klik pada pengepala <guilabel>Tarikh diubahsuai</guilabel> sekali lagi.</para>
+    <para><application>Pengurus Arkib</application> sentiasa melakukan pengisihan kedua berdasarkan nama fail. Pada contoh di atas, <application>Pengurus Arkib</application> mengisih nama mana-mana fail yang mempunyai tarikh ubahsuai yang sama.</para>
+  </section>
+
+  <section xml:id="grapa-extra-info"><info><title>Memaparkan Perincian Tambahan</title></info>
+    
+      <para>Untuk membuka dialog <guilabel>Output Terakhir</guilabel>, pilih <menuchoice><guimenu>Lihat</guimenu><guimenuitem>Output Terakhir</guimenuitem></menuchoice>: <itemizedlist>
+              <listitem>
+                <para>Jika anda menguji arkin dalam sesi <application>Pengurus Arkib</application> semasa, dialog <guilabel>Output Terakhir</guilabel> memaparkan keputusan ujian yang terakhir.</para>
+              </listitem>
+              <listitem>
+                <para>Jika anda tidak menguji arkib dalam sesi <application>Pengurus Akrib</application> semasa, dialog <guilabel>Output Terakhir</guilabel> memaparkan satu senarai semua fail di dalam arkib, tetapi tidak menyatakan apa-apa status fail itu. Akan tetapi, dialog <guilabel>Output Terakhir</guilabel> menyediakan saiz termampat setiap fail dengan peratus pemampatannya, serta tarikh dan format ketika fail kali terakhir diubahsuai.</para>
+              </listitem>
+            </itemizedlist></para>
+  </section>
+</section>
+
+<!-- ====== Using the File Manager Popup Menu to Manipulate an Archive ===== -->
+
+<section xml:id="grapa-fmgr"><info><title>Menggunakan Pengurus Fail untuk Mengendalikan sesebuah Arkib</title></info> 
+     
+    <para>Anda boleh menggunakan pengurus fail untuk tambah fail-fail ke dalam arkib, atau pun mengekstrak fail-fail daripada sesebuah arkib.</para>
+
+<!-- ======= Adding files Using File Manager Menu  ============= --> 
+    <section xml:id="grapa-fmgr-add"><info><title>Untuk Menambah Fail ke dalam Arkib Melalui Pengurus Fail</title></info>
+      
+           <para>Anda juga boleh menggunakan pengurus fail untuk tambah fail-fail ke dalam arkib, dengan cara berikut: <itemizedlist>
+             <listitem><para>Seret fail-fail ke dalam tetingkap <application>Pengurus Arkib</application> dari tetingkap pengurus fail.</para>
+             </listitem>
+             <listitem><para>Guna menu timbul pengurus fail untuk menambah fail-fail ke dalam arkib.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Untuk menambah fail-fail ke dalam arkib menggunakan menu timbul pengurus fail, buat langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Klik-kanan pada fail atau folder di dalam tetingkap pengurus fail.</para>
+        </listitem>
+        <listitem><para>Pilih <guimenuitem>Cipta Arkib</guimenuitem> melalui menu timbul pengurus fail untuk memaparkan dialog <guilabel>Cipta Arkib</guilabel> <application>Pengurus Arkib</application>.</para>
+        </listitem>
+        <listitem><para>Masukkan nama arkib, tanpa sambungan failnya, di dalam kotak teks <guilabel>Arkib</guilabel>.</para>
+        </listitem>
+        <listitem><para>Pilih jenis arkib melalui senarai tarik-turun.</para>
+        </listitem>
+        <listitem><para>Pilih lokasi simpanan fail arkib, melalui senarai tarik-turun <guilabel>Lokasi</guilabel>. Jika lokasi tiada dalam senarai pilih <guilabel>Lain-lain...</guilabel> untuk memilihnya menerusi dialog <guilabel>Loaksi</guilabel>.</para>
+        </listitem>
+        <listitem><para>Pilih pilihan cipta diperlukan dengan mengklik <guilabel>Pilihan Lain</guilabel>. Untuk maklumat lanjut berkenaan pilihan-pilihan cipta, sila rujuk <xref linkend="grapa-create-options"/>.</para>
+        </listitem>
+        <listitem><para>Klik <guilabel>Cipta</guilabel> untuk menambah fail-fail terpilih ke dalam folder root bagi arkib yang dinyatakan.</para>
+                 <note><para>Untuk memilih mana-mana pilih tambah lanjutan, anda mesti seru <application>Pengurus Arkib</application> seperti yang dijelaskan dalam <xref linkend="grapa-to-start"/>.</para></note>
+        </listitem>
+      </orderedlist>
+    </section>
+
+<!-- ======= Extracting files Using File Manager Menu  ============= --> 
+  <section xml:id="grapa-fmgr-extract"><info><title>Untuk Mengekstrak Fail-Fail Dari Arkib Menggunakan Pengurus Fail</title></info>
+      
+           <para>Anda juga boleh menggunakan pengurus fail untuk esktrak fail-fail dari arkib, dengan cara berikut: <itemizedlist>
+             <listitem><para>Seret fail-fail dari tetingkap <application>Pengurus Arkib</application> ke dalam tetingkap pengurus fail.</para>
+             </listitem>
+             <listitem><para>Guna menu timbul pengurus fail untuk mengekstrak fail-fail dari arkib.</para>
+             </listitem>
+          </itemizedlist></para>
+      <para>Untuk mengekstrak fail-fail dari arkib menggunakan menu timbul pengurus fail, buat langkah-langkah berikut:</para>
+      <orderedlist inheritnum="ignore" continuation="restarts">
+        <listitem><para>Klik-kanan pada arkib di dalam tetingkap pengurus fail.</para>
+        </listitem>
+        <listitem><para>Pilih <guimenuitem>Ekstrak Di SIni</guimenuitem> untuk mengekstrak semua isi kandungan arkib ke dalam direktori yang mana arkib berada.</para>
+        </listitem>
+      </orderedlist>
+      <note><para>Jika arkib disulitkan, <application>Pengurus Akrib</application> akan meminta kata laluan sebelum kerja-kerja pengekstrakan dijalankan.</para></note>
+    </section>
+
+</section>
+
+<!-- ======= Create Archive Advanced Options  ============= --> 
+    <section xml:id="grapa-create-options"><info><title>Pilihan-Pilihan Cipta</title></info>
+      
+      <para>Ketika mencipta satu arkib baharu, atau menukar format arkib sedia ada ke format lain, klik pada <guilabel>Pilihan Lain</guilabel> untuk menyatakan pilihan-pilihan lanjutan berikut:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Kata Laluan</guilabel></term>
+	  <listitem>
+	  <para>Taip kata laluan yang akan digunakan untuk menyulitkan arkib. Jika tiada kata laluan dinyatakan arkib tidak akan disulitkan.</para>
+	  <note>
+	    <para>Bukan semua jenis arkib menyokong penyulitan. Maklumat lanjut berkenaan penyulitan fail, sila rujuk <xref linkend="grapa-encrypt-files"/>.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Sulit senarai fail juga</guilabel></term>
+	  <listitem>
+	  <para>Jika pilihan ini dipilih, kata laluan akan diminta walaupun untuk melihat senarai fail terkandung di dalam arkib, jika tidak ia hanya minta untuk mengekstrak fail-fail daripada arkib. Pilihan ini hanya tersedia jika kata laluan dinyatakan.</para>
+	  </listitem>
+	</varlistentry>
+	<varlistentry>	  
+	  <term><guilabel>Pisah dalam volum</guilabel></term>
+	  <listitem>
+	  <para>Pilih pilihan ini untuk memisahkan arkib lebih dari satu fail mengikut saiz atau dimensi tertentu.</para>
+	  <note>
+	    <para>Hanya arkib 7-Zip dan RAR menyokong fitur ini.</para>
+	  </note>
+	  </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+
+<!-- ======= Add Advanced Options  ============= --> 
+    <section xml:id="grapa-add-options"><info><title>Pilihan Tambah</title></info>
+      
+      <para>Dialog <guilabel>Tambah Fail</guilabel> dan <guilabel>Tambah satu Folder</guilabel> menyediakan piihan berikut:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Hanya tambah jika lebih baharu</guilabel></term>
+	  <listitem>
+            <para>Pilih pilihan ini untuk menambah fail ke dalam arkib jika arkib tidak mengandungi fail yang dikehendaki, atau jika arkib mengandungi versi fail yang lebih lama. <application>Pengurus Arkib</application> melihat tarikh ubahsuai untuk tentukan sama ada fail adalah terkini. Jika versi fail di dalam arkib adalah yang terkini, <application>Pengurus Arkib</application> tidak akan menambah masuk fail tersebut ke dalam arkib.</para>
+	    <para>Jika anda tidak memilih pilihan ini, <application>Pengurus Arkib</application> tetap menambah masuk fail ke dalam arkib dan menulis-ganti kandungan arkib yang terdahulu.</para>
+	    <tip><info><title>Petua</title></info>
+	      
+	      <para>Jika anda menggunakan <application>Pengurus Arkib</application> untuk mencipta sandar, pilihan <guilabel>hanya tambah jika lebih baharu</guilabel> sangat berguna. Sebagai contoh, arkib <filename>backup.tar.gz</filename> mengandungi sandar folder rummah berusia seminggu. Untuk mengemaskini arkib sandar folder rumah semasa anda, buat langkah-langkah berikut: <orderedlist inheritnum="ignore" continuation="restarts">
+                      <listitem>
+                        <para>Buka arkib <filename>backup.tar.gz</filename> di dalam <application>Pengurus Arkib</application>.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Pilih <menuchoice><guimenu>Sunting</guimenu><guimenuitem>Tambah</guimenuitem></menuchoice> untuk memaparkan dialog <guilabel>Tambah satu Folder</guilabel>.</para> 
+                      </listitem>
+                      <listitem>
+                        <para>Pilih folder rumah anda.</para>
+                      </listitem>
+                      <listitem>
+                        <para>Pilih piihan <guilabel>Hanya tambah jika lebih baharu</guilabel></para>
+                      </listitem>
+                      <listitem>
+                        <para>Klik <guibutton>Tambah</guibutton>.</para>
+                      </listitem>
+                    </orderedlist></para>
+                <para><application>Pengurus Arkib</application> menambah ke dalam arkib semua fail secara automatik ke dalam arkib berusia seminggu, dan juga mengemaskini semua fail yang telah diubahsuai dalam tempoh tersebut. Namun begitu, <application>Pengurus Arkib</application> tidak membuang fail yang telah dibuang pada minggu lepas sekiranya masih ada di dalam arkib. Operasi kemaskini arkib lebih pantas membuat sandaran penuh folder rumah anda.</para>
+	  </tip>
+	</listitem>
+      </varlistentry>
+      </variablelist>
+      <section xml:id="grapa-add-folder-options"><info><title>Pilihan Tambah ke dalam Folder</title></info>
+      
+      <para>Pilihan tersebut tersedia di dalam dialog <guilabel>Tambah satu Folder</guilabel> dan membolehkan pilih dan tambah semua fail secara automatik sekiranya memenuhi kriteria-kriteria tertentu:</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Fail-Fail Disertakan</guilabel></term>
+	  <listitem>
+            <para>Taip satu pola nama fail di dalam kotak teks ini untuk sertakan fail yang namanya sepadan dengan pola yang ditetapkan. Sila rujuk <xref linkend="grapa-pattern"/> untuk maklumat lanjut berkenaan pola-pola nama fail.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Asingkan fail</guilabel></term>
+	  <listitem>
+            <para>Taip satu pola nama fail dalam kotak teks ini untuk asingkan fail yang namanya sepadan dengan pola yang ditentukan. Sila rujuk <xref linkend="grapa-pattern"/> untuk maklumat lanjut berkenaan pola-pola nama fail.</para>
+          </listitem>
+	</varlistentry>
+        <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Asingkan folder</guilabel></term>
+	  <listitem>
+            <para>Taip satu pola nama fail dalam kotak teks ini untuk asingkan folder yang namanya sepadan dengan pola yang ditentukan. Sila rujuk <xref linkend="grapa-pattern"/> untuk maklumat lanjut berkenaan pola-pola nama fail.</para>
+          </listitem>
+	</varlistentry>      
+       <!-- ============= -->	
+      <varlistentry>
+	<term><guilabel>Sertakan subfolder</guilabel></term>
+	<listitem>
+          <para>Pilih pilihan ini untuk menambah semua fail yang sepadan dengan pola yang ditentukan, daripada folder semasa dan juga subfolder-subfoldernya.</para>
+          <note>
+          <para>Nama fail, bukan nama subfolder, mesti sepadan dengan pola yang ditentukan.</para>
+          </note>
+	  <para>Jika anda tidak memilih pilihan ini, <application>Pengurus Arkib</application> tetap menambah masuk fail sepadan daripada folder semasa sahaja.</para>
+        </listitem>
+      </varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guilabel>Asingkan folder-folder yang merupakan pautan simbolik</guilabel></term>
+	  <listitem>
+            <para>Pilih pilihan ini untuk menyingkir fail-fail daripada folder-folder yang merupakan pautan simbolik. Pautan simbolik adalah penuding atau pintasan ke folder-folder lain.</para>
+	    <para>Jika anda tidak memilih pilihan ini, <application>Pengurus Arkib</application> tetap menambah masuk fail  daripada folder yang sebenarnya adalah pautan simbolik.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->
+     <varlistentry>
+	<term><guibutton>Pilihan Simpan</guibutton></term>
+	  <listitem>
+            <para>Klik pada butang ini untuk menyimpan pemilihan semasa bagi pilihan tambah lanjutan sesebuah fail. Seterusnya, dialog <guilabel>Pilihan Simpan</guilabel> dipaparkan. Masukkan satu nama fail di dalam kotak teks <guilabel>Nama Pilihan</guilabel>, kemudian klik <guibutton>Simpan</guibutton>.</para>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Pilihan Muat</guibutton></term>
+	  <listitem>
+            <para>Klik pada butang ini untuk muat atau padam pilihan tersimpan bagi pilihan lanjutan sebelum ini. Dialog <guilabel>Pilihan Muat</guilabel> akan dipaparkan.</para>
+            <itemizedlist>
+              <listitem>
+                <para>Untuk memuatkan satu set pilihan, pilih fail pilihan di dalam kotak senarai, kemudian klik <guibutton>Laksana</guibutton>.</para>
+              </listitem>
+              <listitem>
+                <para>Untuk memadam satu set pilihan, pilih fail pilihan tersebut di dalam kotak senarai, kemudian klik <guibutton>Buang</guibutton>. Seterusnya, klik <guibutton>Tutup</guibutton> untuk menutup dilaog <guilabel>Pilihan Muat</guilabel>.</para>
+              </listitem>
+            </itemizedlist>
+          </listitem>
+	</varlistentry>
+       <!-- ============= -->	
+     <varlistentry>
+	<term><guibutton>Pilihan Tetapan Semula</guibutton></term>
+	  <listitem>
+            <para>Klik pada butang ini untuk menetap semula pemilihan semasa bagi pilihan tambah lanjutan ke nilai lalainya.</para>
+          </listitem>
+	</varlistentry>
+      </variablelist>
+    </section>
+  </section>
+
+<!-- ======= Extract Options  ============= --> 
+  <section xml:id="grapa-extract-options"><info><title>Pilihan Ekstrak</title></info>
+    
+      
+    <para>Dialog <guilabel>Ekstrak</guilabel> menyediakan pilihan-pilihan berikut, yang akan disimpan ketika anda keluar daripada <application>Pengurus Arkib</application> :</para>
+      <variablelist>
+       <!-- ============= -->	
+	<varlistentry>
+	  <term><guilabel>Ekstrak</guilabel></term>
+	  <listitem>
+            <para>Pilih fail-fail yang hendak diesktrakkan:</para>
+            <variablelist>
+              <varlistentry>
+                <term><guilabel>Semua fail</guilabel></term>
+                <listitem>
+                  <para>Ekstrak semua fail daripada arkib.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Fail terpilih</guilabel></term>
+                <listitem>
+                  <para>Ekstrak fail-fail terpilih di dalam arkib.</para>
+                </listitem>
+              </varlistentry>
+              <varlistentry>
+                <term><guilabel>Fail</guilabel></term>
+                <listitem>
+                  <para>Ekstrak daripada arkib semua fail yang sepadan dengan pola yang ditentukan. Sila rujuk <xref linkend="grapa-pattern"/> untuk maklumat lanjut berkenaan pola nama fail.</para>
+                </listitem>
+              </varlistentry>
+            </variablelist>
+	  </listitem>
+	</varlistentry>
+	<!-- ============= -->	
+	<varlistentry>
+      <term><guilabel>Tindakan</guilabel></term>
+        <listitem>
+          <para>Pilih salah satu pilihan ekstrak berikut:</para>	
+          <variablelist>
+	        <varlistentry>
+	          <term><guilabel>Cipta-semula folder</guilabel></term>
+	          <listitem><para>Pilih pilihan ini untuk membina semula struktur folder ketika mengekstrak fail-fail tertentu.</para> 
+                <para>Sebagai contoh, anda menyatakan <filename>/tmp</filename> dalam kotak teks <guilabel>Nama Fail</guilabel> dan pilih untuk mengekstrak semua fail. Arkib ini mengandungi sebuah subfolder yang dikenali sebagai <filename>doc</filename>. <itemizedlist>
+                  <listitem><para>Jika anda memilih pilihan <guilabel>Cipta-semula folder</guilabel>, <application>Pengurus Arkib</application> akan mengekstrak isi kandungan subfolder ke dalam <filename>/tmp/doc</filename>.</para>
+                 </listitem>
+                 <listitem><para>Jika anda tidak memilih pilihan <guilabel>Cipta-semula folder</guilabel>, <application>Pengurus Arkib</application> tidak akan mencipta apa-apa subfolder. Melainkan <application>Pengurus Arkib</application> mengekstrak semua fail di dalam arkib, termasuklah fail yang mengandungi subfolder, ke dalam <filename>/tmp</filename>.</para>
+                 </listitem>
+               </itemizedlist></para></listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Tulis-ganti fail-fail sedia ada</guilabel></term>
+	           <listitem><para>Pilih pilihan ini untuk menulis-ganti mana-mana fail di dalam folder destinasi yang mempunyai nama yang sama dengan fail-fail yang dinyatakan.</para>
+	             <para>Jika anda tidak memilih pilihan ini, <application>Pengurus Arkib</application> tidak mengekstrak fail dinyatakan jika fail sedia dengan nama serupa sudah wujud di dalam folder destinasi.</para>
+	           </listitem>
+	         </varlistentry>
+             <!-- ============= -->	
+	         <varlistentry>
+	           <term><guilabel>Jangan ekstrak fail-fail lebih lama</guilabel></term>
+	           <listitem>
+	             <para>Pilihan ini hanya berkesan sekiranya pilihan <guilabel>Tulis-ganti fail-fail sedia ada</guilabel> dipilih.</para>
+	             <para>Pilih pilihan <guilabel>Jangan ekstrak fail lebih lama</guilabel> untuk mengekstrak fail dinyatakan sahaja jika folder destinasi tidak mengandungi fail yang dikehendaki, atau jika arkib mengandungi versi fail yang lebih lama. <application>Pengurus Arkib</application> melihat tarikh ubahsuai untuk tentukan sama ada fail adalah terkini. Jika versi fail di dalam arkib adalah lebih lama, <application>Pengurus Arkib</application> tidak akan mengekstrak masuk fail tersebut ke dalam folder destinasi.</para>
+	             <para>Jika anda tidak memilih pilihan <guilabel>Jangan ekstrak fail-fail lebih lama</guilabel> ketika pilihan <guilabel>Tulis-ganti fail-fail sedia ada</guilabel> dipilih, <application>Pengurus Arkib</application> akan mengekstrak semua fail dinyatakan daripada arkib dan menulis-ganti kandungan terdahulu folder destinasi.</para>
+	           </listitem>
+	         </varlistentry>
+	       </variablelist>
+	     </listitem>
+	   </varlistentry>
+     </variablelist>	
+  </section>
+</article>
