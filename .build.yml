@@ -28,6 +28,7 @@ requires:
     - clang
     - clang-tools
     - cppcheck
+    - debhelper
     - gettext
     - gcc
     - git
