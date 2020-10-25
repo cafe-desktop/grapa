@@ -276,7 +276,7 @@ _gtk_request_dialog_run (GtkWindow        *parent,
 				      button,
 				      GTK_RESPONSE_CANCEL);
 
-	button = create_button ("gtk-ok", yes_button_text);
+	button = create_button ("grapa-ok", yes_button_text);
 	gtk_dialog_add_action_widget (GTK_DIALOG (dialog),
 				      button,
 				      GTK_RESPONSE_YES);
@@ -323,11 +323,15 @@ _gtk_error_dialog_new (GtkWindow        *parent,
 	va_list        args;
 	gboolean       view_output = (row_output != NULL);
 
-	dialog = gtk_dialog_new_with_buttons ("",
-					      parent,
-					      flags,
-					      "gtk-ok", GTK_RESPONSE_OK,
-					      NULL);
+	dialog = gtk_dialog_new ();
+	gtk_window_set_title (GTK_WINDOW (dialog), "");
+	gtk_window_set_transient_for (GTK_WINDOW (dialog), parent);
+	if (flags & GTK_DIALOG_DESTROY_WITH_PARENT)
+		gtk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
+	if (flags & GTK_DIALOG_MODAL)
+		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+	grapa_dialog_add_button (GTK_DIALOG (dialog), _("_OK"), "grapa-ok", GTK_RESPONSE_OK);
+
 	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 

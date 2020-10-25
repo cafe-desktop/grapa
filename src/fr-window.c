@@ -7419,11 +7419,12 @@ fr_window_view_last_output (FrWindow   *window,
 	if (title == NULL)
 		title = _("Last Output");
 
-	dialog = gtk_dialog_new_with_buttons (title,
-					      GTK_WINDOW (window),
-					      GTK_DIALOG_DESTROY_WITH_PARENT,
-					      "gtk-close", GTK_RESPONSE_CLOSE,
-					      NULL);
+	dialog = gtk_dialog_new ();
+	gtk_window_set_title (GTK_WINDOW (dialog), title);
+	gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (window));
+	gtk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
+	grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Close"), "window-close", GTK_RESPONSE_CLOSE);
+
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
 	gtk_window_set_resizable (GTK_WINDOW (dialog), TRUE);
 	gtk_widget_set_size_request (dialog, 500, 300);
