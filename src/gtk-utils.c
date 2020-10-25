@@ -54,6 +54,28 @@ _gtk_count_selected (GtkTreeSelection *selection)
 }
 
 
+
+GtkWidget *
+grapa_dialog_add_button (GtkDialog   *dialog,
+			 const gchar *button_text,
+			 const gchar *icon_name,
+			       gint   response_id)
+{
+	GtkWidget *button;
+
+	button = gtk_button_new_with_mnemonic (button_text);
+	gtk_button_set_image (GTK_BUTTON (button), gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
+
+	gtk_button_set_use_underline (GTK_BUTTON (button), TRUE);
+	gtk_style_context_add_class (gtk_widget_get_style_context (button), "text-button");
+	gtk_widget_set_can_default (button, TRUE);
+	gtk_widget_show (button);
+	gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
+
+	return button;
+}
+
+
 GtkWidget*
 _gtk_message_dialog_new (GtkWindow        *parent,
 			 GtkDialogFlags    flags,
@@ -138,7 +160,20 @@ _gtk_message_dialog_new (GtkWindow        *parent,
 	response_id = va_arg (args, gint);
 
 	while (text != NULL) {
-		gtk_dialog_add_button (GTK_DIALOG (dialog), text, response_id);
+		if (g_strcmp0 (text, "process-stop") == 0)
+			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Cancel"), text, response_id);
+		else if (g_strcmp0 (text, "document-open") == 0)
+			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Open"), text, response_id);
+		else if (g_strcmp0 (text, "window-close") == 0)
+			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Close"), text, response_id);
+		else if (g_strcmp0 (text, "list-add") == 0)
+			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Add"), text, response_id);
+		else if (g_strcmp0 (text, "grapa-ok") == 0)
+			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_OK"), text, response_id);
+		else if (g_strcmp0 (text, "grapa-no") == 0)
+			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_No"), text, response_id);
+		else
+			gtk_dialog_add_button (GTK_DIALOG (dialog), text, response_id);
 
 		text = va_arg (args, char*);
 		if (text == NULL)
@@ -424,7 +459,7 @@ _gtk_error_dialog_run (GtkWindow        *parent,
 				      "dialog-error",
 				      main_message,
 				      message,
-				      "gtk-close", GTK_RESPONSE_CANCEL,
+				      "window-close", GTK_RESPONSE_CANCEL,
 				      NULL);
 	g_free (message);
 
@@ -582,7 +617,7 @@ show_help_dialog (GtkWindow  *parent,
 						  "dialog-error",
 						  _("Could not display help"),
 						  error->message,
-						  "gtk-ok", GTK_RESPONSE_OK,
+						  "grapa-ok", GTK_RESPONSE_OK,
 						  NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 
@@ -635,27 +670,6 @@ _gtk_widget_lookup_for_size (GtkWidget *widget,
 	gtk_icon_size_lookup (icon_size,
 			      &w, &h);
 	return MAX (w, h);
-}
-
-
-GtkWidget *
-grapa_dialog_add_button (GtkDialog   *dialog,
-			 const gchar *button_text,
-			 const gchar *icon_name,
-			       gint   response_id)
-{
-	GtkWidget *button;
-
-	button = gtk_button_new_with_mnemonic (button_text);
-	gtk_button_set_image (GTK_BUTTON (button), gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
-
-	gtk_button_set_use_underline (GTK_BUTTON (button), TRUE);
-	gtk_style_context_add_class (gtk_widget_get_style_context (button), "text-button");
-	gtk_widget_set_can_default (button, TRUE);
-	gtk_widget_show (button);
-	gtk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
-
-	return button;
 }
 
 
