@@ -34,7 +34,6 @@
                 <property name="receives_default">False</property>
                 <property name="image">image5</property>
                 <property name="use_underline">True</property>
-                <property name="always_show_image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -221,7 +220,6 @@
                 <property name="receives_default">False</property>
                 <property name="image">image6</property>
                 <property name="use_underline">True</property>
-                <property name="always_show_image">True</property>
               </object>
               <packing>
                 <property name="expand">False</property>
