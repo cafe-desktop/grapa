@@ -1,3 +1,21 @@
+### grapa 0.1.0
+
+  * update copyright
+  * msgmerge without progress indicators
+  * update grapa icons
+  * ui files: avoid deprecated GtkStock
+                               GtkAlignment
+                               GtkBox:margin-left/margin-right
+                               GtkButton:always-show-image (it has gone in gtk4)
+  * avoid deprecated GtkStock
+                     gtk_dialog_get_action_area
+  * fork deprecated icons gtk-apply, gtk-ok, gtk-no
+
 ### grapa 0.0.1
 
-  * initial job
+  * engrampa 1.24.1 fork
+  * update FUNDING.yml
+  * rename MATE to CAFE
+  * rename engrampa to grapa
+  * change some names in png files
+  * Travis CI improvements
