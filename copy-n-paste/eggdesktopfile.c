@@ -31,8 +31,13 @@
 #include <unistd.h>
 
 #include <glib/gi18n.h>
-#include <gdk/gdkx.h>
 #include <gtk/gtk.h>
+#if GTK_CHECK_VERSION (3,99,0)
+#include <gdk/x11/gdkx.h>
+#else
+#include <gdk/gdkx.h>
+#endif
+
 
 struct EggDesktopFile {
   GKeyFile           *key_file;
