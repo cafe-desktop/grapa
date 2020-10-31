@@ -1389,8 +1389,7 @@ static EggDesktopFile *egg_desktop_file;
  * Creates an #EggDesktopFile for the application from the data at
  * @desktop_file_path. This will also call g_set_application_name()
  * with the localized application name from the desktop file, and
- * gtk_window_set_default_icon_name() or
- * gtk_window_set_default_icon_from_file() with the application's
+ * gtk_window_set_default_icon_name() with the application's
  * icon. Other code may use additional information from the desktop
  * file.
  *
@@ -1419,12 +1418,7 @@ egg_set_desktop_file (const char *desktop_file_path)
     if (egg_desktop_file->name)
       g_set_application_name (egg_desktop_file->name);
     if (egg_desktop_file->icon)
-      {
-        if (g_path_is_absolute (egg_desktop_file->icon))
-          gtk_window_set_default_icon_from_file (egg_desktop_file->icon, NULL);
-        else
-          gtk_window_set_default_icon_name (egg_desktop_file->icon);
-      }
+      gtk_window_set_default_icon_name (egg_desktop_file->icon);
   }
 
   G_UNLOCK (egg_desktop_file);
