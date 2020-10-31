@@ -920,14 +920,13 @@ static char *
 start_startup_notification (GdkDisplay     *display,
 			    EggDesktopFile *desktop_file,
 			    const char     *argv0,
-			    int             screen,
 			    int             workspace,
 			    guint32         launch_time)
 {
   static int sequence = 0;
   char *startup_id;
   char *description, *wmclass;
-  char *screen_str, *workspace_str;
+  char *workspace_str;
 
   if (g_key_file_has_key (desktop_file->key_file,
 			  EGG_DESKTOP_FILE_GROUP,
@@ -962,13 +961,11 @@ start_startup_notification (GdkDisplay     *display,
 				(unsigned long)launch_time);
 
   description = g_strdup_printf (_("Starting %s"), desktop_file->name);
-  screen_str = g_strdup_printf ("%d", screen);
   workspace_str = workspace == -1 ? NULL : g_strdup_printf ("%d", workspace);
 
   gdk_x11_display_broadcast_startup_message (display, "new",
 					     "ID", startup_id,
 					     "NAME", desktop_file->name,
-					     "SCREEN", screen_str,
 					     "BIN", argv0,
 					     "ICON", desktop_file->icon,
 					     "DESKTOP", workspace_str,
@@ -978,7 +975,6 @@ start_startup_notification (GdkDisplay     *display,
 
   g_free (description);
   g_free (wmclass);
-  g_free (screen_str);
   g_free (workspace_str);
 
   return startup_id;
@@ -1079,14 +1075,13 @@ egg_desktop_file_launchv (EggDesktopFile *desktop_file,
   EggDesktopFileLaunchOption option;
   GSList *translated_documents = NULL, *docs = NULL;
   char *command, **argv;
-  int argc, i, screen_num;
+  int argc, i;
   gboolean success, current_success;
   GdkDisplay *display;
   char *startup_id;
 
   GPtrArray   *env = NULL;
   char       **variables = NULL;
-  GdkScreen   *screen = NULL;
   int          workspace = -1;
   const char  *directory = NULL;
   guint32      launch_time = (guint32)-1;
@@ -1128,9 +1123,6 @@ egg_desktop_file_launchv (EggDesktopFile *desktop_file,
 	    env = array_putenv (env, variables[i]);
 	  break;
 
-	case EGG_DESKTOP_FILE_LAUNCH_SCREEN:
-	  screen = va_arg (args, GdkScreen *);
-	  break;
 	case EGG_DESKTOP_FILE_LAUNCH_WORKSPACE:
 	  workspace = va_arg (args, int);
 	  break;
@@ -1177,21 +1169,7 @@ egg_desktop_file_launchv (EggDesktopFile *desktop_file,
 	}
     }
 
-  if (screen)
-    {
-      display = gdk_screen_get_display (screen);
-      char *display_name = g_strdup (gdk_display_get_name (display));
-      char *display_env = g_strdup_printf ("DISPLAY=%s", display_name);
-      env = array_putenv (env, display_env);
-      g_free (display_name);
-      g_free (display_env);
-    }
-  else
-    {
-      display = gdk_display_get_default ();
-      screen = gdk_display_get_default_screen (display);
-    }
-  screen_num = gdk_x11_screen_get_screen_number (screen);
+  display = gdk_display_get_default ();
 
   translated_documents = translate_document_list (desktop_file, documents);
   docs = translated_documents;
@@ -1212,7 +1190,7 @@ egg_desktop_file_launchv (EggDesktopFile *desktop_file,
       g_free (command);
 
       startup_id = start_startup_notification (display, desktop_file,
-					       argv[0], screen_num,
+					       argv[0],
 					       workspace, launch_time);
       if (startup_id)
 	{
@@ -1295,8 +1273,6 @@ egg_desktop_file_launchv (EggDesktopFile *desktop_file,
  *   %EGG_DESKTOP_FILE_LAUNCH_PUTENV: (char **variables)
  *       adds the NAME=VALUE strings in the given %NULL-terminated
  *       array to the child process's environment
- *   %EGG_DESKTOP_FILE_LAUNCH_SCREEN: (GdkScreen *screen)
- *       causes the application to be launched on the given screen
  *   %EGG_DESKTOP_FILE_LAUNCH_WORKSPACE: (int workspace)
  *       causes the application to be launched on the given workspace
  *   %EGG_DESKTOP_FILE_LAUNCH_DIRECTORY: (char *dir)
