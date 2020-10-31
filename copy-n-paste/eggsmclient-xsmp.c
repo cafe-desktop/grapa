@@ -20,6 +20,7 @@
  * Free Software Foundation, Inc., 51 Franklin St, Fifth Floor,
  * Boston, MA 02110-1301, USA.
  */
+#ifdef EGG_SM_CLIENT_BACKEND_XSMP
 
 #include "config.h"
 
@@ -1367,3 +1368,5 @@ smc_error_handler (SmcConn       smc_conn,
 {
   /* Do nothing */
 }
+
+#endif /* #ifdef EGG_SM_CLIENT_BACKEND_XSMP */
