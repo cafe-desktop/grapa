@@ -132,6 +132,10 @@ AM_CONDITIONAL(ENABLE_JSON_GLIB, test x"$enable_json_glib" != x"no")
 
 dnl ******************************
 
+PKG_CHECK_MODULES(LIBEGG, ice sm $GTK_API_VERSION)
+
+dnl ******************************
+
 AC_CHECK_LIB(m, floor)
 
 dnl ==========================================================================

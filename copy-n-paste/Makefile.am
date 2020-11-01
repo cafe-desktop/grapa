@@ -5,7 +5,8 @@ AM_CPPFLAGS = \
 
 noinst_LTLIBRARIES = libeggsmclient.la
 
-libeggsmclient_la_LIBADD = $(GTK_LIBS)
+libeggsmclient_la_LIBADD = $(GTK_LIBS)	\
+			   $(LIBEGG_LIBS)
 libeggsmclient_la_CFLAGS = 		\
 	$(GTK_CFLAGS)			\
 	$(WARN_CFLAGS)			\
