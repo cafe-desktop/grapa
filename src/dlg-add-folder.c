@@ -408,7 +408,7 @@ clear_options_cb (GtkWidget  *w,
 		  DialogData *data)
 {
 	sync_widgets_with_options (data,
-				   gtk_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->dialog)),
+				   grapa_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->dialog)),
 				   gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog)),
 				   "",
 				   "",
@@ -536,7 +536,7 @@ get_options_from_widgets (DialogData  *data,
 			  gboolean    *recursive,
 			  gboolean    *no_symlinks)
 {
-	*base_dir = gtk_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->dialog));
+	*base_dir = grapa_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->dialog));
 	*filename = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
 	*update = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
 	*recursive = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->include_subfold_checkbutton));

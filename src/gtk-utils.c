@@ -732,3 +732,26 @@ grapa_file_chooser_dialog_new (const gchar          *title,
 
 	return result;
 }
+
+
+gchar *
+grapa_file_chooser_get_current_folder_uri (GtkFileChooser *chooser)
+{
+	GFile *file;
+	gchar *uri;
+
+	g_return_val_if_fail (GTK_IS_FILE_CHOOSER (chooser), NULL);
+
+#if GTK_CHECK_VERSION (3,99,0)
+	file = gtk_file_chooser_get_current_folder (chooser);
+#else
+	file = gtk_file_chooser_get_current_folder_file (chooser);
+#endif
+	if (!file)
+		return NULL;
+
+	uri = g_file_get_uri (file);
+	g_object_unref (file);
+
+	return uri;
+}

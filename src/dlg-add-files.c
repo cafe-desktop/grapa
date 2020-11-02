@@ -61,7 +61,7 @@ file_sel_response_cb (GtkWidget      *widget,
 	GSList         *selections, *iter;
 	GList          *item_list = NULL;
 
-	current_folder = gtk_file_chooser_get_current_folder_uri (file_sel);
+	current_folder = grapa_file_chooser_get_current_folder_uri (file_sel);
 	uri = gtk_file_chooser_get_uri (file_sel);
 
 	if (current_folder != NULL) {
