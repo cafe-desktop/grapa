@@ -119,7 +119,7 @@ file_sel_response_cb (GtkWidget    *widget,
 		return TRUE;
 	}
 
-	selected_folder = gtk_file_chooser_get_uri (file_sel);
+	selected_folder = grapa_file_chooser_get_uri (file_sel);
 
 	/* check folder permissions. */
 
@@ -409,7 +409,7 @@ clear_options_cb (GtkWidget  *w,
 {
 	sync_widgets_with_options (data,
 				   grapa_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->dialog)),
-				   gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog)),
+				   grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog)),
 				   "",
 				   "",
 				   "",
@@ -537,7 +537,7 @@ get_options_from_widgets (DialogData  *data,
 			  gboolean    *no_symlinks)
 {
 	*base_dir = grapa_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->dialog));
-	*filename = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	*filename = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
 	*update = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
 	*recursive = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->include_subfold_checkbutton));
 	*no_symlinks = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->exclude_symlinks));

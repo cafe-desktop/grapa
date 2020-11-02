@@ -755,3 +755,22 @@ grapa_file_chooser_get_current_folder_uri (GtkFileChooser *chooser)
 
 	return uri;
 }
+
+
+gchar *
+grapa_file_chooser_get_uri (GtkFileChooser *chooser)
+{
+	GFile *file;
+	gchar *result = NULL;
+
+	g_return_val_if_fail (GTK_IS_FILE_CHOOSER (chooser), NULL);
+
+	file = gtk_file_chooser_get_file (chooser);
+	if (file)
+	{
+		result = g_file_get_uri (file);
+		g_object_unref (file);
+	}
+
+	return result;
+}

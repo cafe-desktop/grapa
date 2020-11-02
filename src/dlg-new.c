@@ -104,7 +104,7 @@ get_archive_type (DlgNewData *data)
 	const char *uri;
 	const char *ext;
 
-	uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	uri = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
 	if (uri == NULL)
 		return -1;
 
@@ -133,7 +133,7 @@ archive_type_combo_box_changed_cb (GtkComboBox *combo_box,
 	const char *ext;
 	int         idx;
 
-	uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	uri = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
 
 	ext = get_archive_filename_extension (uri);
 	idx = gtk_combo_box_get_active (GTK_COMBO_BOX (data->n_archive_type_combo_box)) - 1;
@@ -193,7 +193,7 @@ format_chooser_selection_changed_cb (EggFileFormatChooser *format_chooser,
 	const char *ext;
 	int         n_format;
 
-	uri = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	uri = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
 	if (uri == NULL)
 		return;
 

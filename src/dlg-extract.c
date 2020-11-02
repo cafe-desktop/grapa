@@ -84,7 +84,7 @@ extract_cb (GtkWidget   *w,
 
 	/* collect extraction options. */
 
-	extract_to_dir = gtk_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	extract_to_dir = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
 
 	/* check directory existence. */
 

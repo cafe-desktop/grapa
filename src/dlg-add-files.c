@@ -62,7 +62,7 @@ file_sel_response_cb (GtkWidget      *widget,
 	GList          *item_list = NULL;
 
 	current_folder = grapa_file_chooser_get_current_folder_uri (file_sel);
-	uri = gtk_file_chooser_get_uri (file_sel);
+	uri = grapa_file_chooser_get_uri (file_sel);
 
 	if (current_folder != NULL) {
 		g_settings_set_string (data->settings, PREF_ADD_CURRENT_FOLDER, current_folder);
