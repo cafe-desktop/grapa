@@ -177,7 +177,7 @@ add_files_cb (GtkWidget *widget,
 	folder = g_settings_get_string (data->settings, PREF_ADD_CURRENT_FOLDER);
 	if ((folder == NULL) || (strcmp (folder, "") == 0))
 		folder = g_strdup (fr_window_get_add_default_dir (data->window));
-	gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (file_sel), folder);
+	grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (file_sel), folder);
 	g_free (folder);
 
 	/* signals */

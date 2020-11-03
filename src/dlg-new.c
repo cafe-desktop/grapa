@@ -302,7 +302,7 @@ dlg_new_archive (FrWindow  *window,
 	/* Set widgets data. */
 
 	gtk_dialog_set_default_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK);
-	gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (data->dialog), fr_window_get_open_default_dir (window));
+	grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (data->dialog), fr_window_get_open_default_dir (window));
 
 	if (default_name != NULL)
 		gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (data->dialog), default_name);

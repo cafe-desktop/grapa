@@ -389,7 +389,7 @@ sync_widgets_with_options (DialogData *data,
 	if ((filename != NULL) && (strcmp (filename, base_dir) != 0))
 		gtk_file_chooser_select_uri (GTK_FILE_CHOOSER (data->dialog), filename);
 	else
-		gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (data->dialog), base_dir);
+		grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (data->dialog), base_dir);
 
 	if (include_files != NULL)
 		gtk_entry_set_text (GTK_ENTRY (data->include_files_entry), include_files);

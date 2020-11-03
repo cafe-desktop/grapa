@@ -388,7 +388,7 @@ activate_action_open (GtkAction *action,
                         NULL);
     gtk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
     gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (file_sel), FALSE);
-    gtk_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (file_sel), fr_window_get_open_default_dir (window));
+    grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (file_sel), fr_window_get_open_default_dir (window));
 
     filter = gtk_file_filter_new ();
     gtk_file_filter_set_name (filter, _("All archives"));

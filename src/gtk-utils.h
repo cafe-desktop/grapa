@@ -98,6 +98,9 @@ GtkWidget * grapa_dialog_add_button         (GtkDialog   *dialog,
 					     gint         response_id);
 gchar *
 grapa_file_chooser_get_current_folder_uri   (GtkFileChooser *chooser);
+gboolean
+grapa_file_chooser_set_current_folder_uri   (GtkFileChooser *chooser,
+					     const gchar    *uri);
 gchar *
 grapa_file_chooser_get_uri                  (GtkFileChooser *chooser);
 #endif
