@@ -132,10 +132,6 @@ AM_CONDITIONAL(ENABLE_JSON_GLIB, test x"$enable_json_glib" != x"no")
 
 dnl ******************************
 
-PKG_CHECK_MODULES(LIBEGG, ice sm $GTK_API_VERSION)
-
-dnl ******************************
-
 AC_CHECK_LIB(m, floor)
 
 dnl ==========================================================================
@@ -248,7 +244,6 @@ AC_CONFIG_FILES([Makefile
 		 data/grapa.desktop.in
 		 data/org.cafe.grapa.gschema.xml
 		 data/icons/Makefile
-		 copy-n-paste/Makefile
 		 src/Makefile
 		 src/sh/Makefile
 		 src/ui/Makefile

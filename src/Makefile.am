@@ -15,7 +15,6 @@ shdir = $(libexecdir)/grapa/
 endif
 
 AM_CPPFLAGS =						\
-	-I$(top_srcdir)/copy-n-paste/			\
 	-I$(top_srcdir)					\
 	-I$(top_builddir)				\
 	-DGRAPA_RESOURCE_UI_PATH="\"/org/cafe/Grapa/ui\"" \
@@ -194,7 +193,6 @@ grapa_SOURCES = 			\
 	main.c
 
 grapa_LDADD =					\
-	$(top_builddir)/copy-n-paste/libeggsmclient.la	\
 	$(FR_LIBS)					\
 	${JSON_GLIB_LIBS}
 

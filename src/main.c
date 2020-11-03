@@ -29,8 +29,6 @@
 #include <glib.h>
 #include <gio/gio.h>
 
-#include "eggsmclient.h"
-
 #include "fr-init.h"
 
 static char **remaining_args;
@@ -92,32 +90,6 @@ static const GOptionEntry options[] = {
 	{ NULL }
 };
 
-static void
-fr_restore_session (EggSMClient *client)
-{
-	GKeyFile *state = NULL;
-	guint i;
-
-	state = egg_sm_client_get_state_file (client);
-
-	i = g_key_file_get_integer (state, "Session", "archives", NULL);
-
-	for (; i > 0; i--) {
-		GtkWidget *window;
-		gchar *key, *archive;
-
-		key = g_strdup_printf ("archive%d", i);
-		archive = g_key_file_get_string (state, "Session", key, NULL);
-		g_free (key);
-
-		window = fr_window_new ();
-		gtk_widget_show (window);
-		if (strlen (archive))
-			fr_window_archive_open (FR_WINDOW (window), archive, GTK_WINDOW (window));
-
-		g_free (archive);
-	}
-}
 
 static char *
 get_uri_from_command_line (const char *path)
@@ -137,15 +109,6 @@ prepare_app (void)
 {
 	char        *extract_to_uri = NULL;
 	char        *add_to_uri = NULL;
-	EggSMClient *client = NULL;
-
-	client = egg_sm_client_get ();
-	if (egg_sm_client_is_resumed (client)) {
-		fr_restore_session (client);
-		return;
-	}
-
-	/**/
 
 	if (remaining_args == NULL) { /* No archive specified. */
 		fr_window_new ();
@@ -260,59 +223,12 @@ activate_cb (GApplication *application)
 }
 
 
-static void
-fr_save_state (EggSMClient *client, GKeyFile *state, gpointer user_data)
-{
-	/* discard command is automatically set by EggSMClient */
-
-	const char   *argv[2] = { NULL };
-	GApplication *application;
-	guint         i = 0;
-
-	/* restart command */
-	argv[0] = program_argv0;
-	argv[1] = NULL;
-
-	egg_sm_client_set_restart_command (client, 1, argv);
-
-	/* state */
-	application = g_application_get_default ();
-	if (application != NULL) {
-		GList *window;
-
-		for (window = gtk_application_get_windows (GTK_APPLICATION (application)), i = 0;
-		     window != NULL;
-		     window = window->next, i++)
-		{
-			FrWindow *session = window->data;
-			gchar *key;
-
-			key = g_strdup_printf ("archive%d", i);
-			if ((session->archive == NULL) || (session->archive->file == NULL)) {
-				g_key_file_set_string (state, "Session", key, "");
-			}
-			else {
-				gchar *uri;
-
-				uri = g_file_get_uri (session->archive->file);
-				g_key_file_set_string (state, "Session", key, uri);
-				g_free (uri);
-			}
-			g_free (key);
-		}
-	}
-
-	g_key_file_set_integer (state, "Session", "archives", i);
-}
-
-
 int
 main (int argc, char **argv)
 {
 	GOptionContext *context = NULL;
 	GError         *error = NULL;
 	GtkApplication *app = NULL;
-	EggSMClient    *client = NULL;
 	int             status;
 
 	program_argv0 = argv[0];
@@ -326,7 +242,6 @@ main (int argc, char **argv)
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 
 	g_option_context_add_group (context, gtk_get_option_group (TRUE));
-	g_option_context_add_group (context, egg_sm_client_get_option_group ());
 
 	if (! g_option_context_parse (context, &argc, &argv, &error)) {
 		g_critical ("Failed to parse arguments: %s", error->message);
@@ -339,9 +254,6 @@ main (int argc, char **argv)
 
 	g_set_application_name (_("Grapa"));
 	gtk_window_set_default_icon_name ("grapa");
-
-	client = egg_sm_client_get ();
-	g_signal_connect (client, "save-state", G_CALLBACK (fr_save_state), NULL);
 
 	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
 					   PKG_DATA_DIR G_DIR_SEPARATOR_S "icons");
