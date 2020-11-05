@@ -230,7 +230,9 @@ add_folder_cb (GtkWidget *widget,
 	gtk_window_set_default_size (GTK_WINDOW (data->dialog), 530, 510);
 
 	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (file_sel), FALSE);
+#if !GTK_CHECK_VERSION (3,99,0)
 	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (file_sel), FALSE);
+#endif
 	gtk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
 
 	data->add_if_newer_checkbutton = gtk_check_button_new_with_mnemonic (_("Add only if _newer"));
