@@ -1792,7 +1792,11 @@ fr_window_update_dir_tree (FrWindow *window)
 	else {
 		gtk_widget_set_sensitive (window->priv->tree_view, TRUE);
 		if (! gtk_widget_get_visible (window->priv->sidepane))
+#if GTK_CHECK_VERSION (3,99,0)
+			gtk_widget_show (window->priv->sidepane);
+#else
 			gtk_widget_show_all (window->priv->sidepane);
+#endif
 	}
 
 	if (gtk_widget_get_realized (window->priv->tree_view))
@@ -1932,7 +1936,11 @@ fr_window_update_file_list (FrWindow *window,
 
 		if (window->priv->archive_new) {
 			gtk_widget_set_sensitive (window->priv->list_view, TRUE);
+#if GTK_CHECK_VERSION (3,99,0)
+			gtk_widget_show (gtk_widget_get_parent (window->priv->list_view));
+#else
 			gtk_widget_show_all (gtk_widget_get_parent (window->priv->list_view));
+#endif
 		}
 		else {
 			gtk_widget_set_sensitive (window->priv->list_view, FALSE);
@@ -1943,7 +1951,11 @@ fr_window_update_file_list (FrWindow *window,
 	}
 	else {
 		gtk_widget_set_sensitive (window->priv->list_view, TRUE);
+#if GTK_CHECK_VERSION (3,99,0)
+		gtk_widget_show (gtk_widget_get_parent (window->priv->list_view));
+#else
 		gtk_widget_show_all (gtk_widget_get_parent (window->priv->list_view));
+#endif
 	}
 
 	if (window->priv->give_focus_to_the_list) {
@@ -2659,7 +2671,11 @@ create_the_progress_dialog (FrWindow *window)
 	gtk_label_set_ellipsize (GTK_LABEL (lbl), PANGO_ELLIPSIZE_END);
 	gtk_box_pack_start (GTK_BOX (progress_vbox), lbl, TRUE, TRUE, 0);
 
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (hbox);
+#else
 	gtk_widget_show_all (hbox);
+#endif
 
 	progress_dialog_update_action_description (window);
 
@@ -5817,7 +5833,11 @@ fr_window_construct (FrWindow *window)
 			  G_CALLBACK (filter_entry_icon_release_cb),
 			  window);
 
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (filter_box);
+#else
 	gtk_widget_show_all (filter_box);
+#endif
 
 	/* tree view */
 
@@ -5904,7 +5924,11 @@ fr_window_construct (FrWindow *window)
 	gtk_paned_set_position (GTK_PANED (window->priv->paned), g_settings_get_int (window->priv->settings_ui, PREF_UI_SIDEBAR_WIDTH));
 
 	fr_window_attach (FR_WINDOW (window), window->priv->paned, FR_WINDOW_AREA_CONTENTS);
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (window->priv->paned);
+#else
 	gtk_widget_show_all (window->priv->paned);
+#endif
 
 	/* Build the menu and the toolbar. */
 
@@ -6028,13 +6052,21 @@ fr_window_construct (FrWindow *window)
 		GtkToolItem *tool_item;
 
 		tool_item = gtk_separator_tool_item_new ();
+#if GTK_CHECK_VERSION (3,99,0)
+		gtk_widget_show (GTK_WIDGET (tool_item));
+#else
 		gtk_widget_show_all (GTK_WIDGET (tool_item));
+#endif
 		gtk_toolbar_insert (GTK_TOOLBAR (window->priv->location_bar), tool_item, -1);
 
 		tool_item = gtk_tool_item_new ();
 		gtk_tool_item_set_expand (tool_item, TRUE);
 		gtk_container_add (GTK_CONTAINER (tool_item), location_box);
+#if GTK_CHECK_VERSION (3,99,0)
+		gtk_widget_show (GTK_WIDGET (tool_item));
+#else
 		gtk_widget_show_all (GTK_WIDGET (tool_item));
+#endif
 		gtk_toolbar_insert (GTK_TOOLBAR (window->priv->location_bar), tool_item, -1);
 	}
 
@@ -7456,7 +7488,11 @@ fr_window_view_last_output (FrWindow   *window,
 	gtk_box_pack_start (GTK_BOX (vbox), scrolled,
 			    TRUE, TRUE, 0);
 
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (vbox);
+#else
 	gtk_widget_show_all (vbox);
+#endif
 	gtk_box_pack_start (GTK_BOX (gtk_dialog_get_content_area (GTK_DIALOG (dialog))),
 			    vbox,
 			    TRUE, TRUE, 0);

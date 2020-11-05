@@ -446,7 +446,11 @@ egg_file_format_chooser_init (EggFileFormatChooser *self)
                                        GTK_SHADOW_IN);
   gtk_widget_set_size_request (scroller, -1, 150);
   gtk_container_add (GTK_CONTAINER (scroller), view);
+#if GTK_CHECK_VERSION (3,99,0)
+  gtk_widget_show (scroller);
+#else
   gtk_widget_show_all (scroller);
+#endif
 
   gtk_container_add (GTK_CONTAINER (self), scroller);
 

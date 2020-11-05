@@ -324,7 +324,11 @@ add_folder_cb (GtkWidget *widget,
 	gtk_box_pack_start (GTK_BOX (vbox), data->clear_button,
 			    FALSE, FALSE, 0);
 
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (main_box);
+#else
 	gtk_widget_show_all (main_box);
+#endif
 
 	/* set data */
 

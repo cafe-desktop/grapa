@@ -547,7 +547,11 @@ dlg_batch_add_files (FrWindow *window,
 						mime_type_desc[data->supported_types[i]].default_ext);
 
 	gtk_box_pack_start (GTK_BOX (GET_WIDGET ("a_archive_type_box")), data->archive_type_combo_box, TRUE, TRUE, 0);
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (GET_WIDGET ("a_archive_type_box"));
+#else
 	gtk_widget_show_all (GET_WIDGET ("a_archive_type_box"));
+#endif
 
 	/* Set the signals handlers. */
 

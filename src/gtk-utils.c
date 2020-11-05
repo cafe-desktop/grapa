@@ -147,7 +147,11 @@ _gtk_message_dialog_new (GtkWindow        *parent,
 			    hbox,
 			    FALSE, FALSE, 0);
 
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (hbox);
+#else
 	gtk_widget_show_all (hbox);
+#endif
 
 	/* Add buttons */
 
@@ -267,7 +271,11 @@ _gtk_request_dialog_run (GtkWindow        *parent,
 	gtk_box_pack_start (GTK_BOX (vbox), entry, FALSE, FALSE, 0);
 	gtk_box_pack_start (GTK_BOX (content_area), hbox, FALSE, FALSE, 0);
 
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (hbox);
+#else
 	gtk_widget_show_all (hbox);
+#endif
 
 	/* Add buttons */
 
@@ -433,7 +441,11 @@ _gtk_error_dialog_new (GtkWindow        *parent,
 	gtk_container_set_border_width (GTK_CONTAINER (hbox), 5);
 	gtk_box_set_spacing (GTK_BOX (content_area), 14); /* 14 + 2 * 5 = 24 */
 
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_widget_show (vbox);
+#else
 	gtk_widget_show_all (vbox);
+#endif
 
 	return dialog;
 }
