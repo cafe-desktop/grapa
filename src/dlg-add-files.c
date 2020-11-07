@@ -58,7 +58,12 @@ file_sel_response_cb (GtkWidget      *widget,
 	char           *current_folder;
 	char           *uri;
 	gboolean        update;
+#if GTK_CHECK_VERSION (3,99,0)
+	GListModel     *files;
+	guint           i, n;
+#else
 	GSList         *selections, *iter;
+#endif
 	GList          *item_list = NULL;
 
 	current_folder = grapa_file_chooser_get_current_folder_uri (file_sel);
@@ -114,15 +119,26 @@ file_sel_response_cb (GtkWidget      *widget,
 
 	/**/
 
+#if GTK_CHECK_VERSION (3,99,0)
+	files = gtk_file_chooser_get_files (file_sel);
+	n = g_list_model_get_n_items (files);
+	for (i = 0; i < n; i++)
+		item_list = g_list_prepend (item_list, g_file_new_for_uri (g_list_model_get_item (files, i)));
+#else
 	selections = gtk_file_chooser_get_uris (file_sel);
 	for (iter = selections; iter != NULL; iter = iter->next)
 		item_list = g_list_prepend (item_list, g_file_new_for_uri (iter->data));
+#endif
 
 	if (item_list != NULL)
 		fr_window_archive_add_files (window, item_list, update);
 
 	gio_file_list_free (item_list);
+#if GTK_CHECK_VERSION (3,99,0)
+	g_object_unref (files);
+#else
 	g_slist_free_full (selections, g_free);
+#endif
 	g_free (current_folder);
 
 	gtk_widget_destroy (data->dialog);
