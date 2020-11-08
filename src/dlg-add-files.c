@@ -35,7 +35,6 @@ typedef struct {
 	FrWindow  *window;
 	GSettings *settings;
 	GtkWidget *dialog;
-	GtkWidget *add_if_newer_checkbutton;
 } DialogData;
 
 
@@ -115,7 +114,7 @@ file_sel_response_cb (GtkWidget      *widget,
 		return FALSE;
 	}
 
-	update = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
+	update = (g_strcmp0 (gtk_file_chooser_get_choice (file_sel, "add_if_newer_checkbutton"), "true") == 0);
 
 	/**/
 
@@ -154,7 +153,6 @@ add_files_cb (GtkWidget *widget,
 {
 	GtkWidget  *file_sel;
 	DialogData *data;
-	GtkWidget  *main_box;
 	char       *folder;
 
 	data = g_new0 (DialogData, 1);
@@ -179,20 +177,11 @@ add_files_cb (GtkWidget *widget,
 
 	/* Translators: add a file to the archive only if the disk version is
 	 * newer than the archive version. */
-	data->add_if_newer_checkbutton = gtk_check_button_new_with_mnemonic (_("Add only if _newer"));
-
-	main_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 20);
-	gtk_container_set_border_width (GTK_CONTAINER (main_box), 0);
-	gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (file_sel), main_box);
-
-	gtk_box_pack_start (GTK_BOX (main_box), data->add_if_newer_checkbutton,
-			    TRUE, TRUE, 0);
-
-#if GTK_CHECK_VERSION (3,99,0)
-	gtk_widget_show (main_box);
-#else
-	gtk_widget_show_all (main_box);
-#endif
+	gtk_file_chooser_add_choice (GTK_FILE_CHOOSER (file_sel),
+				     "add_if_newer_checkbutton",
+				     _("Add only if newer"), /* TODO: set _("Add only if _newer") underline */
+				     NULL, NULL);
+	gtk_file_chooser_set_choice (GTK_FILE_CHOOSER (file_sel), "add_if_newer_checkbutton", "false");
 
 	/* set data */
 
