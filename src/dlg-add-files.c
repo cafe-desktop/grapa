@@ -35,6 +35,8 @@ typedef struct {
 	FrWindow  *window;
 	GSettings *settings;
 	GtkWidget *dialog;
+	GtkWidget *choice;
+	GtkWidget *add_if_newer_checkbutton;
 } DialogData;
 
 
@@ -52,7 +54,7 @@ file_sel_response_cb (GtkWidget      *widget,
 		      int             response,
 		      DialogData     *data)
 {
-	GtkFileChooser *file_sel = GTK_FILE_CHOOSER (widget);
+	GtkFileChooser *file_sel = GTK_FILE_CHOOSER (data->choice);
 	FrWindow       *window = data->window;
 	char           *current_folder;
 	char           *uri;
@@ -114,7 +116,7 @@ file_sel_response_cb (GtkWidget      *widget,
 		return FALSE;
 	}
 
-	update = (g_strcmp0 (gtk_file_chooser_get_choice (file_sel, "add_if_newer_checkbutton"), "true") == 0);
+	update = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
 
 	/**/
 
@@ -153,42 +155,63 @@ add_files_cb (GtkWidget *widget,
 {
 	GtkWidget  *file_sel;
 	DialogData *data;
+	GtkWidget  *main_box;
+#if !GTK_CHECK_VERSION (3,99,0)
+	GtkWidget  *content_area;
+#endif
+	GtkWidget  *filechooser;
 	char       *folder;
 
 	data = g_new0 (DialogData, 1);
 	data->window = callback_data;
 	data->settings = g_settings_new (GRAPA_SCHEMA_ADD);
-	data->dialog = file_sel =
-		grapa_file_chooser_dialog_new (_("Add Files"),
-					     GTK_WINDOW (data->window),
-					     GTK_FILE_CHOOSER_ACTION_OPEN,
-					     "process-stop", GTK_RESPONSE_CANCEL,
-					     "grapa_add-files-to-archive", GTK_RESPONSE_OK,
-					     "help-browser", GTK_RESPONSE_HELP,
-					     NULL);
+	data->dialog = file_sel = gtk_dialog_new ();
+	gtk_window_set_title (GTK_WINDOW (file_sel), _("Add Files"));
+	gtk_window_set_transient_for (GTK_WINDOW (file_sel), GTK_WINDOW (data->window));
+	gtk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
+	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
+	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
+	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Add"), "grapa_add-files-to-archive", GTK_RESPONSE_OK);
 
-	gtk_window_set_default_size (GTK_WINDOW (data->dialog), 530, 450);
+	gtk_window_set_default_size (GTK_WINDOW (file_sel), 530, 450);
 
-	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (file_sel), TRUE);
+	data->choice = filechooser = gtk_file_chooser_widget_new (GTK_FILE_CHOOSER_ACTION_OPEN);
+	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (filechooser), TRUE);
 #if !GTK_CHECK_VERSION (3,99,0)
-	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (file_sel), FALSE);
+	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (filechooser), FALSE);
 #endif
 	gtk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
 
 	/* Translators: add a file to the archive only if the disk version is
 	 * newer than the archive version. */
-	gtk_file_chooser_add_choice (GTK_FILE_CHOOSER (file_sel),
-				     "add_if_newer_checkbutton",
-				     _("Add only if newer"), /* TODO: set _("Add only if _newer") underline */
-				     NULL, NULL);
-	gtk_file_chooser_set_choice (GTK_FILE_CHOOSER (file_sel), "add_if_newer_checkbutton", "false");
+	data->add_if_newer_checkbutton = gtk_check_button_new_with_mnemonic (_("Add only if _newer"));
+
+	main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	gtk_widget_set_margin_top (GTK_WIDGET(main_box) , 2);
+	gtk_widget_set_halign (data->add_if_newer_checkbutton, GTK_ALIGN_START);
+#if GTK_CHECK_VERSION (3,99,0)
+	gtk_window_set_child (GTK_WINDOW (file_sel), main_box);
+	gtk_box_append (GTK_BOX (main_box), filechooser);
+	gtk_box_append (GTK_BOX (main_box), data->add_if_newer_checkbutton);
+#else
+	content_area = gtk_dialog_get_content_area (GTK_DIALOG (file_sel));
+	gtk_container_set_border_width (GTK_CONTAINER (main_box), 0);
+	gtk_box_pack_start (GTK_BOX (main_box), filechooser,
+			    TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (main_box), data->add_if_newer_checkbutton,
+			    FALSE, FALSE, 6);
+	gtk_box_pack_start (GTK_BOX (content_area),
+			    main_box,
+			    TRUE, TRUE, 0);
+	gtk_widget_show_all (main_box);
+#endif
 
 	/* set data */
 
 	folder = g_settings_get_string (data->settings, PREF_ADD_CURRENT_FOLDER);
 	if ((folder == NULL) || (strcmp (folder, "") == 0))
 		folder = g_strdup (fr_window_get_add_default_dir (data->window));
-	grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (file_sel), folder);
+	grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (filechooser), folder);
 	g_free (folder);
 
 	/* signals */
