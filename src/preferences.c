@@ -36,13 +36,24 @@ pref_util_save_window_geometry (GtkWindow  *window,
 	GSettings *settings;
 	int width;
 	int height;
+	char *dialog_width;
+	char *dialog_height;
+
+	if (g_strcmp0 (dialog_id, "add") == 0) {
+		dialog_width = "width-addfiles";
+		dialog_height = "height-addfiles";
+	}
+	else {
+		dialog_width = "width";
+		dialog_height = "height";
+	}
 
 	schema = g_strconcat (GRAPA_SCHEMA_DIALOGS, ".", dialog_id, NULL);
 	settings = g_settings_new (schema);
 
 	gtk_window_get_size (window, &width, &height);
-	g_settings_set_int (settings, "width", width);
-	g_settings_set_int (settings, "height", height);
+	g_settings_set_int (settings, dialog_width, width);
+	g_settings_set_int (settings, dialog_height, height);
 	g_object_unref (settings);
 	g_free (schema);
 }
@@ -56,12 +67,23 @@ pref_util_restore_window_geometry (GtkWindow  *window,
 	GSettings *settings;
 	int width;
 	int height;
+	char *dialog_width;
+	char *dialog_height;
+
+	if (g_strcmp0 (dialog_id, "add") == 0) {
+		dialog_width = "width-addfiles";
+		dialog_height = "height-addfiles";
+	}
+	else {
+		dialog_width = "width";
+		dialog_height = "height";
+	}
 
 	schema = g_strconcat (GRAPA_SCHEMA_DIALOGS, ".", dialog_id, NULL);
 	settings = g_settings_new (schema);
 
-	width = g_settings_get_int (settings, "width");
-	height = g_settings_get_int (settings, "height");
+	width = g_settings_get_int (settings, dialog_width);
+	height = g_settings_get_int (settings, dialog_height);
 	if ((width != -1) && (height != 1))
 		gtk_window_set_default_size (window, width, height);
 

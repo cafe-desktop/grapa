@@ -148,6 +148,15 @@ file_sel_response_cb (GtkWidget      *widget,
 }
 
 
+static gboolean
+add_files_window_unrealize_cb (GtkWidget  *widget,
+			       gpointer    data)
+{
+	pref_util_save_window_geometry (GTK_WINDOW (widget), "add");
+	return FALSE;
+}
+
+
 /* create the "add" dialog. */
 void
 add_files_cb (GtkWidget *widget,
@@ -226,6 +235,12 @@ add_files_cb (GtkWidget *widget,
 			  G_CALLBACK (file_sel_response_cb),
 			  data);
 
+	g_signal_connect (G_OBJECT (file_sel),
+			  "unrealize",
+			  G_CALLBACK (add_files_window_unrealize_cb),
+			  NULL);
+
 	gtk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
+	pref_util_restore_window_geometry (GTK_WINDOW (file_sel), "add");
 	gtk_widget_show (file_sel);
 }

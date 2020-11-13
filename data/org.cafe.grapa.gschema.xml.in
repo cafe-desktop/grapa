@@ -176,6 +176,12 @@
     <key name="no-symlinks" type="b">
       <default>false</default>
     </key>
+    <key name="width-addfiles" type="i">
+      <default>-1</default>
+    </key>
+    <key name="height-addfiles" type="i">
+      <default>-1</default>
+    </key>
 </schema>
   <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.cafe.grapa.dialogs.batch-add" path="/org/cafe/grapa/dialogs/batch-add/">
     <key name="default-extension" type="s">
