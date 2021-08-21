@@ -54,6 +54,11 @@ build_scripts:
   -     scan-build $CHECKERS --html-title="$TITLESCANBUILD" --keep-cc -o html-report make 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
   - fi
 
+  - make check 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
+  - apt list --installed cafe-common libctk-3-dev 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
+  - echo Warnings detected in the logs `cat ./html-report/output_${TRAVIS_COMMIT} | grep -i warning | wc -l` 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
+  - make install
+
 after_scripts:
   - make distcheck
   - if [ -f "gen-index" ]; then ./gen-index -l 20; fi
