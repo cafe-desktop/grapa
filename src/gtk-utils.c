@@ -174,7 +174,7 @@ _gtk_message_dialog_new (GtkWindow        *parent,
 			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Add"), text, response_id);
 		else if (g_strcmp0 (text, "gtk-ok") == 0)
 			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_OK"), text, response_id);
-		else if (g_strcmp0 (text, "grapa-no") == 0)
+		else if (g_strcmp0 (text, "gtk-no") == 0)
 			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_No"), text, response_id);
 		else
 			gtk_dialog_add_button (GTK_DIALOG (dialog), text, response_id);
