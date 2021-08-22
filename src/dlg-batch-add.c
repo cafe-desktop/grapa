@@ -316,7 +316,7 @@ add_clicked_cb (GtkWidget  *widget,
 					     "dialog-question",
 					     _("The archive is already present.  Do you want to overwrite it?"),
 					     NULL,
-					     "grapa-no", GTK_RESPONSE_NO,
+					     "gtk-no", GTK_RESPONSE_NO,
 					     _("_Overwrite"), GTK_RESPONSE_YES,
 					     NULL);
 
