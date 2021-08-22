@@ -6941,7 +6941,7 @@ _fr_window_ask_overwrite_dialog (OverwriteData *odata)
 					     "dialog-warning",
 					     _("Extraction not performed"),
 					     NULL,
-					     "grapa-ok", GTK_RESPONSE_OK,
+					     "gtk-ok", GTK_RESPONSE_OK,
 					     NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
 		fr_window_show_error_dialog (odata->window, d, GTK_WINDOW (odata->window), _("Extraction not performed"));
@@ -7049,7 +7049,7 @@ fr_window_archive_extract (FrWindow    *window,
 					     "dialog-warning",
 					     _("Extraction not performed"),
 					     NULL,
-					     "grapa-ok", GTK_RESPONSE_OK,
+					     "gtk-ok", GTK_RESPONSE_OK,
 					     NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
 		fr_window_show_error_dialog (window, d, GTK_WINDOW (window), _("Extraction not performed"));

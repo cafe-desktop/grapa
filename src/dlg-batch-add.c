@@ -268,7 +268,7 @@ add_clicked_cb (GtkWidget  *widget,
 					     "dialog-warning",
 					     _("Archive not created"),
 					     NULL,
-					     "grapa-ok", GTK_RESPONSE_OK,
+					     "gtk-ok", GTK_RESPONSE_OK,
 					     NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
 		gtk_dialog_run (GTK_DIALOG (d));
