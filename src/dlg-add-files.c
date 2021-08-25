@@ -152,7 +152,7 @@ static gboolean
 add_files_window_unrealize_cb (GtkWidget  *widget,
 			       gpointer    data)
 {
-	pref_util_save_window_geometry (GTK_WINDOW (widget), "add");
+	pref_util_save_window_geometry (GTK_WINDOW (widget), "addfiles");
 	return FALSE;
 }
 
@@ -241,6 +241,6 @@ add_files_cb (GtkWidget *widget,
 			  NULL);
 
 	gtk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
-	pref_util_restore_window_geometry (GTK_WINDOW (file_sel), "add");
+	pref_util_restore_window_geometry (GTK_WINDOW (file_sel), "addfiles");
 	gtk_widget_show (file_sel);
 }
