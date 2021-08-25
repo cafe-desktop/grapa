@@ -44,6 +44,7 @@ typedef struct {
 	GSettings   *settings;
 	GtkWidget   *dialog;
 	GtkWidget   *include_subfold_checkbutton;
+	GtkWidget   *choice;
 	GtkWidget   *add_if_newer_checkbutton;
 	GtkWidget   *exclude_symlinks;
 	GtkWidget   *include_files_checkbutton;
@@ -96,7 +97,7 @@ file_sel_response_cb (GtkWidget    *widget,
 		      int           response,
 		      DialogData   *data)
 {
-	GtkFileChooser *file_sel = GTK_FILE_CHOOSER (widget);
+	GtkFileChooser *file_sel = GTK_FILE_CHOOSER (data->choice);
 	FrWindow       *window = data->window;
 	char           *selected_folder;
 	gboolean        update, UNUSED_VARIABLE recursive, follow_links;
@@ -210,28 +211,32 @@ add_folder_cb (GtkWidget *widget,
 {
 	GtkWidget   *file_sel;
 	DialogData  *data;
+	GtkWidget   *full_box;
 	GtkWidget   *main_box;
 	GtkWidget   *vbox;
 	GtkWidget   *grid;
+	GtkWidget   *filechooser;
+	GtkWidget   *content_area;
 
 	data = g_new0 (DialogData, 1);
 	data->settings = g_settings_new (GRAPA_SCHEMA_ADD);
 	data->window = callback_data;
 
-	data->dialog = file_sel =
-		grapa_file_chooser_dialog_new (_("Add a Folder"),
-					     GTK_WINDOW (data->window),
-					     GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER,
-					     "process-stop", GTK_RESPONSE_CANCEL,
-					     "grapa_add-folder-to-archive", GTK_RESPONSE_OK,
-					     "help-browser", GTK_RESPONSE_HELP,
-					     NULL);
+	data->dialog = file_sel = gtk_dialog_new ();
+	gtk_window_set_title (GTK_WINDOW (file_sel), _("Add a Folder"));
+	gtk_window_set_transient_for (GTK_WINDOW (file_sel), GTK_WINDOW (data->window));
+	gtk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
+	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
+	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
+	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Add"), "grapa_add-folder-to-archive", GTK_RESPONSE_OK);
 
-	gtk_window_set_default_size (GTK_WINDOW (data->dialog), 530, 510);
+	gtk_window_set_default_size (GTK_WINDOW (file_sel), 530, 510);
 
-	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (file_sel), FALSE);
+	data->choice = filechooser = gtk_file_chooser_widget_new (GTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
+	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (filechooser), FALSE);
+
 #if !GTK_CHECK_VERSION (3,99,0)
-	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (file_sel), FALSE);
+	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (filechooser), FALSE);
 #endif
 	gtk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
 
@@ -266,19 +271,30 @@ add_folder_cb (GtkWidget *widget,
 
 	main_box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 20);
 	gtk_container_set_border_width (GTK_CONTAINER (main_box), 0);
-	gtk_file_chooser_set_extra_widget (GTK_FILE_CHOOSER (file_sel), main_box);
+ 	gtk_widget_set_margin_start (GTK_WIDGET (main_box) , 6);
+
+	content_area = gtk_dialog_get_content_area (GTK_DIALOG (file_sel));
+	full_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+ 	gtk_widget_set_margin_top (GTK_WIDGET (full_box) , 2);
+	gtk_container_set_border_width (GTK_CONTAINER (full_box), 0);
+	gtk_box_pack_start (GTK_BOX (full_box), filechooser,
+			    TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (full_box), main_box, FALSE, FALSE, 0);
+	gtk_box_pack_start (GTK_BOX (content_area),
+			    full_box,
+			    TRUE, TRUE, 0);
 
 	vbox = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
 	gtk_container_set_border_width (GTK_CONTAINER (vbox), 0);
-	gtk_box_pack_start (GTK_BOX (main_box), vbox, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (main_box), vbox, FALSE, FALSE, 0);
 
 	gtk_box_pack_start (GTK_BOX (vbox), data->include_subfold_checkbutton,
-			    TRUE, TRUE, 0);
+			    FALSE, FALSE, 0);
 
-	gtk_box_pack_start (GTK_BOX (vbox), data->exclude_symlinks, TRUE, TRUE, 0);
+	gtk_box_pack_start (GTK_BOX (vbox), data->exclude_symlinks, FALSE, FALSE, 0);
 
 	gtk_box_pack_start (GTK_BOX (vbox), data->add_if_newer_checkbutton,
-			    TRUE, TRUE, 0);
+			    FALSE, FALSE, 0);
 
 	grid = gtk_grid_new ();
 	gtk_grid_set_row_spacing (GTK_GRID (grid), 6);
@@ -327,7 +343,7 @@ add_folder_cb (GtkWidget *widget,
 #if GTK_CHECK_VERSION (3,99,0)
 	gtk_widget_show (main_box);
 #else
-	gtk_widget_show_all (main_box);
+	gtk_widget_show_all (full_box);
 #endif
 
 	/* set data */
@@ -362,7 +378,7 @@ add_folder_cb (GtkWidget *widget,
 			  data);
 
 	gtk_window_set_modal (GTK_WINDOW (file_sel),TRUE);
-	gtk_widget_show (file_sel);
+	gtk_widget_show_all (file_sel);
 }
 
 
@@ -393,9 +409,9 @@ sync_widgets_with_options (DialogData *data,
 		base_dir = fr_window_get_add_default_dir (data->window);
 
 	if ((filename != NULL) && (strcmp (filename, base_dir) != 0))
-		gtk_file_chooser_select_uri (GTK_FILE_CHOOSER (data->dialog), filename);
+		gtk_file_chooser_select_uri (GTK_FILE_CHOOSER (data->choice), filename);
 	else
-		grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (data->dialog), base_dir);
+		grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (data->choice), base_dir);
 
 	if (include_files != NULL)
 		gtk_entry_set_text (GTK_ENTRY (data->include_files_entry), include_files);
@@ -414,8 +430,8 @@ clear_options_cb (GtkWidget  *w,
 		  DialogData *data)
 {
 	sync_widgets_with_options (data,
-				   grapa_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->dialog)),
-				   grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog)),
+				   grapa_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->choice)),
+				   grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->choice)),
 				   "",
 				   "",
 				   "",
@@ -542,8 +558,8 @@ get_options_from_widgets (DialogData  *data,
 			  gboolean    *recursive,
 			  gboolean    *no_symlinks)
 {
-	*base_dir = grapa_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->dialog));
-	*filename = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	*base_dir = grapa_file_chooser_get_current_folder_uri (GTK_FILE_CHOOSER (data->choice));
+	*filename = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->choice));
 	*update = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
 	*recursive = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->include_subfold_checkbutton));
 	*no_symlinks = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->exclude_symlinks));
