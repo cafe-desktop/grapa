@@ -229,7 +229,7 @@ add_clicked_cb (GtkWidget  *widget,
 					     "dialog-question",
 					     msg,
 					     NULL,
-					     "process-stop", GTK_RESPONSE_CANCEL,
+					     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 					     _("Create _Folder"), GTK_RESPONSE_YES,
 					     NULL);
 
@@ -268,7 +268,7 @@ add_clicked_cb (GtkWidget  *widget,
 					     "dialog-warning",
 					     _("Archive not created"),
 					     NULL,
-					     "gtk-ok", GTK_RESPONSE_OK,
+					     GTK_STOCK_OK, GTK_RESPONSE_OK,
 					     NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
 		gtk_dialog_run (GTK_DIALOG (d));
@@ -316,7 +316,7 @@ add_clicked_cb (GtkWidget  *widget,
 					     "dialog-question",
 					     _("The archive is already present.  Do you want to overwrite it?"),
 					     NULL,
-					     "gtk-no", GTK_RESPONSE_NO,
+					     GTK_STOCK_NO, GTK_RESPONSE_NO,
 					     _("_Overwrite"), GTK_RESPONSE_YES,
 					     NULL);
 

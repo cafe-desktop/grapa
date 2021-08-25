@@ -104,7 +104,7 @@ extract_cb (GtkWidget   *w,
 						     "dialog-question",
 						     msg,
 						     NULL,
-						     "process-stop", GTK_RESPONSE_CANCEL,
+						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 						     _("Create _Folder"), GTK_RESPONSE_YES,
 						     NULL);
 
@@ -144,7 +144,7 @@ extract_cb (GtkWidget   *w,
 					     "dialog-warning",
 					     _("Extraction not performed"),
 					     NULL,
-					     "gtk-ok", GTK_RESPONSE_OK,
+					     GTK_STOCK_OK, GTK_RESPONSE_OK,
 					     NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
 		gtk_dialog_run (GTK_DIALOG (d));
