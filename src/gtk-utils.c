@@ -164,20 +164,7 @@ _gtk_message_dialog_new (GtkWindow        *parent,
 	response_id = va_arg (args, gint);
 
 	while (text != NULL) {
-		if (g_strcmp0 (text, "process-stop") == 0)
-			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Cancel"), text, response_id);
-		else if (g_strcmp0 (text, "document-open") == 0)
-			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Open"), text, response_id);
-		else if (g_strcmp0 (text, "window-close") == 0)
-			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Close"), text, response_id);
-		else if (g_strcmp0 (text, "list-add") == 0)
-			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Add"), text, response_id);
-		else if (g_strcmp0 (text, "gtk-ok") == 0)
-			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_OK"), text, response_id);
-		else if (g_strcmp0 (text, "gtk-no") == 0)
-			grapa_dialog_add_button (GTK_DIALOG (dialog), _("_No"), text, response_id);
-		else
-			gtk_dialog_add_button (GTK_DIALOG (dialog), text, response_id);
+		gtk_dialog_add_button (GTK_DIALOG (dialog), text, response_id);
 
 		text = va_arg (args, char*);
 		if (text == NULL)
@@ -337,7 +324,7 @@ _gtk_error_dialog_new (GtkWindow        *parent,
 		gtk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
 	if (flags & GTK_DIALOG_MODAL)
 		gtk_window_set_modal (GTK_WINDOW (dialog), TRUE);
-	grapa_dialog_add_button (GTK_DIALOG (dialog), _("_OK"), "gtk-ok", GTK_RESPONSE_OK);
+	gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_OK, GTK_RESPONSE_OK);
 
 	gtk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
@@ -470,7 +457,7 @@ _gtk_error_dialog_run (GtkWindow        *parent,
 				      "dialog-error",
 				      main_message,
 				      message,
-				      "window-close", GTK_RESPONSE_CANCEL,
+				      GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
 				      NULL);
 	g_free (message);
 
@@ -628,7 +615,7 @@ show_help_dialog (GtkWindow  *parent,
 						  "dialog-error",
 						  _("Could not display help"),
 						  error->message,
-						  "gtk-ok", GTK_RESPONSE_OK,
+						  GTK_STOCK_OK, GTK_RESPONSE_OK,
 						  NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
 

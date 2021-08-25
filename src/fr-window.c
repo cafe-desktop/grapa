@@ -4205,9 +4205,9 @@ fr_window_drag_data_received  (GtkWidget          *widget,
 						     "dialog-question",
 						     _("Do you want to add this file to the current archive or open it as a new archive?"),
 						     NULL,
-						     "process-stop", GTK_RESPONSE_CANCEL,
-						     "list-add", 0,
-						     "document-open", 1,
+						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+						     GTK_STOCK_ADD, 0,
+						     GTK_STOCK_OPEN, 1,
 						     NULL);
 
 			gtk_dialog_set_default_response (GTK_DIALOG (d), 2);
@@ -4235,7 +4235,7 @@ fr_window_drag_data_received  (GtkWidget          *widget,
 						     "dialog-question",
 						     _("Do you want to create a new archive with these files?"),
 						     NULL,
-						     "process-stop", GTK_RESPONSE_CANCEL,
+						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 						     _("Create _Archive"), GTK_RESPONSE_YES,
 						     NULL);
 
@@ -6896,7 +6896,7 @@ _fr_window_ask_overwrite_dialog (OverwriteData *odata)
 						     "dialog-question",
 						     msg,
 						     details,
-						     "process-stop", GTK_RESPONSE_CANCEL,
+						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 						     _("Replace _All"), _FR_RESPONSE_OVERWRITE_YES_ALL,
 						     _("_Skip"), _FR_RESPONSE_OVERWRITE_NO,
 						     _("_Replace"), _FR_RESPONSE_OVERWRITE_YES,
@@ -6941,7 +6941,7 @@ _fr_window_ask_overwrite_dialog (OverwriteData *odata)
 					     "dialog-warning",
 					     _("Extraction not performed"),
 					     NULL,
-					     "gtk-ok", GTK_RESPONSE_OK,
+					     GTK_STOCK_OK, GTK_RESPONSE_OK,
 					     NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
 		fr_window_show_error_dialog (odata->window, d, GTK_WINDOW (odata->window), _("Extraction not performed"));
@@ -7006,7 +7006,7 @@ fr_window_archive_extract (FrWindow    *window,
 						     "dialog-question",
 						     msg,
 						     NULL,
-						     "process-stop", GTK_RESPONSE_CANCEL,
+						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
 						     _("Create _Folder"), GTK_RESPONSE_YES,
 						     NULL);
 
@@ -7049,7 +7049,7 @@ fr_window_archive_extract (FrWindow    *window,
 					     "dialog-warning",
 					     _("Extraction not performed"),
 					     NULL,
-					     "gtk-ok", GTK_RESPONSE_OK,
+					     GTK_STOCK_OK, GTK_RESPONSE_OK,
 					     NULL);
 		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
 		fr_window_show_error_dialog (window, d, GTK_WINDOW (window), _("Extraction not performed"));
@@ -7907,7 +7907,7 @@ fr_window_rename_selection (FrWindow *window,
 						       "dialog-question",
 						       (renaming_dir ? _("Could not rename the folder") : _("Could not rename the file")),
 						       reason,
-						       "window-close", GTK_RESPONSE_OK,
+						       GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
 						       NULL);
 			gtk_dialog_run (GTK_DIALOG (dlg));
 			gtk_widget_destroy (dlg);
