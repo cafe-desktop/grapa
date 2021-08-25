@@ -43,6 +43,10 @@ pref_util_save_window_geometry (GtkWindow  *window,
 		dialog_width = "width-addfiles";
 		dialog_height = "height-addfiles";
 	}
+	else if (g_strcmp0 (dialog_id, "addfolder") == 0) {
+		dialog_width = "width-addfolder";
+		dialog_height = "height-addfolder";
+	}
 	else {
 		dialog_width = "width";
 		dialog_height = "height";
@@ -73,6 +77,10 @@ pref_util_restore_window_geometry (GtkWindow  *window,
 	if (g_strcmp0 (dialog_id, "add") == 0) {
 		dialog_width = "width-addfiles";
 		dialog_height = "height-addfiles";
+	}
+	else if (g_strcmp0 (dialog_id, "addfolder") == 0) {
+		dialog_width = "width-addfolder";
+		dialog_height = "height-addfolder";
 	}
 	else {
 		dialog_width = "width";
