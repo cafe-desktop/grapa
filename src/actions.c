@@ -380,11 +380,11 @@ activate_action_open (GtkAction *action,
     GtkFileFilter *filter;
     int            i;
 
-    file_sel = grapa_file_chooser_dialog_new (_("Open"),
+    file_sel = gtk_file_chooser_dialog_new (_("Open"),
                         GTK_WINDOW (window),
                         GTK_FILE_CHOOSER_ACTION_OPEN,
-                        "process-stop", GTK_RESPONSE_CANCEL,
-                        "document-open", GTK_RESPONSE_OK,
+                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+                        GTK_STOCK_OPEN, GTK_RESPONSE_OK,
                         NULL);
     gtk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
 #if !GTK_CHECK_VERSION (3,99,0)

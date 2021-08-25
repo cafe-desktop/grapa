@@ -684,68 +684,6 @@ _gtk_widget_lookup_for_size (GtkWidget *widget,
 }
 
 
-static GtkWidget *
-grapa_file_chooser_dialog_new_valist (const gchar          *title,
-				      GtkWindow            *parent,
-				      GtkFileChooserAction  action,
-				      const gchar          *first_button_text,
-				      va_list               varargs)
-{
-	GtkWidget *result;
-	const char *button_text = first_button_text;
-	gint response_id;
-
-	result = g_object_new (GTK_TYPE_FILE_CHOOSER_DIALOG,
-			       "title", title,
-			       "action", action,
-			       NULL);
-
-	if (parent)
-		gtk_window_set_transient_for (GTK_WINDOW (result), parent);
-
-	while (button_text)
-		{
-			response_id = va_arg (varargs, gint);
-
-			if (g_strcmp0 (button_text, "process-stop") == 0)
-				grapa_dialog_add_button (GTK_DIALOG (result), _("_Cancel"), button_text, response_id);
-			else if (g_strcmp0 (button_text, "document-open") == 0)
-				grapa_dialog_add_button (GTK_DIALOG (result), _("_Open"), button_text, response_id);
-			else if (g_strcmp0 (button_text, "help-browser") == 0)
-				grapa_dialog_add_button (GTK_DIALOG (result), _("_Help"), button_text, response_id);
-			else if ((g_strcmp0 (button_text, "grapa_add-files-to-archive") == 0) ||
-				 (g_strcmp0 (button_text, "grapa_add-folder-to-archive") == 0))
-				grapa_dialog_add_button (GTK_DIALOG (result), _("_Add"), button_text, response_id);
-			else
-				gtk_dialog_add_button (GTK_DIALOG (result), button_text, response_id);
-
-			button_text = va_arg (varargs, const gchar *);
-		}
-
-	return result;
-}
-
-
-GtkWidget *
-grapa_file_chooser_dialog_new (const gchar          *title,
-			       GtkWindow            *parent,
-			       GtkFileChooserAction  action,
-			       const gchar          *first_button_text,
-			       ...)
-{
-	GtkWidget *result;
-	va_list varargs;
-
-	va_start (varargs, first_button_text);
-	result = grapa_file_chooser_dialog_new_valist (title, parent, action,
-						       first_button_text,
-						       varargs);
-	va_end (varargs);
-
-	return result;
-}
-
-
 gchar *
 grapa_file_chooser_get_current_folder_uri (GtkFileChooser *chooser)
 {
