@@ -2593,14 +2593,14 @@ create_the_progress_dialog (FrWindow *window)
 								     NULL,
 								     NULL);
 
-	window->priv->pd_quit_button = grapa_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Quit"), "application-exit", DIALOG_RESPONSE_QUIT);
+	window->priv->pd_quit_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), GTK_STOCK_QUIT, DIALOG_RESPONSE_QUIT);
 	window->priv->pd_open_archive_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Open the Archive"), DIALOG_RESPONSE_OPEN_ARCHIVE);
 	window->priv->pd_open_destination_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Show the Files"), DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER);
 	window->priv->pd_open_destination_and_quit_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("Show the _Files and Quit"), DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER_AND_QUIT);
-	window->priv->pd_close_button = grapa_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Close"), "window-close", GTK_RESPONSE_CLOSE);
-	window->priv->pd_cancel_button = grapa_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
+	window->priv->pd_close_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
+	window->priv->pd_cancel_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
 	/*add start button default suspend*/
-	window->priv->pd_state_button = grapa_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Pause"), "media-playback-pause", GTK_RESPONSE_ACCEPT);
+	window->priv->pd_state_button = gtk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), GTK_STOCK_MEDIA_PAUSE, GTK_RESPONSE_ACCEPT);
 	d = GTK_DIALOG (window->priv->progress_dialog);
 	gtk_window_set_resizable (GTK_WINDOW (d), TRUE);
 	gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
@@ -7455,7 +7455,7 @@ fr_window_view_last_output (FrWindow   *window,
 	gtk_window_set_title (GTK_WINDOW (dialog), title);
 	gtk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (window));
 	gtk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
-	grapa_dialog_add_button (GTK_DIALOG (dialog), _("_Close"), "window-close", GTK_RESPONSE_CLOSE);
+	gtk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
 
 	gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
 	gtk_window_set_resizable (GTK_WINDOW (dialog), TRUE);
