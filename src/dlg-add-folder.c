@@ -236,7 +236,7 @@ add_folder_cb (GtkWidget *widget,
 	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (filechooser), FALSE);
 
 #if !GTK_CHECK_VERSION (3,99,0)
-	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (file_sel), FALSE);
+	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (filechooser), FALSE);
 #endif
 	gtk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
 
