@@ -182,6 +182,12 @@
     <key name="height-addfiles" type="i">
       <default>-1</default>
     </key>
+    <key name="width-addfolder" type="i">
+      <default>-1</default>
+    </key>
+    <key name="height-addfolder" type="i">
+      <default>-1</default>
+    </key>
 </schema>
   <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.cafe.grapa.dialogs.batch-add" path="/org/cafe/grapa/dialogs/batch-add/">
     <key name="default-extension" type="s">

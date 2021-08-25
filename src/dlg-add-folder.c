@@ -204,6 +204,15 @@ static void clear_options_cb (GtkWidget *w, DialogData *data);
 static void dlg_add_folder_load_last_options (DialogData *data);
 
 
+static gboolean
+add_folder_window_unrealize_cb (GtkWidget  *widget,
+				gpointer    data)
+{
+	pref_util_save_window_geometry (GTK_WINDOW (widget), "addfolder");
+	return FALSE;
+}
+
+
 /* create the "add" dialog. */
 void
 add_folder_cb (GtkWidget *widget,
@@ -377,7 +386,13 @@ add_folder_cb (GtkWidget *widget,
 			  G_CALLBACK (clear_options_cb),
 			  data);
 
+	g_signal_connect (G_OBJECT (file_sel),
+			  "unrealize",
+			  G_CALLBACK (add_folder_window_unrealize_cb),
+			  NULL);
+
 	gtk_window_set_modal (GTK_WINDOW (file_sel),TRUE);
+	pref_util_restore_window_geometry (GTK_WINDOW (file_sel), "addfolder");
 	gtk_widget_show_all (file_sel);
 }
 
