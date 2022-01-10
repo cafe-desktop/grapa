@@ -26,24 +26,15 @@ before_scripts:
   - ./install-from-git https://github.com/cafe-desktop/cafe-common master
 
 build_scripts:
-  - export TITLESCANBUILD="${REPO_NAME} (clang-tools `dpkg -s clang-tools|grep -i version|cut -d " " -f 2`) - scan-build results"
   - mkdir html-report
   - cppcheck $ARGS_CPPCHECK . 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
 
-  - NOCONFIGURE=1 ./autogen.sh
-  - scan-build $CHECKERS ./configure --enable-compile-warnings=maximum
-  - if [ $CPU_COUNT -gt 1 ]; then
-  -     scan-build $CHECKERS --html-title="$TITLESCANBUILD" --keep-cc -o html-report make -j $(( $CPU_COUNT + 1 )) 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
-  - else
-  -     scan-build $CHECKERS --html-title="$TITLESCANBUILD" --keep-cc -o html-report make 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
-  - fi
+  - ./make-scanbuild '--enable-compile-warnings=maximum'
 
-  - make check 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
   - apt list --installed cafe-common libctk-3-dev 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
   - echo Errors detected in the build `cat ./html-report/output_${TRAVIS_COMMIT} | grep ' error:' | grep -v "\[" | wc -l` 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
   - echo Warnings detected in the logs `cat ./html-report/output_${TRAVIS_COMMIT} | grep -i warning | wc -l` 2>&1 | tee -a ./html-report/output_${TRAVIS_COMMIT}
-  - make install
+
 
 after_scripts:
-  - make distcheck
   - if [ -f "gen-index" ]; then ./gen-index -l 20; fi
