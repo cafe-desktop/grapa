@@ -32,4 +32,4 @@ build_scripts:
   - ./after-build
 
 after_scripts:
-  - if [ -f "gen-index" ]; then ./gen-index -l 20; fi
+  - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/cafe-desktop/grapa/raw/master/data/icons/16x16/apps/grapa.png; fi
