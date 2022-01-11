@@ -150,7 +150,7 @@ egg_tree_multi_drag_source_drag_data_delete (EggTreeMultiDragSource *drag_source
  **/
 gboolean
 egg_tree_multi_drag_source_drag_data_get (EggTreeMultiDragSource *drag_source,
-					  GdkDragContext         *context,
+					  CdkDragContext         *context,
 					  CtkSelectionData       *selection_data,
 					  GList                  *path_list)
 {
@@ -193,7 +193,7 @@ stop_drag_check (CtkWidget *widget)
 
 static gboolean
 egg_tree_multi_drag_button_release_event (CtkWidget      *widget,
-					  GdkEventButton *event,
+					  CdkEventButton *event,
 					  gpointer        data)
 {
   EggTreeMultiDndData *priv_data;
@@ -233,7 +233,7 @@ path_list_free (GList *path_list)
 
 
 static void
-set_context_data (GdkDragContext *context,
+set_context_data (CdkDragContext *context,
 		  GList          *path_list)
 {
   g_object_set_data_full (G_OBJECT (context),
@@ -244,7 +244,7 @@ set_context_data (GdkDragContext *context,
 
 
 static GList *
-get_context_data (GdkDragContext *context)
+get_context_data (CdkDragContext *context)
 {
   return g_object_get_data (G_OBJECT (context),
 			    "egg-tree-view-multi-source-row");
@@ -253,7 +253,7 @@ get_context_data (GdkDragContext *context)
 
 static gboolean
 egg_tree_multi_drag_drag_data_get (CtkWidget        *widget,
-				   GdkDragContext   *context,
+				   CdkDragContext   *context,
 				   CtkSelectionData *selection_data,
 				   guint             info,
 				   guint             time)
@@ -288,7 +288,7 @@ egg_tree_multi_drag_drag_data_get (CtkWidget        *widget,
 
 static gboolean
 egg_tree_multi_drag_motion_event (CtkWidget      *widget,
-				  GdkEventMotion *event,
+				  CdkEventMotion *event,
 				  gpointer        data)
 {
   EggTreeMultiDndData *priv_data;
@@ -304,7 +304,7 @@ egg_tree_multi_drag_motion_event (CtkWidget      *widget,
       GList            *path_list = NULL;
       CtkTreeSelection *selection;
       CtkTreeModel     *model;
-      GdkDragContext   *context;
+      CdkDragContext   *context;
 
       stop_drag_check (widget);
 
@@ -328,7 +328,7 @@ egg_tree_multi_drag_motion_event (CtkWidget      *widget,
 	                                             target_list,
 	                                             GDK_ACTION_COPY,
 	                                             priv_data->pressed_button,
-	                                             (GdkEvent*) event,
+	                                             (CdkEvent*) event,
 	                                             event->x,
 	                                             event->y);
 	  set_context_data (context, path_list);
@@ -367,7 +367,7 @@ egg_tree_multi_drag_motion_event (CtkWidget      *widget,
 
 static gboolean
 egg_tree_multi_drag_button_press_event (CtkWidget      *widget,
-					GdkEventButton *event,
+					CdkEventButton *event,
 					gpointer        data)
 {
   CtkTreeView         *tree_view;
@@ -401,7 +401,7 @@ egg_tree_multi_drag_button_press_event (CtkWidget      *widget,
     {
       /* save the event to be propagated in order */
       priv_data->event_list = g_slist_append (priv_data->event_list,
-					      cdk_event_copy ((GdkEvent*)event));
+					      cdk_event_copy ((CdkEvent*)event));
       return TRUE;
     }
 
@@ -433,7 +433,7 @@ egg_tree_multi_drag_button_press_event (CtkWidget      *widget,
       priv_data->pending_event = TRUE;
       if (!call_parent)
 	priv_data->event_list = g_slist_append (priv_data->event_list,
-						cdk_event_copy ((GdkEvent*)event));
+						cdk_event_copy ((CdkEvent*)event));
 
       if (priv_data->motion_notify_handler == 0)
         {

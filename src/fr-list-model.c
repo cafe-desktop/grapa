@@ -69,7 +69,7 @@ fr_list_model_multi_row_draggable (EggTreeMultiDragSource *drag_source,
 
 static gboolean
 fr_list_model_multi_drag_data_get (EggTreeMultiDragSource *drag_source,
-				   GdkDragContext         *context,
+				   CdkDragContext         *context,
 				   CtkSelectionData       *selection_data,
 				   GList                  *path_list)
 {

@@ -944,7 +944,7 @@ egg_file_format_chooser_add_pixbuf_formats (EggFileFormatChooser *self,
 
   for(iter = pixbuf_formats, i = 0; iter; iter = iter->next, ++i)
     {
-      GdkPixbufFormat *format = iter->data;
+      CdkPixbufFormat *format = iter->data;
 
       gchar *description, *name, *extensions, *icon;
       gchar **mime_types, **extension_list;
