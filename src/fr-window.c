@@ -1283,10 +1283,10 @@ get_parent_dir (const char *current_dir)
 static void fr_window_update_statusbar_list_info (FrWindow *window);
 
 
-static CdkPixbuf *
+static GdkPixbuf *
 get_mime_type_icon (const char *mime_type)
 {
-	CdkPixbuf *pixbuf = NULL;
+	GdkPixbuf *pixbuf = NULL;
 
 	pixbuf = g_hash_table_lookup (tree_pixbuf_hash, mime_type);
 	if (pixbuf != NULL) {
@@ -1306,11 +1306,11 @@ get_mime_type_icon (const char *mime_type)
 }
 
 
-static CdkPixbuf *
+static GdkPixbuf *
 get_icon (CtkWidget *widget,
 	  FileData  *fdata)
 {
-	CdkPixbuf  *pixbuf = NULL;
+	GdkPixbuf  *pixbuf = NULL;
 	const char *content_type;
 	GIcon      *icon;
 
@@ -1342,11 +1342,11 @@ get_icon (CtkWidget *widget,
 }
 
 
-static CdkPixbuf *
+static GdkPixbuf *
 get_emblem (CtkWidget *widget,
 	    FileData  *fdata)
 {
-	CdkPixbuf *pixbuf = NULL;
+	GdkPixbuf *pixbuf = NULL;
 
 	if (! fdata->encrypted)
 		return NULL;
@@ -1571,7 +1571,7 @@ fr_window_populate_file_list (FrWindow  *window,
 	for (i = 0; i < files->len; i++) {
 		FileData    *fdata = g_ptr_array_index (files, i);
 		CtkTreeIter  iter;
-		CdkPixbuf   *icon, *emblem;
+		GdkPixbuf   *icon, *emblem;
 		char        *utf8_name;
 
 		if (fdata->list_name == NULL)
@@ -1777,7 +1777,7 @@ fr_window_update_dir_tree (FrWindow *window)
 	GPtrArray  *dirs;
 	GHashTable *dir_cache;
 	guint       i;
-	CdkPixbuf  *icon;
+	GdkPixbuf  *icon;
 
 	ctk_tree_store_clear (window->priv->tree_store);
 
@@ -2573,7 +2573,7 @@ create_the_progress_dialog (FrWindow *window)
 	CtkWidget     *progress_vbox;
 	CtkWidget     *lbl;
 	PangoAttrList *attr_list;
-	CdkPixbuf     *icon;
+	GdkPixbuf     *icon;
 
 	if (window->priv->progress_dialog != NULL)
 		return;
