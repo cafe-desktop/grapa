@@ -86,7 +86,7 @@
 
 static GHashTable     *pixbuf_hash = NULL;
 static GHashTable     *tree_pixbuf_hash = NULL;
-static GtkIconTheme   *icon_theme = NULL;
+static CtkIconTheme   *icon_theme = NULL;
 static int             file_list_icon_size = 0;
 static int             dir_tree_icon_size = 0;
 
@@ -100,16 +100,16 @@ static int             dir_tree_icon_size = 0;
 #define FR_CLIPBOARD (gdk_atom_intern_static_string ("_RNGRAMPA_SPECIAL_CLIPBOARD"))
 #define FR_SPECIAL_URI_LIST (gdk_atom_intern_static_string ("application/grapa-uri-list"))
 
-static GtkTargetEntry clipboard_targets[] = {
+static CtkTargetEntry clipboard_targets[] = {
 	{ "application/grapa-uri-list", 0, 1 }
 };
 
-static GtkTargetEntry target_table[] = {
+static CtkTargetEntry target_table[] = {
 	{ "XdndGrapa0", 0, 0 },
 	{ "text/uri-list", 0, 1 },
 };
 
-static GtkTargetEntry folder_tree_targets[] = {
+static CtkTargetEntry folder_tree_targets[] = {
 	{ "XdndGrapa0", 0, 0 },
 	{ "XdndDirectSave0", 0, 2 }
 };
@@ -244,28 +244,28 @@ enum {
 	LAST_SIGNAL
 };
 
-static GtkApplicationWindowClass *parent_class = NULL;
+static CtkApplicationWindowClass *parent_class = NULL;
 static guint fr_window_signals[LAST_SIGNAL] = { 0 };
 
 struct _FrWindowPrivateData {
-	GtkWidget         *layout;
-	GtkWidget         *contents;
-	GtkWidget         *list_view;
-	GtkListStore      *list_store;
-	GtkWidget         *tree_view;
-	GtkTreeStore      *tree_store;
-	GtkWidget         *toolbar;
-	GtkWidget         *statusbar;
-	GtkWidget         *progress_bar;
-	GtkWidget         *location_bar;
-	GtkWidget         *location_entry;
-	GtkWidget         *location_label;
-	GtkWidget         *filter_bar;
-	GtkWidget         *filter_entry;
-	GtkWidget         *paned;
-	GtkWidget         *sidepane;
-	GtkTreePath       *list_hover_path;
-	GtkTreeViewColumn *filename_column;
+	CtkWidget         *layout;
+	CtkWidget         *contents;
+	CtkWidget         *list_view;
+	CtkListStore      *list_store;
+	CtkWidget         *tree_view;
+	CtkTreeStore      *tree_store;
+	CtkWidget         *toolbar;
+	CtkWidget         *statusbar;
+	CtkWidget         *progress_bar;
+	CtkWidget         *location_bar;
+	CtkWidget         *location_entry;
+	CtkWidget         *location_label;
+	CtkWidget         *filter_bar;
+	CtkWidget         *filter_entry;
+	CtkWidget         *paned;
+	CtkWidget         *sidepane;
+	CtkTreePath       *list_hover_path;
+	CtkTreeViewColumn *filename_column;
 
 	gboolean         filter_mode;
 	gint             current_view_length;
@@ -274,8 +274,8 @@ struct _FrWindowPrivateData {
 	guint            list_info_cid;
 	guint            progress_cid;
 
-	GtkWidget *      up_arrows[5];
-	GtkWidget *      down_arrows[5];
+	CtkWidget *      up_arrows[5];
+	CtkWidget *      down_arrows[5];
 
 	FrAction         action;
 	gboolean         archive_present;
@@ -302,10 +302,10 @@ struct _FrWindowPrivateData {
 
 	gboolean         give_focus_to_the_list;
 	gboolean         single_click;
-	GtkTreePath     *path_clicked;
+	CtkTreePath     *path_clicked;
 
 	FrWindowSortMethod sort_method;
-	GtkSortType      sort_type;
+	CtkSortType      sort_type;
 
 	char *           last_location;
 
@@ -338,11 +338,11 @@ struct _FrWindowPrivateData {
 
 	FrArchive       *copy_from_archive;
 
-	GtkActionGroup  *actions;
+	CtkActionGroup  *actions;
 
-	GtkWidget        *file_popup_menu;
-	GtkWidget        *folder_popup_menu;
-	GtkWidget        *sidebar_folder_popup_menu;
+	CtkWidget        *file_popup_menu;
+	CtkWidget        *folder_popup_menu;
+	CtkWidget        *sidebar_folder_popup_menu;
 
 	/* dragged files data */
 
@@ -354,18 +354,18 @@ struct _FrWindowPrivateData {
 
 	/* progress dialog data */
 
-	GtkWidget        *progress_dialog;
-	GtkWidget        *pd_action;
-	GtkWidget        *pd_message;
-	GtkWidget        *pd_progress_bar;
-	GtkWidget        *pd_cancel_button;
-	GtkWidget        *pd_close_button;
-	GtkWidget        *pd_open_archive_button;
-	GtkWidget        *pd_open_destination_button;
-	GtkWidget        *pd_open_destination_and_quit_button;
-	GtkWidget        *pd_quit_button;
-	GtkWidget        *pd_state_button;    //Switch state, pause state or start state
-	GtkWidget        *pd_icon;
+	CtkWidget        *progress_dialog;
+	CtkWidget        *pd_action;
+	CtkWidget        *pd_message;
+	CtkWidget        *pd_progress_bar;
+	CtkWidget        *pd_cancel_button;
+	CtkWidget        *pd_close_button;
+	CtkWidget        *pd_open_archive_button;
+	CtkWidget        *pd_open_destination_button;
+	CtkWidget        *pd_open_destination_and_quit_button;
+	CtkWidget        *pd_quit_button;
+	CtkWidget        *pd_state_button;    //Switch state, pause state or start state
+	CtkWidget        *pd_icon;
 	gboolean          progress_pulse;
 	guint             progress_timeout;  /* Timeout to display the progress dialog. */
 	guint             hide_progress_timeout;  /* Timeout to hide the progress dialog. */
@@ -403,9 +403,9 @@ struct _FrWindowPrivateData {
 	gboolean          update_dropped_files;
 	gboolean          batch_adding_one_file;
 
-	GtkWindow        *load_error_parent_window;
+	CtkWindow        *load_error_parent_window;
 	gboolean          showing_error_dialog;
-	GtkWindow        *error_dialog_parent;
+	CtkWindow        *error_dialog_parent;
 };
 
 
@@ -753,11 +753,11 @@ fr_window_class_init (FrWindowClass *class)
 }
 
 
-static void fr_window_update_paste_command_sensitivity (FrWindow *, GtkClipboard *);
+static void fr_window_update_paste_command_sensitivity (FrWindow *, CtkClipboard *);
 
 
 static void
-clipboard_owner_change_cb (GtkClipboard *clipboard,
+clipboard_owner_change_cb (CtkClipboard *clipboard,
 			   GdkEvent     *event,
 			   gpointer      user_data)
 {
@@ -766,10 +766,10 @@ clipboard_owner_change_cb (GtkClipboard *clipboard,
 
 
 static void
-fr_window_realized (GtkWidget *window,
+fr_window_realized (CtkWidget *window,
 		    gpointer  *data)
 {
-	GtkClipboard *clipboard;
+	CtkClipboard *clipboard;
 
 	clipboard = ctk_widget_get_clipboard (window, FR_CLIPBOARD);
 	g_signal_connect (clipboard,
@@ -780,10 +780,10 @@ fr_window_realized (GtkWidget *window,
 
 
 static void
-fr_window_unrealized (GtkWidget *window,
+fr_window_unrealized (CtkWidget *window,
 		      gpointer  *data)
 {
-	GtkClipboard *clipboard;
+	CtkClipboard *clipboard;
 
 	clipboard = ctk_widget_get_clipboard (window, FR_CLIPBOARD);
 	g_signal_handlers_disconnect_by_func (clipboard,
@@ -795,7 +795,7 @@ fr_window_unrealized (GtkWidget *window,
 static void
 fr_window_init (FrWindow *window)
 {
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 
 	window->priv = g_new0 (FrWindowPrivateData, 1);
 	window->priv->update_dropped_files = FALSE;
@@ -1307,7 +1307,7 @@ get_mime_type_icon (const char *mime_type)
 
 
 static GdkPixbuf *
-get_icon (GtkWidget *widget,
+get_icon (CtkWidget *widget,
 	  FileData  *fdata)
 {
 	GdkPixbuf  *pixbuf = NULL;
@@ -1343,7 +1343,7 @@ get_icon (GtkWidget *widget,
 
 
 static GdkPixbuf *
-get_emblem (GtkWidget *widget,
+get_emblem (CtkWidget *widget,
 	    FileData  *fdata)
 {
 	GdkPixbuf *pixbuf = NULL;
@@ -1410,9 +1410,9 @@ get_sort_method_from_column (int column_id)
 
 
 static void
-add_selected_from_list_view (GtkTreeModel *model,
-			     GtkTreePath  *path,
-			     GtkTreeIter  *iter,
+add_selected_from_list_view (CtkTreeModel *model,
+			     CtkTreePath  *path,
+			     CtkTreeIter  *iter,
 			     gpointer      data)
 {
 	GList    **list = data;
@@ -1426,9 +1426,9 @@ add_selected_from_list_view (GtkTreeModel *model,
 
 
 static void
-add_selected_from_tree_view (GtkTreeModel *model,
-			     GtkTreePath  *path,
-			     GtkTreeIter  *iter,
+add_selected_from_tree_view (CtkTreeModel *model,
+			     CtkTreePath  *path,
+			     CtkTreeIter  *iter,
 			     gpointer      data)
 {
 	GList **list = data;
@@ -1442,9 +1442,9 @@ add_selected_from_tree_view (GtkTreeModel *model,
 
 
 static void
-add_selected_fd (GtkTreeModel *model,
-		 GtkTreePath  *path,
-		 GtkTreeIter  *iter,
+add_selected_fd (CtkTreeModel *model,
+		 CtkTreePath  *path,
+		 CtkTreeIter  *iter,
 		 gpointer      data)
 {
 	GList    **list = data;
@@ -1461,7 +1461,7 @@ add_selected_fd (GtkTreeModel *model,
 static GList *
 get_selection_as_fd (FrWindow *window)
 {
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 	GList            *list = NULL;
 
 	if (! ctk_widget_get_realized (window->priv->list_view))
@@ -1570,7 +1570,7 @@ fr_window_populate_file_list (FrWindow  *window,
 
 	for (i = 0; i < files->len; i++) {
 		FileData    *fdata = g_ptr_array_index (files, i);
-		GtkTreeIter  iter;
+		CtkTreeIter  iter;
 		GdkPixbuf   *icon, *emblem;
 		char        *utf8_name;
 
@@ -1681,8 +1681,8 @@ path_compare (gconstpointer a,
 static gboolean
 get_tree_iter_from_path (FrWindow    *window,
 			 const char  *path,
-			 GtkTreeIter *parent,
-			 GtkTreeIter *iter)
+			 CtkTreeIter *parent,
+			 CtkTreeIter *iter)
 {
 	gboolean    result = FALSE;
 
@@ -1690,7 +1690,7 @@ get_tree_iter_from_path (FrWindow    *window,
 		return FALSE;
 
 	do {
-		GtkTreeIter  tmp;
+		CtkTreeIter  tmp;
 		char        *iter_path;
 
 		if (get_tree_iter_from_path (window, path, iter, &tmp)) {
@@ -1720,7 +1720,7 @@ set_sensitive (FrWindow   *window,
 	       const char *action_name,
 	       gboolean    sensitive)
 {
-	GtkAction *action;
+	CtkAction *action;
 
 	action = ctk_action_group_get_action (window->priv->actions, action_name);
 	g_object_set (action, "sensitive", sensitive, NULL);
@@ -1732,7 +1732,7 @@ fr_window_update_current_location (FrWindow *window)
 {
 	const char *current_dir = fr_window_get_current_location (window);
 	char       *path;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	if (window->priv->list_mode == FR_WINDOW_LIST_MODE_FLAT) {
 		ctk_widget_hide (window->priv->location_bar);
@@ -1757,8 +1757,8 @@ fr_window_update_current_location (FrWindow *window)
 
 	path = remove_ending_separator (current_dir);
 	if (get_tree_iter_from_path (window, path, NULL, &iter)) {
-		GtkTreeSelection *selection;
-		GtkTreePath      *t_path;
+		CtkTreeSelection *selection;
+		CtkTreePath      *t_path;
 
 		t_path = ctk_tree_model_get_path (GTK_TREE_MODEL (window->priv->tree_store), &iter);
 		ctk_tree_view_expand_to_path (GTK_TREE_VIEW (window->priv->tree_view), t_path);
@@ -1845,7 +1845,7 @@ fr_window_update_dir_tree (FrWindow *window)
 
 	icon = get_mime_type_icon (MIME_TYPE_ARCHIVE);
 	{
-		GtkTreeIter  node;
+		CtkTreeIter  node;
 		char        *uri;
 		char        *name;
 
@@ -1872,9 +1872,9 @@ fr_window_update_dir_tree (FrWindow *window)
 	for (i = 0; i < dirs->len; i++) {
 		char        *dir = g_ptr_array_index (dirs, i);
 		char        *parent_dir;
-		GtkTreePath *parent_path;
-		GtkTreeIter  parent;
-		GtkTreeIter  node;
+		CtkTreePath *parent_path;
+		CtkTreeIter  parent;
+		CtkTreeIter  node;
 
 		parent_dir = remove_level_from_path (dir);
 		if (parent_dir == NULL)
@@ -2035,9 +2035,9 @@ fr_window_update_title (FrWindow *window)
 
 
 static void
-check_whether_has_a_dir (GtkTreeModel *model,
-			 GtkTreePath  *path,
-			 GtkTreeIter  *iter,
+check_whether_has_a_dir (CtkTreeModel *model,
+			 CtkTreePath  *path,
+			 CtkTreeIter  *iter,
 			 gpointer      data)
 {
 	gboolean *has_a_dir = data;
@@ -2054,7 +2054,7 @@ check_whether_has_a_dir (GtkTreeModel *model,
 static gboolean
 selection_has_a_dir (FrWindow *window)
 {
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 	gboolean          has_a_dir = FALSE;
 
 	if (! ctk_widget_get_realized (window->priv->list_view))
@@ -2077,7 +2077,7 @@ set_active (FrWindow   *window,
 	    const char *action_name,
 	    gboolean    is_active)
 {
-	GtkAction *action;
+	CtkAction *action;
 
 	action = ctk_action_group_get_action (window->priv->actions, action_name);
 	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), is_active);
@@ -2086,7 +2086,7 @@ set_active (FrWindow   *window,
 
 static void
 fr_window_update_paste_command_sensitivity (FrWindow     *window,
-					    GtkClipboard *clipboard)
+					    CtkClipboard *clipboard)
 {
 	gboolean running;
 	gboolean no_archive;
@@ -2184,7 +2184,7 @@ fr_window_update_sensitivity (FrWindow *window)
 
 
 static gboolean
-location_entry_key_press_event_cb (GtkWidget   *widget,
+location_entry_key_press_event_cb (CtkWidget   *widget,
 				   GdkEventKey *event,
 				   FrWindow    *window)
 {
@@ -2257,7 +2257,7 @@ close_progress_dialog (FrWindow *window,
 
 
 static gboolean
-progress_dialog_delete_event (GtkWidget *caller,
+progress_dialog_delete_event (CtkWidget *caller,
 			      GdkEvent  *event,
 			      FrWindow  *window)
 {
@@ -2271,7 +2271,7 @@ progress_dialog_delete_event (GtkWidget *caller,
 
 
 static void
-open_folder (GtkWindow  *parent,
+open_folder (CtkWindow  *parent,
 	     const char *folder)
 {
 	GError *error = NULL;
@@ -2280,7 +2280,7 @@ open_folder (GtkWindow  *parent,
 		return;
 
 	if (! ctk_show_uri_on_window (parent, folder, GDK_CURRENT_TIME, &error)) {
-		GtkWidget *d;
+		CtkWidget *d;
 		char      *utf8_name;
 		char      *message;
 
@@ -2310,7 +2310,7 @@ fr_window_view_extraction_destination_folder (FrWindow *window)
 }
 
 static void change_button_label (FrWindow  *window,
-                                 GtkWidget *button)
+                                 CtkWidget *button)
 {
 	const gchar *state;
 	state = ctk_button_get_label (GTK_BUTTON (button));
@@ -2350,11 +2350,11 @@ static void fr_state_switch (FrWindow  *window)
 }
 
 static void
-progress_dialog_response (GtkDialog *dialog,
+progress_dialog_response (CtkDialog *dialog,
 			  int        response_id,
 			  FrWindow  *window)
 {
-	GtkWidget *new_window;
+	CtkWidget *new_window;
 
 	switch (response_id) {
 	case GTK_RESPONSE_CANCEL:
@@ -2565,13 +2565,13 @@ fr_window_message_cb (FrCommand  *command,
 static void
 create_the_progress_dialog (FrWindow *window)
 {
-	GtkWindow     *parent;
-	GtkDialogFlags flags;
-	GtkDialog     *d;
-	GtkWidget     *hbox;
-	GtkWidget     *vbox;
-	GtkWidget     *progress_vbox;
-	GtkWidget     *lbl;
+	CtkWindow     *parent;
+	CtkDialogFlags flags;
+	CtkDialog     *d;
+	CtkWidget     *hbox;
+	CtkWidget     *vbox;
+	CtkWidget     *progress_vbox;
+	CtkWidget     *lbl;
 	PangoAttrList *attr_list;
 	GdkPixbuf     *icon;
 
@@ -2930,9 +2930,9 @@ fr_window_add_to_recent_list (FrWindow *window,
 		return;
 
 	if (window->archive->content_type != NULL) {
-		GtkRecentData *recent_data;
+		CtkRecentData *recent_data;
 
-		recent_data = g_new0 (GtkRecentData, 1);
+		recent_data = g_new0 (CtkRecentData, 1);
 		recent_data->mime_type = g_content_type_get_mime_type (window->archive->content_type);
 		recent_data->app_name = "Grapa";
 		recent_data->app_exec = "grapa";
@@ -2955,17 +2955,17 @@ fr_window_remove_from_recent_list (FrWindow *window,
 
 
 static void
-error_dialog_response_cb (GtkDialog *dialog,
+error_dialog_response_cb (CtkDialog *dialog,
 			  gint       arg1,
 			  gpointer   user_data)
 {
 	FrWindow  *window = user_data;
-	GtkWindow *dialog_parent = window->priv->error_dialog_parent;
+	CtkWindow *dialog_parent = window->priv->error_dialog_parent;
 
 	window->priv->showing_error_dialog = FALSE;
 	window->priv->error_dialog_parent = NULL;
 
-	if ((dialog_parent != NULL) && (ctk_widget_get_toplevel (GTK_WIDGET (dialog_parent)) != (GtkWidget*) dialog_parent))
+	if ((dialog_parent != NULL) && (ctk_widget_get_toplevel (GTK_WIDGET (dialog_parent)) != (CtkWidget*) dialog_parent))
 		ctk_window_set_modal (dialog_parent, TRUE);
 	ctk_widget_destroy (GTK_WIDGET (dialog));
 
@@ -2976,8 +2976,8 @@ error_dialog_response_cb (GtkDialog *dialog,
 
 static void
 fr_window_show_error_dialog (FrWindow   *window,
-			     GtkWidget  *dialog,
-			     GtkWindow  *dialog_parent,
+			     CtkWidget  *dialog,
+			     CtkWindow  *dialog_parent,
 			     const char *details)
 {
 	if (window->priv->batch_mode && ! window->priv->use_progress_dialog) {
@@ -3050,8 +3050,8 @@ handle_errors (FrWindow    *window,
 		char      *msg = NULL;
 		char      *utf8_name;
 		char      *details = NULL;
-		GtkWindow *dialog_parent;
-		GtkWidget *dialog;
+		CtkWindow *dialog_parent;
+		CtkWidget *dialog;
 		FrProcess *process = archive->process;
 		GList     *output = NULL;
 
@@ -3060,9 +3060,9 @@ handle_errors (FrWindow    *window,
 			window->priv->load_error_parent_window = NULL;
 		}
 		else {
-			dialog_parent = (GtkWindow *) window;
+			dialog_parent = (CtkWindow *) window;
 			if (window->priv->load_error_parent_window == NULL)
-				window->priv->load_error_parent_window = (GtkWindow *) window;
+				window->priv->load_error_parent_window = (CtkWindow *) window;
 		}
 
 		if ((action == FR_ACTION_LISTING_CONTENT) || (action == FR_ACTION_LOADING_ARCHIVE))
@@ -3452,7 +3452,7 @@ fr_window_get_file_list_selection (FrWindow *window,
 				   gboolean  recursive,
 				   gboolean *has_dirs)
 {
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 	GList            *selections = NULL, *list, *scan;
 
 	g_return_val_if_fail (window != NULL, NULL);
@@ -3494,7 +3494,7 @@ fr_window_get_folder_tree_selection (FrWindow *window,
 				     gboolean  recursive,
 				     gboolean *has_dirs)
 {
-	GtkTreeSelection *tree_selection;
+	CtkTreeSelection *tree_selection;
 	GList            *selections, *list, *scan;
 
 	g_return_val_if_fail (window != NULL, NULL);
@@ -3532,7 +3532,7 @@ fr_window_get_file_list_from_path_list (FrWindow *window,
 					GList    *path_list,
 					gboolean *has_dirs)
 {
-	GtkTreeModel *model;
+	CtkTreeModel *model;
 	GList        *selections, *list, *scan;
 
 	g_return_val_if_fail (window != NULL, NULL);
@@ -3544,9 +3544,9 @@ fr_window_get_file_list_from_path_list (FrWindow *window,
 		*has_dirs = FALSE;
 
 	for (scan = path_list; scan; scan = scan->next) {
-		GtkTreeRowReference *reference = scan->data;
-		GtkTreePath         *path;
-		GtkTreeIter          iter;
+		CtkTreeRowReference *reference = scan->data;
+		CtkTreePath         *path;
+		CtkTreeIter          iter;
 		FileData            *fdata;
 
 		path = ctk_tree_row_reference_get_path (reference);
@@ -3647,12 +3647,12 @@ fr_window_get_n_selected_files (FrWindow *window)
 
 
 static int
-dir_tree_button_press_cb (GtkWidget      *widget,
+dir_tree_button_press_cb (CtkWidget      *widget,
 			  GdkEventButton *event,
 			  gpointer        data)
 {
 	FrWindow         *window = data;
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 
 	if (event->window != ctk_tree_view_get_bin_window (GTK_TREE_VIEW (window->priv->tree_view)))
 		return FALSE;
@@ -3662,8 +3662,8 @@ dir_tree_button_press_cb (GtkWidget      *widget,
 		return FALSE;
 
 	if ((event->type == GDK_BUTTON_PRESS) && (event->button == 3)) {
-		GtkTreePath *path;
-		GtkTreeIter  iter;
+		CtkTreePath *path;
+		CtkTreeIter  iter;
 
 		if (ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (window->priv->tree_view),
 						   event->x, event->y,
@@ -3704,7 +3704,7 @@ dir_tree_button_press_cb (GtkWidget      *widget,
 static FileData *
 fr_window_get_selected_item_from_file_list (FrWindow *window)
 {
-	GtkTreeSelection *tree_selection;
+	CtkTreeSelection *tree_selection;
 	GList            *selection;
 	FileData         *fdata = NULL;
 
@@ -3732,7 +3732,7 @@ fr_window_get_selected_item_from_file_list (FrWindow *window)
 static char *
 fr_window_get_selected_folder_in_tree_view (FrWindow *window)
 {
-	GtkTreeSelection *tree_selection;
+	CtkTreeSelection *tree_selection;
 	GList            *selections;
 	char             *path = NULL;
 
@@ -3787,14 +3787,14 @@ fr_window_current_folder_activated (FrWindow *window,
 
 
 static gboolean
-row_activated_cb (GtkTreeView       *tree_view,
-		  GtkTreePath       *path,
-		  GtkTreeViewColumn *column,
+row_activated_cb (CtkTreeView       *tree_view,
+		  CtkTreePath       *path,
+		  CtkTreeViewColumn *column,
 		  gpointer           data)
 {
 	FrWindow    *window = data;
 	FileData    *fdata;
-	GtkTreeIter  iter;
+	CtkTreeIter  iter;
 
 	if (! ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->list_store),
 				       &iter,
@@ -3825,12 +3825,12 @@ row_activated_cb (GtkTreeView       *tree_view,
 
 
 static int
-file_button_press_cb (GtkWidget      *widget,
+file_button_press_cb (CtkWidget      *widget,
 		      GdkEventButton *event,
 		      gpointer        data)
 {
 	FrWindow         *window = data;
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 
 	if (event->window != ctk_tree_view_get_bin_window (GTK_TREE_VIEW (window->priv->list_view)))
 		return FALSE;
@@ -3845,8 +3845,8 @@ file_button_press_cb (GtkWidget      *widget,
 	}
 
 	if ((event->type == GDK_BUTTON_PRESS) && (event->button == 3)) {
-		GtkTreePath *path;
-		GtkTreeIter  iter;
+		CtkTreePath *path;
+		CtkTreeIter  iter;
 		int          n_selected;
 
 		if (ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (window->priv->list_view),
@@ -3877,7 +3877,7 @@ file_button_press_cb (GtkWidget      *widget,
 		return TRUE;
 	}
 	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 1)) {
-		GtkTreePath *path = NULL;
+		CtkTreePath *path = NULL;
 
 		if (! ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (window->priv->list_view),
 						     event->x, event->y,
@@ -3913,12 +3913,12 @@ file_button_press_cb (GtkWidget      *widget,
 
 
 static int
-file_button_release_cb (GtkWidget      *widget,
+file_button_release_cb (CtkWidget      *widget,
 			GdkEventButton *event,
 			gpointer        data)
 {
 	FrWindow         *window = data;
-	GtkTreeSelection *selection;
+	CtkTreeSelection *selection;
 
 	if (event->window != ctk_tree_view_get_bin_window (GTK_TREE_VIEW (window->priv->list_view)))
 		return FALSE;
@@ -3933,7 +3933,7 @@ file_button_release_cb (GtkWidget      *widget,
 	if ((event->type == GDK_BUTTON_RELEASE)
 	    && (event->button == 1)
 	    && (window->priv->path_clicked != NULL)) {
-		GtkTreePath *path = NULL;
+		CtkTreePath *path = NULL;
 
 		if (ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (window->priv->list_view),
 						   event->x, event->y,
@@ -3966,15 +3966,15 @@ file_button_release_cb (GtkWidget      *widget,
 
 
 static gboolean
-file_motion_notify_callback (GtkWidget *widget,
+file_motion_notify_callback (CtkWidget *widget,
 			     GdkEventMotion *event,
 			     gpointer user_data)
 {
 	FrWindow    *window = user_data;
 	GdkCursor   *cursor;
-	GtkTreePath *last_hover_path;
+	CtkTreePath *last_hover_path;
 	GdkDisplay  *display;
-	GtkTreeIter  iter;
+	CtkTreeIter  iter;
 
 	if (! window->priv->single_click)
 		return FALSE;
@@ -4025,12 +4025,12 @@ file_motion_notify_callback (GtkWidget *widget,
 
 
 static gboolean
-file_leave_notify_callback (GtkWidget *widget,
+file_leave_notify_callback (CtkWidget *widget,
 			    GdkEventCrossing *event,
 			    gpointer user_data)
 {
 	FrWindow    *window = user_data;
-	GtkTreeIter  iter;
+	CtkTreeIter  iter;
 
 	if (window->priv->single_click && (window->priv->list_hover_path != NULL)) {
 		ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->list_store),
@@ -4071,7 +4071,7 @@ get_uri_list_from_selection_data (char *uri_list)
 
 
 static gboolean
-fr_window_drag_motion (GtkWidget      *widget,
+fr_window_drag_motion (CtkWidget      *widget,
 		       GdkDragContext *context,
 		       gint            x,
 		       gint            y,
@@ -4125,11 +4125,11 @@ get_clipboard_data_from_selection_data (FrWindow   *window,
 
 
 static void
-fr_window_drag_data_received  (GtkWidget          *widget,
+fr_window_drag_data_received  (CtkWidget          *widget,
 			       GdkDragContext     *context,
 			       gint                x,
 			       gint                y,
-			       GtkSelectionData   *data,
+			       CtkSelectionData   *data,
 			       guint               info,
 			       guint               time,
 			       gpointer            extra_data)
@@ -4172,7 +4172,7 @@ fr_window_drag_data_received  (GtkWidget          *widget,
 
 	list = get_uri_list_from_selection_data ((char*) ctk_selection_data_get_data (data));
 	if (list == NULL) {
-		GtkWidget *d;
+		CtkWidget *d;
 
 		d = _ctk_error_dialog_new (GTK_WINDOW (window),
 					   GTK_DIALOG_MODAL,
@@ -4197,7 +4197,7 @@ fr_window_drag_data_received  (GtkWidget          *widget,
 	    && ! window->archive->is_compressed_file)
 	{
 		if (one_file && is_an_archive) {
-			GtkWidget *d;
+			CtkWidget *d;
 			gint       r;
 
 			d = _ctk_message_dialog_new (GTK_WINDOW (window),
@@ -4227,7 +4227,7 @@ fr_window_drag_data_received  (GtkWidget          *widget,
 		if (one_file && is_an_archive)
 			fr_window_archive_open (window, list->data, GTK_WINDOW (window));
 		else {
-			GtkWidget *d;
+			CtkWidget *d;
 			int        r;
 
 			d = _ctk_message_dialog_new (GTK_WINDOW (window),
@@ -4294,7 +4294,7 @@ fr_window_drag_data_received  (GtkWidget          *widget,
 
 
 static gboolean
-file_list_drag_begin (GtkWidget          *widget,
+file_list_drag_begin (CtkWidget          *widget,
 		      GdkDragContext     *context,
 		      gpointer            data)
 {
@@ -4322,7 +4322,7 @@ file_list_drag_begin (GtkWidget          *widget,
 
 
 static void
-file_list_drag_end (GtkWidget      *widget,
+file_list_drag_end (CtkWidget      *widget,
 		    GdkDragContext *context,
 		    gpointer        data)
 {
@@ -4446,9 +4446,9 @@ get_selection_data_from_clipboard_data (FrWindow        *window,
 
 
 static gboolean
-fr_window_folder_tree_drag_data_get (GtkWidget        *widget,
+fr_window_folder_tree_drag_data_get (CtkWidget        *widget,
 				     GdkDragContext   *context,
-				     GtkSelectionData *selection_data,
+				     CtkSelectionData *selection_data,
 				     guint             info,
 				     guint             time,
 				     gpointer          user_data)
@@ -4531,7 +4531,7 @@ fr_window_folder_tree_drag_data_get (GtkWidget        *widget,
 gboolean
 fr_window_file_list_drag_data_get (FrWindow         *window,
 				   GdkDragContext   *context,
-				   GtkSelectionData *selection_data,
+				   CtkSelectionData *selection_data,
 				   GList            *path_list)
 {
 	char *destination;
@@ -4630,7 +4630,7 @@ fr_window_deactivate_filter (FrWindow *window)
 
 
 static gboolean
-key_press_cb (GtkWidget   *widget,
+key_press_cb (CtkWidget   *widget,
 	      GdkEventKey *event,
 	      gpointer     data)
 {
@@ -4665,7 +4665,7 @@ key_press_cb (GtkWidget   *widget,
 
 	case GDK_KEY_F10:
 		if (event->state & GDK_SHIFT_MASK) {
-			GtkTreeSelection *selection;
+			CtkTreeSelection *selection;
 
 			selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
 			if (selection == NULL)
@@ -4723,11 +4723,11 @@ key_press_cb (GtkWidget   *widget,
 
 
 static gboolean
-dir_tree_selection_changed_cb (GtkTreeSelection *selection,
+dir_tree_selection_changed_cb (CtkTreeSelection *selection,
 			       gpointer          user_data)
 {
 	FrWindow    *window = user_data;
-	GtkTreeIter  iter;
+	CtkTreeIter  iter;
 
 	if (ctk_tree_selection_get_selected (selection, NULL, &iter)) {
 		char *path;
@@ -4745,7 +4745,7 @@ dir_tree_selection_changed_cb (GtkTreeSelection *selection,
 
 
 static gboolean
-selection_changed_cb (GtkTreeSelection *selection,
+selection_changed_cb (CtkTreeSelection *selection,
 		      gpointer          user_data)
 {
 	FrWindow *window = user_data;
@@ -4758,7 +4758,7 @@ selection_changed_cb (GtkTreeSelection *selection,
 
 
 static void
-fr_window_delete_event_cb (GtkWidget *caller,
+fr_window_delete_event_cb (CtkWidget *caller,
 			   GdkEvent  *event,
 			   FrWindow  *window)
 {
@@ -4783,14 +4783,14 @@ is_single_click_policy (FrWindow *window)
 
 
 static void
-filename_cell_data_func (GtkTreeViewColumn *column,
-			 GtkCellRenderer   *renderer,
-			 GtkTreeModel      *model,
-			 GtkTreeIter       *iter,
+filename_cell_data_func (CtkTreeViewColumn *column,
+			 CtkCellRenderer   *renderer,
+			 CtkTreeModel      *model,
+			 CtkTreeIter       *iter,
 			 FrWindow          *window)
 {
 	char           *text;
-	GtkTreePath    *path;
+	CtkTreePath    *path;
 	PangoUnderline  underline;
 
 	ctk_tree_model_get (model, iter,
@@ -4822,10 +4822,10 @@ filename_cell_data_func (GtkTreeViewColumn *column,
 
 static void
 add_dir_tree_columns (FrWindow    *window,
-		      GtkTreeView *treeview)
+		      CtkTreeView *treeview)
 {
-	GtkCellRenderer   *renderer;
-	GtkTreeViewColumn *column;
+	CtkCellRenderer   *renderer;
+	CtkTreeViewColumn *column;
 	GValue             value = { 0, };
 
 	/* First column. */
@@ -4867,14 +4867,14 @@ add_dir_tree_columns (FrWindow    *window,
 
 static void
 add_file_list_columns (FrWindow    *window,
-		       GtkTreeView *treeview)
+		       CtkTreeView *treeview)
 {
 	static const char *titles[] = {NC_("File", "Size"),
 				       NC_("File", "Type"),
 				       NC_("File", "Date Modified"),
 				       NC_("File", "Location")};
-	GtkCellRenderer   *renderer;
-	GtkTreeViewColumn *column;
+	CtkCellRenderer   *renderer;
+	CtkTreeViewColumn *column;
 	GValue             value = { 0, };
 	int                i, j, w;
 
@@ -4925,7 +4925,7 @@ add_file_list_columns (FrWindow    *window,
 	ctk_tree_view_column_set_resizable (column, TRUE);
 	ctk_tree_view_column_set_sort_column_id (column, COLUMN_NAME);
 	ctk_tree_view_column_set_cell_data_func (column, renderer,
-						 (GtkTreeCellDataFunc) filename_cell_data_func,
+						 (CtkTreeCellDataFunc) filename_cell_data_func,
 						 window, NULL);
 
 	ctk_tree_view_append_column (GTK_TREE_VIEW (treeview), column);
@@ -4958,9 +4958,9 @@ add_file_list_columns (FrWindow    *window,
 
 
 static int
-name_column_sort_func (GtkTreeModel *model,
-		       GtkTreeIter  *a,
-		       GtkTreeIter  *b,
+name_column_sort_func (CtkTreeModel *model,
+		       CtkTreeIter  *a,
+		       CtkTreeIter  *b,
 		       gpointer      user_data)
 {
 	FileData *fdata1, *fdata2;
@@ -4973,9 +4973,9 @@ name_column_sort_func (GtkTreeModel *model,
 
 
 static int
-size_column_sort_func (GtkTreeModel *model,
-		       GtkTreeIter  *a,
-		       GtkTreeIter  *b,
+size_column_sort_func (CtkTreeModel *model,
+		       CtkTreeIter  *a,
+		       CtkTreeIter  *b,
 		       gpointer      user_data)
 {
 	FileData *fdata1, *fdata2;
@@ -4988,9 +4988,9 @@ size_column_sort_func (GtkTreeModel *model,
 
 
 static int
-type_column_sort_func (GtkTreeModel *model,
-		       GtkTreeIter  *a,
-		       GtkTreeIter  *b,
+type_column_sort_func (CtkTreeModel *model,
+		       CtkTreeIter  *a,
+		       CtkTreeIter  *b,
 		       gpointer      user_data)
 {
 	FileData *fdata1, *fdata2;
@@ -5003,9 +5003,9 @@ type_column_sort_func (GtkTreeModel *model,
 
 
 static int
-time_column_sort_func (GtkTreeModel *model,
-		       GtkTreeIter  *a,
-		       GtkTreeIter  *b,
+time_column_sort_func (CtkTreeModel *model,
+		       CtkTreeIter  *a,
+		       CtkTreeIter  *b,
 		       gpointer      user_data)
 {
 	FileData *fdata1, *fdata2;
@@ -5018,9 +5018,9 @@ time_column_sort_func (GtkTreeModel *model,
 
 
 static int
-path_column_sort_func (GtkTreeModel *model,
-		       GtkTreeIter  *a,
-		       GtkTreeIter  *b,
+path_column_sort_func (CtkTreeModel *model,
+		       CtkTreeIter  *a,
+		       CtkTreeIter  *b,
 		       gpointer      user_data)
 {
 	FileData *fdata1, *fdata2;
@@ -5033,9 +5033,9 @@ path_column_sort_func (GtkTreeModel *model,
 
 
 static int
-no_sort_column_sort_func (GtkTreeModel *model,
-			  GtkTreeIter  *a,
-			  GtkTreeIter  *b,
+no_sort_column_sort_func (CtkTreeModel *model,
+			  CtkTreeIter  *a,
+			  CtkTreeIter  *b,
 			  gpointer      user_data)
 {
 	return -1;
@@ -5043,11 +5043,11 @@ no_sort_column_sort_func (GtkTreeModel *model,
 
 
 static void
-sort_column_changed_cb (GtkTreeSortable *sortable,
+sort_column_changed_cb (CtkTreeSortable *sortable,
 			gpointer         user_data)
 {
 	FrWindow    *window = user_data;
-	GtkSortType  order;
+	CtkSortType  order;
 	int          column_id;
 
 	if (! ctk_tree_sortable_get_sort_column_id (sortable,
@@ -5064,7 +5064,7 @@ sort_column_changed_cb (GtkTreeSortable *sortable,
 
 
 static gboolean
-fr_window_show_cb (GtkWidget *widget,
+fr_window_show_cb (CtkWidget *widget,
 		   FrWindow  *window)
 {
 	fr_window_update_current_location (window);
@@ -5091,7 +5091,7 @@ pref_history_len_changed (GSettings *settings,
 {
 	FrWindow  *window = user_data;
 	int        limit;
-	GtkAction *action;
+	CtkAction *action;
 
 	limit = g_settings_get_int (settings, PREF_UI_HISTORY_LEN);
 
@@ -5193,7 +5193,7 @@ pref_use_mime_icons_changed (GSettings *settings,
 
 
 static void
-theme_changed_cb (GtkIconTheme *theme, FrWindow *window)
+theme_changed_cb (CtkIconTheme *theme, FrWindow *window)
 {
 	file_list_icon_size = _ctk_widget_lookup_for_size (GTK_WIDGET (window), FILE_LIST_ICON_SIZE);
 	dir_tree_icon_size = _ctk_widget_lookup_for_size (GTK_WIDGET (window), DIR_TREE_ICON_SIZE);
@@ -5284,10 +5284,10 @@ fr_window_fake_load (FrArchive *archive,
 
 
 static void
-menu_item_select_cb (GtkMenuItem *proxy,
+menu_item_select_cb (CtkMenuItem *proxy,
 		     FrWindow    *window)
 {
-	GtkAction *action;
+	CtkAction *action;
 	char      *message;
 
 	action = ctk_activatable_get_related_action (GTK_ACTIVATABLE (proxy));
@@ -5303,7 +5303,7 @@ menu_item_select_cb (GtkMenuItem *proxy,
 
 
 static void
-menu_item_deselect_cb (GtkMenuItem *proxy,
+menu_item_deselect_cb (CtkMenuItem *proxy,
 		       FrWindow    *window)
 {
 	ctk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
@@ -5312,9 +5312,9 @@ menu_item_deselect_cb (GtkMenuItem *proxy,
 
 
 static void
-disconnect_proxy_cb (GtkUIManager *manager,
-		     GtkAction    *action,
-		     GtkWidget    *proxy,
+disconnect_proxy_cb (CtkUIManager *manager,
+		     CtkAction    *action,
+		     CtkWidget    *proxy,
 		     FrWindow     *window)
 {
 	if (GTK_IS_MENU_ITEM (proxy)) {
@@ -5327,9 +5327,9 @@ disconnect_proxy_cb (GtkUIManager *manager,
 
 
 static void
-connect_proxy_cb (GtkUIManager *manager,
-		  GtkAction    *action,
-		  GtkWidget    *proxy,
+connect_proxy_cb (CtkUIManager *manager,
+		  CtkAction    *action,
+		  CtkWidget    *proxy,
 		  FrWindow     *window)
 {
 	if (GTK_IS_MENU_ITEM (proxy)) {
@@ -5342,8 +5342,8 @@ connect_proxy_cb (GtkUIManager *manager,
 
 
 static void
-view_as_radio_action (GtkAction      *action,
-		      GtkRadioAction *current,
+view_as_radio_action (CtkAction      *action,
+		      CtkRadioAction *current,
 		      gpointer        data)
 {
 	FrWindow *window = data;
@@ -5352,8 +5352,8 @@ view_as_radio_action (GtkAction      *action,
 
 
 static void
-sort_by_radio_action (GtkAction      *action,
-		      GtkRadioAction *current,
+sort_by_radio_action (CtkAction      *action,
+		      CtkRadioAction *current,
 		      gpointer        data)
 {
 	FrWindow *window = data;
@@ -5365,7 +5365,7 @@ sort_by_radio_action (GtkAction      *action,
 
 
 static void
-recent_chooser_item_activated_cb (GtkRecentChooser *chooser,
+recent_chooser_item_activated_cb (CtkRecentChooser *chooser,
 				  FrWindow         *window)
 {
 	char *uri;
@@ -5380,9 +5380,9 @@ recent_chooser_item_activated_cb (GtkRecentChooser *chooser,
 
 static void
 fr_window_init_recent_chooser (FrWindow         *window,
-			       GtkRecentChooser *chooser)
+			       CtkRecentChooser *chooser)
 {
-	GtkRecentFilter *filter;
+	CtkRecentFilter *filter;
 	int              i;
 
 	g_return_if_fail (chooser != NULL);
@@ -5407,7 +5407,7 @@ fr_window_init_recent_chooser (FrWindow         *window,
 
 
 static void
-close_sidepane_button_clicked_cb (GtkButton *button,
+close_sidepane_button_clicked_cb (CtkButton *button,
 				  FrWindow  *window)
 {
 	fr_window_set_folders_visibility (window, FALSE);
@@ -5417,8 +5417,8 @@ close_sidepane_button_clicked_cb (GtkButton *button,
 static void
 fr_window_activate_filter (FrWindow *window)
 {
-	GtkTreeView       *tree_view = GTK_TREE_VIEW (window->priv->list_view);
-	GtkTreeViewColumn *column;
+	CtkTreeView       *tree_view = GTK_TREE_VIEW (window->priv->list_view);
+	CtkTreeViewColumn *column;
 
 	fr_window_update_filter_bar_visibility (window);
 	window->priv->list_mode = FR_WINDOW_LIST_MODE_FLAT;
@@ -5435,7 +5435,7 @@ fr_window_activate_filter (FrWindow *window)
 
 
 static void
-filter_entry_activate_cb (GtkEntry *entry,
+filter_entry_activate_cb (CtkEntry *entry,
 			  FrWindow *window)
 {
 	fr_window_activate_filter (window);
@@ -5443,8 +5443,8 @@ filter_entry_activate_cb (GtkEntry *entry,
 
 
 static void
-filter_entry_icon_release_cb (GtkEntry             *entry,
-			      GtkEntryIconPosition  icon_pos,
+filter_entry_icon_release_cb (CtkEntry             *entry,
+			      CtkEntryIconPosition  icon_pos,
 			      GdkEventButton       *event,
 			      gpointer              user_data)
 {
@@ -5457,7 +5457,7 @@ filter_entry_icon_release_cb (GtkEntry             *entry,
 
 static void
 fr_window_attach (FrWindow      *window,
-		  GtkWidget     *child,
+		  CtkWidget     *child,
 		  FrWindowArea   area)
 {
 	int position;
@@ -5505,10 +5505,10 @@ fr_window_attach (FrWindow      *window,
 
 
 static void
-set_action_important (GtkUIManager *ui,
+set_action_important (CtkUIManager *ui,
 		      const char   *action_name)
 {
-	GtkAction *action;
+	CtkAction *action;
 
 	action = ctk_ui_manager_get_action (ui, action_name);
 	g_object_set (action, "is_important", TRUE, NULL);
@@ -5519,22 +5519,22 @@ set_action_important (GtkUIManager *ui,
 static void
 fr_window_construct (FrWindow *window)
 {
-	GtkWidget        *menubar;
-	GtkWidget        *toolbar;
-	GtkWidget        *list_scrolled_window;
-	GtkWidget        *location_box;
-	GtkStatusbar     *statusbar;
-	GtkWidget        *statusbar_box;
-	GtkWidget        *filter_box;
-	GtkWidget        *tree_scrolled_window;
-	GtkWidget        *sidepane_title;
-	GtkWidget        *sidepane_title_box;
-	GtkWidget        *sidepane_title_label;
-	GtkWidget        *close_sidepane_button;
-	GtkTreeSelection *selection;
-	GtkActionGroup   *actions;
-	GtkAction        *action;
-	GtkUIManager     *ui;
+	CtkWidget        *menubar;
+	CtkWidget        *toolbar;
+	CtkWidget        *list_scrolled_window;
+	CtkWidget        *location_box;
+	CtkStatusbar     *statusbar;
+	CtkWidget        *statusbar_box;
+	CtkWidget        *filter_box;
+	CtkWidget        *tree_scrolled_window;
+	CtkWidget        *sidepane_title;
+	CtkWidget        *sidepane_title_box;
+	CtkWidget        *sidepane_title_label;
+	CtkWidget        *close_sidepane_button;
+	CtkTreeSelection *selection;
+	CtkActionGroup   *actions;
+	CtkAction        *action;
+	CtkUIManager     *ui;
 	GError           *error = NULL;
 	GSettingsSchemaSource *schema_source;
 	GSettingsSchema  *caja_schema;
@@ -6049,7 +6049,7 @@ fr_window_construct (FrWindow *window)
 			  window);
 
 	{
-		GtkToolItem *tool_item;
+		CtkToolItem *tool_item;
 
 		tool_item = ctk_separator_tool_item_new ();
 #if GTK_CHECK_VERSION (3,99,0)
@@ -6110,7 +6110,7 @@ fr_window_construct (FrWindow *window)
 	ctk_progress_bar_set_pulse_step (GTK_PROGRESS_BAR (window->priv->progress_bar), ACTIVITY_PULSE_STEP);
 	ctk_widget_set_size_request (window->priv->progress_bar, -1, PROGRESS_BAR_HEIGHT);
 	{
-		GtkWidget *vbox;
+		CtkWidget *vbox;
 
 		vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
 		ctk_box_pack_start (GTK_BOX (statusbar_box), vbox, FALSE, FALSE, 0);
@@ -6185,10 +6185,10 @@ fr_window_construct (FrWindow *window)
 }
 
 
-GtkWidget *
+CtkWidget *
 fr_window_new (void)
 {
-	GtkWidget *window;
+	CtkWidget *window;
 
 	window = g_object_new (FR_TYPE_WINDOW, "application", g_application_get_default (), NULL);
 	fr_window_construct ((FrWindow*) window);
@@ -6214,7 +6214,7 @@ fr_window_archive_new (FrWindow   *window,
 	g_return_val_if_fail (window != NULL, FALSE);
 
 	if (! fr_archive_create (window->archive, uri)) {
-		GtkWindow *file_sel = g_object_get_data (G_OBJECT (window), "fr_file_sel");
+		CtkWindow *file_sel = g_object_get_data (G_OBJECT (window), "fr_file_sel");
 
 		window->priv->load_error_parent_window = file_sel;
 		fr_archive_action_completed (window->archive,
@@ -6241,7 +6241,7 @@ fr_window_archive_new (FrWindow   *window,
 FrWindow *
 fr_window_archive_open (FrWindow   *current_window,
 			const char *uri,
-			GtkWindow  *parent)
+			CtkWindow  *parent)
 {
 	FrWindow *window = current_window;
 
@@ -6383,7 +6383,7 @@ fr_window_archive_save_as (FrWindow   *window,
 
 	window->priv->convert_data.new_archive = fr_archive_new ();
 	if (! fr_archive_create (window->priv->convert_data.new_archive, uri)) {
-		GtkWidget *d;
+		CtkWidget *d;
 		char      *utf8_name;
 		char      *message;
 
@@ -6801,7 +6801,7 @@ static void _fr_window_ask_overwrite_dialog (OverwriteData *odata);
 
 
 static void
-overwrite_dialog_response_cb (GtkDialog *dialog,
+overwrite_dialog_response_cb (CtkDialog *dialog,
 			      int        response_id,
 			      gpointer   user_data)
 {
@@ -6885,7 +6885,7 @@ _fr_window_ask_overwrite_dialog (OverwriteData *odata)
 			GFile     *parent;
 			char      *parent_name;
 			char      *details;
-			GtkWidget *d;
+			CtkWidget *d;
 
 			msg = g_strdup_printf (_("Replace file \"%s\"?"), g_file_info_get_display_name (info));
 			parent = g_file_get_parent (file);
@@ -6934,7 +6934,7 @@ _fr_window_ask_overwrite_dialog (OverwriteData *odata)
 		_fr_window_archive_extract_from_edata (odata->window, odata->edata);
 	}
 	else {
-		GtkWidget *d;
+		CtkWidget *d;
 
 		d = _ctk_message_dialog_new (GTK_WINDOW (odata->window),
 					     0,
@@ -6992,7 +6992,7 @@ fr_window_archive_extract (FrWindow    *window,
 			edata->overwrite = FR_OVERWRITE_YES;
 
 		if (! ForceDirectoryCreation) {
-			GtkWidget *d;
+			CtkWidget *d;
 			int        r;
 			char      *folder_name;
 			char      *msg;
@@ -7021,7 +7021,7 @@ fr_window_archive_extract (FrWindow    *window,
 		}
 
 		if (! do_not_extract && ! ensure_dir_exists (edata->extract_to_dir, 0755, &error)) {
-			GtkWidget *d;
+			CtkWidget *d;
 			char      *details;
 
 			details = g_strdup_printf (_("Could not create the destination folder: %s."), error->message);
@@ -7042,7 +7042,7 @@ fr_window_archive_extract (FrWindow    *window,
 	}
 
 	if (do_not_extract) {
-		GtkWidget *d;
+		CtkWidget *d;
 
 		d = _ctk_message_dialog_new (GTK_WINDOW (window),
 					     0,
@@ -7289,7 +7289,7 @@ fr_window_set_list_mode (FrWindow         *window,
 }
 
 
-GtkTreeModel *
+CtkTreeModel *
 fr_window_get_list_store (FrWindow *window)
 {
 	return GTK_TREE_MODEL (window->priv->list_store);
@@ -7321,7 +7321,7 @@ fr_window_unselect_all (FrWindow *window)
 
 void
 fr_window_set_sort_type (FrWindow     *window,
-			 GtkSortType   sort_type)
+			 CtkSortType   sort_type)
 {
 	window->priv->sort_type = sort_type;
 	fr_window_update_list_order (window);
@@ -7408,7 +7408,7 @@ fr_window_stop_activity_mode (FrWindow *window)
 
 
 static gboolean
-last_output_window__unrealize_cb (GtkWidget  *widget,
+last_output_window__unrealize_cb (CtkWidget  *widget,
 				  gpointer    data)
 {
 	pref_util_save_window_geometry (GTK_WINDOW (widget), LAST_OUTPUT_DIALOG_NAME);
@@ -7417,8 +7417,8 @@ last_output_window__unrealize_cb (GtkWidget  *widget,
 
 
 static void
-fr_window_view_last_output_print(GtkTextBuffer *text_buffer,
-                                 GtkTextIter   *iter,
+fr_window_view_last_output_print(CtkTextBuffer *text_buffer,
+                                 CtkTextIter   *iter,
                                  GList         *scan)
 {
     for (; scan; scan = scan->next) {
@@ -7441,12 +7441,12 @@ void
 fr_window_view_last_output (FrWindow   *window,
 			    const char *title)
 {
-	GtkWidget     *dialog;
-	GtkWidget     *vbox;
-	GtkWidget     *text_view;
-	GtkWidget     *scrolled;
-	GtkTextBuffer *text_buffer;
-	GtkTextIter    iter;
+	CtkWidget     *dialog;
+	CtkWidget     *vbox;
+	CtkWidget     *text_view;
+	CtkWidget     *scrolled;
+	CtkTextBuffer *text_buffer;
+	CtkTextIter    iter;
 
 	if (title == NULL)
 		title = _("Last Output");
@@ -7881,7 +7881,7 @@ fr_window_rename_selection (FrWindow *window,
 
 		if (! valid_name (new_name, old_name, &reason)) {
 			char      *utf8_name = g_filename_display_name (new_name);
-			GtkWidget *dlg;
+			CtkWidget *dlg;
 
 			dlg = _ctk_error_dialog_new (GTK_WINDOW (window),
 						     GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -7900,7 +7900,7 @@ fr_window_rename_selection (FrWindow *window,
 		}
 
 		if (name_is_present (window, parent_dir, new_name, &reason)) {
-			GtkWidget *dlg;
+			CtkWidget *dlg;
 
 			dlg = _ctk_message_dialog_new (GTK_WINDOW (window),
 						       GTK_DIALOG_MODAL,
@@ -7936,8 +7936,8 @@ fr_window_rename_selection (FrWindow *window,
 
 
 static void
-fr_clipboard_get (GtkClipboard     *clipboard,
-		  GtkSelectionData *selection_data,
+fr_clipboard_get (CtkClipboard     *clipboard,
+		  CtkSelectionData *selection_data,
 		  guint             info,
 		  gpointer          user_data_or_owner)
 {
@@ -7958,7 +7958,7 @@ fr_clipboard_get (GtkClipboard     *clipboard,
 
 
 static void
-fr_clipboard_clear (GtkClipboard *clipboard,
+fr_clipboard_clear (CtkClipboard *clipboard,
 		    gpointer      user_data_or_owner)
 {
 	FrWindow *window = user_data_or_owner;
@@ -8015,7 +8015,7 @@ fr_window_copy_or_cut_selection (FrWindow      *window,
 {
 	GList        *files;
 	char         *base_dir;
-	GtkClipboard *clipboard;
+	CtkClipboard *clipboard;
 
 	files = fr_window_get_selection (window, from_sidebar, &base_dir);
 
@@ -8272,8 +8272,8 @@ static void
 fr_window_paste_selection_to (FrWindow   *window,
 			      const char *current_dir)
 {
-	GtkClipboard     *clipboard;
-	GtkSelectionData *selection_data;
+	CtkClipboard     *clipboard;
+	CtkSelectionData *selection_data;
 	FrClipboardData  *paste_data;
 
 	clipboard = ctk_clipboard_get (FR_CLIPBOARD);
@@ -8807,8 +8807,8 @@ fr_window_set_default_dir (FrWindow   *window,
 void
 fr_window_update_columns_visibility (FrWindow *window)
 {
-	GtkTreeView       *tree_view = GTK_TREE_VIEW (window->priv->list_view);
-	GtkTreeViewColumn *column;
+	CtkTreeView       *tree_view = GTK_TREE_VIEW (window->priv->list_view);
+	CtkTreeViewColumn *column;
 
 	column = ctk_tree_view_get_column (tree_view, 1);
 	ctk_tree_view_column_set_visible (column, g_settings_get_boolean (window->priv->settings_listing, PREF_LISTING_SHOW_SIZE));

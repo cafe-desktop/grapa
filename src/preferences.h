@@ -79,9 +79,9 @@
 #define CAJA_SCHEMA			"org.cafe.caja.preferences"
 #define CAJA_CLICK_POLICY		"click-policy"
 
-void pref_util_save_window_geometry (GtkWindow *window,
+void pref_util_save_window_geometry (CtkWindow *window,
                                      const char *dialog_id);
-void pref_util_restore_window_geometry (GtkWindow *window,
+void pref_util_restore_window_geometry (CtkWindow *window,
                                        const char *dialog_id);
 
 #endif /* PREFERENCES_H */

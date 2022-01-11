@@ -52,7 +52,7 @@ static void
 new_archive (DlgNewData *data,
          char       *uri)
 {
-    GtkWidget  *archive_window;
+    CtkWidget  *archive_window;
     gboolean    new_window;
     const char *password;
     gboolean    encrypt_header;
@@ -62,7 +62,7 @@ new_archive (DlgNewData *data,
     if (new_window)
         archive_window = fr_window_new ();
     else
-        archive_window = (GtkWidget *) data->window;
+        archive_window = (CtkWidget *) data->window;
 
     password = dlg_new_data_get_password (data);
     encrypt_header = dlg_new_data_get_encrypt_header (data);
@@ -88,7 +88,7 @@ new_archive (DlgNewData *data,
    archive is unsupported
 */
 static gboolean
-is_supported_extension (GtkWidget *file_sel,
+is_supported_extension (CtkWidget *file_sel,
             char      *filename,
             int       *file_type)
 {
@@ -148,7 +148,7 @@ get_archive_filename_from_selector (DlgNewData *data)
 
     uri = get_full_uri (data);
     if ((uri == NULL) || (*uri == 0)) {
-        GtkWidget *dialog;
+        CtkWidget *dialog;
 
         g_free (uri);
 
@@ -184,7 +184,7 @@ get_archive_filename_from_selector (DlgNewData *data)
     }
 
     if (! g_file_info_get_attribute_boolean (info, G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE)) {
-        GtkWidget *dialog;
+        CtkWidget *dialog;
 
         g_object_unref (info);
         g_object_unref (dir);
@@ -226,7 +226,7 @@ get_archive_filename_from_selector (DlgNewData *data)
     if (uri_exists (uri)) {
 
         if (! is_supported_extension (data->dialog, uri, data->supported_types)) {
-            GtkWidget *dialog;
+            CtkWidget *dialog;
             dialog = _ctk_error_dialog_new (GTK_WINDOW (data->dialog),
                             GTK_DIALOG_MODAL,
                             NULL,
@@ -242,7 +242,7 @@ get_archive_filename_from_selector (DlgNewData *data)
 
         g_file_delete (file, NULL, &err);
         if (err != NULL) {
-            GtkWidget *dialog;
+            CtkWidget *dialog;
             dialog = _ctk_error_dialog_new (GTK_WINDOW (data->dialog),
                             GTK_DIALOG_DESTROY_WITH_PARENT,
                             NULL,
@@ -265,7 +265,7 @@ get_archive_filename_from_selector (DlgNewData *data)
 
 
 static void
-new_file_response_cb (GtkWidget  *w,
+new_file_response_cb (CtkWidget  *w,
               int         response,
               DlgNewData *data)
 {
@@ -313,7 +313,7 @@ show_new_archive_dialog (FrWindow   *window,
 
 
 void
-activate_action_new (GtkAction *action,
+activate_action_new (CtkAction *action,
              gpointer   data)
 {
     show_new_archive_dialog ((FrWindow*)data, NULL);
@@ -326,7 +326,7 @@ activate_action_new (GtkAction *action,
 static void
 window_archive_loaded_cb (FrWindow  *window,
               gboolean   success,
-              GtkWidget *file_sel)
+              CtkWidget *file_sel)
 {
     if (success) {
         g_signal_handlers_disconnect_by_data (window, file_sel);
@@ -341,9 +341,9 @@ window_archive_loaded_cb (FrWindow  *window,
 
 
 static void
-open_file_response_cb (GtkWidget *w,
+open_file_response_cb (CtkWidget *w,
                int        response,
-               GtkWidget *file_sel)
+               CtkWidget *file_sel)
 {
     FrWindow *window = NULL;
     char     *uri;
@@ -372,12 +372,12 @@ open_file_response_cb (GtkWidget *w,
 
 
 void
-activate_action_open (GtkAction *action,
+activate_action_open (CtkAction *action,
               gpointer   data)
 {
-    GtkWidget     *file_sel;
+    CtkWidget     *file_sel;
     FrWindow      *window = data;
-    GtkFileFilter *filter;
+    CtkFileFilter *filter;
     int            i;
 
     file_sel = ctk_file_chooser_dialog_new (_("Open"),
@@ -422,7 +422,7 @@ activate_action_open (GtkAction *action,
 
 
 static void
-save_file_response_cb (GtkWidget  *w,
+save_file_response_cb (CtkWidget  *w,
                gint        response,
                DlgNewData *data)
 {
@@ -462,7 +462,7 @@ save_file_response_cb (GtkWidget  *w,
 
 
 void
-activate_action_save_as (GtkAction *action,
+activate_action_save_as (CtkAction *action,
              gpointer   callback_data)
 {
     FrWindow   *window = callback_data;
@@ -504,7 +504,7 @@ activate_action_save_as (GtkAction *action,
 
 
 void
-activate_action_test_archive (GtkAction *action,
+activate_action_test_archive (CtkAction *action,
                   gpointer   data)
 {
     FrWindow *window = data;
@@ -514,7 +514,7 @@ activate_action_test_archive (GtkAction *action,
 
 
 void
-activate_action_properties (GtkAction *action,
+activate_action_properties (CtkAction *action,
                 gpointer   data)
 {
     FrWindow *window = data;
@@ -524,7 +524,7 @@ activate_action_properties (GtkAction *action,
 
 
 void
-activate_action_close (GtkAction *action,
+activate_action_close (CtkAction *action,
                gpointer   data)
 {
     FrWindow *window = data;
@@ -534,7 +534,7 @@ activate_action_close (GtkAction *action,
 
 
 void
-activate_action_add_files (GtkAction *action,
+activate_action_add_files (CtkAction *action,
                gpointer   data)
 {
     add_files_cb (NULL, data);
@@ -542,7 +542,7 @@ activate_action_add_files (GtkAction *action,
 
 
 void
-activate_action_add_folder (GtkAction *action,
+activate_action_add_folder (CtkAction *action,
                 gpointer   data)
 {
     add_folder_cb (NULL, data);
@@ -550,7 +550,7 @@ activate_action_add_folder (GtkAction *action,
 
 
 void
-activate_action_extract (GtkAction *action,
+activate_action_extract (CtkAction *action,
              gpointer   data)
 {
     dlg_extract (NULL, data);
@@ -558,7 +558,7 @@ activate_action_extract (GtkAction *action,
 
 
 void
-activate_action_extract_folder_from_sidebar (GtkAction *action,
+activate_action_extract_folder_from_sidebar (CtkAction *action,
                          gpointer   data)
 {
     dlg_extract_folder_from_sidebar (NULL, data);
@@ -566,7 +566,7 @@ activate_action_extract_folder_from_sidebar (GtkAction *action,
 
 
 void
-activate_action_copy (GtkAction *action,
+activate_action_copy (CtkAction *action,
               gpointer   data)
 {
     fr_window_copy_selection ((FrWindow*) data, FALSE);
@@ -574,7 +574,7 @@ activate_action_copy (GtkAction *action,
 
 
 void
-activate_action_cut (GtkAction *action,
+activate_action_cut (CtkAction *action,
              gpointer   data)
 {
     fr_window_cut_selection ((FrWindow*) data, FALSE);
@@ -582,7 +582,7 @@ activate_action_cut (GtkAction *action,
 
 
 void
-activate_action_paste (GtkAction *action,
+activate_action_paste (CtkAction *action,
                gpointer   data)
 {
     fr_window_paste_selection ((FrWindow*) data, FALSE);
@@ -590,7 +590,7 @@ activate_action_paste (GtkAction *action,
 
 
 void
-activate_action_rename (GtkAction *action,
+activate_action_rename (CtkAction *action,
             gpointer   data)
 {
     fr_window_rename_selection ((FrWindow*) data, FALSE);
@@ -598,7 +598,7 @@ activate_action_rename (GtkAction *action,
 
 
 void
-activate_action_delete (GtkAction *action,
+activate_action_delete (CtkAction *action,
             gpointer   data)
 {
     dlg_delete (NULL, data);
@@ -606,7 +606,7 @@ activate_action_delete (GtkAction *action,
 
 
 void
-activate_action_copy_folder_from_sidebar (GtkAction *action,
+activate_action_copy_folder_from_sidebar (CtkAction *action,
                           gpointer   data)
 {
     fr_window_copy_selection ((FrWindow*) data, TRUE);
@@ -614,7 +614,7 @@ activate_action_copy_folder_from_sidebar (GtkAction *action,
 
 
 void
-activate_action_cut_folder_from_sidebar (GtkAction *action,
+activate_action_cut_folder_from_sidebar (CtkAction *action,
                          gpointer   data)
 {
     fr_window_cut_selection ((FrWindow*) data, TRUE);
@@ -622,7 +622,7 @@ activate_action_cut_folder_from_sidebar (GtkAction *action,
 
 
 void
-activate_action_paste_folder_from_sidebar (GtkAction *action,
+activate_action_paste_folder_from_sidebar (CtkAction *action,
                            gpointer   data)
 {
     fr_window_paste_selection ((FrWindow*) data, TRUE);
@@ -630,7 +630,7 @@ activate_action_paste_folder_from_sidebar (GtkAction *action,
 
 
 void
-activate_action_rename_folder_from_sidebar (GtkAction *action,
+activate_action_rename_folder_from_sidebar (CtkAction *action,
                         gpointer   data)
 {
     fr_window_rename_selection ((FrWindow*) data, TRUE);
@@ -638,7 +638,7 @@ activate_action_rename_folder_from_sidebar (GtkAction *action,
 
 
 void
-activate_action_delete_folder_from_sidebar (GtkAction *action,
+activate_action_delete_folder_from_sidebar (CtkAction *action,
                         gpointer   data)
 {
     dlg_delete_from_sidebar (NULL, data);
@@ -646,7 +646,7 @@ activate_action_delete_folder_from_sidebar (GtkAction *action,
 
 
 void
-activate_action_find (GtkAction *action,
+activate_action_find (CtkAction *action,
               gpointer   data)
 {
     FrWindow *window = data;
@@ -656,7 +656,7 @@ activate_action_find (GtkAction *action,
 
 
 void
-activate_action_select_all (GtkAction *action,
+activate_action_select_all (CtkAction *action,
                 gpointer   data)
 {
     FrWindow *window = data;
@@ -666,7 +666,7 @@ activate_action_select_all (GtkAction *action,
 
 
 void
-activate_action_deselect_all (GtkAction *action,
+activate_action_deselect_all (CtkAction *action,
                   gpointer   data)
 {
     FrWindow *window = data;
@@ -676,7 +676,7 @@ activate_action_deselect_all (GtkAction *action,
 
 
 void
-activate_action_open_with (GtkAction *action,
+activate_action_open_with (CtkAction *action,
                gpointer   data)
 {
     open_with_cb (NULL, (FrWindow*) data);
@@ -684,7 +684,7 @@ activate_action_open_with (GtkAction *action,
 
 
 void
-activate_action_view_or_open (GtkAction *action,
+activate_action_view_or_open (CtkAction *action,
                   gpointer   data)
 {
     FrWindow *window = data;
@@ -699,7 +699,7 @@ activate_action_view_or_open (GtkAction *action,
 
 
 void
-activate_action_open_folder (GtkAction *action,
+activate_action_open_folder (CtkAction *action,
                  gpointer   data)
 {
     FrWindow *window = data;
@@ -708,7 +708,7 @@ activate_action_open_folder (GtkAction *action,
 
 
 void
-activate_action_open_folder_from_sidebar (GtkAction *action,
+activate_action_open_folder_from_sidebar (CtkAction *action,
                               gpointer   data)
 {
     FrWindow *window = data;
@@ -717,7 +717,7 @@ activate_action_open_folder_from_sidebar (GtkAction *action,
 
 
 void
-activate_action_password (GtkAction *action,
+activate_action_password (CtkAction *action,
               gpointer   data)
 {
     dlg_password (NULL, (FrWindow*) data);
@@ -725,7 +725,7 @@ activate_action_password (GtkAction *action,
 
 
 void
-activate_action_view_toolbar (GtkAction *action,
+activate_action_view_toolbar (CtkAction *action,
                   gpointer   data)
 {
     GSettings *settings;
@@ -737,7 +737,7 @@ activate_action_view_toolbar (GtkAction *action,
 
 
 void
-activate_action_view_statusbar (GtkAction *action,
+activate_action_view_statusbar (CtkAction *action,
                 gpointer   data)
 {
     GSettings *settings;
@@ -749,7 +749,7 @@ activate_action_view_statusbar (GtkAction *action,
 
 
 void
-activate_action_view_folders (GtkAction *action,
+activate_action_view_folders (CtkAction *action,
                 gpointer   data)
 {
     GSettings *settings;
@@ -761,7 +761,7 @@ activate_action_view_folders (GtkAction *action,
 
 
 void
-activate_action_stop (GtkAction *action,
+activate_action_stop (CtkAction *action,
               gpointer   data)
 {
     FrWindow *window = data;
@@ -770,7 +770,7 @@ activate_action_stop (GtkAction *action,
 
 
 void
-activate_action_reload (GtkAction *action,
+activate_action_reload (CtkAction *action,
             gpointer   data)
 {
     FrWindow *window = data;
@@ -780,7 +780,7 @@ activate_action_reload (GtkAction *action,
 
 
 void
-activate_action_sort_reverse_order (GtkAction *action,
+activate_action_sort_reverse_order (CtkAction *action,
                     gpointer   data)
 {
     FrWindow *window = data;
@@ -790,7 +790,7 @@ activate_action_sort_reverse_order (GtkAction *action,
 
 
 void
-activate_action_last_output (GtkAction *action,
+activate_action_last_output (CtkAction *action,
                  gpointer   data)
 {
     FrWindow *window = data;
@@ -799,7 +799,7 @@ activate_action_last_output (GtkAction *action,
 
 
 void
-activate_action_go_back (GtkAction *action,
+activate_action_go_back (CtkAction *action,
              gpointer   data)
 {
     FrWindow *window = data;
@@ -808,7 +808,7 @@ activate_action_go_back (GtkAction *action,
 
 
 void
-activate_action_go_forward (GtkAction *action,
+activate_action_go_forward (CtkAction *action,
                 gpointer   data)
 {
     FrWindow *window = data;
@@ -817,7 +817,7 @@ activate_action_go_forward (GtkAction *action,
 
 
 void
-activate_action_go_up (GtkAction *action,
+activate_action_go_up (CtkAction *action,
                gpointer   data)
 {
     FrWindow *window = data;
@@ -826,7 +826,7 @@ activate_action_go_up (GtkAction *action,
 
 
 void
-activate_action_go_home (GtkAction *action,
+activate_action_go_home (CtkAction *action,
              gpointer   data)
 {
     FrWindow *window = data;
@@ -835,7 +835,7 @@ activate_action_go_home (GtkAction *action,
 
 
 void
-activate_action_manual (GtkAction *action,
+activate_action_manual (CtkAction *action,
             gpointer   data)
 {
     FrWindow *window = data;
@@ -848,7 +848,7 @@ activate_action_manual (GtkAction *action,
 #define EMAILIFY(string) (g_strdelimit ((string), "%", '@'))
 
 void
-activate_action_about (GtkAction *action,
+activate_action_about (CtkAction *action,
                gpointer   gp)
 {
     FrWindow *window = gp;

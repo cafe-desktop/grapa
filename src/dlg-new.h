@@ -34,17 +34,17 @@ typedef struct {
 	gboolean    can_encrypt;
 	gboolean    can_encrypt_header;
 	gboolean    can_create_volumes;
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 
-	GtkWidget  *dialog;
-	/*GtkWidget  *n_archive_type_combo_box;*/
-	GtkWidget  *n_other_options_expander;
-	GtkWidget  *n_password_entry;
-	GtkWidget  *n_password_label;
-	GtkWidget  *n_encrypt_header_checkbutton;
-	GtkWidget  *n_volume_checkbutton;
-	GtkWidget  *n_volume_spinbutton;
-	GtkWidget  *n_volume_box;
+	CtkWidget  *dialog;
+	/*CtkWidget  *n_archive_type_combo_box;*/
+	CtkWidget  *n_other_options_expander;
+	CtkWidget  *n_password_entry;
+	CtkWidget  *n_password_label;
+	CtkWidget  *n_encrypt_header_checkbutton;
+	CtkWidget  *n_volume_checkbutton;
+	CtkWidget  *n_volume_spinbutton;
+	CtkWidget  *n_volume_box;
 	EggFileFormatChooser *format_chooser;
 } DlgNewData;
 

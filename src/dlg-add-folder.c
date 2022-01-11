@@ -42,27 +42,27 @@
 typedef struct {
 	FrWindow    *window;
 	GSettings   *settings;
-	GtkWidget   *dialog;
-	GtkWidget   *include_subfold_checkbutton;
-	GtkWidget   *choice;
-	GtkWidget   *add_if_newer_checkbutton;
-	GtkWidget   *exclude_symlinks;
-	GtkWidget   *include_files_checkbutton;
-	GtkWidget   *include_files_entry;
-	GtkWidget   *include_files_label;
-	GtkWidget   *exclude_files_entry;
-	GtkWidget   *exclude_files_label;
-	GtkWidget   *exclude_folders_entry;
-	GtkWidget   *exclude_folders_label;
-	GtkWidget   *load_button;
-	GtkWidget   *save_button;
-	GtkWidget   *clear_button;
+	CtkWidget   *dialog;
+	CtkWidget   *include_subfold_checkbutton;
+	CtkWidget   *choice;
+	CtkWidget   *add_if_newer_checkbutton;
+	CtkWidget   *exclude_symlinks;
+	CtkWidget   *include_files_checkbutton;
+	CtkWidget   *include_files_entry;
+	CtkWidget   *include_files_label;
+	CtkWidget   *exclude_files_entry;
+	CtkWidget   *exclude_files_label;
+	CtkWidget   *exclude_folders_entry;
+	CtkWidget   *exclude_folders_label;
+	CtkWidget   *load_button;
+	CtkWidget   *save_button;
+	CtkWidget   *clear_button;
 	char        *last_options;
 } DialogData;
 
 
 static void
-open_file_destroy_cb (GtkWidget  *widget,
+open_file_destroy_cb (CtkWidget  *widget,
 		      DialogData *data)
 {
 	g_object_unref (data->settings);
@@ -93,11 +93,11 @@ static void dlg_add_folder_save_last_options (DialogData *data);
 
 
 static int
-file_sel_response_cb (GtkWidget    *widget,
+file_sel_response_cb (CtkWidget    *widget,
 		      int           response,
 		      DialogData   *data)
 {
-	GtkFileChooser *file_sel = GTK_FILE_CHOOSER (data->choice);
+	CtkFileChooser *file_sel = GTK_FILE_CHOOSER (data->choice);
 	FrWindow       *window = data->window;
 	char           *selected_folder;
 	gboolean        update, UNUSED_VARIABLE recursive, follow_links;
@@ -125,7 +125,7 @@ file_sel_response_cb (GtkWidget    *widget,
 	/* check folder permissions. */
 
 	if (! check_permissions (selected_folder, R_OK)) {
-		GtkWidget *d;
+		CtkWidget *d;
 		char      *utf8_path;
 
 		utf8_path = g_filename_display_name (selected_folder);
@@ -186,7 +186,7 @@ file_sel_response_cb (GtkWidget    *widget,
 
 
 static int
-include_subfold_toggled_cb (GtkWidget *widget,
+include_subfold_toggled_cb (CtkWidget *widget,
 			    gpointer   callback_data)
 {
 	DialogData *data = callback_data;
@@ -198,14 +198,14 @@ include_subfold_toggled_cb (GtkWidget *widget,
 }
 
 
-static void load_options_cb (GtkWidget *w, DialogData *data);
-static void save_options_cb (GtkWidget *w, DialogData *data);
-static void clear_options_cb (GtkWidget *w, DialogData *data);
+static void load_options_cb (CtkWidget *w, DialogData *data);
+static void save_options_cb (CtkWidget *w, DialogData *data);
+static void clear_options_cb (CtkWidget *w, DialogData *data);
 static void dlg_add_folder_load_last_options (DialogData *data);
 
 
 static gboolean
-add_folder_window_unrealize_cb (GtkWidget  *widget,
+add_folder_window_unrealize_cb (CtkWidget  *widget,
 				gpointer    data)
 {
 	pref_util_save_window_geometry (GTK_WINDOW (widget), "addfolder");
@@ -215,17 +215,17 @@ add_folder_window_unrealize_cb (GtkWidget  *widget,
 
 /* create the "add" dialog. */
 void
-add_folder_cb (GtkWidget *widget,
+add_folder_cb (CtkWidget *widget,
 	       void      *callback_data)
 {
-	GtkWidget   *file_sel;
+	CtkWidget   *file_sel;
 	DialogData  *data;
-	GtkWidget   *full_box;
-	GtkWidget   *main_box;
-	GtkWidget   *vbox;
-	GtkWidget   *grid;
-	GtkWidget   *filechooser;
-	GtkWidget   *content_area;
+	CtkWidget   *full_box;
+	CtkWidget   *main_box;
+	CtkWidget   *vbox;
+	CtkWidget   *grid;
+	CtkWidget   *filechooser;
+	CtkWidget   *content_area;
 
 	data = g_new0 (DialogData, 1);
 	data->settings = g_settings_new (GRAPA_SCHEMA_ADD);
@@ -441,7 +441,7 @@ sync_widgets_with_options (DialogData *data,
 
 
 static void
-clear_options_cb (GtkWidget  *w,
+clear_options_cb (CtkWidget  *w,
 		  DialogData *data)
 {
 	sync_widgets_with_options (data,
@@ -675,15 +675,15 @@ dlg_add_folder_save_last_options (DialogData *data)
 
 typedef struct {
 	DialogData   *data;
-	GtkBuilder *builder;
-	GtkWidget    *dialog;
-	GtkWidget    *aod_treeview;
-	GtkTreeModel *aod_model;
+	CtkBuilder *builder;
+	CtkWidget    *dialog;
+	CtkWidget    *aod_treeview;
+	CtkTreeModel *aod_model;
 } LoadOptionsDialogData;
 
 
 static void
-aod_destroy_cb (GtkWidget             *widget,
+aod_destroy_cb (CtkWidget             *widget,
 		LoadOptionsDialogData *aod_data)
 {
 	g_object_unref (aod_data->builder);
@@ -692,13 +692,13 @@ aod_destroy_cb (GtkWidget             *widget,
 
 
 static void
-aod_apply_cb (GtkWidget *widget,
+aod_apply_cb (CtkWidget *widget,
 	      gpointer   callback_data)
 {
 	LoadOptionsDialogData *aod_data = callback_data;
 	DialogData            *data = aod_data->data;
-	GtkTreeSelection      *selection;
-	GtkTreeIter            iter;
+	CtkTreeSelection      *selection;
+	CtkTreeIter            iter;
 	char                  *options_name;
 
 	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (aod_data->aod_treeview));
@@ -715,9 +715,9 @@ aod_apply_cb (GtkWidget *widget,
 
 
 static void
-aod_activated_cb (GtkTreeView       *tree_view,
-		  GtkTreePath       *path,
-		  GtkTreeViewColumn *column,
+aod_activated_cb (CtkTreeView       *tree_view,
+		  CtkTreePath       *path,
+		  CtkTreeViewColumn *column,
 		  gpointer           callback_data)
 {
 	aod_apply_cb (NULL, callback_data);
@@ -727,7 +727,7 @@ aod_activated_cb (GtkTreeView       *tree_view,
 static void
 aod_update_option_list (LoadOptionsDialogData *aod_data)
 {
-	GtkListStore    *list_store = GTK_LIST_STORE (aod_data->aod_model);
+	CtkListStore    *list_store = GTK_LIST_STORE (aod_data->aod_model);
 	GFile           *options_dir;
 	GFileEnumerator *file_enum;
 	GFileInfo       *info;
@@ -749,7 +749,7 @@ aod_update_option_list (LoadOptionsDialogData *aod_data)
 	while ((info = g_file_enumerator_next_file (file_enum, NULL, &err)) != NULL) {
 		const char  *name;
 		char        *display_name;
-		GtkTreeIter  iter;
+		CtkTreeIter  iter;
 
 		if (err != NULL) {
 			g_warning ("Failed to get info while enumerating: %s", err->message);
@@ -780,11 +780,11 @@ aod_update_option_list (LoadOptionsDialogData *aod_data)
 
 
 static void
-aod_remove_cb (GtkWidget             *widget,
+aod_remove_cb (CtkWidget             *widget,
 	       LoadOptionsDialogData *aod_data)
 {
-	GtkTreeSelection *selection;
-	GtkTreeIter       iter;
+	CtkTreeSelection *selection;
+	CtkTreeIter       iter;
 	char             *filename;
 	GFile            *options_dir;
 	GFile            *options_file;
@@ -811,15 +811,15 @@ aod_remove_cb (GtkWidget             *widget,
 
 
 static void
-load_options_cb (GtkWidget  *w,
+load_options_cb (CtkWidget  *w,
 		 DialogData *data)
 {
 	LoadOptionsDialogData *aod_data;
-	GtkWidget             *ok_button;
-	GtkWidget             *cancel_button;
-	GtkWidget             *remove_button;
-	GtkCellRenderer       *renderer;
-	GtkTreeViewColumn     *column;
+	CtkWidget             *ok_button;
+	CtkWidget             *cancel_button;
+	CtkWidget             *remove_button;
+	CtkCellRenderer       *renderer;
+	CtkTreeViewColumn     *column;
 
 	aod_data = g_new0 (LoadOptionsDialogData, 1);
 
@@ -897,7 +897,7 @@ load_options_cb (GtkWidget  *w,
 
 
 static void
-save_options_cb (GtkWidget  *w,
+save_options_cb (CtkWidget  *w,
 		 DialogData *data)
 {
 	GFile *options_dir;

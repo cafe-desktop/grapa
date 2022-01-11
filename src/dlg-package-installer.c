@@ -233,7 +233,7 @@ install_packages (InstallerData *idata)
 
 
 static void
-confirm_search_dialog_response_cb (GtkDialog *dialog,
+confirm_search_dialog_response_cb (CtkDialog *dialog,
 				   int        response_id,
 				   gpointer   user_data)
 {
@@ -250,17 +250,17 @@ confirm_search_dialog_response_cb (GtkDialog *dialog,
 	}
 }
 
-static GtkWidget *
+static CtkWidget *
 create_button (const char *icon_name,
 	       const char *text)
 {
-	GtkIconTheme *icon_theme;
-	GtkWidget    *button;
+	CtkIconTheme *icon_theme;
+	CtkWidget    *button;
 
 	button = ctk_button_new_with_mnemonic (text);
 	icon_theme = ctk_icon_theme_get_default ();
 	if (ctk_icon_theme_has_icon (icon_theme, icon_name)) {
-		GtkWidget *image;
+		CtkWidget *image;
 		image = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON);
 		ctk_button_set_image (GTK_BUTTON (button), image);
 	}
@@ -309,7 +309,7 @@ dlg_package_installer (FrWindow  *window,
 
 	{
 		char      *secondary_text;
-		GtkWidget *dialog;
+		CtkWidget *dialog;
 
 		secondary_text = g_strdup_printf (_("There is no command installed for %s files.\nDo you want to search for a command to open this file?"),
 						  g_content_type_get_description (idata->archive->content_type));

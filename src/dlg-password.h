@@ -25,7 +25,7 @@
 
 #include "fr-window.h"
 
-void dlg_password (GtkWidget *widget,
+void dlg_password (CtkWidget *widget,
 		   gpointer   callback_data);
 
 #endif /* DLG_PASSWORD_H */

@@ -36,19 +36,19 @@ typedef struct _EggFileFormatChooserPrivate EggFileFormatChooserPrivate;
 
 struct _EggFileFormatChooser
 {
-  GtkExpander parent;
+  CtkExpander parent;
   EggFileFormatChooserPrivate *priv;
 };
 
 struct _EggFileFormatChooserClass
 {
-  GtkExpanderClass parent;
+  CtkExpanderClass parent;
 
   void (*selection_changed)(EggFileFormatChooser *self);
 };
 
 GType           egg_file_format_chooser_get_type           (void) G_GNUC_CONST;
-GtkWidget*      egg_file_format_chooser_new                (void);
+CtkWidget*      egg_file_format_chooser_new                (void);
 
 guint           egg_file_format_chooser_add_format         (EggFileFormatChooser *self,
                                                             guint                 parent,

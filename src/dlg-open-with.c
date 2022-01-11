@@ -39,7 +39,7 @@ typedef struct {
 
 
 static void
-app_chooser_response_cb (GtkDialog *dialog,
+app_chooser_response_cb (CtkDialog *dialog,
 			 int        response_id,
 			 gpointer   user_data)
 {
@@ -74,7 +74,7 @@ dlg_open_with (FrWindow *window,
 	       GList    *file_list)
 {
 	OpenData  *o_data;
-	GtkWidget *app_chooser;
+	CtkWidget *app_chooser;
 	GFile     *first_file;
 
 	o_data = g_new0 (OpenData, 1);
@@ -94,7 +94,7 @@ dlg_open_with (FrWindow *window,
 
 
 void
-open_with_cb (GtkWidget *widget,
+open_with_cb (CtkWidget *widget,
 	      void      *callback_data)
 {
 	FrWindow *window = callback_data;

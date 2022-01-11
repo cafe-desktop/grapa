@@ -26,7 +26,7 @@
 #include "fr-window.h"
 
 
-static GtkListStoreClass *parent_class;
+static CtkListStoreClass *parent_class;
 
 
 static gboolean
@@ -34,7 +34,7 @@ fr_list_model_multi_row_draggable (EggTreeMultiDragSource *drag_source,
 				   GList                  *path_list)
 {
 	FrWindow     *window;
-	GtkTreeModel *model;
+	CtkTreeModel *model;
 	GList        *scan;
 
 	window = g_object_get_data (G_OBJECT (drag_source), "FrWindow");
@@ -43,9 +43,9 @@ fr_list_model_multi_row_draggable (EggTreeMultiDragSource *drag_source,
 	model = fr_window_get_list_store (window);
 
 	for (scan = path_list; scan; scan = scan->next) {
-		GtkTreeRowReference *reference = scan->data;
-		GtkTreePath         *path;
-		GtkTreeIter          iter;
+		CtkTreeRowReference *reference = scan->data;
+		CtkTreePath         *path;
+		CtkTreeIter          iter;
 		FileData            *fdata;
 
 		path = ctk_tree_row_reference_get_path (reference);
@@ -70,7 +70,7 @@ fr_list_model_multi_row_draggable (EggTreeMultiDragSource *drag_source,
 static gboolean
 fr_list_model_multi_drag_data_get (EggTreeMultiDragSource *drag_source,
 				   GdkDragContext         *context,
-				   GtkSelectionData       *selection_data,
+				   CtkSelectionData       *selection_data,
 				   GList                  *path_list)
 {
 	FrWindow *window;
@@ -164,10 +164,10 @@ fr_list_model_get_type (void)
 }
 
 
-GtkListStore *
+CtkListStore *
 fr_list_model_new (int n_columns, ...)
 {
-	GtkListStore *retval;
+	CtkListStore *retval;
 	GType        *types;
 	va_list       args;
 	int           i;

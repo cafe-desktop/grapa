@@ -2,17 +2,17 @@
 <!-- Generated with glade 3.22.2 -->
 <interface>
   <requires lib="ctk+" version="3.24"/>
-  <object class="GtkImage" id="image1">
+  <object class="CtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">help-browser</property>
   </object>
-  <object class="GtkImage" id="image2">
+  <object class="CtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">window-close</property>
   </object>
-  <object class="GtkDialog" id="prop_dialog">
+  <object class="CtkDialog" id="prop_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="window_position">center-on-parent</property>
@@ -21,18 +21,18 @@
       <placeholder/>
     </child>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox12">
+      <object class="CtkBox" id="dialog-vbox12">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area12">
+          <object class="CtkButtonBox" id="dialog-action_area12">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="p_help_button">
+              <object class="CtkButton" id="p_help_button">
                 <property name="label" translatable="yes">_Help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -49,7 +49,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="p_ok_button">
+              <object class="CtkButton" id="p_ok_button">
                 <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -75,14 +75,14 @@
           </packing>
         </child>
         <child>
-          <object class="GtkGrid" id="table3">
+          <object class="CtkGrid" id="table3">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
             <property name="row_spacing">6</property>
             <property name="column_spacing">12</property>
             <child>
-              <object class="GtkLabel" id="p_name_label_label">
+              <object class="CtkLabel" id="p_name_label_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
@@ -98,7 +98,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_size_label_label">
+              <object class="CtkLabel" id="p_size_label_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
@@ -114,7 +114,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_size_label">
+              <object class="CtkLabel" id="p_size_label">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
@@ -126,7 +126,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_cratio_label">
+              <object class="CtkLabel" id="p_cratio_label">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
@@ -138,7 +138,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_cratio_label_label">
+              <object class="CtkLabel" id="p_cratio_label_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
@@ -153,7 +153,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_date_label">
+              <object class="CtkLabel" id="p_date_label">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
@@ -165,7 +165,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_uncomp_size_label_label">
+              <object class="CtkLabel" id="p_uncomp_size_label_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
@@ -180,7 +180,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_uncomp_size_label">
+              <object class="CtkLabel" id="p_uncomp_size_label">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
@@ -192,7 +192,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_files_label">
+              <object class="CtkLabel" id="p_files_label">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
@@ -204,7 +204,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_files_label_label">
+              <object class="CtkLabel" id="p_files_label_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
@@ -220,7 +220,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_path_label">
+              <object class="CtkLabel" id="p_path_label">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
@@ -233,7 +233,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_name_label">
+              <object class="CtkLabel" id="p_name_label">
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="halign">start</property>
@@ -246,7 +246,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_path_label_label">
+              <object class="CtkLabel" id="p_path_label_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
@@ -262,7 +262,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_date_label_label">
+              <object class="CtkLabel" id="p_date_label_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
@@ -278,7 +278,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_mime_type_label_label">
+              <object class="CtkLabel" id="p_mime_type_label_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>
@@ -294,7 +294,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkLabel" id="p_mime_type_label">
+              <object class="CtkLabel" id="p_mime_type_label">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="halign">start</property>

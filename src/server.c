@@ -175,7 +175,7 @@ static GDBusNodeInfo *introspection_data = NULL;
 
 
 static void
-window_ready_cb (GtkWidget *widget,
+window_ready_cb (CtkWidget *widget,
 		 GError    *error,
 		 gpointer   user_data)
 {
@@ -279,7 +279,7 @@ handle_method_call (GDBusConnection       *connection,
 		gboolean    use_progress_dialog;
 		int         i;
 		GList      *file_list = NULL;
-		GtkWidget  *window;
+		CtkWidget  *window;
 
 		g_variant_get (parameters, "(s^asb)", &archive, &files, &use_progress_dialog);
 
@@ -308,7 +308,7 @@ handle_method_call (GDBusConnection       *connection,
 		gboolean    use_progress_dialog;
 		int         i;
 		GList      *file_list = NULL;
-		GtkWidget  *window;
+		CtkWidget  *window;
 
 		g_variant_get (parameters, "(^assb)", &files, &destination, &use_progress_dialog);
 
@@ -339,7 +339,7 @@ handle_method_call (GDBusConnection       *connection,
 		char      *archive;
 		char      *destination;
 		gboolean   use_progress_dialog;
-		GtkWidget *window;
+		CtkWidget *window;
 
 		g_variant_get (parameters, "(ssb)", &archive, &destination, &use_progress_dialog);
 
@@ -364,7 +364,7 @@ handle_method_call (GDBusConnection       *connection,
 	else if (g_strcmp0 (method_name, "ExtractHere") == 0) {
 		char      *archive;
 		gboolean   use_progress_dialog;
-		GtkWidget *window;
+		CtkWidget *window;
 
 		g_variant_get (parameters, "(sb)", &archive, &use_progress_dialog);
 

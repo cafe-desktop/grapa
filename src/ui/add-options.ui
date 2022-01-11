@@ -2,22 +2,22 @@
 <!-- Generated with glade 3.22.2 -->
 <interface>
   <requires lib="ctk+" version="3.24"/>
-  <object class="GtkImage" id="image1">
+  <object class="CtkImage" id="image1">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">list-remove</property>
   </object>
-  <object class="GtkImage" id="image2">
+  <object class="CtkImage" id="image2">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">window-close</property>
   </object>
-  <object class="GtkImage" id="image3">
+  <object class="CtkImage" id="image3">
     <property name="visible">True</property>
     <property name="can_focus">False</property>
     <property name="icon_name">ctk-apply</property>
   </object>
-  <object class="GtkDialog" id="add_options_dialog">
+  <object class="CtkDialog" id="add_options_dialog">
     <property name="can_focus">False</property>
     <property name="border_width">5</property>
     <property name="title" translatable="yes">Load Options</property>
@@ -27,18 +27,18 @@
       <placeholder/>
     </child>
     <child internal-child="vbox">
-      <object class="GtkBox" id="dialog-vbox19">
+      <object class="CtkBox" id="dialog-vbox19">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <property name="spacing">2</property>
         <child internal-child="action_area">
-          <object class="GtkButtonBox" id="dialog-action_area19">
+          <object class="CtkButtonBox" id="dialog-action_area19">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="layout_style">end</property>
             <child>
-              <object class="GtkButton" id="aod_cancelbutton">
+              <object class="CtkButton" id="aod_cancelbutton">
                 <property name="label" translatable="yes">_Close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -54,7 +54,7 @@
               </packing>
             </child>
             <child>
-              <object class="GtkButton" id="aod_okbutton">
+              <object class="CtkButton" id="aod_okbutton">
                 <property name="label" translatable="yes">_Apply</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
@@ -78,20 +78,20 @@
           </packing>
         </child>
         <child>
-          <object class="GtkGrid" id="table4">
+          <object class="CtkGrid" id="table4">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="border_width">5</property>
             <property name="row_spacing">6</property>
             <property name="column_spacing">6</property>
             <child>
-              <object class="GtkBox" id="vbox18">
+              <object class="CtkBox" id="vbox18">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
                 <property name="orientation">vertical</property>
                 <property name="spacing">6</property>
                 <child>
-                  <object class="GtkButton" id="aod_remove_button">
+                  <object class="CtkButton" id="aod_remove_button">
                     <property name="label" translatable="yes">_Remove</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
@@ -118,19 +118,19 @@
               </packing>
             </child>
             <child>
-              <object class="GtkScrolledWindow" id="scrolledwindow11">
+              <object class="CtkScrolledWindow" id="scrolledwindow11">
                 <property name="width_request">280</property>
                 <property name="height_request">150</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="shadow_type">in</property>
                 <child>
-                  <object class="GtkTreeView" id="aod_treeview">
+                  <object class="CtkTreeView" id="aod_treeview">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="headers_visible">False</property>
                     <child internal-child="selection">
-                      <object class="GtkTreeSelection" id="treeview-selection1"/>
+                      <object class="CtkTreeSelection" id="treeview-selection1"/>
                     </child>
                   </object>
                 </child>

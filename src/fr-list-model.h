@@ -33,14 +33,14 @@
 #define FR_LIST_MODEL_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS((obj), FR_TYPE_LIST_MODEL, FRListModelClass))
 
 typedef struct FRListModel {
-	GtkListStore __parent;
+	CtkListStore __parent;
 } FRListModel;
 
 typedef struct FRListModelClass {
-	GtkListStoreClass __parent_class;
+	CtkListStoreClass __parent_class;
 } FRListModelClass;
 
 GType         fr_list_model_get_type (void);
-GtkListStore *fr_list_model_new      (int n_columns, ...);
+CtkListStore *fr_list_model_new      (int n_columns, ...);
 
 #endif /* FR_LIST_MODEL_H */

@@ -28,18 +28,18 @@
 #include <ctk/ctk.h>
 
 
-int         _ctk_count_selected             (GtkTreeSelection *selection);
+int         _ctk_count_selected             (CtkTreeSelection *selection);
 
-GtkWidget*  _ctk_message_dialog_new         (GtkWindow        *parent,
-					     GtkDialogFlags    flags,
+CtkWidget*  _ctk_message_dialog_new         (CtkWindow        *parent,
+					     CtkDialogFlags    flags,
 					     const char       *icon_name,
 					     const char       *message,
 					     const char       *secondary_message,
 					     const char       *first_button_text,
 					     ...);
 
-gchar*      _ctk_request_dialog_run         (GtkWindow        *parent,
-					     GtkDialogFlags    flags,
+gchar*      _ctk_request_dialog_run         (CtkWindow        *parent,
+					     CtkDialogFlags    flags,
 					     const char       *title,
 					     const char       *message,
 					     const char       *default_value,
@@ -47,54 +47,54 @@ gchar*      _ctk_request_dialog_run         (GtkWindow        *parent,
 					     const char       *no_button_text,
 					     const char       *yes_button_text);
 
-GtkWidget*  _ctk_error_dialog_new           (GtkWindow        *parent,
-					     GtkDialogFlags    flags,
+CtkWidget*  _ctk_error_dialog_new           (CtkWindow        *parent,
+					     CtkDialogFlags    flags,
 					     GList            *row_output,
 					     const char       *primary_text,
 					     const char       *secondary_text,
 					     ...) G_GNUC_PRINTF (5, 6);
 
-void        _ctk_error_dialog_run           (GtkWindow        *parent,
+void        _ctk_error_dialog_run           (CtkWindow        *parent,
 					     const gchar      *main_message,
 					     const gchar      *format,
 					     ...);
 
-void        _ctk_entry_set_locale_text      (GtkEntry   *entry,
+void        _ctk_entry_set_locale_text      (CtkEntry   *entry,
 					     const char *text);
 
-char *      _ctk_entry_get_locale_text      (GtkEntry   *entry);
+char *      _ctk_entry_get_locale_text      (CtkEntry   *entry);
 
-void        _ctk_entry_set_filename_text    (GtkEntry   *entry,
+void        _ctk_entry_set_filename_text    (CtkEntry   *entry,
 					     const char *text);
 
 GdkPixbuf * get_icon_pixbuf                 (GIcon        *icon,
 		 			     int           size,
-		 			     GtkIconTheme *icon_theme);
+		 			     CtkIconTheme *icon_theme);
 
 GdkPixbuf * get_mime_type_pixbuf            (const char   *mime_type,
 		                             int           icon_size,
-		                             GtkIconTheme *icon_theme);
+		                             CtkIconTheme *icon_theme);
 
-void        show_help_dialog                (GtkWindow    *parent,
+void        show_help_dialog                (CtkWindow    *parent,
 					     const char   *section);
-GtkBuilder *
+CtkBuilder *
 	   _ctk_builder_new_from_resource   (const char   *resource_path);
-GtkWidget *
-	    _ctk_builder_get_widget         (GtkBuilder   *builder,
+CtkWidget *
+	    _ctk_builder_get_widget         (CtkBuilder   *builder,
 			 		     const char   *name);
 
-int	    _ctk_widget_lookup_for_size	    (GtkWidget *widget,
-					     GtkIconSize icon_size);
+int	    _ctk_widget_lookup_for_size	    (CtkWidget *widget,
+					     CtkIconSize icon_size);
 
-GtkWidget * grapa_dialog_add_button         (GtkDialog   *dialog,
+CtkWidget * grapa_dialog_add_button         (CtkDialog   *dialog,
 					     const gchar *button_text,
 					     const gchar *icon_name,
 					     gint         response_id);
 gchar *
-grapa_file_chooser_get_current_folder_uri   (GtkFileChooser *chooser);
+grapa_file_chooser_get_current_folder_uri   (CtkFileChooser *chooser);
 gboolean
-grapa_file_chooser_set_current_folder_uri   (GtkFileChooser *chooser,
+grapa_file_chooser_set_current_folder_uri   (CtkFileChooser *chooser,
 					     const gchar    *uri);
 gchar *
-grapa_file_chooser_get_uri                  (GtkFileChooser *chooser);
+grapa_file_chooser_get_uri                  (CtkFileChooser *chooser);
 #endif

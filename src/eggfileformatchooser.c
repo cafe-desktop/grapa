@@ -46,15 +46,15 @@ enum
 
 struct _EggFileFormatChooserPrivate
 {
-  GtkTreeStore *model;
-  GtkTreeSelection *selection;
+  CtkTreeStore *model;
+  CtkTreeSelection *selection;
   guint idle_hack;
   guint last_id;
   gulong size_changed_event;
 
-  GtkFileChooser *chooser;
-  GtkFileFilter *all_files;
-  GtkFileFilter *supported_files;
+  CtkFileChooser *chooser;
+  CtkFileFilter *all_files;
+  CtkFileFilter *supported_files;
 };
 
 struct _EggFileFormatFilterInfo
@@ -68,7 +68,7 @@ struct _EggFileFormatFilterInfo
 struct _EggFileFormatSearch
 {
   gboolean success;
-  GtkTreeIter iter;
+  CtkTreeIter iter;
 
   guint format;
   const gchar *extension;
@@ -117,14 +117,14 @@ egg_file_format_filter_find (gpointer key,
                              gpointer value G_GNUC_UNUSED,
                              gpointer data)
 {
-  const GtkFileFilterInfo *info = data;
+  const CtkFileFilterInfo *info = data;
   const gchar *pattern = key;
 
   return g_str_has_suffix (info->filename, pattern + 1);
 }
 
 static gboolean
-egg_file_format_filter_filter (const GtkFileFilterInfo *info,
+egg_file_format_filter_filter (const CtkFileFilterInfo *info,
                                gpointer                 data)
 {
   EggFileFormatFilterInfo *self = data;
@@ -134,11 +134,11 @@ egg_file_format_filter_filter (const GtkFileFilterInfo *info,
                                     (gpointer) info);
 }
 
-static GtkFileFilter*
+static CtkFileFilter*
 egg_file_format_filter_new (const gchar *name,
                             gboolean     show_extensions)
 {
-  GtkFileFilter *filter;
+  CtkFileFilter *filter;
   EggFileFormatFilterInfo *info;
 
   filter = ctk_file_filter_new ();
@@ -157,7 +157,7 @@ egg_file_format_filter_new (const gchar *name,
 }
 
 static void
-egg_file_format_filter_add_extensions (GtkFileFilter *filter,
+egg_file_format_filter_add_extensions (CtkFileFilter *filter,
                                        const gchar   *extensions)
 {
   EggFileFormatFilterInfo *info;
@@ -208,16 +208,16 @@ egg_file_format_filter_add_extensions (GtkFileFilter *filter,
 }
 
 static void
-selection_changed_cb (GtkTreeSelection     *selection,
+selection_changed_cb (CtkTreeSelection     *selection,
                       EggFileFormatChooser *self)
 {
   gchar *label;
   gchar *name;
 
-  GtkFileFilter *filter;
-  GtkTreeModel *model;
-  GtkTreeIter parent;
-  GtkTreeIter iter;
+  CtkFileFilter *filter;
+  CtkTreeModel *model;
+  CtkTreeIter parent;
+  CtkTreeIter iter;
 
   if (ctk_tree_selection_get_selected (selection, &model, &iter))
     {
@@ -256,9 +256,9 @@ select_default_file_format (gpointer data)
 }
 
 static gboolean
-find_by_format (GtkTreeModel *model,
-                GtkTreePath  *path G_GNUC_UNUSED,
-                GtkTreeIter  *iter,
+find_by_format (CtkTreeModel *model,
+                CtkTreePath  *path G_GNUC_UNUSED,
+                CtkTreeIter  *iter,
                 gpointer      data)
 {
   EggFileFormatSearch *search = data;
@@ -320,9 +320,9 @@ accept_filename (gchar       *extensions,
 }
 
 static gboolean
-find_by_extension (GtkTreeModel *model,
-                   GtkTreePath  *path G_GNUC_UNUSED,
-                   GtkTreeIter  *iter,
+find_by_extension (CtkTreeModel *model,
+                   CtkTreePath  *path G_GNUC_UNUSED,
+                   CtkTreeIter  *iter,
                    gpointer      data)
 {
   EggFileFormatSearch *search = data;
@@ -357,7 +357,7 @@ emit_default_size_changed (gpointer user_data)
 }
 
 static void
-expander_unmap_cb (GtkWidget *widget,
+expander_unmap_cb (CtkWidget *widget,
 		   gpointer   user_data)
 {
   EggFileFormatChooser *self = user_data;
@@ -369,12 +369,12 @@ expander_unmap_cb (GtkWidget *widget,
 static void
 egg_file_format_chooser_init (EggFileFormatChooser *self)
 {
-  GtkWidget *scroller;
-  GtkWidget *view;
+  CtkWidget *scroller;
+  CtkWidget *view;
 
-  GtkTreeViewColumn *column;
-  GtkCellRenderer *cell;
-  GtkTreeIter iter;
+  CtkTreeViewColumn *column;
+  CtkCellRenderer *cell;
+  CtkTreeIter iter;
 
   self->priv = egg_file_format_chooser_get_instance_private(self);
 
@@ -460,8 +460,8 @@ egg_file_format_chooser_init (EggFileFormatChooser *self)
 static void
 reset_model (EggFileFormatChooser *self)
 {
-  GtkTreeModel *model = GTK_TREE_MODEL (self->priv->model);
-  GtkTreeIter iter;
+  CtkTreeModel *model = GTK_TREE_MODEL (self->priv->model);
+  CtkTreeIter iter;
 
   if (ctk_tree_model_get_iter_first (model, &iter))
     {
@@ -535,12 +535,12 @@ filter_changed_cb (GObject    *object,
 {
   EggFileFormatChooser *self;
 
-  GtkFileFilter *current_filter;
-  GtkFileFilter *format_filter;
+  CtkFileFilter *current_filter;
+  CtkFileFilter *format_filter;
 
-  GtkTreeModel *model;
-  GtkTreeIter iter;
-  GtkTreeIter parent;
+  CtkTreeModel *model;
+  CtkTreeIter iter;
+  CtkTreeIter parent;
 
   self = EGG_FILE_FORMAT_CHOOSER (data);
 
@@ -588,13 +588,13 @@ filter_changed_cb (GObject    *object,
 
 /* Shows an error dialog set as transient for the specified window */
 static void
-error_message_with_parent (GtkWindow  *parent,
+error_message_with_parent (CtkWindow  *parent,
 			   const char *msg,
 			   const char *detail)
 {
-  GtkWidget *dialog;
+  CtkWidget *dialog;
 
-  g_warning ("%s: Merge with the code in Gtk{File,Recent}ChooserDefault.", G_STRLOC);
+  g_warning ("%s: Merge with the code in Ctk{File,Recent}ChooserDefault.", G_STRLOC);
 
   dialog = ctk_message_dialog_new (parent,
 				   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -612,11 +612,11 @@ error_message_with_parent (GtkWindow  *parent,
   ctk_widget_destroy (dialog);
 }
 
-/* Returns a toplevel GtkWindow, or NULL if none */
-static GtkWindow *
-get_toplevel (GtkWidget *widget)
+/* Returns a toplevel CtkWindow, or NULL if none */
+static CtkWindow *
+get_toplevel (CtkWidget *widget)
 {
-  GtkWidget *toplevel;
+  CtkWidget *toplevel;
 
   toplevel = ctk_widget_get_toplevel (widget);
   if (!ctk_widget_is_toplevel (toplevel))
@@ -635,7 +635,7 @@ error_message (EggFileFormatChooser *impl,
 }
 
 static void
-chooser_response_cb (GtkDialog *dialog,
+chooser_response_cb (CtkDialog *dialog,
                      gint       response_id,
                      gpointer   data)
 {
@@ -692,14 +692,14 @@ chooser_response_cb (GtkDialog *dialog,
 }
 
 static void
-egg_file_format_chooser_realize (GtkWidget *widget)
+egg_file_format_chooser_realize (CtkWidget *widget)
 {
   EggFileFormatChooser *self;
-  GtkWidget *parent;
+  CtkWidget *parent;
 
-  GtkFileFilter *filter;
-  GtkTreeModel *model;
-  GtkTreeIter iter;
+  CtkFileFilter *filter;
+  CtkTreeModel *model;
+  CtkTreeIter iter;
 
   GTK_WIDGET_CLASS (egg_file_format_chooser_parent_class)->realize (widget);
 
@@ -745,13 +745,13 @@ egg_file_format_chooser_realize (GtkWidget *widget)
 }
 
 static void
-egg_file_format_chooser_unrealize (GtkWidget *widget)
+egg_file_format_chooser_unrealize (CtkWidget *widget)
 {
   EggFileFormatChooser *self;
 
-  GtkFileFilter *filter;
-  GtkTreeModel *model;
-  GtkTreeIter iter;
+  CtkFileFilter *filter;
+  CtkTreeModel *model;
+  CtkTreeIter iter;
 
   GTK_WIDGET_CLASS (egg_file_format_chooser_parent_class)->unrealize (widget);
 
@@ -782,7 +782,7 @@ static void
 egg_file_format_chooser_class_init (EggFileFormatChooserClass *cls)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (cls);
-  GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (cls);
+  CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (cls);
 
   object_class->dispose = egg_file_format_chooser_dispose;
   object_class->finalize = egg_file_format_chooser_finalize;
@@ -796,7 +796,7 @@ egg_file_format_chooser_class_init (EggFileFormatChooserClass *cls)
     NULL, NULL, g_cclosure_marshal_VOID__VOID, G_TYPE_NONE, 0);
 }
 
-GtkWidget*
+CtkWidget*
 egg_file_format_chooser_new (void)
 {
   return g_object_new (EGG_TYPE_FILE_FORMAT_CHOOSER, NULL);
@@ -810,8 +810,8 @@ egg_file_format_chooser_add_format_impl (EggFileFormatChooser *self,
                                          const gchar          *extensions)
 {
   EggFileFormatSearch search;
-  GtkFileFilter *filter;
-  GtkTreeIter iter;
+  CtkFileFilter *filter;
+  CtkTreeIter iter;
 
   search.success = FALSE;
   search.format = parent;
@@ -989,8 +989,8 @@ egg_file_format_chooser_remove_format (EggFileFormatChooser *self,
   gpointer data = NULL;
 
   EggFileFormatSearch search;
-  GtkFileFilter *filter;
-  GtkTreeModel *model;
+  CtkFileFilter *filter;
+  CtkTreeModel *model;
 
   g_return_if_fail (EGG_IS_FILE_FORMAT_CHOOSER (self));
 
@@ -1030,9 +1030,9 @@ egg_file_format_chooser_set_format (EggFileFormatChooser *self,
 {
   EggFileFormatSearch search;
 
-  GtkTreeModel *model;
-  GtkTreePath *path;
-  GtkTreeView *view;
+  CtkTreeModel *model;
+  CtkTreePath *path;
+  CtkTreeView *view;
 
   g_return_if_fail (EGG_IS_FILE_FORMAT_CHOOSER (self));
 
@@ -1064,8 +1064,8 @@ guint
 egg_file_format_chooser_get_format (EggFileFormatChooser *self,
                                     const gchar          *filename)
 {
-  GtkTreeModel *model;
-  GtkTreeIter iter;
+  CtkTreeModel *model;
+  CtkTreeIter iter;
   guint format = 0;
 
   g_return_val_if_fail (EGG_IS_FILE_FORMAT_CHOOSER (self), -1);
@@ -1119,7 +1119,7 @@ egg_file_format_chooser_get_format_data (EggFileFormatChooser *self,
 {
   EggFileFormatSearch search;
   gpointer data = NULL;
-  GtkTreeModel *model;
+  CtkTreeModel *model;
 
   g_return_val_if_fail (EGG_IS_FILE_FORMAT_CHOOSER (self), NULL);
 
@@ -1143,8 +1143,8 @@ egg_file_format_chooser_append_extension (EggFileFormatChooser *self,
                                           guint                 format)
 {
   EggFileFormatSearch search;
-  GtkTreeModel *model;
-  GtkTreeIter child;
+  CtkTreeModel *model;
+  CtkTreeIter child;
 
   gchar *extensions;
   gchar *result;
