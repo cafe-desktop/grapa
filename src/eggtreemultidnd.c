@@ -326,7 +326,7 @@ egg_tree_multi_drag_motion_event (CtkWidget      *widget,
 	  target_list = ctk_target_list_new (target_table, G_N_ELEMENTS (target_table));
 	  context = ctk_drag_begin_with_coordinates (widget,
 	                                             target_list,
-	                                             GDK_ACTION_COPY,
+	                                             CDK_ACTION_COPY,
 	                                             priv_data->pressed_button,
 	                                             (CdkEvent*) event,
 	                                             event->x,
@@ -405,7 +405,7 @@ egg_tree_multi_drag_button_press_event (CtkWidget      *widget,
       return TRUE;
     }
 
-  if (event->type == GDK_2BUTTON_PRESS)
+  if (event->type == CDK_2BUTTON_PRESS)
     return FALSE;
 
   ctk_tree_view_get_path_at_pos (tree_view,
@@ -417,7 +417,7 @@ egg_tree_multi_drag_button_press_event (CtkWidget      *widget,
 
   if (path)
     {
-      gboolean call_parent = (event->state & (GDK_CONTROL_MASK | GDK_SHIFT_MASK) ||
+      gboolean call_parent = (event->state & (CDK_CONTROL_MASK | CDK_SHIFT_MASK) ||
 			      !ctk_tree_selection_path_is_selected (selection, path) ||
 			      event->button != 1);
 

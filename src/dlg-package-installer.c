@@ -175,7 +175,7 @@ install_packages (InstallerData *idata)
 			CdkDisplay *display;
 
 			display = ctk_widget_get_display (CTK_WIDGET (idata));
-			cursor = cdk_cursor_new_for_display (display, GDK_WATCH);
+			cursor = cdk_cursor_new_for_display (display, CDK_WATCH);
 			cdk_window_set_cursor (window, cursor);
 			g_object_unref (cursor);
 		}
@@ -195,7 +195,7 @@ install_packages (InstallerData *idata)
 			char  **real_names;
 
 			if (window != NULL)
-				xid = GDK_WINDOW_XID (window);
+				xid = CDK_WINDOW_XID (window);
 			else
 				xid = 0;
 

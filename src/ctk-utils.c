@@ -607,7 +607,7 @@ show_help_dialog (CtkWindow  *parent,
 	GError *error = NULL;
 
 	uri = g_strconcat ("help:grapa", section ? "/" : NULL, section, NULL);
-	if (! ctk_show_uri_on_window (parent, uri, GDK_CURRENT_TIME, &error)) {
+	if (! ctk_show_uri_on_window (parent, uri, CDK_CURRENT_TIME, &error)) {
 		CtkWidget *dialog;
 
 		dialog = _ctk_message_dialog_new (parent,
