@@ -31,19 +31,19 @@
 typedef struct {
 	FrWindow  *window;
 	GList     *selected_files;
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 
-	GtkWidget *dialog;
-	GtkWidget *d_all_files_radio;
-	GtkWidget *d_selected_files_radio;
-	GtkWidget *d_files_radio;
-	GtkWidget *d_files_entry;
+	CtkWidget *dialog;
+	CtkWidget *d_all_files_radio;
+	CtkWidget *d_selected_files_radio;
+	CtkWidget *d_files_radio;
+	CtkWidget *d_files_entry;
 } DialogData;
 
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (GtkWidget  *widget,
+destroy_cb (CtkWidget  *widget,
 	    DialogData *data)
 {
 	path_list_free (data->selected_files);
@@ -54,7 +54,7 @@ destroy_cb (GtkWidget  *widget,
 
 /* called when the "ok" button is pressed. */
 static void
-ok_clicked_cb (GtkWidget  *widget,
+ok_clicked_cb (CtkWidget  *widget,
 	       DialogData *data)
 {
 	gboolean  selected_files;
@@ -95,7 +95,7 @@ ok_clicked_cb (GtkWidget  *widget,
 
 
 static void
-entry_changed_cb (GtkWidget  *widget,
+entry_changed_cb (CtkWidget  *widget,
 		  DialogData *data)
 {
 	if (! ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_files_radio)))
@@ -108,8 +108,8 @@ dlg_delete__common (FrWindow *window,
 	            GList    *selected_files)
 {
 	DialogData *data;
-	GtkWidget  *cancel_button;
-	GtkWidget  *ok_button;
+	CtkWidget  *cancel_button;
+	CtkWidget  *ok_button;
 
 	data = g_new (DialogData, 1);
 	data->window = window;
@@ -171,7 +171,7 @@ dlg_delete__common (FrWindow *window,
 
 
 void
-dlg_delete (GtkWidget *widget,
+dlg_delete (CtkWidget *widget,
 	    gpointer   callback_data)
 {
 	FrWindow *window = callback_data;
@@ -181,7 +181,7 @@ dlg_delete (GtkWidget *widget,
 
 
 void
-dlg_delete_from_sidebar (GtkWidget *widget,
+dlg_delete_from_sidebar (CtkWidget *widget,
 			 gpointer   callback_data)
 {
 	FrWindow *window = callback_data;

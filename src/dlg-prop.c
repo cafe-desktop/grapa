@@ -31,14 +31,14 @@
 
 
 typedef struct {
-	GtkBuilder *builder;
-	GtkWidget *dialog;
+	CtkBuilder *builder;
+	CtkWidget *dialog;
 } DialogData;
 
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (GtkWidget  *widget,
+destroy_cb (CtkWidget  *widget,
 	    DialogData *data)
 {
 	g_object_unref (G_OBJECT (data->builder));
@@ -47,7 +47,7 @@ destroy_cb (GtkWidget  *widget,
 
 
 static int
-help_cb (GtkWidget   *w,
+help_cb (CtkWidget   *w,
 	 DialogData  *data)
 {
 	show_help_dialog (GTK_WINDOW (data->dialog), "grapa-view-archive-properties");
@@ -59,9 +59,9 @@ void
 dlg_prop (FrWindow *window)
 {
 	DialogData       *data;
-	GtkWidget        *ok_button;
-	GtkWidget        *help_button;
-	GtkWidget        *label;
+	CtkWidget        *ok_button;
+	CtkWidget        *help_button;
+	CtkWidget        *label;
 	GFile            *parent;
 	char             *uri;
 	char             *markup;

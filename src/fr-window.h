@@ -82,14 +82,14 @@ typedef struct _FrWindowPrivateData FrWindowPrivateData;
 
 struct _FrWindow
 {
-	GtkApplicationWindow __parent;
+	CtkApplicationWindow __parent;
 	FrArchive *archive;
 	FrWindowPrivateData *priv;
 };
 
 struct _FrWindowClass
 {
-	GtkApplicationWindowClass __parent_class;
+	CtkApplicationWindowClass __parent_class;
 
 	/*<signals>*/
 
@@ -103,7 +103,7 @@ struct _FrWindowClass
 };
 
 GType       fr_window_get_type                  (void);
-GtkWidget * fr_window_new                       (void);
+CtkWidget * fr_window_new                       (void);
 void        fr_window_close                     (FrWindow      *window);
 
 /* archive operations */
@@ -112,7 +112,7 @@ gboolean    fr_window_archive_new               (FrWindow      *window,
 						 const char    *uri);
 FrWindow *  fr_window_archive_open              (FrWindow      *window,
 						 const char    *uri,
-						 GtkWindow     *parent);
+						 CtkWindow     *parent);
 void        fr_window_archive_close             (FrWindow      *window);
 const char *fr_window_get_archive_uri           (FrWindow      *window);
 const char *fr_window_get_paste_archive_uri     (FrWindow      *window);
@@ -212,13 +212,13 @@ GList *    fr_window_get_folder_tree_selection    (FrWindow    *window,
 GList *    fr_window_get_selection                (FrWindow    *window,
 		  	 			   gboolean     from_sidebar,
 		  	 			   char       **return_base_dir);
-GtkTreeModel *
+CtkTreeModel *
 	   fr_window_get_list_store               (FrWindow    *window);
 void       fr_window_find                         (FrWindow    *window);
 void       fr_window_select_all                   (FrWindow    *window);
 void       fr_window_unselect_all                 (FrWindow    *window);
 void       fr_window_set_sort_type                (FrWindow    *window,
-						   GtkSortType  sort_type);
+						   CtkSortType  sort_type);
 
 /**/
 
@@ -312,7 +312,7 @@ void       fr_window_destroy_with_error_dialog    (FrWindow      *window);
 
 gboolean   fr_window_file_list_drag_data_get (FrWindow         *window,
 					      GdkDragContext   *context,
-					      GtkSelectionData *selection_data,
+					      CtkSelectionData *selection_data,
 					      GList            *path_list);
 
 void       fr_window_update_dialog_closed    (FrWindow *window);

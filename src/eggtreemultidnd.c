@@ -31,7 +31,7 @@
 
 #define EGG_TREE_MULTI_DND_STRING "EggTreeMultiDndString"
 
-static GtkTargetEntry target_table[] = {
+static CtkTargetEntry target_table[] = {
         { "XdndDirectSave0", 0, 0 },
         { "XdndGrapa0", 0, 1 }
 };
@@ -151,7 +151,7 @@ egg_tree_multi_drag_source_drag_data_delete (EggTreeMultiDragSource *drag_source
 gboolean
 egg_tree_multi_drag_source_drag_data_get (EggTreeMultiDragSource *drag_source,
 					  GdkDragContext         *context,
-					  GtkSelectionData       *selection_data,
+					  CtkSelectionData       *selection_data,
 					  GList                  *path_list)
 {
   EggTreeMultiDragSourceIface *iface = EGG_TREE_MULTI_DRAG_SOURCE_GET_IFACE (drag_source);
@@ -166,7 +166,7 @@ egg_tree_multi_drag_source_drag_data_get (EggTreeMultiDragSource *drag_source,
 
 
 static void
-stop_drag_check (GtkWidget *widget)
+stop_drag_check (CtkWidget *widget)
 {
   EggTreeMultiDndData *priv_data;
   GSList *l;
@@ -192,7 +192,7 @@ stop_drag_check (GtkWidget *widget)
 
 
 static gboolean
-egg_tree_multi_drag_button_release_event (GtkWidget      *widget,
+egg_tree_multi_drag_button_release_event (CtkWidget      *widget,
 					  GdkEventButton *event,
 					  gpointer        data)
 {
@@ -211,9 +211,9 @@ egg_tree_multi_drag_button_release_event (GtkWidget      *widget,
 
 
 static void
-selection_foreach (GtkTreeModel *model,
-		   GtkTreePath  *path,
-		   GtkTreeIter  *iter,
+selection_foreach (CtkTreeModel *model,
+		   CtkTreePath  *path,
+		   CtkTreeIter  *iter,
 		   gpointer      data)
 {
   GList **list_ptr;
@@ -252,14 +252,14 @@ get_context_data (GdkDragContext *context)
 
 
 static gboolean
-egg_tree_multi_drag_drag_data_get (GtkWidget        *widget,
+egg_tree_multi_drag_drag_data_get (CtkWidget        *widget,
 				   GdkDragContext   *context,
-				   GtkSelectionData *selection_data,
+				   CtkSelectionData *selection_data,
 				   guint             info,
 				   guint             time)
 {
-  GtkTreeView  *tree_view;
-  GtkTreeModel *model;
+  CtkTreeView  *tree_view;
+  CtkTreeModel *model;
   GList        *path_list;
 
   tree_view = GTK_TREE_VIEW (widget);
@@ -287,7 +287,7 @@ egg_tree_multi_drag_drag_data_get (GtkWidget        *widget,
 
 
 static gboolean
-egg_tree_multi_drag_motion_event (GtkWidget      *widget,
+egg_tree_multi_drag_motion_event (CtkWidget      *widget,
 				  GdkEventMotion *event,
 				  gpointer        data)
 {
@@ -302,8 +302,8 @@ egg_tree_multi_drag_motion_event (GtkWidget      *widget,
 				event->y))
     {
       GList            *path_list = NULL;
-      GtkTreeSelection *selection;
-      GtkTreeModel     *model;
+      CtkTreeSelection *selection;
+      CtkTreeModel     *model;
       GdkDragContext   *context;
 
       stop_drag_check (widget);
@@ -318,8 +318,8 @@ egg_tree_multi_drag_motion_event (GtkWidget      *widget,
       model = ctk_tree_view_get_model (GTK_TREE_VIEW (widget));
       if (egg_tree_multi_drag_source_row_draggable (EGG_TREE_MULTI_DRAG_SOURCE (model), path_list))
 	{
-	  GtkTargetList *target_list;
-	  GtkTreePath   *tree_path;
+	  CtkTargetList *target_list;
+	  CtkTreePath   *tree_path;
 	  int            cell_x;
 	  int            cell_y;
 
@@ -366,15 +366,15 @@ egg_tree_multi_drag_motion_event (GtkWidget      *widget,
 
 
 static gboolean
-egg_tree_multi_drag_button_press_event (GtkWidget      *widget,
+egg_tree_multi_drag_button_press_event (CtkWidget      *widget,
 					GdkEventButton *event,
 					gpointer        data)
 {
-  GtkTreeView         *tree_view;
-  GtkTreePath         *path = NULL;
-  GtkTreeViewColumn   *column = NULL;
+  CtkTreeView         *tree_view;
+  CtkTreePath         *path = NULL;
+  CtkTreeViewColumn   *column = NULL;
   gint                 cell_x, cell_y;
-  GtkTreeSelection    *selection;
+  CtkTreeSelection    *selection;
   EggTreeMultiDndData *priv_data;
 
   if (event->window != ctk_tree_view_get_bin_window (GTK_TREE_VIEW (widget)))
@@ -473,7 +473,7 @@ egg_tree_multi_drag_button_press_event (GtkWidget      *widget,
 
 
 void
-egg_tree_multi_drag_add_drag_support (GtkTreeView *tree_view)
+egg_tree_multi_drag_add_drag_support (CtkTreeView *tree_view)
 {
   g_return_if_fail (GTK_IS_TREE_VIEW (tree_view));
   g_signal_connect (G_OBJECT (tree_view),

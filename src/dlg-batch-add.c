@@ -47,9 +47,9 @@ typedef struct {
 	FrWindow   *window;
 	GSettings *settings;
 	GSettings *settings_general;
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 	int        *supported_types;
-	GtkWidget  *archive_type_combo_box;
+	CtkWidget  *archive_type_combo_box;
 	GList      *file_list;
 	gboolean    add_clicked;
 	const char *last_mime_type;
@@ -70,7 +70,7 @@ get_ext (DialogData *data)
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (GtkWidget  *widget,
+destroy_cb (CtkWidget  *widget,
 	    DialogData *data)
 {
 	g_settings_set_string (data->settings, PREF_BATCH_ADD_DEFAULT_EXTENSION, get_ext (data));
@@ -124,7 +124,7 @@ set_archive_options (DialogData *data)
 
 
 static void
-help_clicked_cb (GtkWidget  *widget,
+help_clicked_cb (CtkWidget  *widget,
 		 DialogData *data)
 {
 	show_help_dialog (GTK_WINDOW (GET_WIDGET ("dialog")), "grapa-fmgr-add");
@@ -132,7 +132,7 @@ help_clicked_cb (GtkWidget  *widget,
 
 
 static void
-add_clicked_cb (GtkWidget  *widget,
+add_clicked_cb (CtkWidget  *widget,
 		DialogData *data)
 {
 	FrWindow   *window = data->window;
@@ -153,7 +153,7 @@ add_clicked_cb (GtkWidget  *widget,
 	/* Check whether the user entered a valid archive name. */
 
 	if ((archive_name == NULL) || (*archive_name == '\0')) {
-		GtkWidget *d;
+		CtkWidget *d;
 
 		d = _ctk_error_dialog_new (GTK_WINDOW (window),
 					   GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -168,7 +168,7 @@ add_clicked_cb (GtkWidget  *widget,
 		return;
 	}
 	else if (strchrs (archive_name, BAD_CHARS)) {
-		GtkWidget *d;
+		CtkWidget *d;
 		char      *utf8_name = g_filename_display_name (archive_name);
 
 		d = _ctk_error_dialog_new (GTK_WINDOW (window),
@@ -198,7 +198,7 @@ add_clicked_cb (GtkWidget  *widget,
 	}
 
 	if (! check_permissions (archive_dir, R_OK|W_OK|X_OK)) {
-		GtkWidget  *d;
+		CtkWidget  *d;
 
 		d = _ctk_error_dialog_new (GTK_WINDOW (window),
 					   GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -215,7 +215,7 @@ add_clicked_cb (GtkWidget  *widget,
 	}
 
 	if (! uri_is_dir (archive_dir)) {
-		GtkWidget *d;
+		CtkWidget *d;
 		int        r;
 		char      *folder_name;
 		char      *msg;
@@ -243,7 +243,7 @@ add_clicked_cb (GtkWidget  *widget,
 	}
 
 	if (! do_not_add && ! ensure_dir_exists (archive_dir, 0755, &error)) {
-		GtkWidget  *d;
+		CtkWidget  *d;
 
 		d = _ctk_error_dialog_new (GTK_WINDOW (window),
 					   GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -261,7 +261,7 @@ add_clicked_cb (GtkWidget  *widget,
 	}
 
 	if (do_not_add) {
-		GtkWidget *d;
+		CtkWidget *d;
 
 		d = _ctk_message_dialog_new (GTK_WINDOW (window),
 					     GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -289,7 +289,7 @@ add_clicked_cb (GtkWidget  *widget,
 	archive_file = g_strconcat (archive_dir, "/", archive_name, NULL);
 
 	if (uri_is_dir (archive_file)) {
-		GtkWidget  *d;
+		CtkWidget  *d;
 
 		d = _ctk_error_dialog_new (GTK_WINDOW (window),
 					   GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -308,7 +308,7 @@ add_clicked_cb (GtkWidget  *widget,
 	}
 
 	if (uri_exists (archive_file)) {
-		GtkWidget *d;
+		CtkWidget *d;
 		int        r;
 
 		d = _ctk_message_dialog_new (GTK_WINDOW (GET_WIDGET ("dialog")),
@@ -394,7 +394,7 @@ update_sensitivity_for_mime_type (DialogData *data,
 
 
 static void
-archive_type_combo_box_changed_cb (GtkComboBox *combo_box,
+archive_type_combo_box_changed_cb (CtkComboBox *combo_box,
 				   DialogData  *data)
 {
 	const char *mime_type;
@@ -458,7 +458,7 @@ password_entry_notify_text_cb (GObject    *object,
 
 
 static void
-volume_toggled_cb (GtkToggleButton *toggle_button,
+volume_toggled_cb (CtkToggleButton *toggle_button,
 		   gpointer         user_data)
 {
 	update_sensitivity ((DialogData *) user_data);
@@ -470,7 +470,7 @@ dlg_batch_add_files (FrWindow *window,
 		     GList    *file_list)
 {
 	DialogData   *data;
-	GtkSizeGroup *size_group;
+	CtkSizeGroup *size_group;
 	char         *automatic_name = NULL;
 	char         *default_ext;
 	const char   *first_filename;

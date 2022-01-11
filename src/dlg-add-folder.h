@@ -25,6 +25,6 @@
 
 #include <ctk/ctk.h>
 
-void  add_folder_cb (GtkWidget *widget, void *data);
+void  add_folder_cb (CtkWidget *widget, void *data);
 
 #endif /* DLG_ADD_FOLDER_H */

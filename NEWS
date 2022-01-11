@@ -3,11 +3,11 @@
   * update copyright
   * msgmerge without progress indicators
   * update grapa icons
-  * ui files: avoid deprecated GtkStock
-                               GtkAlignment
-                               GtkBox:margin-left/margin-right
-                               GtkButton:always-show-image (it has gone in ctk4)
-  * avoid deprecated GtkStock
+  * ui files: avoid deprecated CtkStock
+                               CtkAlignment
+                               CtkBox:margin-left/margin-right
+                               CtkButton:always-show-image (it has gone in ctk4)
+  * avoid deprecated CtkStock
                      ctk_dialog_get_action_area
   * fork deprecated icons ctk-apply, ctk-ok, ctk-no
 

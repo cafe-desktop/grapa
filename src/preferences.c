@@ -29,7 +29,7 @@
 
 
 void
-pref_util_save_window_geometry (GtkWindow  *window,
+pref_util_save_window_geometry (CtkWindow  *window,
 				const char *dialog_id)
 {
 	char *schema;
@@ -67,7 +67,7 @@ pref_util_save_window_geometry (GtkWindow  *window,
 
 
 void
-pref_util_restore_window_geometry (GtkWindow  *window,
+pref_util_restore_window_geometry (CtkWindow  *window,
 				   const char *dialog_id)
 {
 	char *schema;

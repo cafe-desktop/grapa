@@ -39,9 +39,9 @@ typedef struct {
 	GList        *selected_files;
 	char         *base_dir_for_selection;
 
-	GtkWidget    *dialog;
+	CtkWidget    *dialog;
 
-	GtkBuilder   *builder;
+	CtkBuilder   *builder;
 
 	gboolean      extract_clicked;
 } DialogData;
@@ -49,7 +49,7 @@ typedef struct {
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (GtkWidget  *widget,
+destroy_cb (CtkWidget  *widget,
 	    DialogData *data)
 {
 	if (! data->extract_clicked) {
@@ -65,7 +65,7 @@ destroy_cb (GtkWidget  *widget,
 
 
 static int
-extract_cb (GtkWidget   *w,
+extract_cb (CtkWidget   *w,
 	    DialogData  *data)
 {
 	FrWindow   *window = data->window;
@@ -90,7 +90,7 @@ extract_cb (GtkWidget   *w,
 
 	if (! uri_is_dir (extract_to_dir)) {
 		if (! ForceDirectoryCreation) {
-			GtkWidget *d;
+			CtkWidget *d;
 			int        r;
 			char      *folder_name;
 			char      *msg;
@@ -119,7 +119,7 @@ extract_cb (GtkWidget   *w,
 		}
 
 		if (! do_not_extract && ! ensure_dir_exists (extract_to_dir, 0755, &error)) {
-			GtkWidget  *d;
+			CtkWidget  *d;
 
 			d = _ctk_error_dialog_new (GTK_WINDOW (window),
 						   GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -137,7 +137,7 @@ extract_cb (GtkWidget   *w,
 	}
 
 	if (do_not_extract) {
-		GtkWidget *d;
+		CtkWidget *d;
 
 		d = _ctk_message_dialog_new (GTK_WINDOW (window),
 					     GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -161,7 +161,7 @@ extract_cb (GtkWidget   *w,
 	if (uri_is_dir (extract_to_dir)
 	    && ! check_permissions (extract_to_dir, R_OK | W_OK))
 	{
-		GtkWidget *d;
+		CtkWidget *d;
 		char      *utf8_path;
 
 		utf8_path = g_filename_display_name (extract_to_dir);
@@ -246,7 +246,7 @@ extract_cb (GtkWidget   *w,
 
 
 static int
-file_sel_response_cb (GtkWidget    *widget,
+file_sel_response_cb (CtkWidget    *widget,
 		      int           response,
 		      DialogData   *data)
 {
@@ -268,7 +268,7 @@ file_sel_response_cb (GtkWidget    *widget,
 
 
 static void
-files_entry_changed_cb (GtkWidget  *widget,
+files_entry_changed_cb (CtkWidget  *widget,
 			DialogData *data)
 {
 	if (! ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("file_pattern_radiobutton"))))
@@ -277,7 +277,7 @@ files_entry_changed_cb (GtkWidget  *widget,
 
 
 static void
-overwrite_toggled_cb (GtkToggleButton *button,
+overwrite_toggled_cb (CtkToggleButton *button,
 		      DialogData      *data)
 {
 	gboolean active = ctk_toggle_button_get_active (button);
@@ -344,7 +344,7 @@ dlg_extract__common (FrWindow *window,
 
 
 void
-dlg_extract (GtkWidget *widget,
+dlg_extract (CtkWidget *widget,
 	     gpointer   callback_data)
 {
 	FrWindow *window = callback_data;
@@ -357,7 +357,7 @@ dlg_extract (GtkWidget *widget,
 
 
 void
-dlg_extract_folder_from_sidebar (GtkWidget *widget,
+dlg_extract_folder_from_sidebar (CtkWidget *widget,
 	     			 gpointer   callback_data)
 {
 	FrWindow *window = callback_data;

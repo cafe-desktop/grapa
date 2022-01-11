@@ -36,17 +36,17 @@ typedef enum {
 } FrPasswordType;
 
 typedef struct {
-	GtkBuilder     *builder;
+	CtkBuilder     *builder;
 	FrWindow       *window;
 	FrPasswordType  pwd_type;
-	GtkWidget      *dialog;
-	GtkWidget      *pw_password_entry;
+	CtkWidget      *dialog;
+	CtkWidget      *pw_password_entry;
 } DialogData;
 
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (GtkWidget  *widget,
+destroy_cb (CtkWidget  *widget,
 	    DialogData *data)
 {
 	g_object_unref (data->builder);
@@ -55,7 +55,7 @@ destroy_cb (GtkWidget  *widget,
 
 
 static void
-ask_password__response_cb (GtkWidget  *dialog,
+ask_password__response_cb (CtkWidget  *dialog,
 			   int         response_id,
 			   DialogData *data)
 {
@@ -92,7 +92,7 @@ dlg_ask_password__common (FrWindow       *window,
 			  FrPasswordType  pwd_type)
 {
 	DialogData *data;
-	GtkWidget  *label;
+	CtkWidget  *label;
 	char       *text;
 	char       *name = NULL;
 

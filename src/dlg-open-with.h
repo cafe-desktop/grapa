@@ -26,7 +26,7 @@
 #include <ctk/ctk.h>
 #include "fr-window.h"
 
-void  open_with_cb  (GtkWidget *widget, void *data);
+void  open_with_cb  (CtkWidget *widget, void *data);
 void  dlg_open_with (FrWindow *window, GList *file_list);
 
 #endif /* DLG_OPEN_WITH_H */

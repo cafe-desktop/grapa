@@ -34,14 +34,14 @@
 typedef struct {
 	FrWindow  *window;
 	GSettings *settings;
-	GtkWidget *dialog;
-	GtkWidget *choice;
-	GtkWidget *add_if_newer_checkbutton;
+	CtkWidget *dialog;
+	CtkWidget *choice;
+	CtkWidget *add_if_newer_checkbutton;
 } DialogData;
 
 
 static void
-open_file_destroy_cb (GtkWidget  *file_sel,
+open_file_destroy_cb (CtkWidget  *file_sel,
 		      DialogData *data)
 {
 	g_object_unref (data->settings);
@@ -50,11 +50,11 @@ open_file_destroy_cb (GtkWidget  *file_sel,
 
 
 static int
-file_sel_response_cb (GtkWidget      *widget,
+file_sel_response_cb (CtkWidget      *widget,
 		      int             response,
 		      DialogData     *data)
 {
-	GtkFileChooser *file_sel = GTK_FILE_CHOOSER (data->choice);
+	CtkFileChooser *file_sel = GTK_FILE_CHOOSER (data->choice);
 	FrWindow       *window = data->window;
 	char           *current_folder;
 	char           *uri;
@@ -97,7 +97,7 @@ file_sel_response_cb (GtkWidget      *widget,
 	/* check folder permissions. */
 
 	if (uri_is_dir (current_folder) && ! check_permissions (current_folder, R_OK)) {
-		GtkWidget *d;
+		CtkWidget *d;
 		char      *utf8_path;
 
 		utf8_path = g_filename_display_name (current_folder);
@@ -149,7 +149,7 @@ file_sel_response_cb (GtkWidget      *widget,
 
 
 static gboolean
-add_files_window_unrealize_cb (GtkWidget  *widget,
+add_files_window_unrealize_cb (CtkWidget  *widget,
 			       gpointer    data)
 {
 	pref_util_save_window_geometry (GTK_WINDOW (widget), "addfiles");
@@ -159,16 +159,16 @@ add_files_window_unrealize_cb (GtkWidget  *widget,
 
 /* create the "add" dialog. */
 void
-add_files_cb (GtkWidget *widget,
+add_files_cb (CtkWidget *widget,
 	      void      *callback_data)
 {
-	GtkWidget  *file_sel;
+	CtkWidget  *file_sel;
 	DialogData *data;
-	GtkWidget  *main_box;
+	CtkWidget  *main_box;
 #if !GTK_CHECK_VERSION (3,99,0)
-	GtkWidget  *content_area;
+	CtkWidget  *content_area;
 #endif
-	GtkWidget  *filechooser;
+	CtkWidget  *filechooser;
 	char       *folder;
 
 	data = g_new0 (DialogData, 1);

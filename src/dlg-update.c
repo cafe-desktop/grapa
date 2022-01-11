@@ -40,26 +40,26 @@ enum {
 
 typedef struct {
 	FrWindow     *window;
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 
-	GtkWidget    *update_file_dialog;
-	GtkWidget    *update_file_primary_text_label;
-	GtkWidget    *update_file_secondary_text_label;
+	CtkWidget    *update_file_dialog;
+	CtkWidget    *update_file_primary_text_label;
+	CtkWidget    *update_file_secondary_text_label;
 
-	GtkWidget    *update_files_dialog;
-	GtkWidget    *update_files_primary_text_label;
-	GtkWidget    *update_files_secondary_text_label;
-	GtkWidget    *update_files_treeview;
-	GtkWidget    *update_files_ok_button;
+	CtkWidget    *update_files_dialog;
+	CtkWidget    *update_files_primary_text_label;
+	CtkWidget    *update_files_secondary_text_label;
+	CtkWidget    *update_files_treeview;
+	CtkWidget    *update_files_ok_button;
 
 	GList        *file_list;
-	GtkTreeModel *list_model;
+	CtkTreeModel *list_model;
 } DialogData;
 
 
 /* called when the main dialog is closed. */
 static void
-dlg_update__destroy_cb (GtkWidget  *widget,
+dlg_update__destroy_cb (CtkWidget  *widget,
 		        DialogData *data)
 {
 	fr_window_update_dialog_closed (data->window);
@@ -74,7 +74,7 @@ static GList*
 get_selected_files (DialogData *data)
 {
 	GList       *selection = NULL;
-	GtkTreeIter  iter;
+	CtkTreeIter  iter;
 
 	if (! ctk_tree_model_get_iter_first (data->list_model, &iter))
 		return NULL;
@@ -96,7 +96,7 @@ get_selected_files (DialogData *data)
 
 
 static void
-update_cb (GtkWidget *widget,
+update_cb (CtkWidget *widget,
 	   gpointer   callback_data)
 {
 	DialogData *data = callback_data;
@@ -122,7 +122,7 @@ update_file_list (DialogData *data)
 {
 	gboolean     n_files;
 	GList       *scan;
-	GtkTreeIter  iter;
+	CtkTreeIter  iter;
 
 	n_files = g_list_length (data->file_list);
 
@@ -236,7 +236,7 @@ static int
 n_selected (DialogData *data)
 {
 	int         n = 0;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 
 	if (! ctk_tree_model_get_iter_first (data->list_model, &iter))
 		return 0;
@@ -253,14 +253,14 @@ n_selected (DialogData *data)
 
 
 static void
-is_selected_toggled (GtkCellRendererToggle *cell,
+is_selected_toggled (CtkCellRendererToggle *cell,
 		     char                  *path_string,
 		     gpointer               callback_data)
 {
 	DialogData   *data  = callback_data;
-	GtkTreeModel *model = GTK_TREE_MODEL (data->list_model);
-	GtkTreeIter   iter;
-	GtkTreePath  *path = ctk_tree_path_new_from_string (path_string);
+	CtkTreeModel *model = GTK_TREE_MODEL (data->list_model);
+	CtkTreeIter   iter;
+	CtkTreePath  *path = ctk_tree_path_new_from_string (path_string);
 	guint         value;
 
 	ctk_tree_model_get_iter (model, &iter, path);
@@ -277,11 +277,11 @@ gpointer
 dlg_update (FrWindow *window)
 {
 	DialogData        *data;
-	GtkWidget         *update_file_ok_button;
-	GtkWidget         *update_file_cancel_button;
-	GtkWidget         *update_files_cancel_button;
-	GtkCellRenderer   *renderer;
-	GtkTreeViewColumn *column;
+	CtkWidget         *update_file_ok_button;
+	CtkWidget         *update_file_cancel_button;
+	CtkWidget         *update_files_cancel_button;
+	CtkCellRenderer   *renderer;
+	CtkTreeViewColumn *column;
 
 	data = g_new0 (DialogData, 1);
 

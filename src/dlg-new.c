@@ -40,7 +40,7 @@
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (GtkWidget  *widget,
+destroy_cb (CtkWidget  *widget,
 	    DlgNewData *data)
 {
 	g_object_unref (data->builder);
@@ -126,7 +126,7 @@ get_archive_type (DlgNewData *data)
 
 /* FIXME
 static void
-archive_type_combo_box_changed_cb (GtkComboBox *combo_box,
+archive_type_combo_box_changed_cb (CtkComboBox *combo_box,
 				   DlgNewData  *data)
 {
 	const char *uri;
@@ -170,7 +170,7 @@ archive_type_combo_box_changed_cb (GtkComboBox *combo_box,
 
 
 static void
-password_entry_changed_cb (GtkEditable *editable,
+password_entry_changed_cb (CtkEditable *editable,
 			   gpointer     user_data)
 {
 	update_sensitivity ((DlgNewData *) user_data);
@@ -178,7 +178,7 @@ password_entry_changed_cb (GtkEditable *editable,
 
 
 static void
-volume_toggled_cb (GtkToggleButton *toggle_button,
+volume_toggled_cb (CtkToggleButton *toggle_button,
 		   gpointer         user_data)
 {
 	update_sensitivity ((DlgNewData *) user_data);
@@ -254,7 +254,7 @@ get_icon_name_for_type (const char *mime_type)
 
 
 static void
-options_expander_unmap_cb (GtkWidget *widget,
+options_expander_unmap_cb (CtkWidget *widget,
 			   gpointer   user_data)
 {
 	egg_file_format_chooser_emit_size_changed ((EggFileFormatChooser *) user_data);
@@ -267,7 +267,7 @@ dlg_new_archive (FrWindow  *window,
 		const char *default_name)
 {
 	DlgNewData    *data;
-	GtkWidget     *n_new_button;
+	CtkWidget     *n_new_button;
         GSettings *settings;
 	/*char          *default_ext;*/
 	int            i;

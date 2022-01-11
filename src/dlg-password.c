@@ -30,17 +30,17 @@
 
 
 typedef struct {
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 	FrWindow  *window;
-	GtkWidget *dialog;
-	GtkWidget *pw_password_entry;
-	GtkWidget *pw_encrypt_header_checkbutton;
+	CtkWidget *dialog;
+	CtkWidget *pw_password_entry;
+	CtkWidget *pw_encrypt_header_checkbutton;
 } DialogData;
 
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (GtkWidget  *widget,
+destroy_cb (CtkWidget  *widget,
 	    DialogData *data)
 {
 	g_object_unref (data->builder);
@@ -49,7 +49,7 @@ destroy_cb (GtkWidget  *widget,
 
 
 static void
-response_cb (GtkWidget  *dialog,
+response_cb (CtkWidget  *dialog,
 	     int         response_id,
 	     DialogData *data)
 {
@@ -81,7 +81,7 @@ response_cb (GtkWidget  *dialog,
 
 
 void
-dlg_password (GtkWidget *widget,
+dlg_password (CtkWidget *widget,
 	      gpointer   callback_data)
 {
 	FrWindow   *window = callback_data;

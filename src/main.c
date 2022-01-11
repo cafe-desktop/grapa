@@ -122,7 +122,7 @@ prepare_app (void)
 		add_to_uri = get_uri_from_command_line (add_to);
 
 	if ((add_to != NULL) || (add == 1)) { /* Add files to an archive */
-		GtkWidget   *window;
+		CtkWidget   *window;
 		GList       *file_list = NULL;
 		const char  *filename;
 		int          i = 0;
@@ -147,7 +147,7 @@ prepare_app (void)
 
 		/* Extract all archives. */
 
-		GtkWidget  *window;
+		CtkWidget  *window;
 		const char *archive;
 		int         i = 0;
 
@@ -181,7 +181,7 @@ prepare_app (void)
 
 		int i = 0;
 		while ((filename = remaining_args[i++]) != NULL) {
-			GtkWidget *window;
+			CtkWidget *window;
 			GFile     *file;
 			char      *uri;
 
@@ -228,7 +228,7 @@ main (int argc, char **argv)
 {
 	GOptionContext *context = NULL;
 	GError         *error = NULL;
-	GtkApplication *app = NULL;
+	CtkApplication *app = NULL;
 	int             status;
 
 	program_argv0 = argv[0];

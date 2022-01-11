@@ -32,9 +32,9 @@
 
 
 static void
-count_selected (GtkTreeModel *model,
-		GtkTreePath  *path,
-		GtkTreeIter  *iter,
+count_selected (CtkTreeModel *model,
+		CtkTreePath  *path,
+		CtkTreeIter  *iter,
 		gpointer      data)
 {
 	int *n = data;
@@ -43,7 +43,7 @@ count_selected (GtkTreeModel *model,
 
 
 int
-_ctk_count_selected (GtkTreeSelection *selection)
+_ctk_count_selected (CtkTreeSelection *selection)
 {
 	int n = 0;
 
@@ -55,13 +55,13 @@ _ctk_count_selected (GtkTreeSelection *selection)
 
 
 
-GtkWidget *
-grapa_dialog_add_button (GtkDialog   *dialog,
+CtkWidget *
+grapa_dialog_add_button (CtkDialog   *dialog,
 			 const gchar *button_text,
 			 const gchar *icon_name,
 			       gint   response_id)
 {
-	GtkWidget *button;
+	CtkWidget *button;
 
 	button = ctk_button_new_with_mnemonic (button_text);
 	ctk_button_set_image (GTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
@@ -76,20 +76,20 @@ grapa_dialog_add_button (GtkDialog   *dialog,
 }
 
 
-GtkWidget*
-_ctk_message_dialog_new (GtkWindow        *parent,
-			 GtkDialogFlags    flags,
+CtkWidget*
+_ctk_message_dialog_new (CtkWindow        *parent,
+			 CtkDialogFlags    flags,
 			 const char       *icon_name,
 			 const char       *message,
 			 const char       *secondary_message,
 			 const gchar      *first_button_text,
 			 ...)
 {
-	GtkWidget    *dialog;
-	GtkWidget    *label;
-	GtkWidget    *image;
-	GtkWidget    *hbox;
-	GtkWidget    *content_area;
+	CtkWidget    *dialog;
+	CtkWidget    *label;
+	CtkWidget    *image;
+	CtkWidget    *hbox;
+	CtkWidget    *content_area;
 	va_list       args;
 	const gchar  *text;
 	int           response_id;
@@ -178,17 +178,17 @@ _ctk_message_dialog_new (GtkWindow        *parent,
 }
 
 
-static GtkWidget *
+static CtkWidget *
 create_button (const char *icon_name,
 	       const char *text)
 {
-	GtkIconTheme *icon_theme;
-	GtkWidget    *button;
+	CtkIconTheme *icon_theme;
+	CtkWidget    *button;
 
 	button = ctk_button_new_with_mnemonic (text);
 	icon_theme = ctk_icon_theme_get_default ();
 	if (ctk_icon_theme_has_icon (icon_theme, icon_name)) {
-		GtkWidget *image;
+		CtkWidget *image;
 		image = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON);
 		ctk_button_set_image (GTK_BUTTON (button), image);
 	}
@@ -201,8 +201,8 @@ create_button (const char *icon_name,
 
 
 char *
-_ctk_request_dialog_run (GtkWindow        *parent,
-			 GtkDialogFlags    flags,
+_ctk_request_dialog_run (CtkWindow        *parent,
+			 CtkDialogFlags    flags,
 			 const char       *title,
 			 const char       *message,
 			 const char       *default_value,
@@ -210,14 +210,14 @@ _ctk_request_dialog_run (GtkWindow        *parent,
 			 const gchar      *no_button_text,
 			 const gchar      *yes_button_text)
 {
-	GtkWidget    *dialog;
-	GtkWidget    *label;
-	GtkWidget    *image;
-	GtkWidget    *hbox;
-	GtkWidget    *vbox;
-	GtkWidget    *entry;
-	GtkWidget    *button;
-	GtkWidget    *content_area;
+	CtkWidget    *dialog;
+	CtkWidget    *label;
+	CtkWidget    *image;
+	CtkWidget    *hbox;
+	CtkWidget    *vbox;
+	CtkWidget    *entry;
+	CtkWidget    *button;
+	CtkWidget    *content_area;
 	char         *result;
 
 	dialog = ctk_dialog_new_with_buttons (title, parent, flags, NULL, NULL);
@@ -293,25 +293,25 @@ _ctk_request_dialog_run (GtkWindow        *parent,
 }
 
 
-GtkWidget*
-_ctk_error_dialog_new (GtkWindow        *parent,
-		       GtkDialogFlags    flags,
+CtkWidget*
+_ctk_error_dialog_new (CtkWindow        *parent,
+		       CtkDialogFlags    flags,
 		       GList            *row_output,
 		       const char       *primary_text,
 		       const char       *secondary_text,
 		       ...)
 {
-	GtkWidget     *dialog;
-	GtkWidget     *label;
-	GtkWidget     *image;
-	GtkWidget     *hbox;
-	GtkWidget     *vbox;
-	GtkWidget     *text_view;
-	GtkWidget     *scrolled = NULL;
-	GtkWidget     *expander;
-	GtkWidget     *content_area;
-	GtkTextBuffer *text_buf;
-	GtkTextIter    iter;
+	CtkWidget     *dialog;
+	CtkWidget     *label;
+	CtkWidget     *image;
+	CtkWidget     *hbox;
+	CtkWidget     *vbox;
+	CtkWidget     *text_view;
+	CtkWidget     *scrolled = NULL;
+	CtkWidget     *expander;
+	CtkWidget     *content_area;
+	CtkTextBuffer *text_buf;
+	CtkTextIter    iter;
 	GList         *scan;
 	char          *escaped_message, *markup_text;
 	va_list        args;
@@ -439,12 +439,12 @@ _ctk_error_dialog_new (GtkWindow        *parent,
 
 
 void
-_ctk_error_dialog_run (GtkWindow        *parent,
+_ctk_error_dialog_run (CtkWindow        *parent,
 		       const gchar      *main_message,
 		       const gchar      *format,
 		       ...)
 {
-	GtkWidget *d;
+	CtkWidget *d;
 	char      *message;
 	va_list    args;
 
@@ -470,7 +470,7 @@ _ctk_error_dialog_run (GtkWindow        *parent,
 
 
 void
-_ctk_entry_set_locale_text (GtkEntry   *entry,
+_ctk_entry_set_locale_text (CtkEntry   *entry,
 			    const char *text)
 {
 	char *utf8_text;
@@ -488,7 +488,7 @@ _ctk_entry_set_locale_text (GtkEntry   *entry,
 
 
 char *
-_ctk_entry_get_locale_text (GtkEntry *entry)
+_ctk_entry_get_locale_text (CtkEntry *entry)
 {
 	const char *utf8_text;
 	char       *text;
@@ -504,7 +504,7 @@ _ctk_entry_get_locale_text (GtkEntry *entry)
 
 
 void
-_ctk_entry_set_filename_text (GtkEntry   *entry,
+_ctk_entry_set_filename_text (CtkEntry   *entry,
 			      const char *text)
 {
 	char *utf8_text;
@@ -521,10 +521,10 @@ _ctk_entry_set_filename_text (GtkEntry   *entry,
 static GdkPixbuf *
 get_themed_icon_pixbuf (GThemedIcon  *icon,
 		        int           size,
-		        GtkIconTheme *icon_theme)
+		        CtkIconTheme *icon_theme)
 {
 	char        **icon_names;
-	GtkIconInfo  *icon_info;
+	CtkIconInfo  *icon_info;
 	GdkPixbuf    *pixbuf;
 	GError       *error = NULL;
 
@@ -568,7 +568,7 @@ get_file_icon_pixbuf (GFileIcon *icon,
 GdkPixbuf *
 get_icon_pixbuf (GIcon        *icon,
 		 int           size,
-		 GtkIconTheme *theme)
+		 CtkIconTheme *theme)
 {
 	if (icon == NULL)
 		return NULL;
@@ -583,7 +583,7 @@ get_icon_pixbuf (GIcon        *icon,
 GdkPixbuf *
 get_mime_type_pixbuf (const char   *mime_type,
 		      int           icon_size,
-		      GtkIconTheme *icon_theme)
+		      CtkIconTheme *icon_theme)
 {
 	GdkPixbuf *pixbuf = NULL;
 	GIcon     *icon;
@@ -600,7 +600,7 @@ get_mime_type_pixbuf (const char   *mime_type,
 
 
 void
-show_help_dialog (GtkWindow  *parent,
+show_help_dialog (CtkWindow  *parent,
 		  const char *section)
 {
 	char   *uri;
@@ -608,7 +608,7 @@ show_help_dialog (GtkWindow  *parent,
 
 	uri = g_strconcat ("help:grapa", section ? "/" : NULL, section, NULL);
 	if (! ctk_show_uri_on_window (parent, uri, GDK_CURRENT_TIME, &error)) {
-		GtkWidget *dialog;
+		CtkWidget *dialog;
 
 		dialog = _ctk_message_dialog_new (parent,
 						  GTK_DIALOG_DESTROY_WITH_PARENT,
@@ -633,10 +633,10 @@ show_help_dialog (GtkWindow  *parent,
 }
 
 
-GtkBuilder *
+CtkBuilder *
 _ctk_builder_new_from_resource (const char *resource_path)
 {
-	GtkBuilder *builder;
+	CtkBuilder *builder;
 	char       *full_path;
 	GError     *error = NULL;
 
@@ -652,17 +652,17 @@ _ctk_builder_new_from_resource (const char *resource_path)
 }
 
 
-GtkWidget *
-_ctk_builder_get_widget (GtkBuilder *builder,
+CtkWidget *
+_ctk_builder_get_widget (CtkBuilder *builder,
 			 const char *name)
 {
-	return (GtkWidget *) ctk_builder_get_object (builder, name);
+	return (CtkWidget *) ctk_builder_get_object (builder, name);
 }
 
 
 int
-_ctk_widget_lookup_for_size (GtkWidget *widget,
-                             GtkIconSize icon_size)
+_ctk_widget_lookup_for_size (CtkWidget *widget,
+                             CtkIconSize icon_size)
 {
 	int w, h;
 	ctk_icon_size_lookup (icon_size,
@@ -672,7 +672,7 @@ _ctk_widget_lookup_for_size (GtkWidget *widget,
 
 
 gchar *
-grapa_file_chooser_get_current_folder_uri (GtkFileChooser *chooser)
+grapa_file_chooser_get_current_folder_uri (CtkFileChooser *chooser)
 {
 	GFile *file;
 	gchar *uri;
@@ -695,7 +695,7 @@ grapa_file_chooser_get_current_folder_uri (GtkFileChooser *chooser)
 
 
 gboolean
-grapa_file_chooser_set_current_folder_uri (GtkFileChooser *chooser,
+grapa_file_chooser_set_current_folder_uri (CtkFileChooser *chooser,
 					   const gchar    *uri)
 {
 	GFile *file;
@@ -717,7 +717,7 @@ grapa_file_chooser_set_current_folder_uri (GtkFileChooser *chooser,
 
 
 gchar *
-grapa_file_chooser_get_uri (GtkFileChooser *chooser)
+grapa_file_chooser_get_uri (CtkFileChooser *chooser)
 {
 	GFile *file;
 	gchar *result = NULL;
