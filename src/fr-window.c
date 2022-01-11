@@ -758,7 +758,7 @@ static void fr_window_update_paste_command_sensitivity (FrWindow *, CtkClipboard
 
 static void
 clipboard_owner_change_cb (CtkClipboard *clipboard,
-			   GdkEvent     *event,
+			   CdkEvent     *event,
 			   gpointer      user_data)
 {
 	fr_window_update_paste_command_sensitivity ((FrWindow *) user_data, clipboard);
@@ -1283,10 +1283,10 @@ get_parent_dir (const char *current_dir)
 static void fr_window_update_statusbar_list_info (FrWindow *window);
 
 
-static GdkPixbuf *
+static CdkPixbuf *
 get_mime_type_icon (const char *mime_type)
 {
-	GdkPixbuf *pixbuf = NULL;
+	CdkPixbuf *pixbuf = NULL;
 
 	pixbuf = g_hash_table_lookup (tree_pixbuf_hash, mime_type);
 	if (pixbuf != NULL) {
@@ -1306,11 +1306,11 @@ get_mime_type_icon (const char *mime_type)
 }
 
 
-static GdkPixbuf *
+static CdkPixbuf *
 get_icon (CtkWidget *widget,
 	  FileData  *fdata)
 {
-	GdkPixbuf  *pixbuf = NULL;
+	CdkPixbuf  *pixbuf = NULL;
 	const char *content_type;
 	GIcon      *icon;
 
@@ -1342,11 +1342,11 @@ get_icon (CtkWidget *widget,
 }
 
 
-static GdkPixbuf *
+static CdkPixbuf *
 get_emblem (CtkWidget *widget,
 	    FileData  *fdata)
 {
-	GdkPixbuf *pixbuf = NULL;
+	CdkPixbuf *pixbuf = NULL;
 
 	if (! fdata->encrypted)
 		return NULL;
@@ -1571,7 +1571,7 @@ fr_window_populate_file_list (FrWindow  *window,
 	for (i = 0; i < files->len; i++) {
 		FileData    *fdata = g_ptr_array_index (files, i);
 		CtkTreeIter  iter;
-		GdkPixbuf   *icon, *emblem;
+		CdkPixbuf   *icon, *emblem;
 		char        *utf8_name;
 
 		if (fdata->list_name == NULL)
@@ -1777,7 +1777,7 @@ fr_window_update_dir_tree (FrWindow *window)
 	GPtrArray  *dirs;
 	GHashTable *dir_cache;
 	guint       i;
-	GdkPixbuf  *icon;
+	CdkPixbuf  *icon;
 
 	ctk_tree_store_clear (window->priv->tree_store);
 
@@ -2185,7 +2185,7 @@ fr_window_update_sensitivity (FrWindow *window)
 
 static gboolean
 location_entry_key_press_event_cb (CtkWidget   *widget,
-				   GdkEventKey *event,
+				   CdkEventKey *event,
 				   FrWindow    *window)
 {
 	if ((event->keyval == GDK_KEY_Return)
@@ -2258,7 +2258,7 @@ close_progress_dialog (FrWindow *window,
 
 static gboolean
 progress_dialog_delete_event (CtkWidget *caller,
-			      GdkEvent  *event,
+			      CdkEvent  *event,
 			      FrWindow  *window)
 {
 	if (window->priv->stoppable) {
@@ -2573,7 +2573,7 @@ create_the_progress_dialog (FrWindow *window)
 	CtkWidget     *progress_vbox;
 	CtkWidget     *lbl;
 	PangoAttrList *attr_list;
-	GdkPixbuf     *icon;
+	CdkPixbuf     *icon;
 
 	if (window->priv->progress_dialog != NULL)
 		return;
@@ -3648,7 +3648,7 @@ fr_window_get_n_selected_files (FrWindow *window)
 
 static int
 dir_tree_button_press_cb (CtkWidget      *widget,
-			  GdkEventButton *event,
+			  CdkEventButton *event,
 			  gpointer        data)
 {
 	FrWindow         *window = data;
@@ -3681,7 +3681,7 @@ dir_tree_button_press_cb (CtkWidget      *widget,
 			}
 
 			ctk_menu_popup_at_pointer (CTK_MENU (window->priv->sidebar_folder_popup_menu),
-			                           (const GdkEvent*) event);
+			                           (const CdkEvent*) event);
 		}
 		else
 			ctk_tree_selection_unselect_all (selection);
@@ -3826,7 +3826,7 @@ row_activated_cb (CtkTreeView       *tree_view,
 
 static int
 file_button_press_cb (CtkWidget      *widget,
-		      GdkEventButton *event,
+		      CdkEventButton *event,
 		      gpointer        data)
 {
 	FrWindow         *window = data;
@@ -3870,10 +3870,10 @@ file_button_press_cb (CtkWidget      *widget,
 		n_selected = fr_window_get_n_selected_files (window);
 		if ((n_selected == 1) && selection_has_a_dir (window))
 			ctk_menu_popup_at_pointer (CTK_MENU (window->priv->folder_popup_menu),
-			                           (const GdkEvent*) event);
+			                           (const CdkEvent*) event);
 		else
 			ctk_menu_popup_at_pointer (CTK_MENU (window->priv->file_popup_menu),
-			                           (const GdkEvent*) event);
+			                           (const CdkEvent*) event);
 		return TRUE;
 	}
 	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 1)) {
@@ -3914,7 +3914,7 @@ file_button_press_cb (CtkWidget      *widget,
 
 static int
 file_button_release_cb (CtkWidget      *widget,
-			GdkEventButton *event,
+			CdkEventButton *event,
 			gpointer        data)
 {
 	FrWindow         *window = data;
@@ -3967,13 +3967,13 @@ file_button_release_cb (CtkWidget      *widget,
 
 static gboolean
 file_motion_notify_callback (CtkWidget *widget,
-			     GdkEventMotion *event,
+			     CdkEventMotion *event,
 			     gpointer user_data)
 {
 	FrWindow    *window = user_data;
-	GdkCursor   *cursor;
+	CdkCursor   *cursor;
 	CtkTreePath *last_hover_path;
-	GdkDisplay  *display;
+	CdkDisplay  *display;
 	CtkTreeIter  iter;
 
 	if (! window->priv->single_click)
@@ -4026,7 +4026,7 @@ file_motion_notify_callback (CtkWidget *widget,
 
 static gboolean
 file_leave_notify_callback (CtkWidget *widget,
-			    GdkEventCrossing *event,
+			    CdkEventCrossing *event,
 			    gpointer user_data)
 {
 	FrWindow    *window = user_data;
@@ -4072,7 +4072,7 @@ get_uri_list_from_selection_data (char *uri_list)
 
 static gboolean
 fr_window_drag_motion (CtkWidget      *widget,
-		       GdkDragContext *context,
+		       CdkDragContext *context,
 		       gint            x,
 		       gint            y,
 		       guint           time,
@@ -4126,7 +4126,7 @@ get_clipboard_data_from_selection_data (FrWindow   *window,
 
 static void
 fr_window_drag_data_received  (CtkWidget          *widget,
-			       GdkDragContext     *context,
+			       CdkDragContext     *context,
 			       gint                x,
 			       gint                y,
 			       CtkSelectionData   *data,
@@ -4295,7 +4295,7 @@ fr_window_drag_data_received  (CtkWidget          *widget,
 
 static gboolean
 file_list_drag_begin (CtkWidget          *widget,
-		      GdkDragContext     *context,
+		      CdkDragContext     *context,
 		      gpointer            data)
 {
 	FrWindow *window = data;
@@ -4323,7 +4323,7 @@ file_list_drag_begin (CtkWidget          *widget,
 
 static void
 file_list_drag_end (CtkWidget      *widget,
-		    GdkDragContext *context,
+		    CdkDragContext *context,
 		    gpointer        data)
 {
 	FrWindow *window = data;
@@ -4362,7 +4362,7 @@ file_list_drag_end (CtkWidget      *widget,
  * Copyright: 2005 Free Software Foundation, Inc
  * License: GPL */
 static char *
-get_xds_atom_value (GdkDragContext *context)
+get_xds_atom_value (CdkDragContext *context)
 {
 	gint actual_length;
 	char *data;
@@ -4387,15 +4387,15 @@ get_xds_atom_value (GdkDragContext *context)
 
 
 static gboolean
-context_offers_target (GdkDragContext *context,
-		       GdkAtom target)
+context_offers_target (CdkDragContext *context,
+		       CdkAtom target)
 {
 	return (g_list_find (cdk_drag_context_list_targets (context), target) != NULL);
 }
 
 
 static gboolean
-caja_xds_dnd_is_valid_xds_context (GdkDragContext *context)
+caja_xds_dnd_is_valid_xds_context (CdkDragContext *context)
 {
 	char *tmp;
 	gboolean ret;
@@ -4447,7 +4447,7 @@ get_selection_data_from_clipboard_data (FrWindow        *window,
 
 static gboolean
 fr_window_folder_tree_drag_data_get (CtkWidget        *widget,
-				     GdkDragContext   *context,
+				     CdkDragContext   *context,
 				     CtkSelectionData *selection_data,
 				     guint             info,
 				     guint             time,
@@ -4530,7 +4530,7 @@ fr_window_folder_tree_drag_data_get (CtkWidget        *widget,
 
 gboolean
 fr_window_file_list_drag_data_get (FrWindow         *window,
-				   GdkDragContext   *context,
+				   CdkDragContext   *context,
 				   CtkSelectionData *selection_data,
 				   GList            *path_list)
 {
@@ -4631,7 +4631,7 @@ fr_window_deactivate_filter (FrWindow *window)
 
 static gboolean
 key_press_cb (CtkWidget   *widget,
-	      GdkEventKey *event,
+	      CdkEventKey *event,
 	      gpointer     data)
 {
 	FrWindow *window = data;
@@ -4672,7 +4672,7 @@ key_press_cb (CtkWidget   *widget,
 				return FALSE;
 
 			ctk_menu_popup_at_pointer (CTK_MENU (window->priv->file_popup_menu),
-			                           (const GdkEvent*) event);
+			                           (const CdkEvent*) event);
 			retval = TRUE;
 		}
 		break;
@@ -4759,7 +4759,7 @@ selection_changed_cb (CtkTreeSelection *selection,
 
 static void
 fr_window_delete_event_cb (CtkWidget *caller,
-			   GdkEvent  *event,
+			   CdkEvent  *event,
 			   FrWindow  *window)
 {
 	fr_window_close (window);
@@ -5153,8 +5153,8 @@ pref_click_policy_changed (GSettings *settings,
                            gpointer user_data)
 {
 	FrWindow   *window = user_data;
-	GdkWindow  *win = ctk_tree_view_get_bin_window (CTK_TREE_VIEW (window->priv->list_view));
-	GdkDisplay *display;
+	CdkWindow  *win = ctk_tree_view_get_bin_window (CTK_TREE_VIEW (window->priv->list_view));
+	CdkDisplay *display;
 
 	window->priv->single_click = is_single_click_policy (window);
 
@@ -5445,7 +5445,7 @@ filter_entry_activate_cb (CtkEntry *entry,
 static void
 filter_entry_icon_release_cb (CtkEntry             *entry,
 			      CtkEntryIconPosition  icon_pos,
-			      GdkEventButton       *event,
+			      CdkEventButton       *event,
 			      gpointer              user_data)
 {
 	FrWindow *window = FR_WINDOW (user_data);
@@ -8362,7 +8362,7 @@ fr_window_open_files_with_application (FrWindow *window,
 {
 	GList               *uris;
 	GList               *scan;
-	GdkAppLaunchContext *context;
+	CdkAppLaunchContext *context;
 	GError              *error = NULL;
 
 	if (window->priv->activity_ref > 0)
@@ -8571,7 +8571,7 @@ fr_window_open_extracted_files (OpenFilesData *odata)
 	const char          *first_mime_type;
 	GAppInfo            *app;
 	GList               *files_to_open = NULL;
-	GdkAppLaunchContext *context;
+	CdkAppLaunchContext *context;
 	gboolean             result;
 	GError              *error = NULL;
 

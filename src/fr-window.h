@@ -311,7 +311,7 @@ void       fr_window_destroy_with_error_dialog    (FrWindow      *window);
 /**/
 
 gboolean   fr_window_file_list_drag_data_get (FrWindow         *window,
-					      GdkDragContext   *context,
+					      CdkDragContext   *context,
 					      CtkSelectionData *selection_data,
 					      GList            *path_list);
 

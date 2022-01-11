@@ -41,7 +41,7 @@ struct _EggTreeMultiDragSourceIface
 				   GList                  *path_list);
 
   gboolean  (* drag_data_get)     (EggTreeMultiDragSource *drag_source,
-				   GdkDragContext         *context,
+				   CdkDragContext         *context,
 				   CtkSelectionData       *selection_data,
 				   GList                  *path_list);
 
@@ -64,7 +64,7 @@ gboolean egg_tree_multi_drag_source_drag_data_delete (EggTreeMultiDragSource *dr
  * denoted by path, returns TRUE if it does anything
  */
 gboolean egg_tree_multi_drag_source_drag_data_get    (EggTreeMultiDragSource *drag_source,
-						      GdkDragContext         *context,
+						      CdkDragContext         *context,
 						      CtkSelectionData       *selection_data,
 						      GList                  *path_list);
 

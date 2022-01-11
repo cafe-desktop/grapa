@@ -56,7 +56,7 @@ package_installer_terminated (InstallerData   *idata,
 			      FrProcErrorType  error_type,
 			      const char      *error_message)
 {
-	GdkWindow *window;
+	CdkWindow *window;
 
 	window = ctk_widget_get_window (CTK_WIDGET (idata->window));
 	if (window != NULL)
@@ -166,13 +166,13 @@ install_packages (InstallerData *idata)
 
 	connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
 	if (connection != NULL) {
-		GdkWindow  *window;
+		CdkWindow  *window;
 		GDBusProxy *proxy;
 
 		window = ctk_widget_get_window (CTK_WIDGET (idata->window));
 		if (window != NULL) {
-			GdkCursor *cursor;
-			GdkDisplay *display;
+			CdkCursor *cursor;
+			CdkDisplay *display;
 
 			display = ctk_widget_get_display (CTK_WIDGET (idata));
 			cursor = cdk_cursor_new_for_display (display, GDK_WATCH);
