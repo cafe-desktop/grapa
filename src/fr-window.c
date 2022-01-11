@@ -2188,9 +2188,9 @@ location_entry_key_press_event_cb (CtkWidget   *widget,
 				   CdkEventKey *event,
 				   FrWindow    *window)
 {
-	if ((event->keyval == GDK_KEY_Return)
-	    || (event->keyval == GDK_KEY_KP_Enter)
-	    || (event->keyval == GDK_KEY_ISO_Enter))
+	if ((event->keyval == CDK_KEY_Return)
+	    || (event->keyval == CDK_KEY_KP_Enter)
+	    || (event->keyval == CDK_KEY_ISO_Enter))
 	{
 		fr_window_go_to_location (window, ctk_entry_get_text (CTK_ENTRY (window->priv->location_entry)), FALSE);
 	}
@@ -2279,7 +2279,7 @@ open_folder (CtkWindow  *parent,
 	if (folder == NULL)
 		return;
 
-	if (! ctk_show_uri_on_window (parent, folder, GDK_CURRENT_TIME, &error)) {
+	if (! ctk_show_uri_on_window (parent, folder, CDK_CURRENT_TIME, &error)) {
 		CtkWidget *d;
 		char      *utf8_name;
 		char      *message;
@@ -3661,7 +3661,7 @@ dir_tree_button_press_cb (CtkWidget      *widget,
 	if (selection == NULL)
 		return FALSE;
 
-	if ((event->type == GDK_BUTTON_PRESS) && (event->button == 3)) {
+	if ((event->type == CDK_BUTTON_PRESS) && (event->button == 3)) {
 		CtkTreePath *path;
 		CtkTreeIter  iter;
 
@@ -3688,11 +3688,11 @@ dir_tree_button_press_cb (CtkWidget      *widget,
 
 		return TRUE;
 	}
-	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 8)) {
+	else if ((event->type == CDK_BUTTON_PRESS) && (event->button == 8)) {
 		fr_window_go_back (window);
 		return TRUE;
 	}
-	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 9)) {
+	else if ((event->type == CDK_BUTTON_PRESS) && (event->button == 9)) {
 		fr_window_go_forward (window);
 		return TRUE;
 	}
@@ -3844,7 +3844,7 @@ file_button_press_cb (CtkWidget      *widget,
 		window->priv->path_clicked = NULL;
 	}
 
-	if ((event->type == GDK_BUTTON_PRESS) && (event->button == 3)) {
+	if ((event->type == CDK_BUTTON_PRESS) && (event->button == 3)) {
 		CtkTreePath *path;
 		CtkTreeIter  iter;
 		int          n_selected;
@@ -3876,7 +3876,7 @@ file_button_press_cb (CtkWidget      *widget,
 			                           (const CdkEvent*) event);
 		return TRUE;
 	}
-	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 1)) {
+	else if ((event->type == CDK_BUTTON_PRESS) && (event->button == 1)) {
 		CtkTreePath *path = NULL;
 
 		if (! ctk_tree_view_get_path_at_pos (CTK_TREE_VIEW (window->priv->list_view),
@@ -3897,12 +3897,12 @@ file_button_press_cb (CtkWidget      *widget,
 
 		return FALSE;
 	}
-	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 8)) {
+	else if ((event->type == CDK_BUTTON_PRESS) && (event->button == 8)) {
 		// go back
 		fr_window_go_back (window);
 		return TRUE;
 	}
-	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 9)) {
+	else if ((event->type == CDK_BUTTON_PRESS) && (event->button == 9)) {
 		// go forward
 		fr_window_go_forward (window);
 		return TRUE;
@@ -3930,7 +3930,7 @@ file_button_release_cb (CtkWidget      *widget,
 	if (window->priv->path_clicked == NULL)
 		return FALSE;
 
-	if ((event->type == GDK_BUTTON_RELEASE)
+	if ((event->type == CDK_BUTTON_RELEASE)
 	    && (event->button == 1)
 	    && (window->priv->path_clicked != NULL)) {
 		CtkTreePath *path = NULL;
@@ -3941,7 +3941,7 @@ file_button_release_cb (CtkWidget      *widget,
 
 			if ((ctk_tree_path_compare (window->priv->path_clicked, path) == 0)
 			    && window->priv->single_click
-			    && ! ((event->state & GDK_CONTROL_MASK) || (event->state & GDK_SHIFT_MASK))) {
+			    && ! ((event->state & CDK_CONTROL_MASK) || (event->state & CDK_SHIFT_MASK))) {
 				ctk_tree_view_set_cursor (CTK_TREE_VIEW (widget),
 							  path,
 							  NULL,
@@ -3992,7 +3992,7 @@ file_motion_notify_callback (CtkWidget *widget,
 	display = ctk_widget_get_display (CTK_WIDGET (widget));
 
 	if (window->priv->list_hover_path != NULL)
-		cursor = cdk_cursor_new_for_display (display, GDK_HAND2);
+		cursor = cdk_cursor_new_for_display (display, CDK_HAND2);
 	else
 		cursor = NULL;
 
@@ -4313,7 +4313,7 @@ file_list_drag_begin (CtkWidget          *widget,
 
 	cdk_property_change (cdk_drag_context_get_source_window (context),
 			     XDS_ATOM, TEXT_ATOM,
-			     8, GDK_PROP_MODE_REPLACE,
+			     8, CDK_PROP_MODE_REPLACE,
 			     (guchar *) XDS_FILENAME,
 			     strlen (XDS_FILENAME));
 
@@ -4643,7 +4643,7 @@ key_press_cb (CtkWidget   *widget,
 
 	if (ctk_widget_has_focus (window->priv->filter_entry)) {
 		switch (event->keyval) {
-		case GDK_KEY_Escape:
+		case CDK_KEY_Escape:
 			fr_window_deactivate_filter (window);
 			retval = TRUE;
 			break;
@@ -4653,18 +4653,18 @@ key_press_cb (CtkWidget   *widget,
 		return retval;
 	}
 
-	alt = (event->state & GDK_MOD1_MASK) == GDK_MOD1_MASK;
+	alt = (event->state & CDK_MOD1_MASK) == CDK_MOD1_MASK;
 
 	switch (event->keyval) {
-	case GDK_KEY_Escape:
+	case CDK_KEY_Escape:
 		activate_action_stop (NULL, window);
 		if (window->priv->filter_mode)
 			fr_window_deactivate_filter (window);
 		retval = TRUE;
 		break;
 
-	case GDK_KEY_F10:
-		if (event->state & GDK_SHIFT_MASK) {
+	case CDK_KEY_F10:
+		if (event->state & CDK_SHIFT_MASK) {
 			CtkTreeSelection *selection;
 
 			selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
@@ -4677,37 +4677,37 @@ key_press_cb (CtkWidget   *widget,
 		}
 		break;
 
-	case GDK_KEY_Up:
-	case GDK_KEY_KP_Up:
+	case CDK_KEY_Up:
+	case CDK_KEY_KP_Up:
 		if (alt) {
 			fr_window_go_up_one_level (window);
 			retval = TRUE;
 		}
 		break;
 
-	case GDK_KEY_BackSpace:
+	case CDK_KEY_BackSpace:
 		fr_window_go_up_one_level (window);
 		retval = TRUE;
 		break;
 
-	case GDK_KEY_Right:
-	case GDK_KEY_KP_Right:
+	case CDK_KEY_Right:
+	case CDK_KEY_KP_Right:
 		if (alt) {
 			fr_window_go_forward (window);
 			retval = TRUE;
 		}
 		break;
 
-	case GDK_KEY_Left:
-	case GDK_KEY_KP_Left:
+	case CDK_KEY_Left:
+	case CDK_KEY_KP_Left:
 		if (alt) {
 			fr_window_go_back (window);
 			retval = TRUE;
 		}
 		break;
 
-	case GDK_KEY_Home:
-	case GDK_KEY_KP_Home:
+	case CDK_KEY_Home:
+	case CDK_KEY_KP_Home:
 		if (alt) {
 			fr_window_go_to_location (window, "/", FALSE);
 			retval = TRUE;
@@ -5597,7 +5597,7 @@ fr_window_construct (FrWindow *window)
 	ctk_drag_dest_set (CTK_WIDGET (window),
 			   CTK_DEST_DEFAULT_ALL,
 			   target_table, G_N_ELEMENTS (target_table),
-			   GDK_ACTION_COPY);
+			   CDK_ACTION_COPY);
 
 	g_signal_connect (G_OBJECT (window),
 			  "drag_data_received",
@@ -5716,9 +5716,9 @@ fr_window_construct (FrWindow *window)
 
 	window->priv->list_store = fr_list_model_new (NUMBER_OF_COLUMNS,
 						      G_TYPE_POINTER,
-						      GDK_TYPE_PIXBUF,
+						      CDK_TYPE_PIXBUF,
 						      G_TYPE_STRING,
-						      GDK_TYPE_PIXBUF,
+						      CDK_TYPE_PIXBUF,
 						      G_TYPE_STRING,
 						      G_TYPE_STRING,
 						      G_TYPE_STRING,
@@ -5843,7 +5843,7 @@ fr_window_construct (FrWindow *window)
 
 	window->priv->tree_store = ctk_tree_store_new (TREE_NUMBER_OF_COLUMNS,
 						       G_TYPE_STRING,
-						       GDK_TYPE_PIXBUF,
+						       CDK_TYPE_PIXBUF,
 						       G_TYPE_STRING,
 						       PANGO_TYPE_WEIGHT);
 	window->priv->tree_view = ctk_tree_view_new_with_model (CTK_TREE_MODEL (window->priv->tree_store));
@@ -5874,9 +5874,9 @@ fr_window_construct (FrWindow *window)
 			  G_CALLBACK (fr_window_folder_tree_drag_data_get),
 			  window);
 	ctk_drag_source_set (window->priv->tree_view,
-			     GDK_BUTTON1_MASK,
+			     CDK_BUTTON1_MASK,
 			     folder_tree_targets, G_N_ELEMENTS (folder_tree_targets),
-			     GDK_ACTION_COPY);
+			     CDK_ACTION_COPY);
 
 	tree_scrolled_window = ctk_scrolled_window_new (NULL, NULL);
 	ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (tree_scrolled_window),
@@ -6001,7 +6001,7 @@ fr_window_construct (FrWindow *window)
 
 	/* Add a hidden short cut Ctrl-Q for power users */
 	ctk_accel_group_connect (ctk_ui_manager_get_accel_group (ui),
-				 GDK_KEY_q, GDK_CONTROL_MASK, 0,
+				 CDK_KEY_q, CDK_CONTROL_MASK, 0,
 				 g_cclosure_new_swap (G_CALLBACK (fr_window_close), window, NULL));
 
 
