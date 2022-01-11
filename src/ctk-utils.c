@@ -557,7 +557,7 @@ get_file_icon_pixbuf (GFileIcon *icon,
 
 	file = g_file_icon_get_file (icon);
 	filename = g_file_get_path (file);
-	pixbuf = gdk_pixbuf_new_from_file_at_size (filename, size, -1, NULL);
+	pixbuf = cdk_pixbuf_new_from_file_at_size (filename, size, -1, NULL);
 	g_free (filename);
 	g_object_unref (file);
 

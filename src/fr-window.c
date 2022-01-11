@@ -26,9 +26,9 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <gio/gio.h>
-#include <gdk/gdk.h>
-#include <gdk/gdkkeysyms.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk/cdk.h>
+#include <cdk/cdkkeysyms.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #include "actions.h"
 #include "dlg-batch-add.h"
@@ -92,13 +92,13 @@ static int             dir_tree_icon_size = 0;
 
 #define XDS_FILENAME "xds.txt"
 #define MAX_XDS_ATOM_VAL_LEN 4096
-#define XDS_ATOM   gdk_atom_intern  ("XdndDirectSave0", FALSE)
-#define TEXT_ATOM  gdk_atom_intern  ("text/plain", FALSE)
-#define OCTET_ATOM gdk_atom_intern  ("application/octet-stream", FALSE)
-#define XFR_ATOM   gdk_atom_intern  ("XdndGrapa0", FALSE)
+#define XDS_ATOM   cdk_atom_intern  ("XdndDirectSave0", FALSE)
+#define TEXT_ATOM  cdk_atom_intern  ("text/plain", FALSE)
+#define OCTET_ATOM cdk_atom_intern  ("application/octet-stream", FALSE)
+#define XFR_ATOM   cdk_atom_intern  ("XdndGrapa0", FALSE)
 
-#define FR_CLIPBOARD (gdk_atom_intern_static_string ("_RNGRAMPA_SPECIAL_CLIPBOARD"))
-#define FR_SPECIAL_URI_LIST (gdk_atom_intern_static_string ("application/grapa-uri-list"))
+#define FR_CLIPBOARD (cdk_atom_intern_static_string ("_RNGRAMPA_SPECIAL_CLIPBOARD"))
+#define FR_SPECIAL_URI_LIST (cdk_atom_intern_static_string ("application/grapa-uri-list"))
 
 static CtkTargetEntry clipboard_targets[] = {
 	{ "application/grapa-uri-list", 0, 1 }
@@ -1298,7 +1298,7 @@ get_mime_type_icon (const char *mime_type)
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = gdk_pixbuf_copy (pixbuf);
+	pixbuf = cdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (tree_pixbuf_hash, (gpointer) mime_type, pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
@@ -1334,7 +1334,7 @@ get_icon (CtkWidget *widget,
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = gdk_pixbuf_copy (pixbuf);
+	pixbuf = cdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (pixbuf_hash, (gpointer) content_type, pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
@@ -1367,7 +1367,7 @@ get_emblem (CtkWidget *widget,
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = gdk_pixbuf_copy (pixbuf);
+	pixbuf = cdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (pixbuf_hash, (gpointer) "emblem-nowrite", pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
@@ -3992,11 +3992,11 @@ file_motion_notify_callback (CtkWidget *widget,
 	display = ctk_widget_get_display (CTK_WIDGET (widget));
 
 	if (window->priv->list_hover_path != NULL)
-		cursor = gdk_cursor_new_for_display (display, GDK_HAND2);
+		cursor = cdk_cursor_new_for_display (display, GDK_HAND2);
 	else
 		cursor = NULL;
 
-	gdk_window_set_cursor (event->window, cursor);
+	cdk_window_set_cursor (event->window, cursor);
 
 	/* only redraw if the hover row has changed */
 	if (!(last_hover_path == NULL && window->priv->list_hover_path == NULL) &&
@@ -4083,7 +4083,7 @@ fr_window_drag_motion (CtkWidget      *widget,
 	if ((ctk_drag_get_source_widget (context) == window->priv->list_view)
 	    || (ctk_drag_get_source_widget (context) == window->priv->tree_view))
 	{
-		gdk_drag_status (context, 0, time);
+		cdk_drag_status (context, 0, time);
 		return FALSE;
 	}
 
@@ -4311,7 +4311,7 @@ file_list_drag_begin (CtkWidget          *widget,
 	g_free (window->priv->drag_base_dir);
 	window->priv->drag_base_dir = NULL;
 
-	gdk_property_change (gdk_drag_context_get_source_window (context),
+	cdk_property_change (cdk_drag_context_get_source_window (context),
 			     XDS_ATOM, TEXT_ATOM,
 			     8, GDK_PROP_MODE_REPLACE,
 			     (guchar *) XDS_FILENAME,
@@ -4330,7 +4330,7 @@ file_list_drag_end (CtkWidget      *widget,
 
 	debug (DEBUG_INFO, "::DragEnd -->\n");
 
-	gdk_property_delete (gdk_drag_context_get_source_window (context), XDS_ATOM);
+	cdk_property_delete (cdk_drag_context_get_source_window (context), XDS_ATOM);
 
 	if (window->priv->drag_error != NULL) {
 		_ctk_error_dialog_run (CTK_WINDOW (window),
@@ -4369,9 +4369,9 @@ get_xds_atom_value (GdkDragContext *context)
 	char *ret;
 
 	g_return_val_if_fail (context != NULL, NULL);
-	g_return_val_if_fail (gdk_drag_context_get_source_window (context) != NULL, NULL);
+	g_return_val_if_fail (cdk_drag_context_get_source_window (context) != NULL, NULL);
 
-	if (gdk_property_get (gdk_drag_context_get_source_window (context),
+	if (cdk_property_get (cdk_drag_context_get_source_window (context),
 			      XDS_ATOM, TEXT_ATOM,
 			      0, MAX_XDS_ATOM_VAL_LEN,
 			      FALSE, NULL, NULL, &actual_length,
@@ -4390,7 +4390,7 @@ static gboolean
 context_offers_target (GdkDragContext *context,
 		       GdkAtom target)
 {
-	return (g_list_find (gdk_drag_context_list_targets (context), target) != NULL);
+	return (g_list_find (cdk_drag_context_list_targets (context), target) != NULL);
 }
 
 
@@ -5158,10 +5158,10 @@ pref_click_policy_changed (GSettings *settings,
 
 	window->priv->single_click = is_single_click_policy (window);
 
-	gdk_window_set_cursor (win, NULL);
+	cdk_window_set_cursor (win, NULL);
 	display = ctk_widget_get_display (CTK_WIDGET (window->priv->list_view));
 	if (display != NULL)
-		gdk_display_flush (display);
+		cdk_display_flush (display);
 }
 
 
@@ -8374,9 +8374,9 @@ fr_window_open_files_with_application (FrWindow *window,
 	for (scan = file_list; scan; scan = scan->next)
 		uris = g_list_prepend (uris, g_filename_to_uri (scan->data, NULL, NULL));
 
-	context = gdk_display_get_app_launch_context (ctk_widget_get_display (CTK_WIDGET (window)));
-	gdk_app_launch_context_set_screen (context, ctk_widget_get_screen (CTK_WIDGET (window)));
-	gdk_app_launch_context_set_timestamp (context, 0);
+	context = cdk_display_get_app_launch_context (ctk_widget_get_display (CTK_WIDGET (window)));
+	cdk_app_launch_context_set_screen (context, ctk_widget_get_screen (CTK_WIDGET (window)));
+	cdk_app_launch_context_set_timestamp (context, 0);
 
 	if (! g_app_info_launch_uris (app, uris, G_APP_LAUNCH_CONTEXT (context), &error)) {
 		_ctk_error_dialog_run (CTK_WINDOW (window),
@@ -8624,9 +8624,9 @@ fr_window_open_extracted_files (OpenFilesData *odata)
 		}
 	}
 
-	context = gdk_display_get_app_launch_context (ctk_widget_get_display (CTK_WIDGET (odata->window)));
-	gdk_app_launch_context_set_screen (context, ctk_widget_get_screen (CTK_WIDGET (odata->window)));
-	gdk_app_launch_context_set_timestamp (context, 0);
+	context = cdk_display_get_app_launch_context (ctk_widget_get_display (CTK_WIDGET (odata->window)));
+	cdk_app_launch_context_set_screen (context, ctk_widget_get_screen (CTK_WIDGET (odata->window)));
+	cdk_app_launch_context_set_timestamp (context, 0);
 	result = g_app_info_launch_uris (app, files_to_open, G_APP_LAUNCH_CONTEXT (context), &error);
 	if (! result) {
 		_ctk_error_dialog_run (CTK_WINDOW (odata->window),

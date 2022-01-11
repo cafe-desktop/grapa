@@ -25,9 +25,9 @@
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
 #if CTK_CHECK_VERSION (3,99,0)
-#include <gdk/x11/gdkx.h>
+#include <cdk/x11/cdkx.h>
 #else
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #endif
 #include "dlg-package-installer.h"
 #include "ctk-utils.h"
@@ -60,7 +60,7 @@ package_installer_terminated (InstallerData   *idata,
 
 	window = ctk_widget_get_window (CTK_WIDGET (idata->window));
 	if (window != NULL)
-		gdk_window_set_cursor (window, NULL);
+		cdk_window_set_cursor (window, NULL);
 
 	if (error_type != FR_PROC_ERROR_NONE) {
 		fr_archive_action_completed (idata->archive,
@@ -175,8 +175,8 @@ install_packages (InstallerData *idata)
 			GdkDisplay *display;
 
 			display = ctk_widget_get_display (CTK_WIDGET (idata));
-			cursor = gdk_cursor_new_for_display (display, GDK_WATCH);
-			gdk_window_set_cursor (window, cursor);
+			cursor = cdk_cursor_new_for_display (display, GDK_WATCH);
+			cdk_window_set_cursor (window, cursor);
 			g_object_unref (cursor);
 		}
 
