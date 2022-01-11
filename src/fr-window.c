@@ -28,7 +28,7 @@
 #include <gio/gio.h>
 #include <cdk/cdk.h>
 #include <cdk/cdkkeysyms.h>
-#include <cdk-pixbuf/cdk-pixbuf.h>
+#include <gdk-pixbuf/gdk-pixbuf.h>
 
 #include "actions.h"
 #include "dlg-batch-add.h"
