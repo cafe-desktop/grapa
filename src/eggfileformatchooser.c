@@ -363,7 +363,7 @@ expander_unmap_cb (CtkWidget *widget,
   EggFileFormatChooser *self = user_data;
 
   if (self->priv->size_changed_event == 0)
-    self->priv->size_changed_event = gdk_threads_add_idle (emit_default_size_changed, self);
+    self->priv->size_changed_event = cdk_threads_add_idle (emit_default_size_changed, self);
 }
 
 static void
@@ -937,7 +937,7 @@ egg_file_format_chooser_add_pixbuf_formats (EggFileFormatChooser *self,
 
   g_return_if_fail (EGG_IS_FILE_FORMAT_CHOOSER (self));
 
-  pixbuf_formats = gdk_pixbuf_get_formats ();
+  pixbuf_formats = cdk_pixbuf_get_formats ();
 
   if (formats)
     *formats = g_new0 (guint, g_slist_length (pixbuf_formats) + 1);
@@ -950,20 +950,20 @@ egg_file_format_chooser_add_pixbuf_formats (EggFileFormatChooser *self,
       gchar **mime_types, **extension_list;
       guint id;
 
-      if (gdk_pixbuf_format_is_disabled (format) ||
-         !gdk_pixbuf_format_is_writable (format))
+      if (cdk_pixbuf_format_is_disabled (format) ||
+         !cdk_pixbuf_format_is_writable (format))
         continue;
 
-      mime_types = gdk_pixbuf_format_get_mime_types (format);
+      mime_types = cdk_pixbuf_format_get_mime_types (format);
       icon = get_icon_name (mime_types[0]);
       g_strfreev (mime_types);
 
-      extension_list = gdk_pixbuf_format_get_extensions (format);
+      extension_list = cdk_pixbuf_format_get_extensions (format);
       extensions = g_strjoinv (", ", extension_list);
       g_strfreev (extension_list);
 
-      description = gdk_pixbuf_format_get_description (format);
-      name = gdk_pixbuf_format_get_name (format);
+      description = cdk_pixbuf_format_get_description (format);
+      name = cdk_pixbuf_format_get_name (format);
 
       id = egg_file_format_chooser_add_format_impl (self, parent, description,
                                                     icon, extensions);
@@ -1202,7 +1202,7 @@ void
 egg_file_format_chooser_emit_size_changed (EggFileFormatChooser *self)
 {
   if (self->priv->size_changed_event == 0)
-    self->priv->size_changed_event = gdk_threads_add_idle (emit_default_size_changed, self);
+    self->priv->size_changed_event = cdk_threads_add_idle (emit_default_size_changed, self);
 }
 
 /* vim: set sw=2 sta et: */
