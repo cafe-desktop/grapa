@@ -1298,7 +1298,7 @@ get_mime_type_icon (const char *mime_type)
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = cdk_pixbuf_copy (pixbuf);
+	pixbuf = gdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (tree_pixbuf_hash, (gpointer) mime_type, pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
@@ -1334,7 +1334,7 @@ get_icon (CtkWidget *widget,
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = cdk_pixbuf_copy (pixbuf);
+	pixbuf = gdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (pixbuf_hash, (gpointer) content_type, pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
@@ -1367,7 +1367,7 @@ get_emblem (CtkWidget *widget,
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = cdk_pixbuf_copy (pixbuf);
+	pixbuf = gdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (pixbuf_hash, (gpointer) "emblem-nowrite", pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
