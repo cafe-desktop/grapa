@@ -262,6 +262,9 @@ main (int argc, char **argv)
 	g_signal_connect (app, "startup", G_CALLBACK (startup_cb), NULL);
 	g_signal_connect (app, "activate", G_CALLBACK (activate_cb), NULL);
 
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+	g_object_set (ctk_settings_get_default (), "ctk-menu-images", TRUE, NULL);
+
 	status = g_application_run (G_APPLICATION (app), argc, argv);
 
 	release_data ();
