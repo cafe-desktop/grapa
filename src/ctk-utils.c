@@ -518,14 +518,14 @@ _ctk_entry_set_filename_text (CtkEntry   *entry,
 }
 
 
-static CdkPixbuf *
+static GdkPixbuf *
 get_themed_icon_pixbuf (GThemedIcon  *icon,
 		        int           size,
 		        CtkIconTheme *icon_theme)
 {
 	char        **icon_names;
 	CtkIconInfo  *icon_info;
-	CdkPixbuf    *pixbuf;
+	GdkPixbuf    *pixbuf;
 	GError       *error = NULL;
 
 	g_object_get (icon, "names", &icon_names, NULL);
@@ -547,13 +547,13 @@ get_themed_icon_pixbuf (GThemedIcon  *icon,
 }
 
 
-static CdkPixbuf *
+static GdkPixbuf *
 get_file_icon_pixbuf (GFileIcon *icon,
 		      int        size)
 {
 	GFile     *file;
 	char      *filename;
-	CdkPixbuf *pixbuf;
+	GdkPixbuf *pixbuf;
 
 	file = g_file_icon_get_file (icon);
 	filename = g_file_get_path (file);
@@ -565,7 +565,7 @@ get_file_icon_pixbuf (GFileIcon *icon,
 }
 
 
-CdkPixbuf *
+GdkPixbuf *
 get_icon_pixbuf (GIcon        *icon,
 		 int           size,
 		 CtkIconTheme *theme)
@@ -580,12 +580,12 @@ get_icon_pixbuf (GIcon        *icon,
 }
 
 
-CdkPixbuf *
+GdkPixbuf *
 get_mime_type_pixbuf (const char   *mime_type,
 		      int           icon_size,
 		      CtkIconTheme *icon_theme)
 {
-	CdkPixbuf *pixbuf = NULL;
+	GdkPixbuf *pixbuf = NULL;
 	GIcon     *icon;
 
 	if (icon_theme == NULL)
