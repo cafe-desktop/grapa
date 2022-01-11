@@ -54,12 +54,12 @@ file_sel_response_cb (CtkWidget      *widget,
 		      int             response,
 		      DialogData     *data)
 {
-	CtkFileChooser *file_sel = GTK_FILE_CHOOSER (data->choice);
+	CtkFileChooser *file_sel = CTK_FILE_CHOOSER (data->choice);
 	FrWindow       *window = data->window;
 	char           *current_folder;
 	char           *uri;
 	gboolean        update;
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	GListModel     *files;
 	guint           i, n;
 #else
@@ -82,14 +82,14 @@ file_sel_response_cb (CtkWidget      *widget,
 	}
 
 
-	if ((response == GTK_RESPONSE_CANCEL) || (response == GTK_RESPONSE_DELETE_EVENT)) {
+	if ((response == CTK_RESPONSE_CANCEL) || (response == CTK_RESPONSE_DELETE_EVENT)) {
 		ctk_widget_destroy (data->dialog);
 		g_free (current_folder);
 		return TRUE;
 	}
 
-	if (response == GTK_RESPONSE_HELP) {
-		show_help_dialog (GTK_WINDOW (data->dialog), "grapa-add-options");
+	if (response == CTK_RESPONSE_HELP) {
+		show_help_dialog (CTK_WINDOW (data->dialog), "grapa-add-options");
 		g_free (current_folder);
 		return TRUE;
 	}
@@ -102,25 +102,25 @@ file_sel_response_cb (CtkWidget      *widget,
 
 		utf8_path = g_filename_display_name (current_folder);
 
-		d = _ctk_error_dialog_new (GTK_WINDOW (window),
-					   GTK_DIALOG_MODAL,
+		d = _ctk_error_dialog_new (CTK_WINDOW (window),
+					   CTK_DIALOG_MODAL,
 					   NULL,
 					   _("Could not add the files to the archive"),
 					   _("You don't have the right permissions to read files from folder \"%s\""),
 					   utf8_path);
-		ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 
 		g_free (utf8_path);
 		g_free (current_folder);
 		return FALSE;
 	}
 
-	update = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
+	update = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
 
 	/**/
 
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	files = ctk_file_chooser_get_files (file_sel);
 	n = g_list_model_get_n_items (files);
 	for (i = 0; i < n; i++)
@@ -135,7 +135,7 @@ file_sel_response_cb (CtkWidget      *widget,
 		fr_window_archive_add_files (window, item_list, update);
 
 	gio_file_list_free (item_list);
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	g_object_unref (files);
 #else
 	g_slist_free_full (selections, g_free);
@@ -152,7 +152,7 @@ static gboolean
 add_files_window_unrealize_cb (CtkWidget  *widget,
 			       gpointer    data)
 {
-	pref_util_save_window_geometry (GTK_WINDOW (widget), "addfiles");
+	pref_util_save_window_geometry (CTK_WINDOW (widget), "addfiles");
 	return FALSE;
 }
 
@@ -165,7 +165,7 @@ add_files_cb (CtkWidget *widget,
 	CtkWidget  *file_sel;
 	DialogData *data;
 	CtkWidget  *main_box;
-#if !GTK_CHECK_VERSION (3,99,0)
+#if !CTK_CHECK_VERSION (3,99,0)
 	CtkWidget  *content_area;
 #endif
 	CtkWidget  *filechooser;
@@ -175,41 +175,41 @@ add_files_cb (CtkWidget *widget,
 	data->window = callback_data;
 	data->settings = g_settings_new (GRAPA_SCHEMA_ADD);
 	data->dialog = file_sel = ctk_dialog_new ();
-	ctk_window_set_title (GTK_WINDOW (file_sel), _("Add Files"));
-	ctk_window_set_transient_for (GTK_WINDOW (file_sel), GTK_WINDOW (data->window));
-	ctk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
-	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
-	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
-	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Add"), "grapa_add-files-to-archive", GTK_RESPONSE_OK);
+	ctk_window_set_title (CTK_WINDOW (file_sel), _("Add Files"));
+	ctk_window_set_transient_for (CTK_WINDOW (file_sel), CTK_WINDOW (data->window));
+	ctk_window_set_modal (CTK_WINDOW (file_sel), TRUE);
+	grapa_dialog_add_button (CTK_DIALOG (file_sel), _("_Help"), "help-browser", CTK_RESPONSE_HELP);
+	grapa_dialog_add_button (CTK_DIALOG (file_sel), _("_Cancel"), "process-stop", CTK_RESPONSE_CANCEL);
+	grapa_dialog_add_button (CTK_DIALOG (file_sel), _("_Add"), "grapa_add-files-to-archive", CTK_RESPONSE_OK);
 
-	ctk_window_set_default_size (GTK_WINDOW (file_sel), 530, 450);
+	ctk_window_set_default_size (CTK_WINDOW (file_sel), 530, 450);
 
-	data->choice = filechooser = ctk_file_chooser_widget_new (GTK_FILE_CHOOSER_ACTION_OPEN);
-	ctk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (filechooser), TRUE);
-#if !GTK_CHECK_VERSION (3,99,0)
-	ctk_file_chooser_set_local_only (GTK_FILE_CHOOSER (filechooser), FALSE);
+	data->choice = filechooser = ctk_file_chooser_widget_new (CTK_FILE_CHOOSER_ACTION_OPEN);
+	ctk_file_chooser_set_select_multiple (CTK_FILE_CHOOSER (filechooser), TRUE);
+#if !CTK_CHECK_VERSION (3,99,0)
+	ctk_file_chooser_set_local_only (CTK_FILE_CHOOSER (filechooser), FALSE);
 #endif
-	ctk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
+	ctk_dialog_set_default_response (CTK_DIALOG (file_sel), CTK_RESPONSE_OK);
 
 	/* Translators: add a file to the archive only if the disk version is
 	 * newer than the archive version. */
 	data->add_if_newer_checkbutton = ctk_check_button_new_with_mnemonic (_("Add only if _newer"));
 
-	main_box = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	ctk_widget_set_margin_top (GTK_WIDGET(main_box) , 2);
-	ctk_widget_set_halign (data->add_if_newer_checkbutton, GTK_ALIGN_START);
-#if GTK_CHECK_VERSION (3,99,0)
-	ctk_window_set_child (GTK_WINDOW (file_sel), main_box);
-	ctk_box_append (GTK_BOX (main_box), filechooser);
-	ctk_box_append (GTK_BOX (main_box), data->add_if_newer_checkbutton);
+	main_box = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
+	ctk_widget_set_margin_top (CTK_WIDGET(main_box) , 2);
+	ctk_widget_set_halign (data->add_if_newer_checkbutton, CTK_ALIGN_START);
+#if CTK_CHECK_VERSION (3,99,0)
+	ctk_window_set_child (CTK_WINDOW (file_sel), main_box);
+	ctk_box_append (CTK_BOX (main_box), filechooser);
+	ctk_box_append (CTK_BOX (main_box), data->add_if_newer_checkbutton);
 #else
-	content_area = ctk_dialog_get_content_area (GTK_DIALOG (file_sel));
-	ctk_container_set_border_width (GTK_CONTAINER (main_box), 0);
-	ctk_box_pack_start (GTK_BOX (main_box), filechooser,
+	content_area = ctk_dialog_get_content_area (CTK_DIALOG (file_sel));
+	ctk_container_set_border_width (CTK_CONTAINER (main_box), 0);
+	ctk_box_pack_start (CTK_BOX (main_box), filechooser,
 			    TRUE, TRUE, 0);
-	ctk_box_pack_start (GTK_BOX (main_box), data->add_if_newer_checkbutton,
+	ctk_box_pack_start (CTK_BOX (main_box), data->add_if_newer_checkbutton,
 			    FALSE, FALSE, 6);
-	ctk_box_pack_start (GTK_BOX (content_area),
+	ctk_box_pack_start (CTK_BOX (content_area),
 			    main_box,
 			    TRUE, TRUE, 0);
 	ctk_widget_show_all (main_box);
@@ -220,7 +220,7 @@ add_files_cb (CtkWidget *widget,
 	folder = g_settings_get_string (data->settings, PREF_ADD_CURRENT_FOLDER);
 	if ((folder == NULL) || (strcmp (folder, "") == 0))
 		folder = g_strdup (fr_window_get_add_default_dir (data->window));
-	grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (filechooser), folder);
+	grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (filechooser), folder);
 	g_free (folder);
 
 	/* signals */
@@ -240,7 +240,7 @@ add_files_cb (CtkWidget *widget,
 			  G_CALLBACK (add_files_window_unrealize_cb),
 			  NULL);
 
-	ctk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
-	pref_util_restore_window_geometry (GTK_WINDOW (file_sel), "addfiles");
+	ctk_window_set_modal (CTK_WINDOW (file_sel), TRUE);
+	pref_util_restore_window_geometry (CTK_WINDOW (file_sel), "addfiles");
 	ctk_widget_show (file_sel);
 }

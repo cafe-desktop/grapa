@@ -79,8 +79,8 @@
 #define DEF_WIN_HEIGHT 480
 #define DEF_SIDEBAR_WIDTH 200
 
-#define FILE_LIST_ICON_SIZE GTK_ICON_SIZE_LARGE_TOOLBAR
-#define DIR_TREE_ICON_SIZE GTK_ICON_SIZE_MENU
+#define FILE_LIST_ICON_SIZE CTK_ICON_SIZE_LARGE_TOOLBAR
+#define DIR_TREE_ICON_SIZE CTK_ICON_SIZE_MENU
 
 #define BAD_CHARS "/\\*"
 
@@ -654,7 +654,7 @@ fr_window_finalize (GObject *object)
 		window->priv = NULL;
 	}
 
-	if (ctk_application_get_windows (GTK_APPLICATION (g_application_get_default ())) == NULL) {
+	if (ctk_application_get_windows (CTK_APPLICATION (g_application_get_default ())) == NULL) {
 		if (pixbuf_hash != NULL) {
 			g_hash_table_foreach (pixbuf_hash,
 					      gh_unref_pixbuf,
@@ -678,7 +678,7 @@ fr_window_finalize (GObject *object)
 static gboolean
 close__step2 (gpointer data)
 {
-	ctk_widget_destroy (GTK_WIDGET (data));
+	ctk_widget_destroy (CTK_WIDGET (data));
 	return FALSE;
 }
 
@@ -691,15 +691,15 @@ fr_window_close (FrWindow *window)
 
 	window->priv->closing = TRUE;
 
-	if (ctk_widget_get_realized (GTK_WIDGET (window))) {
+	if (ctk_widget_get_realized (CTK_WIDGET (window))) {
 		int width, height;
 
-		width = ctk_widget_get_allocated_width (GTK_WIDGET (window));
-		height = ctk_widget_get_allocated_height (GTK_WIDGET (window));
+		width = ctk_widget_get_allocated_width (CTK_WIDGET (window));
+		height = ctk_widget_get_allocated_height (CTK_WIDGET (window));
 		g_settings_set_int (window->priv->settings_ui, PREF_UI_WINDOW_WIDTH, width);
 		g_settings_set_int (window->priv->settings_ui, PREF_UI_WINDOW_HEIGHT, height);
 
-		width = ctk_paned_get_position (GTK_PANED (window->priv->paned));
+		width = ctk_paned_get_position (CTK_PANED (window->priv->paned));
 		if (width > 0)
 			g_settings_set_int (window->priv->settings_ui, PREF_UI_SIDEBAR_WIDTH, width);
 
@@ -804,7 +804,7 @@ fr_window_init (FrWindow *window)
 	window->priv->use_progress_dialog = TRUE;
 	window->priv->batch_title = NULL;
 
-	context = ctk_widget_get_style_context (GTK_WIDGET (window));
+	context = ctk_widget_get_style_context (CTK_WIDGET (window));
 	ctk_style_context_add_class (context, "grapa-window");
 
 	g_signal_connect (window,
@@ -837,7 +837,7 @@ fr_window_get_type (void)
 			NULL
 		};
 
-		type = g_type_register_static (GTK_TYPE_APPLICATION_WINDOW,
+		type = g_type_register_static (CTK_TYPE_APPLICATION_WINDOW,
 					       "FrWindow",
 					       &type_info,
 					       0);
@@ -1106,7 +1106,7 @@ file_data_respects_filter (FrWindow *window,
 {
 	const char *filter;
 
-	filter = ctk_entry_get_text (GTK_ENTRY (window->priv->filter_entry));
+	filter = ctk_entry_get_text (CTK_ENTRY (window->priv->filter_entry));
 	if ((fdata == NULL) || (filter == NULL) || (*filter == '\0'))
 		return TRUE;
 
@@ -1467,7 +1467,7 @@ get_selection_as_fd (FrWindow *window)
 	if (! ctk_widget_get_realized (window->priv->list_view))
 		return NULL;
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
 	if (selection == NULL)
 		return NULL;
 	ctk_tree_selection_selected_foreach (selection, add_selected_fd, &list);
@@ -1489,7 +1489,7 @@ fr_window_update_statusbar_list_info (FrWindow *window)
 		return;
 
 	if ((window->archive == NULL) || (window->archive->command == NULL)) {
-		ctk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar), window->priv->list_info_cid);
+		ctk_statusbar_pop (CTK_STATUSBAR (window->priv->statusbar), window->priv->list_info_cid);
 		return;
 	}
 
@@ -1546,7 +1546,7 @@ fr_window_update_statusbar_list_info (FrWindow *window)
 			    selected_info,
 			    NULL);
 
-	ctk_statusbar_push (GTK_STATUSBAR (window->priv->statusbar), window->priv->list_info_cid, info);
+	ctk_statusbar_push (CTK_STATUSBAR (window->priv->statusbar), window->priv->list_info_cid, info);
 
 	g_free (size_txt);
 	g_free (sel_size_txt);
@@ -1564,9 +1564,9 @@ fr_window_populate_file_list (FrWindow  *window,
 
 	ctk_list_store_clear (window->priv->list_store);
 
-	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (window->priv->list_store),
-	 				      GTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID,
-	 				      GTK_SORT_ASCENDING);
+	ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (window->priv->list_store),
+	 				      CTK_TREE_SORTABLE_DEFAULT_SORT_COLUMN_ID,
+	 				      CTK_SORT_ASCENDING);
 
 	for (i = 0; i < files->len; i++) {
 		FileData    *fdata = g_ptr_array_index (files, i);
@@ -1579,9 +1579,9 @@ fr_window_populate_file_list (FrWindow  *window,
 
 		ctk_list_store_append (window->priv->list_store, &iter);
 
-		icon = get_icon (GTK_WIDGET (window), fdata);
+		icon = get_icon (CTK_WIDGET (window), fdata);
 		utf8_name = g_filename_display_name (fdata->list_name);
-		emblem = get_emblem (GTK_WIDGET (window), fdata);
+		emblem = get_emblem (CTK_WIDGET (window), fdata);
 
 		if (file_data_is_dir (fdata)) {
 			char *utf8_path;
@@ -1658,7 +1658,7 @@ fr_window_populate_file_list (FrWindow  *window,
 			g_object_unref (emblem);
 	}
 
-	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (window->priv->list_store),
+	ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (window->priv->list_store),
 					      get_column_from_sort_method (window->priv->sort_method),
 					      window->priv->sort_type);
 
@@ -1686,7 +1686,7 @@ get_tree_iter_from_path (FrWindow    *window,
 {
 	gboolean    result = FALSE;
 
-	if (! ctk_tree_model_iter_children (GTK_TREE_MODEL (window->priv->tree_store), iter, parent))
+	if (! ctk_tree_model_iter_children (CTK_TREE_MODEL (window->priv->tree_store), iter, parent))
 		return FALSE;
 
 	do {
@@ -1698,7 +1698,7 @@ get_tree_iter_from_path (FrWindow    *window,
 			return TRUE;
 		}
 
-		ctk_tree_model_get (GTK_TREE_MODEL (window->priv->tree_store),
+		ctk_tree_model_get (CTK_TREE_MODEL (window->priv->tree_store),
 				    iter,
 				    TREE_COLUMN_PATH, &iter_path,
 				    -1);
@@ -1709,7 +1709,7 @@ get_tree_iter_from_path (FrWindow    *window,
 			break;
 		}
 		g_free (iter_path);
-	} while (ctk_tree_model_iter_next (GTK_TREE_MODEL (window->priv->tree_store), iter));
+	} while (ctk_tree_model_iter_next (CTK_TREE_MODEL (window->priv->tree_store), iter));
 
 	return result;
 }
@@ -1741,7 +1741,7 @@ fr_window_update_current_location (FrWindow *window)
 
 	ctk_widget_show (window->priv->location_bar);
 
-	ctk_entry_set_text (GTK_ENTRY (window->priv->location_entry), window->priv->archive_present? current_dir: "");
+	ctk_entry_set_text (CTK_ENTRY (window->priv->location_entry), window->priv->archive_present? current_dir: "");
 
 	set_sensitive (window, "GoBack", window->priv->archive_present && (current_dir != NULL) && (window->priv->history_current != NULL) && (window->priv->history_current->next != NULL));
 	set_sensitive (window, "GoForward", window->priv->archive_present && (current_dir != NULL) && (window->priv->history_current != NULL) && (window->priv->history_current->prev != NULL));
@@ -1760,11 +1760,11 @@ fr_window_update_current_location (FrWindow *window)
 		CtkTreeSelection *selection;
 		CtkTreePath      *t_path;
 
-		t_path = ctk_tree_model_get_path (GTK_TREE_MODEL (window->priv->tree_store), &iter);
-		ctk_tree_view_expand_to_path (GTK_TREE_VIEW (window->priv->tree_view), t_path);
+		t_path = ctk_tree_model_get_path (CTK_TREE_MODEL (window->priv->tree_store), &iter);
+		ctk_tree_view_expand_to_path (CTK_TREE_VIEW (window->priv->tree_view), t_path);
 		ctk_tree_path_free (t_path);
 
-		selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->tree_view));
+		selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->tree_view));
 		ctk_tree_selection_select_iter (selection, &iter);
 	}
 	g_free (path);
@@ -1792,7 +1792,7 @@ fr_window_update_dir_tree (FrWindow *window)
 	else {
 		ctk_widget_set_sensitive (window->priv->tree_view, TRUE);
 		if (! ctk_widget_get_visible (window->priv->sidepane))
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 			ctk_widget_show (window->priv->sidepane);
 #else
 			ctk_widget_show_all (window->priv->sidepane);
@@ -1800,7 +1800,7 @@ fr_window_update_dir_tree (FrWindow *window)
 	}
 
 	if (ctk_widget_get_realized (window->priv->tree_view))
-		ctk_tree_view_scroll_to_point (GTK_TREE_VIEW (window->priv->tree_view), 0, 0);
+		ctk_tree_view_scroll_to_point (CTK_TREE_VIEW (window->priv->tree_view), 0, 0);
 
 	/**/
 
@@ -1811,7 +1811,7 @@ fr_window_update_dir_tree (FrWindow *window)
 		FileData *fdata = g_ptr_array_index (window->archive->command->files, i);
 		char     *dir;
 
-		if (ctk_entry_get_text (GTK_ENTRY (window->priv->filter_entry)) != NULL) {
+		if (ctk_entry_get_text (CTK_ENTRY (window->priv->filter_entry)) != NULL) {
 			if (! file_data_respects_filter (window, fdata))
 				continue;
 		}
@@ -1859,7 +1859,7 @@ fr_window_update_dir_tree (FrWindow *window)
 				    TREE_COLUMN_PATH, "/",
 				    TREE_COLUMN_WEIGHT, PANGO_WEIGHT_BOLD,
 				    -1);
-		g_hash_table_replace (dir_cache, "/", ctk_tree_model_get_path (GTK_TREE_MODEL (window->priv->tree_store), &node));
+		g_hash_table_replace (dir_cache, "/", ctk_tree_model_get_path (CTK_TREE_MODEL (window->priv->tree_store), &node));
 
 		g_free (name);
 		g_free (uri);
@@ -1881,7 +1881,7 @@ fr_window_update_dir_tree (FrWindow *window)
 			continue;
 
 		parent_path = g_hash_table_lookup (dir_cache, parent_dir);
-		ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->tree_store),
+		ctk_tree_model_get_iter (CTK_TREE_MODEL (window->priv->tree_store),
 					 &parent,
 					 parent_path);
 		ctk_tree_store_append (window->priv->tree_store, &node, &parent);
@@ -1891,7 +1891,7 @@ fr_window_update_dir_tree (FrWindow *window)
 				    TREE_COLUMN_PATH, dir,
 				    TREE_COLUMN_WEIGHT, PANGO_WEIGHT_NORMAL,
 				    -1);
-		g_hash_table_replace (dir_cache, dir, ctk_tree_model_get_path (GTK_TREE_MODEL (window->priv->tree_store), &node));
+		g_hash_table_replace (dir_cache, dir, ctk_tree_model_get_path (CTK_TREE_MODEL (window->priv->tree_store), &node));
 
 		g_free (parent_dir);
 	}
@@ -1910,7 +1910,7 @@ fr_window_update_filter_bar_visibility (FrWindow *window)
 {
 	const char *filter;
 
-	filter = ctk_entry_get_text (GTK_ENTRY (window->priv->filter_entry));
+	filter = ctk_entry_get_text (CTK_ENTRY (window->priv->filter_entry));
 	if ((filter == NULL) || (*filter == '\0'))
 		ctk_widget_hide (window->priv->filter_bar);
 	else
@@ -1926,7 +1926,7 @@ fr_window_update_file_list (FrWindow *window,
 	gboolean    free_files = FALSE;
 
 	if (ctk_widget_get_realized (window->priv->list_view))
-		ctk_tree_view_scroll_to_point (GTK_TREE_VIEW (window->priv->list_view), 0, 0);
+		ctk_tree_view_scroll_to_point (CTK_TREE_VIEW (window->priv->list_view), 0, 0);
 
 	if (! window->priv->archive_present || window->priv->archive_new) {
 		if (update_view)
@@ -1936,7 +1936,7 @@ fr_window_update_file_list (FrWindow *window,
 
 		if (window->priv->archive_new) {
 			ctk_widget_set_sensitive (window->priv->list_view, TRUE);
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 			ctk_widget_show (ctk_widget_get_parent (window->priv->list_view));
 #else
 			ctk_widget_show_all (ctk_widget_get_parent (window->priv->list_view));
@@ -1951,7 +1951,7 @@ fr_window_update_file_list (FrWindow *window,
 	}
 	else {
 		ctk_widget_set_sensitive (window->priv->list_view, TRUE);
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 		ctk_widget_show (ctk_widget_get_parent (window->priv->list_view));
 #else
 		ctk_widget_show_all (ctk_widget_get_parent (window->priv->list_view));
@@ -2009,7 +2009,7 @@ fr_window_update_file_list (FrWindow *window,
 void
 fr_window_update_list_order (FrWindow *window)
 {
-	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (window->priv->list_store), get_column_from_sort_method (window->priv->sort_method), window->priv->sort_type);
+	ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (window->priv->list_store), get_column_from_sort_method (window->priv->sort_method), window->priv->sort_type);
 }
 
 
@@ -2017,7 +2017,7 @@ static void
 fr_window_update_title (FrWindow *window)
 {
 	if (! window->priv->archive_present)
-		ctk_window_set_title (GTK_WINDOW (window), _("Archive Manager"));
+		ctk_window_set_title (CTK_WINDOW (window), _("Archive Manager"));
 	else {
 		char *title;
 		char *name;
@@ -2027,7 +2027,7 @@ fr_window_update_title (FrWindow *window)
 					 name,
 					 window->archive->read_only ? _("[read only]") : "");
 
-		ctk_window_set_title (GTK_WINDOW (window), title);
+		ctk_window_set_title (CTK_WINDOW (window), title);
 		g_free (title);
 		g_free (name);
 	}
@@ -2060,7 +2060,7 @@ selection_has_a_dir (FrWindow *window)
 	if (! ctk_widget_get_realized (window->priv->list_view))
 		return FALSE;
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
 	if (selection == NULL)
 		return FALSE;
 
@@ -2080,7 +2080,7 @@ set_active (FrWindow   *window,
 	CtkAction *action;
 
 	action = ctk_action_group_get_action (window->priv->actions, action_name);
-	ctk_toggle_action_set_active (GTK_TOGGLE_ACTION (action), is_active);
+	ctk_toggle_action_set_active (CTK_TOGGLE_ACTION (action), is_active);
 }
 
 
@@ -2097,7 +2097,7 @@ fr_window_update_paste_command_sensitivity (FrWindow     *window,
 		return;
 
 	if (clipboard == NULL)
-		clipboard = ctk_widget_get_clipboard (GTK_WIDGET (window), FR_CLIPBOARD);
+		clipboard = ctk_widget_get_clipboard (CTK_WIDGET (window), FR_CLIPBOARD);
 	running    = window->priv->activity_ref > 0;
 	no_archive = (window->archive == NULL) || ! window->priv->archive_present;
 	ro         = ! no_archive && window->archive->read_only;
@@ -2165,8 +2165,8 @@ fr_window_update_sensitivity (FrWindow *window)
 	set_sensitive (window, "ViewSelection_Toolbar", file_op && one_file_selected && ! dir_selected);
 
 	if (window->priv->progress_dialog != NULL)
-		ctk_dialog_set_response_sensitive (GTK_DIALOG (window->priv->progress_dialog),
-						   GTK_RESPONSE_OK,
+		ctk_dialog_set_response_sensitive (CTK_DIALOG (window->priv->progress_dialog),
+						   CTK_RESPONSE_OK,
 						   running && window->priv->stoppable);
 
 	fr_window_update_paste_command_sensitivity (window, NULL);
@@ -2192,7 +2192,7 @@ location_entry_key_press_event_cb (CtkWidget   *widget,
 	    || (event->keyval == GDK_KEY_KP_Enter)
 	    || (event->keyval == GDK_KEY_ISO_Enter))
 	{
-		fr_window_go_to_location (window, ctk_entry_get_text (GTK_ENTRY (window->priv->location_entry)), FALSE);
+		fr_window_go_to_location (window, ctk_entry_get_text (CTK_ENTRY (window->priv->location_entry)), FALSE);
 	}
 
 	return FALSE;
@@ -2232,7 +2232,7 @@ close_progress_dialog (FrWindow *window,
 		window->priv->progress_timeout = 0;
 	}
 
-	if (! window->priv->batch_mode && ctk_widget_get_mapped (GTK_WIDGET (window)))
+	if (! window->priv->batch_mode && ctk_widget_get_mapped (CTK_WIDGET (window)))
 		ctk_widget_hide (window->priv->progress_bar);
 
 	if (window->priv->progress_dialog == NULL)
@@ -2289,12 +2289,12 @@ open_folder (CtkWindow  *parent,
 		g_free (utf8_name);
 
 		d = _ctk_error_dialog_new (parent,
-					   GTK_DIALOG_MODAL,
+					   CTK_DIALOG_MODAL,
 					   NULL,
 					   message,
 					   "%s",
 					   error->message);
-		ctk_dialog_run (GTK_DIALOG (d));
+		ctk_dialog_run (CTK_DIALOG (d));
 		ctk_widget_destroy (d);
 
 		g_free (message);
@@ -2306,34 +2306,34 @@ open_folder (CtkWindow  *parent,
 static void
 fr_window_view_extraction_destination_folder (FrWindow *window)
 {
-	open_folder (GTK_WINDOW (window), fr_archive_get_last_extraction_destination (window->archive));
+	open_folder (CTK_WINDOW (window), fr_archive_get_last_extraction_destination (window->archive));
 }
 
 static void change_button_label (FrWindow  *window,
                                  CtkWidget *button)
 {
 	const gchar *state;
-	state = ctk_button_get_label (GTK_BUTTON (button));
+	state = ctk_button_get_label (CTK_BUTTON (button));
 
 	if (g_strrstr (_("_Pause"), state) != NULL)
 	{
 		ctk_widget_set_visible (window->priv->pd_progress_bar, FALSE);
 		fr_command_message (window->archive->command, _("Process paused"));
 
-		ctk_button_set_label (GTK_BUTTON (button), _("_Resume"));
-		ctk_button_set_image (GTK_BUTTON (button),
+		ctk_button_set_label (CTK_BUTTON (button), _("_Resume"));
+		ctk_button_set_image (CTK_BUTTON (button),
 				      ctk_image_new_from_icon_name ("media-playback-start",
-								    GTK_ICON_SIZE_BUTTON));
+								    CTK_ICON_SIZE_BUTTON));
 	}
 	else
 	{
 		ctk_widget_set_visible (window->priv->pd_progress_bar, TRUE);
 		fr_command_message (window->archive->command, _("Please wait…"));
 
-		ctk_button_set_label (GTK_BUTTON(button), _("_Pause"));
-		ctk_button_set_image (GTK_BUTTON (button),
+		ctk_button_set_label (CTK_BUTTON(button), _("_Pause"));
+		ctk_button_set_image (CTK_BUTTON (button),
 				      ctk_image_new_from_icon_name ("media-playback-pause",
-								    GTK_ICON_SIZE_BUTTON));
+								    CTK_ICON_SIZE_BUTTON));
 	}
 }
 static void fr_state_switch (FrWindow  *window)
@@ -2357,19 +2357,19 @@ progress_dialog_response (CtkDialog *dialog,
 	CtkWidget *new_window;
 
 	switch (response_id) {
-	case GTK_RESPONSE_CANCEL:
+	case CTK_RESPONSE_CANCEL:
 		if (window->priv->stoppable) {
 			activate_action_stop (NULL, window);
 			close_progress_dialog (window, TRUE);
 		}
 		break;
-	case GTK_RESPONSE_CLOSE:
+	case CTK_RESPONSE_CLOSE:
 		close_progress_dialog (window, TRUE);
 		break;
 	case DIALOG_RESPONSE_OPEN_ARCHIVE:
 		new_window = fr_window_new ();
 		ctk_widget_show (new_window);
-		fr_window_archive_open (FR_WINDOW (new_window), window->priv->convert_data.new_file, GTK_WINDOW (new_window));
+		fr_window_archive_open (FR_WINDOW (new_window), window->priv->convert_data.new_file, CTK_WINDOW (new_window));
 		close_progress_dialog (window, TRUE);
 		break;
 	case DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER:
@@ -2384,7 +2384,7 @@ progress_dialog_response (CtkDialog *dialog,
 	case DIALOG_RESPONSE_QUIT:
 		fr_window_close (window);
 		break;
-	case GTK_RESPONSE_ACCEPT:
+	case CTK_RESPONSE_ACCEPT:
 		fr_state_switch (window);
 		break;
 	default:
@@ -2483,7 +2483,7 @@ progress_dialog_update_action_description (FrWindow *window)
 
 	description = get_action_description (window->priv->action, window->priv->pd_last_archive);
 	description_markup = g_markup_printf_escaped ("<span weight=\"bold\" size=\"larger\">%s</span>", description);
-	ctk_label_set_markup (GTK_LABEL (window->priv->pd_action), description_markup);
+	ctk_label_set_markup (CTK_LABEL (window->priv->pd_action), description_markup);
 
 	g_free (description_markup);
 	g_free (description);
@@ -2536,7 +2536,7 @@ fr_window_message_cb (FrCommand  *command,
 			return TRUE;
 
 		if (g_utf8_validate (utf8_msg, -1, NULL))
-			ctk_label_set_text (GTK_LABEL (window->priv->pd_message), utf8_msg);
+			ctk_label_set_text (CTK_LABEL (window->priv->pd_message), utf8_msg);
 
 		g_free (window->priv->pd_last_message);
 		window->priv->pd_last_message = g_strdup (utf8_msg);
@@ -2554,7 +2554,7 @@ fr_window_message_cb (FrCommand  *command,
 		g_free (utf8_msg);
 	}
 	else
-		ctk_label_set_text (GTK_LABEL (window->priv->pd_message), "");
+		ctk_label_set_text (CTK_LABEL (window->priv->pd_message), "");
 
 	progress_dialog_update_action_description (window);
 
@@ -2578,13 +2578,13 @@ create_the_progress_dialog (FrWindow *window)
 	if (window->priv->progress_dialog != NULL)
 		return;
 
-	flags = GTK_DIALOG_DESTROY_WITH_PARENT;
+	flags = CTK_DIALOG_DESTROY_WITH_PARENT;
 	if (window->priv->batch_mode) {
 		parent = NULL;
 	}
 	else {
-		parent = GTK_WINDOW (window);
-		flags |= GTK_DIALOG_MODAL;
+		parent = CTK_WINDOW (window);
+		flags |= CTK_DIALOG_MODAL;
 	}
 
 	window->priv->progress_dialog = ctk_dialog_new_with_buttons ((window->priv->batch_mode ? window->priv->batch_title : NULL),
@@ -2593,47 +2593,47 @@ create_the_progress_dialog (FrWindow *window)
 								     NULL,
 								     NULL);
 
-	window->priv->pd_quit_button = ctk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), GTK_STOCK_QUIT, DIALOG_RESPONSE_QUIT);
-	window->priv->pd_open_archive_button = ctk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Open the Archive"), DIALOG_RESPONSE_OPEN_ARCHIVE);
-	window->priv->pd_open_destination_button = ctk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("_Show the Files"), DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER);
-	window->priv->pd_open_destination_and_quit_button = ctk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), _("Show the _Files and Quit"), DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER_AND_QUIT);
-	window->priv->pd_close_button = ctk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
-	window->priv->pd_cancel_button = ctk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL);
+	window->priv->pd_quit_button = ctk_dialog_add_button (CTK_DIALOG (window->priv->progress_dialog), CTK_STOCK_QUIT, DIALOG_RESPONSE_QUIT);
+	window->priv->pd_open_archive_button = ctk_dialog_add_button (CTK_DIALOG (window->priv->progress_dialog), _("_Open the Archive"), DIALOG_RESPONSE_OPEN_ARCHIVE);
+	window->priv->pd_open_destination_button = ctk_dialog_add_button (CTK_DIALOG (window->priv->progress_dialog), _("_Show the Files"), DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER);
+	window->priv->pd_open_destination_and_quit_button = ctk_dialog_add_button (CTK_DIALOG (window->priv->progress_dialog), _("Show the _Files and Quit"), DIALOG_RESPONSE_OPEN_DESTINATION_FOLDER_AND_QUIT);
+	window->priv->pd_close_button = ctk_dialog_add_button (CTK_DIALOG (window->priv->progress_dialog), CTK_STOCK_CLOSE, CTK_RESPONSE_CLOSE);
+	window->priv->pd_cancel_button = ctk_dialog_add_button (CTK_DIALOG (window->priv->progress_dialog), CTK_STOCK_CANCEL, CTK_RESPONSE_CANCEL);
 	/*add start button default suspend*/
-	window->priv->pd_state_button = ctk_dialog_add_button (GTK_DIALOG (window->priv->progress_dialog), GTK_STOCK_MEDIA_PAUSE, GTK_RESPONSE_ACCEPT);
-	d = GTK_DIALOG (window->priv->progress_dialog);
-	ctk_window_set_resizable (GTK_WINDOW (d), TRUE);
-	ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
-	ctk_window_set_default_size (GTK_WINDOW (d), PROGRESS_DIALOG_DEFAULT_WIDTH, -1);
+	window->priv->pd_state_button = ctk_dialog_add_button (CTK_DIALOG (window->priv->progress_dialog), CTK_STOCK_MEDIA_PAUSE, CTK_RESPONSE_ACCEPT);
+	d = CTK_DIALOG (window->priv->progress_dialog);
+	ctk_window_set_resizable (CTK_WINDOW (d), TRUE);
+	ctk_dialog_set_default_response (CTK_DIALOG (d), CTK_RESPONSE_OK);
+	ctk_window_set_default_size (CTK_WINDOW (d), PROGRESS_DIALOG_DEFAULT_WIDTH, -1);
 
 	/* Main */
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 24);
-	ctk_container_set_border_width (GTK_CONTAINER (hbox), 6);
-	ctk_box_pack_start (GTK_BOX (ctk_dialog_get_content_area (d)), hbox, FALSE, FALSE, 10);
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 24);
+	ctk_container_set_border_width (CTK_CONTAINER (hbox), 6);
+	ctk_box_pack_start (CTK_BOX (ctk_dialog_get_content_area (d)), hbox, FALSE, FALSE, 10);
 
-	icon = get_mime_type_pixbuf ("package-x-generic", _ctk_widget_lookup_for_size (GTK_WIDGET (window), GTK_ICON_SIZE_DIALOG), NULL);
+	icon = get_mime_type_pixbuf ("package-x-generic", _ctk_widget_lookup_for_size (CTK_WIDGET (window), CTK_ICON_SIZE_DIALOG), NULL);
 	window->priv->pd_icon = ctk_image_new_from_pixbuf (icon);
 	g_object_unref (icon);
 
-	ctk_widget_set_valign (window->priv->pd_icon, GTK_ALIGN_START);
-	ctk_box_pack_start (GTK_BOX (hbox), window->priv->pd_icon, FALSE, FALSE, 0);
+	ctk_widget_set_valign (window->priv->pd_icon, CTK_ALIGN_START);
+	ctk_box_pack_start (CTK_BOX (hbox), window->priv->pd_icon, FALSE, FALSE, 0);
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 5);
-	ctk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 5);
+	ctk_box_pack_start (CTK_BOX (hbox), vbox, TRUE, TRUE, 0);
 
 	/* action description */
 
 	lbl = window->priv->pd_action = ctk_label_new ("");
-	ctk_widget_set_halign (lbl, GTK_ALIGN_START);
-	ctk_widget_set_valign (lbl, GTK_ALIGN_START);
+	ctk_widget_set_halign (lbl, CTK_ALIGN_START);
+	ctk_widget_set_valign (lbl, CTK_ALIGN_START);
 	ctk_widget_set_hexpand (lbl, TRUE);
 	ctk_widget_set_vexpand (lbl, TRUE);
 	ctk_widget_set_margin_bottom (lbl, 12);
 
-	ctk_label_set_xalign (GTK_LABEL (lbl), 0.0);
-	ctk_label_set_ellipsize (GTK_LABEL (lbl), PANGO_ELLIPSIZE_END);
-	ctk_box_pack_start (GTK_BOX (vbox), lbl, TRUE, TRUE, 0);
+	ctk_label_set_xalign (CTK_LABEL (lbl), 0.0);
+	ctk_label_set_ellipsize (CTK_LABEL (lbl), PANGO_ELLIPSIZE_END);
+	ctk_box_pack_start (CTK_BOX (vbox), lbl, TRUE, TRUE, 0);
 
 	/* archive name */
 
@@ -2645,18 +2645,18 @@ create_the_progress_dialog (FrWindow *window)
 
 	/* progress and details */
 
-	progress_vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	ctk_widget_set_valign (progress_vbox, GTK_ALIGN_START);
+	progress_vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
+	ctk_widget_set_valign (progress_vbox, CTK_ALIGN_START);
 	ctk_widget_set_hexpand (progress_vbox, TRUE);
 	ctk_widget_set_vexpand (progress_vbox, TRUE);
 	ctk_widget_set_margin_bottom (progress_vbox, 6);
-	ctk_box_pack_start (GTK_BOX (vbox), progress_vbox, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), progress_vbox, TRUE, TRUE, 0);
 
 	/* progress bar */
 
 	window->priv->pd_progress_bar = ctk_progress_bar_new ();
-	ctk_progress_bar_set_pulse_step (GTK_PROGRESS_BAR (window->priv->pd_progress_bar), ACTIVITY_PULSE_STEP);
-	ctk_box_pack_start (GTK_BOX (progress_vbox), window->priv->pd_progress_bar, TRUE, TRUE, 0);
+	ctk_progress_bar_set_pulse_step (CTK_PROGRESS_BAR (window->priv->pd_progress_bar), ACTIVITY_PULSE_STEP);
+	ctk_box_pack_start (CTK_BOX (progress_vbox), window->priv->pd_progress_bar, TRUE, TRUE, 0);
 
 	/* details label */
 
@@ -2664,14 +2664,14 @@ create_the_progress_dialog (FrWindow *window)
 
 	attr_list = pango_attr_list_new ();
 	pango_attr_list_insert (attr_list, pango_attr_size_new (9000));
-	ctk_label_set_attributes (GTK_LABEL (lbl), attr_list);
+	ctk_label_set_attributes (CTK_LABEL (lbl), attr_list);
 	pango_attr_list_unref (attr_list);
 
-	ctk_label_set_xalign (GTK_LABEL (lbl), 0.0);
-	ctk_label_set_ellipsize (GTK_LABEL (lbl), PANGO_ELLIPSIZE_END);
-	ctk_box_pack_start (GTK_BOX (progress_vbox), lbl, TRUE, TRUE, 0);
+	ctk_label_set_xalign (CTK_LABEL (lbl), 0.0);
+	ctk_label_set_ellipsize (CTK_LABEL (lbl), PANGO_ELLIPSIZE_END);
+	ctk_box_pack_start (CTK_BOX (progress_vbox), lbl, TRUE, TRUE, 0);
 
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	ctk_widget_show (hbox);
 #else
 	ctk_widget_show_all (hbox);
@@ -2701,11 +2701,11 @@ display_progress_dialog (gpointer data)
 		g_source_remove (window->priv->progress_timeout);
 
 	if (window->priv->use_progress_dialog && (window->priv->progress_dialog != NULL)) {
-		ctk_dialog_set_response_sensitive (GTK_DIALOG (window->priv->progress_dialog),
-						   GTK_RESPONSE_OK,
+		ctk_dialog_set_response_sensitive (CTK_DIALOG (window->priv->progress_dialog),
+						   CTK_RESPONSE_OK,
 						   window->priv->stoppable);
 		if (! window->priv->non_interactive)
-			ctk_widget_show (GTK_WIDGET (window));
+			ctk_widget_show (CTK_WIDGET (window));
 		ctk_widget_hide (window->priv->progress_bar);
 		ctk_widget_show (window->priv->progress_dialog);
 		fr_window_message_cb (NULL, window->priv->pd_last_message, window);
@@ -2766,8 +2766,8 @@ fr_window_progress_cb (FrArchive *archive,
 	if (! window->priv->progress_pulse) {
 		fraction = CLAMP (fraction, 0.0, 1.0);
 		if (window->priv->progress_dialog != NULL)
-			ctk_progress_bar_set_fraction (GTK_PROGRESS_BAR (window->priv->pd_progress_bar), fraction);
-		ctk_progress_bar_set_fraction (GTK_PROGRESS_BAR (window->priv->progress_bar), fraction);
+			ctk_progress_bar_set_fraction (CTK_PROGRESS_BAR (window->priv->pd_progress_bar), fraction);
+		ctk_progress_bar_set_fraction (CTK_PROGRESS_BAR (window->priv->progress_bar), fraction);
 
 		if ((archive != NULL) && (archive->command != NULL) && (archive->command->n_files > 0)) {
 			char *message = NULL;
@@ -2864,10 +2864,10 @@ void
 fr_window_push_message (FrWindow   *window,
 			const char *msg)
 {
-	if (! ctk_widget_get_mapped (GTK_WIDGET (window)))
+	if (! ctk_widget_get_mapped (CTK_WIDGET (window)))
 		return;
 
-	ctk_statusbar_push (GTK_STATUSBAR (window->priv->statusbar),
+	ctk_statusbar_push (CTK_STATUSBAR (window->priv->statusbar),
 			    window->priv->progress_cid,
 			    msg);
 }
@@ -2876,11 +2876,11 @@ fr_window_push_message (FrWindow   *window,
 void
 fr_window_pop_message (FrWindow *window)
 {
-	if (! ctk_widget_get_mapped (GTK_WIDGET (window)))
+	if (! ctk_widget_get_mapped (CTK_WIDGET (window)))
 		return;
-	ctk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar), window->priv->progress_cid);
+	ctk_statusbar_pop (CTK_STATUSBAR (window->priv->statusbar), window->priv->progress_cid);
 	if (window->priv->progress_dialog != NULL)
-		ctk_label_set_text (GTK_LABEL (window->priv->pd_message), "");
+		ctk_label_set_text (CTK_LABEL (window->priv->pd_message), "");
 }
 
 
@@ -2965,12 +2965,12 @@ error_dialog_response_cb (CtkDialog *dialog,
 	window->priv->showing_error_dialog = FALSE;
 	window->priv->error_dialog_parent = NULL;
 
-	if ((dialog_parent != NULL) && (ctk_widget_get_toplevel (GTK_WIDGET (dialog_parent)) != (CtkWidget*) dialog_parent))
+	if ((dialog_parent != NULL) && (ctk_widget_get_toplevel (CTK_WIDGET (dialog_parent)) != (CtkWidget*) dialog_parent))
 		ctk_window_set_modal (dialog_parent, TRUE);
-	ctk_widget_destroy (GTK_WIDGET (dialog));
+	ctk_widget_destroy (CTK_WIDGET (dialog));
 
 	if (window->priv->destroy_with_error_dialog)
-		ctk_widget_destroy (GTK_WIDGET (window));
+		ctk_widget_destroy (CTK_WIDGET (window));
 }
 
 
@@ -2989,7 +2989,7 @@ fr_window_show_error_dialog (FrWindow   *window,
 			       0,
 			       error);
 
-		ctk_widget_destroy (GTK_WIDGET (window));
+		ctk_widget_destroy (CTK_WIDGET (window));
 
 		return;
 	}
@@ -3005,7 +3005,7 @@ fr_window_show_error_dialog (FrWindow   *window,
 			  "response",
 			  G_CALLBACK (error_dialog_response_cb),
 			  window);
-	ctk_window_set_modal (GTK_WINDOW (dialog), TRUE);
+	ctk_window_set_modal (CTK_WINDOW (dialog), TRUE);
 	ctk_widget_show (dialog);
 
 	window->priv->showing_error_dialog = TRUE;
@@ -3238,7 +3238,7 @@ action_performed (FrArchive   *archive,
 		else {
 			fr_window_add_to_recent_list (window, window->priv->archive_uri);
 			if (! window->priv->non_interactive)
-				ctk_window_present (GTK_WINDOW (window));
+				ctk_window_present (CTK_WINDOW (window));
 		}
 		continue_batch = FALSE;
 		g_signal_emit (window,
@@ -3287,7 +3287,7 @@ action_performed (FrArchive   *archive,
 		fr_window_go_to_location (window, fr_window_get_current_location (window), TRUE);
 		fr_window_update_dir_tree (window);
 		if (! window->priv->batch_mode && window->priv->non_interactive)
-			ctk_window_present (GTK_WINDOW (window));
+			ctk_window_present (CTK_WINDOW (window));
 		break;
 
 	case FR_ACTION_DELETING_FILES:
@@ -3460,7 +3460,7 @@ fr_window_get_file_list_selection (FrWindow *window,
 	if (has_dirs != NULL)
 		*has_dirs = FALSE;
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
 	if (selection == NULL)
 		return NULL;
 	ctk_tree_selection_selected_foreach (selection, add_selected_from_list_view, &selections);
@@ -3502,7 +3502,7 @@ fr_window_get_folder_tree_selection (FrWindow *window,
 	if (has_dirs != NULL)
 		*has_dirs = FALSE;
 
-	tree_selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->tree_view));
+	tree_selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->tree_view));
 	if (tree_selection == NULL)
 		return NULL;
 
@@ -3537,7 +3537,7 @@ fr_window_get_file_list_from_path_list (FrWindow *window,
 
 	g_return_val_if_fail (window != NULL, NULL);
 
-	model = GTK_TREE_MODEL (window->priv->list_store);
+	model = CTK_TREE_MODEL (window->priv->list_store);
 	selections = NULL;
 
 	if (has_dirs != NULL)
@@ -3639,7 +3639,7 @@ fr_window_get_file_list (FrWindow *window)
 int
 fr_window_get_n_selected_files (FrWindow *window)
 {
-	return _ctk_count_selected (ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view)));
+	return _ctk_count_selected (ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view)));
 }
 
 
@@ -3654,10 +3654,10 @@ dir_tree_button_press_cb (CtkWidget      *widget,
 	FrWindow         *window = data;
 	CtkTreeSelection *selection;
 
-	if (event->window != ctk_tree_view_get_bin_window (GTK_TREE_VIEW (window->priv->tree_view)))
+	if (event->window != ctk_tree_view_get_bin_window (CTK_TREE_VIEW (window->priv->tree_view)))
 		return FALSE;
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->tree_view));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->tree_view));
 	if (selection == NULL)
 		return FALSE;
 
@@ -3665,11 +3665,11 @@ dir_tree_button_press_cb (CtkWidget      *widget,
 		CtkTreePath *path;
 		CtkTreeIter  iter;
 
-		if (ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (window->priv->tree_view),
+		if (ctk_tree_view_get_path_at_pos (CTK_TREE_VIEW (window->priv->tree_view),
 						   event->x, event->y,
 						   &path, NULL, NULL, NULL)) {
 
-			if (! ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->tree_store), &iter, path)) {
+			if (! ctk_tree_model_get_iter (CTK_TREE_MODEL (window->priv->tree_store), &iter, path)) {
 				ctk_tree_path_free (path);
 				return FALSE;
 			}
@@ -3680,7 +3680,7 @@ dir_tree_button_press_cb (CtkWidget      *widget,
 				ctk_tree_selection_select_iter (selection, &iter);
 			}
 
-			ctk_menu_popup_at_pointer (GTK_MENU (window->priv->sidebar_folder_popup_menu),
+			ctk_menu_popup_at_pointer (CTK_MENU (window->priv->sidebar_folder_popup_menu),
 			                           (const GdkEvent*) event);
 		}
 		else
@@ -3710,7 +3710,7 @@ fr_window_get_selected_item_from_file_list (FrWindow *window)
 
 	g_return_val_if_fail (window != NULL, NULL);
 
-	tree_selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
+	tree_selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
 	if (tree_selection == NULL)
 		return NULL;
 
@@ -3738,7 +3738,7 @@ fr_window_get_selected_folder_in_tree_view (FrWindow *window)
 
 	g_return_val_if_fail (window != NULL, NULL);
 
-	tree_selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->tree_view));
+	tree_selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->tree_view));
 	if (tree_selection == NULL)
 		return NULL;
 
@@ -3796,12 +3796,12 @@ row_activated_cb (CtkTreeView       *tree_view,
 	FileData    *fdata;
 	CtkTreeIter  iter;
 
-	if (! ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->list_store),
+	if (! ctk_tree_model_get_iter (CTK_TREE_MODEL (window->priv->list_store),
 				       &iter,
 				       path))
 		return FALSE;
 
-	ctk_tree_model_get (GTK_TREE_MODEL (window->priv->list_store), &iter,
+	ctk_tree_model_get (CTK_TREE_MODEL (window->priv->list_store), &iter,
 			    COLUMN_FILE_DATA, &fdata,
 			    -1);
 
@@ -3832,10 +3832,10 @@ file_button_press_cb (CtkWidget      *widget,
 	FrWindow         *window = data;
 	CtkTreeSelection *selection;
 
-	if (event->window != ctk_tree_view_get_bin_window (GTK_TREE_VIEW (window->priv->list_view)))
+	if (event->window != ctk_tree_view_get_bin_window (CTK_TREE_VIEW (window->priv->list_view)))
 		return FALSE;
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
 	if (selection == NULL)
 		return FALSE;
 
@@ -3849,11 +3849,11 @@ file_button_press_cb (CtkWidget      *widget,
 		CtkTreeIter  iter;
 		int          n_selected;
 
-		if (ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (window->priv->list_view),
+		if (ctk_tree_view_get_path_at_pos (CTK_TREE_VIEW (window->priv->list_view),
 						   event->x, event->y,
 						   &path, NULL, NULL, NULL)) {
 
-			if (! ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->list_store), &iter, path)) {
+			if (! ctk_tree_model_get_iter (CTK_TREE_MODEL (window->priv->list_store), &iter, path)) {
 				ctk_tree_path_free (path);
 				return FALSE;
 			}
@@ -3869,17 +3869,17 @@ file_button_press_cb (CtkWidget      *widget,
 
 		n_selected = fr_window_get_n_selected_files (window);
 		if ((n_selected == 1) && selection_has_a_dir (window))
-			ctk_menu_popup_at_pointer (GTK_MENU (window->priv->folder_popup_menu),
+			ctk_menu_popup_at_pointer (CTK_MENU (window->priv->folder_popup_menu),
 			                           (const GdkEvent*) event);
 		else
-			ctk_menu_popup_at_pointer (GTK_MENU (window->priv->file_popup_menu),
+			ctk_menu_popup_at_pointer (CTK_MENU (window->priv->file_popup_menu),
 			                           (const GdkEvent*) event);
 		return TRUE;
 	}
 	else if ((event->type == GDK_BUTTON_PRESS) && (event->button == 1)) {
 		CtkTreePath *path = NULL;
 
-		if (! ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (window->priv->list_view),
+		if (! ctk_tree_view_get_path_at_pos (CTK_TREE_VIEW (window->priv->list_view),
 						     event->x, event->y,
 						     &path, NULL, NULL, NULL)) {
 			ctk_tree_selection_unselect_all (selection);
@@ -3920,10 +3920,10 @@ file_button_release_cb (CtkWidget      *widget,
 	FrWindow         *window = data;
 	CtkTreeSelection *selection;
 
-	if (event->window != ctk_tree_view_get_bin_window (GTK_TREE_VIEW (window->priv->list_view)))
+	if (event->window != ctk_tree_view_get_bin_window (CTK_TREE_VIEW (window->priv->list_view)))
 		return FALSE;
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
 	if (selection == NULL)
 		return FALSE;
 
@@ -3935,18 +3935,18 @@ file_button_release_cb (CtkWidget      *widget,
 	    && (window->priv->path_clicked != NULL)) {
 		CtkTreePath *path = NULL;
 
-		if (ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (window->priv->list_view),
+		if (ctk_tree_view_get_path_at_pos (CTK_TREE_VIEW (window->priv->list_view),
 						   event->x, event->y,
 						   &path, NULL, NULL, NULL)) {
 
 			if ((ctk_tree_path_compare (window->priv->path_clicked, path) == 0)
 			    && window->priv->single_click
 			    && ! ((event->state & GDK_CONTROL_MASK) || (event->state & GDK_SHIFT_MASK))) {
-				ctk_tree_view_set_cursor (GTK_TREE_VIEW (widget),
+				ctk_tree_view_set_cursor (CTK_TREE_VIEW (widget),
 							  path,
 							  NULL,
 							  FALSE);
-				ctk_tree_view_row_activated (GTK_TREE_VIEW (widget),
+				ctk_tree_view_row_activated (CTK_TREE_VIEW (widget),
 							     path,
 							     NULL);
 			}
@@ -3979,17 +3979,17 @@ file_motion_notify_callback (CtkWidget *widget,
 	if (! window->priv->single_click)
 		return FALSE;
 
-	if (event->window != ctk_tree_view_get_bin_window (GTK_TREE_VIEW (window->priv->list_view)))
+	if (event->window != ctk_tree_view_get_bin_window (CTK_TREE_VIEW (window->priv->list_view)))
 		return FALSE;
 
 	last_hover_path = window->priv->list_hover_path;
 
-	ctk_tree_view_get_path_at_pos (GTK_TREE_VIEW (widget),
+	ctk_tree_view_get_path_at_pos (CTK_TREE_VIEW (widget),
 				       event->x, event->y,
 				       &window->priv->list_hover_path,
 				       NULL, NULL, NULL);
 
-	display = ctk_widget_get_display (GTK_WIDGET (widget));
+	display = ctk_widget_get_display (CTK_WIDGET (widget));
 
 	if (window->priv->list_hover_path != NULL)
 		cursor = gdk_cursor_new_for_display (display, GDK_HAND2);
@@ -4004,16 +4004,16 @@ file_motion_notify_callback (CtkWidget *widget,
 	     ctk_tree_path_compare (last_hover_path, window->priv->list_hover_path)))
 	{
 		if (last_hover_path) {
-			ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->list_store),
+			ctk_tree_model_get_iter (CTK_TREE_MODEL (window->priv->list_store),
 						 &iter, last_hover_path);
-			ctk_tree_model_row_changed (GTK_TREE_MODEL (window->priv->list_store),
+			ctk_tree_model_row_changed (CTK_TREE_MODEL (window->priv->list_store),
 						    last_hover_path, &iter);
 		}
 
 		if (window->priv->list_hover_path) {
-			ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->list_store),
+			ctk_tree_model_get_iter (CTK_TREE_MODEL (window->priv->list_store),
 						 &iter, window->priv->list_hover_path);
-			ctk_tree_model_row_changed (GTK_TREE_MODEL (window->priv->list_store),
+			ctk_tree_model_row_changed (CTK_TREE_MODEL (window->priv->list_store),
 						    window->priv->list_hover_path, &iter);
 		}
 	}
@@ -4033,10 +4033,10 @@ file_leave_notify_callback (CtkWidget *widget,
 	CtkTreeIter  iter;
 
 	if (window->priv->single_click && (window->priv->list_hover_path != NULL)) {
-		ctk_tree_model_get_iter (GTK_TREE_MODEL (window->priv->list_store),
+		ctk_tree_model_get_iter (CTK_TREE_MODEL (window->priv->list_store),
 					 &iter,
 					 window->priv->list_hover_path);
-		ctk_tree_model_row_changed (GTK_TREE_MODEL (window->priv->list_store),
+		ctk_tree_model_row_changed (CTK_TREE_MODEL (window->priv->list_store),
 					    window->priv->list_hover_path,
 					    &iter);
 
@@ -4174,12 +4174,12 @@ fr_window_drag_data_received  (CtkWidget          *widget,
 	if (list == NULL) {
 		CtkWidget *d;
 
-		d = _ctk_error_dialog_new (GTK_WINDOW (window),
-					   GTK_DIALOG_MODAL,
+		d = _ctk_error_dialog_new (CTK_WINDOW (window),
+					   CTK_DIALOG_MODAL,
 					   NULL,
 					   _("Could not perform the operation"),
 					   NULL);
-		ctk_dialog_run (GTK_DIALOG (d));
+		ctk_dialog_run (CTK_DIALOG (d));
 		ctk_widget_destroy(d);
 
  		return;
@@ -4200,50 +4200,50 @@ fr_window_drag_data_received  (CtkWidget          *widget,
 			CtkWidget *d;
 			gint       r;
 
-			d = _ctk_message_dialog_new (GTK_WINDOW (window),
-						     GTK_DIALOG_MODAL,
+			d = _ctk_message_dialog_new (CTK_WINDOW (window),
+						     CTK_DIALOG_MODAL,
 						     "dialog-question",
 						     _("Do you want to add this file to the current archive or open it as a new archive?"),
 						     NULL,
-						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-						     GTK_STOCK_ADD, 0,
-						     GTK_STOCK_OPEN, 1,
+						     CTK_STOCK_CANCEL, CTK_RESPONSE_CANCEL,
+						     CTK_STOCK_ADD, 0,
+						     CTK_STOCK_OPEN, 1,
 						     NULL);
 
-			ctk_dialog_set_default_response (GTK_DIALOG (d), 2);
+			ctk_dialog_set_default_response (CTK_DIALOG (d), 2);
 
-			r = ctk_dialog_run (GTK_DIALOG (d));
-			ctk_widget_destroy (GTK_WIDGET (d));
+			r = ctk_dialog_run (CTK_DIALOG (d));
+			ctk_widget_destroy (CTK_WIDGET (d));
 
 			if (r == 0)  /* Add */
 				fr_window_archive_add_dropped_items (window, list, FALSE);
 			else if (r == 1)  /* Open */
-				fr_window_archive_open (window, list->data, GTK_WINDOW (window));
+				fr_window_archive_open (window, list->data, CTK_WINDOW (window));
  		}
  		else
 			fr_window_archive_add_dropped_items (window, list, FALSE);
 	}
 	else {
 		if (one_file && is_an_archive)
-			fr_window_archive_open (window, list->data, GTK_WINDOW (window));
+			fr_window_archive_open (window, list->data, CTK_WINDOW (window));
 		else {
 			CtkWidget *d;
 			int        r;
 
-			d = _ctk_message_dialog_new (GTK_WINDOW (window),
-						     GTK_DIALOG_MODAL,
+			d = _ctk_message_dialog_new (CTK_WINDOW (window),
+						     CTK_DIALOG_MODAL,
 						     "dialog-question",
 						     _("Do you want to create a new archive with these files?"),
 						     NULL,
-						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-						     _("Create _Archive"), GTK_RESPONSE_YES,
+						     CTK_STOCK_CANCEL, CTK_RESPONSE_CANCEL,
+						     _("Create _Archive"), CTK_RESPONSE_YES,
 						     NULL);
 
-			ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_YES);
-			r = ctk_dialog_run (GTK_DIALOG (d));
-			ctk_widget_destroy (GTK_WIDGET (d));
+			ctk_dialog_set_default_response (CTK_DIALOG (d), CTK_RESPONSE_YES);
+			r = ctk_dialog_run (CTK_DIALOG (d));
+			ctk_widget_destroy (CTK_WIDGET (d));
 
-			if (r == GTK_RESPONSE_YES) {
+			if (r == CTK_RESPONSE_YES) {
 				char       *first_item;
 				char       *folder;
 				char       *local_path = NULL;
@@ -4333,7 +4333,7 @@ file_list_drag_end (CtkWidget      *widget,
 	gdk_property_delete (gdk_drag_context_get_source_window (context), XDS_ATOM);
 
 	if (window->priv->drag_error != NULL) {
-		_ctk_error_dialog_run (GTK_WINDOW (window),
+		_ctk_error_dialog_run (CTK_WINDOW (window),
 				       _("Extraction not performed"),
 				       "%s",
 				       window->priv->drag_error->message);
@@ -4617,7 +4617,7 @@ fr_window_deactivate_filter (FrWindow *window)
 	window->priv->filter_mode = FALSE;
 	window->priv->list_mode = window->priv->last_list_mode;
 
-	ctk_entry_set_text (GTK_ENTRY (window->priv->filter_entry), "");
+	ctk_entry_set_text (CTK_ENTRY (window->priv->filter_entry), "");
 	fr_window_update_filter_bar_visibility (window);
 
 	ctk_list_store_clear (window->priv->list_store);
@@ -4667,11 +4667,11 @@ key_press_cb (CtkWidget   *widget,
 		if (event->state & GDK_SHIFT_MASK) {
 			CtkTreeSelection *selection;
 
-			selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
+			selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
 			if (selection == NULL)
 				return FALSE;
 
-			ctk_menu_popup_at_pointer (GTK_MENU (window->priv->file_popup_menu),
+			ctk_menu_popup_at_pointer (CTK_MENU (window->priv->file_popup_menu),
 			                           (const GdkEvent*) event);
 			retval = TRUE;
 		}
@@ -4732,7 +4732,7 @@ dir_tree_selection_changed_cb (CtkTreeSelection *selection,
 	if (ctk_tree_selection_get_selected (selection, NULL, &iter)) {
 		char *path;
 
-		ctk_tree_model_get (GTK_TREE_MODEL (window->priv->tree_store),
+		ctk_tree_model_get (CTK_TREE_MODEL (window->priv->tree_store),
 				    &iter,
 				    TREE_COLUMN_PATH, &path,
 				    -1);
@@ -4858,10 +4858,10 @@ add_dir_tree_columns (FrWindow    *window,
 					     "weight", TREE_COLUMN_WEIGHT,
 					     NULL);
 
-	ctk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_AUTOSIZE);
+	ctk_tree_view_column_set_sizing (column, CTK_TREE_VIEW_COLUMN_AUTOSIZE);
 	ctk_tree_view_column_set_sort_column_id (column, TREE_COLUMN_NAME);
 
-	ctk_tree_view_append_column (GTK_TREE_VIEW (treeview), column);
+	ctk_tree_view_append_column (CTK_TREE_VIEW (treeview), column);
 }
 
 
@@ -4917,7 +4917,7 @@ add_file_list_columns (FrWindow    *window,
 					     "text", COLUMN_NAME,
 					     NULL);
 
-	ctk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_FIXED);
+	ctk_tree_view_column_set_sizing (column, CTK_TREE_VIEW_COLUMN_FIXED);
 	w = g_settings_get_int (window->priv->settings_listing, PREF_LISTING_NAME_COLUMN_WIDTH);
 	if (w <= 0)
 		w = DEFAULT_NAME_COLUMN_WIDTH;
@@ -4928,7 +4928,7 @@ add_file_list_columns (FrWindow    *window,
 						 (CtkTreeCellDataFunc) filename_cell_data_func,
 						 window, NULL);
 
-	ctk_tree_view_append_column (GTK_TREE_VIEW (treeview), column);
+	ctk_tree_view_append_column (CTK_TREE_VIEW (treeview), column);
 
 	/* Other columns */
 
@@ -4941,7 +4941,7 @@ add_file_list_columns (FrWindow    *window,
 								   "text", i,
 								   NULL);
 
-		ctk_tree_view_column_set_sizing (column, GTK_TREE_VIEW_COLUMN_FIXED);
+		ctk_tree_view_column_set_sizing (column, CTK_TREE_VIEW_COLUMN_FIXED);
 		ctk_tree_view_column_set_fixed_width (column, OTHER_COLUMNS_WIDTH);
 		ctk_tree_view_column_set_resizable (column, TRUE);
 
@@ -5059,7 +5059,7 @@ sort_column_changed_cb (CtkTreeSortable *sortable,
 	window->priv->sort_type = order;
 
 	/*set_active (window, get_action_from_sort_method (window->priv->sort_method), TRUE);
-	set_active (window, "SortReverseOrder", (window->priv->sort_type == GTK_SORT_DESCENDING));*/
+	set_active (window, "SortReverseOrder", (window->priv->sort_type == CTK_SORT_DESCENDING));*/
 }
 
 
@@ -5096,10 +5096,10 @@ pref_history_len_changed (GSettings *settings,
 	limit = g_settings_get_int (settings, PREF_UI_HISTORY_LEN);
 
 	action = ctk_action_group_get_action (window->priv->actions, "OpenRecent");
-	ctk_recent_chooser_set_limit (GTK_RECENT_CHOOSER (action), limit);
+	ctk_recent_chooser_set_limit (CTK_RECENT_CHOOSER (action), limit);
 
 	action = ctk_action_group_get_action (window->priv->actions, "OpenRecent_Toolbar");
-	ctk_recent_chooser_set_limit (GTK_RECENT_CHOOSER (action), limit);
+	ctk_recent_chooser_set_limit (CTK_RECENT_CHOOSER (action), limit);
 }
 
 
@@ -5153,13 +5153,13 @@ pref_click_policy_changed (GSettings *settings,
                            gpointer user_data)
 {
 	FrWindow   *window = user_data;
-	GdkWindow  *win = ctk_tree_view_get_bin_window (GTK_TREE_VIEW (window->priv->list_view));
+	GdkWindow  *win = ctk_tree_view_get_bin_window (CTK_TREE_VIEW (window->priv->list_view));
 	GdkDisplay *display;
 
 	window->priv->single_click = is_single_click_policy (window);
 
 	gdk_window_set_cursor (win, NULL);
-	display = ctk_widget_get_display (GTK_WIDGET (window->priv->list_view));
+	display = ctk_widget_get_display (CTK_WIDGET (window->priv->list_view));
 	if (display != NULL)
 		gdk_display_flush (display);
 }
@@ -5195,8 +5195,8 @@ pref_use_mime_icons_changed (GSettings *settings,
 static void
 theme_changed_cb (CtkIconTheme *theme, FrWindow *window)
 {
-	file_list_icon_size = _ctk_widget_lookup_for_size (GTK_WIDGET (window), FILE_LIST_ICON_SIZE);
-	dir_tree_icon_size = _ctk_widget_lookup_for_size (GTK_WIDGET (window), DIR_TREE_ICON_SIZE);
+	file_list_icon_size = _ctk_widget_lookup_for_size (CTK_WIDGET (window), FILE_LIST_ICON_SIZE);
+	dir_tree_icon_size = _ctk_widget_lookup_for_size (CTK_WIDGET (window), DIR_TREE_ICON_SIZE);
 
 	if (pixbuf_hash != NULL) {
 		g_hash_table_foreach (pixbuf_hash,
@@ -5226,8 +5226,8 @@ fr_window_stoppable_cb (FrCommand  *command,
 	window->priv->stoppable = stoppable;
 	set_sensitive (window, "Stop", stoppable);
 	if (window->priv->progress_dialog != NULL)
-		ctk_dialog_set_response_sensitive (GTK_DIALOG (window->priv->progress_dialog),
-						   GTK_RESPONSE_OK,
+		ctk_dialog_set_response_sensitive (CTK_DIALOG (window->priv->progress_dialog),
+						   CTK_RESPONSE_OK,
 						   stoppable);
 	return TRUE;
 }
@@ -5290,12 +5290,12 @@ menu_item_select_cb (CtkMenuItem *proxy,
 	CtkAction *action;
 	char      *message;
 
-	action = ctk_activatable_get_related_action (GTK_ACTIVATABLE (proxy));
+	action = ctk_activatable_get_related_action (CTK_ACTIVATABLE (proxy));
 	g_return_if_fail (action != NULL);
 
 	g_object_get (G_OBJECT (action), "tooltip", &message, NULL);
 	if (message) {
-		ctk_statusbar_push (GTK_STATUSBAR (window->priv->statusbar),
+		ctk_statusbar_push (CTK_STATUSBAR (window->priv->statusbar),
 				    window->priv->help_message_cid, message);
 		g_free (message);
 	}
@@ -5306,7 +5306,7 @@ static void
 menu_item_deselect_cb (CtkMenuItem *proxy,
 		       FrWindow    *window)
 {
-	ctk_statusbar_pop (GTK_STATUSBAR (window->priv->statusbar),
+	ctk_statusbar_pop (CTK_STATUSBAR (window->priv->statusbar),
 			   window->priv->help_message_cid);
 }
 
@@ -5317,7 +5317,7 @@ disconnect_proxy_cb (CtkUIManager *manager,
 		     CtkWidget    *proxy,
 		     FrWindow     *window)
 {
-	if (GTK_IS_MENU_ITEM (proxy)) {
+	if (CTK_IS_MENU_ITEM (proxy)) {
 		g_signal_handlers_disconnect_by_func
 			(proxy, G_CALLBACK (menu_item_select_cb), window);
 		g_signal_handlers_disconnect_by_func
@@ -5332,7 +5332,7 @@ connect_proxy_cb (CtkUIManager *manager,
 		  CtkWidget    *proxy,
 		  FrWindow     *window)
 {
-	if (GTK_IS_MENU_ITEM (proxy)) {
+	if (CTK_IS_MENU_ITEM (proxy)) {
 		g_signal_connect (proxy, "select",
 				  G_CALLBACK (menu_item_select_cb), window);
 		g_signal_connect (proxy, "deselect",
@@ -5359,7 +5359,7 @@ sort_by_radio_action (CtkAction      *action,
 	FrWindow *window = data;
 
 	window->priv->sort_method = ctk_radio_action_get_current_value (current);
-	window->priv->sort_type = GTK_SORT_ASCENDING;
+	window->priv->sort_type = CTK_SORT_ASCENDING;
 	fr_window_update_list_order (window);
 }
 
@@ -5372,7 +5372,7 @@ recent_chooser_item_activated_cb (CtkRecentChooser *chooser,
 
 	uri = ctk_recent_chooser_get_current_uri (chooser);
 	if (uri != NULL) {
-		fr_window_archive_open (window, uri, GTK_WINDOW (window));
+		fr_window_archive_open (window, uri, CTK_WINDOW (window));
 		g_free (uri);
 	}
 }
@@ -5397,7 +5397,7 @@ fr_window_init_recent_chooser (FrWindow         *window,
 	ctk_recent_chooser_set_local_only (chooser, FALSE);
 	ctk_recent_chooser_set_limit (chooser, g_settings_get_int (window->priv->settings_ui, PREF_UI_HISTORY_LEN));
 	ctk_recent_chooser_set_show_not_found (chooser, TRUE);
-	ctk_recent_chooser_set_sort_type (chooser, GTK_RECENT_SORT_MRU);
+	ctk_recent_chooser_set_sort_type (chooser, CTK_RECENT_SORT_MRU);
 
 	g_signal_connect (G_OBJECT (chooser),
 			  "item_activated",
@@ -5417,7 +5417,7 @@ close_sidepane_button_clicked_cb (CtkButton *button,
 static void
 fr_window_activate_filter (FrWindow *window)
 {
-	CtkTreeView       *tree_view = GTK_TREE_VIEW (window->priv->list_view);
+	CtkTreeView       *tree_view = CTK_TREE_VIEW (window->priv->list_view);
 	CtkTreeViewColumn *column;
 
 	fr_window_update_filter_bar_visibility (window);
@@ -5450,7 +5450,7 @@ filter_entry_icon_release_cb (CtkEntry             *entry,
 {
 	FrWindow *window = FR_WINDOW (user_data);
 
-	if ((event->button == 1) && (icon_pos == GTK_ENTRY_ICON_SECONDARY))
+	if ((event->button == 1) && (icon_pos == CTK_ENTRY_ICON_SECONDARY))
 		fr_window_deactivate_filter (window);
 }
 
@@ -5465,7 +5465,7 @@ fr_window_attach (FrWindow      *window,
 	g_return_if_fail (window != NULL);
 	g_return_if_fail (FR_IS_WINDOW (window));
 	g_return_if_fail (child != NULL);
-	g_return_if_fail (GTK_IS_WIDGET (child));
+	g_return_if_fail (CTK_IS_WIDGET (child));
 
 	switch (area) {
 	case FR_WINDOW_AREA_MENUBAR:
@@ -5497,7 +5497,7 @@ fr_window_attach (FrWindow      *window,
 	}
 
 	ctk_widget_set_hexpand (child, TRUE);
-	ctk_grid_attach (GTK_GRID (window->priv->layout),
+	ctk_grid_attach (CTK_GRID (window->priv->layout),
 			 child,
 			 0, position,
 			 1, 1);
@@ -5566,10 +5566,10 @@ fr_window_construct (FrWindow *window)
 	/* Create the application. */
 
 	window->priv->layout = ctk_grid_new ();
-	ctk_container_add (GTK_CONTAINER (window), window->priv->layout);
+	ctk_container_add (CTK_CONTAINER (window), window->priv->layout);
 	ctk_widget_show (window->priv->layout);
 
-	ctk_window_set_title (GTK_WINDOW (window), _("Archive Manager"));
+	ctk_window_set_title (CTK_WINDOW (window), _("Archive Manager"));
 
 	g_signal_connect (G_OBJECT (window),
 			  "delete_event",
@@ -5587,15 +5587,15 @@ fr_window_construct (FrWindow *window)
 				  G_CALLBACK (theme_changed_cb),
 				  window);
 
-	file_list_icon_size = _ctk_widget_lookup_for_size (GTK_WIDGET (window), FILE_LIST_ICON_SIZE);
-	dir_tree_icon_size = _ctk_widget_lookup_for_size (GTK_WIDGET (window), DIR_TREE_ICON_SIZE);
+	file_list_icon_size = _ctk_widget_lookup_for_size (CTK_WIDGET (window), FILE_LIST_ICON_SIZE);
+	dir_tree_icon_size = _ctk_widget_lookup_for_size (CTK_WIDGET (window), DIR_TREE_ICON_SIZE);
 
-	ctk_window_set_default_size (GTK_WINDOW (window),
+	ctk_window_set_default_size (CTK_WINDOW (window),
 				g_settings_get_int (window->priv->settings_ui, PREF_UI_WINDOW_WIDTH),
 				g_settings_get_int (window->priv->settings_ui, PREF_UI_WINDOW_HEIGHT));
 
-	ctk_drag_dest_set (GTK_WIDGET (window),
-			   GTK_DEST_DEFAULT_ALL,
+	ctk_drag_dest_set (CTK_WIDGET (window),
+			   CTK_DEST_DEFAULT_ALL,
 			   target_table, G_N_ELEMENTS (target_table),
 			   GDK_ACTION_COPY);
 
@@ -5724,36 +5724,36 @@ fr_window_construct (FrWindow *window)
 						      G_TYPE_STRING,
 						      G_TYPE_STRING);
 	g_object_set_data (G_OBJECT (window->priv->list_store), "FrWindow", window);
-	window->priv->list_view = ctk_tree_view_new_with_model (GTK_TREE_MODEL (window->priv->list_store));
+	window->priv->list_view = ctk_tree_view_new_with_model (CTK_TREE_MODEL (window->priv->list_store));
 
-	add_file_list_columns (window, GTK_TREE_VIEW (window->priv->list_view));
-	ctk_tree_view_set_enable_search (GTK_TREE_VIEW (window->priv->list_view),
+	add_file_list_columns (window, CTK_TREE_VIEW (window->priv->list_view));
+	ctk_tree_view_set_enable_search (CTK_TREE_VIEW (window->priv->list_view),
 					 TRUE);
-	ctk_tree_view_set_search_column (GTK_TREE_VIEW (window->priv->list_view),
+	ctk_tree_view_set_search_column (CTK_TREE_VIEW (window->priv->list_view),
 					 COLUMN_NAME);
 
-	ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (window->priv->list_store),
+	ctk_tree_sortable_set_sort_func (CTK_TREE_SORTABLE (window->priv->list_store),
 					 COLUMN_NAME, name_column_sort_func,
 					 NULL, NULL);
-	ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (window->priv->list_store),
+	ctk_tree_sortable_set_sort_func (CTK_TREE_SORTABLE (window->priv->list_store),
 					 COLUMN_SIZE, size_column_sort_func,
 					 NULL, NULL);
-	ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (window->priv->list_store),
+	ctk_tree_sortable_set_sort_func (CTK_TREE_SORTABLE (window->priv->list_store),
 					 COLUMN_TYPE, type_column_sort_func,
 					 NULL, NULL);
-	ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (window->priv->list_store),
+	ctk_tree_sortable_set_sort_func (CTK_TREE_SORTABLE (window->priv->list_store),
 					 COLUMN_TIME, time_column_sort_func,
 					 NULL, NULL);
-	ctk_tree_sortable_set_sort_func (GTK_TREE_SORTABLE (window->priv->list_store),
+	ctk_tree_sortable_set_sort_func (CTK_TREE_SORTABLE (window->priv->list_store),
 					 COLUMN_PATH, path_column_sort_func,
 					 NULL, NULL);
 
-	ctk_tree_sortable_set_default_sort_func (GTK_TREE_SORTABLE (window->priv->list_store),
+	ctk_tree_sortable_set_default_sort_func (CTK_TREE_SORTABLE (window->priv->list_store),
 						 no_sort_column_sort_func,
 						 NULL, NULL);
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view));
-	ctk_tree_selection_set_mode (selection, GTK_SELECTION_MULTIPLE);
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view));
+	ctk_tree_selection_set_mode (selection, CTK_SELECTION_MULTIPLE);
 
 	g_signal_connect (selection,
 			  "changed",
@@ -5794,34 +5794,34 @@ fr_window_construct (FrWindow *window)
 			  "drag_end",
 			  G_CALLBACK (file_list_drag_end),
 			  window);
-	egg_tree_multi_drag_add_drag_support (GTK_TREE_VIEW (window->priv->list_view));
+	egg_tree_multi_drag_add_drag_support (CTK_TREE_VIEW (window->priv->list_view));
 
 	list_scrolled_window = ctk_scrolled_window_new (NULL, NULL);
-	ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (list_scrolled_window),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
-	ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (list_scrolled_window),
-	                                     GTK_SHADOW_IN);
-	ctk_container_add (GTK_CONTAINER (list_scrolled_window), window->priv->list_view);
+	ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (list_scrolled_window),
+					CTK_POLICY_AUTOMATIC,
+					CTK_POLICY_AUTOMATIC);
+	ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (list_scrolled_window),
+	                                     CTK_SHADOW_IN);
+	ctk_container_add (CTK_CONTAINER (list_scrolled_window), window->priv->list_view);
 
 	/* filter bar */
 
-	window->priv->filter_bar = filter_box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
-	ctk_container_set_border_width (GTK_CONTAINER (filter_box), 3);
+	window->priv->filter_bar = filter_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
+	ctk_container_set_border_width (CTK_CONTAINER (filter_box), 3);
 	fr_window_attach (FR_WINDOW (window), window->priv->filter_bar, FR_WINDOW_AREA_FILTERBAR);
 
-	ctk_box_pack_start (GTK_BOX (filter_box),
+	ctk_box_pack_start (CTK_BOX (filter_box),
 			    ctk_label_new (_("Find:")), FALSE, FALSE, 0);
 
 	/* * filter entry */
 
-	window->priv->filter_entry = GTK_WIDGET (ctk_entry_new ());
-	ctk_entry_set_icon_from_icon_name (GTK_ENTRY (window->priv->filter_entry),
-				           GTK_ENTRY_ICON_SECONDARY,
+	window->priv->filter_entry = CTK_WIDGET (ctk_entry_new ());
+	ctk_entry_set_icon_from_icon_name (CTK_ENTRY (window->priv->filter_entry),
+				           CTK_ENTRY_ICON_SECONDARY,
 				           "edit-clear");
 
 	ctk_widget_set_size_request (window->priv->filter_entry, 300, -1);
-	ctk_box_pack_start (GTK_BOX (filter_box),
+	ctk_box_pack_start (CTK_BOX (filter_box),
 			    window->priv->filter_entry, FALSE, FALSE, 6);
 
 	g_signal_connect (G_OBJECT (window->priv->filter_entry),
@@ -5833,7 +5833,7 @@ fr_window_construct (FrWindow *window)
 			  G_CALLBACK (filter_entry_icon_release_cb),
 			  window);
 
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	ctk_widget_show (filter_box);
 #else
 	ctk_widget_show_all (filter_box);
@@ -5846,16 +5846,16 @@ fr_window_construct (FrWindow *window)
 						       GDK_TYPE_PIXBUF,
 						       G_TYPE_STRING,
 						       PANGO_TYPE_WEIGHT);
-	window->priv->tree_view = ctk_tree_view_new_with_model (GTK_TREE_MODEL (window->priv->tree_store));
-	ctk_tree_view_set_headers_visible (GTK_TREE_VIEW (window->priv->tree_view), FALSE);
-	add_dir_tree_columns (window, GTK_TREE_VIEW (window->priv->tree_view));
+	window->priv->tree_view = ctk_tree_view_new_with_model (CTK_TREE_MODEL (window->priv->tree_store));
+	ctk_tree_view_set_headers_visible (CTK_TREE_VIEW (window->priv->tree_view), FALSE);
+	add_dir_tree_columns (window, CTK_TREE_VIEW (window->priv->tree_view));
 
 	g_signal_connect (G_OBJECT (window->priv->tree_view),
 			  "button_press_event",
 			  G_CALLBACK (dir_tree_button_press_cb),
 			  window);
 
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->tree_view));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->tree_view));
 	g_signal_connect (selection,
 			  "changed",
 			  G_CALLBACK (dir_tree_selection_changed_cb),
@@ -5879,52 +5879,52 @@ fr_window_construct (FrWindow *window)
 			     GDK_ACTION_COPY);
 
 	tree_scrolled_window = ctk_scrolled_window_new (NULL, NULL);
-	ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (tree_scrolled_window),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
-	ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (tree_scrolled_window),
-	                                     GTK_SHADOW_IN);
-	ctk_container_add (GTK_CONTAINER (tree_scrolled_window), window->priv->tree_view);
+	ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (tree_scrolled_window),
+					CTK_POLICY_AUTOMATIC,
+					CTK_POLICY_AUTOMATIC);
+	ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (tree_scrolled_window),
+	                                     CTK_SHADOW_IN);
+	ctk_container_add (CTK_CONTAINER (tree_scrolled_window), window->priv->tree_view);
 
 	/* side pane */
 
-	window->priv->sidepane = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
+	window->priv->sidepane = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
 
 	sidepane_title = ctk_frame_new (NULL);
-	ctk_frame_set_shadow_type (GTK_FRAME (sidepane_title), GTK_SHADOW_ETCHED_IN);
+	ctk_frame_set_shadow_type (CTK_FRAME (sidepane_title), CTK_SHADOW_ETCHED_IN);
 
-	sidepane_title_box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 0);
-	ctk_container_set_border_width (GTK_CONTAINER (sidepane_title_box), 2);
-	ctk_container_add (GTK_CONTAINER (sidepane_title), sidepane_title_box);
+	sidepane_title_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 0);
+	ctk_container_set_border_width (CTK_CONTAINER (sidepane_title_box), 2);
+	ctk_container_add (CTK_CONTAINER (sidepane_title), sidepane_title_box);
 	sidepane_title_label = ctk_label_new (_("Folders"));
 
-	ctk_label_set_xalign (GTK_LABEL (sidepane_title_label), 0.0);
-	ctk_box_pack_start (GTK_BOX (sidepane_title_box), sidepane_title_label, TRUE, TRUE, 0);
+	ctk_label_set_xalign (CTK_LABEL (sidepane_title_label), 0.0);
+	ctk_box_pack_start (CTK_BOX (sidepane_title_box), sidepane_title_label, TRUE, TRUE, 0);
 
 	close_sidepane_button = ctk_button_new ();
-	ctk_container_add (GTK_CONTAINER (close_sidepane_button),
+	ctk_container_add (CTK_CONTAINER (close_sidepane_button),
 	                                  ctk_image_new_from_icon_name ("window-close",
-	                                                                GTK_ICON_SIZE_MENU));
-	ctk_button_set_relief (GTK_BUTTON (close_sidepane_button), GTK_RELIEF_NONE);
+	                                                                CTK_ICON_SIZE_MENU));
+	ctk_button_set_relief (CTK_BUTTON (close_sidepane_button), CTK_RELIEF_NONE);
 	ctk_widget_set_tooltip_text (close_sidepane_button, _("Close the folders pane"));
 	g_signal_connect (close_sidepane_button,
 			  "clicked",
 			  G_CALLBACK (close_sidepane_button_clicked_cb),
 			  window);
-	ctk_box_pack_end (GTK_BOX (sidepane_title_box), close_sidepane_button, FALSE, FALSE, 0);
+	ctk_box_pack_end (CTK_BOX (sidepane_title_box), close_sidepane_button, FALSE, FALSE, 0);
 
-	ctk_box_pack_start (GTK_BOX (window->priv->sidepane), sidepane_title, FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (window->priv->sidepane), tree_scrolled_window, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (window->priv->sidepane), sidepane_title, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (window->priv->sidepane), tree_scrolled_window, TRUE, TRUE, 0);
 
 	/* main content */
 
-	window->priv->paned = ctk_paned_new (GTK_ORIENTATION_HORIZONTAL);
-	ctk_paned_pack1 (GTK_PANED (window->priv->paned), window->priv->sidepane, FALSE, TRUE);
-	ctk_paned_pack2 (GTK_PANED (window->priv->paned), list_scrolled_window, TRUE, TRUE);
-	ctk_paned_set_position (GTK_PANED (window->priv->paned), g_settings_get_int (window->priv->settings_ui, PREF_UI_SIDEBAR_WIDTH));
+	window->priv->paned = ctk_paned_new (CTK_ORIENTATION_HORIZONTAL);
+	ctk_paned_pack1 (CTK_PANED (window->priv->paned), window->priv->sidepane, FALSE, TRUE);
+	ctk_paned_pack2 (CTK_PANED (window->priv->paned), list_scrolled_window, TRUE, TRUE);
+	ctk_paned_set_position (CTK_PANED (window->priv->paned), g_settings_get_int (window->priv->settings_ui, PREF_UI_SIDEBAR_WIDTH));
 
 	fr_window_attach (FR_WINDOW (window), window->priv->paned, FR_WINDOW_AREA_CONTENTS);
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	ctk_widget_show (window->priv->paned);
 #else
 	ctk_widget_show_all (window->priv->paned);
@@ -5938,27 +5938,27 @@ fr_window_construct (FrWindow *window)
 
 	/* open recent toolbar item action  */
 
-	action = g_object_new (GTK_TYPE_RECENT_ACTION,
+	action = g_object_new (CTK_TYPE_RECENT_ACTION,
 			       "name", "OpenRecent",
 			       /* Translators: this is the label for the "open recent file" sub-menu. */
 			       "label", _("Open _Recent"),
 			       "tooltip", _("Open a recently used archive"),
 			       "icon-name", "document-open",
 			       NULL);
-	fr_window_init_recent_chooser (window, GTK_RECENT_CHOOSER (action));
+	fr_window_init_recent_chooser (window, CTK_RECENT_CHOOSER (action));
 	ctk_action_group_add_action (actions, action);
 	g_object_unref (action);
 
 	/* open recent toolbar item action  */
 
-	action = g_object_new (GTK_TYPE_RECENT_ACTION,
+	action = g_object_new (CTK_TYPE_RECENT_ACTION,
 			       "name", "OpenRecent_Toolbar",
 			       "label", _("Open"),
 			       "tooltip", _("Open a recently used archive"),
 			       "icon-name", "document-open",
 			       "is-important", TRUE,
 			       NULL);
-	fr_window_init_recent_chooser (window, GTK_RECENT_CHOOSER (action));
+	fr_window_init_recent_chooser (window, CTK_RECENT_CHOOSER (action));
 	g_signal_connect (action,
 			  "activate",
 			  G_CALLBACK (activate_action_open),
@@ -5996,7 +5996,7 @@ fr_window_construct (FrWindow *window)
 			  G_CALLBACK (disconnect_proxy_cb), window);
 
 	ctk_ui_manager_insert_action_group (ui, actions, 0);
-	ctk_window_add_accel_group (GTK_WINDOW (window),
+	ctk_window_add_accel_group (CTK_WINDOW (window),
 				    ctk_ui_manager_get_accel_group (ui));
 
 	/* Add a hidden short cut Ctrl-Q for power users */
@@ -6015,32 +6015,32 @@ fr_window_construct (FrWindow *window)
 	ctk_widget_show (menubar);
 
 	window->priv->toolbar = toolbar = ctk_ui_manager_get_widget (ui, "/ToolBar");
-	ctk_toolbar_set_show_arrow (GTK_TOOLBAR (toolbar), TRUE);
-	ctk_style_context_add_class (ctk_widget_get_style_context (toolbar), GTK_STYLE_CLASS_PRIMARY_TOOLBAR);
+	ctk_toolbar_set_show_arrow (CTK_TOOLBAR (toolbar), TRUE);
+	ctk_style_context_add_class (ctk_widget_get_style_context (toolbar), CTK_STYLE_CLASS_PRIMARY_TOOLBAR);
 	set_action_important (ui, "/ToolBar/Extract_Toolbar");
 
 	/* location bar */
 
 	window->priv->location_bar = ctk_ui_manager_get_widget (ui, "/LocationBar");
-	ctk_toolbar_set_show_arrow (GTK_TOOLBAR (window->priv->location_bar), FALSE);
-	ctk_toolbar_set_style (GTK_TOOLBAR (window->priv->location_bar), GTK_TOOLBAR_BOTH_HORIZ);
-	ctk_style_context_add_class (ctk_widget_get_style_context (window->priv->location_bar), GTK_STYLE_CLASS_TOOLBAR);
+	ctk_toolbar_set_show_arrow (CTK_TOOLBAR (window->priv->location_bar), FALSE);
+	ctk_toolbar_set_style (CTK_TOOLBAR (window->priv->location_bar), CTK_TOOLBAR_BOTH_HORIZ);
+	ctk_style_context_add_class (ctk_widget_get_style_context (window->priv->location_bar), CTK_STYLE_CLASS_TOOLBAR);
 	set_action_important (ui, "/LocationBar/GoBack");
 
 	/* current location */
 
-	location_box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+	location_box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 6);
 	/* Translators: after the colon there is a folder name. */
 	window->priv->location_label = ctk_label_new_with_mnemonic (_("_Location:"));
-	ctk_box_pack_start (GTK_BOX (location_box),
+	ctk_box_pack_start (CTK_BOX (location_box),
 			    window->priv->location_label, FALSE, FALSE, 5);
 
 	window->priv->location_entry = ctk_entry_new ();
-	ctk_entry_set_icon_from_icon_name (GTK_ENTRY (window->priv->location_entry),
-				       GTK_ENTRY_ICON_PRIMARY,
+	ctk_entry_set_icon_from_icon_name (CTK_ENTRY (window->priv->location_entry),
+				       CTK_ENTRY_ICON_PRIMARY,
 				       "folder");
 
-	ctk_box_pack_start (GTK_BOX (location_box),
+	ctk_box_pack_start (CTK_BOX (location_box),
 			    window->priv->location_entry, TRUE, TRUE, 5);
 
 	g_signal_connect (G_OBJECT (window->priv->location_entry),
@@ -6052,22 +6052,22 @@ fr_window_construct (FrWindow *window)
 		CtkToolItem *tool_item;
 
 		tool_item = ctk_separator_tool_item_new ();
-#if GTK_CHECK_VERSION (3,99,0)
-		ctk_widget_show (GTK_WIDGET (tool_item));
+#if CTK_CHECK_VERSION (3,99,0)
+		ctk_widget_show (CTK_WIDGET (tool_item));
 #else
-		ctk_widget_show_all (GTK_WIDGET (tool_item));
+		ctk_widget_show_all (CTK_WIDGET (tool_item));
 #endif
-		ctk_toolbar_insert (GTK_TOOLBAR (window->priv->location_bar), tool_item, -1);
+		ctk_toolbar_insert (CTK_TOOLBAR (window->priv->location_bar), tool_item, -1);
 
 		tool_item = ctk_tool_item_new ();
 		ctk_tool_item_set_expand (tool_item, TRUE);
-		ctk_container_add (GTK_CONTAINER (tool_item), location_box);
-#if GTK_CHECK_VERSION (3,99,0)
-		ctk_widget_show (GTK_WIDGET (tool_item));
+		ctk_container_add (CTK_CONTAINER (tool_item), location_box);
+#if CTK_CHECK_VERSION (3,99,0)
+		ctk_widget_show (CTK_WIDGET (tool_item));
 #else
-		ctk_widget_show_all (GTK_WIDGET (tool_item));
+		ctk_widget_show_all (CTK_WIDGET (tool_item));
 #endif
-		ctk_toolbar_insert (GTK_TOOLBAR (window->priv->location_bar), tool_item, -1);
+		ctk_toolbar_insert (CTK_TOOLBAR (window->priv->location_bar), tool_item, -1);
 	}
 
 	fr_window_attach (FR_WINDOW (window), window->priv->location_bar, FR_WINDOW_AREA_LOCATIONBAR);
@@ -6091,30 +6091,30 @@ fr_window_construct (FrWindow *window)
 	/* Create the statusbar. */
 
 	window->priv->statusbar = ctk_statusbar_new ();
-	window->priv->help_message_cid = ctk_statusbar_get_context_id (GTK_STATUSBAR (window->priv->statusbar), "help_message");
-	window->priv->list_info_cid = ctk_statusbar_get_context_id (GTK_STATUSBAR (window->priv->statusbar), "list_info");
-	window->priv->progress_cid = ctk_statusbar_get_context_id (GTK_STATUSBAR (window->priv->statusbar), "progress");
+	window->priv->help_message_cid = ctk_statusbar_get_context_id (CTK_STATUSBAR (window->priv->statusbar), "help_message");
+	window->priv->list_info_cid = ctk_statusbar_get_context_id (CTK_STATUSBAR (window->priv->statusbar), "list_info");
+	window->priv->progress_cid = ctk_statusbar_get_context_id (CTK_STATUSBAR (window->priv->statusbar), "progress");
 
-	statusbar = GTK_STATUSBAR (window->priv->statusbar);
+	statusbar = CTK_STATUSBAR (window->priv->statusbar);
 
 	/*reduce size of statusbar */
-	ctk_widget_set_margin_top (GTK_WIDGET (statusbar), 0);
-	ctk_widget_set_margin_bottom (GTK_WIDGET (statusbar), 0);
+	ctk_widget_set_margin_top (CTK_WIDGET (statusbar), 0);
+	ctk_widget_set_margin_bottom (CTK_WIDGET (statusbar), 0);
 
 	statusbar_box = ctk_statusbar_get_message_area (statusbar);
-	ctk_box_set_homogeneous (GTK_BOX (statusbar_box), FALSE);
-	ctk_box_set_spacing (GTK_BOX (statusbar_box), 4);
-	ctk_box_set_child_packing (GTK_BOX (statusbar_box), ctk_statusbar_get_message_area (statusbar), TRUE, TRUE, 0, GTK_PACK_START );
+	ctk_box_set_homogeneous (CTK_BOX (statusbar_box), FALSE);
+	ctk_box_set_spacing (CTK_BOX (statusbar_box), 4);
+	ctk_box_set_child_packing (CTK_BOX (statusbar_box), ctk_statusbar_get_message_area (statusbar), TRUE, TRUE, 0, CTK_PACK_START );
 
 	window->priv->progress_bar = ctk_progress_bar_new ();
-	ctk_progress_bar_set_pulse_step (GTK_PROGRESS_BAR (window->priv->progress_bar), ACTIVITY_PULSE_STEP);
+	ctk_progress_bar_set_pulse_step (CTK_PROGRESS_BAR (window->priv->progress_bar), ACTIVITY_PULSE_STEP);
 	ctk_widget_set_size_request (window->priv->progress_bar, -1, PROGRESS_BAR_HEIGHT);
 	{
 		CtkWidget *vbox;
 
-		vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 0);
-		ctk_box_pack_start (GTK_BOX (statusbar_box), vbox, FALSE, FALSE, 0);
-		ctk_box_pack_start (GTK_BOX (vbox), window->priv->progress_bar, TRUE, TRUE, 1);
+		vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 0);
+		ctk_box_pack_start (CTK_BOX (statusbar_box), vbox, FALSE, FALSE, 0);
+		ctk_box_pack_start (CTK_BOX (vbox), window->priv->progress_bar, TRUE, TRUE, 1);
 		ctk_widget_show (vbox);
 	}
 	ctk_widget_show (statusbar_box);
@@ -6391,13 +6391,13 @@ fr_window_archive_save_as (FrWindow   *window,
 		message = g_strdup_printf (_("Could not save the archive \"%s\""), utf8_name);
 		g_free (utf8_name);
 
-		d = _ctk_error_dialog_new (GTK_WINDOW (window),
-					   GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = _ctk_error_dialog_new (CTK_WINDOW (window),
+					   CTK_DIALOG_DESTROY_WITH_PARENT,
 					   NULL,
 					   message,
 					   "%s",
 					   _("Archive type not supported."));
-		ctk_dialog_run (GTK_DIALOG (d));
+		ctk_dialog_run (CTK_DIALOG (d));
 		ctk_widget_destroy (d);
 
 		g_free (message);
@@ -6828,8 +6828,8 @@ overwrite_dialog_response_cb (CtkDialog *dialog,
 		}
 		break;
 
-	case GTK_RESPONSE_DELETE_EVENT:
-	case GTK_RESPONSE_CANCEL:
+	case CTK_RESPONSE_DELETE_EVENT:
+	case CTK_RESPONSE_CANCEL:
 		do_not_extract = TRUE;
 		break;
 
@@ -6837,7 +6837,7 @@ overwrite_dialog_response_cb (CtkDialog *dialog,
 		break;
 	}
 
-	ctk_widget_destroy (GTK_WIDGET (dialog));
+	ctk_widget_destroy (CTK_WIDGET (dialog));
 
 	if (do_not_extract) {
 		fr_window_stop_batch (odata->window);
@@ -6891,17 +6891,17 @@ _fr_window_ask_overwrite_dialog (OverwriteData *odata)
 			parent = g_file_get_parent (file);
 			parent_name = g_file_get_parse_name (parent);
 			details = g_strdup_printf (_("Another file with the same name already exists in \"%s\"."), parent_name);
-			d = _ctk_message_dialog_new (GTK_WINDOW (odata->window),
-						     GTK_DIALOG_MODAL,
+			d = _ctk_message_dialog_new (CTK_WINDOW (odata->window),
+						     CTK_DIALOG_MODAL,
 						     "dialog-question",
 						     msg,
 						     details,
-						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+						     CTK_STOCK_CANCEL, CTK_RESPONSE_CANCEL,
 						     _("Replace _All"), _FR_RESPONSE_OVERWRITE_YES_ALL,
 						     _("_Skip"), _FR_RESPONSE_OVERWRITE_NO,
 						     _("_Replace"), _FR_RESPONSE_OVERWRITE_YES,
 						     NULL);
-			ctk_dialog_set_default_response (GTK_DIALOG (d), _FR_RESPONSE_OVERWRITE_YES);
+			ctk_dialog_set_default_response (CTK_DIALOG (d), _FR_RESPONSE_OVERWRITE_YES);
 			g_signal_connect (d,
 					  "response",
 					  G_CALLBACK (overwrite_dialog_response_cb),
@@ -6936,15 +6936,15 @@ _fr_window_ask_overwrite_dialog (OverwriteData *odata)
 	else {
 		CtkWidget *d;
 
-		d = _ctk_message_dialog_new (GTK_WINDOW (odata->window),
+		d = _ctk_message_dialog_new (CTK_WINDOW (odata->window),
 					     0,
 					     "dialog-warning",
 					     _("Extraction not performed"),
 					     NULL,
-					     GTK_STOCK_OK, GTK_RESPONSE_OK,
+					     CTK_STOCK_OK, CTK_RESPONSE_OK,
 					     NULL);
-		ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
-		fr_window_show_error_dialog (odata->window, d, GTK_WINDOW (odata->window), _("Extraction not performed"));
+		ctk_dialog_set_default_response (CTK_DIALOG (d), CTK_RESPONSE_OK);
+		fr_window_show_error_dialog (odata->window, d, CTK_WINDOW (odata->window), _("Extraction not performed"));
 
 		fr_window_stop_batch (odata->window);
 	}
@@ -7001,22 +7001,22 @@ fr_window_archive_extract (FrWindow    *window,
 			msg = g_strdup_printf (_("Destination folder \"%s\" does not exist.\n\nDo you want to create it?"), folder_name);
 			g_free (folder_name);
 
-			d = _ctk_message_dialog_new (GTK_WINDOW (window),
-						     GTK_DIALOG_MODAL,
+			d = _ctk_message_dialog_new (CTK_WINDOW (window),
+						     CTK_DIALOG_MODAL,
 						     "dialog-question",
 						     msg,
 						     NULL,
-						     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-						     _("Create _Folder"), GTK_RESPONSE_YES,
+						     CTK_STOCK_CANCEL, CTK_RESPONSE_CANCEL,
+						     _("Create _Folder"), CTK_RESPONSE_YES,
 						     NULL);
 
-			ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_YES);
-			r = ctk_dialog_run (GTK_DIALOG (d));
-			ctk_widget_destroy (GTK_WIDGET (d));
+			ctk_dialog_set_default_response (CTK_DIALOG (d), CTK_RESPONSE_YES);
+			r = ctk_dialog_run (CTK_DIALOG (d));
+			ctk_widget_destroy (CTK_WIDGET (d));
 
 			g_free (msg);
 
-			if (r != GTK_RESPONSE_YES)
+			if (r != CTK_RESPONSE_YES)
 				do_not_extract = TRUE;
 		}
 
@@ -7025,14 +7025,14 @@ fr_window_archive_extract (FrWindow    *window,
 			char      *details;
 
 			details = g_strdup_printf (_("Could not create the destination folder: %s."), error->message);
-			d = _ctk_error_dialog_new (GTK_WINDOW (window),
+			d = _ctk_error_dialog_new (CTK_WINDOW (window),
 						   0,
 						   NULL,
 						   _("Extraction not performed"),
 						   "%s",
 						   details);
 			g_clear_error (&error);
-			fr_window_show_error_dialog (window, d, GTK_WINDOW (window), details);
+			fr_window_show_error_dialog (window, d, CTK_WINDOW (window), details);
 			fr_window_stop_batch (window);
 
 			g_free (details);
@@ -7044,15 +7044,15 @@ fr_window_archive_extract (FrWindow    *window,
 	if (do_not_extract) {
 		CtkWidget *d;
 
-		d = _ctk_message_dialog_new (GTK_WINDOW (window),
+		d = _ctk_message_dialog_new (CTK_WINDOW (window),
 					     0,
 					     "dialog-warning",
 					     _("Extraction not performed"),
 					     NULL,
-					     GTK_STOCK_OK, GTK_RESPONSE_OK,
+					     CTK_STOCK_OK, CTK_RESPONSE_OK,
 					     NULL);
-		ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
-		fr_window_show_error_dialog (window, d, GTK_WINDOW (window), _("Extraction not performed"));
+		ctk_dialog_set_default_response (CTK_DIALOG (d), CTK_RESPONSE_OK);
+		fr_window_show_error_dialog (window, d, CTK_WINDOW (window), _("Extraction not performed"));
 		fr_window_stop_batch (window);
 
 		return;
@@ -7292,7 +7292,7 @@ fr_window_set_list_mode (FrWindow         *window,
 CtkTreeModel *
 fr_window_get_list_store (FrWindow *window)
 {
-	return GTK_TREE_MODEL (window->priv->list_store);
+	return CTK_TREE_MODEL (window->priv->list_store);
 }
 
 
@@ -7308,14 +7308,14 @@ fr_window_find (FrWindow *window)
 void
 fr_window_select_all (FrWindow *window)
 {
-	ctk_tree_selection_select_all (ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view)));
+	ctk_tree_selection_select_all (ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view)));
 }
 
 
 void
 fr_window_unselect_all (FrWindow *window)
 {
-	ctk_tree_selection_unselect_all (ctk_tree_view_get_selection (GTK_TREE_VIEW (window->priv->list_view)));
+	ctk_tree_selection_unselect_all (ctk_tree_view_get_selection (CTK_TREE_VIEW (window->priv->list_view)));
 }
 
 
@@ -7351,9 +7351,9 @@ activity_cb (gpointer data)
 	FrWindow *window = data;
 
 	if ((window->priv->pd_progress_bar != NULL) && window->priv->progress_pulse)
-		ctk_progress_bar_pulse (GTK_PROGRESS_BAR (window->priv->pd_progress_bar));
+		ctk_progress_bar_pulse (CTK_PROGRESS_BAR (window->priv->pd_progress_bar));
 	if (window->priv->progress_pulse)
-		ctk_progress_bar_pulse (GTK_PROGRESS_BAR (window->priv->progress_bar));
+		ctk_progress_bar_pulse (CTK_PROGRESS_BAR (window->priv->progress_bar));
 
 	return TRUE;
 }
@@ -7393,15 +7393,15 @@ fr_window_stop_activity_mode (FrWindow *window)
 	g_source_remove (window->priv->activity_timeout_handle);
 	window->priv->activity_timeout_handle = 0;
 
-	if (! ctk_widget_get_realized (GTK_WIDGET (window)))
+	if (! ctk_widget_get_realized (CTK_WIDGET (window)))
 		return;
 
 	if (window->priv->progress_dialog != NULL)
-		ctk_progress_bar_set_fraction (GTK_PROGRESS_BAR (window->priv->pd_progress_bar), 0.0);
+		ctk_progress_bar_set_fraction (CTK_PROGRESS_BAR (window->priv->pd_progress_bar), 0.0);
 
 	if (! window->priv->batch_mode) {
 		if (window->priv->progress_bar != NULL)
-			ctk_progress_bar_set_fraction (GTK_PROGRESS_BAR (window->priv->progress_bar), 0.0);
+			ctk_progress_bar_set_fraction (CTK_PROGRESS_BAR (window->priv->progress_bar), 0.0);
 		fr_window_update_sensitivity (window);
 	}
 }
@@ -7411,7 +7411,7 @@ static gboolean
 last_output_window__unrealize_cb (CtkWidget  *widget,
 				  gpointer    data)
 {
-	pref_util_save_window_geometry (GTK_WINDOW (widget), LAST_OUTPUT_DIALOG_NAME);
+	pref_util_save_window_geometry (CTK_WINDOW (widget), LAST_OUTPUT_DIALOG_NAME);
 	return FALSE;
 }
 
@@ -7452,23 +7452,23 @@ fr_window_view_last_output (FrWindow   *window,
 		title = _("Last Output");
 
 	dialog = ctk_dialog_new ();
-	ctk_window_set_title (GTK_WINDOW (dialog), title);
-	ctk_window_set_transient_for (GTK_WINDOW (dialog), GTK_WINDOW (window));
-	ctk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
-	ctk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_CLOSE, GTK_RESPONSE_CLOSE);
+	ctk_window_set_title (CTK_WINDOW (dialog), title);
+	ctk_window_set_transient_for (CTK_WINDOW (dialog), CTK_WINDOW (window));
+	ctk_window_set_destroy_with_parent (CTK_WINDOW (dialog), TRUE);
+	ctk_dialog_add_button (CTK_DIALOG (dialog), CTK_STOCK_CLOSE, CTK_RESPONSE_CLOSE);
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_CLOSE);
-	ctk_window_set_resizable (GTK_WINDOW (dialog), TRUE);
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_CLOSE);
+	ctk_window_set_resizable (CTK_WINDOW (dialog), TRUE);
 	ctk_widget_set_size_request (dialog, 500, 300);
 
 	/* Add text */
 
 	scrolled = ctk_scrolled_window_new (NULL, NULL);
-	ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
-					GTK_POLICY_AUTOMATIC,
-					GTK_POLICY_AUTOMATIC);
-	ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolled),
-					     GTK_SHADOW_ETCHED_IN);
+	ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (scrolled),
+					CTK_POLICY_AUTOMATIC,
+					CTK_POLICY_AUTOMATIC);
+	ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (scrolled),
+					     CTK_SHADOW_ETCHED_IN);
 
 	text_buffer = ctk_text_buffer_new (NULL);
 	ctk_text_buffer_create_tag (text_buffer, "monospace",
@@ -7476,24 +7476,24 @@ fr_window_view_last_output (FrWindow   *window,
 
 	text_view = ctk_text_view_new_with_buffer (text_buffer);
 	g_object_unref (text_buffer);
-	ctk_text_view_set_editable (GTK_TEXT_VIEW (text_view), FALSE);
-	ctk_text_view_set_cursor_visible (GTK_TEXT_VIEW (text_view), FALSE);
+	ctk_text_view_set_editable (CTK_TEXT_VIEW (text_view), FALSE);
+	ctk_text_view_set_cursor_visible (CTK_TEXT_VIEW (text_view), FALSE);
 
 	/**/
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	ctk_container_set_border_width (GTK_CONTAINER (vbox), 5);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
+	ctk_container_set_border_width (CTK_CONTAINER (vbox), 5);
 
-	ctk_container_add (GTK_CONTAINER (scrolled), text_view);
-	ctk_box_pack_start (GTK_BOX (vbox), scrolled,
+	ctk_container_add (CTK_CONTAINER (scrolled), text_view);
+	ctk_box_pack_start (CTK_BOX (vbox), scrolled,
 			    TRUE, TRUE, 0);
 
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	ctk_widget_show (vbox);
 #else
 	ctk_widget_show_all (vbox);
 #endif
-	ctk_box_pack_start (GTK_BOX (ctk_dialog_get_content_area (GTK_DIALOG (dialog))),
+	ctk_box_pack_start (CTK_BOX (ctk_dialog_get_content_area (CTK_DIALOG (dialog))),
 			    vbox,
 			    TRUE, TRUE, 0);
 
@@ -7517,7 +7517,7 @@ fr_window_view_last_output (FrWindow   *window,
 
 	/**/
 
-	pref_util_restore_window_geometry (GTK_WINDOW (dialog), LAST_OUTPUT_DIALOG_NAME);
+	pref_util_restore_window_geometry (CTK_WINDOW (dialog), LAST_OUTPUT_DIALOG_NAME);
 }
 
 
@@ -7861,9 +7861,9 @@ fr_window_rename_selection (FrWindow *window,
 
  retry__rename_selection:
 	utf8_old_name = g_locale_to_utf8 (old_name, -1 ,0 ,0 ,0);
-	utf8_new_name = _ctk_request_dialog_run (GTK_WINDOW (window),
-						 (GTK_DIALOG_DESTROY_WITH_PARENT
-						  | GTK_DIALOG_MODAL),
+	utf8_new_name = _ctk_request_dialog_run (CTK_WINDOW (window),
+						 (CTK_DIALOG_DESTROY_WITH_PARENT
+						  | CTK_DIALOG_MODAL),
 						 _("Rename"),
 						 (renaming_dir ? _("_New folder name:") : _("_New file name:")),
 						 utf8_old_name,
@@ -7883,13 +7883,13 @@ fr_window_rename_selection (FrWindow *window,
 			char      *utf8_name = g_filename_display_name (new_name);
 			CtkWidget *dlg;
 
-			dlg = _ctk_error_dialog_new (GTK_WINDOW (window),
-						     GTK_DIALOG_DESTROY_WITH_PARENT,
+			dlg = _ctk_error_dialog_new (CTK_WINDOW (window),
+						     CTK_DIALOG_DESTROY_WITH_PARENT,
 						     NULL,
 						     (renaming_dir ? _("Could not rename the folder") : _("Could not rename the file")),
 						     "%s",
 						     reason);
-			ctk_dialog_run (GTK_DIALOG (dlg));
+			ctk_dialog_run (CTK_DIALOG (dlg));
 			ctk_widget_destroy (dlg);
 
 			g_free (reason);
@@ -7902,14 +7902,14 @@ fr_window_rename_selection (FrWindow *window,
 		if (name_is_present (window, parent_dir, new_name, &reason)) {
 			CtkWidget *dlg;
 
-			dlg = _ctk_message_dialog_new (GTK_WINDOW (window),
-						       GTK_DIALOG_MODAL,
+			dlg = _ctk_message_dialog_new (CTK_WINDOW (window),
+						       CTK_DIALOG_MODAL,
 						       "dialog-question",
 						       (renaming_dir ? _("Could not rename the folder") : _("Could not rename the file")),
 						       reason,
-						       GTK_STOCK_CLOSE, GTK_RESPONSE_OK,
+						       CTK_STOCK_CLOSE, CTK_RESPONSE_OK,
 						       NULL);
-			ctk_dialog_run (GTK_DIALOG (dlg));
+			ctk_dialog_run (CTK_DIALOG (dlg));
 			ctk_widget_destroy (dlg);
 			g_free (reason);
 			g_free (new_name);
@@ -8302,9 +8302,9 @@ fr_window_paste_selection (FrWindow *window,
 	/**/
 
 	utf8_old_path = g_filename_to_utf8 (fr_window_get_current_location (window), -1, NULL, NULL, NULL);
-	utf8_path = _ctk_request_dialog_run (GTK_WINDOW (window),
-					       (GTK_DIALOG_DESTROY_WITH_PARENT
-						| GTK_DIALOG_MODAL),
+	utf8_path = _ctk_request_dialog_run (CTK_WINDOW (window),
+					       (CTK_DIALOG_DESTROY_WITH_PARENT
+						| CTK_DIALOG_MODAL),
 					       _("Paste Selection"),
 					       _("_Destination folder:"),
 					       utf8_old_path,
@@ -8343,7 +8343,7 @@ fr_window_open_files_with_command (FrWindow *window,
 
 	app = g_app_info_create_from_commandline (command, NULL, G_APP_INFO_CREATE_NONE, &error);
 	if (error != NULL) {
-		_ctk_error_dialog_run (GTK_WINDOW (window),
+		_ctk_error_dialog_run (CTK_WINDOW (window),
 				       _("Could not perform the operation"),
 				       "%s",
 				       error->message);
@@ -8374,12 +8374,12 @@ fr_window_open_files_with_application (FrWindow *window,
 	for (scan = file_list; scan; scan = scan->next)
 		uris = g_list_prepend (uris, g_filename_to_uri (scan->data, NULL, NULL));
 
-	context = gdk_display_get_app_launch_context (ctk_widget_get_display (GTK_WIDGET (window)));
-	gdk_app_launch_context_set_screen (context, ctk_widget_get_screen (GTK_WIDGET (window)));
+	context = gdk_display_get_app_launch_context (ctk_widget_get_display (CTK_WIDGET (window)));
+	gdk_app_launch_context_set_screen (context, ctk_widget_get_screen (CTK_WIDGET (window)));
 	gdk_app_launch_context_set_timestamp (context, 0);
 
 	if (! g_app_info_launch_uris (app, uris, G_APP_LAUNCH_CONTEXT (context), &error)) {
-		_ctk_error_dialog_run (GTK_WINDOW (window),
+		_ctk_error_dialog_run (CTK_WINDOW (window),
 				       _("Could not perform the operation"),
 				       "%s",
 				       error->message);
@@ -8624,12 +8624,12 @@ fr_window_open_extracted_files (OpenFilesData *odata)
 		}
 	}
 
-	context = gdk_display_get_app_launch_context (ctk_widget_get_display (GTK_WIDGET (odata->window)));
-	gdk_app_launch_context_set_screen (context, ctk_widget_get_screen (GTK_WIDGET (odata->window)));
+	context = gdk_display_get_app_launch_context (ctk_widget_get_display (CTK_WIDGET (odata->window)));
+	gdk_app_launch_context_set_screen (context, ctk_widget_get_screen (CTK_WIDGET (odata->window)));
 	gdk_app_launch_context_set_timestamp (context, 0);
 	result = g_app_info_launch_uris (app, files_to_open, G_APP_LAUNCH_CONTEXT (context), &error);
 	if (! result) {
-		_ctk_error_dialog_run (GTK_WINDOW (odata->window),
+		_ctk_error_dialog_run (CTK_WINDOW (odata->window),
 				       _("Could not perform the operation"),
 				       "%s",
 				       error->message);
@@ -8807,7 +8807,7 @@ fr_window_set_default_dir (FrWindow   *window,
 void
 fr_window_update_columns_visibility (FrWindow *window)
 {
-	CtkTreeView       *tree_view = GTK_TREE_VIEW (window->priv->list_view);
+	CtkTreeView       *tree_view = CTK_TREE_VIEW (window->priv->list_view);
 	CtkTreeViewColumn *column;
 
 	column = ctk_tree_view_get_column (tree_view, 1);
@@ -8897,7 +8897,7 @@ fr_window_exec_batch_action (FrWindow      *window,
 		if (! uri_exists ((char*) action->data))
 			fr_window_archive_new (window, (char*) action->data);
 		else
-			fr_window_archive_open (window, (char*) action->data, GTK_WINDOW (window));
+			fr_window_archive_open (window, (char*) action->data, CTK_WINDOW (window));
 		break;
 
 	case FR_BATCH_ACTION_ADD:
@@ -9016,9 +9016,9 @@ fr_window_exec_batch_action (FrWindow      *window,
 			       0,
 			       NULL);
 
-		if ((window->priv->progress_dialog != NULL) && (ctk_widget_get_parent (window->priv->progress_dialog) != GTK_WIDGET (window)))
+		if ((window->priv->progress_dialog != NULL) && (ctk_widget_get_parent (window->priv->progress_dialog) != CTK_WIDGET (window)))
 			ctk_widget_destroy (window->priv->progress_dialog);
-		ctk_widget_destroy (GTK_WIDGET (window));
+		ctk_widget_destroy (CTK_WIDGET (window));
 		break;
 
 	default:
@@ -9119,7 +9119,7 @@ fr_window_start_batch (FrWindow *window)
 		return;
 
 	if (window->priv->progress_dialog != NULL)
-		ctk_window_set_title (GTK_WINDOW (window->priv->progress_dialog),
+		ctk_window_set_title (CTK_WINDOW (window->priv->progress_dialog),
 				      window->priv->batch_title);
 
 	window->priv->batch_mode = TRUE;
@@ -9141,12 +9141,12 @@ fr_window_stop_batch (FrWindow *window)
 
 	if (window->priv->batch_mode) {
 		if (! window->priv->showing_error_dialog) {
-			ctk_widget_destroy (GTK_WIDGET (window));
+			ctk_widget_destroy (CTK_WIDGET (window));
 			return;
 		}
 	}
 	else {
-		ctk_window_present (GTK_WINDOW (window));
+		ctk_window_present (CTK_WINDOW (window));
 		fr_window_archive_close (window);
 	}
 

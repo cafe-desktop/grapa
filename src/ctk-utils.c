@@ -64,13 +64,13 @@ grapa_dialog_add_button (CtkDialog   *dialog,
 	CtkWidget *button;
 
 	button = ctk_button_new_with_mnemonic (button_text);
-	ctk_button_set_image (GTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON));
+	ctk_button_set_image (CTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_BUTTON));
 
-	ctk_button_set_use_underline (GTK_BUTTON (button), TRUE);
+	ctk_button_set_use_underline (CTK_BUTTON (button), TRUE);
 	ctk_style_context_add_class (ctk_widget_get_style_context (button), "text-button");
 	ctk_widget_set_can_default (button, TRUE);
 	ctk_widget_show (button);
-	ctk_dialog_add_action_widget (GTK_DIALOG (dialog), button, response_id);
+	ctk_dialog_add_action_widget (CTK_DIALOG (dialog), button, response_id);
 
 	return button;
 }
@@ -101,12 +101,12 @@ _ctk_message_dialog_new (CtkWindow        *parent,
 		icon_name = "dialog-information";
 
 	dialog = ctk_dialog_new_with_buttons ("", parent, flags, NULL, NULL);
-	content_area = ctk_dialog_get_content_area (GTK_DIALOG (dialog));
+	content_area = ctk_dialog_get_content_area (CTK_DIALOG (dialog));
 
 	/* Add label and image */
 
-	image = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_DIALOG);
-	ctk_widget_set_valign (image, GTK_ALIGN_START);
+	image = ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_DIALOG);
+	ctk_widget_set_valign (image, CTK_ALIGN_START);
 
 	label = ctk_label_new ("");
 
@@ -128,26 +128,26 @@ _ctk_message_dialog_new (CtkWindow        *parent,
 	else
 		markup_text = g_markup_escape_text (secondary_message, -1);
 
-	ctk_label_set_markup (GTK_LABEL (label), markup_text);
+	ctk_label_set_markup (CTK_LABEL (label), markup_text);
 	g_free (markup_text);
 
-	ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-	ctk_label_set_selectable (GTK_LABEL (label), TRUE);
+	ctk_label_set_line_wrap (CTK_LABEL (label), TRUE);
+	ctk_label_set_selectable (CTK_LABEL (label), TRUE);
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 24);
-	ctk_container_set_border_width (GTK_CONTAINER (hbox), 5);
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 24);
+	ctk_container_set_border_width (CTK_CONTAINER (hbox), 5);
 
-	ctk_box_pack_start (GTK_BOX (hbox), image,
+	ctk_box_pack_start (CTK_BOX (hbox), image,
 			    FALSE, FALSE, 0);
 
-	ctk_box_pack_start (GTK_BOX (hbox), label,
+	ctk_box_pack_start (CTK_BOX (hbox), label,
 			    TRUE, TRUE, 0);
 
-	ctk_box_pack_start (GTK_BOX (content_area),
+	ctk_box_pack_start (CTK_BOX (content_area),
 			    hbox,
 			    FALSE, FALSE, 0);
 
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	ctk_widget_show (hbox);
 #else
 	ctk_widget_show_all (hbox);
@@ -164,7 +164,7 @@ _ctk_message_dialog_new (CtkWindow        *parent,
 	response_id = va_arg (args, gint);
 
 	while (text != NULL) {
-		ctk_dialog_add_button (GTK_DIALOG (dialog), text, response_id);
+		ctk_dialog_add_button (CTK_DIALOG (dialog), text, response_id);
 
 		text = va_arg (args, char*);
 		if (text == NULL)
@@ -189,8 +189,8 @@ create_button (const char *icon_name,
 	icon_theme = ctk_icon_theme_get_default ();
 	if (ctk_icon_theme_has_icon (icon_theme, icon_name)) {
 		CtkWidget *image;
-		image = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON);
-		ctk_button_set_image (GTK_BUTTON (button), image);
+		image = ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_BUTTON);
+		ctk_button_set_image (CTK_BUTTON (button), image);
 	}
 	ctk_widget_set_can_default (button, TRUE);
 
@@ -221,44 +221,44 @@ _ctk_request_dialog_run (CtkWindow        *parent,
 	char         *result;
 
 	dialog = ctk_dialog_new_with_buttons (title, parent, flags, NULL, NULL);
-	content_area = ctk_dialog_get_content_area (GTK_DIALOG (dialog));
+	content_area = ctk_dialog_get_content_area (CTK_DIALOG (dialog));
 
 	/* Add label and image */
 
-	image = ctk_image_new_from_icon_name ("dialog-question", GTK_ICON_SIZE_DIALOG);
-	ctk_widget_set_halign (image, GTK_ALIGN_CENTER);
-	ctk_widget_set_valign (image, GTK_ALIGN_START);
+	image = ctk_image_new_from_icon_name ("dialog-question", CTK_ICON_SIZE_DIALOG);
+	ctk_widget_set_halign (image, CTK_ALIGN_CENTER);
+	ctk_widget_set_valign (image, CTK_ALIGN_START);
 
 	label = ctk_label_new_with_mnemonic (message);
-	ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-	ctk_label_set_selectable (GTK_LABEL (label), FALSE);
-	ctk_label_set_xalign (GTK_LABEL (label), 0.0);
-	ctk_label_set_yalign (GTK_LABEL (label), 0.0);
+	ctk_label_set_line_wrap (CTK_LABEL (label), TRUE);
+	ctk_label_set_selectable (CTK_LABEL (label), FALSE);
+	ctk_label_set_xalign (CTK_LABEL (label), 0.0);
+	ctk_label_set_yalign (CTK_LABEL (label), 0.0);
 
 	entry = ctk_entry_new ();
-	ctk_entry_set_width_chars (GTK_ENTRY (entry), 50);
-	ctk_entry_set_activates_default (GTK_ENTRY (entry), TRUE);
-	ctk_entry_set_max_length (GTK_ENTRY (entry), max_length);
-	ctk_entry_set_text (GTK_ENTRY (entry), default_value);
-	ctk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
+	ctk_entry_set_width_chars (CTK_ENTRY (entry), 50);
+	ctk_entry_set_activates_default (CTK_ENTRY (entry), TRUE);
+	ctk_entry_set_max_length (CTK_ENTRY (entry), max_length);
+	ctk_entry_set_text (CTK_ENTRY (entry), default_value);
+	ctk_label_set_mnemonic_widget (CTK_LABEL (label), entry);
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 12);
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 12);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 12);
 
-	ctk_container_set_border_width (GTK_CONTAINER (dialog), 5);
-	ctk_container_set_border_width (GTK_CONTAINER (hbox), 5);
+	ctk_container_set_border_width (CTK_CONTAINER (dialog), 5);
+	ctk_container_set_border_width (CTK_CONTAINER (hbox), 5);
 
-	ctk_box_set_spacing (GTK_BOX (content_area), 14); /* 14 + 2 * 5 = 24 */
-	ctk_container_set_border_width (GTK_CONTAINER (vbox), 5);
-	ctk_box_set_spacing (GTK_BOX (vbox), 6);
+	ctk_box_set_spacing (CTK_BOX (content_area), 14); /* 14 + 2 * 5 = 24 */
+	ctk_container_set_border_width (CTK_CONTAINER (vbox), 5);
+	ctk_box_set_spacing (CTK_BOX (vbox), 6);
 
-	ctk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), label, FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), entry, FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (content_area), hbox, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (hbox), image, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (hbox), vbox, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), label, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), entry, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (content_area), hbox, FALSE, FALSE, 0);
 
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	ctk_widget_show (hbox);
 #else
 	ctk_widget_show_all (hbox);
@@ -267,23 +267,23 @@ _ctk_request_dialog_run (CtkWindow        *parent,
 	/* Add buttons */
 
 	button = create_button ("process-stop", no_button_text);
-	ctk_dialog_add_action_widget (GTK_DIALOG (dialog),
+	ctk_dialog_add_action_widget (CTK_DIALOG (dialog),
 				      button,
-				      GTK_RESPONSE_CANCEL);
+				      CTK_RESPONSE_CANCEL);
 
 	button = create_button ("ctk-ok", yes_button_text);
-	ctk_dialog_add_action_widget (GTK_DIALOG (dialog),
+	ctk_dialog_add_action_widget (CTK_DIALOG (dialog),
 				      button,
-				      GTK_RESPONSE_YES);
+				      CTK_RESPONSE_YES);
 
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_YES);
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_YES);
 
 	/* Run dialog */
 
 	ctk_widget_grab_focus (entry);
 
-	if (ctk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_YES)
-		result = g_strdup (ctk_entry_get_text (GTK_ENTRY (entry)));
+	if (ctk_dialog_run (CTK_DIALOG (dialog)) == CTK_RESPONSE_YES)
+		result = g_strdup (ctk_entry_get_text (CTK_ENTRY (entry)));
 	else
 		result = NULL;
 
@@ -318,30 +318,30 @@ _ctk_error_dialog_new (CtkWindow        *parent,
 	gboolean       view_output = (row_output != NULL);
 
 	dialog = ctk_dialog_new ();
-	ctk_window_set_title (GTK_WINDOW (dialog), "");
-	ctk_window_set_transient_for (GTK_WINDOW (dialog), parent);
-	if (flags & GTK_DIALOG_DESTROY_WITH_PARENT)
-		ctk_window_set_destroy_with_parent (GTK_WINDOW (dialog), TRUE);
-	if (flags & GTK_DIALOG_MODAL)
-		ctk_window_set_modal (GTK_WINDOW (dialog), TRUE);
-	ctk_dialog_add_button (GTK_DIALOG (dialog), GTK_STOCK_OK, GTK_RESPONSE_OK);
+	ctk_window_set_title (CTK_WINDOW (dialog), "");
+	ctk_window_set_transient_for (CTK_WINDOW (dialog), parent);
+	if (flags & CTK_DIALOG_DESTROY_WITH_PARENT)
+		ctk_window_set_destroy_with_parent (CTK_WINDOW (dialog), TRUE);
+	if (flags & CTK_DIALOG_MODAL)
+		ctk_window_set_modal (CTK_WINDOW (dialog), TRUE);
+	ctk_dialog_add_button (CTK_DIALOG (dialog), CTK_STOCK_OK, CTK_RESPONSE_OK);
 
-	ctk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
-	ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
+	ctk_window_set_resizable (CTK_WINDOW (dialog), FALSE);
+	ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_OK);
 
-	content_area = ctk_dialog_get_content_area (GTK_DIALOG (dialog));
+	content_area = ctk_dialog_get_content_area (CTK_DIALOG (dialog));
 
 	/* Add label and image */
 
-	image = ctk_image_new_from_icon_name ("dialog-error", GTK_ICON_SIZE_DIALOG);
-	ctk_widget_set_halign (image, GTK_ALIGN_CENTER);
-	ctk_widget_set_valign (image, GTK_ALIGN_START);
+	image = ctk_image_new_from_icon_name ("dialog-error", CTK_ICON_SIZE_DIALOG);
+	ctk_widget_set_halign (image, CTK_ALIGN_CENTER);
+	ctk_widget_set_valign (image, CTK_ALIGN_START);
 
 	label = ctk_label_new ("");
-	ctk_label_set_line_wrap (GTK_LABEL (label), TRUE);
-	ctk_label_set_selectable (GTK_LABEL (label), TRUE);
-	ctk_label_set_xalign (GTK_LABEL (label), 0.0);
-	ctk_label_set_yalign (GTK_LABEL (label), 0.0);
+	ctk_label_set_line_wrap (CTK_LABEL (label), TRUE);
+	ctk_label_set_selectable (CTK_LABEL (label), TRUE);
+	ctk_label_set_xalign (CTK_LABEL (label), 0.0);
+	ctk_label_set_yalign (CTK_LABEL (label), 0.0);
 
 	escaped_message = g_markup_escape_text (primary_text, -1);
 	if (secondary_text != NULL) {
@@ -362,7 +362,7 @@ _ctk_error_dialog_new (CtkWindow        *parent,
 	}
 	else
 		markup_text = g_strdup (escaped_message);
-	ctk_label_set_markup (GTK_LABEL (label), markup_text);
+	ctk_label_set_markup (CTK_LABEL (label), markup_text);
 	g_free (markup_text);
 	g_free (escaped_message);
 
@@ -372,16 +372,16 @@ _ctk_error_dialog_new (CtkWindow        *parent,
 		/* Expander */
 
 		expander = ctk_expander_new_with_mnemonic (_("Command _Line Output"));
-		ctk_expander_set_expanded (GTK_EXPANDER (expander), secondary_text == NULL);
+		ctk_expander_set_expanded (CTK_EXPANDER (expander), secondary_text == NULL);
 
 		/* Add text */
 
 		scrolled = ctk_scrolled_window_new (NULL, NULL);
-		ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolled),
-						GTK_POLICY_AUTOMATIC,
-						GTK_POLICY_AUTOMATIC);
-		ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scrolled),
-						     GTK_SHADOW_ETCHED_IN);
+		ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (scrolled),
+						CTK_POLICY_AUTOMATIC,
+						CTK_POLICY_AUTOMATIC);
+		ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (scrolled),
+						     CTK_SHADOW_ETCHED_IN);
 		ctk_widget_set_size_request (scrolled, -1, 200);
 
 		text_buf = ctk_text_buffer_new (NULL);
@@ -405,30 +405,30 @@ _ctk_error_dialog_new (CtkWindow        *parent,
 		}
 		text_view = ctk_text_view_new_with_buffer (text_buf);
 		g_object_unref (text_buf);
-		ctk_text_view_set_editable (GTK_TEXT_VIEW (text_view), FALSE);
-		ctk_text_view_set_cursor_visible (GTK_TEXT_VIEW (text_view), FALSE);
+		ctk_text_view_set_editable (CTK_TEXT_VIEW (text_view), FALSE);
+		ctk_text_view_set_cursor_visible (CTK_TEXT_VIEW (text_view), FALSE);
 	}
 
-	vbox = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	vbox = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
 
-	hbox = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 12);
-	ctk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (hbox), label, FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX (vbox), hbox, TRUE, TRUE, 0);
+	hbox = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 12);
+	ctk_box_pack_start (CTK_BOX (hbox), image, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (hbox), label, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (vbox), hbox, TRUE, TRUE, 0);
 
 	if (view_output) {
-		ctk_container_add (GTK_CONTAINER (scrolled), text_view);
-		ctk_container_add (GTK_CONTAINER (expander), scrolled);
-		ctk_box_pack_start (GTK_BOX (vbox), expander, TRUE, TRUE, 0);
+		ctk_container_add (CTK_CONTAINER (scrolled), text_view);
+		ctk_container_add (CTK_CONTAINER (expander), scrolled);
+		ctk_box_pack_start (CTK_BOX (vbox), expander, TRUE, TRUE, 0);
 	}
 
-	ctk_box_pack_start (GTK_BOX (content_area), vbox, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX (content_area), vbox, FALSE, FALSE, 0);
 
-	ctk_container_set_border_width (GTK_CONTAINER (dialog), 5);
-	ctk_container_set_border_width (GTK_CONTAINER (hbox), 5);
-	ctk_box_set_spacing (GTK_BOX (content_area), 14); /* 14 + 2 * 5 = 24 */
+	ctk_container_set_border_width (CTK_CONTAINER (dialog), 5);
+	ctk_container_set_border_width (CTK_CONTAINER (hbox), 5);
+	ctk_box_set_spacing (CTK_BOX (content_area), 14); /* 14 + 2 * 5 = 24 */
 
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	ctk_widget_show (vbox);
 #else
 	ctk_widget_show_all (vbox);
@@ -453,11 +453,11 @@ _ctk_error_dialog_run (CtkWindow        *parent,
 	va_end (args);
 
 	d =  _ctk_message_dialog_new (parent,
-				      GTK_DIALOG_MODAL,
+				      CTK_DIALOG_MODAL,
 				      "dialog-error",
 				      main_message,
 				      message,
-				      GTK_STOCK_CLOSE, GTK_RESPONSE_CANCEL,
+				      CTK_STOCK_CLOSE, CTK_RESPONSE_CANCEL,
 				      NULL);
 	g_free (message);
 
@@ -532,7 +532,7 @@ get_themed_icon_pixbuf (GThemedIcon  *icon,
 
 	icon_info = ctk_icon_theme_choose_icon (icon_theme, (const char **)icon_names, size, 0);
 	if (icon_info == NULL)
-		icon_info = ctk_icon_theme_lookup_icon (icon_theme, "text-x-generic", size, GTK_ICON_LOOKUP_USE_BUILTIN);
+		icon_info = ctk_icon_theme_lookup_icon (icon_theme, "text-x-generic", size, CTK_ICON_LOOKUP_USE_BUILTIN);
 
 	pixbuf = ctk_icon_info_load_icon (icon_info, &error);
 	if (pixbuf == NULL) {
@@ -611,19 +611,19 @@ show_help_dialog (CtkWindow  *parent,
 		CtkWidget *dialog;
 
 		dialog = _ctk_message_dialog_new (parent,
-						  GTK_DIALOG_DESTROY_WITH_PARENT,
+						  CTK_DIALOG_DESTROY_WITH_PARENT,
 						  "dialog-error",
 						  _("Could not display help"),
 						  error->message,
-						  GTK_STOCK_OK, GTK_RESPONSE_OK,
+						  CTK_STOCK_OK, CTK_RESPONSE_OK,
 						  NULL);
-		ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_OK);
+		ctk_dialog_set_default_response (CTK_DIALOG (dialog), CTK_RESPONSE_OK);
 
 		g_signal_connect (G_OBJECT (dialog), "response",
 				  G_CALLBACK (ctk_widget_destroy),
 				  NULL);
 
-		ctk_window_set_resizable (GTK_WINDOW (dialog), FALSE);
+		ctk_window_set_resizable (CTK_WINDOW (dialog), FALSE);
 
 		ctk_widget_show (dialog);
 
@@ -677,9 +677,9 @@ grapa_file_chooser_get_current_folder_uri (CtkFileChooser *chooser)
 	GFile *file;
 	gchar *uri;
 
-	g_return_val_if_fail (GTK_IS_FILE_CHOOSER (chooser), NULL);
+	g_return_val_if_fail (CTK_IS_FILE_CHOOSER (chooser), NULL);
 
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	file = ctk_file_chooser_get_current_folder (chooser);
 #else
 	file = ctk_file_chooser_get_current_folder_file (chooser);
@@ -701,11 +701,11 @@ grapa_file_chooser_set_current_folder_uri (CtkFileChooser *chooser,
 	GFile *file;
 	gboolean result;
 
-	g_return_val_if_fail (GTK_IS_FILE_CHOOSER (chooser), FALSE);
+	g_return_val_if_fail (CTK_IS_FILE_CHOOSER (chooser), FALSE);
 	g_return_val_if_fail (uri != NULL, FALSE);
 
 	file = g_file_new_for_uri (uri);
-#if GTK_CHECK_VERSION (3,99,0)
+#if CTK_CHECK_VERSION (3,99,0)
 	result = ctk_file_chooser_set_current_folder (chooser, file, NULL);
 #else
 	result = ctk_file_chooser_set_current_folder_file (chooser, file, NULL);
@@ -722,7 +722,7 @@ grapa_file_chooser_get_uri (CtkFileChooser *chooser)
 	GFile *file;
 	gchar *result = NULL;
 
-	g_return_val_if_fail (GTK_IS_FILE_CHOOSER (chooser), NULL);
+	g_return_val_if_fail (CTK_IS_FILE_CHOOSER (chooser), NULL);
 
 	file = ctk_file_chooser_get_file (chooser);
 	if (file)

@@ -75,7 +75,7 @@ new_archive (DlgNewData *data,
     if (fr_window_archive_new (FR_WINDOW (archive_window), uri)) {
         ctk_widget_destroy (data->dialog);
         if (! fr_window_is_batch_mode (FR_WINDOW (archive_window)))
-            ctk_window_present (GTK_WINDOW (archive_window));
+            ctk_window_present (CTK_WINDOW (archive_window));
     }
     else if (new_window)
         ctk_widget_destroy (archive_window);
@@ -108,7 +108,7 @@ get_full_uri (DlgNewData *data)
     const char  *filename;
     int          idx;
 
-    uri = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+    uri = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (data->dialog));
 
     if ((uri == NULL) || (*uri == 0))
         return NULL;
@@ -152,14 +152,14 @@ get_archive_filename_from_selector (DlgNewData *data)
 
         g_free (uri);
 
-        dialog = _ctk_error_dialog_new (GTK_WINDOW (data->dialog),
-                        GTK_DIALOG_DESTROY_WITH_PARENT,
+        dialog = _ctk_error_dialog_new (CTK_WINDOW (data->dialog),
+                        CTK_DIALOG_DESTROY_WITH_PARENT,
                         NULL,
                         _("Could not create the archive"),
                         "%s",
                         _("You have to specify an archive name."));
-        ctk_dialog_run (GTK_DIALOG (dialog));
-        ctk_widget_destroy (GTK_WIDGET (dialog));
+        ctk_dialog_run (CTK_DIALOG (dialog));
+        ctk_widget_destroy (CTK_WIDGET (dialog));
 
         return NULL;
     }
@@ -191,14 +191,14 @@ get_archive_filename_from_selector (DlgNewData *data)
         g_object_unref (file);
         g_free (uri);
 
-        dialog = _ctk_error_dialog_new (GTK_WINDOW (data->dialog),
-                        GTK_DIALOG_DESTROY_WITH_PARENT,
+        dialog = _ctk_error_dialog_new (CTK_WINDOW (data->dialog),
+                        CTK_DIALOG_DESTROY_WITH_PARENT,
                         NULL,
                         _("Could not create the archive"),
                         "%s",
                         _("You don't have permission to create an archive in this folder"));
-        ctk_dialog_run (GTK_DIALOG (dialog));
-        ctk_widget_destroy (GTK_WIDGET (dialog));
+        ctk_dialog_run (CTK_DIALOG (dialog));
+        ctk_widget_destroy (CTK_WIDGET (dialog));
         return NULL;
     }
     g_object_unref (info);
@@ -227,14 +227,14 @@ get_archive_filename_from_selector (DlgNewData *data)
 
         if (! is_supported_extension (data->dialog, uri, data->supported_types)) {
             CtkWidget *dialog;
-            dialog = _ctk_error_dialog_new (GTK_WINDOW (data->dialog),
-                            GTK_DIALOG_MODAL,
+            dialog = _ctk_error_dialog_new (CTK_WINDOW (data->dialog),
+                            CTK_DIALOG_MODAL,
                             NULL,
                             _("Could not create the archive"),
                             "%s",
                             _("Archive type not supported."));
-            ctk_dialog_run (GTK_DIALOG (dialog));
-            ctk_widget_destroy (GTK_WIDGET (dialog));
+            ctk_dialog_run (CTK_DIALOG (dialog));
+            ctk_widget_destroy (CTK_WIDGET (dialog));
             g_free (uri);
 
             return NULL;
@@ -243,14 +243,14 @@ get_archive_filename_from_selector (DlgNewData *data)
         g_file_delete (file, NULL, &err);
         if (err != NULL) {
             CtkWidget *dialog;
-            dialog = _ctk_error_dialog_new (GTK_WINDOW (data->dialog),
-                            GTK_DIALOG_DESTROY_WITH_PARENT,
+            dialog = _ctk_error_dialog_new (CTK_WINDOW (data->dialog),
+                            CTK_DIALOG_DESTROY_WITH_PARENT,
                             NULL,
                             _("Could not delete the old archive."),
                             "%s",
                             err->message);
-            ctk_dialog_run (GTK_DIALOG (dialog));
-            ctk_widget_destroy (GTK_WIDGET (dialog));
+            ctk_dialog_run (CTK_DIALOG (dialog));
+            ctk_widget_destroy (CTK_WIDGET (dialog));
             g_error_free (err);
             g_free (uri);
             g_object_unref (file);
@@ -271,7 +271,7 @@ new_file_response_cb (CtkWidget  *w,
 {
     char *path;
 
-    if ((response == GTK_RESPONSE_CANCEL) || (response == GTK_RESPONSE_DELETE_EVENT)) {
+    if ((response == CTK_RESPONSE_CANCEL) || (response == CTK_RESPONSE_DELETE_EVENT)) {
         fr_archive_action_completed (data->window->archive,
                          FR_ACTION_CREATING_NEW_ARCHIVE,
                          FR_PROC_ERROR_STOPPED,
@@ -280,8 +280,8 @@ new_file_response_cb (CtkWidget  *w,
         return;
     }
 
-    if (response == GTK_RESPONSE_HELP) {
-        show_help_dialog (GTK_WINDOW (data->dialog), "grapa-create");
+    if (response == CTK_RESPONSE_HELP) {
+        show_help_dialog (CTK_WINDOW (data->dialog), "grapa-create");
         return;
     }
 
@@ -308,7 +308,7 @@ show_new_archive_dialog (FrWindow   *window,
               "response",
               G_CALLBACK (new_file_response_cb),
               data);
-    ctk_window_present (GTK_WINDOW (data->dialog));
+    ctk_window_present (CTK_WINDOW (data->dialog));
 }
 
 
@@ -348,13 +348,13 @@ open_file_response_cb (CtkWidget *w,
     FrWindow *window = NULL;
     char     *uri;
 
-    if ((response == GTK_RESPONSE_CANCEL) || (response == GTK_RESPONSE_DELETE_EVENT)) {
+    if ((response == CTK_RESPONSE_CANCEL) || (response == CTK_RESPONSE_DELETE_EVENT)) {
         ctk_widget_destroy (file_sel);
         return;
     }
 
     window = g_object_get_data (G_OBJECT (file_sel), "fr_window");
-    uri = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (file_sel));
+    uri = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (file_sel));
 
     if ((window == NULL) || (uri == NULL))
         return;
@@ -365,7 +365,7 @@ open_file_response_cb (CtkWidget *w,
               "archive_loaded",
               G_CALLBACK (window_archive_loaded_cb),
               file_sel);
-    fr_window_archive_open (window, uri, GTK_WINDOW (file_sel));
+    fr_window_archive_open (window, uri, CTK_WINDOW (file_sel));
 
     g_free (uri);
 }
@@ -381,28 +381,28 @@ activate_action_open (CtkAction *action,
     int            i;
 
     file_sel = ctk_file_chooser_dialog_new (_("Open"),
-                        GTK_WINDOW (window),
-                        GTK_FILE_CHOOSER_ACTION_OPEN,
-                        GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-                        GTK_STOCK_OPEN, GTK_RESPONSE_OK,
+                        CTK_WINDOW (window),
+                        CTK_FILE_CHOOSER_ACTION_OPEN,
+                        CTK_STOCK_CANCEL, CTK_RESPONSE_CANCEL,
+                        CTK_STOCK_OPEN, CTK_RESPONSE_OK,
                         NULL);
-    ctk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
-#if !GTK_CHECK_VERSION (3,99,0)
-    ctk_file_chooser_set_local_only (GTK_FILE_CHOOSER (file_sel), FALSE);
+    ctk_dialog_set_default_response (CTK_DIALOG (file_sel), CTK_RESPONSE_OK);
+#if !CTK_CHECK_VERSION (3,99,0)
+    ctk_file_chooser_set_local_only (CTK_FILE_CHOOSER (file_sel), FALSE);
 #endif
-    grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (file_sel), fr_window_get_open_default_dir (window));
+    grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (file_sel), fr_window_get_open_default_dir (window));
 
     filter = ctk_file_filter_new ();
     ctk_file_filter_set_name (filter, _("All archives"));
     for (i = 0; open_type[i] != -1; i++)
         ctk_file_filter_add_mime_type (filter, mime_type_desc[open_type[i]].mime_type);
-    ctk_file_chooser_add_filter (GTK_FILE_CHOOSER (file_sel), filter);
-    ctk_file_chooser_set_filter (GTK_FILE_CHOOSER (file_sel), filter);
+    ctk_file_chooser_add_filter (CTK_FILE_CHOOSER (file_sel), filter);
+    ctk_file_chooser_set_filter (CTK_FILE_CHOOSER (file_sel), filter);
 
     filter = ctk_file_filter_new ();
     ctk_file_filter_set_name (filter, _("All files"));
     ctk_file_filter_add_pattern (filter, "*");
-    ctk_file_chooser_add_filter (GTK_FILE_CHOOSER (file_sel), filter);
+    ctk_file_chooser_add_filter (CTK_FILE_CHOOSER (file_sel), filter);
 
     /**/
 
@@ -413,7 +413,7 @@ activate_action_open (CtkAction *action,
               G_CALLBACK (open_file_response_cb),
               file_sel);
 
-    ctk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
+    ctk_window_set_modal (CTK_WINDOW (file_sel), TRUE);
     ctk_widget_show (file_sel);
 }
 
@@ -432,13 +432,13 @@ save_file_response_cb (CtkWidget  *w,
     int         volume_size;
     GSettings  *settings;
 
-    if ((response == GTK_RESPONSE_CANCEL) || (response == GTK_RESPONSE_DELETE_EVENT)) {
+    if ((response == CTK_RESPONSE_CANCEL) || (response == CTK_RESPONSE_DELETE_EVENT)) {
         ctk_widget_destroy (data->dialog);
         return;
     }
 
-    if (response == GTK_RESPONSE_HELP) {
-        show_help_dialog (GTK_WINDOW (data->dialog), "grapa-create#grapa-convert-archive");
+    if (response == CTK_RESPONSE_HELP) {
+        show_help_dialog (CTK_WINDOW (data->dialog), "grapa-create#grapa-convert-archive");
         return;
     }
 
@@ -497,7 +497,7 @@ activate_action_save_as (CtkAction *action,
               "response",
               G_CALLBACK (save_file_response_cb),
               data);
-    ctk_window_present (GTK_WINDOW (data->dialog));
+    ctk_window_present (CTK_WINDOW (data->dialog));
 
     g_free (archive_name);
 }
@@ -731,7 +731,7 @@ activate_action_view_toolbar (CtkAction *action,
     GSettings *settings;
 
     settings = g_settings_new (GRAPA_SCHEMA_UI);
-    g_settings_set_boolean (settings, PREF_UI_VIEW_TOOLBAR, ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)));
+    g_settings_set_boolean (settings, PREF_UI_VIEW_TOOLBAR, ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action)));
     g_object_unref (settings);
 }
 
@@ -743,7 +743,7 @@ activate_action_view_statusbar (CtkAction *action,
     GSettings *settings;
 
     settings = g_settings_new (GRAPA_SCHEMA_UI);
-    g_settings_set_boolean (settings, PREF_UI_VIEW_STATUSBAR, ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)));
+    g_settings_set_boolean (settings, PREF_UI_VIEW_STATUSBAR, ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action)));
     g_object_unref (settings);
 }
 
@@ -755,7 +755,7 @@ activate_action_view_folders (CtkAction *action,
     GSettings *settings;
 
     settings = g_settings_new (GRAPA_SCHEMA_UI);
-    g_settings_set_boolean (settings, PREF_UI_VIEW_FOLDERS, ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)));
+    g_settings_set_boolean (settings, PREF_UI_VIEW_FOLDERS, ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action)));
     g_object_unref (settings);
 }
 
@@ -785,7 +785,7 @@ activate_action_sort_reverse_order (CtkAction *action,
 {
     FrWindow *window = data;
 
-    fr_window_set_sort_type (window, ctk_toggle_action_get_active (GTK_TOGGLE_ACTION (action)) ? GTK_SORT_DESCENDING : GTK_SORT_ASCENDING);
+    fr_window_set_sort_type (window, ctk_toggle_action_get_active (CTK_TOGGLE_ACTION (action)) ? CTK_SORT_DESCENDING : CTK_SORT_ASCENDING);
 }
 
 
@@ -840,7 +840,7 @@ activate_action_manual (CtkAction *action,
 {
     FrWindow *window = data;
 
-    show_help_dialog (GTK_WINDOW (window) , NULL);
+    show_help_dialog (CTK_WINDOW (window) , NULL);
 }
 
 
@@ -897,7 +897,7 @@ activate_action_about (CtkAction *action,
 
     license_text =  g_strjoin ("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
-    ctk_show_about_dialog (GTK_WINDOW (window),
+    ctk_show_about_dialog (CTK_WINDOW (window),
                    "version", VERSION,
                    "copyright", _("Copyright \xc2\xa9 2001–2010 Free Software Foundation, Inc.\n"
                                   "Copyright \xc2\xa9 2012–2020 The MATE developers\n"

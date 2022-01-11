@@ -62,8 +62,8 @@ ask_password__response_cb (CtkWidget  *dialog,
 	char *password;
 
 	switch (response_id) {
-	case GTK_RESPONSE_OK:
-		password = _ctk_entry_get_locale_text (GTK_ENTRY (data->pw_password_entry));
+	case CTK_RESPONSE_OK:
+		password = _ctk_entry_get_locale_text (CTK_ENTRY (data->pw_password_entry));
 		if (data->pwd_type == FR_PASSWORD_TYPE_MAIN)
 			fr_window_set_password (data->window, password);
 		else if (data->pwd_type == FR_PASSWORD_TYPE_PASTE_FROM)
@@ -77,7 +77,7 @@ ask_password__response_cb (CtkWidget  *dialog,
 
 	default:
 		if (fr_window_is_batch_mode (data->window))
-			ctk_widget_destroy (GTK_WIDGET (data->window));
+			ctk_widget_destroy (CTK_WIDGET (data->window));
 		else
 			fr_window_reset_current_batch_action (data->window);
 		break;
@@ -122,11 +122,11 @@ dlg_ask_password__common (FrWindow       *window,
 		name = g_uri_display_basename (fr_window_get_paste_archive_uri (window));
         g_assert (name != NULL);
 	text = g_strdup_printf (_("Enter the password for the archive '%s'."), name);
-	ctk_label_set_label (GTK_LABEL (label), text);
+	ctk_label_set_label (CTK_LABEL (label), text);
 	g_free (text);
 
 	if (fr_window_get_password (window) != NULL)
-		_ctk_entry_set_locale_text (GTK_ENTRY (data->pw_password_entry),
+		_ctk_entry_set_locale_text (CTK_ENTRY (data->pw_password_entry),
 					    fr_window_get_password (window));
 
 	/* Set the signals handlers. */
@@ -144,13 +144,13 @@ dlg_ask_password__common (FrWindow       *window,
 	/* Run dialog. */
 
 	ctk_widget_grab_focus (data->pw_password_entry);
-	if (ctk_widget_get_realized (GTK_WIDGET (window))) {
-		ctk_window_set_transient_for (GTK_WINDOW (data->dialog),
-					      GTK_WINDOW (window));
-		ctk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
+	if (ctk_widget_get_realized (CTK_WIDGET (window))) {
+		ctk_window_set_transient_for (CTK_WINDOW (data->dialog),
+					      CTK_WINDOW (window));
+		ctk_window_set_modal (CTK_WINDOW (data->dialog), TRUE);
 	}
 	else
-		ctk_window_set_title (GTK_WINDOW (data->dialog), name);
+		ctk_window_set_title (CTK_WINDOW (data->dialog), name);
 	g_free (name);
 
 	ctk_widget_show (data->dialog);
