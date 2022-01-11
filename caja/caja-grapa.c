@@ -271,7 +271,7 @@ unsupported_scheme (CajaFileInfo *file)
 
 static GList *
 caja_fr_get_file_items (CajaMenuProvider *provider,
-			    CtkWidget            *window,
+			    GtkWidget            *window,
 			    GList                *files)
 {
 	GList    *items = NULL;
