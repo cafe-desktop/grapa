@@ -23,7 +23,7 @@
 #ifndef DLG_UPDATE_H
 #define DLG_UPDATE_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "fr-window.h"
 #include "open-file.h"
 

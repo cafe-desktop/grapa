@@ -1405,11 +1405,11 @@ msgstr "Pelan têxe arşîvê"
 msgid "Extract archive"
 msgstr "Arşîvê veke"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Derana _Rêzika Fermanan"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Alîkarî nehate nîşandan"
 

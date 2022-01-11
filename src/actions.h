@@ -23,7 +23,7 @@
 #ifndef ACTIONS_H
 #define ACTIONS_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "fr-window.h"
 
 void show_new_archive_dialog (FrWindow *window, const char *archive_name);

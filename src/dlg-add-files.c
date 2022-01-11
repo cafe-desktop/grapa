@@ -24,10 +24,10 @@
 #include <string.h>
 #include <unistd.h>
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "file-utils.h"
 #include "fr-window.h"
-#include "gtk-utils.h"
+#include "ctk-utils.h"
 #include "preferences.h"
 #include "dlg-add-files.h"
 
@@ -83,7 +83,7 @@ file_sel_response_cb (GtkWidget      *widget,
 
 
 	if ((response == GTK_RESPONSE_CANCEL) || (response == GTK_RESPONSE_DELETE_EVENT)) {
-		gtk_widget_destroy (data->dialog);
+		ctk_widget_destroy (data->dialog);
 		g_free (current_folder);
 		return TRUE;
 	}
@@ -102,31 +102,31 @@ file_sel_response_cb (GtkWidget      *widget,
 
 		utf8_path = g_filename_display_name (current_folder);
 
-		d = _gtk_error_dialog_new (GTK_WINDOW (window),
+		d = _ctk_error_dialog_new (GTK_WINDOW (window),
 					   GTK_DIALOG_MODAL,
 					   NULL,
 					   _("Could not add the files to the archive"),
 					   _("You don't have the right permissions to read files from folder \"%s\""),
 					   utf8_path);
-		gtk_dialog_run (GTK_DIALOG (d));
-		gtk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_run (GTK_DIALOG (d));
+		ctk_widget_destroy (GTK_WIDGET (d));
 
 		g_free (utf8_path);
 		g_free (current_folder);
 		return FALSE;
 	}
 
-	update = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
+	update = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
 
 	/**/
 
 #if GTK_CHECK_VERSION (3,99,0)
-	files = gtk_file_chooser_get_files (file_sel);
+	files = ctk_file_chooser_get_files (file_sel);
 	n = g_list_model_get_n_items (files);
 	for (i = 0; i < n; i++)
 		item_list = g_list_prepend (item_list, g_file_new_for_uri (g_list_model_get_item (files, i)));
 #else
-	selections = gtk_file_chooser_get_uris (file_sel);
+	selections = ctk_file_chooser_get_uris (file_sel);
 	for (iter = selections; iter != NULL; iter = iter->next)
 		item_list = g_list_prepend (item_list, g_file_new_for_uri (iter->data));
 #endif
@@ -142,7 +142,7 @@ file_sel_response_cb (GtkWidget      *widget,
 #endif
 	g_free (current_folder);
 
-	gtk_widget_destroy (data->dialog);
+	ctk_widget_destroy (data->dialog);
 
 	return TRUE;
 }
@@ -174,45 +174,45 @@ add_files_cb (GtkWidget *widget,
 	data = g_new0 (DialogData, 1);
 	data->window = callback_data;
 	data->settings = g_settings_new (GRAPA_SCHEMA_ADD);
-	data->dialog = file_sel = gtk_dialog_new ();
-	gtk_window_set_title (GTK_WINDOW (file_sel), _("Add Files"));
-	gtk_window_set_transient_for (GTK_WINDOW (file_sel), GTK_WINDOW (data->window));
-	gtk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
+	data->dialog = file_sel = ctk_dialog_new ();
+	ctk_window_set_title (GTK_WINDOW (file_sel), _("Add Files"));
+	ctk_window_set_transient_for (GTK_WINDOW (file_sel), GTK_WINDOW (data->window));
+	ctk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
 	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Help"), "help-browser", GTK_RESPONSE_HELP);
 	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Cancel"), "process-stop", GTK_RESPONSE_CANCEL);
 	grapa_dialog_add_button (GTK_DIALOG (file_sel), _("_Add"), "grapa_add-files-to-archive", GTK_RESPONSE_OK);
 
-	gtk_window_set_default_size (GTK_WINDOW (file_sel), 530, 450);
+	ctk_window_set_default_size (GTK_WINDOW (file_sel), 530, 450);
 
-	data->choice = filechooser = gtk_file_chooser_widget_new (GTK_FILE_CHOOSER_ACTION_OPEN);
-	gtk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (filechooser), TRUE);
+	data->choice = filechooser = ctk_file_chooser_widget_new (GTK_FILE_CHOOSER_ACTION_OPEN);
+	ctk_file_chooser_set_select_multiple (GTK_FILE_CHOOSER (filechooser), TRUE);
 #if !GTK_CHECK_VERSION (3,99,0)
-	gtk_file_chooser_set_local_only (GTK_FILE_CHOOSER (filechooser), FALSE);
+	ctk_file_chooser_set_local_only (GTK_FILE_CHOOSER (filechooser), FALSE);
 #endif
-	gtk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
+	ctk_dialog_set_default_response (GTK_DIALOG (file_sel), GTK_RESPONSE_OK);
 
 	/* Translators: add a file to the archive only if the disk version is
 	 * newer than the archive version. */
-	data->add_if_newer_checkbutton = gtk_check_button_new_with_mnemonic (_("Add only if _newer"));
+	data->add_if_newer_checkbutton = ctk_check_button_new_with_mnemonic (_("Add only if _newer"));
 
-	main_box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
-	gtk_widget_set_margin_top (GTK_WIDGET(main_box) , 2);
-	gtk_widget_set_halign (data->add_if_newer_checkbutton, GTK_ALIGN_START);
+	main_box = ctk_box_new (GTK_ORIENTATION_VERTICAL, 6);
+	ctk_widget_set_margin_top (GTK_WIDGET(main_box) , 2);
+	ctk_widget_set_halign (data->add_if_newer_checkbutton, GTK_ALIGN_START);
 #if GTK_CHECK_VERSION (3,99,0)
-	gtk_window_set_child (GTK_WINDOW (file_sel), main_box);
-	gtk_box_append (GTK_BOX (main_box), filechooser);
-	gtk_box_append (GTK_BOX (main_box), data->add_if_newer_checkbutton);
+	ctk_window_set_child (GTK_WINDOW (file_sel), main_box);
+	ctk_box_append (GTK_BOX (main_box), filechooser);
+	ctk_box_append (GTK_BOX (main_box), data->add_if_newer_checkbutton);
 #else
-	content_area = gtk_dialog_get_content_area (GTK_DIALOG (file_sel));
-	gtk_container_set_border_width (GTK_CONTAINER (main_box), 0);
-	gtk_box_pack_start (GTK_BOX (main_box), filechooser,
+	content_area = ctk_dialog_get_content_area (GTK_DIALOG (file_sel));
+	ctk_container_set_border_width (GTK_CONTAINER (main_box), 0);
+	ctk_box_pack_start (GTK_BOX (main_box), filechooser,
 			    TRUE, TRUE, 0);
-	gtk_box_pack_start (GTK_BOX (main_box), data->add_if_newer_checkbutton,
+	ctk_box_pack_start (GTK_BOX (main_box), data->add_if_newer_checkbutton,
 			    FALSE, FALSE, 6);
-	gtk_box_pack_start (GTK_BOX (content_area),
+	ctk_box_pack_start (GTK_BOX (content_area),
 			    main_box,
 			    TRUE, TRUE, 0);
-	gtk_widget_show_all (main_box);
+	ctk_widget_show_all (main_box);
 #endif
 
 	/* set data */
@@ -240,7 +240,7 @@ add_files_cb (GtkWidget *widget,
 			  G_CALLBACK (add_files_window_unrealize_cb),
 			  NULL);
 
-	gtk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
+	ctk_window_set_modal (GTK_WINDOW (file_sel), TRUE);
 	pref_util_restore_window_geometry (GTK_WINDOW (file_sel), "addfiles");
-	gtk_widget_show (file_sel);
+	ctk_widget_show (file_sel);
 }

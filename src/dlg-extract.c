@@ -23,15 +23,15 @@
 #include <config.h>
 #include <string.h>
 #include <unistd.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "file-utils.h"
 #include "fr-init.h"
-#include "gtk-utils.h"
+#include "ctk-utils.h"
 #include "fr-window.h"
 #include "typedefs.h"
 #include "dlg-extract.h"
 
-#define GET_WIDGET(x) (_gtk_builder_get_widget (data->builder, (x)))
+#define GET_WIDGET(x) (_ctk_builder_get_widget (data->builder, (x)))
 
 typedef struct {
 	FrWindow     *window;
@@ -99,7 +99,7 @@ extract_cb (GtkWidget   *w,
 			msg = g_strdup_printf (_("Destination folder \"%s\" does not exist.\n\nDo you want to create it?"), folder_name);
 			g_free (folder_name);
 
-			d = _gtk_message_dialog_new (GTK_WINDOW (data->dialog),
+			d = _ctk_message_dialog_new (GTK_WINDOW (data->dialog),
 						     GTK_DIALOG_MODAL,
 						     "dialog-question",
 						     msg,
@@ -108,9 +108,9 @@ extract_cb (GtkWidget   *w,
 						     _("Create _Folder"), GTK_RESPONSE_YES,
 						     NULL);
 
-			gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_YES);
-			r = gtk_dialog_run (GTK_DIALOG (d));
-			gtk_widget_destroy (GTK_WIDGET (d));
+			ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_YES);
+			r = ctk_dialog_run (GTK_DIALOG (d));
+			ctk_widget_destroy (GTK_WIDGET (d));
 
 			g_free (msg);
 
@@ -121,14 +121,14 @@ extract_cb (GtkWidget   *w,
 		if (! do_not_extract && ! ensure_dir_exists (extract_to_dir, 0755, &error)) {
 			GtkWidget  *d;
 
-			d = _gtk_error_dialog_new (GTK_WINDOW (window),
+			d = _ctk_error_dialog_new (GTK_WINDOW (window),
 						   GTK_DIALOG_DESTROY_WITH_PARENT,
 						   NULL,
 						   _("Extraction not performed"),
 						   _("Could not create the destination folder: %s."),
 						   error->message);
-			gtk_dialog_run (GTK_DIALOG (d));
-			gtk_widget_destroy (GTK_WIDGET (d));
+			ctk_dialog_run (GTK_DIALOG (d));
+			ctk_widget_destroy (GTK_WIDGET (d));
 
 			g_error_free (error);
 
@@ -139,19 +139,19 @@ extract_cb (GtkWidget   *w,
 	if (do_not_extract) {
 		GtkWidget *d;
 
-		d = _gtk_message_dialog_new (GTK_WINDOW (window),
+		d = _ctk_message_dialog_new (GTK_WINDOW (window),
 					     GTK_DIALOG_DESTROY_WITH_PARENT,
 					     "dialog-warning",
 					     _("Extraction not performed"),
 					     NULL,
 					     GTK_STOCK_OK, GTK_RESPONSE_OK,
 					     NULL);
-		gtk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
-		gtk_dialog_run (GTK_DIALOG (d));
-		gtk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
+		ctk_dialog_run (GTK_DIALOG (d));
+		ctk_widget_destroy (GTK_WIDGET (d));
 
 		if (fr_window_is_batch_mode (data->window))
-			gtk_widget_destroy (data->dialog);
+			ctk_widget_destroy (data->dialog);
 
 		return FALSE;
 	}
@@ -166,14 +166,14 @@ extract_cb (GtkWidget   *w,
 
 		utf8_path = g_filename_display_name (extract_to_dir);
 
-		d = _gtk_error_dialog_new (GTK_WINDOW (window),
+		d = _ctk_error_dialog_new (GTK_WINDOW (window),
 					   GTK_DIALOG_DESTROY_WITH_PARENT,
 					   NULL,
 					   _("Extraction not performed"),
 					   _("You don't have the right permissions to extract archives in the folder \"%s\""),
 					   utf8_path);
-		gtk_dialog_run (GTK_DIALOG (d));
-		gtk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_run (GTK_DIALOG (d));
+		ctk_widget_destroy (GTK_WIDGET (d));
 
 		g_free (utf8_path);
 		g_free (extract_to_dir);
@@ -183,17 +183,17 @@ extract_cb (GtkWidget   *w,
 
 	fr_window_set_extract_default_dir (window, extract_to_dir, TRUE);
 
-	overwrite = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("overwrite_checkbutton")));
-	skip_newer = ! gtk_toggle_button_get_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton"))) && gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton")));
-	junk_paths = ! gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("recreate_dir_checkbutton")));
+	overwrite = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("overwrite_checkbutton")));
+	skip_newer = ! ctk_toggle_button_get_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton"))) && ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton")));
+	junk_paths = ! ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("recreate_dir_checkbutton")));
 
 	g_settings_set_boolean (data->settings, PREF_EXTRACT_OVERWRITE, overwrite);
-	if (! gtk_toggle_button_get_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton"))))
+	if (! ctk_toggle_button_get_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton"))))
 		g_settings_set_boolean (data->settings, PREF_EXTRACT_SKIP_NEWER, skip_newer);
 	g_settings_set_boolean (data->settings, PREF_EXTRACT_RECREATE_FOLDERS, ! junk_paths);
 
-	selected_files = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("selected_files_radiobutton")));
-	pattern_files = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("file_pattern_radiobutton")));
+	selected_files = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("selected_files_radiobutton")));
+	pattern_files = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("file_pattern_radiobutton")));
 
 	/* create the file list. */
 
@@ -206,10 +206,10 @@ extract_cb (GtkWidget   *w,
 	else if (pattern_files) {
 		const char *pattern;
 
-		pattern = gtk_entry_get_text (GTK_ENTRY (GET_WIDGET ("file_pattern_entry")));
+		pattern = ctk_entry_get_text (GTK_ENTRY (GET_WIDGET ("file_pattern_entry")));
 		file_list = fr_window_get_file_list_pattern (window, pattern);
 		if (file_list == NULL) {
-			gtk_widget_destroy (data->dialog);
+			ctk_widget_destroy (data->dialog);
 			g_free (extract_to_dir);
 			return FALSE;
 		}
@@ -224,7 +224,7 @@ extract_cb (GtkWidget   *w,
 
 	/* close the dialog. */
 
-	gtk_widget_destroy (data->dialog);
+	ctk_widget_destroy (data->dialog);
 
 	/* extract ! */
 
@@ -251,7 +251,7 @@ file_sel_response_cb (GtkWidget    *widget,
 		      DialogData   *data)
 {
 	if ((response == GTK_RESPONSE_CANCEL) || (response == GTK_RESPONSE_DELETE_EVENT)) {
-		gtk_widget_destroy (data->dialog);
+		ctk_widget_destroy (data->dialog);
 		return TRUE;
 	}
 
@@ -271,8 +271,8 @@ static void
 files_entry_changed_cb (GtkWidget  *widget,
 			DialogData *data)
 {
-	if (! gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("file_pattern_radiobutton"))))
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("file_pattern_radiobutton")), TRUE);
+	if (! ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("file_pattern_radiobutton"))))
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("file_pattern_radiobutton")), TRUE);
 }
 
 
@@ -280,9 +280,9 @@ static void
 overwrite_toggled_cb (GtkToggleButton *button,
 		      DialogData      *data)
 {
-	gboolean active = gtk_toggle_button_get_active (button);
-	gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton")), !active);
-	gtk_widget_set_sensitive (GET_WIDGET ("not_newer_checkbutton"), active);
+	gboolean active = ctk_toggle_button_get_active (button);
+	ctk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton")), !active);
+	ctk_widget_set_sensitive (GET_WIDGET ("not_newer_checkbutton"), active);
 }
 
 
@@ -294,7 +294,7 @@ dlg_extract__common (FrWindow *window,
 	DialogData *data;
 
 	data = g_new0 (DialogData, 1);
-	if ((data->builder = _gtk_builder_new_from_resource ("dlg-extract.ui")) == NULL) {
+	if ((data->builder = _ctk_builder_new_from_resource ("dlg-extract.ui")) == NULL) {
 		g_free (data);
 		return;
 	}
@@ -310,36 +310,36 @@ dlg_extract__common (FrWindow *window,
 	grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (data->dialog), fr_window_get_extract_default_dir (window));
 
 	if (data->selected_files != NULL)
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("selected_files_radiobutton")), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("selected_files_radiobutton")), TRUE);
 	else {
-		gtk_widget_set_sensitive (GET_WIDGET ("selected_files_radiobutton"), FALSE);
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("all_files_radiobutton")), TRUE);
+		ctk_widget_set_sensitive (GET_WIDGET ("selected_files_radiobutton"), FALSE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("all_files_radiobutton")), TRUE);
 	}
 
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("overwrite_checkbutton")), g_settings_get_boolean (data->settings, PREF_EXTRACT_OVERWRITE));
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton")), g_settings_get_boolean (data->settings, PREF_EXTRACT_SKIP_NEWER));
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("overwrite_checkbutton")), g_settings_get_boolean (data->settings, PREF_EXTRACT_OVERWRITE));
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton")), g_settings_get_boolean (data->settings, PREF_EXTRACT_SKIP_NEWER));
 
-	if (!gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("overwrite_checkbutton")))) {
-		gtk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton")), TRUE);
-		gtk_widget_set_sensitive (GET_WIDGET ("not_newer_checkbutton"), FALSE);
+	if (!ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("overwrite_checkbutton")))) {
+		ctk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("not_newer_checkbutton")), TRUE);
+		ctk_widget_set_sensitive (GET_WIDGET ("not_newer_checkbutton"), FALSE);
 	}
 
-	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("recreate_dir_checkbutton")), g_settings_get_boolean (data->settings, PREF_EXTRACT_RECREATE_FOLDERS));
+	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("recreate_dir_checkbutton")), g_settings_get_boolean (data->settings, PREF_EXTRACT_RECREATE_FOLDERS));
 
 	/* Set the signals handlers. */
 
-	gtk_builder_add_callback_symbols (data->builder,
+	ctk_builder_add_callback_symbols (data->builder,
 	                                  "on_dialog_extract_destroy", G_CALLBACK (destroy_cb),
 	                                  "on_dialog_extract_response", G_CALLBACK (file_sel_response_cb),
 	                                  "on_overwrite_checkbutton_toggled", G_CALLBACK (overwrite_toggled_cb),
 	                                  "on_file_pattern_entry_changed", G_CALLBACK (files_entry_changed_cb),
 	                                  NULL);
-	gtk_builder_connect_signals (data->builder, data);
+	ctk_builder_connect_signals (data->builder, data);
 
 	/* Run dialog. */
 
-	gtk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
-	gtk_widget_show (data->dialog);
+	ctk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
+	ctk_widget_show (data->dialog);
 }
 
 

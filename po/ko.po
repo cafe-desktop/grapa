@@ -1419,11 +1419,11 @@ msgstr "압축 파일에 파일을 추가합니다"
 msgid "Extract archive"
 msgstr "압축 파일을 풉니다"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "명령문 출력(_L)"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "도움말을 보여줄 수 없습니다"
 

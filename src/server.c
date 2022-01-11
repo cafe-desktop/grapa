@@ -300,7 +300,7 @@ handle_method_call (GDBusConnection       *connection,
 
 		g_free (archive);
 
-		gtk_main ();
+		ctk_main ();
 	}
 	else if (g_strcmp0 (method_name, "Compress") == 0) {
 		char      **files;
@@ -333,7 +333,7 @@ handle_method_call (GDBusConnection       *connection,
 
 		g_free (destination);
 
-		gtk_main ();
+		ctk_main ();
 	}
 	else if (g_strcmp0 (method_name, "Extract") == 0) {
 		char      *archive;
@@ -359,7 +359,7 @@ handle_method_call (GDBusConnection       *connection,
 		g_free (destination);
 		g_free (archive);
 
-		gtk_main ();
+		ctk_main ();
 	}
 	else if (g_strcmp0 (method_name, "ExtractHere") == 0) {
 		char      *archive;
@@ -381,7 +381,7 @@ handle_method_call (GDBusConnection       *connection,
 
 		g_free (archive);
 
-		gtk_main ();
+		ctk_main ();
 	}
 }
 
@@ -426,7 +426,7 @@ on_name_lost (GDBusConnection *connection,
 	      const char      *name,
 	      gpointer         user_data)
 {
-	gtk_main_quit ();
+	ctk_main_quit ();
 }
 
 
@@ -443,7 +443,7 @@ main (int argc, char *argv[])
 
 	context = g_option_context_new (N_("- Create and modify an archive"));
 	g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
-	g_option_context_add_group (context, gtk_get_option_group (TRUE));
+	g_option_context_add_group (context, ctk_get_option_group (TRUE));
 
 	if (! g_option_context_parse (context, &argc, &argv, &error)) {
 		g_critical ("Failed to parse arguments: %s", error->message);
@@ -455,9 +455,9 @@ main (int argc, char *argv[])
 	g_option_context_free (context);
 
 	g_set_application_name (_("Grapa"));
-	gtk_window_set_default_icon_name ("grapa");
+	ctk_window_set_default_icon_name ("grapa");
 
-	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
 					   PKG_DATA_DIR G_DIR_SEPARATOR_S "icons");
 
 	introspection_data = g_dbus_node_info_new_for_xml (introspection_xml, NULL);
@@ -472,7 +472,7 @@ main (int argc, char *argv[])
 				   NULL,
 				   NULL);
 
-	gtk_main ();
+	ctk_main ();
 
 	g_bus_unown_name (owner_id);
 	g_dbus_node_info_unref (introspection_data);

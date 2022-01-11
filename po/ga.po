@@ -1413,11 +1413,11 @@ msgstr "Cuir comhaid le cartlann"
 msgid "Extract archive"
 msgstr "Asbhain cartlann"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr ""
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Níorbh fhéidir cabhair a thaispeáint"
 

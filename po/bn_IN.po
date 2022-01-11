@@ -1419,11 +1419,11 @@ msgstr "আর্কাইভে ফাইল সংযোজন করুন"
 msgid "Extract archive"
 msgstr "আর্কাইভ এক্সট্র্যাক্ট করুন"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "কমান্ড লাইন আউটপুট (_L)"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "সহায়িকা প্রদর্শনে ব্যর্থ"
 

@@ -1497,11 +1497,11 @@ msgstr "Добавить файлы в архив"
 msgid "Extract archive"
 msgstr "Распаковать архив"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Показать вывод ко_мандной строки"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Не удалось показать справку"
 

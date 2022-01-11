@@ -23,7 +23,7 @@
 #ifndef DLG_ADD_FILES_H
 #define DLG_ADD_FILES_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 void  add_files_cb (GtkWidget *widget, void *data);
 

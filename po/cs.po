@@ -1484,11 +1484,11 @@ msgstr "Přidat soubory do archivu"
 msgid "Extract archive"
 msgstr "Rozbalit archiv"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Výstup příkazového řá_dku"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Nelze zobrazit nápovědu"
 

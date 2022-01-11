@@ -98,8 +98,8 @@ src/gio-utils.c
 src/gio-utils.h
 src/glib-utils.c
 src/glib-utils.h
-src/gtk-utils.c
-src/gtk-utils.h
+src/ctk-utils.c
+src/ctk-utils.h
 src/java-utils.c
 src/java-utils.h
 src/main.c

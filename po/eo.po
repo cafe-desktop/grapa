@@ -1429,11 +1429,11 @@ msgstr "Aldoni dosierojn al arkivo"
 msgid "Extract archive"
 msgstr "Elpaki arkivon"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Komandlinia _eligo"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Ne povis montri helpon"
 

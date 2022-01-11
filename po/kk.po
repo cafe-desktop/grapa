@@ -1413,11 +1413,11 @@ msgstr "Архивке файлдарды қосу"
 msgid "Extract archive"
 msgstr "Архивті тарқату"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Командалық жо_лдың шығысы"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Көмекті көрсету мүмкін емес"
 

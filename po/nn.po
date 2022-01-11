@@ -1416,11 +1416,11 @@ msgstr "Legg til filer i eit arkiv"
 msgid "Extract archive"
 msgstr "Pakk ut arkiv"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Kommando_linjeutskrift"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Klarte ikkje visa hjelp"
 

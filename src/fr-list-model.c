@@ -48,14 +48,14 @@ fr_list_model_multi_row_draggable (EggTreeMultiDragSource *drag_source,
 		GtkTreeIter          iter;
 		FileData            *fdata;
 
-		path = gtk_tree_row_reference_get_path (reference);
+		path = ctk_tree_row_reference_get_path (reference);
 		if (path == NULL)
 			continue;
 
-		if (! gtk_tree_model_get_iter (model, &iter, path))
+		if (! ctk_tree_model_get_iter (model, &iter, path))
 			continue;
 
-		gtk_tree_model_get (model, &iter,
+		ctk_tree_model_get (model, &iter,
 				    COLUMN_FILE_DATA, &fdata,
 				    -1);
 
@@ -182,7 +182,7 @@ fr_list_model_new (int n_columns, ...)
 		types[i] = va_arg (args, GType);
 	va_end (args);
 
-	gtk_list_store_set_column_types (retval, n_columns, types);
+	ctk_list_store_set_column_types (retval, n_columns, types);
 	g_free (types);
 
 	return retval;

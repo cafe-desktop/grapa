@@ -1426,11 +1426,11 @@ msgstr "ファイルを書庫に追加します"
 msgid "Extract archive"
 msgstr "書庫からファイルを展開します"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "コマンドラインの出力(_L)"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "ヘルプを表示できませんでした"
 

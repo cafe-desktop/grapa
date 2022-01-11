@@ -1471,11 +1471,11 @@ msgstr "Ajoute des fichiers à l'archive"
 msgid "Extract archive"
 msgstr "Extraire l'archive"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Résultat de la _ligne de commande"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Impossible d'afficher l'aide"
 

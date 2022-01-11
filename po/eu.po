@@ -1432,11 +1432,11 @@ msgstr "Gehitu fitxategiak artxiboan"
 msgid "Extract archive"
 msgstr "Erauzi artxiboa"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Komando _lerro irteera"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Ezin izan da laguntza erakutsi"
 

@@ -1473,11 +1473,11 @@ msgstr "Pridať súbory do archívu"
 msgid "Extract archive"
 msgstr "Rozbaliť archív"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Výstup _príkazového riadka"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Nepodarilo sa zobraziť pomocníka"
 

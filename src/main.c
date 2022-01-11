@@ -213,12 +213,12 @@ activate_cb (GApplication *application)
 {
 	GList *link;
 
-	for (link = gtk_application_get_windows (GTK_APPLICATION (application));
+	for (link = ctk_application_get_windows (GTK_APPLICATION (application));
 	     link != NULL;
 	     link = link->next)
 	{
 		if (! fr_window_is_batch_mode (FR_WINDOW (link->data)))
-			gtk_widget_show (GTK_WIDGET (link->data));
+			ctk_widget_show (GTK_WIDGET (link->data));
 	}
 }
 
@@ -241,7 +241,7 @@ main (int argc, char **argv)
 	g_option_context_set_translation_domain (context, GETTEXT_PACKAGE);
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 
-	g_option_context_add_group (context, gtk_get_option_group (TRUE));
+	g_option_context_add_group (context, ctk_get_option_group (TRUE));
 
 	if (! g_option_context_parse (context, &argc, &argv, &error)) {
 		g_critical ("Failed to parse arguments: %s", error->message);
@@ -253,12 +253,12 @@ main (int argc, char **argv)
 	g_option_context_free (context);
 
 	g_set_application_name (_("Grapa"));
-	gtk_window_set_default_icon_name ("grapa");
+	ctk_window_set_default_icon_name ("grapa");
 
-	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
 					   PKG_DATA_DIR G_DIR_SEPARATOR_S "icons");
 
-	app = gtk_application_new (NULL, G_APPLICATION_FLAGS_NONE);
+	app = ctk_application_new (NULL, G_APPLICATION_FLAGS_NONE);
 	g_signal_connect (app, "startup", G_CALLBACK (startup_cb), NULL);
 	g_signal_connect (app, "activate", G_CALLBACK (activate_cb), NULL);
 
