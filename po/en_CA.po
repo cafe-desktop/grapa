@@ -1414,11 +1414,11 @@ msgstr "Add files to an archive"
 msgid "Extract archive"
 msgstr "Extract archive"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Command _Line Output"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Could not display help"
 

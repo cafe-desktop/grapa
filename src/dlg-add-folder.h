@@ -23,7 +23,7 @@
 #ifndef DLG_ADD_FOLDER_H
 #define DLG_ADD_FOLDER_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 void  add_folder_cb (GtkWidget *widget, void *data);
 

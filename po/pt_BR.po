@@ -1482,11 +1482,11 @@ msgstr "Adicionar arquivos a um pacote"
 msgid "Extract archive"
 msgstr "Extrair pacote"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Saída da _linha de comando"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Não foi possível exibir a ajuda"
 

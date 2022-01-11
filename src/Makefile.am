@@ -134,8 +134,8 @@ COMMON_SOURCES = 			\
 	gio-utils.h			\
 	glib-utils.c			\
 	glib-utils.h			\
-	gtk-utils.c			\
-	gtk-utils.h			\
+	ctk-utils.c			\
+	ctk-utils.h			\
 	java-utils.c			\
 	java-utils.h			\
 	open-file.c			\

@@ -1440,11 +1440,11 @@ msgstr "Apondre de fichièrs dins un archiu"
 msgid "Extract archive"
 msgstr "Traire l'archiu"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Resulta de la _linha de comandas"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Impossible de visualizar l'ajuda"
 

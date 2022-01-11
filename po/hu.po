@@ -1447,11 +1447,11 @@ msgstr "Fájlok hozzáadása az archívumhoz"
 msgid "Extract archive"
 msgstr "Archívum kibontása"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Parancssori _kimenet"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "A súgó megjelenítése nem sikerült"
 

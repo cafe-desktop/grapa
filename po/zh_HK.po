@@ -1404,11 +1404,11 @@ msgstr "將檔案加入到壓縮檔中"
 msgid "Extract archive"
 msgstr "解開壓縮檔"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "命令列輸出(_L)"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "無法顯示說明文件"
 

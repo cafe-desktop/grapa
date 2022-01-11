@@ -22,12 +22,12 @@
 
 #include <config.h>
 #include <string.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "dlg-ask-password.h"
 #include "file-utils.h"
 #include "fr-window.h"
 #include "glib-utils.h"
-#include "gtk-utils.h"
+#include "ctk-utils.h"
 
 
 typedef enum {
@@ -63,7 +63,7 @@ ask_password__response_cb (GtkWidget  *dialog,
 
 	switch (response_id) {
 	case GTK_RESPONSE_OK:
-		password = _gtk_entry_get_locale_text (GTK_ENTRY (data->pw_password_entry));
+		password = _ctk_entry_get_locale_text (GTK_ENTRY (data->pw_password_entry));
 		if (data->pwd_type == FR_PASSWORD_TYPE_MAIN)
 			fr_window_set_password (data->window, password);
 		else if (data->pwd_type == FR_PASSWORD_TYPE_PASTE_FROM)
@@ -77,13 +77,13 @@ ask_password__response_cb (GtkWidget  *dialog,
 
 	default:
 		if (fr_window_is_batch_mode (data->window))
-			gtk_widget_destroy (GTK_WIDGET (data->window));
+			ctk_widget_destroy (GTK_WIDGET (data->window));
 		else
 			fr_window_reset_current_batch_action (data->window);
 		break;
 	}
 
-	gtk_widget_destroy (data->dialog);
+	ctk_widget_destroy (data->dialog);
 }
 
 
@@ -98,7 +98,7 @@ dlg_ask_password__common (FrWindow       *window,
 
 	data = g_new0 (DialogData, 1);
 
-	data->builder = _gtk_builder_new_from_resource ("batch-password.ui");
+	data->builder = _ctk_builder_new_from_resource ("batch-password.ui");
 	if (data->builder == NULL) {
 		g_free (data);
 		return;
@@ -109,10 +109,10 @@ dlg_ask_password__common (FrWindow       *window,
 
 	/* Get the widgets. */
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "password_dialog");
-	data->pw_password_entry = _gtk_builder_get_widget (data->builder, "pw_password_entry");
+	data->dialog = _ctk_builder_get_widget (data->builder, "password_dialog");
+	data->pw_password_entry = _ctk_builder_get_widget (data->builder, "pw_password_entry");
 
-	label = _gtk_builder_get_widget (data->builder, "pw_password_label");
+	label = _ctk_builder_get_widget (data->builder, "pw_password_label");
 
 	/* Set widgets data. */
 
@@ -122,11 +122,11 @@ dlg_ask_password__common (FrWindow       *window,
 		name = g_uri_display_basename (fr_window_get_paste_archive_uri (window));
         g_assert (name != NULL);
 	text = g_strdup_printf (_("Enter the password for the archive '%s'."), name);
-	gtk_label_set_label (GTK_LABEL (label), text);
+	ctk_label_set_label (GTK_LABEL (label), text);
 	g_free (text);
 
 	if (fr_window_get_password (window) != NULL)
-		_gtk_entry_set_locale_text (GTK_ENTRY (data->pw_password_entry),
+		_ctk_entry_set_locale_text (GTK_ENTRY (data->pw_password_entry),
 					    fr_window_get_password (window));
 
 	/* Set the signals handlers. */
@@ -143,17 +143,17 @@ dlg_ask_password__common (FrWindow       *window,
 
 	/* Run dialog. */
 
-	gtk_widget_grab_focus (data->pw_password_entry);
-	if (gtk_widget_get_realized (GTK_WIDGET (window))) {
-		gtk_window_set_transient_for (GTK_WINDOW (data->dialog),
+	ctk_widget_grab_focus (data->pw_password_entry);
+	if (ctk_widget_get_realized (GTK_WIDGET (window))) {
+		ctk_window_set_transient_for (GTK_WINDOW (data->dialog),
 					      GTK_WINDOW (window));
-		gtk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
+		ctk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
 	}
 	else
-		gtk_window_set_title (GTK_WINDOW (data->dialog), name);
+		ctk_window_set_title (GTK_WINDOW (data->dialog), name);
 	g_free (name);
 
-	gtk_widget_show (data->dialog);
+	ctk_widget_show (data->dialog);
 }
 
 

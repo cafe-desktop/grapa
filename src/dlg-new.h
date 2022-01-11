@@ -23,7 +23,7 @@
 #ifndef DLG_NEW_H
 #define DLG_NEW_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "eggfileformatchooser.h"
 #include "fr-window.h"
 

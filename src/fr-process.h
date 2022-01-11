@@ -24,7 +24,7 @@
 #define FR_PROCESS_H
 
 #include <glib.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <sys/types.h>
 #include "typedefs.h"
 

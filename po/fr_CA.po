@@ -1221,11 +1221,11 @@ msgid "%d %B %Y, %H:%M"
 msgstr ""
 
 #. Expander
-#: ../src/gtk-utils.c:424
+#: ../src/ctk-utils.c:424
 msgid "Command _Line Output"
 msgstr ""
 
-#: ../src/gtk-utils.c:753
+#: ../src/ctk-utils.c:753
 msgid "Could not display help"
 msgstr ""
 

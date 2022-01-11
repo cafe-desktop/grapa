@@ -6,10 +6,10 @@
   * ui files: avoid deprecated GtkStock
                                GtkAlignment
                                GtkBox:margin-left/margin-right
-                               GtkButton:always-show-image (it has gone in gtk4)
+                               GtkButton:always-show-image (it has gone in ctk4)
   * avoid deprecated GtkStock
-                     gtk_dialog_get_action_area
-  * fork deprecated icons gtk-apply, gtk-ok, gtk-no
+                     ctk_dialog_get_action_area
+  * fork deprecated icons ctk-apply, ctk-ok, ctk-no
 
 ### grapa 0.0.1
 

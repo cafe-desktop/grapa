@@ -23,14 +23,14 @@
 #include <config.h>
 #include <string.h>
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #if GTK_CHECK_VERSION (3,99,0)
 #include <gdk/x11/gdkx.h>
 #else
 #include <gdk/gdkx.h>
 #endif
 #include "dlg-package-installer.h"
-#include "gtk-utils.h"
+#include "ctk-utils.h"
 #include "fr-init.h"
 
 
@@ -58,7 +58,7 @@ package_installer_terminated (InstallerData   *idata,
 {
 	GdkWindow *window;
 
-	window = gtk_widget_get_window (GTK_WIDGET (idata->window));
+	window = ctk_widget_get_window (GTK_WIDGET (idata->window));
 	if (window != NULL)
 		gdk_window_set_cursor (window, NULL);
 
@@ -169,12 +169,12 @@ install_packages (InstallerData *idata)
 		GdkWindow  *window;
 		GDBusProxy *proxy;
 
-		window = gtk_widget_get_window (GTK_WIDGET (idata->window));
+		window = ctk_widget_get_window (GTK_WIDGET (idata->window));
 		if (window != NULL) {
 			GdkCursor *cursor;
 			GdkDisplay *display;
 
-			display = gtk_widget_get_display (GTK_WIDGET (idata));
+			display = ctk_widget_get_display (GTK_WIDGET (idata));
 			cursor = gdk_cursor_new_for_display (display, GDK_WATCH);
 			gdk_window_set_cursor (window, cursor);
 			g_object_unref (cursor);
@@ -239,7 +239,7 @@ confirm_search_dialog_response_cb (GtkDialog *dialog,
 {
 	InstallerData *idata = user_data;
 
-	gtk_widget_destroy (GTK_WIDGET (dialog));
+	ctk_widget_destroy (GTK_WIDGET (dialog));
 
 	if (response_id == GTK_RESPONSE_YES) {
 		install_packages (idata);
@@ -257,16 +257,16 @@ create_button (const char *icon_name,
 	GtkIconTheme *icon_theme;
 	GtkWidget    *button;
 
-	button = gtk_button_new_with_mnemonic (text);
-	icon_theme = gtk_icon_theme_get_default ();
-	if (gtk_icon_theme_has_icon (icon_theme, icon_name)) {
+	button = ctk_button_new_with_mnemonic (text);
+	icon_theme = ctk_icon_theme_get_default ();
+	if (ctk_icon_theme_has_icon (icon_theme, icon_name)) {
 		GtkWidget *image;
-		image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON);
-		gtk_button_set_image (GTK_BUTTON (button), image);
+		image = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_BUTTON);
+		ctk_button_set_image (GTK_BUTTON (button), image);
 	}
-	gtk_widget_set_can_default (button, TRUE);
+	ctk_widget_set_can_default (button, TRUE);
 
-	gtk_widget_show (button);
+	ctk_widget_show (button);
 
 	return button;
 }
@@ -313,25 +313,25 @@ dlg_package_installer (FrWindow  *window,
 
 		secondary_text = g_strdup_printf (_("There is no command installed for %s files.\nDo you want to search for a command to open this file?"),
 						  g_content_type_get_description (idata->archive->content_type));
-		dialog = _gtk_message_dialog_new (GTK_WINDOW (idata->window),
+		dialog = _ctk_message_dialog_new (GTK_WINDOW (idata->window),
 						  GTK_DIALOG_MODAL,
 						  "dialog-error",
 						  _("Could not open this file type"),
 						  secondary_text,
 						  NULL);
 
-		gtk_dialog_add_action_widget (GTK_DIALOG (dialog),
+		ctk_dialog_add_action_widget (GTK_DIALOG (dialog),
 		                              create_button ("process-stop", _("_Cancel")),
 		                              GTK_RESPONSE_NO);
 
-		gtk_dialog_add_action_widget (GTK_DIALOG (dialog),
+		ctk_dialog_add_action_widget (GTK_DIALOG (dialog),
 		                              create_button ("edit-find", _("_Search Command")),
 		                              GTK_RESPONSE_YES);
 
-		gtk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_YES);
+		ctk_dialog_set_default_response (GTK_DIALOG (dialog), GTK_RESPONSE_YES);
 
 		g_signal_connect (dialog, "response", G_CALLBACK (confirm_search_dialog_response_cb), idata);
-		gtk_widget_show (dialog);
+		ctk_widget_show (dialog);
 
 		g_free (secondary_text);
 	}

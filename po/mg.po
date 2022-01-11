@@ -1404,11 +1404,11 @@ msgstr "Hampiditra rakitra anaty arsiva iray"
 msgid "Extract archive"
 msgstr "Hanaboraka arsiva"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Fivoahan'ny _lazam-baiko"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Tsy afaka naneho ny toro-làlana"
 

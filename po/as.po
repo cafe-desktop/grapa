@@ -1410,11 +1410,11 @@ msgstr "আৰ্কাইভে নথিপত্ৰ সংযোজন কৰ
 msgid "Extract archive"
 msgstr "আৰ্কাইভ এক্সট্ৰেক্ট কৰক"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "আদেশ লাইন আউটপুট (_L)"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "সহায়িকা প্ৰদৰ্শনে ব্যৰ্থ"
 

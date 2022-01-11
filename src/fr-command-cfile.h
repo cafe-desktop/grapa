@@ -23,7 +23,7 @@
 #ifndef FR_COMMAND_CFILE_H
 #define FR_COMMAND_CFILE_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "fr-command.h"
 #include "typedefs.h"
 

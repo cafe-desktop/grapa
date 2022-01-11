@@ -36,21 +36,21 @@ GIO_REQUIRED=2.50.0
 CAJA_REQUIRED=1.17.1
 JSON_GLIB_REQUIRED=0.14.0
 
-AC_MSG_CHECKING([which gtk+ version to compile against])
-AC_ARG_WITH([gtk],
-  [AS_HELP_STRING([--with-gtk=3|4],[which gtk+ version to compile against (default: 3)])],
-  [case "$with_gtk" in
+AC_MSG_CHECKING([which ctk+ version to compile against])
+AC_ARG_WITH([ctk],
+  [AS_HELP_STRING([--with-ctk=3|4],[which ctk+ version to compile against (default: 3)])],
+  [case "$with_ctk" in
      3|4) ;;
-     *) AC_MSG_ERROR([invalid gtk version specified]) ;;
+     *) AC_MSG_ERROR([invalid ctk version specified]) ;;
    esac],
-  [with_gtk=3])
-AC_MSG_RESULT([$with_gtk])
+  [with_ctk=3])
+AC_MSG_RESULT([$with_ctk])
 
-case "$with_gtk" in
-  3) GTK_API_VERSION=gtk+-3.0
+case "$with_ctk" in
+  3) GTK_API_VERSION=ctk+-3.0
        GTK_REQUIRED=3.24.0
        ;;
-  4) GTK_API_VERSION=gtk4
+  4) GTK_API_VERSION=ctk4
        GTK_REQUIRED=3.99.0
        ;;
 esac

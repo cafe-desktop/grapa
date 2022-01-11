@@ -1406,11 +1406,11 @@ msgstr "ფაილების დაარქივება"
 msgid "Extract archive"
 msgstr "ამოაარქივე არქივი"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "ბრძანებათა სტრიქონის გამოტანა"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "ვერ ვახერხებ დამხმარე სახელმძღვანელოს გამოტანას"
 

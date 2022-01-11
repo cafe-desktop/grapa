@@ -1413,11 +1413,11 @@ msgstr "ಕಡತವನ್ನು ಆರ್ಕೈವ್‍ಗೆ ಸೇರಿಸ�
 msgid "Extract archive"
 msgstr "ಆರ್ಕೈವನಿಂದ ಹೊರತೆಗೆ"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "ಆಜ್ಞೆ ಸಾಲಿನ ಔಟ್‍ಪುಟ್(_L)"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "ಸಹಾಯವನ್ನು ತೋರಿಸಲಾಗಲಿಲ್ಲ"
 

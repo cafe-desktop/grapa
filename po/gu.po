@@ -1411,11 +1411,11 @@ msgstr "પેટીમાં ફાઇલો ઉમેરો"
 msgid "Extract archive"
 msgstr "પેટીનો અર્ક કાઢવો"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "આદેશવાક્યનું આઉટપુટ"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "મદદ દેખાડી શકાઈ નથી"
 

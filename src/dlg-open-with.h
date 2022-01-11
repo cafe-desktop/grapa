@@ -23,7 +23,7 @@
 #ifndef DLG_OPEN_WITH_H
 #define DLG_OPEN_WITH_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "fr-window.h"
 
 void  open_with_cb  (GtkWidget *widget, void *data);

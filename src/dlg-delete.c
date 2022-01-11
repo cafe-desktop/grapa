@@ -21,9 +21,9 @@
  */
 
 #include <config.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "fr-window.h"
-#include "gtk-utils.h"
+#include "ctk-utils.h"
 #include "file-utils.h"
 #include "dlg-delete.h"
 
@@ -63,8 +63,8 @@ ok_clicked_cb (GtkWidget  *widget,
 	GList    *file_list = NULL;
 	gboolean  do_not_remove_if_null = FALSE;
 
-	selected_files = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_selected_files_radio));
-	pattern_files = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_files_radio));
+	selected_files = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_selected_files_radio));
+	pattern_files = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_files_radio));
 
 	/* create the file list. */
 
@@ -75,7 +75,7 @@ ok_clicked_cb (GtkWidget  *widget,
 	else if (pattern_files) {
 		const char *pattern;
 
-		pattern = gtk_entry_get_text (GTK_ENTRY (data->d_files_entry));
+		pattern = ctk_entry_get_text (GTK_ENTRY (data->d_files_entry));
 		file_list = fr_window_get_file_list_pattern (window, pattern);
 		if (file_list == NULL)
 			do_not_remove_if_null = TRUE;
@@ -83,7 +83,7 @@ ok_clicked_cb (GtkWidget  *widget,
 
 	/* close the dialog. */
 
-	gtk_widget_destroy (data->dialog);
+	ctk_widget_destroy (data->dialog);
 
 	/* remove ! */
 
@@ -98,8 +98,8 @@ static void
 entry_changed_cb (GtkWidget  *widget,
 		  DialogData *data)
 {
-	if (! gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_files_radio)))
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_files_radio), TRUE);
+	if (! ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_files_radio)))
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_files_radio), TRUE);
 }
 
 
@@ -115,7 +115,7 @@ dlg_delete__common (FrWindow *window,
 	data->window = window;
 	data->selected_files = selected_files;
 
-	data->builder = _gtk_builder_new_from_resource ("delete.ui");
+	data->builder = _ctk_builder_new_from_resource ("delete.ui");
 	if (data->builder == NULL) {
 		g_free (data);
 		return;
@@ -123,22 +123,22 @@ dlg_delete__common (FrWindow *window,
 
 	/* Get the widgets. */
 
-	data->dialog = _gtk_builder_get_widget (data->builder, "delete_dialog");
-	data->d_all_files_radio = _gtk_builder_get_widget (data->builder, "d_all_files_radio");
-	data->d_selected_files_radio = _gtk_builder_get_widget (data->builder, "d_selected_files_radio");
-	data->d_files_radio = _gtk_builder_get_widget (data->builder, "d_files_radio");
-	data->d_files_entry = _gtk_builder_get_widget (data->builder, "d_files_entry");
+	data->dialog = _ctk_builder_get_widget (data->builder, "delete_dialog");
+	data->d_all_files_radio = _ctk_builder_get_widget (data->builder, "d_all_files_radio");
+	data->d_selected_files_radio = _ctk_builder_get_widget (data->builder, "d_selected_files_radio");
+	data->d_files_radio = _ctk_builder_get_widget (data->builder, "d_files_radio");
+	data->d_files_entry = _ctk_builder_get_widget (data->builder, "d_files_entry");
 
-	ok_button = _gtk_builder_get_widget (data->builder, "d_ok_button");
-	cancel_button = _gtk_builder_get_widget (data->builder, "d_cancel_button");
+	ok_button = _ctk_builder_get_widget (data->builder, "d_ok_button");
+	cancel_button = _ctk_builder_get_widget (data->builder, "d_cancel_button");
 
 	/* Set widgets data. */
 
 	if (data->selected_files != NULL)
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_selected_files_radio), TRUE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_selected_files_radio), TRUE);
 	else {
-		gtk_widget_set_sensitive (data->d_selected_files_radio, FALSE);
-		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_all_files_radio), TRUE);
+		ctk_widget_set_sensitive (data->d_selected_files_radio, FALSE);
+		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_all_files_radio), TRUE);
 	}
 
 	/* Set the signals handlers. */
@@ -149,7 +149,7 @@ dlg_delete__common (FrWindow *window,
 			  data);
 	g_signal_connect_swapped (G_OBJECT (cancel_button),
 				  "clicked",
-				  G_CALLBACK (gtk_widget_destroy),
+				  G_CALLBACK (ctk_widget_destroy),
 				  G_OBJECT (data->dialog));
 	g_signal_connect (G_OBJECT (ok_button),
 			  "clicked",
@@ -162,11 +162,11 @@ dlg_delete__common (FrWindow *window,
 
 	/* Run dialog. */
 
-	gtk_window_set_transient_for (GTK_WINDOW (data->dialog),
+	ctk_window_set_transient_for (GTK_WINDOW (data->dialog),
 				      GTK_WINDOW (window));
-	gtk_window_set_modal         (GTK_WINDOW (data->dialog), TRUE);
+	ctk_window_set_modal         (GTK_WINDOW (data->dialog), TRUE);
 
-	gtk_widget_show (data->dialog);
+	ctk_widget_show (data->dialog);
 }
 
 

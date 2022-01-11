@@ -1447,11 +1447,11 @@ msgstr "Добавяне на файловете към архив"
 msgid "Extract archive"
 msgstr "Разархивиране на архив"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "_Изход на командния ред"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Неуспех при показването на ръководството"
 

@@ -1436,11 +1436,11 @@ msgstr "أضِف الملفات للأرشيف"
 msgid "Extract archive"
 msgstr "استخرج الأرشيف"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "مُخرجات _سطر الأوامر"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "تعذّر عرض المساعدة"
 

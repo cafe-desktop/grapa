@@ -1448,11 +1448,11 @@ msgstr "Ouzhpennañ restroù e-barzh un diell"
 msgid "Extract archive"
 msgstr "Eztennañ an diell"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Ec'hankad an _arc'had"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "N'eus ket tu da skrammañ ar skoazell"
 

@@ -1395,11 +1395,11 @@ msgstr "සංරක්‍ෂණය සඳහා ගොනු ඇතුලත්
 msgid "Extract archive"
 msgstr "සංරක්‍ෂණය විසුරුවන්න"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "රේඛිය විධාන ප්‍රථිධානය (_L)"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "සහාය දර්ශනය කළ නොහැක"
 

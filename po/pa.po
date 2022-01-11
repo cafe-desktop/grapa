@@ -1420,11 +1420,11 @@ msgstr "ਫਾਇਲਾਂ ਅਕਾਇਵ 'ਚ ਸ਼ਾਮਿਲ"
 msgid "Extract archive"
 msgstr "ਅਕਾਇਵ ਖਿਲਾਰੋ"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "ਕਮਾਂਡ ਲਾਈਨ ਆਉਟਪੁੱਟ(_L)"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "ਮੱਦਦ ਵੇਖਾਈ ਨਹੀਂ ਜਾ ਸਕੀ"
 

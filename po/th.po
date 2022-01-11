@@ -1419,11 +1419,11 @@ msgstr "เพิ่มแฟ้มลงในแฟ้มจัดเก็บ
 msgid "Extract archive"
 msgstr "แตกแฟ้มออกจากแฟ้มจัดเก็บ"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "_ผลลัพธ์คำสั่ง"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "ไม่สามารถแสดงคำแนะนำวิธีใช้"
 

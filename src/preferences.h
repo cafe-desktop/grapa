@@ -23,7 +23,7 @@
 #ifndef PREFERENCES_H
 #define PREFERENCES_H
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "typedefs.h"
 #include "fr-window.h"
 

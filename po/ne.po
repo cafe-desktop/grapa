@@ -1414,11 +1414,11 @@ msgstr "एउटा सङ्ग्रहमा फाइलहरू थप्
 msgid "Extract archive"
 msgstr "सङ्ग्रह हटाउनुहोस्"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "आदेश रेखा निर्गत"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "मद्दत प्रदर्शन गर्न सकेन"
 

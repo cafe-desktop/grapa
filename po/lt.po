@@ -1462,11 +1462,11 @@ msgstr "Įdėti failus į archyvą"
 msgid "Extract archive"
 msgstr "Išskleisti archyvą"
 
-#: src/gtk-utils.c:340
+#: src/ctk-utils.c:340
 msgid "Command _Line Output"
 msgstr "Komandinės _eilutės išvestis"
 
-#: src/gtk-utils.c:579
+#: src/ctk-utils.c:579
 msgid "Could not display help"
 msgstr "Nepavyko parodyti žinyno"
 

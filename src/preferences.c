@@ -58,7 +58,7 @@ pref_util_save_window_geometry (GtkWindow  *window,
 		schema = g_strconcat (GRAPA_SCHEMA_DIALOGS, ".", dialog_id, NULL);
 	settings = g_settings_new (schema);
 
-	gtk_window_get_size (window, &width, &height);
+	ctk_window_get_size (window, &width, &height);
 	g_settings_set_int (settings, dialog_width, width);
 	g_settings_set_int (settings, dialog_height, height);
 	g_object_unref (settings);
@@ -99,9 +99,9 @@ pref_util_restore_window_geometry (GtkWindow  *window,
 	width = g_settings_get_int (settings, dialog_width);
 	height = g_settings_get_int (settings, dialog_height);
 	if ((width != -1) && (height != 1))
-		gtk_window_set_default_size (window, width, height);
+		ctk_window_set_default_size (window, width, height);
 
-	gtk_window_present (window);
+	ctk_window_present (window);
 
 	g_object_unref (settings);
 	g_free (schema);
