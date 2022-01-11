@@ -5716,9 +5716,9 @@ fr_window_construct (FrWindow *window)
 
 	window->priv->list_store = fr_list_model_new (NUMBER_OF_COLUMNS,
 						      G_TYPE_POINTER,
-						      CDK_TYPE_PIXBUF,
+						      GDK_TYPE_PIXBUF,
 						      G_TYPE_STRING,
-						      CDK_TYPE_PIXBUF,
+						      GDK_TYPE_PIXBUF,
 						      G_TYPE_STRING,
 						      G_TYPE_STRING,
 						      G_TYPE_STRING,
@@ -5843,7 +5843,7 @@ fr_window_construct (FrWindow *window)
 
 	window->priv->tree_store = ctk_tree_store_new (TREE_NUMBER_OF_COLUMNS,
 						       G_TYPE_STRING,
-						       CDK_TYPE_PIXBUF,
+						       GDK_TYPE_PIXBUF,
 						       G_TYPE_STRING,
 						       PANGO_TYPE_WEIGHT);
 	window->priv->tree_view = ctk_tree_view_new_with_model (CTK_TREE_MODEL (window->priv->tree_store));
