@@ -19,6 +19,7 @@ requires:
     - libmagic-dev
     - libtool
     - make
+    - wget
     - yelp-tools
 
 before_scripts:
