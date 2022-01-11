@@ -63,8 +63,8 @@ ok_clicked_cb (CtkWidget  *widget,
 	GList    *file_list = NULL;
 	gboolean  do_not_remove_if_null = FALSE;
 
-	selected_files = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_selected_files_radio));
-	pattern_files = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_files_radio));
+	selected_files = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->d_selected_files_radio));
+	pattern_files = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->d_files_radio));
 
 	/* create the file list. */
 
@@ -75,7 +75,7 @@ ok_clicked_cb (CtkWidget  *widget,
 	else if (pattern_files) {
 		const char *pattern;
 
-		pattern = ctk_entry_get_text (GTK_ENTRY (data->d_files_entry));
+		pattern = ctk_entry_get_text (CTK_ENTRY (data->d_files_entry));
 		file_list = fr_window_get_file_list_pattern (window, pattern);
 		if (file_list == NULL)
 			do_not_remove_if_null = TRUE;
@@ -98,8 +98,8 @@ static void
 entry_changed_cb (CtkWidget  *widget,
 		  DialogData *data)
 {
-	if (! ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->d_files_radio)))
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_files_radio), TRUE);
+	if (! ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->d_files_radio)))
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (data->d_files_radio), TRUE);
 }
 
 
@@ -135,10 +135,10 @@ dlg_delete__common (FrWindow *window,
 	/* Set widgets data. */
 
 	if (data->selected_files != NULL)
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_selected_files_radio), TRUE);
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (data->d_selected_files_radio), TRUE);
 	else {
 		ctk_widget_set_sensitive (data->d_selected_files_radio, FALSE);
-		ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->d_all_files_radio), TRUE);
+		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (data->d_all_files_radio), TRUE);
 	}
 
 	/* Set the signals handlers. */
@@ -162,9 +162,9 @@ dlg_delete__common (FrWindow *window,
 
 	/* Run dialog. */
 
-	ctk_window_set_transient_for (GTK_WINDOW (data->dialog),
-				      GTK_WINDOW (window));
-	ctk_window_set_modal         (GTK_WINDOW (data->dialog), TRUE);
+	ctk_window_set_transient_for (CTK_WINDOW (data->dialog),
+				      CTK_WINDOW (window));
+	ctk_window_set_modal         (CTK_WINDOW (data->dialog), TRUE);
 
 	ctk_widget_show (data->dialog);
 }

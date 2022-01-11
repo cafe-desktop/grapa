@@ -50,7 +50,7 @@ static int
 help_cb (CtkWidget   *w,
 	 DialogData  *data)
 {
-	show_help_dialog (GTK_WINDOW (data->dialog), "grapa-view-archive-properties");
+	show_help_dialog (CTK_WINDOW (data->dialog), "grapa-view-archive-properties");
 	return TRUE;
 }
 
@@ -92,7 +92,7 @@ dlg_prop (FrWindow *window)
 	parent = g_file_new_for_uri (uri);
 	utf8_name = g_file_get_parse_name (parent);
 	markup = g_strdup_printf ("<a href=\"%s\">%s</a>", uri, utf8_name);
-	ctk_label_set_markup (GTK_LABEL (label), markup);
+	ctk_label_set_markup (CTK_LABEL (label), markup);
 
 	g_free (markup);
 	g_free (utf8_name);
@@ -103,10 +103,10 @@ dlg_prop (FrWindow *window)
 
 	label = _ctk_builder_get_widget (data->builder, "p_name_label");
 	utf8_name = g_uri_display_basename (fr_window_get_archive_uri (window));
-	ctk_label_set_text (GTK_LABEL (label), utf8_name);
+	ctk_label_set_text (CTK_LABEL (label), utf8_name);
 
 	title_txt = g_strdup_printf (_("%s Properties"), utf8_name);
-	ctk_window_set_title (GTK_WINDOW (data->dialog), title_txt);
+	ctk_window_set_title (CTK_WINDOW (data->dialog), title_txt);
 	g_free (title_txt);
 
 	g_free (utf8_name);
@@ -118,7 +118,7 @@ dlg_prop (FrWindow *window)
 	date_time = g_date_time_new_from_unix_local (get_file_mtime (fr_window_get_archive_uri (window)));
 	s = g_date_time_format (date_time, _("%d %B %Y, %H:%M"));
 	g_date_time_unref (date_time);
-	ctk_label_set_text (GTK_LABEL (label), s);
+	ctk_label_set_text (CTK_LABEL (label), s);
 	g_free (s);
 
 	/**/
@@ -126,7 +126,7 @@ dlg_prop (FrWindow *window)
 	label = _ctk_builder_get_widget (data->builder, "p_size_label");
 	size = get_file_size (fr_window_get_archive_uri (window));
 	s = g_format_size_full (size, G_FORMAT_SIZE_LONG_FORMAT);
-	ctk_label_set_text (GTK_LABEL (label), s);
+	ctk_label_set_text (CTK_LABEL (label), s);
 	g_free (s);
 
 	/**/
@@ -143,7 +143,7 @@ dlg_prop (FrWindow *window)
 
 	label = _ctk_builder_get_widget (data->builder, "p_uncomp_size_label");
 	s = g_format_size_full (uncompressed_size, G_FORMAT_SIZE_LONG_FORMAT);
-	ctk_label_set_text (GTK_LABEL (label), s);
+	ctk_label_set_text (CTK_LABEL (label), s);
 	g_free (s);
 
 	/**/
@@ -155,20 +155,20 @@ dlg_prop (FrWindow *window)
 	else
 		ratio = 0.0;
 	s = g_strdup_printf ("%0.2f", ratio);
-	ctk_label_set_text (GTK_LABEL (label), s);
+	ctk_label_set_text (CTK_LABEL (label), s);
 	g_free (s);
 
 	/**/
 
 	label = _ctk_builder_get_widget (data->builder, "p_files_label");
 	s = g_strdup_printf ("%d", window->archive->command->n_regular_files);
-	ctk_label_set_text (GTK_LABEL (label), s);
+	ctk_label_set_text (CTK_LABEL (label), s);
 	g_free (s);
 
 	/**/
 
 	label = _ctk_builder_get_widget (data->builder, "p_mime_type_label");
-	ctk_label_set_text (GTK_LABEL (label), window->archive->command->mime_type);
+	ctk_label_set_text (CTK_LABEL (label), window->archive->command->mime_type);
 
 	/* Set the signals handlers. */
 
@@ -187,9 +187,9 @@ dlg_prop (FrWindow *window)
 
 	/* Run dialog. */
 
-	ctk_window_set_transient_for (GTK_WINDOW (data->dialog),
-				      GTK_WINDOW (window));
-	ctk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
+	ctk_window_set_transient_for (CTK_WINDOW (data->dialog),
+				      CTK_WINDOW (window));
+	ctk_window_set_modal (CTK_WINDOW (data->dialog), TRUE);
 
 	ctk_widget_show (data->dialog);
 }

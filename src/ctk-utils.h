@@ -20,8 +20,8 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef GTK_UTILS_H
-#define GTK_UTILS_H
+#ifndef CTK_UTILS_H
+#define CTK_UTILS_H
 
 #include <glib/gi18n.h>
 #include <gio/gio.h>

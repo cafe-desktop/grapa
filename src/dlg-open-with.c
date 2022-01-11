@@ -47,20 +47,20 @@ app_chooser_response_cb (CtkDialog *dialog,
 	GAppInfo *app_info;
 
 	switch (response_id) {
-	case GTK_RESPONSE_OK:
-		app_info = ctk_app_chooser_get_app_info (GTK_APP_CHOOSER (dialog));
+	case CTK_RESPONSE_OK:
+		app_info = ctk_app_chooser_get_app_info (CTK_APP_CHOOSER (dialog));
 		if (app_info != NULL) {
 			fr_window_open_files_with_application (o_data->window, o_data->file_list, app_info);
 			g_object_unref (app_info);
 		}
 		g_free (o_data);
-		ctk_widget_destroy (GTK_WIDGET (dialog));
+		ctk_widget_destroy (CTK_WIDGET (dialog));
 		break;
 
-	case GTK_RESPONSE_CANCEL:
-	case GTK_RESPONSE_DELETE_EVENT:
+	case CTK_RESPONSE_CANCEL:
+	case CTK_RESPONSE_DELETE_EVENT:
 		g_free (o_data);
-		ctk_widget_destroy (GTK_WIDGET (dialog));
+		ctk_widget_destroy (CTK_WIDGET (dialog));
 		break;
 
 	default:
@@ -82,8 +82,8 @@ dlg_open_with (FrWindow *window,
 	o_data->file_list = file_list;
 
 	first_file = g_file_new_for_path (file_list->data);
-	app_chooser = ctk_app_chooser_dialog_new (GTK_WINDOW (window),
-						  GTK_DIALOG_MODAL,
+	app_chooser = ctk_app_chooser_dialog_new (CTK_WINDOW (window),
+						  CTK_DIALOG_MODAL,
 						  first_file);
 	g_signal_connect (app_chooser,
 			  "response",

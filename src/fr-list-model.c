@@ -154,7 +154,7 @@ fr_list_model_get_type (void)
 			NULL
 		};
 
-		object_type = g_type_register_static (GTK_TYPE_LIST_STORE, "FRListModel", &object_info, 0);
+		object_type = g_type_register_static (CTK_TYPE_LIST_STORE, "FRListModel", &object_info, 0);
 		g_type_add_interface_static (object_type,
 					     EGG_TYPE_TREE_MULTI_DRAG_SOURCE,
 					     &multi_drag_source_info);

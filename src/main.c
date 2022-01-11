@@ -189,7 +189,7 @@ prepare_app (void)
 
 			file = g_file_new_for_commandline_arg (filename);
 			uri = g_file_get_uri (file);
-			fr_window_archive_open (FR_WINDOW (window), uri, GTK_WINDOW (window));
+			fr_window_archive_open (FR_WINDOW (window), uri, CTK_WINDOW (window));
 			g_free (uri);
 			g_object_unref (file);
 		}
@@ -213,12 +213,12 @@ activate_cb (GApplication *application)
 {
 	GList *link;
 
-	for (link = ctk_application_get_windows (GTK_APPLICATION (application));
+	for (link = ctk_application_get_windows (CTK_APPLICATION (application));
 	     link != NULL;
 	     link = link->next)
 	{
 		if (! fr_window_is_batch_mode (FR_WINDOW (link->data)))
-			ctk_widget_show (GTK_WIDGET (link->data));
+			ctk_widget_show (CTK_WIDGET (link->data));
 	}
 }
 

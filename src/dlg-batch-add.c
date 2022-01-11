@@ -62,7 +62,7 @@ get_ext (DialogData *data)
 {
 	int idx;
 
-	idx = ctk_combo_box_get_active (GTK_COMBO_BOX (data->archive_type_combo_box));
+	idx = ctk_combo_box_get_active (CTK_COMBO_BOX (data->archive_type_combo_box));
 
 	return mime_type_desc[data->supported_types[idx]].default_ext;
 }
@@ -74,8 +74,8 @@ destroy_cb (CtkWidget  *widget,
 	    DialogData *data)
 {
 	g_settings_set_string (data->settings, PREF_BATCH_ADD_DEFAULT_EXTENSION, get_ext (data));
-	/*g_settings_set_boolean (data->settings, PREF_BATCH_ADD_OTHER_OPTIONS, data->add_clicked ? FALSE : ctk_expander_get_expanded (GTK_EXPANDER (GET_WIDGET ("a_other_options_expander"))));*/
-	g_settings_set_boolean (data->settings_general, PREF_GENERAL_ENCRYPT_HEADER, ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton"))));
+	/*g_settings_set_boolean (data->settings, PREF_BATCH_ADD_OTHER_OPTIONS, data->add_clicked ? FALSE : ctk_expander_get_expanded (CTK_EXPANDER (GET_WIDGET ("a_other_options_expander"))));*/
+	g_settings_set_boolean (data->settings_general, PREF_GENERAL_ENCRYPT_HEADER, ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton"))));
 
 
 	if (! data->add_clicked) {
@@ -95,27 +95,27 @@ set_archive_options (DialogData *data)
 {
 	int idx;
 
-	idx = ctk_combo_box_get_active (GTK_COMBO_BOX (data->archive_type_combo_box));
+	idx = ctk_combo_box_get_active (CTK_COMBO_BOX (data->archive_type_combo_box));
 	if (mime_type_desc[data->supported_types[idx]].capabilities & FR_COMMAND_CAN_ENCRYPT) {
 		const char *pwd;
 
-		pwd = ctk_entry_get_text (GTK_ENTRY (GET_WIDGET ("a_password_entry")));
+		pwd = ctk_entry_get_text (CTK_ENTRY (GET_WIDGET ("a_password_entry")));
 		if (pwd != NULL) {
 			if (strcmp (pwd, "") != 0) {
 				fr_window_set_password (data->window, pwd);
 				if (mime_type_desc[data->supported_types[idx]].capabilities & FR_COMMAND_CAN_ENCRYPT_HEADER)
-					fr_window_set_encrypt_header (data->window, ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton"))));
+					fr_window_set_encrypt_header (data->window, ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton"))));
 			}
 		}
 	}
 
 	if ((mime_type_desc[data->supported_types[idx]].capabilities & FR_COMMAND_CAN_CREATE_VOLUMES)
-	    && ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("a_volume_checkbutton"))))
+	    && ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (GET_WIDGET ("a_volume_checkbutton"))))
 	{
 		double value;
 		int    size;
 
-		value = ctk_spin_button_get_value (GTK_SPIN_BUTTON (GET_WIDGET ("a_volume_spinbutton")));
+		value = ctk_spin_button_get_value (CTK_SPIN_BUTTON (GET_WIDGET ("a_volume_spinbutton")));
 		size = floor (value * MEGABYTE);
 		g_settings_set_int (data->settings, PREF_BATCH_ADD_VOLUME_SIZE, size);
 		fr_window_set_volume_size (data->window, (guint) size);
@@ -127,7 +127,7 @@ static void
 help_clicked_cb (CtkWidget  *widget,
 		 DialogData *data)
 {
-	show_help_dialog (GTK_WINDOW (GET_WIDGET ("dialog")), "grapa-fmgr-add");
+	show_help_dialog (CTK_WINDOW (GET_WIDGET ("dialog")), "grapa-fmgr-add");
 }
 
 
@@ -148,21 +148,21 @@ add_clicked_cb (CtkWidget  *widget,
 
 	/* Collect data */
 
-	archive_name = g_uri_escape_string (ctk_entry_get_text (GTK_ENTRY (GET_WIDGET ("a_add_to_entry"))), NULL, FALSE);
+	archive_name = g_uri_escape_string (ctk_entry_get_text (CTK_ENTRY (GET_WIDGET ("a_add_to_entry"))), NULL, FALSE);
 
 	/* Check whether the user entered a valid archive name. */
 
 	if ((archive_name == NULL) || (*archive_name == '\0')) {
 		CtkWidget *d;
 
-		d = _ctk_error_dialog_new (GTK_WINDOW (window),
-					   GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = _ctk_error_dialog_new (CTK_WINDOW (window),
+					   CTK_DIALOG_DESTROY_WITH_PARENT,
 					   NULL,
 					   _("Could not create the archive"),
 					   "%s",
 					   _("You have to specify an archive name."));
-		ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 		g_free (archive_name);
 
 		return;
@@ -171,16 +171,16 @@ add_clicked_cb (CtkWidget  *widget,
 		CtkWidget *d;
 		char      *utf8_name = g_filename_display_name (archive_name);
 
-		d = _ctk_error_dialog_new (GTK_WINDOW (window),
-					   GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = _ctk_error_dialog_new (CTK_WINDOW (window),
+					   CTK_DIALOG_DESTROY_WITH_PARENT,
 					   NULL,
 					   _("Could not create the archive"),
 					   _("The name \"%s\" is not valid because it cannot contain the characters: %s\n\n%s"),
 					   utf8_name,
 					   BAD_CHARS,
 					   _("Please use a different name."));
-		ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 
 		g_free (utf8_name);
 		g_free (archive_name);
@@ -190,7 +190,7 @@ add_clicked_cb (CtkWidget  *widget,
 
 	/* Check directory existence. */
 
-	archive_dir = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")));
+	archive_dir = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")));
 	if (archive_dir == NULL) {
 		g_free (archive_dir);
 		g_free (archive_name);
@@ -200,14 +200,14 @@ add_clicked_cb (CtkWidget  *widget,
 	if (! check_permissions (archive_dir, R_OK|W_OK|X_OK)) {
 		CtkWidget  *d;
 
-		d = _ctk_error_dialog_new (GTK_WINDOW (window),
-					   GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = _ctk_error_dialog_new (CTK_WINDOW (window),
+					   CTK_DIALOG_DESTROY_WITH_PARENT,
 					   NULL,
 					   _("Could not create the archive"),
 					   "%s",
 					   _("You don't have the right permissions to create an archive in the destination folder."));
-		ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 
 		g_free (archive_dir);
 		g_free (archive_name);
@@ -224,35 +224,35 @@ add_clicked_cb (CtkWidget  *widget,
 		msg = g_strdup_printf (_("Destination folder \"%s\" does not exist.\n\nDo you want to create it?"), folder_name);
 		g_free (folder_name);
 
-		d = _ctk_message_dialog_new (GTK_WINDOW (GET_WIDGET ("dialog")),
-					     GTK_DIALOG_MODAL,
+		d = _ctk_message_dialog_new (CTK_WINDOW (GET_WIDGET ("dialog")),
+					     CTK_DIALOG_MODAL,
 					     "dialog-question",
 					     msg,
 					     NULL,
-					     GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
-					     _("Create _Folder"), GTK_RESPONSE_YES,
+					     CTK_STOCK_CANCEL, CTK_RESPONSE_CANCEL,
+					     _("Create _Folder"), CTK_RESPONSE_YES,
 					     NULL);
 
-		ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_YES);
-		r = ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_set_default_response (CTK_DIALOG (d), CTK_RESPONSE_YES);
+		r = ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 
 		g_free (msg);
 
-		do_not_add = (r != GTK_RESPONSE_YES);
+		do_not_add = (r != CTK_RESPONSE_YES);
 	}
 
 	if (! do_not_add && ! ensure_dir_exists (archive_dir, 0755, &error)) {
 		CtkWidget  *d;
 
-		d = _ctk_error_dialog_new (GTK_WINDOW (window),
-					   GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = _ctk_error_dialog_new (CTK_WINDOW (window),
+					   CTK_DIALOG_DESTROY_WITH_PARENT,
 					   NULL,
 					   _("Could not create the archive"),
 					   _("Could not create the destination folder: %s."),
 					   error->message);
-		ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 
 		g_error_free (error);
 		g_free (archive_dir);
@@ -263,16 +263,16 @@ add_clicked_cb (CtkWidget  *widget,
 	if (do_not_add) {
 		CtkWidget *d;
 
-		d = _ctk_message_dialog_new (GTK_WINDOW (window),
-					     GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = _ctk_message_dialog_new (CTK_WINDOW (window),
+					     CTK_DIALOG_DESTROY_WITH_PARENT,
 					     "dialog-warning",
 					     _("Archive not created"),
 					     NULL,
-					     GTK_STOCK_OK, GTK_RESPONSE_OK,
+					     CTK_STOCK_OK, CTK_RESPONSE_OK,
 					     NULL);
-		ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_OK);
-		ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_set_default_response (CTK_DIALOG (d), CTK_RESPONSE_OK);
+		ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 
 		g_free (archive_dir);
 		g_free (archive_name);
@@ -291,14 +291,14 @@ add_clicked_cb (CtkWidget  *widget,
 	if (uri_is_dir (archive_file)) {
 		CtkWidget  *d;
 
-		d = _ctk_error_dialog_new (GTK_WINDOW (window),
-					   GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = _ctk_error_dialog_new (CTK_WINDOW (window),
+					   CTK_DIALOG_DESTROY_WITH_PARENT,
 					   NULL,
 					   _("Could not create the archive"),
 					   "%s",
 					   _("You have to specify an archive name."));
-		ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 
 		g_free (archive_name);
 		g_free (archive_dir);
@@ -311,20 +311,20 @@ add_clicked_cb (CtkWidget  *widget,
 		CtkWidget *d;
 		int        r;
 
-		d = _ctk_message_dialog_new (GTK_WINDOW (GET_WIDGET ("dialog")),
-					     GTK_DIALOG_MODAL,
+		d = _ctk_message_dialog_new (CTK_WINDOW (GET_WIDGET ("dialog")),
+					     CTK_DIALOG_MODAL,
 					     "dialog-question",
 					     _("The archive is already present.  Do you want to overwrite it?"),
 					     NULL,
-					     GTK_STOCK_NO, GTK_RESPONSE_NO,
-					     _("_Overwrite"), GTK_RESPONSE_YES,
+					     CTK_STOCK_NO, CTK_RESPONSE_NO,
+					     _("_Overwrite"), CTK_RESPONSE_YES,
 					     NULL);
 
-		ctk_dialog_set_default_response (GTK_DIALOG (d), GTK_RESPONSE_YES);
-		r = ctk_dialog_run (GTK_DIALOG (d));
-		ctk_widget_destroy (GTK_WIDGET (d));
+		ctk_dialog_set_default_response (CTK_DIALOG (d), CTK_RESPONSE_YES);
+		r = ctk_dialog_run (CTK_DIALOG (d));
+		ctk_widget_destroy (CTK_WIDGET (d));
 
-		if (r == GTK_RESPONSE_YES) {
+		if (r == CTK_RESPONSE_YES) {
 			GFile  *file;
 			GError *err = NULL;
 
@@ -366,7 +366,7 @@ update_sensitivity_for_mime_type (DialogData *data,
 		ctk_widget_set_sensitive (GET_WIDGET ("a_password_entry"), FALSE);
 		ctk_widget_set_sensitive (GET_WIDGET ("a_password_label"), FALSE);
 		ctk_widget_set_sensitive (GET_WIDGET ("a_encrypt_header_checkbutton"), FALSE);
-		ctk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton")), TRUE);
+		ctk_toggle_button_set_inconsistent (CTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton")), TRUE);
 		ctk_widget_set_sensitive (GET_WIDGET ("a_volume_box"), FALSE);
 		return;
 	}
@@ -382,7 +382,7 @@ update_sensitivity_for_mime_type (DialogData *data,
 			sensitive = mime_type_desc[i].capabilities & FR_COMMAND_CAN_ENCRYPT_HEADER;
 			can_encrypt_header = sensitive;
 			ctk_widget_set_sensitive (GET_WIDGET ("a_encrypt_header_checkbutton"), sensitive ? has_password : FALSE);
-			ctk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton")), sensitive ? (!has_password) : TRUE);
+			ctk_toggle_button_set_inconsistent (CTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton")), sensitive ? (!has_password) : TRUE);
 
 			sensitive = mime_type_desc[i].capabilities & FR_COMMAND_CAN_CREATE_VOLUMES;
 			ctk_widget_set_sensitive (GET_WIDGET ("a_volume_box"), sensitive);
@@ -403,8 +403,8 @@ archive_type_combo_box_changed_cb (CtkComboBox *combo_box,
 
 	mime_type = mime_type_desc[data->supported_types[idx]].mime_type;
 	if ((icon_name = g_content_type_get_generic_icon_name (mime_type)) != NULL) {
-		ctk_image_set_from_icon_name (GTK_IMAGE (GET_WIDGET ("archive_icon_image")),
-		                              icon_name, GTK_ICON_SIZE_DIALOG);
+		ctk_image_set_from_icon_name (CTK_IMAGE (GET_WIDGET ("archive_icon_image")),
+		                              icon_name, CTK_ICON_SIZE_DIALOG);
 		g_free (icon_name);
 	}
 	update_sensitivity_for_mime_type (data, mime_type);
@@ -419,7 +419,7 @@ update_archive_type_combo_box_from_ext (DialogData  *data,
 	int i;
 
 	if (ext == NULL) {
-		ctk_combo_box_set_active (GTK_COMBO_BOX (data->archive_type_combo_box), 0);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (data->archive_type_combo_box), 0);
 		return;
 	}
 
@@ -429,7 +429,7 @@ update_archive_type_combo_box_from_ext (DialogData  *data,
 			break;
 		}
 
-	ctk_combo_box_set_active (GTK_COMBO_BOX (data->archive_type_combo_box), idx);
+	ctk_combo_box_set_active (CTK_COMBO_BOX (data->archive_type_combo_box), idx);
 }
 
 
@@ -439,11 +439,11 @@ update_sensitivity (DialogData *data)
 	const char *password;
 
 	ctk_widget_set_sensitive (GET_WIDGET ("a_volume_spinbutton"),
-				  ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("a_volume_checkbutton"))));
+				  ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (GET_WIDGET ("a_volume_checkbutton"))));
 
-	password = ctk_entry_get_text (GTK_ENTRY (GET_WIDGET ("a_password_entry")));
+	password = ctk_entry_get_text (CTK_ENTRY (GET_WIDGET ("a_password_entry")));
 	has_password = (password != NULL) && (*password != '\0');
-	ctk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton")), can_encrypt_header ? (!has_password) : TRUE);
+	ctk_toggle_button_set_inconsistent (CTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton")), can_encrypt_header ? (!has_password) : TRUE);
 	ctk_widget_set_sensitive (GET_WIDGET ("a_encrypt_header_checkbutton"), can_encrypt_header ? has_password : FALSE);
 }
 
@@ -497,18 +497,18 @@ dlg_batch_add_files (FrWindow *window,
 
 	/* Set widgets data. */
 
-	size_group = ctk_size_group_new (GTK_SIZE_GROUP_HORIZONTAL);
+	size_group = ctk_size_group_new (CTK_SIZE_GROUP_HORIZONTAL);
 	ctk_size_group_add_widget (size_group, GET_WIDGET ("a_archive_label"));
 	ctk_size_group_add_widget (size_group, GET_WIDGET ("a_location_label"));
 	ctk_size_group_add_widget (size_group, GET_WIDGET ("a_password_label"));
 
-	ctk_button_set_label (GTK_BUTTON (GET_WIDGET ("a_add_button")), _("C_reate"));
-	ctk_button_set_image (GTK_BUTTON (GET_WIDGET ("a_add_button")),
-			      ctk_image_new_from_icon_name ("grapa_add-files-to-archive", GTK_ICON_SIZE_BUTTON));
+	ctk_button_set_label (CTK_BUTTON (GET_WIDGET ("a_add_button")), _("C_reate"));
+	ctk_button_set_image (CTK_BUTTON (GET_WIDGET ("a_add_button")),
+			      ctk_image_new_from_icon_name ("grapa_add-files-to-archive", CTK_ICON_SIZE_BUTTON));
 
-	ctk_expander_set_expanded (GTK_EXPANDER (GET_WIDGET ("a_other_options_expander")), FALSE /*g_settings_get_boolean (data->settings, PREF_BATCH_ADD_OTHER_OPTIONS)*/);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton")), g_settings_get_boolean (data->settings_general, PREF_GENERAL_ENCRYPT_HEADER));
-	ctk_spin_button_set_value (GTK_SPIN_BUTTON (GET_WIDGET ("a_volume_spinbutton")), g_settings_get_int (data->settings, PREF_BATCH_ADD_VOLUME_SIZE) / MEGABYTE);
+	ctk_expander_set_expanded (CTK_EXPANDER (GET_WIDGET ("a_other_options_expander")), FALSE /*g_settings_get_boolean (data->settings, PREF_BATCH_ADD_OTHER_OPTIONS)*/);
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (GET_WIDGET ("a_encrypt_header_checkbutton")), g_settings_get_boolean (data->settings_general, PREF_GENERAL_ENCRYPT_HEADER));
+	ctk_spin_button_set_value (CTK_SPIN_BUTTON (GET_WIDGET ("a_volume_spinbutton")), g_settings_get_int (data->settings, PREF_BATCH_ADD_VOLUME_SIZE) / MEGABYTE);
 
 
 	first_filename = (char*) file_list->data;
@@ -524,13 +524,13 @@ dlg_batch_add_files (FrWindow *window,
 		}
 	}
 
-	_ctk_entry_set_filename_text (GTK_ENTRY (GET_WIDGET ("a_add_to_entry")), automatic_name);
+	_ctk_entry_set_filename_text (CTK_ENTRY (GET_WIDGET ("a_add_to_entry")), automatic_name);
 	g_free (automatic_name);
 
 	if (check_permissions (parent, R_OK | W_OK))
-		grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")), parent);
+		grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")), parent);
 	else
-		grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")), get_home_uri ());
+		grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")), get_home_uri ());
 	g_free (parent);
 
 	/* archive type combobox */
@@ -543,11 +543,11 @@ dlg_batch_add_files (FrWindow *window,
 	sort_mime_types_by_extension (data->supported_types);
 
 	for (i = 0; data->supported_types[i] != -1; i++)
-		ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (data->archive_type_combo_box),
+		ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (data->archive_type_combo_box),
 						mime_type_desc[data->supported_types[i]].default_ext);
 
-	ctk_box_pack_start (GTK_BOX (GET_WIDGET ("a_archive_type_box")), data->archive_type_combo_box, TRUE, TRUE, 0);
-#if GTK_CHECK_VERSION (3,99,0)
+	ctk_box_pack_start (CTK_BOX (GET_WIDGET ("a_archive_type_box")), data->archive_type_combo_box, TRUE, TRUE, 0);
+#if CTK_CHECK_VERSION (3,99,0)
 	ctk_widget_show (GET_WIDGET ("a_archive_type_box"));
 #else
 	ctk_widget_show_all (GET_WIDGET ("a_archive_type_box"));
@@ -591,11 +591,11 @@ dlg_batch_add_files (FrWindow *window,
 	g_free (default_ext);
 
 	ctk_widget_grab_focus (GET_WIDGET ("a_add_to_entry"));
-	ctk_editable_select_region (GTK_EDITABLE (GET_WIDGET ("a_add_to_entry")),
+	ctk_editable_select_region (CTK_EDITABLE (GET_WIDGET ("a_add_to_entry")),
 				    0, -1);
 
 	update_sensitivity (data);
 
-	ctk_window_set_modal (GTK_WINDOW (GET_WIDGET ("dialog")), FALSE);
-	ctk_window_present (GTK_WINDOW (GET_WIDGET ("dialog")));
+	ctk_window_set_modal (CTK_WINDOW (GET_WIDGET ("dialog")), FALSE);
+	ctk_window_present (CTK_WINDOW (GET_WIDGET ("dialog")));
 }

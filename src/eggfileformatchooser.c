@@ -78,7 +78,7 @@ static guint signals[SIGNAL_LAST] = { 0 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (EggFileFormatChooser,
                             egg_file_format_chooser,
-                            GTK_TYPE_EXPANDER);
+                            CTK_TYPE_EXPANDER);
 static EGG_DEFINE_QUARK (EggFileFormatFilterInfo,
                          egg_file_format_filter_info);
 
@@ -146,7 +146,7 @@ egg_file_format_filter_new (const gchar *name,
 
   info = egg_file_format_filter_info_new (name, show_extensions);
 
-  ctk_file_filter_add_custom (filter, GTK_FILE_FILTER_FILENAME,
+  ctk_file_filter_add_custom (filter, CTK_FILE_FILTER_FILENAME,
                               egg_file_format_filter_filter,
                               info, NULL);
   g_object_set_qdata_full (G_OBJECT (filter),
@@ -224,8 +224,8 @@ selection_changed_cb (CtkTreeSelection     *selection,
       ctk_tree_model_get (model, &iter, MODEL_COLUMN_NAME, &name, -1);
 
       label = g_strdup_printf (_("File _Format: %s"), name);
-      ctk_expander_set_use_underline (GTK_EXPANDER (self), TRUE);
-      ctk_expander_set_label (GTK_EXPANDER (self), label);
+      ctk_expander_set_use_underline (CTK_EXPANDER (self), TRUE);
+      ctk_expander_set_label (CTK_EXPANDER (self), label);
 
       g_free (name);
       g_free (label);
@@ -389,7 +389,7 @@ egg_file_format_chooser_init (EggFileFormatChooser *self)
 /* tree model */
 
   self->priv->model = ctk_tree_store_new (7, G_TYPE_UINT, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING,
-                                             GTK_TYPE_FILE_FILTER, G_TYPE_POINTER, G_TYPE_POINTER);
+                                             CTK_TYPE_FILE_FILTER, G_TYPE_POINTER, G_TYPE_POINTER);
 
   ctk_tree_store_append (self->priv->model, &iter, NULL);
   ctk_tree_store_set (self->priv->model, &iter,
@@ -400,15 +400,15 @@ egg_file_format_chooser_init (EggFileFormatChooser *self)
 
 /* tree view */
 
-  view = ctk_tree_view_new_with_model (GTK_TREE_MODEL (self->priv->model));
-  self->priv->selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (view));
+  view = ctk_tree_view_new_with_model (CTK_TREE_MODEL (self->priv->model));
+  self->priv->selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (view));
 
 /* file format column */
 
   column = ctk_tree_view_column_new ();
   ctk_tree_view_column_set_expand (column, TRUE);
   ctk_tree_view_column_set_title (column, _("File Format"));
-  ctk_tree_view_append_column (GTK_TREE_VIEW (view), column);
+  ctk_tree_view_append_column (CTK_TREE_VIEW (view), column);
 
   cell = ctk_cell_renderer_pixbuf_new ();
   ctk_tree_view_column_pack_start (column, cell, FALSE);
@@ -428,11 +428,11 @@ egg_file_format_chooser_init (EggFileFormatChooser *self)
     _("Extension(s)"), ctk_cell_renderer_text_new (),
     "text", MODEL_COLUMN_EXTENSIONS, NULL);
   ctk_tree_view_column_set_expand (column, FALSE);
-  ctk_tree_view_append_column (GTK_TREE_VIEW (view), column);
+  ctk_tree_view_append_column (CTK_TREE_VIEW (view), column);
 
 /* selection */
 
-  ctk_tree_selection_set_mode (self->priv->selection, GTK_SELECTION_BROWSE);
+  ctk_tree_selection_set_mode (self->priv->selection, CTK_SELECTION_BROWSE);
   g_signal_connect (self->priv->selection, "changed",
                     G_CALLBACK (selection_changed_cb), self);
   self->priv->idle_hack = g_idle_add (select_default_file_format, self);
@@ -440,19 +440,19 @@ egg_file_format_chooser_init (EggFileFormatChooser *self)
 /* scroller */
 
   scroller = ctk_scrolled_window_new (NULL, NULL);
-  ctk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scroller),
-                                  GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
-  ctk_scrolled_window_set_shadow_type (GTK_SCROLLED_WINDOW (scroller),
-                                       GTK_SHADOW_IN);
+  ctk_scrolled_window_set_policy (CTK_SCROLLED_WINDOW (scroller),
+                                  CTK_POLICY_NEVER, CTK_POLICY_AUTOMATIC);
+  ctk_scrolled_window_set_shadow_type (CTK_SCROLLED_WINDOW (scroller),
+                                       CTK_SHADOW_IN);
   ctk_widget_set_size_request (scroller, -1, 150);
-  ctk_container_add (GTK_CONTAINER (scroller), view);
-#if GTK_CHECK_VERSION (3,99,0)
+  ctk_container_add (CTK_CONTAINER (scroller), view);
+#if CTK_CHECK_VERSION (3,99,0)
   ctk_widget_show (scroller);
 #else
   ctk_widget_show_all (scroller);
 #endif
 
-  ctk_container_add (GTK_CONTAINER (self), scroller);
+  ctk_container_add (CTK_CONTAINER (self), scroller);
 
   g_signal_connect_after (scroller, "unmap", G_CALLBACK (expander_unmap_cb), self);
 }
@@ -460,7 +460,7 @@ egg_file_format_chooser_init (EggFileFormatChooser *self)
 static void
 reset_model (EggFileFormatChooser *self)
 {
-  CtkTreeModel *model = GTK_TREE_MODEL (self->priv->model);
+  CtkTreeModel *model = CTK_TREE_MODEL (self->priv->model);
   CtkTreeIter iter;
 
   if (ctk_tree_model_get_iter_first (model, &iter))
@@ -545,8 +545,8 @@ filter_changed_cb (GObject    *object,
   self = EGG_FILE_FORMAT_CHOOSER (data);
 
   format_filter = NULL;
-  current_filter = ctk_file_chooser_get_filter (GTK_FILE_CHOOSER (object));
-  model = GTK_TREE_MODEL (self->priv->model);
+  current_filter = ctk_file_chooser_get_filter (CTK_FILE_CHOOSER (object));
+  model = CTK_TREE_MODEL (self->priv->model);
 
   if (ctk_tree_selection_get_selected (self->priv->selection, &model, &iter))
     {
@@ -597,18 +597,18 @@ error_message_with_parent (CtkWindow  *parent,
   g_warning ("%s: Merge with the code in Ctk{File,Recent}ChooserDefault.", G_STRLOC);
 
   dialog = ctk_message_dialog_new (parent,
-				   GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-				   GTK_MESSAGE_ERROR,
-				   GTK_BUTTONS_OK,
+				   CTK_DIALOG_MODAL | CTK_DIALOG_DESTROY_WITH_PARENT,
+				   CTK_MESSAGE_ERROR,
+				   CTK_BUTTONS_OK,
 				   "%s",
 				   msg);
-  ctk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+  ctk_message_dialog_format_secondary_text (CTK_MESSAGE_DIALOG (dialog),
 					    "%s", detail);
 
   if (ctk_window_get_group (parent))
-    ctk_window_group_add_window (ctk_window_get_group (parent), GTK_WINDOW (dialog));
+    ctk_window_group_add_window (ctk_window_get_group (parent), CTK_WINDOW (dialog));
 
-  ctk_dialog_run (GTK_DIALOG (dialog));
+  ctk_dialog_run (CTK_DIALOG (dialog));
   ctk_widget_destroy (dialog);
 }
 
@@ -622,7 +622,7 @@ get_toplevel (CtkWidget *widget)
   if (!ctk_widget_is_toplevel (toplevel))
     return NULL;
   else
-    return GTK_WINDOW (toplevel);
+    return CTK_WINDOW (toplevel);
 }
 
 /* Shows an error dialog for the file chooser */
@@ -631,7 +631,7 @@ error_message (EggFileFormatChooser *impl,
 	       const char           *msg,
 	       const char           *detail)
 {
-  error_message_with_parent (get_toplevel (GTK_WIDGET (impl)), msg, detail);
+  error_message_with_parent (get_toplevel (CTK_WIDGET (impl)), msg, detail);
 }
 
 static void
@@ -701,21 +701,21 @@ egg_file_format_chooser_realize (CtkWidget *widget)
   CtkTreeModel *model;
   CtkTreeIter iter;
 
-  GTK_WIDGET_CLASS (egg_file_format_chooser_parent_class)->realize (widget);
+  CTK_WIDGET_CLASS (egg_file_format_chooser_parent_class)->realize (widget);
 
   self = EGG_FILE_FORMAT_CHOOSER (widget);
 
   g_return_if_fail (NULL == self->priv->chooser);
 
   parent = ctk_widget_get_parent (widget);
-  while ((parent != NULL) && !GTK_IS_FILE_CHOOSER (parent))
+  while ((parent != NULL) && !CTK_IS_FILE_CHOOSER (parent))
     parent = ctk_widget_get_parent (parent);
 
-  self->priv->chooser = GTK_FILE_CHOOSER (parent);
+  self->priv->chooser = CTK_FILE_CHOOSER (parent);
 
-  g_return_if_fail (GTK_IS_FILE_CHOOSER (self->priv->chooser));
+  g_return_if_fail (CTK_IS_FILE_CHOOSER (self->priv->chooser));
   g_return_if_fail (ctk_file_chooser_get_action (self->priv->chooser) ==
-                    GTK_FILE_CHOOSER_ACTION_SAVE);
+                    CTK_FILE_CHOOSER_ACTION_SAVE);
 
   g_object_ref (self->priv->chooser);
 
@@ -723,7 +723,7 @@ egg_file_format_chooser_realize (CtkWidget *widget)
                     G_CALLBACK (filter_changed_cb), self);
   ctk_file_chooser_add_filter (self->priv->chooser, self->priv->all_files);
 
-  model = GTK_TREE_MODEL (self->priv->model);
+  model = CTK_TREE_MODEL (self->priv->model);
 
   if (ctk_tree_model_get_iter_first (model, &iter))
     {
@@ -739,7 +739,7 @@ egg_file_format_chooser_realize (CtkWidget *widget)
   ctk_file_chooser_set_filter (self->priv->chooser,
                                self->priv->supported_files);
 
-  if (GTK_IS_DIALOG (self->priv->chooser))
+  if (CTK_IS_DIALOG (self->priv->chooser))
     g_signal_connect (self->priv->chooser, "response",
                       G_CALLBACK (chooser_response_cb), self);
 }
@@ -753,10 +753,10 @@ egg_file_format_chooser_unrealize (CtkWidget *widget)
   CtkTreeModel *model;
   CtkTreeIter iter;
 
-  GTK_WIDGET_CLASS (egg_file_format_chooser_parent_class)->unrealize (widget);
+  CTK_WIDGET_CLASS (egg_file_format_chooser_parent_class)->unrealize (widget);
 
   self = EGG_FILE_FORMAT_CHOOSER (widget);
-  model = GTK_TREE_MODEL (self->priv->model);
+  model = CTK_TREE_MODEL (self->priv->model);
 
   g_signal_handlers_disconnect_by_func (self->priv->chooser,
                                         filter_changed_cb, self);
@@ -782,7 +782,7 @@ static void
 egg_file_format_chooser_class_init (EggFileFormatChooserClass *cls)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (cls);
-  CtkWidgetClass *widget_class = GTK_WIDGET_CLASS (cls);
+  CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (cls);
 
   object_class->dispose = egg_file_format_chooser_dispose;
   object_class->finalize = egg_file_format_chooser_finalize;
@@ -819,7 +819,7 @@ egg_file_format_chooser_add_format_impl (EggFileFormatChooser *self,
 
   if (parent > 0)
     {
-      ctk_tree_model_foreach (GTK_TREE_MODEL (self->priv->model),
+      ctk_tree_model_foreach (CTK_TREE_MODEL (self->priv->model),
                               find_by_format, &search);
       g_return_val_if_fail (search.success, -1);
     }
@@ -840,7 +840,7 @@ egg_file_format_chooser_add_format_impl (EggFileFormatChooser *self,
   if (extensions)
     {
       if (parent > 0)
-        ctk_tree_model_get (GTK_TREE_MODEL (self->priv->model), &search.iter,
+        ctk_tree_model_get (CTK_TREE_MODEL (self->priv->model), &search.iter,
                             MODEL_COLUMN_FILTER, &filter, -1);
 
       egg_file_format_filter_add_extensions (self->priv->supported_files, extensions);
@@ -997,7 +997,7 @@ egg_file_format_chooser_remove_format (EggFileFormatChooser *self,
   search.success = FALSE;
   search.format = format;
 
-  model = GTK_TREE_MODEL (self->priv->model);
+  model = CTK_TREE_MODEL (self->priv->model);
   ctk_tree_model_foreach (model, find_by_format, &search);
 
   g_return_if_fail (search.success);
@@ -1039,7 +1039,7 @@ egg_file_format_chooser_set_format (EggFileFormatChooser *self,
   search.success = FALSE;
   search.format = format;
 
-  model = GTK_TREE_MODEL (self->priv->model);
+  model = CTK_TREE_MODEL (self->priv->model);
   ctk_tree_model_foreach (model, find_by_format, &search);
 
   g_return_if_fail (search.success);
@@ -1102,7 +1102,7 @@ egg_file_format_chooser_set_format_data (EggFileFormatChooser *self,
   search.success = FALSE;
   search.format = format;
 
-  ctk_tree_model_foreach (GTK_TREE_MODEL (self->priv->model),
+  ctk_tree_model_foreach (CTK_TREE_MODEL (self->priv->model),
                           find_by_format, &search);
 
   g_return_if_fail (search.success);
@@ -1126,7 +1126,7 @@ egg_file_format_chooser_get_format_data (EggFileFormatChooser *self,
   search.success = FALSE;
   search.format = format;
 
-  model = GTK_TREE_MODEL (self->priv->model);
+  model = CTK_TREE_MODEL (self->priv->model);
   ctk_tree_model_foreach (model, find_by_format, &search);
 
   g_return_val_if_fail (search.success, NULL);
@@ -1164,7 +1164,7 @@ egg_file_format_chooser_append_extension (EggFileFormatChooser *self,
   search.success = FALSE;
   search.format = format;
 
-  model = GTK_TREE_MODEL (self->priv->model);
+  model = CTK_TREE_MODEL (self->priv->model);
   ctk_tree_model_foreach (model, find_by_format, &search);
 
   g_return_val_if_fail (search.success, NULL);

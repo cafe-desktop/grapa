@@ -57,12 +57,12 @@ response_cb (CtkWidget  *dialog,
 	gboolean  encrypt_header;
 
 	switch (response_id) {
-	case GTK_RESPONSE_OK:
-		password = _ctk_entry_get_locale_text (GTK_ENTRY (data->pw_password_entry));
+	case CTK_RESPONSE_OK:
+		password = _ctk_entry_get_locale_text (CTK_ENTRY (data->pw_password_entry));
 		fr_window_set_password (data->window, password);
 		g_free (password);
 
-		encrypt_header = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->pw_encrypt_header_checkbutton));
+		encrypt_header = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->pw_encrypt_header_checkbutton));
 		{
 			GSettings *settings;
 
@@ -105,8 +105,8 @@ dlg_password (CtkWidget *widget,
 
 	/* Set widgets data. */
 
-	_ctk_entry_set_locale_text (GTK_ENTRY (data->pw_password_entry), fr_window_get_password (window));
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->pw_encrypt_header_checkbutton), fr_window_get_encrypt_header (window));
+	_ctk_entry_set_locale_text (CTK_ENTRY (data->pw_password_entry), fr_window_get_password (window));
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (data->pw_encrypt_header_checkbutton), fr_window_get_encrypt_header (window));
 
 	/* Set the signals handlers. */
 
@@ -123,10 +123,10 @@ dlg_password (CtkWidget *widget,
 	/* Run dialog. */
 
 	ctk_widget_grab_focus (data->pw_password_entry);
-	if (ctk_widget_get_realized (GTK_WIDGET (window)))
-		ctk_window_set_transient_for (GTK_WINDOW (data->dialog),
-					      GTK_WINDOW (window));
-	ctk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
+	if (ctk_widget_get_realized (CTK_WIDGET (window)))
+		ctk_window_set_transient_for (CTK_WINDOW (data->dialog),
+					      CTK_WINDOW (window));
+	ctk_window_set_modal (CTK_WINDOW (data->dialog), TRUE);
 
 	ctk_widget_show (data->dialog);
 }

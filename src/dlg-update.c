@@ -128,16 +128,16 @@ update_file_list (DialogData *data)
 
 	/* update the file list */
 
-	ctk_list_store_clear (GTK_LIST_STORE (data->list_model));
+	ctk_list_store_clear (CTK_LIST_STORE (data->list_model));
 	for (scan = data->file_list; scan; scan = scan->next) {
 		char     *utf8_name;
 		OpenFile *file = scan->data;
 
-		ctk_list_store_append (GTK_LIST_STORE (data->list_model),
+		ctk_list_store_append (CTK_LIST_STORE (data->list_model),
 				       &iter);
 
 		utf8_name = g_filename_display_name (file_name_from_path (file->path));
-		ctk_list_store_set (GTK_LIST_STORE (data->list_model),
+		ctk_list_store_set (CTK_LIST_STORE (data->list_model),
 				    &iter,
 				    IS_SELECTED_COLUMN, TRUE,
 				    NAME_COLUMN, utf8_name,
@@ -163,7 +163,7 @@ update_file_list (DialogData *data)
 		archive_name = g_path_get_basename (unescaped);
 		label = g_markup_printf_escaped (_("Update the file \"%s\" in the archive \"%s\"?"), file_name, archive_name);
 		markup = g_strdup_printf ("<big><b>%s</b></big>", label);
-		ctk_label_set_markup (GTK_LABEL (data->update_file_primary_text_label), markup);
+		ctk_label_set_markup (CTK_LABEL (data->update_file_primary_text_label), markup);
 
 		g_free (markup);
 		g_free (label);
@@ -177,7 +177,7 @@ update_file_list (DialogData *data)
 						   "%d files have been modified with an external application. If you don't update the files in the archive, all of your changes will be lost.",
 						   n_files),
 					 n_files);
-		ctk_label_set_text (GTK_LABEL (data->update_file_secondary_text_label), label);
+		ctk_label_set_text (CTK_LABEL (data->update_file_secondary_text_label), label);
 		g_free (label);
 	}
 	else if (n_files > 1) {
@@ -192,7 +192,7 @@ update_file_list (DialogData *data)
 		archive_name = g_path_get_basename (unescaped);
 		label = g_markup_printf_escaped (_("Update the files in the archive \"%s\"?"), archive_name);
 		markup = g_strdup_printf ("<big><b>%s</b></big>", label);
-		ctk_label_set_markup (GTK_LABEL (data->update_files_primary_text_label), markup);
+		ctk_label_set_markup (CTK_LABEL (data->update_files_primary_text_label), markup);
 
 		g_free (markup);
 		g_free (label);
@@ -205,28 +205,28 @@ update_file_list (DialogData *data)
 						   "%d files have been modified with an external application. If you don't update the files in the archive, all of your changes will be lost.",
 						   n_files),
 					 n_files);
-		ctk_label_set_text (GTK_LABEL (data->update_files_secondary_text_label), label);
+		ctk_label_set_text (CTK_LABEL (data->update_files_secondary_text_label), label);
 		g_free (label);
 	}
 
 	/* show the appropriate dialog */
 
 	if (n_files == 1) {
-		/*ctk_window_set_modal (GTK_WINDOW (data->update_files_dialog), FALSE);*/
+		/*ctk_window_set_modal (CTK_WINDOW (data->update_files_dialog), FALSE);*/
 		ctk_widget_hide (data->update_files_dialog);
-		/*ctk_window_set_modal (GTK_WINDOW (data->update_file_dialog), TRUE);*/
+		/*ctk_window_set_modal (CTK_WINDOW (data->update_file_dialog), TRUE);*/
 		ctk_widget_show (data->update_file_dialog);
 	}
 	else if (n_files > 1) {
-		/*ctk_window_set_modal (GTK_WINDOW (data->update_file_dialog), FALSE);*/
+		/*ctk_window_set_modal (CTK_WINDOW (data->update_file_dialog), FALSE);*/
 		ctk_widget_hide (data->update_file_dialog);
-		/*ctk_window_set_modal (GTK_WINDOW (data->update_files_dialog), TRUE);*/
+		/*ctk_window_set_modal (CTK_WINDOW (data->update_files_dialog), TRUE);*/
 		ctk_widget_show (data->update_files_dialog);
 	}
 	else { /* n_files == 0 */
-		/*ctk_window_set_modal (GTK_WINDOW (data->update_files_dialog), FALSE);*/
+		/*ctk_window_set_modal (CTK_WINDOW (data->update_files_dialog), FALSE);*/
 		ctk_widget_hide (data->update_files_dialog);
-		/*ctk_window_set_modal (GTK_WINDOW (data->update_file_dialog), FALSE);*/
+		/*ctk_window_set_modal (CTK_WINDOW (data->update_file_dialog), FALSE);*/
 		ctk_widget_hide (data->update_file_dialog);
 	}
 }
@@ -258,14 +258,14 @@ is_selected_toggled (CtkCellRendererToggle *cell,
 		     gpointer               callback_data)
 {
 	DialogData   *data  = callback_data;
-	CtkTreeModel *model = GTK_TREE_MODEL (data->list_model);
+	CtkTreeModel *model = CTK_TREE_MODEL (data->list_model);
 	CtkTreeIter   iter;
 	CtkTreePath  *path = ctk_tree_path_new_from_string (path_string);
 	guint         value;
 
 	ctk_tree_model_get_iter (model, &iter, path);
 	value = ! ctk_cell_renderer_toggle_get_active (cell);
-	ctk_list_store_set (GTK_LIST_STORE (model), &iter, IS_SELECTED_COLUMN, value, -1);
+	ctk_list_store_set (CTK_LIST_STORE (model), &iter, IS_SELECTED_COLUMN, value, -1);
 
 	ctk_tree_path_free (path);
 
@@ -339,14 +339,14 @@ dlg_update (FrWindow *window)
 
 	/* Set dialog data. */
 
-	data->list_model = GTK_TREE_MODEL (ctk_list_store_new (N_COLUMNS,
+	data->list_model = CTK_TREE_MODEL (ctk_list_store_new (N_COLUMNS,
 							       G_TYPE_BOOLEAN,
 							       G_TYPE_STRING,
 							       G_TYPE_POINTER));
-	ctk_tree_sortable_set_sort_column_id (GTK_TREE_SORTABLE (data->list_model),
+	ctk_tree_sortable_set_sort_column_id (CTK_TREE_SORTABLE (data->list_model),
 					      NAME_COLUMN,
-					      GTK_SORT_ASCENDING);
-	ctk_tree_view_set_model (GTK_TREE_VIEW (data->update_files_treeview),
+					      CTK_SORT_ASCENDING);
+	ctk_tree_view_set_model (CTK_TREE_VIEW (data->update_files_treeview),
 				 data->list_model);
 	g_object_unref (G_OBJECT (data->list_model));
 
@@ -368,14 +368,14 @@ dlg_update (FrWindow *window)
 					     "text", NAME_COLUMN,
 					     NULL);
 
-	ctk_tree_view_append_column (GTK_TREE_VIEW (data->update_files_treeview), column);
+	ctk_tree_view_append_column (CTK_TREE_VIEW (data->update_files_treeview), column);
 
 	/* Run dialog. */
 
-	ctk_window_set_transient_for (GTK_WINDOW (data->update_file_dialog),
-				      GTK_WINDOW (window));
-	ctk_window_set_transient_for (GTK_WINDOW (data->update_files_dialog),
-				      GTK_WINDOW (window));
+	ctk_window_set_transient_for (CTK_WINDOW (data->update_file_dialog),
+				      CTK_WINDOW (window));
+	ctk_window_set_transient_for (CTK_WINDOW (data->update_files_dialog),
+				      CTK_WINDOW (window));
 
 	update_file_list (data);
 

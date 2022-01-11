@@ -51,9 +51,9 @@ destroy_cb (CtkWidget  *widget,
 static void
 update_sensitivity (DlgNewData *data)
 {
-	ctk_toggle_button_set_inconsistent (GTK_TOGGLE_BUTTON (data->n_encrypt_header_checkbutton), ! data->can_encrypt_header);
+	ctk_toggle_button_set_inconsistent (CTK_TOGGLE_BUTTON (data->n_encrypt_header_checkbutton), ! data->can_encrypt_header);
 	ctk_widget_set_sensitive (data->n_encrypt_header_checkbutton, data->can_encrypt_header);
-	ctk_widget_set_sensitive (data->n_volume_spinbutton, ! data->can_create_volumes || ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->n_volume_checkbutton)));
+	ctk_widget_set_sensitive (data->n_volume_spinbutton, ! data->can_create_volumes || ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->n_volume_checkbutton)));
 }
 
 
@@ -104,7 +104,7 @@ get_archive_type (DlgNewData *data)
 	const char *uri;
 	const char *ext;
 
-	uri = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	uri = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (data->dialog));
 	if (uri == NULL)
 		return -1;
 
@@ -113,7 +113,7 @@ get_archive_type (DlgNewData *data)
 		int idx;
 
 		idx = egg_file_format_chooser_get_format (EGG_FILE_FORMAT_CHOOSER (data->format_chooser), uri);
-		/*idx = ctk_combo_box_get_active (GTK_COMBO_BOX (data->n_archive_type_combo_box)) - 1;*/
+		/*idx = ctk_combo_box_get_active (CTK_COMBO_BOX (data->n_archive_type_combo_box)) - 1;*/
 		if (idx >= 0)
 			return data->supported_types[idx];
 
@@ -133,10 +133,10 @@ archive_type_combo_box_changed_cb (CtkComboBox *combo_box,
 	const char *ext;
 	int         idx;
 
-	uri = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	uri = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (data->dialog));
 
 	ext = get_archive_filename_extension (uri);
-	idx = ctk_combo_box_get_active (GTK_COMBO_BOX (data->n_archive_type_combo_box)) - 1;
+	idx = ctk_combo_box_get_active (CTK_COMBO_BOX (data->n_archive_type_combo_box)) - 1;
 	if ((ext == NULL) && (idx >= 0))
 		ext = mime_type_desc[data->supported_types[idx]].default_ext;
 
@@ -158,7 +158,7 @@ archive_type_combo_box_changed_cb (CtkComboBox *combo_box,
 		new_basename = g_strconcat (basename_noext, new_ext, NULL);
 		new_basename_uft8 = g_uri_unescape_string (new_basename, NULL);
 
-		ctk_file_chooser_set_current_name (GTK_FILE_CHOOSER (data->dialog), new_basename_uft8);
+		ctk_file_chooser_set_current_name (CTK_FILE_CHOOSER (data->dialog), new_basename_uft8);
 		update_sensitivity_for_ext (data, new_ext);
 
 		g_free (new_basename_uft8);
@@ -193,7 +193,7 @@ format_chooser_selection_changed_cb (EggFileFormatChooser *format_chooser,
 	const char *ext;
 	int         n_format;
 
-	uri = grapa_file_chooser_get_uri (GTK_FILE_CHOOSER (data->dialog));
+	uri = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (data->dialog));
 	if (uri == NULL)
 		return;
 
@@ -220,7 +220,7 @@ format_chooser_selection_changed_cb (EggFileFormatChooser *format_chooser,
 		new_basename = g_strconcat (basename_noext, new_ext, NULL);
 		new_basename_uft8 = g_uri_unescape_string (new_basename, NULL);
 
-		ctk_file_chooser_set_current_name (GTK_FILE_CHOOSER (data->dialog), new_basename_uft8);
+		ctk_file_chooser_set_current_name (CTK_FILE_CHOOSER (data->dialog), new_basename_uft8);
 		update_sensitivity_for_ext (data, new_ext);
 
 		g_free (new_basename_uft8);
@@ -301,25 +301,25 @@ dlg_new_archive (FrWindow  *window,
 
 	/* Set widgets data. */
 
-	ctk_dialog_set_default_response (GTK_DIALOG (data->dialog), GTK_RESPONSE_OK);
-	grapa_file_chooser_set_current_folder_uri (GTK_FILE_CHOOSER (data->dialog), fr_window_get_open_default_dir (window));
+	ctk_dialog_set_default_response (CTK_DIALOG (data->dialog), CTK_RESPONSE_OK);
+	grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (data->dialog), fr_window_get_open_default_dir (window));
 
 	if (default_name != NULL)
-		ctk_file_chooser_set_current_name (GTK_FILE_CHOOSER (data->dialog), default_name);
+		ctk_file_chooser_set_current_name (CTK_FILE_CHOOSER (data->dialog), default_name);
 
 	/**/
 
-	ctk_button_set_label (GTK_BUTTON (n_new_button), _("C_reate"));
-	ctk_button_set_image (GTK_BUTTON (n_new_button),
-			      ctk_image_new_from_icon_name ("grapa_add-files-to-archive", GTK_ICON_SIZE_BUTTON));
+	ctk_button_set_label (CTK_BUTTON (n_new_button), _("C_reate"));
+	ctk_button_set_image (CTK_BUTTON (n_new_button),
+			      ctk_image_new_from_icon_name ("grapa_add-files-to-archive", CTK_ICON_SIZE_BUTTON));
 
-	ctk_expander_set_expanded (GTK_EXPANDER (data->n_other_options_expander), FALSE);
+	ctk_expander_set_expanded (CTK_EXPANDER (data->n_other_options_expander), FALSE);
 	settings = g_settings_new (GRAPA_SCHEMA_GENERAL);
-        ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (data->n_encrypt_header_checkbutton), g_settings_get_boolean (settings, PREF_GENERAL_ENCRYPT_HEADER));
+        ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (data->n_encrypt_header_checkbutton), g_settings_get_boolean (settings, PREF_GENERAL_ENCRYPT_HEADER));
         g_object_unref (settings);
 
         settings = g_settings_new (GRAPA_SCHEMA_BATCH_ADD);
-        ctk_spin_button_set_value (GTK_SPIN_BUTTON (data->n_volume_spinbutton), g_settings_get_int (settings, PREF_BATCH_ADD_VOLUME_SIZE) / MEGABYTE);
+        ctk_spin_button_set_value (CTK_SPIN_BUTTON (data->n_volume_spinbutton), g_settings_get_int (settings, PREF_BATCH_ADD_VOLUME_SIZE) / MEGABYTE);
         g_object_unref (settings);
 
 	/* format chooser */
@@ -359,8 +359,8 @@ dlg_new_archive (FrWindow  *window,
 		g_free (icon_name);
 	}
 	egg_file_format_chooser_set_format (data->format_chooser, 0);
-	ctk_widget_show (GTK_WIDGET (data->format_chooser));
-	ctk_box_pack_start (GTK_BOX (GET_WIDGET ("format_chooser_box")), GTK_WIDGET (data->format_chooser), TRUE, TRUE, 0);
+	ctk_widget_show (CTK_WIDGET (data->format_chooser));
+	ctk_box_pack_start (CTK_BOX (GET_WIDGET ("format_chooser_box")), CTK_WIDGET (data->format_chooser), TRUE, TRUE, 0);
 	ctk_widget_set_vexpand (GET_WIDGET ("extra_widget"), FALSE);
 
 	/* Set the signals handlers. */
@@ -410,9 +410,9 @@ dlg_new_archive (FrWindow  *window,
 
 	update_sensitivity (data);
 
-	ctk_window_set_modal (GTK_WINDOW (data->dialog), TRUE);
-	ctk_window_set_transient_for (GTK_WINDOW (data->dialog), GTK_WINDOW (data->window));
-	/*ctk_window_present (GTK_WINDOW (data->dialog));*/
+	ctk_window_set_modal (CTK_WINDOW (data->dialog), TRUE);
+	ctk_window_set_transient_for (CTK_WINDOW (data->dialog), CTK_WINDOW (data->window));
+	/*ctk_window_present (CTK_WINDOW (data->dialog));*/
 
 	return data;
 }
@@ -424,7 +424,7 @@ dlg_new (FrWindow *window)
 	DlgNewData *data;
 
 	data = dlg_new_archive (window, create_type, NULL);
-	ctk_window_set_title (GTK_WINDOW (data->dialog), C_("File", "New"));
+	ctk_window_set_title (CTK_WINDOW (data->dialog), C_("File", "New"));
 
 	return data;
 }
@@ -437,7 +437,7 @@ dlg_save_as (FrWindow   *window,
 	DlgNewData *data;
 
 	data = dlg_new_archive (window, save_type, default_name);
-	ctk_window_set_title (GTK_WINDOW (data->dialog), C_("File", "Save"));
+	ctk_window_set_title (CTK_WINDOW (data->dialog), C_("File", "Save"));
 
 	return data;
 }
@@ -454,7 +454,7 @@ dlg_new_data_get_password (DlgNewData *data)
 		return NULL;
 
 	if (mime_type_desc[idx].capabilities & FR_COMMAND_CAN_ENCRYPT)
-		password = (char*) ctk_entry_get_text (GTK_ENTRY (data->n_password_entry));
+		password = (char*) ctk_entry_get_text (CTK_ENTRY (data->n_password_entry));
 
 	return password;
 }
@@ -471,11 +471,11 @@ dlg_new_data_get_encrypt_header (DlgNewData *data)
 		return FALSE;
 
 	if (mime_type_desc[idx].capabilities & FR_COMMAND_CAN_ENCRYPT) {
-		const char *password = ctk_entry_get_text (GTK_ENTRY (data->n_password_entry));
+		const char *password = ctk_entry_get_text (CTK_ENTRY (data->n_password_entry));
 		if (password != NULL) {
 			if (strcmp (password, "") != 0) {
 				if (mime_type_desc[idx].capabilities & FR_COMMAND_CAN_ENCRYPT_HEADER)
-					encrypt_header = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->n_encrypt_header_checkbutton));
+					encrypt_header = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->n_encrypt_header_checkbutton));
 			}
 		}
 	}
@@ -495,11 +495,11 @@ dlg_new_data_get_volume_size (DlgNewData *data)
 		return 0;
 
 	if ((mime_type_desc[idx].capabilities & FR_COMMAND_CAN_CREATE_VOLUMES)
-	    && ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (data->n_volume_checkbutton)))
+	    && ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->n_volume_checkbutton)))
 	{
 		double value;
 
-		value = ctk_spin_button_get_value (GTK_SPIN_BUTTON (data->n_volume_spinbutton));
+		value = ctk_spin_button_get_value (CTK_SPIN_BUTTON (data->n_volume_spinbutton));
 		volume_size = floor (value * MEGABYTE);
 
 	}
