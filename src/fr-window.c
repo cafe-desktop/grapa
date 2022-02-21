@@ -1792,11 +1792,7 @@ fr_window_update_dir_tree (FrWindow *window)
 	else {
 		ctk_widget_set_sensitive (window->priv->tree_view, TRUE);
 		if (! ctk_widget_get_visible (window->priv->sidepane))
-#if CTK_CHECK_VERSION (3,99,0)
-			ctk_widget_show (window->priv->sidepane);
-#else
 			ctk_widget_show_all (window->priv->sidepane);
-#endif
 	}
 
 	if (ctk_widget_get_realized (window->priv->tree_view))
@@ -1936,11 +1932,7 @@ fr_window_update_file_list (FrWindow *window,
 
 		if (window->priv->archive_new) {
 			ctk_widget_set_sensitive (window->priv->list_view, TRUE);
-#if CTK_CHECK_VERSION (3,99,0)
-			ctk_widget_show (ctk_widget_get_parent (window->priv->list_view));
-#else
 			ctk_widget_show_all (ctk_widget_get_parent (window->priv->list_view));
-#endif
 		}
 		else {
 			ctk_widget_set_sensitive (window->priv->list_view, FALSE);
@@ -1951,11 +1943,7 @@ fr_window_update_file_list (FrWindow *window,
 	}
 	else {
 		ctk_widget_set_sensitive (window->priv->list_view, TRUE);
-#if CTK_CHECK_VERSION (3,99,0)
-		ctk_widget_show (ctk_widget_get_parent (window->priv->list_view));
-#else
 		ctk_widget_show_all (ctk_widget_get_parent (window->priv->list_view));
-#endif
 	}
 
 	if (window->priv->give_focus_to_the_list) {
@@ -2671,11 +2659,7 @@ create_the_progress_dialog (FrWindow *window)
 	ctk_label_set_ellipsize (CTK_LABEL (lbl), PANGO_ELLIPSIZE_END);
 	ctk_box_pack_start (CTK_BOX (progress_vbox), lbl, TRUE, TRUE, 0);
 
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_widget_show (hbox);
-#else
 	ctk_widget_show_all (hbox);
-#endif
 
 	progress_dialog_update_action_description (window);
 
@@ -5833,11 +5817,7 @@ fr_window_construct (FrWindow *window)
 			  G_CALLBACK (filter_entry_icon_release_cb),
 			  window);
 
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_widget_show (filter_box);
-#else
 	ctk_widget_show_all (filter_box);
-#endif
 
 	/* tree view */
 
@@ -5924,11 +5904,7 @@ fr_window_construct (FrWindow *window)
 	ctk_paned_set_position (CTK_PANED (window->priv->paned), g_settings_get_int (window->priv->settings_ui, PREF_UI_SIDEBAR_WIDTH));
 
 	fr_window_attach (FR_WINDOW (window), window->priv->paned, FR_WINDOW_AREA_CONTENTS);
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_widget_show (window->priv->paned);
-#else
 	ctk_widget_show_all (window->priv->paned);
-#endif
 
 	/* Build the menu and the toolbar. */
 
@@ -6052,21 +6028,13 @@ fr_window_construct (FrWindow *window)
 		CtkToolItem *tool_item;
 
 		tool_item = ctk_separator_tool_item_new ();
-#if CTK_CHECK_VERSION (3,99,0)
-		ctk_widget_show (CTK_WIDGET (tool_item));
-#else
 		ctk_widget_show_all (CTK_WIDGET (tool_item));
-#endif
 		ctk_toolbar_insert (CTK_TOOLBAR (window->priv->location_bar), tool_item, -1);
 
 		tool_item = ctk_tool_item_new ();
 		ctk_tool_item_set_expand (tool_item, TRUE);
 		ctk_container_add (CTK_CONTAINER (tool_item), location_box);
-#if CTK_CHECK_VERSION (3,99,0)
-		ctk_widget_show (CTK_WIDGET (tool_item));
-#else
 		ctk_widget_show_all (CTK_WIDGET (tool_item));
-#endif
 		ctk_toolbar_insert (CTK_TOOLBAR (window->priv->location_bar), tool_item, -1);
 	}
 
@@ -7488,11 +7456,7 @@ fr_window_view_last_output (FrWindow   *window,
 	ctk_box_pack_start (CTK_BOX (vbox), scrolled,
 			    TRUE, TRUE, 0);
 
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_widget_show (vbox);
-#else
 	ctk_widget_show_all (vbox);
-#endif
 	ctk_box_pack_start (CTK_BOX (ctk_dialog_get_content_area (CTK_DIALOG (dialog))),
 			    vbox,
 			    TRUE, TRUE, 0);

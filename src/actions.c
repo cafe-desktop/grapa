@@ -387,9 +387,7 @@ activate_action_open (CtkAction *action,
                         CTK_STOCK_OPEN, CTK_RESPONSE_OK,
                         NULL);
     ctk_dialog_set_default_response (CTK_DIALOG (file_sel), CTK_RESPONSE_OK);
-#if !CTK_CHECK_VERSION (3,99,0)
     ctk_file_chooser_set_local_only (CTK_FILE_CHOOSER (file_sel), FALSE);
-#endif
     ctk_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (file_sel), fr_window_get_open_default_dir (window));
 
     filter = ctk_file_filter_new ();

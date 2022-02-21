@@ -147,11 +147,7 @@ _ctk_message_dialog_new (CtkWindow        *parent,
 			    hbox,
 			    FALSE, FALSE, 0);
 
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_widget_show (hbox);
-#else
 	ctk_widget_show_all (hbox);
-#endif
 
 	/* Add buttons */
 
@@ -258,11 +254,7 @@ _ctk_request_dialog_run (CtkWindow        *parent,
 	ctk_box_pack_start (CTK_BOX (vbox), entry, FALSE, FALSE, 0);
 	ctk_box_pack_start (CTK_BOX (content_area), hbox, FALSE, FALSE, 0);
 
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_widget_show (hbox);
-#else
 	ctk_widget_show_all (hbox);
-#endif
 
 	/* Add buttons */
 
@@ -428,11 +420,7 @@ _ctk_error_dialog_new (CtkWindow        *parent,
 	ctk_container_set_border_width (CTK_CONTAINER (hbox), 5);
 	ctk_box_set_spacing (CTK_BOX (content_area), 14); /* 14 + 2 * 5 = 24 */
 
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_widget_show (vbox);
-#else
 	ctk_widget_show_all (vbox);
-#endif
 
 	return dialog;
 }

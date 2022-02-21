@@ -446,11 +446,7 @@ egg_file_format_chooser_init (EggFileFormatChooser *self)
                                        CTK_SHADOW_IN);
   ctk_widget_set_size_request (scroller, -1, 150);
   ctk_container_add (CTK_CONTAINER (scroller), view);
-#if CTK_CHECK_VERSION (3,99,0)
-  ctk_widget_show (scroller);
-#else
   ctk_widget_show_all (scroller);
-#endif
 
   ctk_container_add (CTK_CONTAINER (self), scroller);
 

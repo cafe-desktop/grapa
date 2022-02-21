@@ -24,11 +24,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
-#if CTK_CHECK_VERSION (3,99,0)
-#include <cdk/x11/cdkx.h>
-#else
 #include <cdk/cdkx.h>
-#endif
 #include "dlg-package-installer.h"
 #include "ctk-utils.h"
 #include "fr-init.h"

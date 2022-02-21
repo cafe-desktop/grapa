@@ -244,9 +244,7 @@ add_folder_cb (CtkWidget *widget,
 	data->choice = filechooser = ctk_file_chooser_widget_new (CTK_FILE_CHOOSER_ACTION_SELECT_FOLDER);
 	ctk_file_chooser_set_select_multiple (CTK_FILE_CHOOSER (filechooser), FALSE);
 
-#if !CTK_CHECK_VERSION (3,99,0)
 	ctk_file_chooser_set_local_only (CTK_FILE_CHOOSER (filechooser), FALSE);
-#endif
 	ctk_dialog_set_default_response (CTK_DIALOG (file_sel), CTK_RESPONSE_OK);
 
 	data->add_if_newer_checkbutton = ctk_check_button_new_with_mnemonic (_("Add only if _newer"));
@@ -349,11 +347,7 @@ add_folder_cb (CtkWidget *widget,
 	ctk_box_pack_start (CTK_BOX (vbox), data->clear_button,
 			    FALSE, FALSE, 0);
 
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_widget_show (main_box);
-#else
 	ctk_widget_show_all (full_box);
-#endif
 
 	/* set data */
 

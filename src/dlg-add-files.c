@@ -59,12 +59,7 @@ file_sel_response_cb (CtkWidget      *widget,
 	char           *current_folder;
 	char           *uri;
 	gboolean        update;
-#if CTK_CHECK_VERSION (3,99,0)
-	GListModel     *files;
-	guint           i, n;
-#else
 	GSList         *selections, *iter;
-#endif
 	GList          *item_list = NULL;
 
 	current_folder = ctk_file_chooser_get_current_folder_uri (file_sel);
@@ -120,26 +115,15 @@ file_sel_response_cb (CtkWidget      *widget,
 
 	/**/
 
-#if CTK_CHECK_VERSION (3,99,0)
-	files = ctk_file_chooser_get_files (file_sel);
-	n = g_list_model_get_n_items (files);
-	for (i = 0; i < n; i++)
-		item_list = g_list_prepend (item_list, g_file_new_for_uri (g_list_model_get_item (files, i)));
-#else
 	selections = ctk_file_chooser_get_uris (file_sel);
 	for (iter = selections; iter != NULL; iter = iter->next)
 		item_list = g_list_prepend (item_list, g_file_new_for_uri (iter->data));
-#endif
 
 	if (item_list != NULL)
 		fr_window_archive_add_files (window, item_list, update);
 
 	gio_file_list_free (item_list);
-#if CTK_CHECK_VERSION (3,99,0)
-	g_object_unref (files);
-#else
 	g_slist_free_full (selections, g_free);
-#endif
 	g_free (current_folder);
 
 	ctk_widget_destroy (data->dialog);
@@ -165,9 +149,7 @@ add_files_cb (CtkWidget *widget,
 	CtkWidget  *file_sel;
 	DialogData *data;
 	CtkWidget  *main_box;
-#if !CTK_CHECK_VERSION (3,99,0)
 	CtkWidget  *content_area;
-#endif
 	CtkWidget  *filechooser;
 	char       *folder;
 
@@ -186,9 +168,7 @@ add_files_cb (CtkWidget *widget,
 
 	data->choice = filechooser = ctk_file_chooser_widget_new (CTK_FILE_CHOOSER_ACTION_OPEN);
 	ctk_file_chooser_set_select_multiple (CTK_FILE_CHOOSER (filechooser), TRUE);
-#if !CTK_CHECK_VERSION (3,99,0)
 	ctk_file_chooser_set_local_only (CTK_FILE_CHOOSER (filechooser), FALSE);
-#endif
 	ctk_dialog_set_default_response (CTK_DIALOG (file_sel), CTK_RESPONSE_OK);
 
 	/* Translators: add a file to the archive only if the disk version is
@@ -198,11 +178,6 @@ add_files_cb (CtkWidget *widget,
 	main_box = ctk_box_new (CTK_ORIENTATION_VERTICAL, 6);
 	ctk_widget_set_margin_top (CTK_WIDGET(main_box) , 2);
 	ctk_widget_set_halign (data->add_if_newer_checkbutton, CTK_ALIGN_START);
-#if CTK_CHECK_VERSION (3,99,0)
-	ctk_window_set_child (CTK_WINDOW (file_sel), main_box);
-	ctk_box_append (CTK_BOX (main_box), filechooser);
-	ctk_box_append (CTK_BOX (main_box), data->add_if_newer_checkbutton);
-#else
 	content_area = ctk_dialog_get_content_area (CTK_DIALOG (file_sel));
 	ctk_container_set_border_width (CTK_CONTAINER (main_box), 0);
 	ctk_box_pack_start (CTK_BOX (main_box), filechooser,
@@ -213,7 +188,6 @@ add_files_cb (CtkWidget *widget,
 			    main_box,
 			    TRUE, TRUE, 0);
 	ctk_widget_show_all (main_box);
-#endif
 
 	/* set data */
 
