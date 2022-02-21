@@ -220,7 +220,7 @@ add_files_cb (CtkWidget *widget,
 	folder = g_settings_get_string (data->settings, PREF_ADD_CURRENT_FOLDER);
 	if ((folder == NULL) || (strcmp (folder, "") == 0))
 		folder = g_strdup (fr_window_get_add_default_dir (data->window));
-	grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (filechooser), folder);
+	ctk_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (filechooser), folder);
 	g_free (folder);
 
 	/* signals */

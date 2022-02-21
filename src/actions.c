@@ -390,7 +390,7 @@ activate_action_open (CtkAction *action,
 #if !CTK_CHECK_VERSION (3,99,0)
     ctk_file_chooser_set_local_only (CTK_FILE_CHOOSER (file_sel), FALSE);
 #endif
-    grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (file_sel), fr_window_get_open_default_dir (window));
+    ctk_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (file_sel), fr_window_get_open_default_dir (window));
 
     filter = ctk_file_filter_new ();
     ctk_file_filter_set_name (filter, _("All archives"));

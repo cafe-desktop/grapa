@@ -528,9 +528,9 @@ dlg_batch_add_files (FrWindow *window,
 	g_free (automatic_name);
 
 	if (check_permissions (parent, R_OK | W_OK))
-		grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")), parent);
+		ctk_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")), parent);
 	else
-		grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")), get_home_uri ());
+		ctk_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (GET_WIDGET ("a_location_filechooserbutton")), get_home_uri ());
 	g_free (parent);
 
 	/* archive type combobox */
