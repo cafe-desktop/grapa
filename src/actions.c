@@ -108,7 +108,7 @@ get_full_uri (DlgNewData *data)
     const char  *filename;
     int          idx;
 
-    uri = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (data->dialog));
+    uri = ctk_file_chooser_get_uri (CTK_FILE_CHOOSER (data->dialog));
 
     if ((uri == NULL) || (*uri == 0))
         return NULL;
@@ -354,7 +354,7 @@ open_file_response_cb (CtkWidget *w,
     }
 
     window = g_object_get_data (G_OBJECT (file_sel), "fr_window");
-    uri = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (file_sel));
+    uri = ctk_file_chooser_get_uri (CTK_FILE_CHOOSER (file_sel));
 
     if ((window == NULL) || (uri == NULL))
         return;

@@ -92,6 +92,4 @@ CtkWidget * grapa_dialog_add_button         (CtkDialog   *dialog,
 					     gint         response_id);
 gchar *
 grapa_file_chooser_get_current_folder_uri   (CtkFileChooser *chooser);
-gchar *
-grapa_file_chooser_get_uri                  (CtkFileChooser *chooser);
 #endif
