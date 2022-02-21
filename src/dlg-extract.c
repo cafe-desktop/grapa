@@ -84,7 +84,7 @@ extract_cb (CtkWidget   *w,
 
 	/* collect extraction options. */
 
-	extract_to_dir = grapa_file_chooser_get_uri (CTK_FILE_CHOOSER (data->dialog));
+	extract_to_dir = ctk_file_chooser_get_uri (CTK_FILE_CHOOSER (data->dialog));
 
 	/* check directory existence. */
 
