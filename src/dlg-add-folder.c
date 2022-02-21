@@ -445,7 +445,7 @@ clear_options_cb (CtkWidget  *w,
 		  DialogData *data)
 {
 	sync_widgets_with_options (data,
-				   grapa_file_chooser_get_current_folder_uri (CTK_FILE_CHOOSER (data->choice)),
+				   ctk_file_chooser_get_current_folder_uri (CTK_FILE_CHOOSER (data->choice)),
 				   ctk_file_chooser_get_uri (CTK_FILE_CHOOSER (data->choice)),
 				   "",
 				   "",
@@ -573,7 +573,7 @@ get_options_from_widgets (DialogData  *data,
 			  gboolean    *recursive,
 			  gboolean    *no_symlinks)
 {
-	*base_dir = grapa_file_chooser_get_current_folder_uri (CTK_FILE_CHOOSER (data->choice));
+	*base_dir = ctk_file_chooser_get_current_folder_uri (CTK_FILE_CHOOSER (data->choice));
 	*filename = ctk_file_chooser_get_uri (CTK_FILE_CHOOSER (data->choice));
 	*update = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->add_if_newer_checkbutton));
 	*recursive = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->include_subfold_checkbutton));
