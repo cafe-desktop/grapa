@@ -33,27 +33,9 @@ dnl ==========================================================================
 
 GLIB_REQUIRED=2.50.0
 GIO_REQUIRED=2.50.0
+CTK_REQUIRED=3.25.0
 CAJA_REQUIRED=1.17.1
 JSON_GLIB_REQUIRED=0.14.0
-
-AC_MSG_CHECKING([which ctk+ version to compile against])
-AC_ARG_WITH([ctk],
-  [AS_HELP_STRING([--with-ctk=3|4],[which ctk+ version to compile against (default: 3)])],
-  [case "$with_ctk" in
-     3|4) ;;
-     *) AC_MSG_ERROR([invalid ctk version specified]) ;;
-   esac],
-  [with_ctk=3])
-AC_MSG_RESULT([$with_ctk])
-
-case "$with_ctk" in
-  3) CTK_API_VERSION=ctk+-3.0
-       CTK_REQUIRED=3.24.0
-       ;;
-  4) CTK_API_VERSION=ctk4
-       CTK_REQUIRED=3.99.0
-       ;;
-esac
 
 AC_SUBST(GLIB_REQUIRED)
 AC_SUBST(GIO_REQUIRED)
@@ -62,7 +44,7 @@ AC_SUBST(CAJA_REQUIRED)
 
 dnl ===========================================================================
 
-PKG_CHECK_MODULES(CTK, [$CTK_API_VERSION >= $CTK_REQUIRED])
+PKG_CHECK_MODULES(CTK, [ctk+-3.0 >= $CTK_REQUIRED])
 AC_SUBST([CTK_CFLAGS])
 AC_SUBST([CTK_LIBS])
 
@@ -80,7 +62,7 @@ PKG_CHECK_MODULES(FR,					\
 	glib-2.0 >= $GLIB_REQUIRED			\
 	gthread-2.0					\
 	gio-unix-2.0 >= $GIO_REQUIRED			\
-	$CTK_API_VERSION >= $CTK_REQUIRED)
+	ctk+-3.0 >= $CTK_REQUIRED)
 AC_SUBST(FR_CFLAGS)
 AC_SUBST(FR_LIBS)
 
