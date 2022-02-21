@@ -669,26 +669,3 @@ _ctk_widget_lookup_for_size (CtkWidget *widget,
 			      &w, &h);
 	return MAX (w, h);
 }
-
-
-gchar *
-grapa_file_chooser_get_current_folder_uri (CtkFileChooser *chooser)
-{
-	GFile *file;
-	gchar *uri;
-
-	g_return_val_if_fail (CTK_IS_FILE_CHOOSER (chooser), NULL);
-
-#if CTK_CHECK_VERSION (3,99,0)
-	file = ctk_file_chooser_get_current_folder (chooser);
-#else
-	file = ctk_file_chooser_get_current_folder_file (chooser);
-#endif
-	if (!file)
-		return NULL;
-
-	uri = g_file_get_uri (file);
-	g_object_unref (file);
-
-	return uri;
-}
