@@ -426,7 +426,7 @@ sync_widgets_with_options (DialogData *data,
 	if ((filename != NULL) && (strcmp (filename, base_dir) != 0))
 		ctk_file_chooser_select_uri (CTK_FILE_CHOOSER (data->choice), filename);
 	else
-		grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (data->choice), base_dir);
+		ctk_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (data->choice), base_dir);
 
 	if (include_files != NULL)
 		ctk_entry_set_text (CTK_ENTRY (data->include_files_entry), include_files);

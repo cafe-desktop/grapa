@@ -307,7 +307,7 @@ dlg_extract__common (FrWindow *window,
 
 	/* Set widgets data. */
 
-	grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (data->dialog), fr_window_get_extract_default_dir (window));
+	ctk_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (data->dialog), fr_window_get_extract_default_dir (window));
 
 	if (data->selected_files != NULL)
 		ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (GET_WIDGET ("selected_files_radiobutton")), TRUE);

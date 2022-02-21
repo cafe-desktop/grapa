@@ -694,28 +694,6 @@ grapa_file_chooser_get_current_folder_uri (CtkFileChooser *chooser)
 }
 
 
-gboolean
-grapa_file_chooser_set_current_folder_uri (CtkFileChooser *chooser,
-					   const gchar    *uri)
-{
-	GFile *file;
-	gboolean result;
-
-	g_return_val_if_fail (CTK_IS_FILE_CHOOSER (chooser), FALSE);
-	g_return_val_if_fail (uri != NULL, FALSE);
-
-	file = g_file_new_for_uri (uri);
-#if CTK_CHECK_VERSION (3,99,0)
-	result = ctk_file_chooser_set_current_folder (chooser, file, NULL);
-#else
-	result = ctk_file_chooser_set_current_folder_file (chooser, file, NULL);
-#endif
-	g_object_unref (file);
-
-	return result;
-}
-
-
 gchar *
 grapa_file_chooser_get_uri (CtkFileChooser *chooser)
 {

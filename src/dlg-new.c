@@ -302,7 +302,7 @@ dlg_new_archive (FrWindow  *window,
 	/* Set widgets data. */
 
 	ctk_dialog_set_default_response (CTK_DIALOG (data->dialog), CTK_RESPONSE_OK);
-	grapa_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (data->dialog), fr_window_get_open_default_dir (window));
+	ctk_file_chooser_set_current_folder_uri (CTK_FILE_CHOOSER (data->dialog), fr_window_get_open_default_dir (window));
 
 	if (default_name != NULL)
 		ctk_file_chooser_set_current_name (CTK_FILE_CHOOSER (data->dialog), default_name);
