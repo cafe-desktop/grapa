@@ -85,9 +85,4 @@ CtkWidget *
 
 int	    _ctk_widget_lookup_for_size	    (CtkWidget *widget,
 					     CtkIconSize icon_size);
-
-CtkWidget * grapa_dialog_add_button         (CtkDialog   *dialog,
-					     const gchar *button_text,
-					     const gchar *icon_name,
-					     gint         response_id);
 #endif

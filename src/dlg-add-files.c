@@ -160,9 +160,9 @@ add_files_cb (CtkWidget *widget,
 	ctk_window_set_title (CTK_WINDOW (file_sel), _("Add Files"));
 	ctk_window_set_transient_for (CTK_WINDOW (file_sel), CTK_WINDOW (data->window));
 	ctk_window_set_modal (CTK_WINDOW (file_sel), TRUE);
-	grapa_dialog_add_button (CTK_DIALOG (file_sel), _("_Help"), "help-browser", CTK_RESPONSE_HELP);
-	grapa_dialog_add_button (CTK_DIALOG (file_sel), _("_Cancel"), "process-stop", CTK_RESPONSE_CANCEL);
-	grapa_dialog_add_button (CTK_DIALOG (file_sel), _("_Add"), "grapa_add-files-to-archive", CTK_RESPONSE_OK);
+	ctk_dialog_add_button_with_icon_name (CTK_DIALOG (file_sel), _("_Help"), "help-browser", CTK_RESPONSE_HELP);
+	ctk_dialog_add_button_with_icon_name (CTK_DIALOG (file_sel), _("_Cancel"), "process-stop", CTK_RESPONSE_CANCEL);
+	ctk_dialog_add_button_with_icon_name (CTK_DIALOG (file_sel), _("_Add"), "grapa_add-files-to-archive", CTK_RESPONSE_OK);
 
 	ctk_window_set_default_size (CTK_WINDOW (file_sel), 530, 450);
 

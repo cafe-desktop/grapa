@@ -54,28 +54,6 @@ _ctk_count_selected (CtkTreeSelection *selection)
 }
 
 
-
-CtkWidget *
-grapa_dialog_add_button (CtkDialog   *dialog,
-			 const gchar *button_text,
-			 const gchar *icon_name,
-			       gint   response_id)
-{
-	CtkWidget *button;
-
-	button = ctk_button_new_with_mnemonic (button_text);
-	ctk_button_set_image (CTK_BUTTON (button), ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_BUTTON));
-
-	ctk_button_set_use_underline (CTK_BUTTON (button), TRUE);
-	ctk_style_context_add_class (ctk_widget_get_style_context (button), "text-button");
-	ctk_widget_set_can_default (button, TRUE);
-	ctk_widget_show (button);
-	ctk_dialog_add_action_widget (CTK_DIALOG (dialog), button, response_id);
-
-	return button;
-}
-
-
 CtkWidget*
 _ctk_message_dialog_new (CtkWindow        *parent,
 			 CtkDialogFlags    flags,
