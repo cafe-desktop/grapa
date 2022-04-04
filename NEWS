@@ -1,15 +1,48 @@
+### grapa 1.25.0
+
+  * eggdesktopfile: avoid deprecated GdkScreen
+  * eggdesktopfile: avoid deprecated 'gtk_window_set_default_icon_from_file'
+  * eggsmclient-xsmp: Fix -Wmissing-prototypes build warnings
+  * libegg: add missing libraries for building
+  * avoid deprecated 'gtk_file_chooser_get_current_folder_uri'
+  * avoid deprecated 'gtk_file_chooser_get_uri'
+  * drop eggdesktopfile and eggsmclient
+  * avoid deprecated 'gtk_file_chooser_set_current_folder_uri'
+  * dlg-add-files: avoid deprecated 'gtk_file_chooser_set_extra_widget'
+  * dlg-add-files: avoid 'gtk_file_chooser_add_choice'
+  * dlg-add-files: save the size of dialog
+  * ci: enable Github Actions
+  * ci: add some improvements
+
+  * Prepare de port from GTK to CTK:
+  *   dlg-add-folder: save the size of dialog
+  *   dlg-add-files: 'pref_util_save/restore_window_geometry' with 'addfiles' instead 'add'
+  *   avoid 'grapa_file_chooser_dialog_new'
+  *   '_gtk_message_dialog_new' with GtkStock
+  *   fr-window: 'gtk-dialog-add-button' with GtkStock instead 'grapa_dialog_add_button'
+  * port from GTK to CTK
+
+  * caja-grapa: GtkWidget instead CtkWidget (it will be reverted when the caja fork port to ctk)
+  * main: show icons in buttons and menus
+  * glib-utils: avoid deprecated 'g_memmove'
+  * 'ctk_file_chooser_set_current_folder_uri' instead 'grapa_file_chooser_set_current_folder_uri'
+  * 'ctk_file_chooser_get_uri' instead 'grapa_file_chooser_get_uri'
+  * 'ctk_file_chooser_get_current_folder_uri' instead 'grapa_file_chooser_get_current_folder_uri'
+  * main: set 'ctk-overlay-scrolling' to FALSE
+  * 'ctk_dialog_add_button_with_icon_name' instead 'grapa_dialog_add_button'
+
 ### grapa 0.1.0
 
   * update copyright
   * msgmerge without progress indicators
   * update grapa icons
-  * ui files: avoid deprecated CtkStock
-                               CtkAlignment
-                               CtkBox:margin-left/margin-right
-                               CtkButton:always-show-image (it has gone in ctk4)
-  * avoid deprecated CtkStock
-                     ctk_dialog_get_action_area
-  * fork deprecated icons ctk-apply, ctk-ok, ctk-no
+  * ui files: avoid deprecated GtkStock
+                               GtkAlignment
+                               GtkBox:margin-left/margin-right
+                               GtkButton:always-show-image (it has gone in gtk4)
+  * avoid deprecated GtkStock
+                     gtk_dialog_get_action_area
+  * fork deprecated icons gtk-apply, gtk-ok, gtk-no
 
 ### grapa 0.0.1
 
