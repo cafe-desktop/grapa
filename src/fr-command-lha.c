@@ -96,12 +96,12 @@ static char **
 split_line_lha (char *line)
 {
 	char       **fields;
-	int          n_fields = 7;
+	int          num_fields = 7;
 	const char  *scan, *field_end;
 	int          i;
 
-	fields = g_new0 (char *, n_fields + 1);
-	fields[n_fields] = NULL;
+	fields = g_new0 (char *, num_fields + 1);
+	fields[num_fields] = NULL;
 
 	i = 0;
 
@@ -127,7 +127,7 @@ split_line_lha (char *line)
 	}
 
 	scan = eat_spaces (line);
-	for (; i < n_fields; i++) {
+	for (; i < num_fields; i++) {
 		field_end = strchr (scan, ' ');
 		if (field_end != NULL) {
 			fields[i] = g_strndup (scan, field_end - scan);
