@@ -4,6 +4,7 @@
 requires:
   debian:
     # Useful URL: https://github.com/cafe-desktop/debian-packages
+    - aptitude
     - autoconf-archive
     - autopoint
     - clang
