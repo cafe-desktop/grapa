@@ -418,37 +418,37 @@ msgstr "Основна величина волумена"
 msgid "The default size for volumes."
 msgstr "Основна величина за волумене."
 
-#: caja/caja-grapa.c:329
+#: baul/baul-grapa.c:329
 msgid "Extract Here"
 msgstr "Распакуј овде"
 
 #. Translators: the current position is the current folder
-#: caja/caja-grapa.c:331
+#: baul/baul-grapa.c:331
 msgid "Extract the selected archive to the current position"
 msgstr "Распакујте изабрану архиву у тренутну фасциклу"
 
-#: caja/caja-grapa.c:348
+#: baul/baul-grapa.c:348
 msgid "Extract To..."
 msgstr "Распакуј у..."
 
-#: caja/caja-grapa.c:349
+#: baul/baul-grapa.c:349
 msgid "Extract the selected archive"
 msgstr "Распакујте изабрану архиву"
 
-#: caja/caja-grapa.c:368
+#: baul/baul-grapa.c:368
 msgid "Compress..."
 msgstr "Запакуј..."
 
-#: caja/caja-grapa.c:369
+#: baul/baul-grapa.c:369
 msgid "Create a compressed archive with the selected objects"
 msgstr "Направите запаковану архиву од изабраних објеката"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:5 src/main.c:340
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:5 src/main.c:340
 #: src/server.c:457
 msgid "Grapa"
 msgstr "Енгрампа"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:6
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
 msgstr "Омогућава стварање и распакивање архива"
 

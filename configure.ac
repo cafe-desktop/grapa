@@ -67,32 +67,32 @@ AC_SUBST(FR_LIBS)
 
 dnl ******************************
 
-AC_ARG_ENABLE([caja_actions],
-	[AS_HELP_STRING([--disable-caja-actions],
-			[do not build the caja context menu actions])],,
-	[enable_caja_actions=yes])
+AC_ARG_ENABLE([baul_actions],
+	[AS_HELP_STRING([--disable-baul-actions],
+			[do not build the baul context menu actions])],,
+	[enable_baul_actions=yes])
 
-if test x"$enable_caja_actions" != x"no" ; then
+if test x"$enable_baul_actions" != x"no" ; then
 	PKG_CHECK_MODULES(CAJA, \
-			  libcaja-extension >= $CAJA_REQUIRED \
+			  libbaul-extension >= $CAJA_REQUIRED \
 			  glib-2.0 \
 			  gio-2.0)
 	AC_SUBST(CAJA_CFLAGS)
 	AC_SUBST(CAJA_LIBS)
 
 fi
-AM_CONDITIONAL(ENABLE_CAJA_ACTIONS, test "x$enable_caja_actions" = xyes)
+AM_CONDITIONAL(ENABLE_CAJA_ACTIONS, test "x$enable_baul_actions" = xyes)
 
-AC_ARG_WITH(cajadir,
-        AS_HELP_STRING([--with-cajadir=DIR],[Installation path for Caja extension @<:@auto@:>@]),
-        [ac_with_cajadir=$withval],
-        [ac_with_cajadir=""])
-if test "${ac_with_cajadir}" = ""; then
-        ac_with_cajadir=`$PKG_CONFIG --variable=extensiondir libcaja-extension`
+AC_ARG_WITH(bauldir,
+        AS_HELP_STRING([--with-bauldir=DIR],[Installation path for Caja extension @<:@auto@:>@]),
+        [ac_with_bauldir=$withval],
+        [ac_with_bauldir=""])
+if test "${ac_with_bauldir}" = ""; then
+        ac_with_bauldir=`$PKG_CONFIG --variable=extensiondir libbaul-extension`
 fi
 
-AC_MSG_NOTICE([installing caja plugin in ${ac_with_cajadir}])
-AC_SUBST([CAJA_EXTENSION_DIR],[${ac_with_cajadir}])
+AC_MSG_NOTICE([installing baul plugin in ${ac_with_bauldir}])
+AC_SUBST([CAJA_EXTENSION_DIR],[${ac_with_bauldir}])
 
 dnl ******************************
 
@@ -228,8 +228,8 @@ AC_CONFIG_FILES([Makefile
 		 src/Makefile
 		 src/sh/Makefile
 		 src/ui/Makefile
-		 caja/Makefile
-		 caja/libcaja-grapa.caja-extension.desktop.in
+		 baul/Makefile
+		 baul/libbaul-grapa.baul-extension.desktop.in
 		 help/Makefile
 		 po/Makefile.in])
 AC_OUTPUT
@@ -242,7 +242,7 @@ Configuration:
         Compiler flags:         ${CFLAGS}
         Warning flags:          ${WARN_CFLAGS}
         Linker flags:           ${LDFLAGS}
-	Caja support:           ${enable_caja_actions}
+	Caja support:           ${enable_baul_actions}
 	PackageKit support:     ${enable_packagekit}
 	Run in place            ${enable_run_in_place}
 	Use libmagic:           ${enable_magic}

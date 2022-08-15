@@ -76,7 +76,7 @@
 #define PREF_BATCH_ADD_OTHER_OPTIONS	 "other-options"
 #define PREF_BATCH_ADD_VOLUME_SIZE	 "volume-size"
 
-#define CAJA_SCHEMA			"org.cafe.caja.preferences"
+#define CAJA_SCHEMA			"org.cafe.baul.preferences"
 #define CAJA_CLICK_POLICY		"click-policy"
 
 void pref_util_save_window_geometry (CtkWindow *window,

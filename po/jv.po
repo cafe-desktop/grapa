@@ -286,37 +286,37 @@ msgstr ""
 msgid "The default size for volumes."
 msgstr ""
 
-#: ../caja/caja-grapa.c:335
+#: ../baul/baul-grapa.c:335
 msgid "Extract Here"
 msgstr ""
 
 #. Translators: the current position is the current folder
-#: ../caja/caja-grapa.c:337
+#: ../baul/baul-grapa.c:337
 msgid "Extract the selected archive to the current position"
 msgstr ""
 
-#: ../caja/caja-grapa.c:354
+#: ../baul/baul-grapa.c:354
 msgid "Extract To..."
 msgstr ""
 
-#: ../caja/caja-grapa.c:355
+#: ../baul/baul-grapa.c:355
 msgid "Extract the selected archive"
 msgstr ""
 
-#: ../caja/caja-grapa.c:374
+#: ../baul/baul-grapa.c:374
 msgid "Compress..."
 msgstr ""
 
-#: ../caja/caja-grapa.c:375
+#: ../baul/baul-grapa.c:375
 msgid "Create a compressed archive with the selected objects"
 msgstr ""
 
-#: ../caja/libcaja-grapa.caja-extension.in.in.h:1 ../src/main.c:330
+#: ../baul/libbaul-grapa.baul-extension.in.in.h:1 ../src/main.c:330
 #: ../src/server.c:457
 msgid "Grapa"
 msgstr ""
 
-#: ../caja/libcaja-grapa.caja-extension.in.in.h:2
+#: ../baul/libbaul-grapa.baul-extension.in.in.h:2
 msgid "Allows to create and extract archives"
 msgstr ""
 

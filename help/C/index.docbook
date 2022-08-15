@@ -465,7 +465,7 @@
         <para>Several <application>Archive Manager</application> dialogs (<guilabel>New</guilabel>, <guilabel>Open</guilabel>, <guilabel>Extract</guilabel>,...) enable you
         to browse files and folders on your computer. Refer to the <link xlink:href="help:cafe-user-guide/filechooser-open">Desktop User Guide</link> to learn more about using the 
         file browsing dialogs.</para>
-        <para>You can also refer to the <link xlink:href="help:cafe-user-guide/caja-bookmarks">Bookmarks 
+        <para>You can also refer to the <link xlink:href="help:cafe-user-guide/baul-bookmarks">Bookmarks 
         section</link> of the Desktop User Guide to learn how you can use the <guilabel>Places</guilabel> pane 
         to access your favorite locations.</para>
      </section>

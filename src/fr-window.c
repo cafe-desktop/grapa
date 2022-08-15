@@ -394,7 +394,7 @@ struct _FrWindowPrivateData {
 	GSettings *settings_ui;
 	GSettings *settings_general;
 	GSettings *settings_dialogs;
-	GSettings *settings_caja;
+	GSettings *settings_baul;
 
 	gulong            theme_changed_handler_id;
 	gboolean          non_interactive;
@@ -631,8 +631,8 @@ fr_window_free_private_data (FrWindow *window)
 	_g_object_unref (window->priv->settings_general);
 	_g_object_unref (window->priv->settings_dialogs);
 
-	if (window->priv->settings_caja)
-		_g_object_unref (window->priv->settings_caja);
+	if (window->priv->settings_baul)
+		_g_object_unref (window->priv->settings_baul);
 }
 
 
@@ -4379,7 +4379,7 @@ context_offers_target (CdkDragContext *context,
 
 
 static gboolean
-caja_xds_dnd_is_valid_xds_context (CdkDragContext *context)
+baul_xds_dnd_is_valid_xds_context (CdkDragContext *context)
 {
 	char *tmp;
 	gboolean ret;
@@ -4469,7 +4469,7 @@ fr_window_folder_tree_drag_data_get (CtkWidget        *widget,
 		return TRUE;
 	}
 
-	if (! caja_xds_dnd_is_valid_xds_context (context))
+	if (! baul_xds_dnd_is_valid_xds_context (context))
 		return FALSE;
 
 	destination = get_xds_atom_value (context);
@@ -4549,7 +4549,7 @@ fr_window_file_list_drag_data_get (FrWindow         *window,
 		return TRUE;
 	}
 
-	if (! caja_xds_dnd_is_valid_xds_context (context))
+	if (! baul_xds_dnd_is_valid_xds_context (context))
 		return FALSE;
 
 	destination = get_xds_atom_value (context);
@@ -4756,8 +4756,8 @@ is_single_click_policy (FrWindow *window)
 	char     *value;
 	gboolean  result = FALSE;
 
-	if (window->priv->settings_caja) {
-		value = g_settings_get_string (window->priv->settings_caja, CAJA_CLICK_POLICY);
+	if (window->priv->settings_baul) {
+		value = g_settings_get_string (window->priv->settings_baul, CAJA_CLICK_POLICY);
 		result = (value != NULL) && (strncmp (value, "single", 6) == 0);
 		g_free (value);
 	}
@@ -5521,7 +5521,7 @@ fr_window_construct (FrWindow *window)
 	CtkUIManager     *ui;
 	GError           *error = NULL;
 	GSettingsSchemaSource *schema_source;
-	GSettingsSchema  *caja_schema;
+	GSettingsSchema  *baul_schema;
 
 	/* data common to all windows. */
 
@@ -5541,10 +5541,10 @@ fr_window_construct (FrWindow *window)
 	window->priv->settings_dialogs = g_settings_new (GRAPA_SCHEMA_DIALOGS);
 
 	schema_source = g_settings_schema_source_get_default ();
-	caja_schema = g_settings_schema_source_lookup (schema_source, CAJA_SCHEMA, FALSE);
-	if (caja_schema) {
-		window->priv->settings_caja = g_settings_new (CAJA_SCHEMA);
-		g_settings_schema_unref (caja_schema);
+	baul_schema = g_settings_schema_source_lookup (schema_source, CAJA_SCHEMA, FALSE);
+	if (baul_schema) {
+		window->priv->settings_baul = g_settings_new (CAJA_SCHEMA);
+		g_settings_schema_unref (baul_schema);
 	}
 
 	/* Create the application. */
@@ -6141,8 +6141,8 @@ fr_window_construct (FrWindow *window)
 			G_CALLBACK (pref_use_mime_icons_changed),
 			window);
 
-	if (window->priv->settings_caja)
-		g_signal_connect (window->priv->settings_caja,
+	if (window->priv->settings_baul)
+		g_signal_connect (window->priv->settings_baul,
 				"changed::" CAJA_CLICK_POLICY,
 				G_CALLBACK (pref_click_policy_changed),
 				window);

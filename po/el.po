@@ -227,7 +227,7 @@ msgstr "Δημιουργία και τροποποίηση ενός συμπιε
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
 #: data/grapa.desktop.in.in:12
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:4
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:4
 msgid "grapa"
 msgstr ""
 
@@ -428,37 +428,37 @@ msgstr "Προεπιλεγμένο μέγεθος τόμου"
 msgid "The default size for volumes."
 msgstr "Το προεπιλεγμένο μέγεθος των τόμων."
 
-#: caja/caja-grapa.c:329
+#: baul/baul-grapa.c:329
 msgid "Extract Here"
 msgstr "Αποσυμπίεση εδώ"
 
 #. Translators: the current position is the current folder
-#: caja/caja-grapa.c:331
+#: baul/baul-grapa.c:331
 msgid "Extract the selected archive to the current position"
 msgstr "Αποσυμπίεση του επιλεγμένου συμπιεσμένου αρχείου στην τρέχουσα θέση"
 
-#: caja/caja-grapa.c:348
+#: baul/baul-grapa.c:348
 msgid "Extract To..."
 msgstr "Αποσυμπίεση σε..."
 
-#: caja/caja-grapa.c:349
+#: baul/baul-grapa.c:349
 msgid "Extract the selected archive"
 msgstr "Αποσυμπίεση του επιλεγμένου συμπιεσμένου αρχείου"
 
-#: caja/caja-grapa.c:368
+#: baul/baul-grapa.c:368
 msgid "Compress..."
 msgstr "Συμπίεση..."
 
-#: caja/caja-grapa.c:369
+#: baul/baul-grapa.c:369
 msgid "Create a compressed archive with the selected objects"
 msgstr "Δημιουργία ενός συμπιεσμένου αρχείου με τα επιλεγμένα αντικείμενα"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:5 src/main.c:342
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
 msgid "Grapa"
 msgstr "Grapa"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:6
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
 msgstr "Επιτρέπει τη δημιουργία και εξαγωγή συμπιεσμένων αρχειοθηκών"
 

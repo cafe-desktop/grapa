@@ -6,21 +6,21 @@ AM_CPPFLAGS =						\
 	-I$(top_builddir)				\
 	$(CAJA_CFLAGS)
 
-caja_extensiondir=$(CAJA_EXTENSION_DIR)
+baul_extensiondir=$(CAJA_EXTENSION_DIR)
 
-caja_extension_LTLIBRARIES=libcaja-grapa.la
+baul_extension_LTLIBRARIES=libbaul-grapa.la
 
-libcaja_grapa_la_SOURCES =     \
-	caja-grapa.c           \
-	caja-grapa.h           \
+libbaul_grapa_la_SOURCES =     \
+	baul-grapa.c           \
+	baul-grapa.h           \
 	grapa-module.c
 
-libcaja_grapa_la_LDFLAGS = -module -avoid-version -no-undefined
-libcaja_grapa_la_LIBADD  = $(CAJA_LIBS)
+libbaul_grapa_la_LDFLAGS = -module -avoid-version -no-undefined
+libbaul_grapa_la_LIBADD  = $(CAJA_LIBS)
 
-extensiondir = $(datadir)/caja/extensions
-extension_in_files = libcaja-grapa.caja-extension.desktop.in
-extension_DATA = $(extension_in_files:.caja-extension.desktop.in=.caja-extension)
+extensiondir = $(datadir)/baul/extensions
+extension_in_files = libbaul-grapa.baul-extension.desktop.in
+extension_DATA = $(extension_in_files:.baul-extension.desktop.in=.baul-extension)
 $(extension_DATA): $(extension_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 

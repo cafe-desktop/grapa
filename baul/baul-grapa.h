@@ -28,7 +28,7 @@
 
 G_BEGIN_DECLS
 
-#define CAJA_TYPE_FR  (caja_fr_get_type ())
+#define CAJA_TYPE_FR  (baul_fr_get_type ())
 #define CAJA_FR(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), CAJA_TYPE_FR, CajaFr))
 #define CAJA_IS_FR(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), CAJA_TYPE_FR))
 
@@ -43,8 +43,8 @@ struct _CajaFrClass {
 	GObjectClass __parent;
 };
 
-GType caja_fr_get_type      (void);
-void  caja_fr_register_type (GTypeModule *module);
+GType baul_fr_get_type      (void);
+void  baul_fr_register_type (GTypeModule *module);
 
 G_END_DECLS
 

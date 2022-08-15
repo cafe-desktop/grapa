@@ -22,16 +22,16 @@
  */
 
 #include <config.h>
-#include <libcaja-extension/caja-extension-types.h>
-#include <libcaja-extension/caja-column-provider.h>
+#include <libbaul-extension/baul-extension-types.h>
+#include <libbaul-extension/baul-column-provider.h>
 #include <glib/gi18n-lib.h>
-#include "caja-grapa.h"
+#include "baul-grapa.h"
 
 
 void
-caja_module_initialize (GTypeModule*module)
+baul_module_initialize (GTypeModule*module)
 {
-	caja_fr_register_type (module);
+	baul_fr_register_type (module);
 
 	bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -39,13 +39,13 @@ caja_module_initialize (GTypeModule*module)
 
 
 void
-caja_module_shutdown (void)
+baul_module_shutdown (void)
 {
 }
 
 
 void
-caja_module_list_types (const GType **types,
+baul_module_list_types (const GType **types,
 			    int          *num_types)
 {
 	static GType type_list[1];

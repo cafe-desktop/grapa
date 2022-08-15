@@ -22,7 +22,7 @@
   *   fr-window: 'gtk-dialog-add-button' with GtkStock instead 'grapa_dialog_add_button'
   * port from GTK to CTK
 
-  * caja-grapa: GtkWidget instead CtkWidget (it will be reverted when the caja fork port to ctk)
+  * baul-grapa: GtkWidget instead CtkWidget (it will be reverted when the baul fork port to ctk)
   * main: show icons in buttons and menus
   * glib-utils: avoid deprecated 'g_memmove'
   * 'ctk_file_chooser_set_current_folder_uri' instead 'grapa_file_chooser_set_current_folder_uri'
