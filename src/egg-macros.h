@@ -13,7 +13,7 @@
 
 G_BEGIN_DECLS
 
-/* Macros for defining classes.  Ideas taken from Caja and GOB. */
+/* Macros for defining classes.  Ideas taken from Baul and GOB. */
 
 /* Define the boilerplate type stuff to reduce typos and code size.  Defines
  * the get_type method and the parent_class static variable. */

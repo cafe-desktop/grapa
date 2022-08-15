@@ -35,7 +35,7 @@ static GObjectClass *parent_class;
 
 
 static void
-extract_to_callback (CajaMenuItem *item,
+extract_to_callback (BaulMenuItem *item,
 		     gpointer          user_data)
 {
 	GList            *files, *scan;
@@ -73,7 +73,7 @@ extract_to_callback (CajaMenuItem *item,
 
 
 static void
-extract_here_callback (CajaMenuItem *item,
+extract_here_callback (BaulMenuItem *item,
 		       gpointer          user_data)
 {
 	GList            *files, *scan;
@@ -84,7 +84,7 @@ extract_here_callback (CajaMenuItem *item,
 	cmd = g_string_new ("grapa --extract-here");
 
 	for (scan = files; scan; scan = scan->next) {
-		CajaFileInfo *file = scan->data;
+		BaulFileInfo *file = scan->data;
 		char             *uri, *quoted_uri;
 
 		uri = baul_file_info_get_uri (file);
@@ -105,7 +105,7 @@ extract_here_callback (CajaMenuItem *item,
 
 
 static void
-add_callback (CajaMenuItem *item,
+add_callback (BaulMenuItem *item,
 	      gpointer          user_data)
 {
 	GList            *files, *scan;
@@ -207,7 +207,7 @@ typedef struct {
 
 
 static FileMimeInfo
-get_file_mime_info (CajaFileInfo *file)
+get_file_mime_info (BaulFileInfo *file)
 {
 	FileMimeInfo file_mime_info;
 	int          i;
@@ -244,7 +244,7 @@ get_file_mime_info (CajaFileInfo *file)
 
 
 static gboolean
-unsupported_scheme (CajaFileInfo *file)
+unsupported_scheme (BaulFileInfo *file)
 {
 	gboolean  result = FALSE;
 	GFile    *location;
@@ -270,7 +270,7 @@ unsupported_scheme (CajaFileInfo *file)
 
 
 static GList *
-baul_fr_get_file_items (CajaMenuProvider *provider,
+baul_fr_get_file_items (BaulMenuProvider *provider,
 			    CtkWidget            *window,
 			    GList                *files)
 {
@@ -288,11 +288,11 @@ baul_fr_get_file_items (CajaMenuProvider *provider,
 	if (files == NULL)
 		return NULL;
 
-	if (unsupported_scheme ((CajaFileInfo *) files->data))
+	if (unsupported_scheme ((BaulFileInfo *) files->data))
 		return NULL;
 
 	for (scan = files; scan; scan = scan->next) {
-		CajaFileInfo *file = scan->data;
+		BaulFileInfo *file = scan->data;
 		FileMimeInfo      file_mime_info;
 
 		file_mime_info = get_file_mime_info (file);
@@ -307,7 +307,7 @@ baul_fr_get_file_items (CajaMenuProvider *provider,
 			all_archives_derived = FALSE;
 
 		if (can_write) {
-			CajaFileInfo *parent;
+			BaulFileInfo *parent;
 
 			parent = baul_file_info_get_parent_info (file);
  			can_write = baul_file_info_can_write (parent);
@@ -323,9 +323,9 @@ baul_fr_get_file_items (CajaMenuProvider *provider,
 	one_compressed_archive = one_archive && all_archives_compressed;
 
 	if (all_archives && can_write) {
-		CajaMenuItem *item;
+		BaulMenuItem *item;
 
-		item = baul_menu_item_new ("CajaFr::extract_here",
+		item = baul_menu_item_new ("BaulFr::extract_here",
 					       _("Extract Here"),
 					       /* Translators: the current position is the current folder */
 					       _("Extract the selected archive to the current position"),
@@ -342,9 +342,9 @@ baul_fr_get_file_items (CajaMenuProvider *provider,
 		items = g_list_append (items, item);
 	}
 	if (all_archives) {
-		CajaMenuItem *item;
+		BaulMenuItem *item;
 
-		item = baul_menu_item_new ("CajaFr::extract_to",
+		item = baul_menu_item_new ("BaulFr::extract_to",
 					       _("Extract To..."),
 					       _("Extract the selected archive"),
 					       "drive-harddisk");
@@ -362,9 +362,9 @@ baul_fr_get_file_items (CajaMenuProvider *provider,
 	}
 
 	if (! one_compressed_archive || one_derived_archive) {
-		CajaMenuItem *item;
+		BaulMenuItem *item;
 
-		item = baul_menu_item_new ("CajaFr::add",
+		item = baul_menu_item_new ("BaulFr::add",
 					       _("Compress..."),
 					       _("Create a compressed archive with the selected objects"),
 					       "package-x-generic");
@@ -385,20 +385,20 @@ baul_fr_get_file_items (CajaMenuProvider *provider,
 
 
 static void
-baul_fr_menu_provider_iface_init (CajaMenuProviderIface *iface)
+baul_fr_menu_provider_iface_init (BaulMenuProviderIface *iface)
 {
 	iface->get_file_items = baul_fr_get_file_items;
 }
 
 
 static void
-baul_fr_instance_init (CajaFr *fr)
+baul_fr_instance_init (BaulFr *fr)
 {
 }
 
 
 static void
-baul_fr_class_init (CajaFrClass *class)
+baul_fr_class_init (BaulFrClass *class)
 {
 	parent_class = g_type_class_peek_parent (class);
 }
@@ -418,13 +418,13 @@ void
 baul_fr_register_type (GTypeModule *module)
 {
 	static const GTypeInfo info = {
-		sizeof (CajaFrClass),
+		sizeof (BaulFrClass),
 		(GBaseInitFunc) NULL,
 		(GBaseFinalizeFunc) NULL,
 		(GClassInitFunc) baul_fr_class_init,
 		NULL,
 		NULL,
-		sizeof (CajaFr),
+		sizeof (BaulFr),
 		0,
 		(GInstanceInitFunc) baul_fr_instance_init,
 		NULL
@@ -438,7 +438,7 @@ baul_fr_register_type (GTypeModule *module)
 
 	fr_type = g_type_module_register_type (module,
 					       G_TYPE_OBJECT,
-					       "CajaGrapa",
+					       "BaulGrapa",
 					       &info, 0);
 
 	g_type_module_add_interface (module,
