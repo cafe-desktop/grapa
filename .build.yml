@@ -48,8 +48,9 @@ requires:
 
 before_scripts:
   - ./html-cppcheck
-  - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 ctk-update-icon-cache'
+  - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 ctk-update-icon-cache libcail-3-0 libcail-3-dev'
   - ./install-from-git https://github.com/cafe-desktop/cafe-common master
+  - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
   - ./install-from-git https://github.com/cafe-desktop/baul master
 
 build_scripts:
