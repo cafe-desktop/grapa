@@ -21,16 +21,16 @@
  *
  */
 
-#ifndef CAJA_RNGRAMPA_H
-#define CAJA_RNGRAMPA_H
+#ifndef BAUL_RNGRAMPA_H
+#define BAUL_RNGRAMPA_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define CAJA_TYPE_FR  (baul_fr_get_type ())
-#define CAJA_FR(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), CAJA_TYPE_FR, BaulFr))
-#define CAJA_IS_FR(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), CAJA_TYPE_FR))
+#define BAUL_TYPE_FR  (baul_fr_get_type ())
+#define BAUL_FR(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), BAUL_TYPE_FR, BaulFr))
+#define BAUL_IS_FR(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), BAUL_TYPE_FR))
 
 typedef struct _BaulFr      BaulFr;
 typedef struct _BaulFrClass BaulFrClass;
@@ -48,4 +48,4 @@ void  baul_fr_register_type (GTypeModule *module);
 
 G_END_DECLS
 
-#endif /* CAJA_RNGRAMPA_H */
+#endif /* BAUL_RNGRAMPA_H */
