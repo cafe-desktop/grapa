@@ -528,7 +528,7 @@ msgid ""
 " Grapa; if not, write to the Free Software Foundation, Inc., 51 Franklin "
 "St, Fifth Floor, Boston, MA  02110-1301 USA"
 msgstr ""
-"Du skal ha mottatt en kopi av GNU General Public License sammen med Caja. "
+"Du skal ha mottatt en kopi av GNU General Public License sammen med Baul. "
 "Hvis dette ikke er tilfelle, kan du skrive til Free Software Foundation, "
 "Inc. 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA"
 

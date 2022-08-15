@@ -84,7 +84,7 @@ fi
 AM_CONDITIONAL(ENABLE_CAJA_ACTIONS, test "x$enable_baul_actions" = xyes)
 
 AC_ARG_WITH(bauldir,
-        AS_HELP_STRING([--with-bauldir=DIR],[Installation path for Caja extension @<:@auto@:>@]),
+        AS_HELP_STRING([--with-bauldir=DIR],[Installation path for Baul extension @<:@auto@:>@]),
         [ac_with_bauldir=$withval],
         [ac_with_bauldir=""])
 if test "${ac_with_bauldir}" = ""; then
@@ -242,7 +242,7 @@ Configuration:
         Compiler flags:         ${CFLAGS}
         Warning flags:          ${WARN_CFLAGS}
         Linker flags:           ${LDFLAGS}
-	Caja support:           ${enable_baul_actions}
+	Baul support:           ${enable_baul_actions}
 	PackageKit support:     ${enable_packagekit}
 	Run in place            ${enable_run_in_place}
 	Use libmagic:           ${enable_magic}

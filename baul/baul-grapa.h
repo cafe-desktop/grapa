@@ -29,17 +29,17 @@
 G_BEGIN_DECLS
 
 #define CAJA_TYPE_FR  (baul_fr_get_type ())
-#define CAJA_FR(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), CAJA_TYPE_FR, CajaFr))
+#define CAJA_FR(o)    (G_TYPE_CHECK_INSTANCE_CAST ((o), CAJA_TYPE_FR, BaulFr))
 #define CAJA_IS_FR(o) (G_TYPE_CHECK_INSTANCE_TYPE ((o), CAJA_TYPE_FR))
 
-typedef struct _CajaFr      CajaFr;
-typedef struct _CajaFrClass CajaFrClass;
+typedef struct _BaulFr      BaulFr;
+typedef struct _BaulFrClass BaulFrClass;
 
-struct _CajaFr {
+struct _BaulFr {
 	GObject __parent;
 };
 
-struct _CajaFrClass {
+struct _BaulFrClass {
 	GObjectClass __parent;
 };
 
