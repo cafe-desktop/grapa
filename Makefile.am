@@ -1,17 +1,17 @@
 ## Process this file with automake to produce Makefile.in.
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
-if ENABLE_CAJA_ACTIONS
-CAJA = baul
+if ENABLE_BAUL_ACTIONS
+BAUL = baul
 else
-CAJA =
+BAUL =
 endif
 
 SUBDIRS =		\
 	data		\
 	src		\
 	help		\
-	$(CAJA)	\
+	$(BAUL)	\
 	po
 
 distcleancheck_listfiles = find . -type f -print | grep -v 'omf\.out'

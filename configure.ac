@@ -33,13 +33,13 @@ dnl ==========================================================================
 GLIB_REQUIRED=2.50.0
 GIO_REQUIRED=2.50.0
 CTK_REQUIRED=3.25.2
-CAJA_REQUIRED=1.17.1
+BAUL_REQUIRED=1.17.1
 JSON_GLIB_REQUIRED=0.14.0
 
 AC_SUBST(GLIB_REQUIRED)
 AC_SUBST(GIO_REQUIRED)
 AC_SUBST(CTK_REQUIRED)
-AC_SUBST(CAJA_REQUIRED)
+AC_SUBST(BAUL_REQUIRED)
 
 dnl ===========================================================================
 
@@ -73,15 +73,15 @@ AC_ARG_ENABLE([baul_actions],
 	[enable_baul_actions=yes])
 
 if test x"$enable_baul_actions" != x"no" ; then
-	PKG_CHECK_MODULES(CAJA, \
-			  libbaul-extension >= $CAJA_REQUIRED \
+	PKG_CHECK_MODULES(BAUL, \
+			  libbaul-extension >= $BAUL_REQUIRED \
 			  glib-2.0 \
 			  gio-2.0)
-	AC_SUBST(CAJA_CFLAGS)
-	AC_SUBST(CAJA_LIBS)
+	AC_SUBST(BAUL_CFLAGS)
+	AC_SUBST(BAUL_LIBS)
 
 fi
-AM_CONDITIONAL(ENABLE_CAJA_ACTIONS, test "x$enable_baul_actions" = xyes)
+AM_CONDITIONAL(ENABLE_BAUL_ACTIONS, test "x$enable_baul_actions" = xyes)
 
 AC_ARG_WITH(bauldir,
         AS_HELP_STRING([--with-bauldir=DIR],[Installation path for Baul extension @<:@auto@:>@]),
@@ -92,7 +92,7 @@ if test "${ac_with_bauldir}" = ""; then
 fi
 
 AC_MSG_NOTICE([installing baul plugin in ${ac_with_bauldir}])
-AC_SUBST([CAJA_EXTENSION_DIR],[${ac_with_bauldir}])
+AC_SUBST([BAUL_EXTENSION_DIR],[${ac_with_bauldir}])
 
 dnl ******************************
 

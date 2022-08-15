@@ -4,9 +4,9 @@ AM_CPPFLAGS =						\
 	-DCAFELOCALEDIR=\""$(datadir)/locale"\" 	\
 	-I$(top_srcdir)					\
 	-I$(top_builddir)				\
-	$(CAJA_CFLAGS)
+	$(BAUL_CFLAGS)
 
-baul_extensiondir=$(CAJA_EXTENSION_DIR)
+baul_extensiondir=$(BAUL_EXTENSION_DIR)
 
 baul_extension_LTLIBRARIES=libbaul-grapa.la
 
@@ -16,7 +16,7 @@ libbaul_grapa_la_SOURCES =     \
 	grapa-module.c
 
 libbaul_grapa_la_LDFLAGS = -module -avoid-version -no-undefined
-libbaul_grapa_la_LIBADD  = $(CAJA_LIBS)
+libbaul_grapa_la_LIBADD  = $(BAUL_LIBS)
 
 extensiondir = $(datadir)/baul/extensions
 extension_in_files = libbaul-grapa.baul-extension.desktop.in

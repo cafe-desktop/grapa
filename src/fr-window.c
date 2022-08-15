@@ -4757,7 +4757,7 @@ is_single_click_policy (FrWindow *window)
 	gboolean  result = FALSE;
 
 	if (window->priv->settings_baul) {
-		value = g_settings_get_string (window->priv->settings_baul, CAJA_CLICK_POLICY);
+		value = g_settings_get_string (window->priv->settings_baul, BAUL_CLICK_POLICY);
 		result = (value != NULL) && (strncmp (value, "single", 6) == 0);
 		g_free (value);
 	}
@@ -5541,9 +5541,9 @@ fr_window_construct (FrWindow *window)
 	window->priv->settings_dialogs = g_settings_new (GRAPA_SCHEMA_DIALOGS);
 
 	schema_source = g_settings_schema_source_get_default ();
-	baul_schema = g_settings_schema_source_lookup (schema_source, CAJA_SCHEMA, FALSE);
+	baul_schema = g_settings_schema_source_lookup (schema_source, BAUL_SCHEMA, FALSE);
 	if (baul_schema) {
-		window->priv->settings_baul = g_settings_new (CAJA_SCHEMA);
+		window->priv->settings_baul = g_settings_new (BAUL_SCHEMA);
 		g_settings_schema_unref (baul_schema);
 	}
 
@@ -6143,7 +6143,7 @@ fr_window_construct (FrWindow *window)
 
 	if (window->priv->settings_baul)
 		g_signal_connect (window->priv->settings_baul,
-				"changed::" CAJA_CLICK_POLICY,
+				"changed::" BAUL_CLICK_POLICY,
 				G_CALLBACK (pref_click_policy_changed),
 				window);
 
