@@ -214,7 +214,7 @@ msgstr "एउटा सङ्ग्रह सिर्जना गर्नु
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
 #: data/grapa.desktop.in.in:12
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:4
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:4
 msgid "grapa"
 msgstr ""
 
@@ -394,37 +394,37 @@ msgstr ""
 msgid "The default size for volumes."
 msgstr ""
 
-#: caja/caja-grapa.c:329
+#: baul/baul-grapa.c:329
 msgid "Extract Here"
 msgstr "यहाँ ल्याउनुहोस्"
 
 #. Translators: the current position is the current folder
-#: caja/caja-grapa.c:331
+#: baul/baul-grapa.c:331
 msgid "Extract the selected archive to the current position"
 msgstr ""
 
-#: caja/caja-grapa.c:348
+#: baul/baul-grapa.c:348
 msgid "Extract To..."
 msgstr "यसमा झिक्नुहोस्..."
 
-#: caja/caja-grapa.c:349
+#: baul/baul-grapa.c:349
 msgid "Extract the selected archive"
 msgstr "चयन गरिएको सङ्ग्रह झिक्नुहोस्"
 
-#: caja/caja-grapa.c:368
+#: baul/baul-grapa.c:368
 msgid "Compress..."
 msgstr ""
 
-#: caja/caja-grapa.c:369
+#: baul/baul-grapa.c:369
 msgid "Create a compressed archive with the selected objects"
 msgstr ""
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:5 src/main.c:342
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
 msgid "Grapa"
 msgstr "फाइल रोलर"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:6
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
 msgstr ""
 

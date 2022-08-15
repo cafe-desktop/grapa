@@ -893,7 +893,7 @@ msgstr ""
 #: C/index.docbook:484
 msgid ""
 "You can also refer to the <ulink type=\"help\" url=\"help:cafe-user-guide"
-"/caja-bookmarks\">Bookmarks section</ulink> of the Desktop User Guide to "
+"/baul-bookmarks\">Bookmarks section</ulink> of the Desktop User Guide to "
 "learn how you can use the <guilabel>Places</guilabel> pane to access your "
 "favorite locations."
 msgstr ""

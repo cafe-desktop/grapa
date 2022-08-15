@@ -14,7 +14,7 @@ requires:
     - gettext
     - gcc
     - git
-    - libcaja-extension-dev
+    - libbaul-extension-dev
     - libglib2.0-dev
     - libjson-glib-dev
     - libmagic-dev

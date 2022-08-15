@@ -3,10 +3,10 @@
 data/grapa.appdata.xml.in
 data/grapa.desktop.in.in
 data/org.cafe.grapa.gschema.xml.in
-caja/grapa-module.c
-caja/caja-grapa.c
-caja/caja-grapa.h
-caja/libcaja-grapa.caja-extension.desktop.in.in
+baul/grapa-module.c
+baul/baul-grapa.c
+baul/baul-grapa.h
+baul/libbaul-grapa.baul-extension.desktop.in.in
 src/actions.c
 src/actions.h
 src/dlg-add-files.c

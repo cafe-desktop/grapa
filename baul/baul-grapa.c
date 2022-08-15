@@ -25,10 +25,10 @@
 #include <string.h>
 #include <glib/gi18n-lib.h>
 #include <gio/gio.h>
-#include <libcaja-extension/caja-extension-types.h>
-#include <libcaja-extension/caja-file-info.h>
-#include <libcaja-extension/caja-menu-provider.h>
-#include "caja-grapa.h"
+#include <libbaul-extension/baul-extension-types.h>
+#include <libbaul-extension/baul-file-info.h>
+#include <libbaul-extension/baul-menu-provider.h>
+#include "baul-grapa.h"
 
 
 static GObjectClass *parent_class;
@@ -44,7 +44,7 @@ extract_to_callback (CajaMenuItem *item,
 	GString          *cmd;
 
 	files = g_object_get_data (G_OBJECT (item), "files");
-	default_dir = caja_file_info_get_parent_uri (files->data);
+	default_dir = baul_file_info_get_parent_uri (files->data);
 	quoted_default_dir = g_shell_quote (default_dir);
 
 	cmd = g_string_new ("grapa");
@@ -53,7 +53,7 @@ extract_to_callback (CajaMenuItem *item,
 	for (scan = files; scan; scan = scan->next) {
 		char *uri, *quoted_uri;
 
-		uri = caja_file_info_get_uri (scan->data);
+		uri = baul_file_info_get_uri (scan->data);
 		quoted_uri = g_shell_quote (uri);
 		g_string_append_printf (cmd, " %s", quoted_uri);
 		g_free (uri);
@@ -87,7 +87,7 @@ extract_here_callback (CajaMenuItem *item,
 		CajaFileInfo *file = scan->data;
 		char             *uri, *quoted_uri;
 
-		uri = caja_file_info_get_uri (file);
+		uri = baul_file_info_get_uri (file);
 		quoted_uri = g_shell_quote (uri);
 		g_string_append_printf (cmd, " %s", quoted_uri);
 		g_free (uri);
@@ -114,7 +114,7 @@ add_callback (CajaMenuItem *item,
 	GString          *cmd;
 
 	files = g_object_get_data (G_OBJECT (item), "files");
-	uri = caja_file_info_get_uri (files->data);
+	uri = baul_file_info_get_uri (files->data);
 	dir = g_path_get_dirname (uri);
 	quoted_dir = g_shell_quote (dir);
 
@@ -126,7 +126,7 @@ add_callback (CajaMenuItem *item,
 	g_free (quoted_dir);
 
 	for (scan = files; scan; scan = scan->next) {
-		uri = caja_file_info_get_uri (scan->data);
+		uri = baul_file_info_get_uri (scan->data);
 		quoted_uri = g_shell_quote (uri);
 		g_string_append_printf (cmd, " %s", quoted_uri);
 		g_free (uri);
@@ -217,12 +217,12 @@ get_file_mime_info (CajaFileInfo *file)
 	file_mime_info.is_compressed_archive = FALSE;
 
 	for (i = 0; archive_mime_types[i].mime_type != NULL; i++)
-		if (caja_file_info_is_mime_type (file, archive_mime_types[i].mime_type)) {
+		if (baul_file_info_is_mime_type (file, archive_mime_types[i].mime_type)) {
 			char *mime_type;
 			char *content_type_mime_file;
 			char *content_type_mime_compare;
 
-			mime_type = caja_file_info_get_mime_type (file);
+			mime_type = baul_file_info_get_mime_type (file);
 
 			content_type_mime_file = g_content_type_from_mime_type (mime_type);
 			content_type_mime_compare = g_content_type_from_mime_type (archive_mime_types[i].mime_type);
@@ -250,7 +250,7 @@ unsupported_scheme (CajaFileInfo *file)
 	GFile    *location;
 	char     *scheme;
 
-	location = caja_file_info_get_location (file);
+	location = baul_file_info_get_location (file);
 	scheme = g_file_get_uri_scheme (location);
 
 	if (scheme != NULL) {
@@ -270,7 +270,7 @@ unsupported_scheme (CajaFileInfo *file)
 
 
 static GList *
-caja_fr_get_file_items (CajaMenuProvider *provider,
+baul_fr_get_file_items (CajaMenuProvider *provider,
 			    CtkWidget            *window,
 			    GList                *files)
 {
@@ -309,8 +309,8 @@ caja_fr_get_file_items (CajaMenuProvider *provider,
 		if (can_write) {
 			CajaFileInfo *parent;
 
-			parent = caja_file_info_get_parent_info (file);
- 			can_write = caja_file_info_can_write (parent);
+			parent = baul_file_info_get_parent_info (file);
+ 			can_write = baul_file_info_can_write (parent);
 			g_object_unref (parent);
 		}
 	}
@@ -325,7 +325,7 @@ caja_fr_get_file_items (CajaMenuProvider *provider,
 	if (all_archives && can_write) {
 		CajaMenuItem *item;
 
-		item = caja_menu_item_new ("CajaFr::extract_here",
+		item = baul_menu_item_new ("CajaFr::extract_here",
 					       _("Extract Here"),
 					       /* Translators: the current position is the current folder */
 					       _("Extract the selected archive to the current position"),
@@ -336,15 +336,15 @@ caja_fr_get_file_items (CajaMenuProvider *provider,
 				  provider);
 		g_object_set_data_full (G_OBJECT (item),
 					"files",
-					caja_file_info_list_copy (files),
-					(GDestroyNotify) caja_file_info_list_free);
+					baul_file_info_list_copy (files),
+					(GDestroyNotify) baul_file_info_list_free);
 
 		items = g_list_append (items, item);
 	}
 	if (all_archives) {
 		CajaMenuItem *item;
 
-		item = caja_menu_item_new ("CajaFr::extract_to",
+		item = baul_menu_item_new ("CajaFr::extract_to",
 					       _("Extract To..."),
 					       _("Extract the selected archive"),
 					       "drive-harddisk");
@@ -354,8 +354,8 @@ caja_fr_get_file_items (CajaMenuProvider *provider,
 				  provider);
 		g_object_set_data_full (G_OBJECT (item),
 					"files",
-					caja_file_info_list_copy (files),
-					(GDestroyNotify) caja_file_info_list_free);
+					baul_file_info_list_copy (files),
+					(GDestroyNotify) baul_file_info_list_free);
 
 		items = g_list_append (items, item);
 
@@ -364,7 +364,7 @@ caja_fr_get_file_items (CajaMenuProvider *provider,
 	if (! one_compressed_archive || one_derived_archive) {
 		CajaMenuItem *item;
 
-		item = caja_menu_item_new ("CajaFr::add",
+		item = baul_menu_item_new ("CajaFr::add",
 					       _("Compress..."),
 					       _("Create a compressed archive with the selected objects"),
 					       "package-x-generic");
@@ -374,8 +374,8 @@ caja_fr_get_file_items (CajaMenuProvider *provider,
 				  provider);
 		g_object_set_data_full (G_OBJECT (item),
 					"files",
-					caja_file_info_list_copy (files),
-					(GDestroyNotify) caja_file_info_list_free);
+					baul_file_info_list_copy (files),
+					(GDestroyNotify) baul_file_info_list_free);
 
 		items = g_list_append (items, item);
 	}
@@ -385,20 +385,20 @@ caja_fr_get_file_items (CajaMenuProvider *provider,
 
 
 static void
-caja_fr_menu_provider_iface_init (CajaMenuProviderIface *iface)
+baul_fr_menu_provider_iface_init (CajaMenuProviderIface *iface)
 {
-	iface->get_file_items = caja_fr_get_file_items;
+	iface->get_file_items = baul_fr_get_file_items;
 }
 
 
 static void
-caja_fr_instance_init (CajaFr *fr)
+baul_fr_instance_init (CajaFr *fr)
 {
 }
 
 
 static void
-caja_fr_class_init (CajaFrClass *class)
+baul_fr_class_init (CajaFrClass *class)
 {
 	parent_class = g_type_class_peek_parent (class);
 }
@@ -408,30 +408,30 @@ static GType fr_type = 0;
 
 
 GType
-caja_fr_get_type (void)
+baul_fr_get_type (void)
 {
 	return fr_type;
 }
 
 
 void
-caja_fr_register_type (GTypeModule *module)
+baul_fr_register_type (GTypeModule *module)
 {
 	static const GTypeInfo info = {
 		sizeof (CajaFrClass),
 		(GBaseInitFunc) NULL,
 		(GBaseFinalizeFunc) NULL,
-		(GClassInitFunc) caja_fr_class_init,
+		(GClassInitFunc) baul_fr_class_init,
 		NULL,
 		NULL,
 		sizeof (CajaFr),
 		0,
-		(GInstanceInitFunc) caja_fr_instance_init,
+		(GInstanceInitFunc) baul_fr_instance_init,
 		NULL
 	};
 
 	static const GInterfaceInfo menu_provider_iface_info = {
-		(GInterfaceInitFunc) caja_fr_menu_provider_iface_init,
+		(GInterfaceInitFunc) baul_fr_menu_provider_iface_init,
 		NULL,
 		NULL
 	};

@@ -809,7 +809,7 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:464
 msgid ""
-"You can also refer to the <link xlink:href=\"help:cafe-user-guide/caja-"
+"You can also refer to the <link xlink:href=\"help:cafe-user-guide/baul-"
 "bookmarks\">Bookmarks section</link> of the Desktop User Guide to learn how "
 "you can use the <guilabel>Places</guilabel> pane to access your favorite "
 "locations."

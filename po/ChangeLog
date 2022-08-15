@@ -2942,7 +2942,7 @@
 
 2004-12-03  Paolo Bacchilega  <paobac@cvs.gnome.org>
 
-	* POTFILES.in: added caja/* files.
+	* POTFILES.in: added baul/* files.
 
 2004-11-24  Funda Wang  <fundawang@linux.net.cn>
 

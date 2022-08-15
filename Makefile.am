@@ -2,7 +2,7 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 
 if ENABLE_CAJA_ACTIONS
-CAJA = caja
+CAJA = baul
 else
 CAJA =
 endif
@@ -29,7 +29,7 @@ EXTRA_DIST = 			\
 DISTCLEANFILES =
 
 DISTCHECK_CONFIGURE_FLAGS = \
-	--with-cajadir='$${libdir}/caja/extensions-2.0-distcheck' \
+	--with-bauldir='$${libdir}/baul/extensions-2.0-distcheck' \
 	--enable-compile-warnings=no \
 	CFLAGS='-Wno-deprecated-declarations'
 

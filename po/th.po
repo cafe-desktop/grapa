@@ -218,7 +218,7 @@ msgstr "สร้างและแก้ไขแฟ้มจัดเก็บ
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
 #: data/grapa.desktop.in.in:12
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:4
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:4
 msgid "grapa"
 msgstr ""
 
@@ -400,37 +400,37 @@ msgstr "ขนาดโวลุมปริยาย"
 msgid "The default size for volumes."
 msgstr "ขนาดปริยายสำหรับโวลุม"
 
-#: caja/caja-grapa.c:329
+#: baul/baul-grapa.c:329
 msgid "Extract Here"
 msgstr "แตกแฟ้มออกมาที่นี่"
 
 #. Translators: the current position is the current folder
-#: caja/caja-grapa.c:331
+#: baul/baul-grapa.c:331
 msgid "Extract the selected archive to the current position"
 msgstr "แตกแฟ้มออกจากแฟ้มจัดเก็บไปยังตำแหน่งปัจจุบัน"
 
-#: caja/caja-grapa.c:348
+#: baul/baul-grapa.c:348
 msgid "Extract To..."
 msgstr "แ_ตกออกยัง..."
 
-#: caja/caja-grapa.c:349
+#: baul/baul-grapa.c:349
 msgid "Extract the selected archive"
 msgstr "แตกแฟ้มออกจากแฟ้มจัดเก็บ"
 
-#: caja/caja-grapa.c:368
+#: baul/baul-grapa.c:368
 msgid "Compress..."
 msgstr "บีบอัด..."
 
-#: caja/caja-grapa.c:369
+#: baul/baul-grapa.c:369
 msgid "Create a compressed archive with the selected objects"
 msgstr "สร้างแฟ้มจัดเก็บแบบบีบอัดจากแฟ้มที่เลือก"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:5 src/main.c:342
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
 msgid "Grapa"
 msgstr "Grapa"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:6
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
 msgstr "อนุญาตให้สร้างและแยกแฟ้มบีบอัด"
 

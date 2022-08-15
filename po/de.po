@@ -224,7 +224,7 @@ msgstr "Archive anlegen und verändern"
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
 #: data/grapa.desktop.in.in:12
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:4
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:4
 msgid "grapa"
 msgstr ""
 
@@ -420,37 +420,37 @@ msgstr "Vorgegebene Dateigröße"
 msgid "The default size for volumes."
 msgstr "Die voreingestellte Größe für Dateien."
 
-#: caja/caja-grapa.c:329
+#: baul/baul-grapa.c:329
 msgid "Extract Here"
 msgstr "Hier entpacken"
 
 #. Translators: the current position is the current folder
-#: caja/caja-grapa.c:331
+#: baul/baul-grapa.c:331
 msgid "Extract the selected archive to the current position"
 msgstr "Das ausgewählte Archiv im aktuellen Ort entpacken"
 
-#: caja/caja-grapa.c:348
+#: baul/baul-grapa.c:348
 msgid "Extract To..."
 msgstr "Entpacken nach …"
 
-#: caja/caja-grapa.c:349
+#: baul/baul-grapa.c:349
 msgid "Extract the selected archive"
 msgstr "Das ausgewählte Archiv entpacken"
 
-#: caja/caja-grapa.c:368
+#: baul/baul-grapa.c:368
 msgid "Compress..."
 msgstr "Komprimieren …"
 
-#: caja/caja-grapa.c:369
+#: baul/baul-grapa.c:369
 msgid "Create a compressed archive with the selected objects"
 msgstr "Ein komprimiertes Archiv mit den ausgewählten Objekten erstellen"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:5 src/main.c:342
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:5 src/main.c:342
 #: src/server.c:457
 msgid "Grapa"
 msgstr "Grapa"
 
-#: caja/libcaja-grapa.caja-extension.desktop.in.in:6
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:6
 msgid "Allows to create and extract archives"
 msgstr "Erlaubt es, Archive zu erstellen und zu entpacken"
 
