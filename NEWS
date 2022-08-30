@@ -1,3 +1,15 @@
+### grapa 1.25.1
+
+  * fr-command-lha: avoid shadow variable
+  * build: avoid deprecated:
+    'AC_HELP_STRING', 'AC_CONFIG_HEADER', 'AC_PROG_LIBTOOL', 'AM_DISABLE_STATIC'
+  * update AUTHORS
+  * ci: some improvements
+  * caja-grapa: CtkWidget instead GtkWidget
+  * rename CAJA -> BAUL
+  * reduce the scope of some variables
+  * update translations
+
 ### grapa 1.25.0
 
   * eggdesktopfile: avoid deprecated GdkScreen
