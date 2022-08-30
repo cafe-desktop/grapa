@@ -99,10 +99,10 @@ egg_file_format_filter_info_new (const gchar *name,
 static void
 egg_file_format_filter_info_free (gpointer boxed)
 {
-  EggFileFormatFilterInfo *self;
-
   if (boxed)
     {
+      EggFileFormatFilterInfo *self;
+
       self = boxed;
 
       g_hash_table_unref (self->extension_set);
@@ -164,7 +164,6 @@ egg_file_format_filter_add_extensions (CtkFileFilter *filter,
   GString *filter_name;
   gchar **strings;
   gchar **ptr;
-  gchar *pattern;
 
   g_assert (NULL != extensions);
 
@@ -185,6 +184,8 @@ egg_file_format_filter_add_extensions (CtkFileFilter *filter,
   strings = g_strsplit (extensions, ", ", -1);
   for (ptr = strings; *ptr; ptr++)
     {
+      gchar *pattern;
+
       pattern = g_strdup_printf ("*%s", *ptr);
 
       if (filter_name)
@@ -211,7 +212,6 @@ static void
 selection_changed_cb (CtkTreeSelection     *selection,
                       EggFileFormatChooser *self)
 {
-  gchar *label;
   gchar *name;
 
   CtkFileFilter *filter;
@@ -221,6 +221,8 @@ selection_changed_cb (CtkTreeSelection     *selection,
 
   if (ctk_tree_selection_get_selected (selection, &model, &iter))
     {
+      gchar *label;
+
       ctk_tree_model_get (model, &iter, MODEL_COLUMN_NAME, &name, -1);
 
       label = g_strdup_printf (_("File _Format: %s"), name);
@@ -298,7 +300,6 @@ static gboolean
 accept_filename (gchar       *extensions,
                  const gchar *filename)
 {
-  const gchar *extptr;
   gchar *saveptr;
   gchar *token;
   gsize length;
@@ -308,6 +309,8 @@ accept_filename (gchar       *extensions,
   for (token = strtok_r (extensions, ",", &saveptr); NULL != token;
        token = strtok_r (NULL, ",", &saveptr))
     {
+      const gchar *extptr;
+
       token = g_strstrip (token);
       extptr = filename + length - strlen (token) - 1;
 
@@ -636,14 +639,14 @@ chooser_response_cb (CtkDialog *dialog,
                      gpointer   data)
 {
   EggFileFormatChooser *self;
-  gchar *filename, *basename;
-  gchar *message;
   guint format;
 
   self = EGG_FILE_FORMAT_CHOOSER (data);
 
   if (EGG_IS_POSITIVE_RESPONSE (response_id))
     {
+      gchar *filename, *basename;
+
       filename = ctk_file_chooser_get_filename (self->priv->chooser);
       basename = g_filename_display_basename (filename);
       g_free (filename);
@@ -653,6 +656,7 @@ chooser_response_cb (CtkDialog *dialog,
 
       if (0 == format)
         {
+          gchar *message;
 
           message = g_strdup_printf (
             _("The program was not able to find out the file format "
@@ -892,7 +896,6 @@ get_icon_name (const gchar *mime_type)
 {
   static gboolean first_call = TRUE;
   gchar *name = NULL;
-  gchar *s;
 
   if (first_call)
     {
@@ -903,6 +906,8 @@ get_icon_name (const gchar *mime_type)
 
   if (mime_type)
     {
+      gchar *s;
+
       name = g_strconcat ("cafe-mime-", mime_type, NULL);
 
       for(s = name; *s; ++s)

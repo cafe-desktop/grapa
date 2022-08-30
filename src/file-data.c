@@ -148,8 +148,7 @@ find_path_in_file_data_array (GPtrArray  *array,
 			      const char *path)
 {
 	int       path_l;
-	int       left, right, p, cmp = -1;
-	FileData *fd;
+	int       left, right;
 
 	if (path == NULL)
 		return -1;
@@ -158,6 +157,9 @@ find_path_in_file_data_array (GPtrArray  *array,
 	left = 0;
 	right = array->len;
 	while (left < right) {
+		FileData *fd;
+		int p, cmp;
+
 		p = left + ((right - left) / 2);
 		fd = (FileData *) g_ptr_array_index (array, p);
 

@@ -48,10 +48,7 @@ mktime_from_string (char *month,
 		    char *mday,
 		    char *time_or_year)
 {
-	static const char *months[] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
 	struct tm   tm = {0, };
-	char      **fields;
 
 	tm.tm_isdst = -1;
 
@@ -59,16 +56,21 @@ mktime_from_string (char *month,
 
 	if (month != NULL) {
 		int i;
-		for (i = 0; i < 12; i++)
+		for (i = 0; i < 12; i++) {
+			static const char *months[] = { "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+		                                         "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
 			if (strcmp (months[i], month) == 0) {
 				tm.tm_mon = i;
 				break;
 			}
+		}
 	}
 	tm.tm_mday = atoi (mday);
 	if (strchr (time_or_year, ':') == NULL)
 		tm.tm_year = atoi (time_or_year) - 1900;
 	else {
+		char **fields;
+
 		time_t     now;
 		struct tm *tm_now;
 
@@ -97,7 +99,7 @@ split_line_lha (char *line)
 {
 	char       **fields;
 	int          num_fields = 7;
-	const char  *scan, *field_end;
+	const char  *scan;
 	int          i;
 
 	fields = g_new0 (char *, num_fields + 1);
@@ -128,6 +130,8 @@ split_line_lha (char *line)
 
 	scan = eat_spaces (line);
 	for (; i < num_fields; i++) {
+		const char *field_end;
+
 		field_end = strchr (scan, ' ');
 		if (field_end != NULL) {
 			fields[i] = g_strndup (scan, field_end - scan);

@@ -304,7 +304,6 @@ egg_tree_multi_drag_motion_event (CtkWidget      *widget,
       GList            *path_list = NULL;
       CtkTreeSelection *selection;
       CtkTreeModel     *model;
-      CdkDragContext   *context;
 
       stop_drag_check (widget);
 
@@ -318,10 +317,11 @@ egg_tree_multi_drag_motion_event (CtkWidget      *widget,
       model = ctk_tree_view_get_model (CTK_TREE_VIEW (widget));
       if (egg_tree_multi_drag_source_row_draggable (EGG_TREE_MULTI_DRAG_SOURCE (model), path_list))
 	{
-	  CtkTargetList *target_list;
-	  CtkTreePath   *tree_path;
-	  int            cell_x;
-	  int            cell_y;
+	  CtkTargetList  *target_list;
+	  CtkTreePath    *tree_path;
+	  int             cell_x;
+	  int             cell_y;
+	  CdkDragContext *context;
 
 	  target_list = ctk_target_list_new (target_table, G_N_ELEMENTS (target_table));
 	  context = ctk_drag_begin_with_coordinates (widget,

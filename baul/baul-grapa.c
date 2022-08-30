@@ -110,7 +110,7 @@ add_callback (BaulMenuItem *item,
 {
 	GList            *files, *scan;
 	char             *uri, *dir;
-	char             *quoted_uri, *quoted_dir;
+	char             *quoted_dir;
 	GString          *cmd;
 
 	files = g_object_get_data (G_OBJECT (item), "files");
@@ -126,6 +126,8 @@ add_callback (BaulMenuItem *item,
 	g_free (quoted_dir);
 
 	for (scan = files; scan; scan = scan->next) {
+		char *quoted_uri;
+
 		uri = baul_file_info_get_uri (scan->data);
 		quoted_uri = g_shell_quote (uri);
 		g_string_append_printf (cmd, " %s", quoted_uri);
