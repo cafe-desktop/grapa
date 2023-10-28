@@ -17,6 +17,7 @@ requires:
     - libglib2.0-dev
     - libjson-glib-dev
     - libmagic-dev
+    - libnotify-dev
     - libtool
     - make
     - wget

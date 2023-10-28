@@ -30,6 +30,8 @@
 #include <cdk/cdkkeysyms.h>
 #include <gdk-pixbuf/gdk-pixbuf.h>
 
+#include <libnotify/notify.h>
+
 #include "actions.h"
 #include "dlg-batch-add.h"
 #include "dlg-delete.h"
@@ -2191,6 +2193,20 @@ static gboolean
 real_close_progress_dialog (gpointer data)
 {
 	FrWindow *window = data;
+
+	if ((ctk_window_is_active (CTK_WINDOW (window)) == FALSE) &&
+	    (ctk_window_is_active (CTK_WINDOW (ctk_widget_get_toplevel (window->priv->progress_dialog))) == FALSE)) {
+		notify_init ("grapa");
+		NotifyNotification *notification;
+
+		notification = notify_notification_new ("grapa",
+                                                        _("Process completed"),
+                                                        "grapa");
+
+		notify_notification_show (notification, NULL);
+		g_object_unref (G_OBJECT (notification));
+		notify_uninit ();
+	}
 
 	if (window->priv->hide_progress_timeout != 0) {
 		g_source_remove (window->priv->hide_progress_timeout);

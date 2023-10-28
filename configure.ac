@@ -61,7 +61,8 @@ PKG_CHECK_MODULES(FR,					\
 	glib-2.0 >= $GLIB_REQUIRED			\
 	gthread-2.0					\
 	gio-unix-2.0 >= $GIO_REQUIRED			\
-	ctk+-3.0 >= $CTK_REQUIRED)
+	ctk+-3.0 >= $CTK_REQUIRED			\
+	libnotify)
 AC_SUBST(FR_CFLAGS)
 AC_SUBST(FR_LIBS)
 
