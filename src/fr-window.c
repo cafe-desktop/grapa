@@ -2194,8 +2194,11 @@ real_close_progress_dialog (gpointer data)
 {
 	FrWindow *window = data;
 
-	if ((ctk_window_is_active (CTK_WINDOW (window)) == FALSE) &&
-	    (ctk_window_is_active (CTK_WINDOW (ctk_widget_get_toplevel (window->priv->progress_dialog))) == FALSE)) {
+	if ((window->priv->use_progress_dialog) &&
+	    (window->priv->progress_dialog != NULL) &&
+	    (ctk_widget_get_visible (window->priv->progress_dialog)) &&
+	    (ctk_window_is_active (CTK_WINDOW (ctk_widget_get_toplevel (window->priv->progress_dialog))) == FALSE) &&
+	    (ctk_window_is_active (CTK_WINDOW (window)) == FALSE)) {
 		notify_init ("grapa");
 		NotifyNotification *notification;
 
