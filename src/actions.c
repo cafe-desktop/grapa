@@ -899,7 +899,7 @@ activate_action_about (CtkAction *action,
                    "version", VERSION,
                    "copyright", _("Copyright \xc2\xa9 2001–2010 Free Software Foundation, Inc.\n"
                                   "Copyright \xc2\xa9 2012–2020 The MATE developers\n"
-                                  "Copyright \xc2\xa9 2020 The CAFE developers\n\n"
+                                  "Copyright \xc2\xa9 2020-2024 Pablo Barciela\n\n"
                                   "grapa icon made by https://freeicons.io/profile/3"),
                    "comments", _("An archive manager for CAFE"),
                    "authors", authors,
