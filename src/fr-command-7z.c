@@ -207,7 +207,15 @@ list__process_line (char     *line,
 static void
 fr_command_7z_begin_command (FrCommand *comm)
 {
-	if (is_program_in_path ("7z"))
+	// Modern 7-Zip by the original author.
+	// Statically linked from a binary distribution, almost guaranteed to work.
+	if (is_program_in_path ("7zzs"))
+		fr_process_begin_command (comm->process, "7zzs");
+	// Dynamically linked from either binary or source distribution.
+	else if (is_program_in_path ("7zz"))
+		fr_process_begin_command (comm->process, "7zz");
+	// Legacy p7zip project.
+	else if (is_program_in_path ("7z"))
 		fr_process_begin_command (comm->process, "7z");
 	else if (is_program_in_path ("7za"))
 		fr_process_begin_command (comm->process, "7za");
@@ -340,8 +348,10 @@ fr_command_7z_add (FrCommand     *comm,
 
 	if (spd_support) fr_process_add_arg (comm->process, "-spd");
 	fr_process_add_arg (comm->process, "-bd");
+	fr_process_add_arg (comm->process, "-bb1");
 	fr_process_add_arg (comm->process, "-y");
-	fr_process_add_arg (comm->process, "-l");
+	if (recursive)
+		fr_process_add_arg (comm->process, "-l");
 	add_password_arg (comm, comm->password, FALSE);
 	if ((comm->password != NULL)
 	    && (*comm->password != 0)
@@ -475,6 +485,7 @@ fr_command_7z_extract (FrCommand  *comm,
 
 	if (spd_support) fr_process_add_arg (comm->process, "-spd");
 	fr_process_add_arg (comm->process, "-bd");
+	fr_process_add_arg (comm->process, "-bb1");
 	fr_process_add_arg (comm->process, "-y");
 	add_password_arg (comm, comm->password, FALSE);
 
@@ -610,22 +621,28 @@ fr_command_7z_get_capabilities (FrCommand  *comm,
 				gboolean    check_command)
 {
 	FrCommandCap capabilities;
+	gboolean available_7zip;
 
 	capabilities = FR_COMMAND_CAN_ARCHIVE_MANY_FILES;
-	if (! is_program_available ("7za", check_command) && ! is_program_available ("7zr", check_command) && ! is_program_available ("7z", check_command))
+	available_7zip = is_program_available ("7zz", check_command) || is_program_available ("7zzs", check_command);
+
+	if (! available_7zip\
+		&& ! is_program_available ("7za", check_command) \
+		&& ! is_program_available ("7zr", check_command) \
+		&& ! is_program_available ("7z", check_command))
 		return capabilities;
 
 	if (is_mime_type (mime_type, "application/x-7z-compressed")) {
 		capabilities |= FR_COMMAND_CAN_READ_WRITE | FR_COMMAND_CAN_CREATE_VOLUMES;
-		if (is_program_available ("7z", check_command))
+		if (is_program_available ("7z", check_command) || available_7zip)
 			capabilities |= FR_COMMAND_CAN_ENCRYPT | FR_COMMAND_CAN_ENCRYPT_HEADER;
 	}
 	else if (is_mime_type (mime_type, "application/x-7z-compressed-tar")) {
 		capabilities |= FR_COMMAND_CAN_READ_WRITE;
-		if (is_program_available ("7z", check_command))
+		if (is_program_available ("7z", check_command) || available_7zip)
 			capabilities |= FR_COMMAND_CAN_ENCRYPT | FR_COMMAND_CAN_ENCRYPT_HEADER;
 	}
-	else if (is_program_available ("7z", check_command)) {
+	else if (is_program_available ("7z", check_command) || available_7zip) {
 		capabilities |= FR_COMMAND_CAN_READ;
 
 		if (is_mime_type (mime_type, "application/x-cbz")
@@ -659,9 +676,9 @@ fr_command_7z_get_packages (FrCommand  *comm,
 			    const char *mime_type)
 {
 	if (is_mime_type (mime_type, "application/zip") || is_mime_type (mime_type, "application/vnd.ms-cab-compressed"))
-		return PACKAGES ("p7zip,p7zip-full");
+		return PACKAGES ("7zip,7zip-full");
 	else
-		return PACKAGES ("p7zip");
+		return PACKAGES ("7zip");
 }
 
 
