@@ -36,7 +36,6 @@
 #include "fr-command-iso.h"
 #include "fr-command-jar.h"
 #include "fr-command-lha.h"
-#include "fr-command-rar.h"
 #include "fr-command-rpm.h"
 #include "fr-command-tar.h"
 #if HAVE_JSON_GLIB
@@ -362,7 +361,6 @@ register_commands (void)
 
 	register_command (FR_TYPE_COMMAND_TAR);
 	register_command (FR_TYPE_COMMAND_CFILE);
-	register_command (FR_TYPE_COMMAND_RAR);
 	register_command (FR_TYPE_COMMAND_7Z);
 	register_command (FR_TYPE_COMMAND_DPKG);
 
