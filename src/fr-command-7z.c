@@ -34,7 +34,6 @@
 #include "glib-utils.h"
 #include "fr-command.h"
 #include "fr-command-7z.h"
-#include "rar-utils.h"
 
 static void fr_command_7z_class_init  (FrCommand7zClass *class);
 static void fr_command_7z_init        (FrCommand        *afile);
@@ -249,8 +248,6 @@ list__begin (gpointer data)
 static void
 fr_command_7z_list (FrCommand  *comm)
 {
-	rar_check_multi_volume (comm);
-
 	fr_process_set_out_line_func (comm->process, list__process_line, comm);
 
 	fr_command_7z_begin_command (comm);
@@ -582,11 +579,9 @@ const char *sevenz_mime_types[] = { "application/x-7z-compressed",
 				    "application/x-arj",
 				    "application/vnd.ms-cab-compressed",
 				    "application/x-cd-image",
-				    /*"application/x-cbr",*/
 				    "application/x-cbz",
 				    "application/x-ms-dos-executable",
 				    "application/x-ms-wim",
-				    "application/x-rar",
 				    "application/zip", /* zip always at the end and the number of */
 				    NULL };            /* place in fr_command_7z_get_mime_types   */
 
@@ -599,7 +594,7 @@ fr_command_7z_get_mime_types (FrCommand *comm)
 
 	if (g_settings_get_boolean (settings, "unar-open-zip") &&
 	    is_program_in_path ("unar") && is_program_in_path ("lsar"))
-		sevenz_mime_types [8] = NULL;
+		sevenz_mime_types [7] = NULL;
 	else
 		g_settings_set_boolean (settings, "unar-open-zip", FALSE);
 
@@ -631,15 +626,7 @@ fr_command_7z_get_capabilities (FrCommand  *comm,
 			capabilities |= FR_COMMAND_CAN_ENCRYPT | FR_COMMAND_CAN_ENCRYPT_HEADER;
 	}
 	else if (is_program_available ("7z", check_command)) {
-		if (is_mime_type (mime_type, "application/x-rar")
-		    || is_mime_type (mime_type, "application/x-cbr"))
-		{
-			if (! check_command || g_file_test ("/usr/lib/p7zip/Codecs/Rar29.so", G_FILE_TEST_EXISTS) || g_file_test ("/usr/lib/p7zip/Codecs/Rar.so", G_FILE_TEST_EXISTS)
-			    || g_file_test ("/usr/libexec/p7zip/Codecs/Rar29.so", G_FILE_TEST_EXISTS) || g_file_test ("/usr/libexec/p7zip/Codecs/Rar.so", G_FILE_TEST_EXISTS))
-				capabilities |= FR_COMMAND_CAN_READ;
-		}
-		else
-			capabilities |= FR_COMMAND_CAN_READ;
+		capabilities |= FR_COMMAND_CAN_READ;
 
 		if (is_mime_type (mime_type, "application/x-cbz")
 		    || is_mime_type (mime_type, "application/x-ms-dos-executable")
@@ -671,9 +658,7 @@ static const char *
 fr_command_7z_get_packages (FrCommand  *comm,
 			    const char *mime_type)
 {
-	if (is_mime_type (mime_type, "application/x-rar"))
-		return PACKAGES ("p7zip,p7zip-rar");
-	else if (is_mime_type (mime_type, "application/zip") || is_mime_type (mime_type, "application/vnd.ms-cab-compressed"))
+	if (is_mime_type (mime_type, "application/zip") || is_mime_type (mime_type, "application/vnd.ms-cab-compressed"))
 		return PACKAGES ("p7zip,p7zip-full");
 	else
 		return PACKAGES ("p7zip");
