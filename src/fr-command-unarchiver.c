@@ -221,12 +221,27 @@ fr_command_unarchiver_extract (FrCommand  *comm,
 }
 
 
+static gboolean
+password_required (GList *raw)
+{
+	GList *scan;
+
+	for (scan = g_list_last (raw); scan; scan = scan->prev) {
+		char *line = scan->data;
+
+		if ((strstr (line, "This archive requires a password to unpack.") != NULL)  ||
+		    (strstr (line, "Failed! (Missing or wrong password)") != NULL))
+			return TRUE;
+	}
+
+	return FALSE;
+}
+
+
 static void
 fr_command_unarchiver_handle_error (FrCommand   *comm,
 				    FrProcError *error)
 {
-	GList *scan;
-
 #if 0
 	{
 		for (scan = g_list_last (comm->process->err.raw); scan; scan = scan->prev)
@@ -237,28 +252,9 @@ fr_command_unarchiver_handle_error (FrCommand   *comm,
 	if (error->type == FR_PROC_ERROR_NONE)
 		return;
 
-	if (error->type == FR_PROC_ERROR_COMMAND_ERROR) {
-		for (scan = g_list_last (comm->process->err.raw); scan; scan = scan->prev) {
-			char *line = scan->data;
-
-			if ((strstr (line, "This archive requires a password to unpack.") != NULL)  ||
-			    (strstr (line, "Failed! (Missing or wrong password)") != NULL)) {
-
-				error->type = FR_PROC_ERROR_ASK_PASSWORD;
-				return;
-			}
-		}
-		for (scan = g_list_last (comm->process->out.raw); scan; scan = scan->prev) {
-			char *line = scan->data;
-
-			if ((strstr (line, "This archive requires a password to unpack.") != NULL)  ||
-			    (strstr (line, "Failed! (Missing or wrong password)") != NULL)) {
-
-				error->type = FR_PROC_ERROR_ASK_PASSWORD;
-				return;
-			}
-		}
-	}
+	if ((error->type == FR_PROC_ERROR_COMMAND_ERROR) &&
+	    (password_required (comm->process->err.raw) || password_required (comm->process->out.raw)))
+		error->type = FR_PROC_ERROR_ASK_PASSWORD;
 }
 
 
