@@ -100,21 +100,21 @@ list__process_line (char     *line,
 	g_return_if_fail (line != NULL);
 
 	if (! p7z_comm->list_started) {
-		if (strncmp (line, "p7zip Version ", 14) == 0) {
+		if (strncmp (line, "7-Zip ", 6) == 0) {
 			const char *ver_start;
 			int         ver_len;
 			char        version[256];
 
-			ver_start = eat_spaces (line + 14);
+			ver_start = eat_spaces (line + 6);
 			ver_len = strchr (ver_start, ' ') - ver_start;
 			strncpy (version, ver_start, ver_len);
 			version[ver_len] = 0;
 
-			if ((strcmp (version, "4.55") < 0) && (ver_len > 1) && (version[1] == '.'))
+			if ((strcmp (version, "04.55") < 0) && (ver_len > 1) && (version[2] == '.'))
 				p7z_comm->old_style = TRUE;
 			else
 				p7z_comm->old_style = FALSE;
-			if ((strcmp (version, "9.38") < 0) && (ver_len > 1) && (version[1] == '.'))
+			if ((strcmp (version, "09.38") < 0) && (ver_len > 1) && (version[2] == '.'))
 				spd_support = FALSE;
 			else
 				spd_support = TRUE;
