@@ -3352,10 +3352,16 @@ action_performed (FrArchive   *archive,
 			g_free (source_dir);
 		}
 		else {
-			if (window->priv->ask_to_open_destination_after_extraction)
+			if ((window->priv->ask_to_open_destination_after_extraction) && (window->priv->drag_destination_folder == NULL))
 				open_progress_dialog_with_open_destination (window);
-			else
+			else {
 				close_progress_dialog (window, FALSE);
+
+				if (window->priv->drag_destination_folder) {
+					g_free (window->priv->drag_destination_folder);
+					window->priv->drag_destination_folder = NULL;
+				}
+			}
 		}
 		break;
 
