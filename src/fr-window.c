@@ -2189,11 +2189,9 @@ location_entry_key_press_event_cb (CtkWidget   *widget,
 }
 
 
-static gboolean
-real_close_progress_dialog (gpointer data)
+static void
+show_notification (FrWindow *window)
 {
-	FrWindow *window = data;
-
 	if ((window->priv->use_progress_dialog) &&
 	    (window->priv->progress_dialog != NULL) &&
 	    (ctk_widget_get_visible (window->priv->progress_dialog)) &&
@@ -2210,6 +2208,15 @@ real_close_progress_dialog (gpointer data)
 		g_object_unref (G_OBJECT (notification));
 		notify_uninit ();
 	}
+}
+
+
+static gboolean
+real_close_progress_dialog (gpointer data)
+{
+	FrWindow *window = data;
+
+	show_notification (window);
 
 	if (window->priv->hide_progress_timeout != 0) {
 		g_source_remove (window->priv->hide_progress_timeout);
@@ -3352,8 +3359,10 @@ action_performed (FrArchive   *archive,
 			g_free (source_dir);
 		}
 		else {
-			if ((window->priv->ask_to_open_destination_after_extraction) && (window->priv->drag_destination_folder == NULL))
+			if ((window->priv->ask_to_open_destination_after_extraction) && (window->priv->drag_destination_folder == NULL)) {
 				open_progress_dialog_with_open_destination (window);
+				show_notification (window);
+			}
 			else {
 				close_progress_dialog (window, FALSE);
 
