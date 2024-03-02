@@ -55,7 +55,7 @@ process_line (char     *line,
 	      gpointer  data)
 {
 	FrCommandUnarchiver *unar_comm = FR_COMMAND_UNARCHIVER (data);
-	g_memory_input_stream_add_data (G_MEMORY_INPUT_STREAM (unar_comm->stream), line, -1, NULL);
+	g_string_append (unar_comm->stream, line);
 }
 
 
@@ -73,10 +73,14 @@ list_command_completed (gpointer data)
 {
 	FrCommandUnarchiver *unar_comm = FR_COMMAND_UNARCHIVER (data);
 	JsonParser          *parser;
+	gchar               *json_data;
 	GError              *error = NULL;
 
 	parser = json_parser_new ();
-	if (json_parser_load_from_stream (parser, unar_comm->stream, NULL, &error)) {
+
+	json_data = g_string_free (unar_comm->stream, FALSE);
+
+	if (json_parser_load_from_data (parser, json_data, -1, &error)) {
 		JsonObject *root;
 
 		root = json_node_get_object (json_parser_get_root (parser));
@@ -123,6 +127,7 @@ list_command_completed (gpointer data)
 	}
 
 	g_object_unref (parser);
+	g_free (json_data);
 }
 
 
@@ -131,8 +136,7 @@ fr_command_unarchiver_list (FrCommand  *comm)
 {
 	FrCommandUnarchiver *unar_comm = FR_COMMAND_UNARCHIVER (comm);
 
-	_g_object_unref (unar_comm->stream);
-	unar_comm->stream = g_memory_input_stream_new ();
+	unar_comm->stream = g_string_new ("");
 
 	fr_process_set_out_line_func (comm->process, process_line, comm);
 
@@ -334,13 +338,8 @@ fr_command_unarchiver_init (FrCommand *comm)
 static void
 fr_command_unarchiver_finalize (GObject *object)
 {
-	FrCommandUnarchiver *unar_comm;
-
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (FR_IS_COMMAND_UNARCHIVER (object));
-
-	unar_comm = FR_COMMAND_UNARCHIVER (object);
-	_g_object_unref (unar_comm->stream);
 
 	/* Chain up */
 	if (G_OBJECT_CLASS (parent_class)->finalize)
