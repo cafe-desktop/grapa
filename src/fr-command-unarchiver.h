@@ -41,7 +41,7 @@ struct _FrCommandUnarchiver
 {
 	FrCommand  __parent;
 
-	GInputStream *stream;
+	GString      *stream;
 	int           n_line;
 };
 
