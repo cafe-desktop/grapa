@@ -41,7 +41,6 @@ struct _FrCommand7z
 {
 	FrCommand __parent;
 	gboolean   list_started;
-	gboolean   old_style;
 	FileData  *fdata;
 };
 

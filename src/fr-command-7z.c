@@ -39,7 +39,6 @@ static void fr_command_7z_class_init  (FrCommand7zClass *class);
 static void fr_command_7z_init        (FrCommand        *afile);
 static void fr_command_7z_finalize    (GObject          *object);
 
-static gboolean spd_support = FALSE;
 static gboolean unexpected_end_of_archive = FALSE;
 static gboolean password_required = FALSE;
 static gboolean password_handled = FALSE;
@@ -100,28 +99,7 @@ list__process_line (char     *line,
 	g_return_if_fail (line != NULL);
 
 	if (! p7z_comm->list_started) {
-		if (strncmp (line, "7-Zip ", 6) == 0) {
-			const char *ver_start;
-			int         ver_len;
-			char        version[256];
-
-			ver_start = eat_spaces (line + 6);
-			ver_len = strchr (ver_start, ' ') - ver_start;
-			strncpy (version, ver_start, ver_len);
-			version[ver_len] = 0;
-
-			if ((strcmp (version, "04.55") < 0) && (ver_len > 1) && (version[2] == '.'))
-				p7z_comm->old_style = TRUE;
-			else
-				p7z_comm->old_style = FALSE;
-			if ((strcmp (version, "09.38") < 0) && (ver_len > 1) && (version[2] == '.'))
-				spd_support = FALSE;
-			else
-				spd_support = TRUE;
-		}
-		else if (p7z_comm->old_style && (strncmp (line, "Listing archive: ", 17) == 0))
-			p7z_comm->list_started = TRUE;
-		else if (! p7z_comm->old_style && (strcmp (line, "----------") == 0))
+		if (strcmp (line, "----------") == 0)
 			p7z_comm->list_started = TRUE;
 		else if (strncmp (line, "Multivolume = ", 14) == 0) {
 			fields = g_strsplit (line, " = ", 2);
@@ -346,7 +324,7 @@ fr_command_7z_add (FrCommand     *comm,
 		fr_process_add_arg (comm->process, "-mem=AES128");
 	}
 
-	if (spd_support) fr_process_add_arg (comm->process, "-spd");
+	fr_process_add_arg (comm->process, "-spd");
 	fr_process_add_arg (comm->process, "-bd");
 	fr_process_add_arg (comm->process, "-bb1");
 	fr_process_add_arg (comm->process, "-y");
@@ -420,7 +398,7 @@ fr_command_7z_delete (FrCommand  *comm,
 
 	fr_command_7z_begin_command (comm);
 	fr_process_add_arg (comm->process, "d");
-	if (spd_support) fr_process_add_arg (comm->process, "-spd");
+	fr_process_add_arg (comm->process, "-spd");
 	fr_process_add_arg (comm->process, "-bd");
 	fr_process_add_arg (comm->process, "-y");
 	if (is_mime_type (comm->mime_type, "application/x-ms-dos-executable"))
@@ -483,7 +461,7 @@ fr_command_7z_extract (FrCommand  *comm,
 	else
 		fr_process_add_arg (comm->process, "x");
 
-	if (spd_support) fr_process_add_arg (comm->process, "-spd");
+	fr_process_add_arg (comm->process, "-spd");
 	fr_process_add_arg (comm->process, "-bd");
 	fr_process_add_arg (comm->process, "-bb1");
 	fr_process_add_arg (comm->process, "-y");
