@@ -91,6 +91,7 @@ static GHashTable     *tree_pixbuf_hash = NULL;
 static CtkIconTheme   *icon_theme = NULL;
 static int             file_list_icon_size = 0;
 static int             dir_tree_icon_size = 0;
+static gboolean        enable_notifications = TRUE;
 
 #define XDS_FILENAME "xds.txt"
 #define MAX_XDS_ATOM_VAL_LEN 4096
@@ -2196,7 +2197,8 @@ show_notification (FrWindow *window)
 	    (window->priv->progress_dialog != NULL) &&
 	    (ctk_widget_get_visible (window->priv->progress_dialog)) &&
 	    (ctk_window_is_active (CTK_WINDOW (ctk_widget_get_toplevel (window->priv->progress_dialog))) == FALSE) &&
-	    (ctk_window_is_active (CTK_WINDOW (window)) == FALSE)) {
+	    (ctk_window_is_active (CTK_WINDOW (window)) == FALSE) &&
+	     enable_notifications) {
 		notify_init ("grapa");
 		NotifyNotification *notification;
 
@@ -2208,6 +2210,8 @@ show_notification (FrWindow *window)
 		g_object_unref (G_OBJECT (notification));
 		notify_uninit ();
 	}
+
+	enable_notifications = TRUE;
 }
 
 
@@ -9206,6 +9210,8 @@ fr_window_set_batch__extract (FrWindow   *window,
 {
 	g_return_if_fail (window != NULL);
 	g_return_if_fail (filename != NULL);
+
+	enable_notifications = FALSE;
 
 	fr_window_append_batch_action (window,
 				       FR_BATCH_ACTION_LOAD,
