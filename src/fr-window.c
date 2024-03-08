@@ -3368,6 +3368,9 @@ action_performed (FrArchive   *archive,
 				show_notification (window);
 			}
 			else {
+				if (ctk_widget_get_visible (CTK_WIDGET (window)) == FALSE)
+					show_notification (window);
+
 				close_progress_dialog (window, FALSE);
 
 				if (window->priv->drag_destination_folder) {
