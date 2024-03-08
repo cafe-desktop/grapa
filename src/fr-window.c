@@ -3311,6 +3311,9 @@ action_performed (FrArchive   *archive,
 		return;
 
 	case FR_ACTION_ADDING_FILES:
+		if (ctk_widget_get_visible (CTK_WIDGET (window)) == FALSE)
+			show_notification (window);
+
 		close_progress_dialog (window, FALSE);
 
 		/* update the uri because multi-volume archives can have
