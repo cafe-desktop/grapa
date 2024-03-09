@@ -258,7 +258,7 @@ main (int argc, char **argv)
 	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
 					   PKG_DATA_DIR G_DIR_SEPARATOR_S "icons");
 
-	app = ctk_application_new (NULL, G_APPLICATION_FLAGS_NONE);
+	app = ctk_application_new (NULL, G_APPLICATION_DEFAULT_FLAGS);
 	g_signal_connect (app, "startup", G_CALLBACK (startup_cb), NULL);
 	g_signal_connect (app, "activate", G_CALLBACK (activate_cb), NULL);
 
