@@ -159,7 +159,6 @@ main (int argc, char *argv[])
 			                  G_CALLBACK (on_signal),
 			                  NULL);
 
-#if 0
 			/* -- GetSupportedTypes -- */
 
 			g_dbus_proxy_call (proxy,
@@ -170,7 +169,6 @@ main (int argc, char *argv[])
 					   NULL,
 					   grapa_getsupportedtypes_ready_cb,
 					   NULL);
-#endif
 
 			/* -- AddToArchive -- */
 
@@ -197,11 +195,8 @@ main (int argc, char *argv[])
 			g_free (archive);
 			g_strfreev (files);
 
-#if 0
-
 			/* -- Compress -- */
 
-			char **files;
 			char  *destination;
 
 			files = g_new0 (char *, 2);
@@ -250,9 +245,6 @@ main (int argc, char *argv[])
 					   NULL,
 					   grapa_addtoarchive_ready_cb,
 					   NULL);
-
-#endif
-
 		}
 	}
 
