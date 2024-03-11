@@ -134,12 +134,19 @@ list_command_completed (gpointer data)
 
 	if (failed) {
 		fr_process_stop (comm->process);
+
+		if (comm->process->out.raw != NULL)
+			comm->process->out.raw = g_list_reverse (comm->process->out.raw);
+
 		unar_comm->error.type = FR_PROC_ERROR_COMMAND_ERROR;
 		unar_comm->error.status = 1;
 		g_signal_emit_by_name (G_OBJECT (comm),
 				       "done",
 				       comm->action,
 				       &unar_comm->error);
+
+		if (comm->process->out.raw != NULL)
+			comm->process->out.raw = g_list_reverse (comm->process->out.raw);
 	}
 
 	g_object_unref (parser);
