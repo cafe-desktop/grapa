@@ -43,6 +43,7 @@ struct _FrCommandUnarchiver
 
 	GString      *stream;
 	int           n_line;
+	FrProcError   error;
 };
 
 struct _FrCommandUnarchiverClass
