@@ -71,10 +71,12 @@ mktime_from_string (const char *time_s)
 static void
 list_command_completed (gpointer data)
 {
+	FrCommand           *comm = FR_COMMAND (data);
 	FrCommandUnarchiver *unar_comm = FR_COMMAND_UNARCHIVER (data);
 	JsonParser          *parser;
 	gchar               *json_data;
 	GError              *error = NULL;
+	gboolean             failed = FALSE;
 
 	parser = json_parser_new ();
 
@@ -123,7 +125,21 @@ list_command_completed (gpointer data)
 
 				fr_command_add_file (FR_COMMAND (unar_comm), fdata);
 			}
+
+			if ((json_object_has_member (json_object_get_object_member (root, "lsarProperties"), "XADVolumeScanningFailed")) ||
+			    (json_object_has_member (json_object_get_object_member (root, "lsarProperties"), "XADIsCorrupted")))
+					failed = TRUE;
 		}
+	}
+
+	if (failed) {
+		fr_process_stop (comm->process);
+		unar_comm->error.type = FR_PROC_ERROR_COMMAND_ERROR;
+		unar_comm->error.status = 1;
+		g_signal_emit_by_name (G_OBJECT (comm),
+				       "done",
+				       comm->action,
+				       &unar_comm->error);
 	}
 
 	g_object_unref (parser);
