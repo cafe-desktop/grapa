@@ -131,6 +131,11 @@
       <summary>Adds 'unar' support over .zip archives.</summary>
       <description>It enables the ability to support 'unar' over .zip archives.</description>
     </key>
+    <key name="notifications" type="b">
+      <default>true</default>
+      <summary>Show notifications</summary>
+      <description>Show notifications when progress finish and the window isn't active.</description>
+    </key>
   </schema>
   <schema gettext-domain="@GETTEXT_PACKAGE@" id="org.cafe.grapa.dialogs" path="/org/cafe/grapa/dialogs/">
     <child name="extract" schema="org.cafe.grapa.dialogs.extract"/>

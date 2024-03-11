@@ -2193,7 +2193,11 @@ location_entry_key_press_event_cb (CtkWidget   *widget,
 static void
 show_notification (FrWindow *window)
 {
-	if ((window->priv->use_progress_dialog) &&
+	GSettings *settings;
+	settings = g_settings_new ("org.cafe.grapa.general");
+
+	if ((g_settings_get_boolean (settings, "notifications")) &&
+	    (window->priv->use_progress_dialog) &&
 	    (window->priv->progress_dialog != NULL) &&
 	    (ctk_widget_get_visible (window->priv->progress_dialog)) &&
 	    (ctk_window_is_active (CTK_WINDOW (ctk_widget_get_toplevel (window->priv->progress_dialog))) == FALSE) &&
@@ -2212,6 +2216,7 @@ show_notification (FrWindow *window)
 	}
 
 	enable_notifications = TRUE;
+	g_object_unref (settings);
 }
 
 
