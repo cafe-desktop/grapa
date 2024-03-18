@@ -604,7 +604,37 @@ get_mime_type_from_filename (GFile *file)
 		return NULL;
 
 	filename = g_file_get_path (file);
-	mime_type = get_mime_type_from_extension (get_file_extension (filename));
+
+	if ((strstr (filename, ".tar-") != NULL) ||
+	    ((strstr (filename, ".tar(") != NULL) && (strstr (filename, ")") != NULL))) {
+		if (g_str_has_suffix (filename, ".7z"))
+			mime_type = "application/x-7z-compressed-tar";
+		else if (g_str_has_suffix (filename, ".br"))
+			mime_type = "application/x-brotli-compressed-tar";
+		else if (g_str_has_suffix (filename, ".bz"))
+			mime_type = "application/x-bzip-compressed-tar";
+		else if (g_str_has_suffix (filename, ".bz2"))
+			mime_type = "application/x-bzip-compressed-tar";
+		else if (g_str_has_suffix (filename, ".gz"))
+			mime_type = "application/x-compressed-tar";
+		else if (g_str_has_suffix (filename, ".lrz"))
+			mime_type = "application/x-lrzip-compressed-tar";
+		else if (g_str_has_suffix (filename, ".lz"))
+			mime_type = "application/x-lzip-compressed-tar";
+		else if (g_str_has_suffix (filename, ".lzma"))
+			mime_type = "application/x-lzma-compressed-tar";
+		else if (g_str_has_suffix (filename, ".lzo"))
+			mime_type = "application/x-lzop-compressed-tar";
+		else if (g_str_has_suffix (filename, ".xz"))
+			mime_type = "application/x-xz-compressed-tar";
+		else if (g_str_has_suffix (filename, ".Z"))
+			mime_type = "application/x-tarz";
+		else if (g_str_has_suffix (filename, ".zst"))
+			mime_type = "application/x-zstd-compressed-tar";
+	}
+	else
+		mime_type = get_mime_type_from_extension (get_file_extension (filename));
+
 	g_free (filename);
 
 	return mime_type;
