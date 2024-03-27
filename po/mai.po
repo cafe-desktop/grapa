@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: grapa 1.23.2\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2022-08-30 18:29+0200\n"
+"POT-Creation-Date: 2024-03-27 12:51+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Maithili (https://www.transifex.com/cafe/teams/13566/mai/)\n"
@@ -143,7 +143,7 @@ msgid ""
 "home page."
 msgstr ""
 
-#: data/grapa.desktop.in.in:4 src/fr-window.c:2008 src/fr-window.c:5556
+#: data/grapa.desktop.in.in:4 src/fr-window.c:2011 src/fr-window.c:5605
 msgid "Archive Manager"
 msgstr "अभिलेख प्रबंधक"
 
@@ -306,23 +306,31 @@ msgstr ""
 msgid "It enables the ability to support 'unar' over .zip archives."
 msgstr ""
 
-#: data/org.cafe.grapa.gschema.xml.in:143
+#: data/org.cafe.grapa.gschema.xml.in:136
+msgid "Show notifications"
+msgstr ""
+
+#: data/org.cafe.grapa.gschema.xml.in:137
+msgid "Show notifications when progress finish and the window isn't active."
+msgstr ""
+
+#: data/org.cafe.grapa.gschema.xml.in:148
 msgid "Overwrite existing files"
 msgstr ""
 
-#: data/org.cafe.grapa.gschema.xml.in:147
+#: data/org.cafe.grapa.gschema.xml.in:152
 msgid "Do not overwrite newer files"
 msgstr ""
 
-#: data/org.cafe.grapa.gschema.xml.in:151
+#: data/org.cafe.grapa.gschema.xml.in:156
 msgid "Recreate the folders stored in the archive"
 msgstr ""
 
-#: data/org.cafe.grapa.gschema.xml.in:201
+#: data/org.cafe.grapa.gschema.xml.in:206
 msgid "Default volume size"
 msgstr ""
 
-#: data/org.cafe.grapa.gschema.xml.in:202
+#: data/org.cafe.grapa.gschema.xml.in:207
 msgid "The default size for volumes."
 msgstr ""
 
@@ -362,7 +370,7 @@ msgstr ""
 
 #: src/actions.c:158 src/actions.c:197 src/actions.c:233
 #: src/dlg-batch-add.c:161 src/dlg-batch-add.c:177 src/dlg-batch-add.c:206
-#: src/dlg-batch-add.c:251 src/dlg-batch-add.c:297 src/fr-window.c:3058
+#: src/dlg-batch-add.c:251 src/dlg-batch-add.c:297 src/fr-window.c:3093
 msgid "Could not create the archive"
 msgstr "अभिलेख तैआर नहि कए सकल"
 
@@ -376,7 +384,7 @@ msgstr "अहाँक सँग एहि फ़ोल्डरमे अभि�
 
 #: src/actions.c:235 src/dlg-package-installer.c:291
 #: src/dlg-package-installer.c:300 src/dlg-package-installer.c:337
-#: src/fr-archive.c:1168 src/fr-window.c:6191 src/fr-window.c:6367
+#: src/fr-archive.c:1198 src/fr-window.c:6240 src/fr-window.c:6416
 msgid "Archive type not supported."
 msgstr "अभिलेख प्रकार समर्थित नहि."
 
@@ -384,11 +392,11 @@ msgstr "अभिलेख प्रकार समर्थित नहि."
 msgid "Could not delete the old archive."
 msgstr "पुरान अभिलेख मेटाएल नहि जाए सकल."
 
-#: src/actions.c:383 src/fr-window.c:5932
+#: src/actions.c:383 src/fr-window.c:5981
 msgid "Open"
 msgstr "खोलू"
 
-#: src/actions.c:394 src/fr-window.c:5375
+#: src/actions.c:394 src/fr-window.c:5424
 msgid "All archives"
 msgstr "सबहि अभिलेख"
 
@@ -396,7 +404,7 @@ msgstr "सबहि अभिलेख"
 msgid "All files"
 msgstr "सबहि फ़ाइल"
 
-#: src/actions.c:795 src/fr-window.c:7420
+#: src/actions.c:795 src/fr-window.c:7469
 msgid "Last Output"
 msgstr "अंतिम आउटपुट"
 
@@ -427,7 +435,7 @@ msgstr ""
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
 "Copyright © 2012–2020 The MATE developers\n"
-"Copyright © 2020 The CAFE developers\n"
+"Copyright © 2020-2024 Pablo Barciela\n"
 "\n"
 "grapa icon made by https://freeicons.io/profile/3"
 msgstr ""
@@ -461,7 +469,7 @@ msgid "_Help"
 msgstr "मद्दति (_H)"
 
 #: src/dlg-add-files.c:164 src/dlg-add-folder.c:239 src/dlg-add-folder.c:911
-#: src/dlg-package-installer.c:320 src/fr-window.c:7835 src/fr-window.c:8276
+#: src/dlg-package-installer.c:320 src/fr-window.c:7884 src/fr-window.c:8325
 #: src/ui/batch-add-files.ui:42 src/ui/batch-password.ui:34 src/ui/delete.ui:35
 #: src/ui/dlg-extract.ui:56 src/ui/new.ui:227 src/ui/password.ui:35
 #: src/ui/update.ui:30 src/ui/update.ui:216
@@ -546,7 +554,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/dlg-batch-add.c:181 src/fr-window.c:7759 src/fr-window.c:7761
+#: src/dlg-batch-add.c:181 src/fr-window.c:7808 src/fr-window.c:7810
 msgid "Please use a different name."
 msgstr "कृप्या एकटा भिन्न नाम उपयोग करू."
 
@@ -556,7 +564,7 @@ msgid ""
 "folder."
 msgstr "अहाँक पास गंतव्य फ़ोल्डरमे अभिलेख तैआर करबाक अनुमति नहि अछि."
 
-#: src/dlg-batch-add.c:224 src/dlg-extract.c:99 src/fr-window.c:6969
+#: src/dlg-batch-add.c:224 src/dlg-extract.c:99 src/fr-window.c:7018
 #, c-format
 msgid ""
 "Destination folder \"%s\" does not exist.\n"
@@ -567,11 +575,11 @@ msgstr ""
 "\n"
 "की अहाँ एकरा तैआर कएनाइ चाहै छी?"
 
-#: src/dlg-batch-add.c:233 src/dlg-extract.c:108 src/fr-window.c:6978
+#: src/dlg-batch-add.c:233 src/dlg-extract.c:108 src/fr-window.c:7027
 msgid "Create _Folder"
 msgstr "फोल्डर बनाबू (_F)"
 
-#: src/dlg-batch-add.c:252 src/dlg-extract.c:128 src/fr-window.c:6995
+#: src/dlg-batch-add.c:252 src/dlg-extract.c:128 src/fr-window.c:7044
 #, c-format
 msgid "Could not create the destination folder: %s."
 msgstr "गंतव्य फोल्डर तैआर नहि कए सकल: %s."
@@ -593,12 +601,12 @@ msgid "C_reate"
 msgstr "बनाबू (_r)"
 
 #: src/dlg-extract.c:127 src/dlg-extract.c:145 src/dlg-extract.c:172
-#: src/fr-window.c:4321 src/fr-window.c:6910 src/fr-window.c:6915
-#: src/fr-window.c:6999 src/fr-window.c:7018 src/fr-window.c:7023
+#: src/fr-window.c:4370 src/fr-window.c:6959 src/fr-window.c:6964
+#: src/fr-window.c:7048 src/fr-window.c:7067 src/fr-window.c:7072
 msgid "Extraction not performed"
 msgstr "निकालल नहि गेल "
 
-#: src/dlg-extract.c:173 src/fr-window.c:4490 src/fr-window.c:4570
+#: src/dlg-extract.c:173 src/fr-window.c:4539 src/fr-window.c:4619
 #, c-format
 msgid ""
 "You don't have the right permissions to extract archives in the folder \"%s\""
@@ -638,7 +646,7 @@ msgstr ""
 msgid "%s Properties"
 msgstr "%s गुण"
 
-#: src/dlg-prop.c:119 src/fr-window.c:1607 src/fr-window.c:1636
+#: src/dlg-prop.c:119 src/fr-window.c:1610 src/fr-window.c:1639
 msgid "%d %B %Y, %H:%M"
 msgstr "%d %B %Y, %H:%M"
 
@@ -700,45 +708,40 @@ msgstr ""
 msgid "File format not recognized"
 msgstr ""
 
-#: src/fr-archive.c:1148
+#: src/fr-archive.c:1178
 msgid "File not found."
 msgstr ""
 
-#: src/fr-archive.c:1254
+#: src/fr-archive.c:1284
 msgid "Archive not found"
 msgstr ""
 
-#: src/fr-archive.c:2452
+#: src/fr-archive.c:2482
 msgid "You don't have the right permissions."
 msgstr "अहाँक पास उचित अनुमति नहि अछि."
 
-#: src/fr-archive.c:2452
+#: src/fr-archive.c:2482
 msgid "This archive type cannot be modified"
 msgstr ""
 
-#: src/fr-archive.c:2464
+#: src/fr-archive.c:2494
 msgid "You can't add an archive to itself."
 msgstr "अहाँ एकटा अभिलेखकेँ ओहि अभिलेखमे नहि जोड़ि सकब."
 
 #. Translators: after the colon there is a filename.
-#: src/fr-command-7z.c:307 src/fr-command-rar.c:451 src/fr-command-tar.c:291
+#: src/fr-command-7z.c:290 src/fr-command-tar.c:291
 msgid "Adding file: "
 msgstr "फाइल जोड़ि रहल अछि:"
 
 #. Translators: after the colon there is a filename.
-#: src/fr-command-7z.c:453 src/fr-command-rar.c:578 src/fr-command-tar.c:412
+#: src/fr-command-7z.c:438 src/fr-command-tar.c:412
 msgid "Extracting file: "
 msgstr "फाइल निकाएल रहल अछि:"
 
 #. Translators: after the colon there is a filename.
-#: src/fr-command-rar.c:529 src/fr-command-tar.c:357
+#: src/fr-command-tar.c:357
 msgid "Removing file: "
 msgstr "फाइल हटाए रहल अछि:"
-
-#: src/fr-command-rar.c:717
-#, c-format
-msgid "Could not find the volume: %s"
-msgstr ""
 
 #: src/fr-command-tar.c:366
 msgid "Deleting files from archive"
@@ -748,405 +751,409 @@ msgstr "फाइलकेँ अभिलेखसँ मेटाए रहल
 msgid "Recompressing archive"
 msgstr "अभिलेख पुनः संपीडित कए रहल अछि"
 
-#: src/fr-command-tar.c:732
+#: src/fr-command-tar.c:733
 msgid "Decompressing archive"
 msgstr "अभिलेख असंपीडित कए रहल अछि"
 
-#: src/fr-init.c:60
+#: src/fr-init.c:59
 msgid "Debian package"
 msgstr ""
 
-#: src/fr-init.c:61
+#: src/fr-init.c:60
 msgid "Cabinet"
 msgstr ""
 
-#: src/fr-init.c:62
+#: src/fr-init.c:61
 msgid "OpenDocument Presentation"
 msgstr ""
 
-#: src/fr-init.c:63
+#: src/fr-init.c:62
 msgid "OpenDocument Spreadsheet"
 msgstr ""
 
-#: src/fr-init.c:64
+#: src/fr-init.c:63
 msgid "OpenDocument Text"
 msgstr ""
 
-#: src/fr-init.c:65
+#: src/fr-init.c:64
 msgid "OpenDocument Presentation Template"
 msgstr ""
 
-#: src/fr-init.c:66
+#: src/fr-init.c:65
 msgid "OpenDocument Spreadsheet Template"
 msgstr ""
 
-#: src/fr-init.c:67
+#: src/fr-init.c:66
 msgid "OpenDocument Text Template"
 msgstr ""
 
-#: src/fr-init.c:68
+#: src/fr-init.c:67
 msgid "7-Zip"
 msgstr ""
 
-#: src/fr-init.c:69
+#: src/fr-init.c:68
 msgid "Tar compressed with 7z"
 msgstr ""
 
-#: src/fr-init.c:70
+#: src/fr-init.c:69
 msgid "Ace"
 msgstr ""
 
-#: src/fr-init.c:71
+#: src/fr-init.c:70
 msgid "ALZip archive"
 msgstr ""
 
-#: src/fr-init.c:72
+#: src/fr-init.c:71
 msgid "Ar"
 msgstr ""
 
-#: src/fr-init.c:73
+#: src/fr-init.c:72
 msgid "Arj"
 msgstr ""
 
-#: src/fr-init.c:74
+#: src/fr-init.c:73
 msgid "Brotli compressed file"
 msgstr ""
 
-#: src/fr-init.c:75
+#: src/fr-init.c:74
 msgid "Tar compressed with brotli"
 msgstr ""
 
-#: src/fr-init.c:76
+#: src/fr-init.c:75
 msgid "Bzip2 compressed file"
 msgstr ""
 
-#: src/fr-init.c:77
+#: src/fr-init.c:76
 msgid "Tar compressed with bzip2"
 msgstr ""
 
-#: src/fr-init.c:78
+#: src/fr-init.c:77
 msgid "Bzip compressed file"
 msgstr ""
 
-#: src/fr-init.c:79
+#: src/fr-init.c:78
 msgid "Tar compressed with bzip"
 msgstr ""
 
-#: src/fr-init.c:80
+#: src/fr-init.c:79
 msgid "Rar Archived Comic Book"
 msgstr ""
 
-#: src/fr-init.c:81
+#: src/fr-init.c:80
 msgid "Zip Archived Comic Book"
 msgstr ""
 
-#: src/fr-init.c:82
+#: src/fr-init.c:81
 msgid "Disc Image File"
 msgstr ""
 
-#: src/fr-init.c:83
+#: src/fr-init.c:82
 msgid "Unix Compressed Archive file"
 msgstr ""
 
-#: src/fr-init.c:84
+#: src/fr-init.c:83
 msgid "Tar compressed with gzip"
 msgstr ""
 
-#: src/fr-init.c:85
+#: src/fr-init.c:84
 msgid "Unix CPIO Archive"
 msgstr ""
 
-#: src/fr-init.c:86
+#: src/fr-init.c:85
 msgid "Ear"
 msgstr ""
 
-#: src/fr-init.c:87
+#: src/fr-init.c:86
 msgid "GZip compressed file"
 msgstr ""
 
-#: src/fr-init.c:88
+#: src/fr-init.c:87
 msgid "Jar"
 msgstr ""
 
-#: src/fr-init.c:89
+#: src/fr-init.c:88
 msgid "Lha"
 msgstr ""
 
-#: src/fr-init.c:90
+#: src/fr-init.c:89
 msgid "Lrzip "
 msgstr ""
 
-#: src/fr-init.c:91
+#: src/fr-init.c:90
 msgid "Tar compressed with lrzip"
 msgstr ""
 
-#: src/fr-init.c:92
+#: src/fr-init.c:91
 msgid "LZip compressed file"
 msgstr ""
 
-#: src/fr-init.c:93
+#: src/fr-init.c:92
 msgid "Tar compressed with lzip"
 msgstr ""
 
-#: src/fr-init.c:94
+#: src/fr-init.c:93
 msgid "LZMA compressed file"
 msgstr ""
 
-#: src/fr-init.c:95
+#: src/fr-init.c:94
 msgid "Tar compressed with lzma"
 msgstr ""
 
-#: src/fr-init.c:96
+#: src/fr-init.c:95
 msgid "LZO compressed file"
 msgstr ""
 
-#: src/fr-init.c:97
+#: src/fr-init.c:96
 msgid "Tar compressed with lzop"
 msgstr ""
 
-#: src/fr-init.c:98
+#: src/fr-init.c:97
 msgid "Self-extracting zip"
 msgstr ""
 
-#: src/fr-init.c:99
+#: src/fr-init.c:98
 msgid "Windows Imaging Format"
 msgstr ""
 
-#: src/fr-init.c:100
+#: src/fr-init.c:99
 msgid "Rar"
 msgstr ""
 
-#: src/fr-init.c:101
+#: src/fr-init.c:100
 msgid "Red Hat Package Manager file"
 msgstr ""
 
-#: src/fr-init.c:102
+#: src/fr-init.c:101
 msgid "RZip compressed file"
 msgstr ""
 
-#: src/fr-init.c:103
+#: src/fr-init.c:102
 msgid "StuffIt Archive"
 msgstr ""
 
-#: src/fr-init.c:104
+#: src/fr-init.c:103
 msgid "Tar uncompressed"
 msgstr ""
 
-#: src/fr-init.c:105
+#: src/fr-init.c:104
 msgid "Tar compressed with compress"
 msgstr ""
 
-#: src/fr-init.c:106
+#: src/fr-init.c:105
 msgid "War"
 msgstr ""
 
-#: src/fr-init.c:107
+#: src/fr-init.c:106
 msgid "Xz compressed file"
 msgstr ""
 
-#: src/fr-init.c:108
+#: src/fr-init.c:107
 msgid "Tar compressed with xz"
 msgstr ""
 
-#: src/fr-init.c:109
+#: src/fr-init.c:108
 msgid "Zoo"
 msgstr ""
 
-#: src/fr-init.c:110
+#: src/fr-init.c:109
 msgid "Zstandard compressed file"
 msgstr ""
 
-#: src/fr-init.c:111
+#: src/fr-init.c:110
 msgid "Tar compressed with zstd"
 msgstr ""
 
-#: src/fr-init.c:112
+#: src/fr-init.c:111
 msgid "Zip"
 msgstr ""
 
-#: src/fr-window.c:1537
+#: src/fr-window.c:1540
 #, c-format
 msgid "%d object (%s)"
 msgid_plural "%d objects (%s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/fr-window.c:1542
+#: src/fr-window.c:1545
 #, c-format
 msgid "%d object selected (%s)"
 msgid_plural "%d objects selected (%s)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/fr-window.c:1616
+#: src/fr-window.c:1619
 msgid "Folder"
 msgstr "फ़ोल्डर"
 
-#: src/fr-window.c:2016
+#: src/fr-window.c:2019
 msgid "[read only]"
 msgstr "[सिर्फ पढ़बाक योग्य]"
 
-#: src/fr-window.c:2276
+#: src/fr-window.c:2210
+msgid "Process completed"
+msgstr ""
+
+#: src/fr-window.c:2311
 #, c-format
 msgid "Could not display the folder \"%s\""
 msgstr "फोल्डर \"%s\" प्रदर्शित नहि कए सकल"
 
-#: src/fr-window.c:2306 src/fr-window.c:2321
+#: src/fr-window.c:2341 src/fr-window.c:2356
 msgid "_Pause"
 msgstr ""
 
-#: src/fr-window.c:2309
+#: src/fr-window.c:2344
 msgid "Process paused"
 msgstr ""
 
-#: src/fr-window.c:2311
+#: src/fr-window.c:2346
 msgid "_Resume"
 msgstr ""
 
-#: src/fr-window.c:2319 src/fr-window.c:2901
+#: src/fr-window.c:2354 src/fr-window.c:2936
 msgid "Please wait…"
 msgstr ""
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2397 src/fr-window.c:2435
+#: src/fr-window.c:2432 src/fr-window.c:2470
 #, c-format
 msgid "Creating \"%s\""
 msgstr ""
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2401
+#: src/fr-window.c:2436
 #, c-format
 msgid "Loading \"%s\""
 msgstr ""
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2405
+#: src/fr-window.c:2440
 #, c-format
 msgid "Reading \"%s\""
 msgstr ""
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2409
+#: src/fr-window.c:2444
 #, c-format
 msgid "Deleting files from \"%s\""
 msgstr ""
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2413
+#: src/fr-window.c:2448
 #, c-format
 msgid "Testing \"%s\""
 msgstr ""
 
-#: src/fr-window.c:2416
+#: src/fr-window.c:2451
 msgid "Getting the file list"
 msgstr "फाइल सूची प्राप्त कए रहल अछि"
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2420
+#: src/fr-window.c:2455
 #, c-format
 msgid "Copying the files to add to \"%s\""
 msgstr ""
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2424
+#: src/fr-window.c:2459
 #, c-format
 msgid "Adding files to \"%s\""
 msgstr ""
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2428
+#: src/fr-window.c:2463
 #, c-format
 msgid "Extracting files from \"%s\""
 msgstr ""
 
-#: src/fr-window.c:2431
+#: src/fr-window.c:2466
 msgid "Copying the extracted files to the destination"
 msgstr ""
 
 #. Translators: %s is a filename
-#: src/fr-window.c:2439
+#: src/fr-window.c:2474
 #, c-format
 msgid "Saving \"%s\""
 msgstr ""
 
-#: src/fr-window.c:2585
+#: src/fr-window.c:2620
 msgid "_Open the Archive"
 msgstr ""
 
-#: src/fr-window.c:2586
+#: src/fr-window.c:2621
 msgid "_Show the Files"
 msgstr ""
 
-#: src/fr-window.c:2587
+#: src/fr-window.c:2622
 msgid "Show the _Files and Quit"
 msgstr ""
 
-#: src/fr-window.c:2766
+#: src/fr-window.c:2801
 #, c-format
 msgid "%d file remaining"
 msgid_plural "%d files remaining"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/fr-window.c:2818
+#: src/fr-window.c:2853
 msgid "Extraction completed successfully"
 msgstr ""
 
-#: src/fr-window.c:2843
+#: src/fr-window.c:2878
 msgid "Archive created successfully"
 msgstr ""
 
-#: src/fr-window.c:2970 src/fr-window.c:3105
+#: src/fr-window.c:3005 src/fr-window.c:3140
 msgid "Command exited abnormally."
 msgstr "कमांड अस्वाभाविक रूप सँ बाहर भेल."
 
-#: src/fr-window.c:3063
+#: src/fr-window.c:3098
 msgid "An error occurred while extracting files."
 msgstr "फाइल निकालै समय एकटा त्रुटि भेल."
 
-#: src/fr-window.c:3069
+#: src/fr-window.c:3104
 #, c-format
 msgid "Could not open \"%s\""
 msgstr "\"%s\" केँ खोलि नहि सकल"
 
-#: src/fr-window.c:3074
+#: src/fr-window.c:3109
 msgid "An error occurred while loading the archive."
 msgstr "अभिलेख लोड करैत समय एकटा त्रुटि भेल."
 
-#: src/fr-window.c:3078
+#: src/fr-window.c:3113
 msgid "An error occurred while deleting files from the archive."
 msgstr "अभिलेखमे सँ फाइल मेटाबैत समय एकटा त्रुटि भेल."
 
-#: src/fr-window.c:3084
+#: src/fr-window.c:3119
 msgid "An error occurred while adding files to the archive."
 msgstr "अभिलेखमे फाइल जोड़ैत समय एकटा त्रुटि भेल."
 
-#: src/fr-window.c:3088
+#: src/fr-window.c:3123
 msgid "An error occurred while testing archive."
 msgstr "अभिलेख क' परीक्षण क' दौरान एकटा त्रुटि भेल"
 
-#: src/fr-window.c:3092
+#: src/fr-window.c:3127
 msgid "An error occurred while saving the archive."
 msgstr ""
 
-#: src/fr-window.c:3096
+#: src/fr-window.c:3131
 msgid "An error occurred."
 msgstr ""
 
-#: src/fr-window.c:3102
+#: src/fr-window.c:3137
 msgid "Command not found."
 msgstr "कमांड नहि भेटल."
 
-#: src/fr-window.c:3305
+#: src/fr-window.c:3343
 msgid "Test Result"
 msgstr "जाँच परिणाम"
 
-#: src/fr-window.c:4164 src/fr-window.c:8311 src/fr-window.c:8347
-#: src/fr-window.c:8597
+#: src/fr-window.c:4213 src/fr-window.c:8360 src/fr-window.c:8396
+#: src/fr-window.c:8646
 msgid "Could not perform the operation"
 msgstr "क्रिया पूरा नहि कए सकल"
 
-#: src/fr-window.c:4190
+#: src/fr-window.c:4239
 msgid ""
 "Do you want to add this file to the current archive or open it as a new "
 "archive?"
@@ -1154,111 +1161,111 @@ msgstr ""
 "की अहाँ एहि फ़ाइलकेँ वर्तमान अभिलेखमे जोड़ब चाहैत छी अथवा एकरा नवीन अभिलेख क' रूपमे "
 "खोलनाइ चाहैत छी?"
 
-#: src/fr-window.c:4220
+#: src/fr-window.c:4269
 msgid "Do you want to create a new archive with these files?"
 msgstr "की अहाँ एहि फ़ाइलक सँग नवीन अभिलेख बनओनाइ चाहैत छी?"
 
-#: src/fr-window.c:4223
+#: src/fr-window.c:4272
 msgid "Create _Archive"
 msgstr "अभिलेख तैआर करू (_A)"
 
-#: src/fr-window.c:4818 src/fr-window.c:5879
+#: src/fr-window.c:4867 src/fr-window.c:5928
 msgid "Folders"
 msgstr "फ़ोल्डरसभ"
 
-#: src/fr-window.c:4856
+#: src/fr-window.c:4905
 msgctxt "File"
 msgid "Size"
 msgstr "आकार"
 
-#: src/fr-window.c:4857
+#: src/fr-window.c:4906
 msgctxt "File"
 msgid "Type"
 msgstr "प्रकार"
 
-#: src/fr-window.c:4858
+#: src/fr-window.c:4907
 msgctxt "File"
 msgid "Date Modified"
 msgstr "तिथि परिवर्धित"
 
-#: src/fr-window.c:4859
+#: src/fr-window.c:4908
 msgctxt "File"
 msgid "Location"
 msgstr "स्थान"
 
-#: src/fr-window.c:4868
+#: src/fr-window.c:4917
 msgctxt "File"
 msgid "Name"
 msgstr "नाम"
 
-#: src/fr-window.c:5798
+#: src/fr-window.c:5847
 msgid "Find:"
 msgstr "खोजू:"
 
-#: src/fr-window.c:5889
+#: src/fr-window.c:5938
 msgid "Close the folders pane"
 msgstr ""
 
 #. Translators: this is the label for the "open recent file" sub-menu.
-#: src/fr-window.c:5920
+#: src/fr-window.c:5969
 msgid "Open _Recent"
 msgstr "हाल क' खोलू (_R)"
 
-#: src/fr-window.c:5921 src/fr-window.c:5933
+#: src/fr-window.c:5970 src/fr-window.c:5982
 msgid "Open a recently used archive"
 msgstr "हालमे प्रयुक्त अभिलेख खोलू"
 
 #. Translators: after the colon there is a folder name.
-#: src/fr-window.c:6010 src/ui/batch-add-files.ui:204
+#: src/fr-window.c:6059 src/ui/batch-add-files.ui:204
 msgid "_Location:"
 msgstr "स्थान (_L):"
 
-#: src/fr-window.c:6359
+#: src/fr-window.c:6408
 #, c-format
 msgid "Could not save the archive \"%s\""
 msgstr "अभिलेख \"%s\" सहेजि नहि सकल"
 
-#: src/fr-window.c:6858
+#: src/fr-window.c:6907
 #, c-format
 msgid "Replace file \"%s\"?"
 msgstr ""
 
-#: src/fr-window.c:6861
+#: src/fr-window.c:6910
 #, c-format
 msgid "Another file with the same name already exists in \"%s\"."
 msgstr ""
 
-#: src/fr-window.c:6868
+#: src/fr-window.c:6917
 msgid "Replace _All"
 msgstr "सबहि बदलू (_A)"
 
-#: src/fr-window.c:6869
+#: src/fr-window.c:6918
 msgid "_Skip"
 msgstr "छोड़ू (_S)"
 
-#: src/fr-window.c:6870
+#: src/fr-window.c:6919
 msgid "_Replace"
 msgstr "बदलू (_R)"
 
 #. Translators: the name references to a filename.  This message can appear when renaming a file.
-#: src/fr-window.c:7713
+#: src/fr-window.c:7762
 msgid "New name is void, please type a name."
 msgstr ""
 
 #. Translators: the name references to a filename.  This message can appear when renaming a file.
-#: src/fr-window.c:7718
+#: src/fr-window.c:7767
 msgid "New name is the same as old one, please type other name."
 msgstr ""
 
 #. Translators: the %s references to a filename.  This message can appear when renaming a file.
-#: src/fr-window.c:7723
+#: src/fr-window.c:7772
 #, c-format
 msgid ""
 "Name \"%s\" is not valid because it contains at least one of the following "
 "characters: %s, please type other name."
 msgstr ""
 
-#: src/fr-window.c:7759
+#: src/fr-window.c:7808
 #, c-format
 msgid ""
 "A folder named \"%s\" already exists.\n"
@@ -1269,7 +1276,7 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/fr-window.c:7761
+#: src/fr-window.c:7810
 #, c-format
 msgid ""
 "A file named \"%s\" already exists.\n"
@@ -1280,47 +1287,47 @@ msgstr ""
 "\n"
 "%s"
 
-#: src/fr-window.c:7831
+#: src/fr-window.c:7880
 msgid "Rename"
 msgstr "नाम बदलू"
 
-#: src/fr-window.c:7832
+#: src/fr-window.c:7881
 msgid "_New folder name:"
 msgstr ""
 
-#: src/fr-window.c:7832
+#: src/fr-window.c:7881
 msgid "_New file name:"
 msgstr ""
 
-#: src/fr-window.c:7836
+#: src/fr-window.c:7885
 msgid "_Rename"
 msgstr "नाम बदलू (_R)"
 
-#: src/fr-window.c:7853 src/fr-window.c:7872
+#: src/fr-window.c:7902 src/fr-window.c:7921
 msgid "Could not rename the folder"
 msgstr "फोल्डर नाम नहि बदैल सकल"
 
-#: src/fr-window.c:7853 src/fr-window.c:7872
+#: src/fr-window.c:7902 src/fr-window.c:7921
 msgid "Could not rename the file"
 msgstr "फाइल नाम बदैल नहि सकल"
 
-#: src/fr-window.c:8272
+#: src/fr-window.c:8321
 msgid "Paste Selection"
 msgstr "चयन साटू"
 
-#: src/fr-window.c:8273
+#: src/fr-window.c:8322
 msgid "_Destination folder:"
 msgstr ""
 
-#: src/fr-window.c:8277 src/ui.h:75 src/ui.h:96
+#: src/fr-window.c:8326 src/ui.h:75 src/ui.h:96
 msgid "_Paste"
 msgstr "साटू (_P)"
 
-#: src/fr-window.c:8876
+#: src/fr-window.c:8925
 msgid "Add files to an archive"
 msgstr "अभिलेखमे नवीन फाइल जोड़ू"
 
-#: src/fr-window.c:8919 src/main.c:158 src/server.c:329 src/server.c:354
+#: src/fr-window.c:8968 src/main.c:158 src/server.c:329 src/server.c:354
 #: src/server.c:377
 msgid "Extract archive"
 msgstr "अभिलेख निकालू"
