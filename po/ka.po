@@ -1874,36 +1874,3 @@ msgstr "_განახლება"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Unrecognized desktop file Version '%s'"
-#~ msgstr "ამოუცნობი desktop ფაილის ვერსია '%s'"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "ირთვება %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "არ არის გაშვებადი ელემენტი"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "ვერ ვუკავშირდები სესიის მენეჯერს"
-
-#~ msgid "Specify file containing saved configuration"
-#~ msgstr "დამახსოვრებული კონფიგურაციის მქონე ფაილის მინიშნება"
-
-#~ msgid "FILE"
-#~ msgstr "ფაილი"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "აღნიშნეთ თუ რომელი სეანსი ჩაიტვირთოს"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Show session management options"
-#~ msgstr "აჩვენე სეანსის მართვის პარამეტრები"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "ამოარქივება"

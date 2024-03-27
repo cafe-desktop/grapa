@@ -1850,19 +1850,3 @@ msgstr ""
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Siqala %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Akusiyona into engathunyelwa"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Qamula ukuxhumana kumphathi wesiqephu"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Cacisa isiqephu sokulawula ukuzazisa"
-
-#~ msgid "ID"
-#~ msgstr "Ukuzazisa"

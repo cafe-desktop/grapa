@@ -1864,36 +1864,3 @@ msgstr "_Ažuriraj"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "Fajl nije validni .desktop fajl"
-
-#, c-format
-#~ msgid "Unrecognized desktop file Version '%s'"
-#~ msgstr "Nepoznat desktop fajl Verzija '%s'"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Pokrećem  %s"
-
-#~ msgid "Application does not accept documents on command line"
-#~ msgstr "Aplikacija ne prihvaća dokumente na komandnoj liniji"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Nije moguće pokrenuti"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Onemogući spajanje sa upraviteljem sesije"
-
-#~ msgid "FILE"
-#~ msgstr "FAJL"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Navedi ID upravitelja sesije"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Raspakuj"

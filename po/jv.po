@@ -1845,14 +1845,3 @@ msgstr ""
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Miwiti %s"
-
-#, c-format
-#~ msgid "Not a launchable item"
-#~ msgstr "Sanes barang sing saged dilakokna"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Cafeni sambungan menyang manager sesi"

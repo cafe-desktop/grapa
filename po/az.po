@@ -1866,26 +1866,3 @@ msgstr "_Güncəllə"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "%s başladılır"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Başladıla bilən üzv deyil"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Gedişat idarəçisinə bağlantıya mane ol"
-
-#~ msgid "FILE"
-#~ msgstr "FAYL"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Gedişat IDsini göstər"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Aç"

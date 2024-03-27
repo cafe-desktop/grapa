@@ -1881,7 +1881,3 @@ msgstr "_تجدید"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr "فائل _منتخب کریں جس کی آپ تجدید کرنا چاہتے ہیں:"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "نکالیں"

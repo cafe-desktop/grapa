@@ -1866,23 +1866,3 @@ msgstr "_Hlaziya"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Kuqaliswa %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Asilonqaku linokundululwa"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Phelisa uqhagamshelwano kumlawuli weseshoni"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Phawula i-ID yolawulo lweseshoni"
-
-#~ msgid "ID"
-#~ msgstr "I-ID"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Khupha"

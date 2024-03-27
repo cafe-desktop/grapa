@@ -1866,29 +1866,3 @@ msgstr "अद्यतन करू (_U)"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "%s शुरू भ' रहल अछि"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "चलाबैबला मद नहि अछि "
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "सत्र प्रबंधकसँ संपर्क रद करू"
-
-#~ msgid "FILE"
-#~ msgstr "फाइल"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "सत्र प्रबंधन आईडी निर्दिष्ट करू"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Show session management options"
-#~ msgstr "सत्र प्रबंधन विकल्प देखाबू"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "निकालू"

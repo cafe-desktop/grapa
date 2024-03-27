@@ -1856,39 +1856,3 @@ msgstr "_Actualizar"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "El archivo no posee un formato .desktop válido"
-
-#, c-format
-#~ msgid "Unrecognized desktop file Version '%s'"
-#~ msgstr "No se reconoce la versión del archivo '%s'"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Empezando %s"
-
-#~ msgid "Application does not accept documents on command line"
-#~ msgstr "La aplicación no acepta documentos en la línea de comandos."
-
-#, c-format
-#~ msgid "Unrecognized launch option: %d"
-#~ msgstr "No se reconoce la opción de lanzamiento: %d"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "No es un ítem de lanzamiento"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Deshabilitar la conexión a la sesión de manager"
-
-#~ msgid "Specify file containing saved configuration"
-#~ msgstr "Especifique el archivo que contiene la configuración guardada"
-
-#~ msgid "FILE"
-#~ msgstr "ARCHIVO"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Especifique el ID de la sesión de management"
-
-#~ msgid "ID"
-#~ msgstr "ID"

@@ -1878,32 +1878,3 @@ msgstr "_Ovay"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr "Safidio ireo rakitra tianao ovaina:"
-
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "Rakitra tsy mety ho .desktop rakitra"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Mandefa %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Tsy fandefa ilay zavatra tanatin'ny karazan-tsafidy"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Manatsahatra ny fifandraisana amin'ny mpandrindra session"
-
-#~ msgid "FILE"
-#~ msgstr "RAKITRA"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Mamaritra ny IDn'ny fandrindrana session"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Show session management options"
-#~ msgstr "Maneho ny safidin'ny fandrindrana session"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Aboray"

@@ -1879,38 +1879,3 @@ msgstr "_Diweddaru"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "Nid yw hon yn ffeil .desktop ddilys"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Wrthi'n dechrau %s"
-
-#~ msgid "Application does not accept documents on command line"
-#~ msgstr "Nid yw'r rhaglen yn derbyn dogfennau ar y llinell orchymyn"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Nid yw'n eitem y gellir lansio"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Analluogi cysylltiad â'r rheolwr sesiynau"
-
-#~ msgid "FILE"
-#~ msgstr "FFEIL"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Penodi ID rheolaeth sesiynau"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Session management options:"
-#~ msgstr "Dewisiadau rheoli sesiynau:"
-
-#~ msgid "Show session management options"
-#~ msgstr "Dangos dewisiadau rheoli sesiynau"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Echdynnu"

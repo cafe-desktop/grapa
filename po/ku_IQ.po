@@ -1850,9 +1850,3 @@ msgstr "_بەڕۆژکردن"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#~ msgid "FILE"
-#~ msgstr "پەڕگە"
-
-#~ msgid "ID"
-#~ msgstr "پێناسە"

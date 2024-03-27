@@ -1853,20 +1853,3 @@ msgstr "_Täzele"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "%s başlanýa"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Aýtem sataşarlik dal"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Ötürşük müdire baglançy söndir"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Aç"

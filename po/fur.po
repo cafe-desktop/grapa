@@ -1880,26 +1880,3 @@ msgstr "_Inzorne"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr "Si_elç i files che tu vuelis inzornâ:"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Inviament di %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Nol è un ogjiet inviabil"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Disabilite la conession al gjestôr di session"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Specifiche l'ID dal gjestôr di session"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Show session management options"
-#~ msgstr "Mostre lis opzions di gjestion da session"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Tire fûr"

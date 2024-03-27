@@ -1850,16 +1850,3 @@ msgstr ""
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "Le file non es un file .desktop valide"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Initiante %s"
-
-#~ msgid "FILE"
-#~ msgstr "FILE"
-
-#~ msgid "ID"
-#~ msgstr "ID"

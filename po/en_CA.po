@@ -1882,26 +1882,3 @@ msgstr "_Update"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Starting %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Not a launchable item"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Disable connection to session manager"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Specify session management ID"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Show session management options"
-#~ msgstr "Show session management options"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Extract"

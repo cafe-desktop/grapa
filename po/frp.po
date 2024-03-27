@@ -1849,33 +1849,3 @@ msgstr ""
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "Ce fôlyo est pas un fôlyo “.desktop” valido."
-
-#, c-format
-#~ msgid "Unrecognized desktop file Version '%s'"
-#~ msgstr "Vèrsion '%s' de fôlyo desktop pas reconyua"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Après enrayér %s"
-
-#~ msgid "Application does not accept documents on command line"
-#~ msgstr "L’aplicacion accèpte pas de documents en linye de comanda"
-
-#, c-format
-#~ msgid "Unrecognized launch option: %d"
-#~ msgstr "Opcion d’enrayement inconyua: %d"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Impossîblo d’enrayér l’objèt"
-
-#~ msgid "FILE"
-#~ msgstr "FÔLYO"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Session management options:"
-#~ msgstr "Opcions de mènement de sèssion"

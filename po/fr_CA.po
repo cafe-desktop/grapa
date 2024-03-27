@@ -1846,10 +1846,3 @@ msgstr ""
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "Fichier est pas valide .desktop fichier"
-
-#~ msgid "ID"
-#~ msgstr "ID"

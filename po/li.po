@@ -1848,19 +1848,3 @@ msgstr ""
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "%s weurt gesjtart"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Gei sjtartbaar item"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Verbènjing mit de sessiemeister oetsjakele"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Sessiemeister-ID sjpesifisere"
-
-#~ msgid "ID"
-#~ msgstr "PID"

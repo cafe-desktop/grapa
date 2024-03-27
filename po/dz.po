@@ -1875,26 +1875,3 @@ msgstr "དུས་མཐུན་  (_U)"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr "དུས་མཐུན་བཟོ་ནི་ཨིན་པའི་ཡིག་སྣོད་ཚུ་ སེར་འཐུ་འབད: (_E)"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "%s འགོ་བཙུགས་དོ།"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "གསར་བཙུགས་འབད་བཏུབ་པའི་ རྣམ་གྲངས་ཅིག་མེན་པས།"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་པ་ལུ་ མཐུད་ལམ་ལྕོགས་མིན་བཟོ།"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང་གིཨའི་ཌི་ གསལ་བཀོད་འབད།"
-
-#~ msgid "ID"
-#~ msgstr "ཨའི་ཌི།"
-
-#~ msgid "Show session management options"
-#~ msgstr "ལཱ་ཡུན་འཛིན་སྐྱོང༌གི་གདམ་ཁ་ཚུ་སྟོན།"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "ཕྱིར་འདོན་འབད།"

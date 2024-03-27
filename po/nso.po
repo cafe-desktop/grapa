@@ -1851,19 +1851,3 @@ msgstr ""
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Go thoma %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Ga se selo se se ka tsebagatwago"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Palediša kgokagano e yago go molaodi wa lenaneo"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Bontšha boitsebišo bja taolo ya lenaneo"
-
-#~ msgid "ID"
-#~ msgstr "Boitsebišo"

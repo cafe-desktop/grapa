@@ -1876,39 +1876,3 @@ msgstr "अद्यावधिक गर्नुहोस्"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#~ msgid "File is not a valid .desktop file"
-#~ msgstr "फाइल मान्य .डेस्कटप फाइल होइन"
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "%s सुरु गर्दै"
-
-#, c-format
-#~ msgid "Unrecognized launch option: %d"
-#~ msgstr "अपरिचित सुरु विकल्प: %d"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "एउटा सुरुआतयोग्य वस्तु होइन"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "सत्र प्रबन्धकमा जडान गर्न असक्षम"
-
-#~ msgid "FILE"
-#~ msgstr "फाइल"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "सत्र प्रबन्धक आईडी निर्दिष्ट गर्नुहोस्"
-
-#~ msgid "ID"
-#~ msgstr "आईडी"
-
-#~ msgid "Session management options:"
-#~ msgstr "सत्र प्रबन्ध विकल्प:"
-
-#~ msgid "Show session management options"
-#~ msgstr "सत्र प्रबन्ध विकल्प देखाउनुहोस्"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "झिक्नुहोस्"

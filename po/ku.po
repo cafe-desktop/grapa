@@ -1874,29 +1874,3 @@ msgstr "_Rojane bike"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Dest bi %s dike"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Ev tişt nayê dan destpêkirin"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Girêdana bi rêveberiyê hatiye kirin betal bike"
-
-#~ msgid "FILE"
-#~ msgstr "PEL"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "IDa rêveberiyê diyar bike"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Show session management options"
-#~ msgstr "Bijarekên gerînendeya beşê nîşan bide"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "Derbixe"

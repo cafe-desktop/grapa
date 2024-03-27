@@ -1859,17 +1859,3 @@ msgstr "යාවත්කාලීන (_U)"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "ආරම්භවෙමින් %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "ඇරඹීය හැකි අයිතමයක් නොවේ"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgctxt "Action"
-#~ msgid "Extract"
-#~ msgstr "විහිදුවන්න"

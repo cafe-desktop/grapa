@@ -1848,19 +1848,3 @@ msgstr "_Mete a djoû"
 #: src/ui/update.ui:366
 msgid "S_elect the files you want to update:"
 msgstr ""
-
-#, c-format
-#~ msgid "Starting %s"
-#~ msgstr "Enondant %s"
-
-#~ msgid "Not a launchable item"
-#~ msgstr "Nén on cayet enondåve"
-
-#~ msgid "Disable connection to session manager"
-#~ msgstr "Essocter l' adjondaedje å manaedjeu di sessions"
-
-#~ msgid "Specify session management ID"
-#~ msgstr "Dire l' ID pol manaedjmint del session"
-
-#~ msgid "ID"
-#~ msgstr "ID"
