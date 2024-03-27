@@ -13,7 +13,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2022-08-30 18:42+0200\n"
+"POT-Creation-Date: 2024-03-27 12:51+0100\n"
 "PO-Revision-Date: 2020-02-14 11:58+0000\n"
 "Last-Translator: Anna Vyalkova <cybertailor@gmail.com>, 2020\n"
 "Language-Team: Russian (https://www.transifex.com/cafe/teams/13566/ru/)\n"
@@ -78,9 +78,8 @@ msgstr ""
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:21
-#, fuzzy
-msgid "<year>2020</year> <holder>CAFE Documentation Project</holder>"
-msgstr "<year>2019-2020</year> <holder>CAFE Documentation Project</holder>"
+msgid "<year>2020-2024</year> <holder>CAFE Documentation Project</holder>"
+msgstr ""
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:25
@@ -3736,3 +3735,7 @@ msgstr ""
 "<application>Менеджера архивов</application> или этого руководства, следуйте "
 "инструкциям на <ulink url=\"help:cafe-user-guide/feedback\" "
 "type=\"help\">Странице обратной связи CAFE</ulink>."
+
+#, fuzzy
+#~ msgid "<year>2020</year> <holder>CAFE Documentation Project</holder>"
+#~ msgstr "<year>2019-2020</year> <holder>CAFE Documentation Project</holder>"
