@@ -4,6 +4,7 @@
 requires:
   debian:
     # Useful URL: https://github.com/cafe-desktop/debian-packages
+    # cafe B-D: libbaul-extension-dev libctk-3-dev cafe-common
     - aptitude
     - autoconf-archive
     - autopoint
