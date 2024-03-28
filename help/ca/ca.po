@@ -3265,7 +3265,3 @@ msgstr ""
 "<application>gestor d'arxius</application> o d'aquest manual, seguiu les "
 "instruccions de la <link xlink:href=\"help:cafe-user-guide/feedback\">pàgina "
 "de retroacció de CAFE</link>."
-
-#, fuzzy
-#~ msgid "<year>2020</year> <holder>CAFE Documentation Project</holder>"
-#~ msgstr "<year>2002</year> <holder>Alexander Kirillov</holder>"

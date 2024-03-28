@@ -3701,8 +3701,3 @@ msgstr ""
 "<application>Arkivhåndtering</application> eller denne manual, bør du følge "
 "instruktionerne på <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE-"
 "tilbagemeldingssiden</link>."
-
-#, fuzzy
-#~ msgid "<year>2020</year> <holder>CAFE Documentation Project</holder>"
-#~ msgstr ""
-#~ "<year>2019-2020</year> <holder>CAFE-dokumentationsprojektet</holder>"

@@ -3753,8 +3753,3 @@ msgstr ""
 "Grapa</application> o su questo manuale, seguite le indicazioni riportate "
 "sulla <link xlink:href=\"help:cafe-user-guide/feedback\">pagina di feedback "
 "di CAFE</link>."
-
-#, fuzzy
-#~ msgid "<year>2020</year> <holder>CAFE Documentation Project</holder>"
-#~ msgstr ""
-#~ "<year>2019-2020</year> <holder>Progetto Documentazione di CAFE</holder>"

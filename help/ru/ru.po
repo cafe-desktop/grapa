@@ -3735,7 +3735,3 @@ msgstr ""
 "<application>Менеджера архивов</application> или этого руководства, следуйте "
 "инструкциям на <ulink url=\"help:cafe-user-guide/feedback\" "
 "type=\"help\">Странице обратной связи CAFE</ulink>."
-
-#, fuzzy
-#~ msgid "<year>2020</year> <holder>CAFE Documentation Project</holder>"
-#~ msgstr "<year>2019-2020</year> <holder>CAFE Documentation Project</holder>"

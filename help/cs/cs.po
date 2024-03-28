@@ -3064,7 +3064,3 @@ msgid ""
 "the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback Page</"
 "link>."
 msgstr ""
-
-#, fuzzy
-#~ msgid "<year>2020</year> <holder>CAFE Documentation Project</holder>"
-#~ msgstr "<year>2009</year> <holder>Paul Cutler</holder>"

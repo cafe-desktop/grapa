@@ -3748,7 +3748,3 @@ msgstr ""
 "<application>Pengurus Arkib</application> atau panduan ini, ikuti arahan di "
 "dalam <link xlink:href=\"help:cafe-user-guide/feedback\">Halaman Maklumbalas "
 "CAFE</link>."
-
-#, fuzzy
-#~ msgid "<year>2020</year> <holder>CAFE Documentation Project</holder>"
-#~ msgstr "<year>2019-2020</year> <holder>Projek Pendokumenan CAFE</holder>"
