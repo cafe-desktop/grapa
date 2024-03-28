@@ -1,3 +1,28 @@
+### grapa 2.0.0
+
+  * ci: some improvements
+  * fr-window:
+    - Show notifications when progress finish and the window isn't active (enabled by default).
+    - fr-window: don't show the 'extraction completed dialog' when dragging
+  * update copyright to 2024
+  * Remove rar non-free support
+  * 7z:
+    - Fix compress of .7z and .zip archives
+    - 7-Zip 9.38 required
+    - Fix the handle of passwords in 7z and zip
+  * fr-command-unarchiver:
+    - Fix password behavior
+    - GString instead GInputStream, it will increase the speed loading big files.
+    - Show error of incomplete volume files
+  * glib-utils:
+    - Fix opening deb files
+    - Fix extract multiple files
+  * build: Fix -Wmissing-prototypes warnings
+  * main: avoid deprecated G_APPLICATION_FLAGS_NONE
+  * test-server: make available all the tests
+  * fr-archive: Fix mime_type with '.tar-' and '.tar(' in the filename
+  * update translations
+
 ### grapa 1.25.1
 
   * fr-command-lha: avoid shadow variable
