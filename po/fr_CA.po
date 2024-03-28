@@ -5,7 +5,7 @@
 # Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: CAFE Desktop Environment\n"
+"Project-Id-Version: grapa 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
 "POT-Creation-Date: 2024-03-27 12:51+0100\n"
 "PO-Revision-Date: 2018-01-09 15:32+0000\n"

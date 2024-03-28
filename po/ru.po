@@ -19,7 +19,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: grapa 1.23.2\n"
+"Project-Id-Version: grapa 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
 "POT-Creation-Date: 2024-03-27 12:51+0100\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
