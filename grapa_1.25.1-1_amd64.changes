@@ -1,0 +1,32 @@
+Format: 1.8
+Date: Tue, 30 Aug 2022 19:37:39 +0200
+Source: grapa
+Binary: grapa grapa-common grapa-dbgsym
+Architecture: all amd64
+Version: 1.25.1-1
+Distribution: unstable
+Urgency: medium
+Maintainer: Pablo Barciela <scow@riseup.net>
+Changed-By: Pablo Barciela <scow@riseup.net>
+Description:
+ grapa      - archive manager for CAFE
+ grapa-common - archive manager for CAFE (common files)
+Changes:
+ grapa (1.25.1-1) unstable; urgency=medium
+ .
+   * New upstream release
+Checksums-Sha1:
+ bb5080da01a9a9f4894a82d5eee3b76b2db6c7f0 875552 grapa-common_1.25.1-1_all.deb
+ c46604781cc3e0f266d75176afce424b2f8a7fd9 995592 grapa-dbgsym_1.25.1-1_amd64.deb
+ 7546b90c89785808056c19eafba5fa427a84002f 16303 grapa_1.25.1-1_amd64.buildinfo
+ db4f4d5d6a53654ddfc354d452f1f378ec1bf36b 202736 grapa_1.25.1-1_amd64.deb
+Checksums-Sha256:
+ 68c654df6f71b983762bd43b18531efb56206f50ea1bdf3d4604dcadf47c28f6 875552 grapa-common_1.25.1-1_all.deb
+ 271269b3957b1c48d16b7c98650a271da9206e37ef29095cb3716dcb437a86ca 995592 grapa-dbgsym_1.25.1-1_amd64.deb
+ db342358937ca1fa94f3aef66ea6f18955ca85e65a4477c60839be07165e1ae2 16303 grapa_1.25.1-1_amd64.buildinfo
+ 747b77c0dfd589425abfa13a2de22651591bfde12807d36ded7b30fafa17283b 202736 grapa_1.25.1-1_amd64.deb
+Files:
+ 0167ef06d9fffe7bba713e84251c4368 875552 x11 optional grapa-common_1.25.1-1_all.deb
+ 6648e67d9c567ad0453996c7550f9630 995592 debug optional grapa-dbgsym_1.25.1-1_amd64.deb
+ 4be09a0871ea46a8aed0ac5fd45ce9b5 16303 x11 optional grapa_1.25.1-1_amd64.buildinfo
+ 0c062236c57aa6cf119c13f785b0bb83 202736 x11 optional grapa_1.25.1-1_amd64.deb
