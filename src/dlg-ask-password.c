@@ -46,7 +46,7 @@ typedef struct {
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (CtkWidget  *widget,
+destroy_cb (CtkWidget  *widget G_GNUC_UNUSED,
 	    DialogData *data)
 {
 	g_object_unref (data->builder);
@@ -55,7 +55,7 @@ destroy_cb (CtkWidget  *widget,
 
 
 static void
-ask_password__response_cb (CtkWidget  *dialog,
+ask_password__response_cb (CtkWidget  *dialog G_GNUC_UNUSED,
 			   int         response_id,
 			   DialogData *data)
 {
