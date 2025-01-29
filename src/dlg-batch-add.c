@@ -70,7 +70,7 @@ get_ext (DialogData *data)
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (CtkWidget  *widget,
+destroy_cb (CtkWidget  *widget G_GNUC_UNUSED,
 	    DialogData *data)
 {
 	g_settings_set_string (data->settings, PREF_BATCH_ADD_DEFAULT_EXTENSION, get_ext (data));
@@ -124,7 +124,7 @@ set_archive_options (DialogData *data)
 
 
 static void
-help_clicked_cb (CtkWidget  *widget,
+help_clicked_cb (CtkWidget  *widget G_GNUC_UNUSED,
 		 DialogData *data)
 {
 	show_help_dialog (CTK_WINDOW (GET_WIDGET ("dialog")), "grapa-fmgr-add");
@@ -132,7 +132,7 @@ help_clicked_cb (CtkWidget  *widget,
 
 
 static void
-add_clicked_cb (CtkWidget  *widget,
+add_clicked_cb (CtkWidget  *widget G_GNUC_UNUSED,
 		DialogData *data)
 {
 	FrWindow   *window = data->window;
@@ -449,8 +449,8 @@ update_sensitivity (DialogData *data)
 
 
 static void
-password_entry_notify_text_cb (GObject    *object,
-			       GParamSpec *spec,
+password_entry_notify_text_cb (GObject    *object G_GNUC_UNUSED,
+			       GParamSpec *spec G_GNUC_UNUSED,
 			       gpointer    user_data)
 {
 	update_sensitivity ((DialogData *) user_data);
@@ -458,7 +458,7 @@ password_entry_notify_text_cb (GObject    *object,
 
 
 static void
-volume_toggled_cb (CtkToggleButton *toggle_button,
+volume_toggled_cb (CtkToggleButton *toggle_button G_GNUC_UNUSED,
 		   gpointer         user_data)
 {
 	update_sensitivity ((DialogData *) user_data);
