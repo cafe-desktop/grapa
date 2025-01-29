@@ -94,7 +94,7 @@ dlg_open_with (FrWindow *window,
 
 
 void
-open_with_cb (CtkWidget *widget,
+open_with_cb (CtkWidget *widget G_GNUC_UNUSED,
 	      void      *callback_data)
 {
 	FrWindow *window = callback_data;
