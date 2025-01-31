@@ -193,12 +193,12 @@ fr_command_rpm_list (FrCommand *comm)
 
 static void
 fr_command_rpm_extract (FrCommand  *comm,
-		        const char  *from_file,
+			const char *from_file G_GNUC_UNUSED,
 			GList      *file_list,
 			const char *dest_dir,
-			gboolean    overwrite,
-			gboolean    skip_older,
-			gboolean    junk_paths)
+			gboolean    overwrite G_GNUC_UNUSED,
+			gboolean    skip_older G_GNUC_UNUSED,
+			gboolean    junk_paths G_GNUC_UNUSED)
 {
 	GList   *scan;
 	GString *cmd;
@@ -228,15 +228,15 @@ const char *rpm_mime_type[] = { "application/x-rpm", NULL };
 
 
 static const char **
-fr_command_rpm_get_mime_types (FrCommand *comm)
+fr_command_rpm_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return rpm_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_rpm_get_capabilities (FrCommand  *comm,
-			         const char *mime_type,
+fr_command_rpm_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+				 const char *mime_type G_GNUC_UNUSED,
 				 gboolean    check_command)
 {
 	FrCommandCap capabilities;
@@ -251,8 +251,8 @@ fr_command_rpm_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_rpm_get_packages (FrCommand  *comm,
-			     const char *mime_type)
+fr_command_rpm_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+			     const char *mime_type G_GNUC_UNUSED)
 {
 	return PACKAGES ("cpio,rpm");
 }
