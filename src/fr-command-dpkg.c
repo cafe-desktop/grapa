@@ -182,12 +182,12 @@ fr_command_dpkg_list (FrCommand *comm)
 
 static void
 fr_command_dpkg_extract (FrCommand  *comm,
-                         const char *from_file,
-                         GList      *file_list,
-                         const char *dest_dir,
-                         gboolean    overwrite,
-                         gboolean    skip_older,
-                         gboolean    junk_paths)
+			 const char *from_file G_GNUC_UNUSED,
+			 GList      *file_list G_GNUC_UNUSED,
+			 const char *dest_dir,
+			 gboolean    overwrite G_GNUC_UNUSED,
+			 gboolean    skip_older G_GNUC_UNUSED,
+			 gboolean    junk_paths G_GNUC_UNUSED)
 {
         fr_process_begin_command (comm->process, "dpkg-deb");
         fr_process_add_arg (comm->process, "-x");
@@ -215,16 +215,16 @@ const char *dpkg_mime_type[] = { "application/vnd.debian.binary-package", NULL }
 
 
 static const char **
-fr_command_dpkg_get_mime_types (FrCommand *comm)
+fr_command_dpkg_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
         return dpkg_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_dpkg_get_capabilities (FrCommand  *comm,
-                                  const char *mime_type,
-                                  gboolean    check_command)
+fr_command_dpkg_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+				  const char *mime_type G_GNUC_UNUSED,
+				  gboolean    check_command)
 {
         FrCommandCap capabilities;
 
@@ -237,8 +237,8 @@ fr_command_dpkg_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_dpkg_get_packages (FrCommand  *comm,
-                              const char *mime_type)
+fr_command_dpkg_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+			      const char *mime_type G_GNUC_UNUSED)
 {
         return PACKAGES ("dpkg");
 }
