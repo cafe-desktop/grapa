@@ -49,12 +49,12 @@ static FrCommandClass *parent_class = NULL;
 
 
 static void
-fr_command_jar_add (FrCommand     *comm,
-		    const char    *from_file,
-		    GList         *file_list,
-		    const char    *base_dir,
-		    gboolean       update,
-		    gboolean       recursive)
+fr_command_jar_add (FrCommand  *comm,
+		    const char *from_file G_GNUC_UNUSED,
+		    GList      *file_list,
+		    const char *base_dir,
+		    gboolean    update,
+		    gboolean    recursive G_GNUC_UNUSED)
 {
 	FrProcess *proc = comm->process;
 	GList     *zip_list = NULL, *jardata_list = NULL, *jar_list = NULL;
@@ -151,15 +151,15 @@ const char *jar_mime_type[] = { "application/x-java-archive",
 
 
 static const char **
-fr_command_jar_get_mime_types (FrCommand *comm)
+fr_command_jar_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return jar_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_jar_get_capabilities (FrCommand  *comm,
-			         const char *mime_type,
+fr_command_jar_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+				 const char *mime_type G_GNUC_UNUSED,
 				 gboolean    check_command)
 {
 	FrCommandCap capabilities;
@@ -173,8 +173,8 @@ fr_command_jar_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_jar_get_packages (FrCommand  *comm,
-			     const char *mime_type)
+fr_command_jar_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+			     const char *mime_type G_GNUC_UNUSED)
 {
 	return PACKAGES ("zip,unzip");
 }
@@ -198,7 +198,7 @@ fr_command_jar_class_init (FrCommandJarClass *class)
 
 
 static void
-fr_command_jar_init (FrCommand *comm)
+fr_command_jar_init (FrCommand *comm G_GNUC_UNUSED)
 {
 }
 
