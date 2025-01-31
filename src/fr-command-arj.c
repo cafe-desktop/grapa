@@ -175,12 +175,12 @@ fr_command_arj_list (FrCommand *comm)
 
 
 static void
-fr_command_arj_add (FrCommand     *comm,
-		    const char    *from_file,
-		    GList         *file_list,
-		    const char    *base_dir,
-		    gboolean       update,
-		    gboolean       recursive)
+fr_command_arj_add (FrCommand  *comm,
+		    const char *from_file G_GNUC_UNUSED,
+		    GList      *file_list,
+		    const char *base_dir,
+		    gboolean    update,
+		    gboolean    recursive G_GNUC_UNUSED)
 {
 	GList *scan;
 
@@ -223,7 +223,7 @@ fr_command_arj_add (FrCommand     *comm,
 
 static void
 fr_command_arj_delete (FrCommand  *comm,
-		       const char *from_file,
+		       const char *from_file G_GNUC_UNUSED,
 		       GList      *file_list)
 {
 	GList *scan;
@@ -245,7 +245,7 @@ fr_command_arj_delete (FrCommand  *comm,
 
 static void
 fr_command_arj_extract (FrCommand  *comm,
-			const char *from_file,
+			const char *from_file G_GNUC_UNUSED,
 			GList      *file_list,
 			const char *dest_dir,
 			gboolean    overwrite,
@@ -304,7 +304,7 @@ fr_command_arj_test (FrCommand   *comm)
 
 
 static void
-fr_command_arj_handle_error (FrCommand   *comm,
+fr_command_arj_handle_error (FrCommand   *comm G_GNUC_UNUSED,
 			     FrProcError *error)
 {
 	if (error->type != FR_PROC_ERROR_NONE) {
@@ -320,15 +320,15 @@ const char *arj_mime_type[] = { "application/x-arj", NULL };
 
 
 static const char **
-fr_command_arj_get_mime_types (FrCommand *comm)
+fr_command_arj_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return arj_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_arj_get_capabilities (FrCommand  *comm,
-			         const char *mime_type,
+fr_command_arj_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+			         const char *mime_type G_GNUC_UNUSED,
 				 gboolean    check_command)
 {
 	FrCommandCap capabilities;
@@ -342,8 +342,8 @@ fr_command_arj_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_arj_get_packages (FrCommand  *comm,
-			     const char *mime_type)
+fr_command_arj_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+			     const char *mime_type G_GNUC_UNUSED)
 {
 	return PACKAGES ("arj");
 }
