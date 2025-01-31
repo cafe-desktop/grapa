@@ -193,8 +193,8 @@ stop_drag_check (CtkWidget *widget)
 
 static gboolean
 egg_tree_multi_drag_button_release_event (CtkWidget      *widget,
-					  CdkEventButton *event,
-					  gpointer        data)
+					  CdkEventButton *event G_GNUC_UNUSED,
+					  gpointer        data G_GNUC_UNUSED)
 {
   EggTreeMultiDndData *priv_data;
   GSList *l;
@@ -213,7 +213,7 @@ egg_tree_multi_drag_button_release_event (CtkWidget      *widget,
 static void
 selection_foreach (CtkTreeModel *model,
 		   CtkTreePath  *path,
-		   CtkTreeIter  *iter,
+		   CtkTreeIter  *iter G_GNUC_UNUSED,
 		   gpointer      data)
 {
   GList **list_ptr;
@@ -255,8 +255,8 @@ static gboolean
 egg_tree_multi_drag_drag_data_get (CtkWidget        *widget,
 				   CdkDragContext   *context,
 				   CtkSelectionData *selection_data,
-				   guint             info,
-				   guint             time)
+				   guint             info G_GNUC_UNUSED,
+				   guint             time G_GNUC_UNUSED)
 {
   CtkTreeView  *tree_view;
   CtkTreeModel *model;
@@ -289,7 +289,7 @@ egg_tree_multi_drag_drag_data_get (CtkWidget        *widget,
 static gboolean
 egg_tree_multi_drag_motion_event (CtkWidget      *widget,
 				  CdkEventMotion *event,
-				  gpointer        data)
+				  gpointer        data G_GNUC_UNUSED)
 {
   EggTreeMultiDndData *priv_data;
 
@@ -368,7 +368,7 @@ egg_tree_multi_drag_motion_event (CtkWidget      *widget,
 static gboolean
 egg_tree_multi_drag_button_press_event (CtkWidget      *widget,
 					CdkEventButton *event,
-					gpointer        data)
+					gpointer        data G_GNUC_UNUSED)
 {
   CtkTreeView         *tree_view;
   CtkTreePath         *path = NULL;
