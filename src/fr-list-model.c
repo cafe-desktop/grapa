@@ -86,8 +86,8 @@ fr_list_model_multi_drag_data_get (EggTreeMultiDragSource *drag_source,
 
 
 static gboolean
-fr_list_model_multi_drag_data_delete (EggTreeMultiDragSource *drag_source,
-				      GList                  *path_list)
+fr_list_model_multi_drag_data_delete (EggTreeMultiDragSource *drag_source G_GNUC_UNUSED,
+				      GList                  *path_list G_GNUC_UNUSED)
 {
 	return TRUE;
 }
@@ -102,7 +102,7 @@ fr_list_model_finalize (GObject *object)
 
 
 static void
-fr_list_model_init (FRListModel *model)
+fr_list_model_init (FRListModel *model G_GNUC_UNUSED)
 {
 }
 
