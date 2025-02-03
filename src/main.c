@@ -40,7 +40,10 @@ static int    extract_here;
 static char  *default_url = NULL;
 
 static void
-_print_version_and_exit (const gchar *option_name, const gchar *value, gpointer data, GError *error)
+_print_version_and_exit (const gchar *option_name G_GNUC_UNUSED,
+			 const gchar *value G_GNUC_UNUSED,
+			 gpointer     data G_GNUC_UNUSED,
+			 GError      *error G_GNUC_UNUSED)
 {
 	g_print("%s %s\n", _("Grapa Archive Manager"), VERSION);
 	exit (EXIT_SUCCESS);
@@ -201,7 +204,7 @@ prepare_app (void)
 
 
 static void
-startup_cb (GApplication *application)
+startup_cb (GApplication *application G_GNUC_UNUSED)
 {
 	initialize_data ();
 	prepare_app ();
