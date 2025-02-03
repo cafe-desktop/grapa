@@ -32,9 +32,9 @@
 
 
 static void
-count_selected (CtkTreeModel *model,
-		CtkTreePath  *path,
-		CtkTreeIter  *iter,
+count_selected (CtkTreeModel *model G_GNUC_UNUSED,
+		CtkTreePath  *path G_GNUC_UNUSED,
+		CtkTreeIter  *iter G_GNUC_UNUSED,
 		gpointer      data)
 {
 	int *n = data;
@@ -627,8 +627,8 @@ _ctk_builder_get_widget (CtkBuilder *builder,
 
 
 int
-_ctk_widget_lookup_for_size (CtkWidget *widget,
-                             CtkIconSize icon_size)
+_ctk_widget_lookup_for_size (CtkWidget  *widget G_GNUC_UNUSED,
+			     CtkIconSize icon_size)
 {
 	int w, h;
 	ctk_icon_size_lookup (icon_size,
