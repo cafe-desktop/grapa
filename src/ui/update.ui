@@ -48,7 +48,7 @@
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
                 <child>
-                  <object class="CtkBox" id="alignment1">
+                  <object class="CtkAlignment" id="alignment1">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="xscale">0</property>
@@ -234,7 +234,7 @@
                 <property name="can_default">True</property>
                 <property name="receives_default">False</property>
                 <child>
-                  <object class="CtkBox" id="alignment2">
+                  <object class="CtkAlignment" id="alignment2">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="xscale">0</property>
