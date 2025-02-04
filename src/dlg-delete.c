@@ -43,7 +43,7 @@ typedef struct {
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (CtkWidget  *widget,
+destroy_cb (CtkWidget  *widget G_GNUC_UNUSED,
 	    DialogData *data)
 {
 	path_list_free (data->selected_files);
@@ -54,7 +54,7 @@ destroy_cb (CtkWidget  *widget,
 
 /* called when the "ok" button is pressed. */
 static void
-ok_clicked_cb (CtkWidget  *widget,
+ok_clicked_cb (CtkWidget  *widget G_GNUC_UNUSED,
 	       DialogData *data)
 {
 	gboolean  selected_files;
@@ -95,7 +95,7 @@ ok_clicked_cb (CtkWidget  *widget,
 
 
 static void
-entry_changed_cb (CtkWidget  *widget,
+entry_changed_cb (CtkWidget  *widget G_GNUC_UNUSED,
 		  DialogData *data)
 {
 	if (! ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (data->d_files_radio)))
@@ -171,7 +171,7 @@ dlg_delete__common (FrWindow *window,
 
 
 void
-dlg_delete (CtkWidget *widget,
+dlg_delete (CtkWidget *widget G_GNUC_UNUSED,
 	    gpointer   callback_data)
 {
 	FrWindow *window = callback_data;
@@ -181,7 +181,7 @@ dlg_delete (CtkWidget *widget,
 
 
 void
-dlg_delete_from_sidebar (CtkWidget *widget,
+dlg_delete_from_sidebar (CtkWidget *widget G_GNUC_UNUSED,
 			 gpointer   callback_data)
 {
 	FrWindow *window = callback_data;

@@ -360,7 +360,7 @@ emit_default_size_changed (gpointer user_data)
 }
 
 static void
-expander_unmap_cb (CtkWidget *widget,
+expander_unmap_cb (CtkWidget *widget G_GNUC_UNUSED,
 		   gpointer   user_data)
 {
   EggFileFormatChooser *self = user_data;
@@ -529,8 +529,8 @@ egg_file_format_chooser_finalize (GObject *obj)
 
 static void
 filter_changed_cb (GObject    *object,
-                   GParamSpec *spec,
-                   gpointer    data)
+		   GParamSpec *spec G_GNUC_UNUSED,
+		   gpointer    data)
 {
   EggFileFormatChooser *self;
 
@@ -1205,5 +1205,3 @@ egg_file_format_chooser_emit_size_changed (EggFileFormatChooser *self)
   if (self->priv->size_changed_event == 0)
     self->priv->size_changed_event = cdk_threads_add_idle (emit_default_size_changed, self);
 }
-
-/* vim: set sw=2 sta et: */

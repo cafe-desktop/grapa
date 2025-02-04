@@ -62,7 +62,7 @@ typedef struct {
 
 
 static void
-open_file_destroy_cb (CtkWidget  *widget,
+open_file_destroy_cb (CtkWidget  *widget G_GNUC_UNUSED,
 		      DialogData *data)
 {
 	g_object_unref (data->settings);
@@ -93,9 +93,9 @@ static void dlg_add_folder_save_last_options (DialogData *data);
 
 
 static int
-file_sel_response_cb (CtkWidget    *widget,
-		      int           response,
-		      DialogData   *data)
+file_sel_response_cb (CtkWidget  *widget G_GNUC_UNUSED,
+		      int         response,
+		      DialogData *data)
 {
 	CtkFileChooser *file_sel = CTK_FILE_CHOOSER (data->choice);
 	FrWindow       *window = data->window;
@@ -206,7 +206,7 @@ static void dlg_add_folder_load_last_options (DialogData *data);
 
 static gboolean
 add_folder_window_unrealize_cb (CtkWidget  *widget,
-				gpointer    data)
+				gpointer    data G_GNUC_UNUSED)
 {
 	pref_util_save_window_geometry (CTK_WINDOW (widget), "addfolder");
 	return FALSE;
@@ -215,7 +215,7 @@ add_folder_window_unrealize_cb (CtkWidget  *widget,
 
 /* create the "add" dialog. */
 void
-add_folder_cb (CtkWidget *widget,
+add_folder_cb (CtkWidget *widget G_GNUC_UNUSED,
 	       void      *callback_data)
 {
 	CtkWidget   *file_sel;
@@ -435,7 +435,7 @@ sync_widgets_with_options (DialogData *data,
 
 
 static void
-clear_options_cb (CtkWidget  *w,
+clear_options_cb (CtkWidget  *w G_GNUC_UNUSED,
 		  DialogData *data)
 {
 	sync_widgets_with_options (data,
@@ -677,7 +677,7 @@ typedef struct {
 
 
 static void
-aod_destroy_cb (CtkWidget             *widget,
+aod_destroy_cb (CtkWidget             *widget G_GNUC_UNUSED,
 		LoadOptionsDialogData *aod_data)
 {
 	g_object_unref (aod_data->builder);
@@ -686,7 +686,7 @@ aod_destroy_cb (CtkWidget             *widget,
 
 
 static void
-aod_apply_cb (CtkWidget *widget,
+aod_apply_cb (CtkWidget *widget G_GNUC_UNUSED,
 	      gpointer   callback_data)
 {
 	LoadOptionsDialogData *aod_data = callback_data;
@@ -709,9 +709,9 @@ aod_apply_cb (CtkWidget *widget,
 
 
 static void
-aod_activated_cb (CtkTreeView       *tree_view,
-		  CtkTreePath       *path,
-		  CtkTreeViewColumn *column,
+aod_activated_cb (CtkTreeView       *tree_view G_GNUC_UNUSED,
+		  CtkTreePath       *path G_GNUC_UNUSED,
+		  CtkTreeViewColumn *column G_GNUC_UNUSED,
 		  gpointer           callback_data)
 {
 	aod_apply_cb (NULL, callback_data);
@@ -774,7 +774,7 @@ aod_update_option_list (LoadOptionsDialogData *aod_data)
 
 
 static void
-aod_remove_cb (CtkWidget             *widget,
+aod_remove_cb (CtkWidget             *widget G_GNUC_UNUSED,
 	       LoadOptionsDialogData *aod_data)
 {
 	CtkTreeSelection *selection;
@@ -805,7 +805,7 @@ aod_remove_cb (CtkWidget             *widget,
 
 
 static void
-load_options_cb (CtkWidget  *w,
+load_options_cb (CtkWidget  *w G_GNUC_UNUSED,
 		 DialogData *data)
 {
 	LoadOptionsDialogData *aod_data;
@@ -891,7 +891,7 @@ load_options_cb (CtkWidget  *w,
 
 
 static void
-save_options_cb (CtkWidget  *w,
+save_options_cb (CtkWidget  *w G_GNUC_UNUSED,
 		 DialogData *data)
 {
 	GFile *options_dir;

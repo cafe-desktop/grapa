@@ -41,7 +41,7 @@ typedef struct {
 
 
 static void
-open_file_destroy_cb (CtkWidget  *file_sel,
+open_file_destroy_cb (CtkWidget  *file_sel G_GNUC_UNUSED,
 		      DialogData *data)
 {
 	g_object_unref (data->settings);
@@ -50,9 +50,9 @@ open_file_destroy_cb (CtkWidget  *file_sel,
 
 
 static int
-file_sel_response_cb (CtkWidget      *widget,
-		      int             response,
-		      DialogData     *data)
+file_sel_response_cb (CtkWidget  *widget G_GNUC_UNUSED,
+		      int         response,
+		      DialogData *data)
 {
 	CtkFileChooser *file_sel = CTK_FILE_CHOOSER (data->choice);
 	FrWindow       *window = data->window;
@@ -134,7 +134,7 @@ file_sel_response_cb (CtkWidget      *widget,
 
 static gboolean
 add_files_window_unrealize_cb (CtkWidget  *widget,
-			       gpointer    data)
+			       gpointer    data G_GNUC_UNUSED)
 {
 	pref_util_save_window_geometry (CTK_WINDOW (widget), "addfiles");
 	return FALSE;
@@ -143,7 +143,7 @@ add_files_window_unrealize_cb (CtkWidget  *widget,
 
 /* create the "add" dialog. */
 void
-add_files_cb (CtkWidget *widget,
+add_files_cb (CtkWidget *widget G_GNUC_UNUSED,
 	      void      *callback_data)
 {
 	CtkWidget  *file_sel;

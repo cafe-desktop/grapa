@@ -59,8 +59,8 @@ typedef struct {
 
 /* called when the main dialog is closed. */
 static void
-dlg_update__destroy_cb (CtkWidget  *widget,
-		        DialogData *data)
+dlg_update__destroy_cb (CtkWidget  *widget G_GNUC_UNUSED,
+			DialogData *data)
 {
 	fr_window_update_dialog_closed (data->window);
 	g_object_unref (G_OBJECT (data->builder));
@@ -96,7 +96,7 @@ get_selected_files (DialogData *data)
 
 
 static void
-update_cb (CtkWidget *widget,
+update_cb (CtkWidget *widget G_GNUC_UNUSED,
 	   gpointer   callback_data)
 {
 	DialogData *data = callback_data;

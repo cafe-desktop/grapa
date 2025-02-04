@@ -196,12 +196,12 @@ fr_command_cfile_list (FrCommand  *comm)
 
 
 static void
-fr_command_cfile_add (FrCommand     *comm,
-		      const char    *from_file,
-		      GList         *file_list,
-		      const char    *base_dir,
-		      gboolean       update,
-		      gboolean       recursive)
+fr_command_cfile_add (FrCommand  *comm,
+		      const char *from_file G_GNUC_UNUSED,
+		      GList      *file_list,
+		      const char *base_dir,
+		      gboolean    update G_GNUC_UNUSED,
+		      gboolean    recursive G_GNUC_UNUSED)
 {
 	const char *filename = NULL;
 	char       *temp_dir = NULL;
@@ -335,9 +335,9 @@ fr_command_cfile_add (FrCommand     *comm,
 
 
 static void
-fr_command_cfile_delete (FrCommand  *comm,
-			 const char *from_file,
-			 GList      *file_list)
+fr_command_cfile_delete (FrCommand  *comm G_GNUC_UNUSED,
+			 const char *from_file G_GNUC_UNUSED,
+			 GList      *file_list G_GNUC_UNUSED)
 {
 	/* never called */
 }
@@ -345,12 +345,12 @@ fr_command_cfile_delete (FrCommand  *comm,
 
 static void
 fr_command_cfile_extract (FrCommand  *comm,
-			  const char *from_file,
-			  GList      *file_list,
+			  const char *from_file G_GNUC_UNUSED,
+			  GList      *file_list G_GNUC_UNUSED,
 			  const char *dest_dir,
-			  gboolean    overwrite,
-			  gboolean    skip_older,
-			  gboolean    junk_paths)
+			  gboolean    overwrite G_GNUC_UNUSED,
+			  gboolean    skip_older G_GNUC_UNUSED,
+			  gboolean    junk_paths G_GNUC_UNUSED)
 {
 	char *temp_dir;
 	char *dest_file;
@@ -547,14 +547,14 @@ const char *cfile_mime_type[] = { "application/x-gzip",
 
 
 static const char **
-fr_command_cfile_get_mime_types (FrCommand *comm)
+fr_command_cfile_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return cfile_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_cfile_get_capabilities (FrCommand  *comm,
+fr_command_cfile_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
 				   const char *mime_type,
 				   gboolean    check_command)
 {
@@ -621,7 +621,7 @@ fr_command_cfile_finalize (GObject *object)
 
 
 static const char *
-fr_command_cfile_get_packages (FrCommand  *comm,
+fr_command_cfile_get_packages (FrCommand  *comm G_GNUC_UNUSED,
 			       const char *mime_type)
 {
 	if (is_mime_type (mime_type, "application/x-gzip"))

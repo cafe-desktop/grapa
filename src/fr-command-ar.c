@@ -165,12 +165,12 @@ fr_command_ar_list (FrCommand *comm)
 
 
 static void
-fr_command_ar_add (FrCommand     *comm,
-		   const char    *from_file,
-		   GList         *file_list,
-		   const char    *base_dir,
-		   gboolean       update,
-		   gboolean       recursive)
+fr_command_ar_add (FrCommand  *comm,
+		   const char *from_file G_GNUC_UNUSED,
+		   GList      *file_list,
+		   const char *base_dir,
+		   gboolean    update,
+		   gboolean    recursive G_GNUC_UNUSED)
 {
 	GList *scan;
 
@@ -195,7 +195,7 @@ fr_command_ar_add (FrCommand     *comm,
 
 static void
 fr_command_ar_delete (FrCommand  *comm,
-		      const char *from_file,
+		      const char *from_file G_GNUC_UNUSED,
 		      GList      *file_list)
 {
 	GList *scan;
@@ -211,12 +211,12 @@ fr_command_ar_delete (FrCommand  *comm,
 
 static void
 fr_command_ar_extract (FrCommand  *comm,
-		       const char *from_file,
+		       const char *from_file G_GNUC_UNUSED,
 		       GList      *file_list,
 		       const char *dest_dir,
-		       gboolean    overwrite,
-		       gboolean    skip_older,
-		       gboolean    junk_paths)
+		       gboolean    overwrite G_GNUC_UNUSED,
+		       gboolean    skip_older G_GNUC_UNUSED,
+		       gboolean    junk_paths G_GNUC_UNUSED)
 {
 	GList *scan;
 
@@ -234,8 +234,8 @@ fr_command_ar_extract (FrCommand  *comm,
 
 
 static void
-fr_command_ar_handle_error (FrCommand   *comm,
-			    FrProcError *error)
+fr_command_ar_handle_error (FrCommand   *comm G_GNUC_UNUSED,
+			    FrProcError *error G_GNUC_UNUSED)
 {
 	/* FIXME */
 }
@@ -247,14 +247,14 @@ const char *ar_mime_type[] = { "application/x-archive",
 
 
 static const char **
-fr_command_ar_get_mime_types (FrCommand *comm)
+fr_command_ar_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return ar_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_ar_get_capabilities (FrCommand  *comm,
+fr_command_ar_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
 			        const char *mime_type,
 				gboolean    check_command)
 {
@@ -273,8 +273,8 @@ fr_command_ar_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_ar_get_packages (FrCommand  *comm,
-			    const char *mime_type)
+fr_command_ar_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+			    const char *mime_type G_GNUC_UNUSED)
 {
 	return PACKAGES ("binutils");
 }

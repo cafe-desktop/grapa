@@ -175,7 +175,7 @@ static GDBusNodeInfo *introspection_data = NULL;
 
 
 static void
-window_ready_cb (CtkWidget *widget,
+window_ready_cb (CtkWidget *widget G_GNUC_UNUSED,
 		 GError    *error,
 		 gpointer   user_data)
 {
@@ -191,7 +191,7 @@ window_ready_cb (CtkWidget *widget,
 
 
 static gboolean
-window_progress_cb (FrWindow *window,
+window_progress_cb (FrWindow *window G_GNUC_UNUSED,
 		    double    fraction,
 		    char     *details,
 		    gpointer  user_data)
@@ -214,13 +214,13 @@ window_progress_cb (FrWindow *window,
 
 static void
 handle_method_call (GDBusConnection       *connection,
-		    const char            *sender,
-		    const char            *object_path,
-		    const char            *interface_name,
+		    const char            *sender G_GNUC_UNUSED,
+		    const char            *object_path G_GNUC_UNUSED,
+		    const char            *interface_name G_GNUC_UNUSED,
 		    const char            *method_name,
 		    GVariant              *parameters,
 		    GDBusMethodInvocation *invocation,
-		    gpointer               user_data)
+		    gpointer               user_data G_GNUC_UNUSED)
 {
 	update_registered_commands_capabilities ();
 
@@ -395,8 +395,8 @@ static const GDBusInterfaceVTable interface_vtable = {
 
 static void
 on_bus_acquired (GDBusConnection *connection,
-		 const char      *name,
-		 gpointer         user_data)
+		 const char      *name G_GNUC_UNUSED,
+		 gpointer         user_data G_GNUC_UNUSED)
 {
 	guint registration_id;
 
@@ -414,17 +414,17 @@ on_bus_acquired (GDBusConnection *connection,
 
 
 static void
-on_name_acquired (GDBusConnection *connection,
-		  const char      *name,
-		  gpointer         user_data)
+on_name_acquired (GDBusConnection *connection G_GNUC_UNUSED,
+		  const char      *name G_GNUC_UNUSED,
+		  gpointer         user_data G_GNUC_UNUSED)
 {
 }
 
 
 static void
-on_name_lost (GDBusConnection *connection,
-	      const char      *name,
-	      gpointer         user_data)
+on_name_lost (GDBusConnection *connection G_GNUC_UNUSED,
+	      const char      *name G_GNUC_UNUSED,
+	      gpointer         user_data G_GNUC_UNUSED)
 {
 	ctk_main_quit ();
 }

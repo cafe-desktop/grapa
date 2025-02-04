@@ -40,7 +40,7 @@
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (CtkWidget  *widget,
+destroy_cb (CtkWidget  *widget G_GNUC_UNUSED,
 	    DlgNewData *data)
 {
 	g_object_unref (data->builder);
@@ -170,7 +170,7 @@ archive_type_combo_box_changed_cb (CtkComboBox *combo_box,
 
 
 static void
-password_entry_changed_cb (CtkEditable *editable,
+password_entry_changed_cb (CtkEditable *editable G_GNUC_UNUSED,
 			   gpointer     user_data)
 {
 	update_sensitivity ((DlgNewData *) user_data);
@@ -178,7 +178,7 @@ password_entry_changed_cb (CtkEditable *editable,
 
 
 static void
-volume_toggled_cb (CtkToggleButton *toggle_button,
+volume_toggled_cb (CtkToggleButton *toggle_button G_GNUC_UNUSED,
 		   gpointer         user_data)
 {
 	update_sensitivity ((DlgNewData *) user_data);
@@ -186,7 +186,7 @@ volume_toggled_cb (CtkToggleButton *toggle_button,
 
 
 static void
-format_chooser_selection_changed_cb (EggFileFormatChooser *format_chooser,
+format_chooser_selection_changed_cb (EggFileFormatChooser *format_chooser G_GNUC_UNUSED,
 				     DlgNewData           *data)
 {
 	const char *uri;
@@ -254,7 +254,7 @@ get_icon_name_for_type (const char *mime_type)
 
 
 static void
-options_expander_unmap_cb (CtkWidget *widget,
+options_expander_unmap_cb (CtkWidget *widget G_GNUC_UNUSED,
 			   gpointer   user_data)
 {
 	egg_file_format_chooser_emit_size_changed ((EggFileFormatChooser *) user_data);

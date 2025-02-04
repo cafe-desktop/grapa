@@ -221,12 +221,12 @@ fr_command_unstuff_list (FrCommand *comm)
 
 static void
 fr_command_unstuff_extract (FrCommand  *comm,
-			    const char  *from_file,
-			    GList      *file_list,
+			    const char  *from_file G_GNUC_UNUSED,
+			    GList      *file_list G_GNUC_UNUSED,
 			    const char *dest_dir,
-			    gboolean    overwrite,
-			    gboolean    skip_older,
-			    gboolean    junk_paths)
+			    gboolean    overwrite G_GNUC_UNUSED,
+			    gboolean    skip_older G_GNUC_UNUSED,
+			    gboolean    junk_paths G_GNUC_UNUSED)
 {
 #if 0
 	GList *scan;
@@ -265,7 +265,7 @@ fr_command_unstuff_extract (FrCommand  *comm,
 
 
 static void
-fr_command_unstuff_handle_error (FrCommand   *comm,
+fr_command_unstuff_handle_error (FrCommand   *comm G_GNUC_UNUSED,
 				 FrProcError *error)
 {
 	if ((error->type != FR_PROC_ERROR_NONE)
@@ -280,15 +280,15 @@ const char *unstuff_mime_type[] = { "application/x-stuffit", NULL };
 
 
 static const char **
-fr_command_unstuff_get_mime_types (FrCommand *comm)
+fr_command_unstuff_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return unstuff_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_unstuff_get_capabilities (FrCommand  *comm,
-			             const char *mime_type,
+fr_command_unstuff_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+				     const char *mime_type G_GNUC_UNUSED,
 				     gboolean    check_command)
 {
 	FrCommandCap capabilities;
@@ -302,8 +302,8 @@ fr_command_unstuff_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_unstaff_get_packages (FrCommand  *comm,
-			         const char *mime_type)
+fr_command_unstaff_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+				 const char *mime_type G_GNUC_UNUSED)
 {
 	return PACKAGES ("unstaff");
 }

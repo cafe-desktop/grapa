@@ -254,7 +254,7 @@ fr_command_7z_list (FrCommand  *comm)
 static void
 parse_progress_line (FrCommand  *comm,
 		     const char *prefix,
-		     const char *message_prefix,
+		     const char *message_prefix G_GNUC_UNUSED,
 		     const char *line)
 {
 	int prefix_len;
@@ -444,8 +444,8 @@ fr_command_7z_extract (FrCommand  *comm,
 		       const char *from_file,
 		       GList      *file_list,
 		       const char *dest_dir,
-		       gboolean    overwrite,
-		       gboolean    skip_older,
+		       gboolean    overwrite G_GNUC_UNUSED,
+		       gboolean    skip_older G_GNUC_UNUSED,
 		       gboolean    junk_paths)
 {
 	GList *scan;
@@ -576,7 +576,7 @@ const char *sevenz_mime_types[] = { "application/x-7z-compressed",
 
 
 static const char **
-fr_command_7z_get_mime_types (FrCommand *comm)
+fr_command_7z_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	GSettings *settings;
 	settings = g_settings_new ("org.cafe.grapa.general");
@@ -650,7 +650,7 @@ fr_command_7z_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_7z_get_packages (FrCommand  *comm,
+fr_command_7z_get_packages (FrCommand  *comm G_GNUC_UNUSED,
 			    const char *mime_type)
 {
 	if (is_mime_type (mime_type, "application/zip") || is_mime_type (mime_type, "application/vnd.ms-cab-compressed"))

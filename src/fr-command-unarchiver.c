@@ -202,12 +202,12 @@ process_line__extract (char     *line,
 
 static void
 fr_command_unarchiver_extract (FrCommand  *comm,
-			       const char *from_file,
+			       const char *from_file G_GNUC_UNUSED,
 			       GList      *file_list,
 			       const char *dest_dir,
 			       gboolean    overwrite,
-			       gboolean    skip_older,
-			       gboolean    junk_paths)
+			       gboolean    skip_older G_GNUC_UNUSED,
+			       gboolean    junk_paths G_GNUC_UNUSED)
 {
 	FrCommandUnarchiver *unar_comm = FR_COMMAND_UNARCHIVER (comm);
 	GList               *scan;
@@ -292,15 +292,15 @@ const char *unarchiver_mime_type[] = { "application/zip",
 
 
 static const char **
-fr_command_unarchiver_get_mime_types (FrCommand *comm)
+fr_command_unarchiver_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return unarchiver_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_unarchiver_get_capabilities (FrCommand  *comm,
-					const char *mime_type,
+fr_command_unarchiver_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+					const char *mime_type G_GNUC_UNUSED,
 					gboolean    check_command)
 {
 	FrCommandCap capabilities;
@@ -314,8 +314,8 @@ fr_command_unarchiver_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_unarchiver_get_packages (FrCommand  *comm,
-				    const char *mime_type)
+fr_command_unarchiver_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+				    const char *mime_type G_GNUC_UNUSED)
 {
 	return PACKAGES ("unarchiver");
 }

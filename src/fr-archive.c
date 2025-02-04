@@ -338,7 +338,7 @@ fr_archive_action_completed (FrArchive       *archive,
 
 
 static gboolean
-archive_sticky_only_cb (FrProcess *process,
+archive_sticky_only_cb (FrProcess *process G_GNUC_UNUSED,
 			FrArchive *archive)
 {
 	fr_archive_stoppable (archive, FALSE);
@@ -719,7 +719,7 @@ create_command_to_create_archive (FrArchive  *archive,
 
 
 static void
-action_started (FrCommand *command,
+action_started (FrCommand *command G_GNUC_UNUSED,
 		FrAction   action,
 		FrArchive *archive)
 {
@@ -765,13 +765,13 @@ copy_to_remote_location_done (GError   *error,
 
 
 static void
-copy_to_remote_location_progress (goffset   current_file,
-                                  goffset   total_files,
-                                  GFile    *source,
-                                  GFile    *destination,
-                                  goffset   current_num_bytes,
-                                  goffset   total_num_bytes,
-                                  gpointer  user_data)
+copy_to_remote_location_progress (goffset   current_file G_GNUC_UNUSED,
+				  goffset   total_files G_GNUC_UNUSED,
+				  GFile    *source G_GNUC_UNUSED,
+				  GFile    *destination G_GNUC_UNUSED,
+				  goffset   current_num_bytes,
+				  goffset   total_num_bytes,
+				  gpointer  user_data)
 {
 	XferData *xfer_data = user_data;
 
@@ -899,12 +899,12 @@ copy_extracted_files_done (GError   *error,
 
 static void
 copy_extracted_files_progress (goffset   current_file,
-                               goffset   total_files,
-                               GFile    *source,
-                               GFile    *destination,
-                               goffset   current_num_bytes,
-                               goffset   total_num_bytes,
-                               gpointer  user_data)
+			       goffset   total_files,
+			       GFile    *source G_GNUC_UNUSED,
+			       GFile    *destination G_GNUC_UNUSED,
+			       goffset   current_num_bytes G_GNUC_UNUSED,
+			       goffset   total_num_bytes G_GNUC_UNUSED,
+			       gpointer  user_data)
 {
 	FrArchive *archive = user_data;
 
@@ -955,7 +955,7 @@ fr_archive_change_name (FrArchive  *archive,
 
 
 static void
-action_performed (FrCommand   *command,
+action_performed (FrCommand   *command G_GNUC_UNUSED,
 		  FrAction     action,
 		  FrProcError *error,
 		  FrArchive   *archive)
@@ -1045,7 +1045,7 @@ action_performed (FrCommand   *command,
 
 
 static gboolean
-archive_progress_cb (FrCommand *command,
+archive_progress_cb (FrCommand *command G_GNUC_UNUSED,
 		     double     fraction,
 		     FrArchive *archive)
 {
@@ -1058,7 +1058,7 @@ archive_progress_cb (FrCommand *command,
 
 
 static gboolean
-archive_message_cb  (FrCommand  *command,
+archive_message_cb  (FrCommand  *command G_GNUC_UNUSED,
 		     const char *msg,
 		     FrArchive  *archive)
 {
@@ -1071,7 +1071,7 @@ archive_message_cb  (FrCommand  *command,
 
 
 static gboolean
-archive_working_archive_cb  (FrCommand  *command,
+archive_working_archive_cb  (FrCommand  *command G_GNUC_UNUSED,
 			     const char *archive_filename,
 			     FrArchive  *archive)
 {
@@ -1244,13 +1244,13 @@ copy_remote_file_done (GError   *error,
 
 
 static void
-copy_remote_file_progress (goffset   current_file,
-                           goffset   total_files,
-                           GFile    *source,
-                           GFile    *destination,
-                           goffset   current_num_bytes,
-                           goffset   total_num_bytes,
-                           gpointer  user_data)
+copy_remote_file_progress (goffset   current_file G_GNUC_UNUSED,
+			   goffset   total_files G_GNUC_UNUSED,
+			   GFile    *source G_GNUC_UNUSED,
+			   GFile    *destination G_GNUC_UNUSED,
+			   goffset   current_num_bytes,
+			   goffset   total_num_bytes,
+			   gpointer  user_data)
 {
 	XferData *xfer_data = user_data;
 
@@ -1868,12 +1868,12 @@ copy_remote_files_done (GError   *error,
 
 static void
 copy_remote_files_progress (goffset   current_file,
-                            goffset   total_files,
-                            GFile    *source,
-                            GFile    *destination,
-                            goffset   current_num_bytes,
-                            goffset   total_num_bytes,
-                            gpointer  user_data)
+			    goffset   total_files,
+			    GFile    *source G_GNUC_UNUSED,
+			    GFile    *destination G_GNUC_UNUSED,
+			    goffset   current_num_bytes G_GNUC_UNUSED,
+			    goffset   total_num_bytes G_GNUC_UNUSED,
+			    gpointer  user_data)
 {
 	XferData *xfer_data = user_data;
 
