@@ -158,7 +158,6 @@
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
                     <property name="halign">start</property>
-                    <property name="label" translatable="yes">The file has been modified with an external application. If you don't update the file in the archive, all of your changes will be lost.</property>
                     <property name="wrap">True</property>
                   </object>
                   <packing>
