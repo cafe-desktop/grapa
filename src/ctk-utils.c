@@ -28,8 +28,6 @@
 
 #include "ctk-utils.h"
 
-#define LOAD_BUFFER_SIZE 65536
-
 
 static void
 count_selected (CtkTreeModel *model G_GNUC_UNUSED,
