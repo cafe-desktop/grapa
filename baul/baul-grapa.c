@@ -36,7 +36,7 @@ static GObjectClass *parent_class;
 
 static void
 extract_to_callback (BaulMenuItem *item,
-		     gpointer          user_data)
+		     gpointer      user_data G_GNUC_UNUSED)
 {
 	GList            *files, *scan;
 	char             *default_dir;
@@ -74,7 +74,7 @@ extract_to_callback (BaulMenuItem *item,
 
 static void
 extract_here_callback (BaulMenuItem *item,
-		       gpointer          user_data)
+		       gpointer      user_data G_GNUC_UNUSED)
 {
 	GList            *files, *scan;
 	GString          *cmd;
@@ -106,7 +106,7 @@ extract_here_callback (BaulMenuItem *item,
 
 static void
 add_callback (BaulMenuItem *item,
-	      gpointer          user_data)
+	      gpointer      user_data G_GNUC_UNUSED)
 {
 	GList            *files, *scan;
 	char             *uri, *dir;
@@ -273,8 +273,8 @@ unsupported_scheme (BaulFileInfo *file)
 
 static GList *
 baul_fr_get_file_items (BaulMenuProvider *provider,
-			    CtkWidget            *window,
-			    GList                *files)
+			CtkWidget        *window G_GNUC_UNUSED,
+			GList            *files)
 {
 	GList    *items = NULL;
 	GList    *scan;
@@ -394,7 +394,7 @@ baul_fr_menu_provider_iface_init (BaulMenuProviderIface *iface)
 
 
 static void
-baul_fr_instance_init (BaulFr *fr)
+baul_fr_instance_init (BaulFr *fr G_GNUC_UNUSED)
 {
 }
 

@@ -88,9 +88,9 @@ new_archive (DlgNewData *data,
    archive is unsupported
 */
 static gboolean
-is_supported_extension (CtkWidget *file_sel,
-            char      *filename,
-            int       *file_type)
+is_supported_extension (CtkWidget *file_sel G_GNUC_UNUSED,
+			char      *filename,
+			int       *file_type)
 {
     int i;
     for (i = 0; file_type[i] != -1; i++)
@@ -265,9 +265,9 @@ get_archive_filename_from_selector (DlgNewData *data)
 
 
 static void
-new_file_response_cb (CtkWidget  *w,
-              int         response,
-              DlgNewData *data)
+new_file_response_cb (CtkWidget  *w G_GNUC_UNUSED,
+		      int         response,
+		      DlgNewData *data)
 {
     char *path;
 
@@ -313,8 +313,8 @@ show_new_archive_dialog (FrWindow   *window,
 
 
 void
-activate_action_new (CtkAction *action,
-             gpointer   data)
+activate_action_new (CtkAction *action G_GNUC_UNUSED,
+		     gpointer   data)
 {
     show_new_archive_dialog ((FrWindow*)data, NULL);
 }
@@ -325,8 +325,8 @@ activate_action_new (CtkAction *action,
 
 static void
 window_archive_loaded_cb (FrWindow  *window,
-              gboolean   success,
-              CtkWidget *file_sel)
+			  gboolean   success,
+			  CtkWidget *file_sel)
 {
     if (success) {
         g_signal_handlers_disconnect_by_data (window, file_sel);
@@ -341,9 +341,9 @@ window_archive_loaded_cb (FrWindow  *window,
 
 
 static void
-open_file_response_cb (CtkWidget *w,
-               int        response,
-               CtkWidget *file_sel)
+open_file_response_cb (CtkWidget *w G_GNUC_UNUSED,
+		       int        response,
+		       CtkWidget *file_sel)
 {
     FrWindow *window = NULL;
     char     *uri;
@@ -372,8 +372,8 @@ open_file_response_cb (CtkWidget *w,
 
 
 void
-activate_action_open (CtkAction *action,
-              gpointer   data)
+activate_action_open (CtkAction *action G_GNUC_UNUSED,
+		      gpointer   data)
 {
     CtkWidget     *file_sel;
     FrWindow      *window = data;
@@ -420,9 +420,9 @@ activate_action_open (CtkAction *action,
 
 
 static void
-save_file_response_cb (CtkWidget  *w,
-               gint        response,
-               DlgNewData *data)
+save_file_response_cb (CtkWidget  *w G_GNUC_UNUSED,
+		       gint        response,
+		       DlgNewData *data)
 {
     char       *path;
     const char *password;
@@ -460,8 +460,8 @@ save_file_response_cb (CtkWidget  *w,
 
 
 void
-activate_action_save_as (CtkAction *action,
-             gpointer   callback_data)
+activate_action_save_as (CtkAction *action G_GNUC_UNUSED,
+			 gpointer   callback_data)
 {
     FrWindow   *window = callback_data;
     DlgNewData *data;
@@ -502,8 +502,8 @@ activate_action_save_as (CtkAction *action,
 
 
 void
-activate_action_test_archive (CtkAction *action,
-                  gpointer   data)
+activate_action_test_archive (CtkAction *action G_GNUC_UNUSED,
+			      gpointer   data)
 {
     FrWindow *window = data;
 
@@ -512,8 +512,8 @@ activate_action_test_archive (CtkAction *action,
 
 
 void
-activate_action_properties (CtkAction *action,
-                gpointer   data)
+activate_action_properties (CtkAction *action G_GNUC_UNUSED,
+			    gpointer   data)
 {
     FrWindow *window = data;
 
@@ -522,8 +522,8 @@ activate_action_properties (CtkAction *action,
 
 
 void
-activate_action_close (CtkAction *action,
-               gpointer   data)
+activate_action_close (CtkAction *action G_GNUC_UNUSED,
+		       gpointer   data)
 {
     FrWindow *window = data;
 
@@ -532,120 +532,120 @@ activate_action_close (CtkAction *action,
 
 
 void
-activate_action_add_files (CtkAction *action,
-               gpointer   data)
+activate_action_add_files (CtkAction *action G_GNUC_UNUSED,
+			   gpointer   data)
 {
     add_files_cb (NULL, data);
 }
 
 
 void
-activate_action_add_folder (CtkAction *action,
-                gpointer   data)
+activate_action_add_folder (CtkAction *action G_GNUC_UNUSED,
+			    gpointer   data)
 {
     add_folder_cb (NULL, data);
 }
 
 
 void
-activate_action_extract (CtkAction *action,
-             gpointer   data)
+activate_action_extract (CtkAction *action G_GNUC_UNUSED,
+			 gpointer   data)
 {
     dlg_extract (NULL, data);
 }
 
 
 void
-activate_action_extract_folder_from_sidebar (CtkAction *action,
-                         gpointer   data)
+activate_action_extract_folder_from_sidebar (CtkAction *action G_GNUC_UNUSED,
+					     gpointer   data)
 {
     dlg_extract_folder_from_sidebar (NULL, data);
 }
 
 
 void
-activate_action_copy (CtkAction *action,
-              gpointer   data)
+activate_action_copy (CtkAction *action G_GNUC_UNUSED,
+		      gpointer   data)
 {
     fr_window_copy_selection ((FrWindow*) data, FALSE);
 }
 
 
 void
-activate_action_cut (CtkAction *action,
-             gpointer   data)
+activate_action_cut (CtkAction *action G_GNUC_UNUSED,
+		     gpointer   data)
 {
     fr_window_cut_selection ((FrWindow*) data, FALSE);
 }
 
 
 void
-activate_action_paste (CtkAction *action,
-               gpointer   data)
+activate_action_paste (CtkAction *action G_GNUC_UNUSED,
+		       gpointer   data)
 {
     fr_window_paste_selection ((FrWindow*) data, FALSE);
 }
 
 
 void
-activate_action_rename (CtkAction *action,
-            gpointer   data)
+activate_action_rename (CtkAction *action G_GNUC_UNUSED,
+			gpointer   data)
 {
     fr_window_rename_selection ((FrWindow*) data, FALSE);
 }
 
 
 void
-activate_action_delete (CtkAction *action,
-            gpointer   data)
+activate_action_delete (CtkAction *action G_GNUC_UNUSED,
+			gpointer   data)
 {
     dlg_delete (NULL, data);
 }
 
 
 void
-activate_action_copy_folder_from_sidebar (CtkAction *action,
-                          gpointer   data)
+activate_action_copy_folder_from_sidebar (CtkAction *action G_GNUC_UNUSED,
+					  gpointer   data)
 {
     fr_window_copy_selection ((FrWindow*) data, TRUE);
 }
 
 
 void
-activate_action_cut_folder_from_sidebar (CtkAction *action,
-                         gpointer   data)
+activate_action_cut_folder_from_sidebar (CtkAction *action G_GNUC_UNUSED,
+					 gpointer   data)
 {
     fr_window_cut_selection ((FrWindow*) data, TRUE);
 }
 
 
 void
-activate_action_paste_folder_from_sidebar (CtkAction *action,
-                           gpointer   data)
+activate_action_paste_folder_from_sidebar (CtkAction *action G_GNUC_UNUSED,
+					   gpointer   data)
 {
     fr_window_paste_selection ((FrWindow*) data, TRUE);
 }
 
 
 void
-activate_action_rename_folder_from_sidebar (CtkAction *action,
-                        gpointer   data)
+activate_action_rename_folder_from_sidebar (CtkAction *action G_GNUC_UNUSED,
+					    gpointer   data)
 {
     fr_window_rename_selection ((FrWindow*) data, TRUE);
 }
 
 
 void
-activate_action_delete_folder_from_sidebar (CtkAction *action,
-                        gpointer   data)
+activate_action_delete_folder_from_sidebar (CtkAction *action G_GNUC_UNUSED,
+					    gpointer   data)
 {
     dlg_delete_from_sidebar (NULL, data);
 }
 
 
 void
-activate_action_find (CtkAction *action,
-              gpointer   data)
+activate_action_find (CtkAction *action G_GNUC_UNUSED,
+		      gpointer   data)
 {
     FrWindow *window = data;
 
@@ -654,8 +654,8 @@ activate_action_find (CtkAction *action,
 
 
 void
-activate_action_select_all (CtkAction *action,
-                gpointer   data)
+activate_action_select_all (CtkAction *action G_GNUC_UNUSED,
+			    gpointer   data)
 {
     FrWindow *window = data;
 
@@ -664,8 +664,8 @@ activate_action_select_all (CtkAction *action,
 
 
 void
-activate_action_deselect_all (CtkAction *action,
-                  gpointer   data)
+activate_action_deselect_all (CtkAction *action G_GNUC_UNUSED,
+			      gpointer   data)
 {
     FrWindow *window = data;
 
@@ -674,16 +674,16 @@ activate_action_deselect_all (CtkAction *action,
 
 
 void
-activate_action_open_with (CtkAction *action,
-               gpointer   data)
+activate_action_open_with (CtkAction *action G_GNUC_UNUSED,
+			   gpointer   data)
 {
     open_with_cb (NULL, (FrWindow*) data);
 }
 
 
 void
-activate_action_view_or_open (CtkAction *action,
-                  gpointer   data)
+activate_action_view_or_open (CtkAction *action G_GNUC_UNUSED,
+			      gpointer   data)
 {
     FrWindow *window = data;
     GList    *file_list;
@@ -697,8 +697,8 @@ activate_action_view_or_open (CtkAction *action,
 
 
 void
-activate_action_open_folder (CtkAction *action,
-                 gpointer   data)
+activate_action_open_folder (CtkAction *action G_GNUC_UNUSED,
+			     gpointer   data)
 {
     FrWindow *window = data;
     fr_window_current_folder_activated (window, FALSE);
@@ -706,8 +706,8 @@ activate_action_open_folder (CtkAction *action,
 
 
 void
-activate_action_open_folder_from_sidebar (CtkAction *action,
-                              gpointer   data)
+activate_action_open_folder_from_sidebar (CtkAction *action G_GNUC_UNUSED,
+					  gpointer   data)
 {
     FrWindow *window = data;
     fr_window_current_folder_activated (window, TRUE);
@@ -715,8 +715,8 @@ activate_action_open_folder_from_sidebar (CtkAction *action,
 
 
 void
-activate_action_password (CtkAction *action,
-              gpointer   data)
+activate_action_password (CtkAction *action G_GNUC_UNUSED,
+			  gpointer   data)
 {
     dlg_password (NULL, (FrWindow*) data);
 }
@@ -724,7 +724,7 @@ activate_action_password (CtkAction *action,
 
 void
 activate_action_view_toolbar (CtkAction *action,
-                  gpointer   data)
+			      gpointer   data G_GNUC_UNUSED)
 {
     GSettings *settings;
 
@@ -736,7 +736,7 @@ activate_action_view_toolbar (CtkAction *action,
 
 void
 activate_action_view_statusbar (CtkAction *action,
-                gpointer   data)
+				gpointer   data G_GNUC_UNUSED)
 {
     GSettings *settings;
 
@@ -748,7 +748,7 @@ activate_action_view_statusbar (CtkAction *action,
 
 void
 activate_action_view_folders (CtkAction *action,
-                gpointer   data)
+			      gpointer   data G_GNUC_UNUSED)
 {
     GSettings *settings;
 
@@ -759,8 +759,8 @@ activate_action_view_folders (CtkAction *action,
 
 
 void
-activate_action_stop (CtkAction *action,
-              gpointer   data)
+activate_action_stop (CtkAction *action G_GNUC_UNUSED,
+		      gpointer   data)
 {
     FrWindow *window = data;
     fr_window_stop (window);
@@ -768,8 +768,8 @@ activate_action_stop (CtkAction *action,
 
 
 void
-activate_action_reload (CtkAction *action,
-            gpointer   data)
+activate_action_reload (CtkAction *action G_GNUC_UNUSED,
+			gpointer   data)
 {
     FrWindow *window = data;
 
@@ -779,7 +779,7 @@ activate_action_reload (CtkAction *action,
 
 void
 activate_action_sort_reverse_order (CtkAction *action,
-                    gpointer   data)
+				    gpointer   data)
 {
     FrWindow *window = data;
 
@@ -788,8 +788,8 @@ activate_action_sort_reverse_order (CtkAction *action,
 
 
 void
-activate_action_last_output (CtkAction *action,
-                 gpointer   data)
+activate_action_last_output (CtkAction *action G_GNUC_UNUSED,
+			     gpointer   data)
 {
     FrWindow *window = data;
     fr_window_view_last_output (window, _("Last Output"));
@@ -797,8 +797,8 @@ activate_action_last_output (CtkAction *action,
 
 
 void
-activate_action_go_back (CtkAction *action,
-             gpointer   data)
+activate_action_go_back (CtkAction *action G_GNUC_UNUSED,
+			 gpointer   data)
 {
     FrWindow *window = data;
     fr_window_go_back (window);
@@ -806,8 +806,8 @@ activate_action_go_back (CtkAction *action,
 
 
 void
-activate_action_go_forward (CtkAction *action,
-                gpointer   data)
+activate_action_go_forward (CtkAction *action G_GNUC_UNUSED,
+			    gpointer   data)
 {
     FrWindow *window = data;
     fr_window_go_forward (window);
@@ -815,8 +815,8 @@ activate_action_go_forward (CtkAction *action,
 
 
 void
-activate_action_go_up (CtkAction *action,
-               gpointer   data)
+activate_action_go_up (CtkAction *action G_GNUC_UNUSED,
+		       gpointer   data)
 {
     FrWindow *window = data;
     fr_window_go_up_one_level (window);
@@ -824,8 +824,8 @@ activate_action_go_up (CtkAction *action,
 
 
 void
-activate_action_go_home (CtkAction *action,
-             gpointer   data)
+activate_action_go_home (CtkAction *action G_GNUC_UNUSED,
+			 gpointer   data)
 {
     FrWindow *window = data;
     fr_window_go_to_location (window, "/", FALSE);
@@ -833,8 +833,8 @@ activate_action_go_home (CtkAction *action,
 
 
 void
-activate_action_manual (CtkAction *action,
-            gpointer   data)
+activate_action_manual (CtkAction *action G_GNUC_UNUSED,
+			gpointer   data)
 {
     FrWindow *window = data;
 
@@ -846,8 +846,8 @@ activate_action_manual (CtkAction *action,
 #define EMAILIFY(string) (g_strdelimit ((string), "%", '@'))
 
 void
-activate_action_about (CtkAction *action,
-               gpointer   gp)
+activate_action_about (CtkAction *action G_GNUC_UNUSED,
+		       gpointer   gp)
 {
     FrWindow *window = gp;
     const char *documenters [] = {

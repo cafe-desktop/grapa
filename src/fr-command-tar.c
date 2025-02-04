@@ -297,7 +297,7 @@ fr_command_tar_add (FrCommand     *comm,
 		    const char    *from_file,
 		    GList         *file_list,
 		    const char    *base_dir,
-		    gboolean       update,
+		    gboolean       update G_GNUC_UNUSED,
 		    gboolean       recursive)
 {
 	FrCommandTar *c_tar = FR_COMMAND_TAR (comm);
@@ -415,12 +415,12 @@ process_line__extract (char     *line,
 
 static void
 fr_command_tar_extract (FrCommand  *comm,
-		        const char *from_file,
+			const char *from_file,
 			GList      *file_list,
 			const char *dest_dir,
 			gboolean    overwrite,
 			gboolean    skip_older,
-			gboolean    junk_paths)
+			gboolean    junk_paths G_GNUC_UNUSED)
 {
 	GList *scan;
 
@@ -842,7 +842,7 @@ get_uncompressed_name (FrCommandTar *c_tar,
 
 
 static char *
-get_temp_name (FrCommandTar *c_tar,
+get_temp_name (FrCommandTar *c_tar G_GNUC_UNUSED,
 	       const char   *filepath)
 {
 	char *dirname = remove_level_from_path (filepath);
@@ -1002,7 +1002,7 @@ fr_command_tar_uncompress (FrCommand *comm)
 
 
 static void
-fr_command_tar_handle_error (FrCommand   *comm,
+fr_command_tar_handle_error (FrCommand   *comm G_GNUC_UNUSED,
 			     FrProcError *error)
 {
 	if (error->type != FR_PROC_ERROR_NONE) {
@@ -1028,15 +1028,15 @@ const char *tar_mime_types[] = { "application/x-compressed-tar",
 
 
 static const char **
-fr_command_tar_get_mime_types (FrCommand *comm)
+fr_command_tar_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return tar_mime_types;
 }
 
 
 static FrCommandCap
-fr_command_tar_get_capabilities (FrCommand  *comm,
-			         const char *mime_type,
+fr_command_tar_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+				 const char *mime_type,
 				 gboolean    check_command)
 {
 	FrCommandCap capabilities;
@@ -1131,7 +1131,7 @@ fr_command_tar_set_mime_type (FrCommand  *comm,
 
 
 static const char *
-fr_command_tar_get_packages (FrCommand  *comm,
+fr_command_tar_get_packages (FrCommand  *comm G_GNUC_UNUSED,
 			     const char *mime_type)
 {
 	if (is_mime_type (mime_type, "application/x-tar"))

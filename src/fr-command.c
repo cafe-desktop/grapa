@@ -117,63 +117,63 @@ fr_command_get_type ()
 
 
 static void
-base_fr_command_list (FrCommand  *comm)
+base_fr_command_list (FrCommand  *comm G_GNUC_UNUSED)
 {
 }
 
 
 static void
-base_fr_command_add (FrCommand     *comm,
-		     const char    *from_file,
-		     GList         *file_list,
-		     const char    *base_dir,
-		     gboolean       update,
-		     gboolean       recursive)
+base_fr_command_add (FrCommand  *comm G_GNUC_UNUSED,
+		     const char *from_file G_GNUC_UNUSED,
+		     GList      *file_list G_GNUC_UNUSED,
+		     const char *base_dir G_GNUC_UNUSED,
+		     gboolean    update G_GNUC_UNUSED,
+		     gboolean    recursive G_GNUC_UNUSED)
 {
 }
 
 
 static void
-base_fr_command_delete (FrCommand  *comm,
-		        const char *from_file,
-			GList       *file_list)
+base_fr_command_delete (FrCommand  *comm G_GNUC_UNUSED,
+			const char *from_file G_GNUC_UNUSED,
+			GList      *file_list G_GNUC_UNUSED)
 {
 }
 
 
 static void
-base_fr_command_extract (FrCommand  *comm,
-		         const char *from_file,
-			 GList      *file_list,
-			 const char *dest_dir,
-			 gboolean    overwrite,
-			 gboolean    skip_older,
-			 gboolean    junk_paths)
+base_fr_command_extract (FrCommand  *comm G_GNUC_UNUSED,
+		         const char *from_file G_GNUC_UNUSED,
+			 GList      *file_list G_GNUC_UNUSED,
+			 const char *dest_dir G_GNUC_UNUSED,
+			 gboolean    overwrite G_GNUC_UNUSED,
+			 gboolean    skip_older G_GNUC_UNUSED,
+			 gboolean    junk_paths G_GNUC_UNUSED)
 {
 }
 
 
 static void
-base_fr_command_test (FrCommand *comm)
+base_fr_command_test (FrCommand *comm G_GNUC_UNUSED)
 {
 }
 
 
 static void
-base_fr_command_uncompress (FrCommand *comm)
+base_fr_command_uncompress (FrCommand *comm G_GNUC_UNUSED)
 {
 }
 
 
 static void
-base_fr_command_recompress (FrCommand *comm)
+base_fr_command_recompress (FrCommand *comm G_GNUC_UNUSED)
 {
 }
 
 
 static void
-base_fr_command_handle_error (FrCommand   *comm,
-			      FrProcError *error)
+base_fr_command_handle_error (FrCommand   *comm G_GNUC_UNUSED,
+			      FrProcError *error G_GNUC_UNUSED)
 {
 }
 
@@ -182,16 +182,16 @@ const char **void_mime_types = { NULL };
 
 
 static const char **
-base_fr_command_get_mime_types (FrCommand *comm)
+base_fr_command_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return void_mime_types;
 }
 
 
 static FrCommandCap
-base_fr_command_get_capabilities (FrCommand  *comm,
-			          const char *mime_type,
-			          gboolean    check_command)
+base_fr_command_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+				  const char *mime_type G_GNUC_UNUSED,
+				  gboolean    check_command G_GNUC_UNUSED)
 {
 	return FR_COMMAND_CAN_DO_NOTHING;
 }
@@ -207,15 +207,15 @@ base_fr_command_set_mime_type (FrCommand  *comm,
 
 
 static const char *
-base_fr_command_get_packages (FrCommand  *comm,
-			      const char *mime_type)
+base_fr_command_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+			      const char *mime_type G_GNUC_UNUSED)
 {
 	return NULL;
 }
 
 
 static void
-fr_command_start (FrProcess *process,
+fr_command_start (FrProcess *process G_GNUC_UNUSED,
 		  gpointer   data)
 {
 	FrCommand *comm = FR_COMMAND (data);
@@ -228,7 +228,7 @@ fr_command_start (FrProcess *process,
 
 
 static void
-fr_command_done (FrProcess   *process,
+fr_command_done (FrProcess   *process G_GNUC_UNUSED,
 		 FrProcError *error,
 		 gpointer     data)
 {
@@ -291,7 +291,7 @@ static void
 fr_command_set_property (GObject      *object,
 			 guint         prop_id,
 			 const GValue *value,
-			 GParamSpec   *pspec)
+			 GParamSpec   *pspec G_GNUC_UNUSED)
 {
 	FrCommand *comm;
 

@@ -438,9 +438,9 @@ fr_window_free_batch_data (FrWindow *window)
 
 
 static void
-gh_unref_pixbuf (gpointer key,
+gh_unref_pixbuf (gpointer key G_GNUC_UNUSED,
 		 gpointer value,
-		 gpointer user_data)
+		 gpointer user_data G_GNUC_UNUSED)
 {
 	g_object_unref (value);
 }
@@ -761,7 +761,7 @@ static void fr_window_update_paste_command_sensitivity (FrWindow *, CtkClipboard
 
 static void
 clipboard_owner_change_cb (CtkClipboard *clipboard,
-			   CdkEvent     *event,
+			   CdkEvent     *event G_GNUC_UNUSED,
 			   gpointer      user_data)
 {
 	fr_window_update_paste_command_sensitivity ((FrWindow *) user_data, clipboard);
@@ -770,7 +770,7 @@ clipboard_owner_change_cb (CtkClipboard *clipboard,
 
 static void
 fr_window_realized (CtkWidget *window,
-		    gpointer  *data)
+		    gpointer  *data G_GNUC_UNUSED)
 {
 	CtkClipboard *clipboard;
 
@@ -784,7 +784,7 @@ fr_window_realized (CtkWidget *window,
 
 static void
 fr_window_unrealized (CtkWidget *window,
-		      gpointer  *data)
+		      gpointer  *data G_GNUC_UNUSED)
 {
 	CtkClipboard *clipboard;
 
@@ -1310,7 +1310,7 @@ get_mime_type_icon (const char *mime_type)
 
 
 static GdkPixbuf *
-get_icon (CtkWidget *widget,
+get_icon (CtkWidget *widget G_GNUC_UNUSED,
 	  FileData  *fdata)
 {
 	GdkPixbuf  *pixbuf = NULL;
@@ -1346,7 +1346,7 @@ get_icon (CtkWidget *widget,
 
 
 static GdkPixbuf *
-get_emblem (CtkWidget *widget,
+get_emblem (CtkWidget *widget G_GNUC_UNUSED,
 	    FileData  *fdata)
 {
 	GdkPixbuf *pixbuf = NULL;
@@ -1414,7 +1414,7 @@ get_sort_method_from_column (int column_id)
 
 static void
 add_selected_from_list_view (CtkTreeModel *model,
-			     CtkTreePath  *path,
+			     CtkTreePath  *path G_GNUC_UNUSED,
 			     CtkTreeIter  *iter,
 			     gpointer      data)
 {
@@ -1430,7 +1430,7 @@ add_selected_from_list_view (CtkTreeModel *model,
 
 static void
 add_selected_from_tree_view (CtkTreeModel *model,
-			     CtkTreePath  *path,
+			     CtkTreePath  *path G_GNUC_UNUSED,
 			     CtkTreeIter  *iter,
 			     gpointer      data)
 {
@@ -1446,7 +1446,7 @@ add_selected_from_tree_view (CtkTreeModel *model,
 
 static void
 add_selected_fd (CtkTreeModel *model,
-		 CtkTreePath  *path,
+		 CtkTreePath  *path G_GNUC_UNUSED,
 		 CtkTreeIter  *iter,
 		 gpointer      data)
 {
@@ -2027,7 +2027,7 @@ fr_window_update_title (FrWindow *window)
 
 static void
 check_whether_has_a_dir (CtkTreeModel *model,
-			 CtkTreePath  *path,
+			 CtkTreePath  *path G_GNUC_UNUSED,
 			 CtkTreeIter  *iter,
 			 gpointer      data)
 {
@@ -2175,7 +2175,7 @@ fr_window_update_sensitivity (FrWindow *window)
 
 
 static gboolean
-location_entry_key_press_event_cb (CtkWidget   *widget,
+location_entry_key_press_event_cb (CtkWidget   *widget G_GNUC_UNUSED,
 				   CdkEventKey *event,
 				   FrWindow    *window)
 {
@@ -2280,8 +2280,8 @@ close_progress_dialog (FrWindow *window,
 
 
 static gboolean
-progress_dialog_delete_event (CtkWidget *caller,
-			      CdkEvent  *event,
+progress_dialog_delete_event (CtkWidget *caller G_GNUC_UNUSED,
+			      CdkEvent  *event G_GNUC_UNUSED,
 			      FrWindow  *window)
 {
 	if (window->priv->stoppable) {
@@ -2373,7 +2373,7 @@ static void fr_state_switch (FrWindow  *window)
 }
 
 static void
-progress_dialog_response (CtkDialog *dialog,
+progress_dialog_response (CtkDialog *dialog G_GNUC_UNUSED,
 			  int        response_id,
 			  FrWindow  *window)
 {
@@ -2514,7 +2514,7 @@ progress_dialog_update_action_description (FrWindow *window)
 
 
 static gboolean
-fr_window_working_archive_cb (FrCommand  *command,
+fr_window_working_archive_cb (FrCommand  *command G_GNUC_UNUSED,
 			      const char *archive_filename,
 			      FrWindow   *window)
 {
@@ -2529,7 +2529,7 @@ fr_window_working_archive_cb (FrCommand  *command,
 
 
 static gboolean
-fr_window_message_cb (FrCommand  *command,
+fr_window_message_cb (FrCommand  *command G_GNUC_UNUSED,
 		      const char *msg,
 		      FrWindow   *window)
 {
@@ -2965,7 +2965,7 @@ fr_window_add_to_recent_list (FrWindow *window,
 
 
 static void
-fr_window_remove_from_recent_list (FrWindow *window,
+fr_window_remove_from_recent_list (FrWindow *window G_GNUC_UNUSED,
 				   char     *filename)
 {
 	if (filename != NULL)
@@ -2975,7 +2975,7 @@ fr_window_remove_from_recent_list (FrWindow *window,
 
 static void
 error_dialog_response_cb (CtkDialog *dialog,
-			  gint       arg1,
+			  gint       arg1 G_GNUC_UNUSED,
 			  gpointer   user_data)
 {
 	FrWindow  *window = user_data;
@@ -3680,7 +3680,7 @@ fr_window_get_n_selected_files (FrWindow *window)
 
 
 static int
-dir_tree_button_press_cb (CtkWidget      *widget,
+dir_tree_button_press_cb (CtkWidget      *widget G_GNUC_UNUSED,
 			  CdkEventButton *event,
 			  gpointer        data)
 {
@@ -3820,9 +3820,9 @@ fr_window_current_folder_activated (FrWindow *window,
 
 
 static gboolean
-row_activated_cb (CtkTreeView       *tree_view,
+row_activated_cb (CtkTreeView       *tree_view G_GNUC_UNUSED,
 		  CtkTreePath       *path,
-		  CtkTreeViewColumn *column,
+		  CtkTreeViewColumn *column G_GNUC_UNUSED,
 		  gpointer           data)
 {
 	FrWindow    *window = data;
@@ -3858,7 +3858,7 @@ row_activated_cb (CtkTreeView       *tree_view,
 
 
 static int
-file_button_press_cb (CtkWidget      *widget,
+file_button_press_cb (CtkWidget      *widget G_GNUC_UNUSED,
 		      CdkEventButton *event,
 		      gpointer        data)
 {
@@ -4058,9 +4058,9 @@ file_motion_notify_callback (CtkWidget *widget,
 
 
 static gboolean
-file_leave_notify_callback (CtkWidget *widget,
-			    CdkEventCrossing *event,
-			    gpointer user_data)
+file_leave_notify_callback (CtkWidget        *widget G_GNUC_UNUSED,
+			    CdkEventCrossing *event G_GNUC_UNUSED,
+			    gpointer          user_data)
 {
 	FrWindow    *window = user_data;
 	CtkTreeIter  iter;
@@ -4104,10 +4104,10 @@ get_uri_list_from_selection_data (char *uri_list)
 
 
 static gboolean
-fr_window_drag_motion (CtkWidget      *widget,
+fr_window_drag_motion (CtkWidget      *widget G_GNUC_UNUSED,
 		       CdkDragContext *context,
-		       gint            x,
-		       gint            y,
+		       gint            x G_GNUC_UNUSED,
+		       gint            y G_GNUC_UNUSED,
 		       guint           time,
 		       gpointer        user_data)
 {
@@ -4158,12 +4158,12 @@ get_clipboard_data_from_selection_data (FrWindow   *window,
 
 
 static void
-fr_window_drag_data_received  (CtkWidget          *widget,
+fr_window_drag_data_received  (CtkWidget          *widget G_GNUC_UNUSED,
 			       CdkDragContext     *context,
-			       gint                x,
-			       gint                y,
+			       gint                x G_GNUC_UNUSED,
+			       gint                y G_GNUC_UNUSED,
 			       CtkSelectionData   *data,
-			       guint               info,
+			       guint               info G_GNUC_UNUSED,
 			       guint               time,
 			       gpointer            extra_data)
 {
@@ -4327,9 +4327,9 @@ fr_window_drag_data_received  (CtkWidget          *widget,
 
 
 static gboolean
-file_list_drag_begin (CtkWidget          *widget,
-		      CdkDragContext     *context,
-		      gpointer            data)
+file_list_drag_begin (CtkWidget      *widget G_GNUC_UNUSED,
+		      CdkDragContext *context,
+		      gpointer        data)
 {
 	FrWindow *window = data;
 
@@ -4355,7 +4355,7 @@ file_list_drag_begin (CtkWidget          *widget,
 
 
 static void
-file_list_drag_end (CtkWidget      *widget,
+file_list_drag_end (CtkWidget      *widget G_GNUC_UNUSED,
 		    CdkDragContext *context,
 		    gpointer        data)
 {
@@ -4479,11 +4479,11 @@ get_selection_data_from_clipboard_data (FrWindow        *window,
 
 
 static gboolean
-fr_window_folder_tree_drag_data_get (CtkWidget        *widget,
+fr_window_folder_tree_drag_data_get (CtkWidget        *widget G_GNUC_UNUSED,
 				     CdkDragContext   *context,
 				     CtkSelectionData *selection_data,
-				     guint             info,
-				     guint             time,
+				     guint             info G_GNUC_UNUSED,
+				     guint             time G_GNUC_UNUSED,
 				     gpointer          user_data)
 {
 	FrWindow *window = user_data;
@@ -4663,7 +4663,7 @@ fr_window_deactivate_filter (FrWindow *window)
 
 
 static gboolean
-key_press_cb (CtkWidget   *widget,
+key_press_cb (CtkWidget   *widget G_GNUC_UNUSED,
 	      CdkEventKey *event,
 	      gpointer     data)
 {
@@ -4778,7 +4778,7 @@ dir_tree_selection_changed_cb (CtkTreeSelection *selection,
 
 
 static gboolean
-selection_changed_cb (CtkTreeSelection *selection,
+selection_changed_cb (CtkTreeSelection *selection G_GNUC_UNUSED,
 		      gpointer          user_data)
 {
 	FrWindow *window = user_data;
@@ -4791,8 +4791,8 @@ selection_changed_cb (CtkTreeSelection *selection,
 
 
 static void
-fr_window_delete_event_cb (CtkWidget *caller,
-			   CdkEvent  *event,
+fr_window_delete_event_cb (CtkWidget *caller G_GNUC_UNUSED,
+			   CdkEvent  *event G_GNUC_UNUSED,
 			   FrWindow  *window)
 {
 	fr_window_close (window);
@@ -4816,7 +4816,7 @@ is_single_click_policy (FrWindow *window)
 
 
 static void
-filename_cell_data_func (CtkTreeViewColumn *column,
+filename_cell_data_func (CtkTreeViewColumn *column G_GNUC_UNUSED,
 			 CtkCellRenderer   *renderer,
 			 CtkTreeModel      *model,
 			 CtkTreeIter       *iter,
@@ -4854,7 +4854,7 @@ filename_cell_data_func (CtkTreeViewColumn *column,
 
 
 static void
-add_dir_tree_columns (FrWindow    *window,
+add_dir_tree_columns (FrWindow    *window G_GNUC_UNUSED,
 		      CtkTreeView *treeview)
 {
 	CtkCellRenderer   *renderer;
@@ -4994,7 +4994,7 @@ static int
 name_column_sort_func (CtkTreeModel *model,
 		       CtkTreeIter  *a,
 		       CtkTreeIter  *b,
-		       gpointer      user_data)
+		       gpointer      user_data G_GNUC_UNUSED)
 {
 	FileData *fdata1, *fdata2;
 
@@ -5009,7 +5009,7 @@ static int
 size_column_sort_func (CtkTreeModel *model,
 		       CtkTreeIter  *a,
 		       CtkTreeIter  *b,
-		       gpointer      user_data)
+		       gpointer      user_data G_GNUC_UNUSED)
 {
 	FileData *fdata1, *fdata2;
 
@@ -5024,7 +5024,7 @@ static int
 type_column_sort_func (CtkTreeModel *model,
 		       CtkTreeIter  *a,
 		       CtkTreeIter  *b,
-		       gpointer      user_data)
+		       gpointer      user_data G_GNUC_UNUSED)
 {
 	FileData *fdata1, *fdata2;
 
@@ -5039,7 +5039,7 @@ static int
 time_column_sort_func (CtkTreeModel *model,
 		       CtkTreeIter  *a,
 		       CtkTreeIter  *b,
-		       gpointer      user_data)
+		       gpointer      user_data G_GNUC_UNUSED)
 {
 	FileData *fdata1, *fdata2;
 
@@ -5054,7 +5054,7 @@ static int
 path_column_sort_func (CtkTreeModel *model,
 		       CtkTreeIter  *a,
 		       CtkTreeIter  *b,
-		       gpointer      user_data)
+		       gpointer      user_data G_GNUC_UNUSED)
 {
 	FileData *fdata1, *fdata2;
 
@@ -5066,10 +5066,10 @@ path_column_sort_func (CtkTreeModel *model,
 
 
 static int
-no_sort_column_sort_func (CtkTreeModel *model,
-			  CtkTreeIter  *a,
-			  CtkTreeIter  *b,
-			  gpointer      user_data)
+no_sort_column_sort_func (CtkTreeModel *model G_GNUC_UNUSED,
+			  CtkTreeIter  *a G_GNUC_UNUSED,
+			  CtkTreeIter  *b G_GNUC_UNUSED,
+			  gpointer      user_data G_GNUC_UNUSED)
 {
 	return -1;
 }
@@ -5097,7 +5097,7 @@ sort_column_changed_cb (CtkTreeSortable *sortable,
 
 
 static gboolean
-fr_window_show_cb (CtkWidget *widget,
+fr_window_show_cb (CtkWidget *widget G_GNUC_UNUSED,
 		   FrWindow  *window)
 {
 	fr_window_update_current_location (window);
@@ -5118,9 +5118,9 @@ fr_window_show_cb (CtkWidget *widget,
 
 
 static void
-pref_history_len_changed (GSettings *settings,
-				const char *key,
-				gpointer user_data)
+pref_history_len_changed (GSettings  *settings,
+			  const char *key G_GNUC_UNUSED,
+			  gpointer    user_data)
 {
 	FrWindow  *window = user_data;
 	int        limit;
@@ -5170,9 +5170,9 @@ pref_view_folders_changed (GSettings *settings,
 
 
 static void
-pref_show_field_changed (GSettings *settings,
-                         const char *key,
-                         gpointer user_data)
+pref_show_field_changed (GSettings  *settings G_GNUC_UNUSED,
+			 const char *key G_GNUC_UNUSED,
+			 gpointer    user_data)
 {
 	FrWindow *window = user_data;
 
@@ -5181,9 +5181,9 @@ pref_show_field_changed (GSettings *settings,
 
 
 static void
-pref_click_policy_changed (GSettings *settings,
-                           const char *key,
-                           gpointer user_data)
+pref_click_policy_changed (GSettings  *settings G_GNUC_UNUSED,
+			   const char *key G_GNUC_UNUSED,
+			   gpointer    user_data)
 {
 	FrWindow   *window = user_data;
 	CdkWindow  *win = ctk_tree_view_get_bin_window (CTK_TREE_VIEW (window->priv->list_view));
@@ -5199,9 +5199,9 @@ pref_click_policy_changed (GSettings *settings,
 
 
 static void
-pref_use_mime_icons_changed (GSettings *settings,
-                             const char *key,
-                             gpointer user_data)
+pref_use_mime_icons_changed (GSettings  *settings G_GNUC_UNUSED,
+			     const char *key G_GNUC_UNUSED,
+			     gpointer    user_data)
 {
 	FrWindow *window = user_data;
 
@@ -5226,7 +5226,8 @@ pref_use_mime_icons_changed (GSettings *settings,
 
 
 static void
-theme_changed_cb (CtkIconTheme *theme, FrWindow *window)
+theme_changed_cb (CtkIconTheme *theme G_GNUC_UNUSED,
+		  FrWindow     *window)
 {
 	file_list_icon_size = _ctk_widget_lookup_for_size (CTK_WIDGET (window), FILE_LIST_ICON_SIZE);
 	dir_tree_icon_size = _ctk_widget_lookup_for_size (CTK_WIDGET (window), DIR_TREE_ICON_SIZE);
@@ -5252,9 +5253,9 @@ theme_changed_cb (CtkIconTheme *theme, FrWindow *window)
 
 
 static gboolean
-fr_window_stoppable_cb (FrCommand  *command,
-			gboolean    stoppable,
-			FrWindow   *window)
+fr_window_stoppable_cb (FrCommand *command G_GNUC_UNUSED,
+			gboolean   stoppable,
+			FrWindow  *window)
 {
 	window->priv->stoppable = stoppable;
 	set_sensitive (window, "Stop", stoppable);
@@ -5267,8 +5268,8 @@ fr_window_stoppable_cb (FrCommand  *command,
 
 
 static gboolean
-fr_window_fake_load (FrArchive *archive,
-		     gpointer   data)
+fr_window_fake_load (FrArchive *archive G_GNUC_UNUSED,
+		     gpointer   data G_GNUC_UNUSED)
 {
 	/* fake loads are disabled to allow exact progress dialogs (#153281) */
 
@@ -5336,7 +5337,7 @@ menu_item_select_cb (CtkMenuItem *proxy,
 
 
 static void
-menu_item_deselect_cb (CtkMenuItem *proxy,
+menu_item_deselect_cb (CtkMenuItem *proxy G_GNUC_UNUSED,
 		       FrWindow    *window)
 {
 	ctk_statusbar_pop (CTK_STATUSBAR (window->priv->statusbar),
@@ -5345,8 +5346,8 @@ menu_item_deselect_cb (CtkMenuItem *proxy,
 
 
 static void
-disconnect_proxy_cb (CtkUIManager *manager,
-		     CtkAction    *action,
+disconnect_proxy_cb (CtkUIManager *manager G_GNUC_UNUSED,
+		     CtkAction    *action G_GNUC_UNUSED,
 		     CtkWidget    *proxy,
 		     FrWindow     *window)
 {
@@ -5360,8 +5361,8 @@ disconnect_proxy_cb (CtkUIManager *manager,
 
 
 static void
-connect_proxy_cb (CtkUIManager *manager,
-		  CtkAction    *action,
+connect_proxy_cb (CtkUIManager *manager G_GNUC_UNUSED,
+		  CtkAction    *action G_GNUC_UNUSED,
 		  CtkWidget    *proxy,
 		  FrWindow     *window)
 {
@@ -5375,7 +5376,7 @@ connect_proxy_cb (CtkUIManager *manager,
 
 
 static void
-view_as_radio_action (CtkAction      *action,
+view_as_radio_action (CtkAction      *action G_GNUC_UNUSED,
 		      CtkRadioAction *current,
 		      gpointer        data)
 {
@@ -5385,7 +5386,7 @@ view_as_radio_action (CtkAction      *action,
 
 
 static void
-sort_by_radio_action (CtkAction      *action,
+sort_by_radio_action (CtkAction      *action G_GNUC_UNUSED,
 		      CtkRadioAction *current,
 		      gpointer        data)
 {
@@ -5440,7 +5441,7 @@ fr_window_init_recent_chooser (FrWindow         *window,
 
 
 static void
-close_sidepane_button_clicked_cb (CtkButton *button,
+close_sidepane_button_clicked_cb (CtkButton *button G_GNUC_UNUSED,
 				  FrWindow  *window)
 {
 	fr_window_set_folders_visibility (window, FALSE);
@@ -5468,7 +5469,7 @@ fr_window_activate_filter (FrWindow *window)
 
 
 static void
-filter_entry_activate_cb (CtkEntry *entry,
+filter_entry_activate_cb (CtkEntry *entry G_GNUC_UNUSED,
 			  FrWindow *window)
 {
 	fr_window_activate_filter (window);
@@ -5476,7 +5477,7 @@ filter_entry_activate_cb (CtkEntry *entry,
 
 
 static void
-filter_entry_icon_release_cb (CtkEntry             *entry,
+filter_entry_icon_release_cb (CtkEntry             *entry G_GNUC_UNUSED,
 			      CtkEntryIconPosition  icon_pos,
 			      CdkEventButton       *event,
 			      gpointer              user_data)
@@ -7425,8 +7426,8 @@ fr_window_stop_activity_mode (FrWindow *window)
 
 
 static gboolean
-last_output_window__unrealize_cb (CtkWidget  *widget,
-				  gpointer    data)
+last_output_window__unrealize_cb (CtkWidget *widget,
+				  gpointer   data G_GNUC_UNUSED)
 {
 	pref_util_save_window_geometry (CTK_WINDOW (widget), LAST_OUTPUT_DIALOG_NAME);
 	return FALSE;
@@ -7949,9 +7950,9 @@ fr_window_rename_selection (FrWindow *window,
 
 
 static void
-fr_clipboard_get (CtkClipboard     *clipboard,
+fr_clipboard_get (CtkClipboard     *clipboard G_GNUC_UNUSED,
 		  CtkSelectionData *selection_data,
-		  guint             info,
+		  guint             info G_GNUC_UNUSED,
 		  gpointer          user_data_or_owner)
 {
 	FrWindow *window = user_data_or_owner;
@@ -7971,7 +7972,7 @@ fr_clipboard_get (CtkClipboard     *clipboard,
 
 
 static void
-fr_clipboard_clear (CtkClipboard *clipboard,
+fr_clipboard_clear (CtkClipboard *clipboard G_GNUC_UNUSED,
 		    gpointer      user_data_or_owner)
 {
 	FrWindow *window = user_data_or_owner;
@@ -8068,8 +8069,8 @@ fr_window_cut_selection (FrWindow *window,
 
 
 static gboolean
-always_fake_load (FrArchive *archive,
-		  gpointer   data)
+always_fake_load (FrArchive *archive G_GNUC_UNUSED,
+		  gpointer   data G_GNUC_UNUSED)
 {
 	return TRUE;
 }
@@ -8304,7 +8305,7 @@ fr_window_paste_selection_to (FrWindow   *window,
 
 void
 fr_window_paste_selection (FrWindow *window,
-			   gboolean  from_sidebar)
+			   gboolean  from_sidebar G_GNUC_UNUSED)
 {
 	char *utf8_path, *utf8_old_path, *destination;
 	char *current_dir;
@@ -8502,9 +8503,9 @@ fr_window_update_files (FrWindow *window,
 
 
 static void
-open_file_modified_cb (GFileMonitor     *monitor,
+open_file_modified_cb (GFileMonitor     *monitor G_GNUC_UNUSED,
 		       GFile            *monitor_file,
-		       GFile            *other_file,
+		       GFile            *other_file G_GNUC_UNUSED,
 		       GFileMonitorEvent event_type,
 		       gpointer          user_data)
 {
@@ -8659,7 +8660,7 @@ fr_window_open_extracted_files (OpenFilesData *odata)
 
 static void
 fr_window_open_files__extract_done_cb (FrArchive   *archive,
-				       FrAction     action,
+				       FrAction     action G_GNUC_UNUSED,
 				       FrProcError *error,
 				       gpointer     callback_data)
 {

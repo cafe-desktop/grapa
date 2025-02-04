@@ -28,8 +28,8 @@ GMainLoop *loop;
 
 static void
 grapa_getsupportedtypes_ready_cb (GObject      *source_object,
-				    GAsyncResult *res,
-				    gpointer      user_data)
+				  GAsyncResult *res,
+				  gpointer      user_data G_GNUC_UNUSED)
 {
 	GDBusProxy *proxy;
 	GVariant   *values;
@@ -92,8 +92,8 @@ grapa_getsupportedtypes_ready_cb (GObject      *source_object,
 
 static void
 grapa_addtoarchive_ready_cb (GObject      *source_object,
-				  GAsyncResult *res,
-				  gpointer      user_data)
+			     GAsyncResult *res,
+			     gpointer      user_data G_GNUC_UNUSED)
 {
 	GDBusProxy *proxy;
 	GVariant   *values;
@@ -115,11 +115,11 @@ grapa_addtoarchive_ready_cb (GObject      *source_object,
 
 
 static void
-on_signal (GDBusProxy *proxy,
-	   char       *sender_name,
+on_signal (GDBusProxy *proxy G_GNUC_UNUSED,
+	   char       *sender_name G_GNUC_UNUSED,
 	   char       *signal_name,
 	   GVariant   *parameters,
-	   gpointer    user_data)
+	   gpointer    user_data G_GNUC_UNUSED)
 {
 	if (g_strcmp0 (signal_name, "Progress") == 0) {
 		double  fraction;
@@ -134,7 +134,8 @@ on_signal (GDBusProxy *proxy,
 
 
 int
-main (int argc, char *argv[])
+main (int   argc G_GNUC_UNUSED,
+      char *argv[] G_GNUC_UNUSED)
 {
 	GDBusConnection *connection;
 	GError          *error = NULL;

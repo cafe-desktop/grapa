@@ -255,7 +255,7 @@ for_each_child_start_next_sub_directory (ForEachChildData *fec)
 
 
 static void
-for_each_child_close_enumerator (GObject      *source_object,
+for_each_child_close_enumerator (GObject      *source_object G_GNUC_UNUSED,
 	              		 GAsyncResult *result,
 		      		 gpointer      user_data)
 {
@@ -280,7 +280,7 @@ for_each_child_close_enumerator (GObject      *source_object,
 
 
 static void
-for_each_child_next_files_ready (GObject      *source_object,
+for_each_child_next_files_ready (GObject      *source_object G_GNUC_UNUSED,
 			         GAsyncResult *result,
 			         gpointer      user_data)
 {
@@ -335,7 +335,7 @@ for_each_child_next_files_ready (GObject      *source_object,
 }
 
 static void
-for_each_child_ready (GObject      *source_object,
+for_each_child_ready (GObject      *source_object G_GNUC_UNUSED,
 		      GAsyncResult *result,
 		      gpointer      user_data)
 {
@@ -658,7 +658,7 @@ get_file_list_for_each_file (const char *uri,
 
 static DirOp
 get_file_list_start_dir (const char  *uri,
-			 GError     **error,
+			 GError     **error G_GNUC_UNUSED,
 			 gpointer     user_data)
 {
 	GetFileListData *gfl = user_data;
@@ -925,7 +925,7 @@ g_copy_next_file (CopyFilesData *cfd)
 
 
 static void
-g_copy_files_ready_cb (GObject      *source_object,
+g_copy_files_ready_cb (GObject      *source_object G_GNUC_UNUSED,
                        GAsyncResult *result,
                        gpointer      user_data)
 {
@@ -1359,7 +1359,7 @@ g_directory_copy_for_each_file (const char *uri,
 
 static DirOp
 g_directory_copy_start_dir (const char  *uri,
-			    GError     **error,
+			    GError     **error G_GNUC_UNUSED,
 			    gpointer     user_data)
 {
 	DirectoryCopyData *dcd = user_data;

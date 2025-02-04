@@ -49,7 +49,7 @@ typedef struct {
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (CtkWidget  *widget,
+destroy_cb (CtkWidget  *widget G_GNUC_UNUSED,
 	    DialogData *data)
 {
 	if (! data->extract_clicked) {
@@ -65,8 +65,8 @@ destroy_cb (CtkWidget  *widget,
 
 
 static int
-extract_cb (CtkWidget   *w,
-	    DialogData  *data)
+extract_cb (CtkWidget  *w G_GNUC_UNUSED,
+	    DialogData *data)
 {
 	FrWindow   *window = data->window;
 	gboolean    do_not_extract = FALSE;
@@ -268,7 +268,7 @@ file_sel_response_cb (CtkWidget    *widget,
 
 
 static void
-files_entry_changed_cb (CtkWidget  *widget,
+files_entry_changed_cb (CtkWidget  *widget G_GNUC_UNUSED,
 			DialogData *data)
 {
 	if (! ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (GET_WIDGET ("file_pattern_radiobutton"))))
@@ -344,7 +344,7 @@ dlg_extract__common (FrWindow *window,
 
 
 void
-dlg_extract (CtkWidget *widget,
+dlg_extract (CtkWidget *widget G_GNUC_UNUSED,
 	     gpointer   callback_data)
 {
 	FrWindow *window = callback_data;
@@ -357,7 +357,7 @@ dlg_extract (CtkWidget *widget,
 
 
 void
-dlg_extract_folder_from_sidebar (CtkWidget *widget,
+dlg_extract_folder_from_sidebar (CtkWidget *widget G_GNUC_UNUSED,
 	     			 gpointer   callback_data)
 {
 	FrWindow *window = callback_data;

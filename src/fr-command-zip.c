@@ -216,12 +216,12 @@ process_line__common (char     *line,
 
 
 static void
-fr_command_zip_add (FrCommand     *comm,
-		    const char    *from_file,
-		    GList         *file_list,
-		    const char    *base_dir,
-		    gboolean       update,
-		    gboolean       recursive)
+fr_command_zip_add (FrCommand  *comm,
+		    const char *from_file G_GNUC_UNUSED,
+		    GList      *file_list,
+		    const char *base_dir,
+		    gboolean    update,
+		    gboolean    recursive G_GNUC_UNUSED)
 {
 	GList *scan;
 
@@ -265,7 +265,7 @@ fr_command_zip_add (FrCommand     *comm,
 
 static void
 fr_command_zip_delete (FrCommand  *comm,
-		       const char *from_file,
+		       const char *from_file G_GNUC_UNUSED,
 		       GList      *file_list)
 {
 	GList *scan;
@@ -294,7 +294,7 @@ fr_command_zip_delete (FrCommand  *comm,
 
 static void
 fr_command_zip_extract (FrCommand  *comm,
-			const char *from_file,
+			const char *from_file G_GNUC_UNUSED,
 			GList      *file_list,
 			const char *dest_dir,
 			gboolean    overwrite,
@@ -397,7 +397,7 @@ const char *zip_mime_type[] = {
 
 
 static const char **
-fr_command_zip_get_mime_types (FrCommand *comm)
+fr_command_zip_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	GSettings *settings;
 	settings = g_settings_new ("org.cafe.grapa.general");
@@ -415,8 +415,8 @@ fr_command_zip_get_mime_types (FrCommand *comm)
 
 
 static FrCommandCap
-fr_command_zip_get_capabilities (FrCommand  *comm,
-			         const char *mime_type,
+fr_command_zip_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+				 const char *mime_type,
 				 gboolean    check_command)
 {
 	FrCommandCap capabilities;
@@ -436,8 +436,8 @@ fr_command_zip_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_zip_get_packages (FrCommand  *comm,
-			     const char *mime_type)
+fr_command_zip_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+			     const char *mime_type G_GNUC_UNUSED)
 {
 	return PACKAGES ("zip,unzip");
 }

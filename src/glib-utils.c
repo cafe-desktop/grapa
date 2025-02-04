@@ -472,10 +472,11 @@ n_fields (char **str_array)
 
 
 void
-debug (const char *file,
-       int         line,
-       const char *function,
-       const char *format, ...)
+debug (const char *file G_GNUC_UNUSED,
+       int         line G_GNUC_UNUSED,
+       const char *function G_GNUC_UNUSED,
+       const char *format G_GNUC_UNUSED,
+       ...)
 {
 #ifdef CAFE_ENABLE_DEBUG
 	va_list  args;

@@ -233,12 +233,12 @@ fr_command_zoo_list (FrCommand  *zoo_comm)
 
 
 static void
-fr_command_zoo_add (FrCommand     *comm,
-		    const char    *from_file,
-		    GList         *file_list,
-		    const char    *base_dir,
-		    gboolean       update,
-		    gboolean       recursive)
+fr_command_zoo_add (FrCommand  *comm,
+		    const char *from_file G_GNUC_UNUSED,
+		    GList      *file_list,
+		    const char *base_dir,
+		    gboolean    update,
+		    gboolean    recursive G_GNUC_UNUSED)
 {
 	GList        *scan;
 
@@ -262,9 +262,9 @@ fr_command_zoo_add (FrCommand     *comm,
 
 
 static void
-fr_command_zoo_delete (FrCommand *comm,
-		       const char  *from_file,
-		       GList     *file_list)
+fr_command_zoo_delete (FrCommand  *comm,
+		       const char *from_file G_GNUC_UNUSED,
+		       GList      *file_list)
 {
 	GList        *scan;
 
@@ -282,12 +282,12 @@ fr_command_zoo_delete (FrCommand *comm,
 
 static void
 fr_command_zoo_extract (FrCommand  *comm,
-			const char  *from_file,
+			const char *from_file G_GNUC_UNUSED,
 			GList      *file_list,
 			const char *dest_dir,
 			gboolean    overwrite,
-			gboolean    skip_older,
-			gboolean    junk_paths)
+			gboolean    skip_older G_GNUC_UNUSED,
+			gboolean    junk_paths G_GNUC_UNUSED)
 {
 	GList *scan;
 
@@ -324,15 +324,15 @@ const char *zoo_mime_type[] = { "application/x-zoo", NULL };
 
 
 static const char **
-fr_command_zoo_get_mime_types (FrCommand *comm)
+fr_command_zoo_get_mime_types (FrCommand *comm G_GNUC_UNUSED)
 {
 	return zoo_mime_type;
 }
 
 
 static FrCommandCap
-fr_command_zoo_get_capabilities (FrCommand  *comm,
-			         const char *mime_type,
+fr_command_zoo_get_capabilities (FrCommand  *comm G_GNUC_UNUSED,
+				 const char *mime_type G_GNUC_UNUSED,
 				 gboolean    check_command)
 {
 	FrCommandCap capabilities;
@@ -346,8 +346,8 @@ fr_command_zoo_get_capabilities (FrCommand  *comm,
 
 
 static const char *
-fr_command_zoo_get_packages (FrCommand  *comm,
-			     const char *mime_type)
+fr_command_zoo_get_packages (FrCommand  *comm G_GNUC_UNUSED,
+			     const char *mime_type G_GNUC_UNUSED)
 {
 	return PACKAGES ("zoo");
 }

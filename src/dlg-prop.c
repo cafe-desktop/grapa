@@ -38,7 +38,7 @@ typedef struct {
 
 /* called when the main dialog is closed. */
 static void
-destroy_cb (CtkWidget  *widget,
+destroy_cb (CtkWidget  *widget G_GNUC_UNUSED,
 	    DialogData *data)
 {
 	g_object_unref (G_OBJECT (data->builder));
@@ -47,7 +47,7 @@ destroy_cb (CtkWidget  *widget,
 
 
 static int
-help_cb (CtkWidget   *w,
+help_cb (CtkWidget   *w G_GNUC_UNUSED,
 	 DialogData  *data)
 {
 	show_help_dialog (CTK_WINDOW (data->dialog), "grapa-view-archive-properties");
