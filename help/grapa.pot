@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-27 12:51+0100\n"
+"POT-Creation-Date: 2025-02-05 12:45+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,7 +26,7 @@ msgstr ""
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:21
-msgid "<year>2020-2024</year> <holder>CAFE Documentation Project</holder>"
+msgid "<year>2020-2025</year> <holder>CAFE Documentation Project</holder>"
 msgstr ""
 
 #. (itstool) path: info/copyright
@@ -2389,3 +2389,4 @@ msgstr ""
 #: C/legal.xml:78
 msgid "To report a bug or make a suggestion regarding the <application>Archive Manager</application> application or this manual, follow the directions in the <link xlink:href=\"help:cafe-user-guide/feedback\">CAFE Feedback Page</link>."
 msgstr ""
+
