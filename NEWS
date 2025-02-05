@@ -1,3 +1,16 @@
+### grapa 2.1.0
+
+  * ci: add debian sid build
+  * add G_GNUC_UNUSED in unused parameters
+  * Remove unused macros
+  * server: Fix [-Wmissing-field-initializers] warning
+  * update.ui:
+    - Add CtkAlignment which fixes crash
+    - Remove translation already included in dlg-update.c
+  * help,figures: Replace broken png files with new ones
+  * update copyright year to 2025
+  * update translations
+
 ### grapa 2.0.0
 
   * ci: some improvements
