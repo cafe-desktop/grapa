@@ -8,7 +8,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-27 12:51+0100\n"
+"POT-Creation-Date: 2025-02-05 12:45+0100\n"
 "PO-Revision-Date: 2020-02-14 11:58+0000\n"
 "Last-Translator: clefebvre <clement.lefebvre@linuxmint.com>, 2020\n"
 "Language-Team: Thai (https://www.transifex.com/cafe/teams/13566/th/)\n"
@@ -37,7 +37,7 @@ msgstr ""
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:21
-msgid "<year>2020-2024</year> <holder>CAFE Documentation Project</holder>"
+msgid "<year>2020-2025</year> <holder>CAFE Documentation Project</holder>"
 msgstr ""
 
 #. (itstool) path: info/copyright
@@ -1157,8 +1157,8 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:622
 msgid ""
-"To extract files from an open archive, perform the following steps: <_:"
-"orderedlist-1/>"
+"To extract files from an open archive, perform the following steps: "
+"<_:orderedlist-1/>"
 msgstr ""
 
 #. (itstool) path: section/para
@@ -1529,8 +1529,8 @@ msgstr ""
 #: C/index.docbook:839
 msgid ""
 "The encryption provided by archive utilities is weak and insecure. If "
-"security is important, use a strong encryption tool such as <link xlink:"
-"href=\"http://www.gnupg.org\">GNU Privacy Guard</link>."
+"security is important, use a strong encryption tool such as <link "
+"xlink:href=\"http://www.gnupg.org\">GNU Privacy Guard</link>."
 msgstr ""
 
 #. (itstool) path: info/title
@@ -1884,8 +1884,8 @@ msgid ""
 "To view the properties of an archive, choose <menuchoice><guimenu>Archive</"
 "guimenu><guimenuitem>Properties</guimenuitem></menuchoice> to display the "
 "<guilabel>Properties</guilabel> dialog. The <guilabel>Properties</guilabel> "
-"dialog displays the following information about the archive: <_:"
-"variablelist-1/>"
+"dialog displays the following information about the archive: "
+"<_:variablelist-1/>"
 msgstr ""
 
 #. (itstool) path: info/title
@@ -2019,8 +2019,8 @@ msgstr ""
 msgid ""
 "Sometimes an archive can be damaged for some reason, to check whether an "
 "archive is damaged, choose <menuchoice><guimenu>Archive</"
-"guimenu><guimenuitem>Test Integrity</guimenuitem></menuchoice>: <_:"
-"itemizedlist-1/>"
+"guimenu><guimenuitem>Test Integrity</guimenuitem></menuchoice>: "
+"<_:itemizedlist-1/>"
 msgstr ""
 
 #. (itstool) path: section/para
@@ -2222,10 +2222,10 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:1203
 msgid ""
-"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/grapa_uparrow."
-"png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows icon to "
-"navigate up one level in folder tree.</phrase> </textobject> </"
-"inlinemediaobject>"
+"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/"
+"grapa_uparrow.png\" format=\"PNG\"/> </imageobject> <textobject> "
+"<phrase>Shows icon to navigate up one level in folder tree.</phrase> </"
+"textobject> </inlinemediaobject>"
 msgstr ""
 
 #. (itstool) path: entry/para
@@ -2247,9 +2247,9 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:1222
 msgid ""
-"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/grapa_home."
-"png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows icon to "
-"open the top-level folder in the archive.</phrase> </textobject> </"
+"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/"
+"grapa_home.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows "
+"icon to open the top-level folder in the archive.</phrase> </textobject> </"
 "inlinemediaobject>"
 msgstr ""
 
@@ -2890,8 +2890,8 @@ msgstr ""
 msgid ""
 "For example, you specify <filename>/tmp</filename> in the "
 "<guilabel>Filename</guilabel> text box and choose to extract all files. The "
-"archive contains a subfolder called <filename>doc</filename>. <_:"
-"itemizedlist-1/>"
+"archive contains a subfolder called <filename>doc</filename>. "
+"<_:itemizedlist-1/>"
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -2955,8 +2955,9 @@ msgid ""
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
 "Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <link xlink:href=\"https://www.gnu.org/licenses/fdl-1.1."
-"html\">link</link> or in the file COPYING-DOCS distributed with this manual."
+"of the GFDL at this <link xlink:href=\"https://www.gnu.org/licenses/"
+"fdl-1.1.html\">link</link> or in the file COPYING-DOCS distributed with this "
+"manual."
 msgstr ""
 
 #. (itstool) path: legalnotice/para

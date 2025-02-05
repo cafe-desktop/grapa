@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-27 12:51+0100\n"
+"POT-Creation-Date: 2025-02-05 12:45+0100\n"
 "PO-Revision-Date: 2020-02-14 11:58+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/cafe/teams/13566/it/)\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:21
-msgid "<year>2020-2024</year> <holder>CAFE Documentation Project</holder>"
+msgid "<year>2020-2025</year> <holder>CAFE Documentation Project</holder>"
 msgstr ""
 
 #. (itstool) path: info/copyright
@@ -1358,8 +1358,8 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:622
 msgid ""
-"To extract files from an open archive, perform the following steps: <_:"
-"orderedlist-1/>"
+"To extract files from an open archive, perform the following steps: "
+"<_:orderedlist-1/>"
 msgstr ""
 "Per estrarre i file da un archivio, segui questi passaggi: <_:orderedlist-1/>"
 
@@ -1673,8 +1673,8 @@ msgid ""
 "To add a folder to an archive, perform the following steps: <_:orderedlist-1/"
 ">"
 msgstr ""
-"Per aggiungere una cartella ad un archivio, segui questi passaggi: <_:"
-"orderedlist-1/>"
+"Per aggiungere una cartella ad un archivio, segui questi passaggi: "
+"<_:orderedlist-1/>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:765
@@ -1841,8 +1841,8 @@ msgstr ""
 #: C/index.docbook:839
 msgid ""
 "The encryption provided by archive utilities is weak and insecure. If "
-"security is important, use a strong encryption tool such as <link xlink:"
-"href=\"http://www.gnupg.org\">GNU Privacy Guard</link>."
+"security is important, use a strong encryption tool such as <link "
+"xlink:href=\"http://www.gnupg.org\">GNU Privacy Guard</link>."
 msgstr ""
 "La crittografia fornita dalle utilità di archiviazione è debole e insicura. "
 "Se per te la sicurezza è davvero importante, utilizza uno strumento di "
@@ -2069,8 +2069,8 @@ msgid ""
 "To modify a file in an archive perform the following steps: <_:orderedlist-1/"
 ">"
 msgstr ""
-"Per modificare i file in un archivio, segui questi passaggi: <_:"
-"orderedlist-1/>"
+"Per modificare i file in un archivio, segui questi passaggi: "
+"<_:orderedlist-1/>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:964
@@ -2257,8 +2257,8 @@ msgid ""
 "To view the properties of an archive, choose <menuchoice><guimenu>Archive</"
 "guimenu><guimenuitem>Properties</guimenuitem></menuchoice> to display the "
 "<guilabel>Properties</guilabel> dialog. The <guilabel>Properties</guilabel> "
-"dialog displays the following information about the archive: <_:"
-"variablelist-1/>"
+"dialog displays the following information about the archive: "
+"<_:variablelist-1/>"
 msgstr ""
 "Per vedere le proprtietà di un archivio, seleziona "
 "<menuchoice><guimenu>Archivio</guimenu><guimenuitem>Proprietà</guimenuitem></"
@@ -2435,13 +2435,13 @@ msgstr ""
 msgid ""
 "Sometimes an archive can be damaged for some reason, to check whether an "
 "archive is damaged, choose <menuchoice><guimenu>Archive</"
-"guimenu><guimenuitem>Test Integrity</guimenuitem></menuchoice>: <_:"
-"itemizedlist-1/>"
+"guimenu><guimenuitem>Test Integrity</guimenuitem></menuchoice>: "
+"<_:itemizedlist-1/>"
 msgstr ""
 "A volte un archivio può essere danneggiato per qualsivoglia motivo, per "
 "verificarne l'integrità seleziona <menuchoice><guimenu>Archivio</"
-"guimenu><guimenuitem>Controlla integrità</guimenuitem></menuchoice>:<_:"
-"itemizedlist-1/>"
+"guimenu><guimenuitem>Controlla integrità</guimenuitem></menuchoice>:"
+"<_:itemizedlist-1/>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:1099
@@ -2692,15 +2692,15 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:1203
 msgid ""
-"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/grapa_uparrow."
-"png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows icon to "
-"navigate up one level in folder tree.</phrase> </textobject> </"
-"inlinemediaobject>"
+"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/"
+"grapa_uparrow.png\" format=\"PNG\"/> </imageobject> <textobject> "
+"<phrase>Shows icon to navigate up one level in folder tree.</phrase> </"
+"textobject> </inlinemediaobject>"
 msgstr ""
-"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/grapa_uparrow."
-"png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Mostra l'icona "
-"per navigare indietro nell'albero delle cartelle.</phrase> </textobject> </"
-"inlinemediaobject>"
+"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/"
+"grapa_uparrow.png\" format=\"PNG\"/> </imageobject> <textobject> "
+"<phrase>Mostra l'icona per navigare indietro nell'albero delle cartelle.</"
+"phrase> </textobject> </inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1215
@@ -2724,15 +2724,15 @@ msgstr ""
 #. (itstool) path: entry/para
 #: C/index.docbook:1222
 msgid ""
-"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/grapa_home."
-"png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows icon to "
-"open the top-level folder in the archive.</phrase> </textobject> </"
+"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/"
+"grapa_home.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Shows "
+"icon to open the top-level folder in the archive.</phrase> </textobject> </"
 "inlinemediaobject>"
 msgstr ""
-"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/grapa_home."
-"png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Mostra l'icona "
-"per aprire la posizione iniziale dell'archivio.</phrase> </textobject> </"
-"inlinemediaobject>"
+"<inlinemediaobject> <imageobject> <imagedata fileref=\"figures/"
+"grapa_home.png\" format=\"PNG\"/> </imageobject> <textobject> <phrase>Mostra "
+"l'icona per aprire la posizione iniziale dell'archivio.</phrase> </"
+"textobject> </inlinemediaobject>"
 
 #. (itstool) path: entry/para
 #: C/index.docbook:1234
@@ -3543,13 +3543,13 @@ msgstr ""
 msgid ""
 "For example, you specify <filename>/tmp</filename> in the "
 "<guilabel>Filename</guilabel> text box and choose to extract all files. The "
-"archive contains a subfolder called <filename>doc</filename>. <_:"
-"itemizedlist-1/>"
+"archive contains a subfolder called <filename>doc</filename>. "
+"<_:itemizedlist-1/>"
 msgstr ""
 "Per esempio, specifichi <filename>/tmp</filename> nell'area di testo "
 "<guilabel>Filename</guilabel> e scegli di estrarre tutti i file. L'archivio "
-"creato conterrà una sottocartella chiamata <filename>doc</filename>. <_:"
-"itemizedlist-1/>"
+"creato conterrà una sottocartella chiamata <filename>doc</filename>. "
+"<_:itemizedlist-1/>"
 
 #. (itstool) path: varlistentry/term
 #: C/index.docbook:1607
@@ -3631,16 +3631,17 @@ msgid ""
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
 "Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
-"of the GFDL at this <link xlink:href=\"https://www.gnu.org/licenses/fdl-1.1."
-"html\">link</link> or in the file COPYING-DOCS distributed with this manual."
+"of the GFDL at this <link xlink:href=\"https://www.gnu.org/licenses/"
+"fdl-1.1.html\">link</link> or in the file COPYING-DOCS distributed with this "
+"manual."
 msgstr ""
 "Questo documento può essere copiato, distribuito e/o modificato solo in "
 "conformità con i termini della GNU Free Documentation License (GFDL), "
 "versione 1.1 o delle versioni successive pubblicate dalla Free Software "
 "Foundation senza sezioni invariabili, frontespizi e testi di copertina. Una "
-"copia della GFDL è disponibile a questo <ulink type=\"help\" url=\"help:"
-"fdl\">collegamento</ulink> o nel file COPYING-DOCS distribuito con questo "
-"manuale."
+"copia della GFDL è disponibile a questo <ulink type=\"help\" "
+"url=\"help:fdl\">collegamento</ulink> o nel file COPYING-DOCS distribuito "
+"con questo manuale."
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:13
