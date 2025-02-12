@@ -1,0 +1,382 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - grapa (cppcheck 2.16.0-1)</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(cb) {
+        var elements = document.querySelectorAll("." + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("id-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleSeverity(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+        var elements = document.querySelectorAll(".sev_" + cb.id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("severity-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleTool(cb) {
+        cb.parentElement.classList.toggle("unchecked", !cb.checked);
+
+        var elements;
+        if (cb.id == "clang-tidy")
+            elements = document.querySelectorAll("[class^=clang-tidy-]");
+        else
+            elements = document.querySelectorAll(".issue:not([class^=clang-tidy-])");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("tool-filtered", !cb.checked);
+        }
+
+        updateFileRows();
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll(".idToggle");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var changed = elements[i].checked != elements[0].checked;
+          if (changed) {
+            elements[i].checked = elements[0].checked;
+            toggleDisplay(elements[i]);
+          }
+        }
+      }
+
+      function filterFile(filter) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector("tr").querySelector("td").textContent.toLowerCase().includes(filter.toLowerCase());
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+      }
+
+      function filterText(text) {
+        filter = text.toLowerCase();
+        var elements = document.querySelectorAll(".issue");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = false;
+          var fields = elements[i].querySelectorAll("td");
+          for (var n = 0, num = fields.length; n < num; n++) {
+            if (fields[n].textContent.toLowerCase().includes(filter)) {
+              visible = true;
+              break;
+            }
+          }
+          elements[i].classList.toggle("text-filtered", !visible);
+        }
+
+        updateFileRows();
+      }
+
+      function updateFileRows(element) {
+        var elements = document.querySelectorAll(".fileEntry");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var visible = elements[i].querySelector(".issue:not(.id-filtered):not(.severity-filtered):not(.tool-filtered):not(.text-filtered)");
+          elements[i].classList.toggle("file-filtered", !visible);
+        }
+      }
+
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+    <div id="header" class="header">
+      <h1>Cppcheck report - grapa (cppcheck 2.16.0-1)</h1>
+      <div id="filters">
+
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="error"checked/>error</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="warning"checked/>warning</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="portability"checked/>portability</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleSeverity(this)" id="performance"disabled/>performance</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="style"checked/>style</label>
+        <label class="checkBtn"><input type="checkbox" onclick="toggleSeverity(this)" id="information"checked/>information</label>
+        | 
+        <label class="checkBtn"><input type="checkbox" onclick="toggleTool(this)" id="cppcheck"checked/>cppcheck</label>
+        <label class="checkBtn disabled"><input type="checkbox" onclick="toggleTool(this)" id="clang-tidy"disabled/>clang-tidy</label>
+        | 
+        <label class="severityHeader">File: <input type="search" oninput="filterFile(this.value)"/></label>
+        <label class="severityHeader">Filter: <input type="search" oninput="filterText(this.value)"/></label>
+      </div>
+
+    </div>
+
+    <div id="menu_index">
+     <p><a href="index.html">Defect summary</a> </p>
+
+       <label><input type="checkbox" class="idToggle" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameterPointer" name="constParameterPointer" checked></td><td>24</td><td>constParameterPointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constVariablePointer" name="constVariablePointer" checked></td><td>24</td><td>constVariablePointer</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="constParameterCallback" name="constParameterCallback" checked></td><td>21</td><td>constParameterCallback</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="normalCheckLevelMaxBranches" name="normalCheckLevelMaxBranches" checked></td><td>19</td><td>normalCheckLevelMaxBranches</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="varFuncNullUB" name="varFuncNullUB" checked></td><td>5</td><td>varFuncNullUB</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unknownMacro" name="unknownMacro" checked></td><td>4</td><td>unknownMacro</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="knownConditionTrueFalse" name="knownConditionTrueFalse" checked></td><td>2</td><td>knownConditionTrueFalse</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="unreadVariable" name="unreadVariable" checked></td><td>2</td><td>unreadVariable</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="checkersReport" name="checkersReport" checked></td><td>1</td><td>checkersReport</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="nullPointerRedundantCheck" name="nullPointerRedundantCheck" checked></td><td>1</td><td>nullPointerRedundantCheck</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantAssignment" name="redundantAssignment" checked></td><td>1</td><td>redundantAssignment</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="redundantCondition" name="redundantCondition" checked></td><td>1</td><td>redundantCondition</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="uninitStructMember" name="uninitStructMember" checked></td><td>1</td><td>uninitStructMember</td></tr>
+            <tr><td><input type="checkbox" class="idToggle" onclick="toggleDisplay(this)" id="variableScope" name="variableScope" checked></td><td>1</td><td>variableScope</td></tr>
+           <tr><td></td><td>107</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table class="summaryTable">
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="35.html"></a></td></tr>
+         <tr class="checkersReport sev_information issue"><td></td><td>checkersReport</td><td></td><td>information</td><td>Active checkers: There was critical errors (use --checkers-report=&lt;filename&gt; to see details)</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="0.html">baul/baul-grapa.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="0.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="1.html">src/actions.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="1.html#line-172">172</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_FILE_ATTRIBUTE_ACCESS_CAN_WRITE is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="2.html">src/ctk-utils.h</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="2.html#line-50">50</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If _ctk_error_dialog_new is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="3.html">src/eggfileformatchooser.c</a></td></tr>
+         <tr class="uninitStructMember sev_error issue"><td><a href="3.html#line-1087">1087</a></td><td>uninitStructMember</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Uninitialized struct member: search.format</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="4.html">src/eggtreemultidnd.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="4.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="5.html">src/file-data.c</a></td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="5.html#line-114">114</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;fdata&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="5.html#line-139">139</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;data_a&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="5.html#line-140">140</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;data_b&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="5.html#line-160">160</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;fd&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="6.html">src/file-utils.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="6.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="6.html#line-275">275</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="6.html#line-817">817</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="6.html#line-1166">1166</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;value&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="7.html">src/fr-archive.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="7.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="7.html#line-1418">1418</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;path&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="7.html#line-1447">1447</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;fdata&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="7.html#line-2287">2287</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;list&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="7.html#line-2301">2301</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;path&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="7.html#line-2439">2439</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;fullpath&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="7.html#line-2527">2527</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;folder_in_list&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="7.html#line-2936">2936</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;name_end&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="7.html#line-3034">3034</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;filename&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="7.html#line-3046">3046</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;dir_pointer&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="7.html#line-3048">3048</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;dirname&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="7.html#line-3053">3053</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;filename&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="8.html">src/fr-command-7z.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="8.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="8.html#line-432">432</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;process_line__extract&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="8.html#line-597">597</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;comm&apos; can be declared as pointer to const. However it seems that &apos;fr_command_7z_get_capabilities&apos; is a callback function, if &apos;comm&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="9.html">src/fr-command-ace.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="9.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="10.html">src/fr-command-alz.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="10.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="10.html#line-83">83</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;process_line&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="10.html#line-109">109</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/570.html">570</a></td><td>style</td><td>Condition &apos;!alz_comm-&gt;list_started&apos; is always false</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="10.html#line-231">231</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;process_extract_line&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="11.html">src/fr-command-arj.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="11.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="12.html">src/fr-command-cfile.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="12.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="12.html#line-47">47</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;comm&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="12.html#line-99">99</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;list__process_line&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="12.html#line-340">340</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;fr_command_cfile_delete&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="13.html">src/fr-command-cpio.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="13.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="13.html#line-48">48</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;month&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="13.html#line-49">49</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;mday&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="13.html#line-72">72</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;now_tm&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="13.html#line-89">89</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;list__process_line&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="13.html#line-97">97</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;ofs&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="14.html">src/fr-command-dpkg.c</a></td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="14.html#line-58">58</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="15.html">src/fr-command-iso.c</a></td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="15.html#line-46">46</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;month&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="15.html#line-47">47</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;mday&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="15.html#line-48">48</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;year&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="15.html#line-73">73</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;list__process_line&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="variableScope sev_style issue"><td><a href="15.html#line-80">80</a></td><td>variableScope</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>The scope of the variable &apos;name_field&apos; can be reduced.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="15.html#line-170">170</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;path&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="16.html">src/fr-command-jar.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="16.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="16.html#line-66">66</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="16.html#line-98">98</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+         <tr class="varFuncNullUB sev_portability issue"><td><a href="16.html#line-104">104</a></td><td>varFuncNullUB</td><td><a href="https://cwe.mitre.org/data/definitions/475.html">475</a></td><td>portability</td><td>Passing NULL after the last typed argument to a variadic function leads to undefined behaviour.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="17.html">src/fr-command-lha.c</a></td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="17.html#line-47">47</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;month&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="17.html#line-48">48</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;mday&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="17.html#line-75">75</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;tm_now&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="17.html#line-147">147</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="18.html">src/fr-command-lrzip.c</a></td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="18.html#line-102">102</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;file_list&apos; can be declared as pointer to const. However it seems that &apos;fr_command_lrzip_add&apos; is a callback function, if &apos;file_list&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="19.html">src/fr-command-rpm.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="19.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="19.html#line-48">48</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;month&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="19.html#line-49">49</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;mday&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="19.html#line-79">79</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;now_tm&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="19.html#line-98">98</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;list__process_line&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="unreadVariable sev_style issue"><td><a href="19.html#line-106">106</a></td><td>unreadVariable</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;ofs&apos; is assigned a value that is never used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="20.html">src/fr-command-tar.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="20.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="20.html#line-254">254</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;comm&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="20.html#line-261">261</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="20.html#line-302">302</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;c_tar&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="20.html#line-374">374</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;c_tar&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="20.html#line-740">740</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;comm&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="20.html#line-968">968</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;comm_tar&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="21.html">src/fr-command-unarchiver.c</a></td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="21.html#line-179">179</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;process_line__extract&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="22.html">src/fr-command-zip.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="22.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="22.html#line-96">96</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;list__process_line&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="22.html#line-201">201</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const. However it seems that &apos;process_line__common&apos; is a callback function, if &apos;line&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="23.html">src/fr-command-zoo.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="23.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="23.html#line-47">47</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;mday_s&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="23.html#line-49">49</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;year_s&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="23.html#line-111">111</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="23.html#line-152">152</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;line&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="24.html">src/fr-command.c</a></td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="24.html#line-128">128</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;base_fr_command_add&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="24.html#line-139">139</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;base_fr_command_delete&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="24.html#line-147">147</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;base_fr_command_extract&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="24.html#line-764">764</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;comm&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="25.html">src/fr-init.c</a></td></tr>
+         <tr class="knownConditionTrueFalse sev_style issue"><td><a href="25.html#line-618">618</a></td><td>knownConditionTrueFalse</td><td><a href="https://cwe.mitre.org/data/definitions/571.html">571</a></td><td>style</td><td>Condition &apos;cap-&gt;current_capabilities&amp;FR_COMMAND_CAN_WRITE&apos; is always true</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="26.html">src/fr-list-model.c</a></td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="26.html#line-90">90</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;fr_list_model_multi_drag_data_delete&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="26.html#line-105">105</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;fr_list_model_init&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="27.html">src/fr-process.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="27.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="27.html#line-641">641</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;process&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="27.html#line-812">812</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;info&apos; can be declared as pointer to const</td></tr>
+         <tr class="redundantAssignment sev_style issue"><td><a href="27.html#line-1068">1068</a></td><td>redundantAssignment</td><td><a href="https://cwe.mitre.org/data/definitions/563.html">563</a></td><td>style</td><td>Variable &apos;ret&apos; is reassigned a value before the old one has been used.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="28.html">src/fr-window.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="28.html#line-6878">6878</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_FILE_ATTRIBUTE_STANDARD_NAME is a macro then please configure it.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="29.html">src/gio-utils.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="29.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constParameterPointer sev_style issue"><td><a href="29.html#line-120">120</a></td><td>constParameterPointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;filter&apos; can be declared as pointer to const</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="29.html#line-237">237</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;sub_directory&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="30.html">src/glib-utils.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="30.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="nullPointerRedundantCheck sev_warning issue"><td><a href="30.html#line-104">104</a></td><td>nullPointerRedundantCheck</td><td><a href="https://cwe.mitre.org/data/definitions/476.html">476</a></td><td>warning</td><td class="warning">Either the condition &apos;s2!=NULL&apos; is redundant or there is possible null pointer dereference: s2.</td></tr>
+         <tr class="redundantCondition sev_style issue"><td><a href="30.html#line-398">398</a></td><td>redundantCondition</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Redundant condition: The condition &apos;*line != 0&apos; is redundant since &apos;*line == &apos; &apos;&apos; is sufficient.</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="31.html">src/java-utils.c</a></td></tr>
+         <tr class="normalCheckLevelMaxBranches sev_information issue"><td><a href="31.html#line-0">0</a></td><td>normalCheckLevelMaxBranches</td><td></td><td>information</td><td>Limiting analysis of branches. Use --check-level=exhaustive to analyze all branches.</td></tr>
+         <tr class="constVariablePointer sev_style issue"><td><a href="31.html#line-290">290</a></td><td>constVariablePointer</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Variable &apos;class&apos; can be declared as pointer to const</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="32.html">src/main.c</a></td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="32.html#line-207">207</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;startup_cb&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="33.html">src/server.c</a></td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="33.html#line-415">415</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;on_name_acquired&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+         <tr class="constParameterCallback sev_style issue"><td><a href="33.html#line-423">423</a></td><td>constParameterCallback</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>style</td><td>Parameter &apos;G_GNUC_UNUSED&apos; can be declared as pointer to const. However it seems that &apos;on_name_lost&apos; is a callback function, if &apos;G_GNUC_UNUSED&apos; is declared with const you might also need to cast function pointer(s).</td></tr>
+      <tbody class="fileEntry">
+       <tr><td colspan="5"><a href="34.html">src/test-server.c</a></td></tr>
+         <tr class="unknownMacro sev_error issue"><td><a href="34.html#line-138">138</a></td><td>unknownMacro</td><td></td><td>error</td><td class="error">There is an unknown macro here somewhere. Configuration is required. If G_GNUC_UNUSED is a macro then please configure it.</td></tr>
+      </tbody>
+       </table>
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Created by Cppcheck 2.16.0 (<a href="https://cppcheck.sourceforge.io">Sourceforge</a>, <a href="irc://irc.freenode.net/cppcheck">IRC</a>)
+      </p>
+    </div>
+    </div>
+  </body>
+</html>
