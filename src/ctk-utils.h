@@ -67,11 +67,11 @@ char *      _ctk_entry_get_locale_text      (CtkEntry   *entry);
 void        _ctk_entry_set_filename_text    (CtkEntry   *entry,
 					     const char *text);
 
-GdkPixbuf * get_icon_pixbuf                 (GIcon        *icon,
+CdkPixbuf * get_icon_pixbuf                 (GIcon        *icon,
 		 			     int           size,
 		 			     CtkIconTheme *icon_theme);
 
-GdkPixbuf * get_mime_type_pixbuf            (const char   *mime_type,
+CdkPixbuf * get_mime_type_pixbuf            (const char   *mime_type,
 		                             int           icon_size,
 		                             CtkIconTheme *icon_theme);
 
