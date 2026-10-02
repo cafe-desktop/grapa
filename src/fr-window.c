@@ -28,7 +28,7 @@
 #include <gio/gio.h>
 #include <cdk/cdk.h>
 #include <cdk/cdkkeysyms.h>
-#include <gdk-pixbuf/gdk-pixbuf.h>
+#include <cdk-pixbuf/cdk-pixbuf.h>
 
 #include <libnotify/notify.h>
 
@@ -1293,7 +1293,7 @@ get_mime_type_icon (const char *mime_type)
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = gdk_pixbuf_copy (pixbuf);
+	pixbuf = cdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (tree_pixbuf_hash, (gpointer) mime_type, pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
@@ -1329,7 +1329,7 @@ get_icon (CtkWidget *widget G_GNUC_UNUSED,
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = gdk_pixbuf_copy (pixbuf);
+	pixbuf = cdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (pixbuf_hash, (gpointer) content_type, pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
@@ -1362,7 +1362,7 @@ get_emblem (CtkWidget *widget G_GNUC_UNUSED,
 	if (pixbuf == NULL)
 		return NULL;
 
-	pixbuf = gdk_pixbuf_copy (pixbuf);
+	pixbuf = cdk_pixbuf_copy (pixbuf);
 	g_hash_table_insert (pixbuf_hash, (gpointer) "emblem-nowrite", pixbuf);
 	g_object_ref (G_OBJECT (pixbuf));
 
