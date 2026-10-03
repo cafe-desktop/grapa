@@ -1,3 +1,10 @@
+### grapa 2.2.0
+
+  * ci: add debian stable build
+  * port from GdkPixbuf to CdkPixbuf
+  * update translations
+
+
 ### grapa 2.1.0
 
   * ci: add debian sid build
@@ -10,6 +17,7 @@
   * help,figures: Replace broken png files with new ones
   * update copyright year to 2025
   * update translations
+
 
 ### grapa 2.0.0
 
@@ -36,6 +44,7 @@
   * fr-archive: Fix mime_type with '.tar-' and '.tar(' in the filename
   * update translations
 
+
 ### grapa 1.25.1
 
   * fr-command-lha: avoid shadow variable
@@ -47,6 +56,7 @@
   * rename CAJA -> BAUL
   * reduce the scope of some variables
   * update translations
+
 
 ### grapa 1.25.0
 
@@ -81,6 +91,7 @@
   * main: set 'ctk-overlay-scrolling' to FALSE
   * 'ctk_dialog_add_button_with_icon_name' instead 'grapa_dialog_add_button'
 
+
 ### grapa 0.1.0
 
   * update copyright
@@ -93,6 +104,7 @@
   * avoid deprecated GtkStock
                      gtk_dialog_get_action_area
   * fork deprecated icons gtk-apply, gtk-ok, gtk-no
+
 
 ### grapa 0.0.1
 
