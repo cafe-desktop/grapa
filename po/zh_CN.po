@@ -21,9 +21,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: grapa 2.1.0\n"
+"Project-Id-Version: grapa 2.2.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2025-02-05 12:45+0100\n"
+"POT-Creation-Date: 2026-10-03 14:43+0200\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: 玉堂白鹤 <yjwork@qq.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/cafe/teams/13566/"
@@ -34,7 +34,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:3 src/main.c:48
+#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:2 src/main.c:48
 msgid "Grapa Archive Manager"
 msgstr "Grapa 归档管理器"
 
@@ -172,16 +172,16 @@ msgstr ""
 "Grapa 为 CAFE 桌面环境的一部分，是 File Roller 的复刻。想了解更多 CAFE 及 "
 "Grapa 的信息，请访问项目主页。"
 
-#: data/grapa.desktop.in.in:4 src/fr-window.c:2003 src/fr-window.c:5598
+#: data/grapa.desktop.in.in:3 src/fr-window.c:2003 src/fr-window.c:5598
 msgid "Archive Manager"
 msgstr "归档管理器"
 
-#: data/grapa.desktop.in.in:5
+#: data/grapa.desktop.in.in:4
 msgid "Create and modify an archive"
 msgstr "创建并修改归档文件"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/grapa.desktop.in.in:17
+#: data/grapa.desktop.in.in:16
 msgid "CAFE;archive;manager;compression;"
 msgstr "CAFE;归档;管理;压缩;"
 
@@ -391,12 +391,12 @@ msgstr "压缩..."
 msgid "Create a compressed archive with the selected objects"
 msgstr "使用选择的对象创建一个压缩的归档"
 
-#: baul/libbaul-grapa.baul-extension.desktop.in.in:5 src/main.c:258
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:4 src/main.c:258
 #: src/server.c:455
 msgid "Grapa"
 msgstr "文件打包器"
 
-#: baul/libbaul-grapa.baul-extension.desktop.in.in:6
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:5
 msgid "Allows to create and extract archives"
 msgstr "允许你创建和解压归档文件"
 
@@ -474,7 +474,7 @@ msgstr ""
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
 "Copyright © 2012–2020 The MATE developers\n"
-"Copyright © 2020-2025 Pablo Barciela\n"
+"Copyright © 2020-2026 Pablo Barciela\n"
 "\n"
 "grapa icon made by https://freeicons.io/profile/3"
 msgstr ""

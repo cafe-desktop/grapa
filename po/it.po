@@ -16,9 +16,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: grapa 2.1.0\n"
+"Project-Id-Version: grapa 2.2.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2025-02-05 12:45+0100\n"
+"POT-Creation-Date: 2026-10-03 14:43+0200\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/cafe/teams/13566/it/)\n"
@@ -28,7 +28,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:3 src/main.c:48
+#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:2 src/main.c:48
 msgid "Grapa Archive Manager"
 msgstr "Gestore di archivi Grapa"
 
@@ -170,16 +170,16 @@ msgstr ""
 "Grapa è un fork di File Roller e fa parte dell'ambiente desktop CAFE. Se "
 "vuoi saperne di più su CAFE e Grapa, visita la home page del progetto."
 
-#: data/grapa.desktop.in.in:4 src/fr-window.c:2003 src/fr-window.c:5598
+#: data/grapa.desktop.in.in:3 src/fr-window.c:2003 src/fr-window.c:5598
 msgid "Archive Manager"
 msgstr "Gestore di Archivi"
 
-#: data/grapa.desktop.in.in:5
+#: data/grapa.desktop.in.in:4
 msgid "Create and modify an archive"
 msgstr "Crea e modifica un archivio"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/grapa.desktop.in.in:17
+#: data/grapa.desktop.in.in:16
 msgid "CAFE;archive;manager;compression;"
 msgstr "CAFE;archive;manager;compression;"
 
@@ -401,12 +401,12 @@ msgstr "Comprimi..."
 msgid "Create a compressed archive with the selected objects"
 msgstr "Crea un archivio compresso con gli oggetti selezionati"
 
-#: baul/libbaul-grapa.baul-extension.desktop.in.in:5 src/main.c:258
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:4 src/main.c:258
 #: src/server.c:455
 msgid "Grapa"
 msgstr "Grapa"
 
-#: baul/libbaul-grapa.baul-extension.desktop.in.in:6
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:5
 msgid "Allows to create and extract archives"
 msgstr "Permette di creare ed estrarre archivi"
 
@@ -488,7 +488,7 @@ msgstr ""
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
 "Copyright © 2012–2020 The MATE developers\n"
-"Copyright © 2020-2025 Pablo Barciela\n"
+"Copyright © 2020-2026 Pablo Barciela\n"
 "\n"
 "grapa icon made by https://freeicons.io/profile/3"
 msgstr ""

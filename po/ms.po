@@ -9,9 +9,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: grapa 2.1.0\n"
+"Project-Id-Version: grapa 2.2.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org\n"
-"POT-Creation-Date: 2025-02-05 12:45+0100\n"
+"POT-Creation-Date: 2026-10-03 14:43+0200\n"
 "PO-Revision-Date: 2020-02-14 11:57+0000\n"
 "Last-Translator: abuyop <abuyop@gmail.com>, 2020\n"
 "Language-Team: Malay (https://www.transifex.com/cafe/teams/13566/ms/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:3 src/main.c:48
+#: data/grapa.appdata.xml.in:7 data/grapa.desktop.in.in:2 src/main.c:48
 msgid "Grapa Archive Manager"
 msgstr "Pengurus Arkib Grapa"
 
@@ -165,16 +165,16 @@ msgstr ""
 "Meja CAFE. Jika anda mahu ketahui lebih lanjut mengenai CAFE dan Grapa, sila "
 "lawati laman sesawang projek."
 
-#: data/grapa.desktop.in.in:4 src/fr-window.c:2003 src/fr-window.c:5598
+#: data/grapa.desktop.in.in:3 src/fr-window.c:2003 src/fr-window.c:5598
 msgid "Archive Manager"
 msgstr "Pengurus Arkib"
 
-#: data/grapa.desktop.in.in:5
+#: data/grapa.desktop.in.in:4
 msgid "Create and modify an archive"
 msgstr "Cipta dan ubahsuai arkib"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/grapa.desktop.in.in:17
+#: data/grapa.desktop.in.in:16
 msgid "CAFE;archive;manager;compression;"
 msgstr "CAFE;arkib;pengurus;pemampatan;"
 
@@ -395,12 +395,12 @@ msgstr "Mampat..."
 msgid "Create a compressed archive with the selected objects"
 msgstr "Cipta arkib termampat dengan objek terpilih"
 
-#: baul/libbaul-grapa.baul-extension.desktop.in.in:5 src/main.c:258
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:4 src/main.c:258
 #: src/server.c:455
 msgid "Grapa"
 msgstr "Grapa"
 
-#: baul/libbaul-grapa.baul-extension.desktop.in.in:6
+#: baul/libbaul-grapa.baul-extension.desktop.in.in:5
 msgid "Allows to create and extract archives"
 msgstr "Membolehkan cipta dan ekstrak arkib"
 
@@ -482,7 +482,7 @@ msgstr ""
 msgid ""
 "Copyright © 2001–2010 Free Software Foundation, Inc.\n"
 "Copyright © 2012–2020 The MATE developers\n"
-"Copyright © 2020-2025 Pablo Barciela\n"
+"Copyright © 2020-2026 Pablo Barciela\n"
 "\n"
 "grapa icon made by https://freeicons.io/profile/3"
 msgstr ""
