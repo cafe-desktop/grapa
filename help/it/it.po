@@ -14,7 +14,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2025-02-05 12:45+0100\n"
+"POT-Creation-Date: 2026-10-03 18:08+0200\n"
 "PO-Revision-Date: 2020-02-14 11:58+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/cafe/teams/13566/it/)\n"
@@ -45,7 +45,7 @@ msgstr ""
 
 #. (itstool) path: info/copyright
 #: C/index.docbook:21
-msgid "<year>2020-2025</year> <holder>CAFE Documentation Project</holder>"
+msgid "<year>2020-2026</year> <holder>CAFE Documentation Project</holder>"
 msgstr ""
 
 #. (itstool) path: info/copyright
